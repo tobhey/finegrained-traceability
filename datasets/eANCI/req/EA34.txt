@@ -1,0 +1,19 @@
+Nome caso d'uso
+RichiestaCertificatiTerzi
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1. Il cittadino seleziona uno specifico certificato(certificati anagrafici, certificati di stato civile).
+2. Il sistema visualizza il form per l'inserimento	dei	dati	della	persona interessata.
+3. Il cittadino inserisce i dati della persona interessata (vedi nota).
+4. Il sistema memorizza in un apposito modulo i dati del cittadino e dell'interessato
+5. Il sistema mostra una schermata con il certificato richiesto.
+6. Il cittadino seleziona la modalità di pagamento e di spedizione.
+7.	Il sistema invia il certificato.
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ Il sistema invia il certificato, OR ➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso
+d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsto.
+Nota: Nel caso in cui il cittadino non è un parente stretto dell'interessato nei dati da inserire, deve specificare una motivazione valida di richiesta del certificato.

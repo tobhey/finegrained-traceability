@@ -1,0 +1,19 @@
+Nome caso d'uso
+CancellazioneCardGiovani
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino richiede la cancellazione della CardGiovani.
+2. Il sistema visualizza un form per l'inserimento del numero della Card.
+3.	Il cittadino inserisce il numero. 4. Il sistema verifica l'esistenza della card e
+l'appartenenza al cittadino. 5. Il sistema visualizza un form per la
+conferma della richiesta. 6. Il cittadino conferma l'eliminazione della
+card. 7. Il sistema elimina la card giovani dal
+repository.
+Condizione di entrata
+ Questo caso richiede che il cittadino ha effettuato la procedura di autenticazione e che abbia una CardGiovani.
+Condizioni di uscita
+ Il sistema ha effettuato la cancellazione della card.
+ Nel caso in cui il cittadino abbia inserito il numero di una card inesistente o non di sua proprietà il sistema chiama il caso d'uso DatiErrati.
+ Qualora si verificasse una failure nella richiesta il sistema chiama il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

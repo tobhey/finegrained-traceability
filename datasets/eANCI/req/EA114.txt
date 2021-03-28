@@ -1,0 +1,18 @@
+Nome caso d'uso
+Sismico
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.	Il Cittadino accede alla schermata descrittiva di come avviene il monitoraggio sismico del territorio e la possibilità di acquisire informazioni circa le cause di un terremoto, e le tecnologie di misurazione e prevenzione utilizzate dagli specialisti del nucleo operativo.
+2.	Il sistema risponde fornendo al Cittadino la possibilità di visionare in modo sempre descrittivo, le caratteristiche degli strumenti, il lavoro svolto dagli specialisti, e gli enti nazionali con cui essi collaborano.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle
+informazioni	reperite,	messe
+a
+disposizione dalla Protezione Civile,OR  Il Cittadino non riesce ad ottenere la schermata descrittiva, e perciò si estende il caso d'uso SerivizioNonDisponibile,
+che gestisce i casi di failure tecniche.
+Requisiti di qualitaI tempi di reazione del sistema alla richiesta del Cittadino sono nell'ordine dei centesimi di secondo, se la visualizzazione è andata a buon fine, OR
+ Se il Cittadino non riesce a visualizzare correttamente la scheda d'informazione, il sistema risponderà in un tempo che varia dai 4 ai 6 secondi.

@@ -1,0 +1,18 @@
+Nome caso d'uso
+CancellazioneImpiegato
+Attori partecipanti
+Iniziato da amministratore
+Flusso di eventi
+1. L'amministratore preme il pulsante di cancellazione impiegato.
+2. Il sistema chiede all'amministratore una conferma.
+3.	L'amministratore conferma l'operazione. 4.	Il sistema cancella l' impiegato.
+Condizione di entrata
+ L'amministratore	si	è	autenticato	nel sistema.
+ Questo	caso	d'uso	include RicercaImpiegato e si verifica quando l'amministratore vuole cancellare un impiegato.
+Condizioni di uscita
+ L'amministratore	non	conferma l'operazione, OR
+ Il sistema cancella l' impiegato,OR ➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso
+d'uso ServizioNonDisponibile.
+Requisiti di qualita La	stringa	matricola	è	presente	nel sistema, è formata solo da caratteri numerici ed ha lunghezza di 6 caratteri.
+ La stringa nome deve essere presente nel sistema ed associata al cognome, può contenere caratteri [ a..z A..Z ' àéèìòù ] e deve avere una lunghezza massima di 30 caratteri.
+ La stringa cognome deve essere presente nel sistema ed associata al nome, può contenere caratteri [ a..z A..Z ' àéèìòù ] e deve avere una lunghezza massima di 30 caratteri.

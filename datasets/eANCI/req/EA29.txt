@@ -1,0 +1,16 @@
+Nome caso d'uso
+ModificaPratica
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1. Il cittadino preme il pulsante di modifica pratica (Carta d'identità, Cambio Residenza) se la pratica non è stata inizializzata.
+3.
+2. Il sistema mostra un form per la modifica della pratica. Il cittadino inserisce i dati.
+4.	Il sistema salva le modifiche apportate.
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema.  Questo	caso	d'uso	estende VisualizzaPratica e si verifica quando il
+cittadino vuole modificare la pratica.
+Condizioni di uscita
+ Il sistema modifica la pratica, OR ➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso
+d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsto.

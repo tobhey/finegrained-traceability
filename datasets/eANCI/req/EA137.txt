@@ -1,0 +1,14 @@
+Nome caso d'uso
+ConsultazioneHelpOn-Line
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino entra nella sezione dedicata all'help on-line.
+2. Il sistema presenta una schermata contenente la lista delle funzionalità.
+3. Il cittadino accede alle informazioni di help cliccando sul collegamento relativo alla funzionalità di cui vuole ricevere.
+4. Il sistema presenta le informazioni di aiuto, spiegando le modalità e le azioni da eseguire per la specifica funzionalità.
+Condizione di entrata
+ Il	cittadino	ha	effettuato	l'accesso	al sistema.
+Condizioni di uscita
+ Il cittadino ha accesso alle informazioni relative ad una particolare funzionalita
+Requisiti di qualita Non previsti

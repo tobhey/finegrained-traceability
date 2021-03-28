@@ -1,0 +1,12 @@
+Nome caso d'uso
+LogoutImpiegato
+Attori partecipanti
+Iniziato da impiegato
+Flusso di eventi
+1. L'impiegato vuole terminare la sessione di lavoro e clicca sul bottone Logout.
+2. Il sistema disconnette l'impiegato dal sistema e ritorna alla schermata principale.
+Condizione di entrata
+ L'impiegato si è autenticato nel sistema.
+Condizioni di uscita
+ Il	sistema	chiude	la	sessione dell'impiegato.
+Requisiti di qualita➢ Non previsti.

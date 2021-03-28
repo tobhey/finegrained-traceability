@@ -1,0 +1,1 @@
+The enterer/editor is presented with the name of the user and determines if it is invalid or not the right person. The enterer/editor is prompted to try again.

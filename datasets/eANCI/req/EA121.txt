@@ -1,0 +1,18 @@
+Nome caso d'uso
+ICI
+Attori partecipanti
+Iniziato da Cittadino.
+Flusso di eventi
+1. II Cittadino clicca sul pulsante per accedere all'area Pagamento Online delle tasse.
+2. Il Sistema visualizza la lista delle tasse che possono essere pagate online.
+3. Il Cittadino seleziona la sezione dedicata all'Imposta Comunale sugli Immobili e al relativo pagamento.
+4. Il Sistema redirige il Cittadino verso la sezione necessaria, mostrando il form della relativa tassa e il relativo importo da pagare.
+5. Il Cittadino conferma la correttezza delle informazioni e avvia la transazione, selezionando il metodo di pagamento preferito.
+6. Il Sistema effettua la transazione e mostra	un	messaggio	di	avvenuto pagamento.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ Il pagamento è stato effettuato, OR  Nel	caso	in	cui	la	disponibilità economica non è sufficiente a coprire il pagamento o si verifica un errore nella transazione il Sistema chiama il caso
+d'uso PagamentoNonRiuscito, OR  Nel caso in cui si verifichino altri errori generici relativi al Sistema viene invocato	il	caso	d'uso
+ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

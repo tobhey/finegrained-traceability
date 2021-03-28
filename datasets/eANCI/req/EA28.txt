@@ -1,0 +1,18 @@
+Nome caso d'uso
+CancellaPratica
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1.
+3.
+Il	cittadino	preme	il	pulsante	di cancellazione pratica (Carta d'identità, Cambio Residenza) se la pratica non è stata inizializzata .
+2. Il sistema chiede al cittadino una conferma. Il cittadino conferma l'operazione.
+4.	Il sistema cancella la pratica.
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema.  Questo	caso	d'uso	estende VisualizzaPratica e si verifica quando il
+cittadino vuole cancellare la pratica.
+Condizioni di uscita
+ Il cittadino non conferma l'operazione, OR
+ Il sistema cancella la pratica, OR ➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso
+d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsto.

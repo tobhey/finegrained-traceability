@@ -1,0 +1,1 @@
+By default, the patient is presented with a list sorted by dates, most recent access first.

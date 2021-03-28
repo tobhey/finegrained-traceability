@@ -1,0 +1,18 @@
+Nome caso d'uso
+RicercaImpiegato
+Attori partecipanti
+Iniziato da amministratore
+Flusso di eventi
+1. L'amministratore preme sul bottone Ricerca impiegato.
+3.
+2.	Il sistema mostra il form per la ricerca di un impiegato. L'amministratore effettua una ricerca tramite i dati del impiegato.
+4.	Il sistema restituisce i dati del impiegato ricercato.
+Condizione di entrata
+ L'amministratore	si	è	autenticato	nel sistema.
+Condizioni di uscita
+➢ Il sistema visualizza la schermata del impiegato, OR
+➢ Nel caso in cui l'impiegato non è trovato il sistema richiama il caso d'uso DatiErrati, OR
+ Nel caso in cui l'amministratore vuole cancellare un impiegato , il sistema chiama	il	caso	d'uso CancellaImpiegato, OR
+ Nel caso in cui l'amministratore vuole modificare un impiegato , il sistema chiama	il	caso	d'uso ModificaImpiegato, OR
+➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita La	stringa	matricola	è	presente	nel sistema, contiene solo caratteri numerici ed ha una lunghezza di 6 caratteri.

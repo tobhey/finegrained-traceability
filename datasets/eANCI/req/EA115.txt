@@ -1,0 +1,15 @@
+Nome caso d'uso
+VisualizzaRisultatiTossicologiciAmbientali
+Attori partecipanti
+Cittadino, UtenteRegistrato
+Flusso di eventi
+1.	Il Cittadino accede a tale scheda per potersi rendere	conto	personalmente	della situazione ambientale del comune in cui risiede, se è tenuta sotto controllo, e quali sono i valori a rischio e del perché di questa situazione.
+2. Il sistema risponde con una schermata descrittiva circa i valori tossicologici pervenuti	dalle	analisi	chimiche	e tossicologiche effettuate dalla Protezione Civile sull'ambiente e sul terreno comunale.
+Condizione di entrata
+ Il Cittadino, è autenticato nel sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle informazioni raccolte, OR
+ Il Cittadino non riesce a visualizzare la scheda e pertanto si estende il caso d'uso SerivizioNonDisponibile, che gestisce i casi di failure tecniche.
+Requisiti di qualita I tempi di risposta del sistema sono accettabili e nell'ordine dei centesimi di secondo se la scheda viene correttamente visualizzata da chi ne ha fatto richiesta
+ Mentre,	se	c'è	stato	qualche	intoppo nella visualizzazione del caso d'uso, i tempi di risposta del sistema aumentano, nell'ordine dei secondi, da un minimo di 3 ad un massimo di 6.

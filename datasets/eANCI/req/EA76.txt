@@ -1,0 +1,16 @@
+Nome caso d'uso
+InformazioniPromozioneTerritoriale
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino richiede la visualizzazione dell'elenco delle promozioni territoriali.
+3.
+2. Il sistema permette di visualizzare l'elenco delle promozioni.
+Il cittadino sceglie la promozione. 4. Il sistema restituisce le informazioni
+riguardanti la promozione prescelta.
+Condizione di entrata
+ Il	cittadino	ha	effettuato	l'accesso	al sistema.
+Condizioni di uscita
+ Il cittadino ha visionato le informazioni sulla promozione territoriale, OR
+Nel caso in cui il cittadino voglia visionare una promozione territoriale verrà rimandato al sito dell'ente turismo.
+Requisiti di qualita Non previsti.

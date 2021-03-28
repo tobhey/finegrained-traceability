@@ -1,0 +1,14 @@
+Nome caso d'uso
+VisualizzaPraticheAttesaImpiegato
+Attori partecipanti
+Iniziato da Impiegato
+Flusso di eventi
+1. Impiegato seleziona “Visualizza Richieste in Attesa”
+2.	Il Sistema mostra la lista delle pratiche in attesa.
+Condizione di entrata
+ L'Impiegato si è loggato correttamente.
+Condizioni di uscita
+➢ L'Impiegato seleziona una richiesta in attesa e viene invocato il caso d'uso “MostraPraticaAttesaImpiegato”, OR
+➢ L'Impiegato	torna	alla	schermata precedente, OR
+ Il Sistema ha riscontrato un errore non previsto quindi chiama il caso d'uso ServizioNonDisponibile, OR
+Requisiti di qualita Non previsti.

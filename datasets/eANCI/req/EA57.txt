@@ -1,0 +1,16 @@
+Nome caso d'uso
+RilascioParcheggioDisabili
+Attori partecipanti
+Iniziato da Utente Comunica con Comando Vigili Urbani
+Flusso di eventi
+1. L'utente	seleziona	la	funzionalità Assistenza Sociale selezionando “Rilascio Parcheggio Disabili”.
+2. Il sistema mostra il form per l'inserimento dei dati del richiedente e del destinatario (se diversi).
+3. L'utente inserisce i dati anagrafici del richiedente e quelli del destinatario (se diverso) se necessario specificando il rapporto con tale persona. Inoltre viene specificato il tipo di documentazione allegata al comando dei vigili urbani (certificato medico-legale rilasciato dalla commissione ASL). Quindi sottomette il form.
+4. Il sistema preleva i dati anagrafici del cittadino destinatario. La richiesta viene inviata al comando dei vigili urbani ed all'utente viene notificato l'invio.
+Condizione di entrata
+ L'utente	ha	effettuato	la	login	con successo e ha selezionato la funzionalità Assistenza Sociale.
+Condizioni di uscita
+ Il sistema ha riscontrato un errore nella compilazione del form quindi chiama il caso d'uso DatiErrati, OR
+ L'utente	ritorna	alla	schermata precedente, OR
+ Il sistema ha riscontrato un errore non previsto quindi chiama il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

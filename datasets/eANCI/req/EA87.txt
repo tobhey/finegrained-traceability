@@ -1,0 +1,15 @@
+Nome caso d'uso
+RichiestaCopiaFascicoloEdilizio
+Attori partecipanti
+Iniziato da cittadino, comunica con impiegato
+Flusso di eventi
+1. Il cittadino richiede la copia del fascicolo mediante apposito pulsante
+2. Ilsistemainvialarichiestaall'impiegato 3. Il sistema notifica al cittadino che la richiesta è stata inoltrata e la copia gli
+sarà a breve inviata
+Condizione di entrata
+ Include RicercaFascicoloEdilizio
+Condizioni di uscita
+ Il	sistema	provvede	ad	inviare	la richiesta all'impiegato
+ Il sistema notifica al cittadino che la richiesta è stata inoltrata e la copia gli sarà a breve inviata, OR
+ nel caso di fallimenti tecnici il sistema richiama	il	caso	d'uso ServizioNonDisponibile
+Requisiti di qualita Non previsti

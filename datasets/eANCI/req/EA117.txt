@@ -1,0 +1,17 @@
+Nome caso d'uso
+Vulcanico
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.	Il Cittadino accede a questa scheda, dal caso d'uso Rischi se intende conoscerne di più, circa la situazione vulcanica del proprio comune di appartenenza, e la possibilità di visualizzare le modalità di monitoraggio della Protezione Civile.
+2. Il sistema risponde con la corretta visualizzazione di una schermata descrittiva circa i diversi tipi di eruzione di un vulcano, mettendo a disposizione, la possibilità di visualizzare l'attuale situazione vulcanica del comune.
+3. Il Cittadino vuole conoscere le modalità di monitoraggio dei vulcani presenti, e pertanto,	richiamerà	il	caso	d'uso MonitoraggioVulcanico
+4. Il sistema mette a disposizione del Cittadino	un	link	al	caso	d'uso MonitoraggioVulcanico,	per	poter conoscere la reale situazione.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ l	Cittadino	è	soddisfatto	delle informazioni che gli sono state fornite, OR
+ Il Cittadino non riesce a visualizzare la scheda descrittiva della funzionalità Vulcanico, perciò si estende il caso d'uso ServizioNonDisponibile, che gestisce i casi di failure tecniche.
+Requisiti di qualitaIl tempo di risposta del sistema è nell'ordine dei centesimi di secondo se il Cittadino visualizza in modo corretto la scheda con le componenti inerenti.
+ Il tempo di risposta al servizio richiesto cambia se il Cittadino non riesce a visualizzare correttamente la pagina descrittiva.

@@ -1,0 +1,2 @@
+A chronic special-diagnosis-history patient is an alive patient who has been diagnosed with at least one of the following: diabetes mellitus [is diagnosed with ICD code beginning with 250],
+asthma [is diagnosed with ICD code beginning with 493], or circulatory-system disease [is diagnosed with an ICD code between 390 and 459 inclusive].

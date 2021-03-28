@@ -1,0 +1,12 @@
+Nome caso d'uso
+ServizioNonDisponibile
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il sistema mostra un messaggio al video del terminale indicante che non è possibile effettuare la richiesta.
+2.	Cittadino legge il messaggio di notifica. 3.	Il sistema ripresenta il form di input.
+Condizione di entrata
+ Questo caso d'uso estende i casi d'uso, e gestisce i casi eccezionali di failure a causa di problemi tecnici.
+Condizioni di uscita
+ Il form input è ripresentato.
+Requisiti di qualita Non previsti

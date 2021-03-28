@@ -1,0 +1,15 @@
+Nome caso d'uso
+ServizioCivile
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede a questa sezione per avere informazioni circa la propria utilità a favore degli altri.
+2.	Il	sistema	risponde	con	una visualizzazione di una schermata dove chiarisce gli obiettivi del servizio civile, informazioni di carattere generale e la possibilità di chiamare il caso d'uso DownloadIscrizione.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	prende	atto	delle informazioni ricevute, OR
+ Il Cittadino non riesce a visualizzare la pagina di informazioni, e pertanto si estende	il	caso	d'uso SerivizioNonDisponibile, che gestisce i casi di failure tecniche.
+Requisiti di qualita Il tempo di risposta è nell'ordine dei centesimi di secondo se l'utente riesce a visualizzare la pagina informativa con il relativo link al download del modulo, OR
+ I	tempi	di	risposta	del	sistema all'esigenza del Cittadino aumenta nell'ordine dei secondi se non riesce a visualizzare la scheda.

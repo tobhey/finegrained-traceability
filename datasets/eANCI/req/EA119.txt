@@ -1,0 +1,15 @@
+Nome caso d'uso
+CalcolaImportoNonRiuscito
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino preme il pulsante relativo alla funzione del calcolo delle imposte.
+2. Il Sistema presenta la lista delle tasse e delle imposte per cui è possibile calcolare l'importo.
+3.	Il Cittadino seleziona l'imposta di interesse. 4.	Il Sistema mostra un form da compilare
+per il calcolo. 5.	Il Cittadino inserisce i dati necessari.
+6.	Il Sistema verifica la correttezza dei dati ma non riesce ad effettuare il calcolo, notificando	all'utente	il	motivo	del fallimento.
+Condizione di entrata
+	Questo	caso	d'uso	estende CalcolaImporto ed è invocato quando il Cittadino inserisce dei dati errati OR si è verificato	un	errore	nel	calcolo dell'importo.
+Condizioni di uscita
+ Il Sistema notifica l'errore e ripresenta il form al Cittadino.
+Requisiti di qualita Non previsti.

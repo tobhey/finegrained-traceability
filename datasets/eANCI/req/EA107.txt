@@ -1,0 +1,15 @@
+Nome caso d'uso
+MonitoraggioVulcanico
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede a questa schermata in quanto ne vuole sapere di più circa il funzionamento effettivo di come la Protezione Civile svolge il monitoraggio dei vulcani presenti sul territorio comunale e nazionale, con una descrizione dettagliata delle tecnologie informatiche adottate.
+2. Il sistema risponde alla richiesta con la visualizzazione di una scheda informativa nella quale viene descritto tutto ciò che la Protezione Civile fa per avere sotto controllo l'attività vulcanica
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle informazioni	che	gli	sono	state fornite,OR
+ Il	Cittadino	non	riesce	a	visualizzare correttamente la scheda informativa circa il monitoraggio dei vulcani presenti sul territorio comunale e nazionale, perciò viene esteso il caso d'uso ServizioNonDisponibile, che gestisce i casi di failure tecniche.
+Requisiti di qualita Il tempo di risposta varia nell'ordine dei centesimi di secondo.
+ Ma	se	il	Cittadino	non	visualizza correttamente la scheda informativa, allora i tempi possono variare nell'ordine dei secondi, da un minimo di 3 ad un massimo di 7

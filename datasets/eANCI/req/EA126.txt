@@ -1,0 +1,16 @@
+Nome caso d'uso
+PagamentoNonRiuscito
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino clicca sul pulsante per accedere all'area Pagamento Online delle tasse o delle multe.
+2. Il Sistema visualizza la lista delle tasse/ multe che possono essere pagate online.
+3. Il Cittadino seleziona la tassa/multa di interesse
+5.
+4. Il Sistema redirige il Cittadino verso la sezione necessaria, mostrando il form al cittadino. Il Cittadino avvia la transazione.
+6. Il Sistema non consente la transazione poiché si sono verificati problemi con il metodo di pagamento selezionato.
+Condizione di entrata
+ Questo	caso	d'uso	estende ICI,IRPEF,TIA,TOSAP,IPPA	e PagamentoMulta ed è invocato quando si verificano errori dovuti al metodo di pagamento.
+Condizioni di uscita
+ Il	Sistema	notifica	l'errore	e	mostra nuovamente il form da compilare.
+Requisiti di qualita Non previsti.

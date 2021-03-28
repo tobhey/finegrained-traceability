@@ -1,0 +1,17 @@
+Nome caso d'uso
+ModificaPasswordCittadino
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1. Il cittadino vuole modificare la password e preme il bottone modifica password.
+2. Il sistema visualizza il form per l'inserimento della vecchia password e della nuova.
+3.	Il cittadino inserisce la vecchia password, la nuova password e preme il tasto di conferma.
+4. Il sistema notifica che la password è stata modificata.
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ La password è modificata,OR  Nel caso in cui il cittadino inserisce una
+password minore di 8 caratteri oppure la vecchia password è errata, il sistema chiama il caso d'uso DatiErrati, OR
+➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita➢ La stringa della password è formata da [a..zA..Z0..9.-_ * +!?,:; àèéòù ] ed ha una lunghezza compresa tra 8 e 15 caratteri.
+➢ La stringa non è coerente con la password inserita.

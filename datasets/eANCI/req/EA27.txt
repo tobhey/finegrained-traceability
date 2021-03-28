@@ -1,0 +1,16 @@
+Nome caso d'uso
+CambioStatoDiFamiglia
+Attori partecipanti
+Iniziato da Cittadino, continuato da Impiegato
+Flusso di eventi
+1.
+3.
+Il Cittadino preme sul bottone Cambio stato di famiglia.
+2. Il sistema mostra al cittadino il form da compilare. Il cittadino inserisce i dati del nuovo nucleo familiare e invia la richiesta.
+4.	Il sistema invia la richiesta all'impiegato competente.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+➢ Il Sistema crea il documento da consegnare all'ufficio competente, OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

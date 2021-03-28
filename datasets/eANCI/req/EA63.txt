@@ -1,0 +1,19 @@
+Nome caso d'uso
+InformazioniConsultorioGiovani
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino richiede la visualizzazione dell'elenco dei consultori.
+3.
+2. Il sistema permette di visualizzare l'elenco dei consultori.
+Il cittadino sceglie il consultorio. 4. Il sistema restituisce le informazioni
+riguardanti il consultorio prescelto visualizzandone dati come:
+•	la localizzazione; •	le date e gli orari d'apertura. •	l'eventuale lista dei colloqui
+prenotati(invocando il caso d'uso
+VisualizzazionePrenotazioneConsu ltorio).
+Condizione di entrata
+ Il	cittadino	ha	effettuato	l'accesso	al sistema.
+Condizioni di uscita
+ Il cittadino ha visionato le informazioni su consultorio, OR
+Nel caso in cui il cittadino voglia prenotare un colloquio il sistema chiama il caso d'uso, PrenotazioneColloquio.
+Requisiti di qualita Non previsti.

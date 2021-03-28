@@ -1,0 +1,14 @@
+Nome caso d'uso
+EliminazionePrenotazioneColloquio
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino richiede la cancellazione della prenotazione del colloquio nel consultorio.
+2. Il sistema visualizza un form per la conferma della richiesta.
+3. Il cittadino conferma l'eliminazione della prenotazione.
+4. Ilsistemaeliminalaprenotazione.
+Condizione di entrata
+ Questo	estende	il	caso	d'uso VisualizzazionePrenotazioneConsultor io considerando il caso in cui il cittadino voglia eliminare la prenotazione scelta.
+Condizioni di uscita
+ Il sistema ha effettuato la cancellazione della prenotazione.
+Requisiti di qualita Non previsti.

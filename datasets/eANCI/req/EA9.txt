@@ -1,0 +1,12 @@
+Nome caso d'uso
+LogoutCittadino
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1. Il cittadino vuole terminare la sessione di lavoro e clicca sul bottone Logout.
+2. Il sistema disconnette il cittadino dal sistema e ritorna alla schermata principale.
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ Il	sistema	chiude	la	sessione	del cittadino.
+Requisiti di qualita➢ Non previsti.

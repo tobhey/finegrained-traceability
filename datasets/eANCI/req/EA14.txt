@@ -1,0 +1,16 @@
+Nome caso d'uso
+ModificaEMailImpiegato
+Attori partecipanti
+Iniziato da impiegato
+Flusso di eventi
+1. L' impiegato accede al form di modifica e- mail.
+2. Il sistema mostra il form l'inserimento della nuova e-mail.
+3. Il impiegato inserisce la nuova email e preme il tasto di conferma.
+4.	Il sistema aggiorna la nuova e-mail.
+Condizione di entrata
+ L' impiegato si è autenticato nel sistema.
+Condizioni di uscita
+➢ Il sistema salva la nuova e-mail . ➢ Il sistema rileva un errore e richiama il
+caso d'uso DatiErrati OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsti.

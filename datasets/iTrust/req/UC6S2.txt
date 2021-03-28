@@ -1,0 +1,1 @@
+The patient can choose to toggle between designating/undesignating any LHCP as being a DLHCP for them.

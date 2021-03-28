@@ -1,0 +1,17 @@
+Nome caso d'uso
+CancellaInformazione
+Attori partecipanti
+Iniziato da Impiegato
+Flusso di eventi
+1.	L'impiegato richiede la cancellazione di una news.
+2. Il sistema visualizza l'elenco delle news esistenti
+3.	L'impiegato sceglie una news. 4. Il sistema visualizza un form la
+conferma dell'operazione. 5. L'impiegato	conferma	l'operazione
+attraverso il form. 6. Il sistema riceve il form, e cancella i dati
+della news dal sistema
+Condizione di entrata
+ Questo caso richiede che l'impiegato ha effettuato la procedura di autenticazione.
+Condizioni di uscita
+ Il sistema ha eseguito la cancellazione della news, OR
+ Qualora si verificasse un errore nella richiesta di cancellazione il sistema chiama	il	caso	d'uso ServizioNonDisponibile
+Requisiti di qualita Non previsti.

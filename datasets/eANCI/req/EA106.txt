@@ -1,0 +1,15 @@
+Nome caso d'uso
+MonitoraggioIdro-pluviometrico
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede a questa schermata in quanto vuole soddisfare la sua curiosità nel conoscere la situazione monitorata dalla Protezione Civile delle acque comunali
+2. Il sistema risponde con una schermata dove permette di visualizzare informazioni circa le modalità del monitoraggio delle acque comunali, la situazione batteriologica e l'aggiornamento delle ultime analisi effettuate sui campioni prelevati.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle informazioni ricevute dalla scheda che gli è stata proposta, OR
+ Il Cittadino non riesce a visualizzare la pagine che ha richiesto, e viene esteso il caso d'uso SerivizioNonDisponibile che gestisce i casi di failure tecniche.
+Requisiti di qualitaIl tempo di risposta del sistema è nell'ordine dei centesimi di secondo se visualizza correttamente la scheda.
+ Il tempo di risposta aumenta, e rientra nei termini di secondi, da un minimo di 3 ad un massimo di 7.

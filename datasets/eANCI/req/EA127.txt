@@ -1,0 +1,15 @@
+Nome caso d'uso
+RicercaVerbaliMulte
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino clicca sul pulsante per accedere alla funzionalità di gestione online delle multe.
+3.
+2. Il Sistema redirige il cittadino verso la sezione desiderata. Il Cittadino clicca sul pulsante per la ricerca dei verbali (solo a suo carico).
+4. Il Sistema effettua una ricerca delle multe a carico del cittadino (pagate e non) presenti nel database e le mostra in una lista nella quale è possibile navigare per mostrare tutte le informazioni disponibili per una determinata multa.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ Il Sistema ha effettuato la ricerca, OR  Nel caso in cui vi siano errori generici il sistema	chiama	il	caso	d'uso
+ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

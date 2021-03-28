@@ -1,0 +1,20 @@
+Nome caso d'uso
+PresentareProgettoEdilizio
+Attori partecipanti
+Iniziato da cittadino, comunica con impiegato
+Flusso di eventi
+1. Il cittadino accede all'area presentazione progetto edilizio mediante l'apposito link
+2. Il sistema visualizza la form per l'inserimento dei dati necessari
+3.	Il cittadino inserisce i dati richiesti 4. Il sistema verifica correttezza e completezza dei dati quindi mostra una schermata di riepilogo oppure attiva il
+caso d'uso DatiErrati 5.	Il cittadino conferma l'operazione
+6. Il sistema visualizza il modulo per la stampa
+7. Il sistema invia all'impiegato competente un messaggio di notifica della richiesta
+8.	Il cittadino effettua la stampa da consegnare all'ufficio comunale con allegati i documenti richiesti e una marca da bollo
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema
+Condizioni di uscita
+ Il sistema visualizza un messaggio di avvenuta notifica della richiesta
+ Il sistema invia all'impiegato competente un messaggio di notifica della richiesta, OR
+nel caso in cui i dati inseriti siano scorretti il sistema richiama il caso d'uso DatiErrati, OR
+ nel caso di fallimenti tecnici il sistema richiama	il	caso	d'uso ServizioNonDisponibile
+Requisiti di qualita Non previsti

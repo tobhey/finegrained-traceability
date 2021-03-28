@@ -1,0 +1,17 @@
+Nome caso d'uso
+RichiestaCartaDiIdentitàAccettata
+Attori partecipanti
+Iniziato da Impiegato, continuato cittadino
+Flusso di eventi
+1.
+3.
+5.
+L'impiegato visualizza la notifica ricevuta. 2. Il sistema mostra all'impiegato la richiesta di creazione della carta d'identità da
+parte del cittadino. L'impiegato certifica la validità della richiesta controllando l'esattezza dei dati e abilita la procedura per la creazione della carta d'identità.
+4. Il sistema invia una e-mail di conferma al cittadino che ha richiesto la creazione della carta d'identità. Il cittadino si reca allo sportello.
+Condizione di entrata
+ L'impiegato si è autenticato nel sistema  Questo	caso	d'uso	estende RichiestaCartaDiIdentità e si verifica quando l'impiegato conferma la richiesta
+del cittadino.
+Condizioni di uscita
+➢ Il sistema avvisa il cittadino.
+Requisiti di qualita Non Previsti.

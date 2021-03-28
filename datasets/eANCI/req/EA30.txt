@@ -1,0 +1,17 @@
+Nome caso d'uso
+RichiestaCartaDiIdentita
+Attori partecipanti
+Iniziato da Cittadino, continuato impiegato
+Flusso di eventi
+1. Il Cittadino visualizza lo stato di famiglia e seleziona un componente della famiglia.
+2. Il sistema mostra un form per inserimento dei dati personali(Altezza, segni particolari ecc.
+3. Il cittadino inserisce i dati, seleziona la modalità di pagamento e preme il tasto conferma.
+4. Il sistema mostra la schermata con la documentazione da esibire allo sportello nei giorni e orari di apertura dell'ufficio.
+5.	Il cittadino conferma l'operazione. 6. Il sistema notifica all'impiegato la
+richiesta.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.  Il	cittadino	esercita	la	patria	potestà
+sull'interessato.
+Condizioni di uscita
+➢ L'impiegato riceve la pratica e sceglie se accettarla	o	meno,	richiamando rispettivamente	il	caso	d'uso RichiestaCartaDiIdentitàRifiutata	o RichiestaCartaDiIdentitàAccettata, OR
+➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso d'uso ServizioNonDisponibile.

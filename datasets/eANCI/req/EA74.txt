@@ -1,0 +1,18 @@
+Nome caso d'uso
+InformazioniEventiNelTerritorio
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino richiede la visualizzazione dell'elenco degli eventi.
+3.
+2. Il sistema permette di visualizzare l'elenco degli eventi.
+Il cittadino sceglie l'evento. 4. Il sistema restituisce le informazioni
+riguardanti	l'evento	prescelto visualizzandone dati come:
+• • •
+il luogo; la data e l'ora dell'evento; sito che gestisce l'evento (Pro-loco).
+Condizione di entrata
+ Il	cittadino	ha	effettuato	l'accesso	al sistema.
+Condizioni di uscita
+ Il cittadino ha visionato le informazioni sull'evento, OR
+Nel caso in cui il cittadino voglia prenotare l'evento verrà rimandato al sito dell'evento.
+Requisiti di qualita Non previsti.

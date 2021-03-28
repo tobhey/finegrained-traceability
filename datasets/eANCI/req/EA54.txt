@@ -1,0 +1,14 @@
+Nome caso d'uso
+MostraPraticaAttesaImpiegato
+Attori partecipanti
+Iniziato da Impiegato
+Flusso di eventi
+1. Il sistema mostra le informazioni riguardanti la pratica selezionata con le relative opzioni di accettazione o rifiuto pratica.
+2.	L'Impiegato può Accettare o Respingere la pratica se è già completa di tutta la documentazione, le firme necessarie e dopo averla verificata. Inoltre può stampare i dati della pratica se necessario.
+Condizione di entrata
+ Questo caso d'uso include il caso d'uso VisualizzaPraticheAttesaImpiegato.
+Condizioni di uscita
+➢ L'Impiegato Accetta la pratica, viene invocato	il	caso	d'uso “PraticaAccettata”, OR
+➢ L'Impiegato Respinge la pratica, viene invocato	il	caso	d'uso “PraticaRespinta”, OR
+ Il sistema ha riscontrato un errore non previsto quindi chiama il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

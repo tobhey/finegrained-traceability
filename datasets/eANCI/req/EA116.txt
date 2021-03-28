@@ -1,0 +1,23 @@
+Nome caso d'uso
+Volontariato
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede alla schermata introduttiva.
+2. Il sistema risponde visualizzando la scheda descrittiva circa le informazioni di carattere generale su questo aspetto della Protezione Civile, e la possibilità di conoscere i prerequisiti per partecipare.
+3. Il Cittadino prende coscienza di ciò che è scritto, e pertanto seleziona il link dove viene	chiamato	il	caso	d'uso ComeDiventareVolontari.
+4. Il sistema risponde permettendogli la visualizzazione di questa descrizione.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	prende	atto	delle informazioni ricevute e se accetta di
+chiamare	il	caso
+ComeDiventareVolontari ,
+ridirezionato a tale scheda, OR  Il	Cittadino	prende	atto
+d'uso viene
+delle informazioni che gli sono state fornite, ma esce dalla visualizzazione della
+schermata corrente, OR  Il Cittadino non riesce a visualizzare la
+scheda descrittiva del caso d'uso Volontariato, e pertanto si estende il caso d'uso ServizioNonDisponibile che gestisce I casi di failure tecniche.
+Requisiti di qualita I tempi di risposta del sistema sono nell'ordine dei centesimi di secondo se il Cittadino riesce a visualizzare la pagina in modo corretto.
+I tempi di risposta del sistema alla richiesta del Cittadino, aumentano nell'ordine dei secondi, variando da un minimo di 3 ad un max di 6.

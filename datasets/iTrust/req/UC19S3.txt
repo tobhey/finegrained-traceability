@@ -1,0 +1,1 @@
+The prescription report is titled with the patient name. The prescription list includes medication, date prescribed, start date, end date for each prescription, and the name of the doctor who prescribed the medication.

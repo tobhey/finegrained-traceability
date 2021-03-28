@@ -1,0 +1,16 @@
+Nome caso d'uso
+IscrizioneNewsInformagiovani
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino richiede l'iscrizione alle news di informagiovani per ricevere advertise relative al servizio.
+2. Il sistema visualizza un form per la sottomissione della richiesta.
+3. Il cittadino inserisce i dati della richiesta di news in un form.
+4. Il sistema riceve il form, verifica i dati e sottomette la richiesta.
+Condizione di entrata
+ Questo caso richiede che il cittadino ha effettuato la procedura di autenticazione.
+Condizioni di uscita
+ Il sistema ha sottomesso la richiesta del richiedente, OR
+ Qualora si verificasse un errore nella fase di richiesta delle news, il sistema chiama	il	caso	d'uso ServizioNonDisponibile, OR
+ Qualora	il	cittadino	decidesse	di annullare la richiesta delle news, il sistema	chiama	il	caso	d'uso NewsAnnullato.
+Requisiti di qualita Non previsti.

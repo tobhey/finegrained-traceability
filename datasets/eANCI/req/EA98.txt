@@ -1,0 +1,15 @@
+Nome caso d'uso
+Boschi
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede a questa schermata per poter conoscere i consigli che la Protezione Civile mette a disposizione di chiunque al fine di evitare e far evitare gli incendi boschivi.
+2. Il sistema mette a disposizione una schermata con una serie di regola che il Cittadino dovrebbe seguire e far seguire se si trova con terze parti, per impedire il verificarsi di incendi dolosi, e in caso di questo, quale autorità chiamare.
+Condizione di entrata
+ Il Cittadino è autenticato all'interno del sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle informazioni e dei consigli ricevuti, OR
+ Il Cittadino non riesce a visualizzare la schermata descrittiva, pertanto viene esteso	il	caso	d'uso ServizioNonDisponibile che gestisce i casi di failure tecniche.
+Requisiti di qualita Il sistema impiega tempo nell'ordine dei centesimi di secondo per far visualizzare la schermata a chi la richiede, OR
+ Il sistema impiegherebbe invece, tempo nell'ordine di 3-5 secondi, se la schermata	non	viene	visualizzata correttamente.

@@ -1,0 +1,17 @@
+Nome caso d'uso
+ModificaInformazione
+Attori partecipanti
+Iniziato da Impiegato
+Flusso di eventi
+1. L'impiegato richiede la modifica di una news.
+2. Il sistema visualizza l'elenco delle news esistenti
+3.	L'impiegato sceglie una news. 4. Il sistema visualizza un form per la
+modifica della news. 5.	L'impiegato inserisce i dati relativi alla news
+in un form. 6. Il sistema riceve il form, e aggiorna i
+dati della news nel sistema
+Condizione di entrata
+ Questo caso richiede che l'impiegato ha effettuato la procedura di autenticazione.
+Condizioni di uscita
+ Il sistema ha eseguito la modifica della news, OR
+ Qualora si verificasse un errore nella richiesta di modifica il sistema chiama il caso d'uso ServizioNonDisponibile
+Requisiti di qualita Non previsti.

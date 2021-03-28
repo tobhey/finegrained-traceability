@@ -1,0 +1,18 @@
+Nome caso d'uso
+InformazioniBiblioteche
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino richiede la visualizzazione dell'elenco delle biblioteche.
+3.
+2. Il sistema permette di visualizzare l'elenco delle biblioteche.
+Il cittadino sceglie la biblioteca. 4. Il sistema restituisce le informazioni
+riguardanti	la	biblioteca	prescelta visualizzandone dati come:
+• • •
+la localizzazione; le date e gli orari d'apertura; il link al sito della biblioteca.
+Condizione di entrata
+ Il	cittadino	ha	effettuato	l'accesso	al sistema.
+Condizioni di uscita
+ Il cittadino ha visionato le informazioni della biblioteca, OR
+Nel caso in cui il cittadino voglia visionare un libro verrà rimandato al sito della biblioteca.
+Requisiti di qualita Non previsti.

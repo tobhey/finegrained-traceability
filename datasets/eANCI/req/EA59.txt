@@ -1,0 +1,15 @@
+Nome caso d'uso
+CancellaIscrizioneNewsInformagiovani
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino richiede la cancellazione dal servizio di advertise relativo alle news di informagiovani.
+2. Il sistema visualizza un form per la conferma della richiesta.
+3. Il cittadino conferma l'operazione di cancellazione inscrizione.
+4. Il sistema elimina il cittadino dal servizio di advertise.
+Condizione di entrata
+ Questo caso richiede che il cittadino ha effettuato la procedura di autenticazione.
+Condizioni di uscita
+ Il sistema ha eseguito la richiesta del cittadino, OR
+ Qualora si verificasse un errore nella fase di eliminazione dal servizio delle news, il sistema chiama il caso d'uso ServizioNonDisponibile
+Requisiti di qualita Non previsti.

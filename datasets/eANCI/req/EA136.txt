@@ -1,0 +1,15 @@
+Nome caso d'uso
+Modulistica
+Attori partecipanti
+Iniziato da Cittadino.
+Flusso di eventi
+1. II Cittadino clicca sul pulsante per accedere sezione dedicata alla modulistica.
+3.
+2. Il Sistema redirige il Cittadino verso la sezione richiesta e mostra i vari moduli disponibili per il download. Il Cittadino seleziona il modulo desiderato.
+4.	Il Sistema avvia il download.
+Condizione di entrata
+ Il Cittadino ha effettuato il login.
+Condizioni di uscita
+ Il download è stato inizializzato, OR  Nel caso in cui vi siano errori di tipo generale il sistema chiama il caso d'uso
+ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

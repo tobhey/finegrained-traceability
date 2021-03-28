@@ -1,0 +1,18 @@
+Nome caso d'uso
+IscrizioneCardGiovani
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino richiede l'iscrizione alla card giovani.
+2. Il sistema visualizza un form per la sottomissione della richiesta.
+3. Il cittadino inserisce i dati della richiesta della card in un form.
+4. Il sistema riceve il form, verifica i dati e sottomette la richiesta.
+5. Il	sistema	comunica	l'avvenuto inserimento della card e visualizza in un form il numero della card e il riepilogo dei dati inseriti.
+Condizione di entrata
+ Questo caso richiede che il cittadino ha effettuato la procedura di autenticazione.
+Condizioni di uscita
+ Il sistema ha visualizzato il form di riepilogo, OR
+ Qualora si verificasse un errore nella fase di richiesta della card, il sistema chiama	il	caso	d'uso ServizioNonDisponibile, OR
+ Nel caso in cui il cittadino inserisca dei dati incorretti il sistema chiama il caso d'uso DatiErrati, OR
+ Qualora	il	cittadino	decidesse	di annullare la richiesta della card, il sistema	chiama	il	caso	d'uso CardAnnullata.
+Requisiti di qualita Non previsti.

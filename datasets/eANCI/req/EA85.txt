@@ -1,0 +1,21 @@
+Nome caso d'uso
+RicercaFascicoloEdilizio
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1.
+3. 5.
+Il cittadino accede all'area di ricerca 2. Il sistema visualizza la form per
+l'inserimento della chiave di ricerca Il cittadino inserisce la chiave di ricerca
+4. Ilsistemamostrairisultatidellaricerca Il cittadino seleziona il fascicolo
+6. Ilsistemavisualizzailfascicolo
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema
+Condizioni di uscita
+ Il sistema visualizza il fascicolo, OR ➢ Nel caso in cui il cittadino non è trovato il sistema richiama il caso d'uso
+DatiErrati, OR  Nel caso di fallimenti tecnici il sistema
+richiama	il	caso	d'uso
+ServizioNonDisponibile, OR  Se il cittadino vuole una copia del
+fascicolo trovato, chiama il caso d'uso
+RichiestaCopiaFascicoloEdilizio
+Requisiti di qualita Non previsti

@@ -1,0 +1,1 @@
+The system prompts the patient or HCP to correct the format of a required data field because the input of that data field does not match that specified in data format 6.1 or data format 6.2, as appropriate.

@@ -1,0 +1,15 @@
+Nome caso d'uso
+GestioneModifiche
+Attori partecipanti
+Iniziato da Impiegato
+Flusso di eventi
+1. L'impiegato dopo essersi autenticato nel sistema accede alla funzionalità Protezione Civile per modificare i relativi form.
+2.	Il sistema risponde a tale esigenza con la possibilità di visualizzare una schermata con i	casi	d'uso AggiornaCondizioniAtmosferiche, AggiornaAnalisiAmbientali, AggiornaBandieConcorsi.
+3. L' impiegato seleziona la funzionalità da modificare.
+4.	Il	sistema	risponde	all'esigenza dell'impiegato con il form di modifica richiesto.
+Condizione di entrata
+ L'impiegato si è autenticato nel sistema comunale.
+Condizioni di uscita
+ L'impiegato	ha	sottomesso	in	modo corretto il form, OR
+ L'impiegato non riesce a visualizzare la pagina relativa al form di modifica richiesto e pertanto verrà esteso il caso d'uso	ServizioNonDisponibile,	che gestisce i casi di failure tecniche.
+Requisiti di qualita Non previsti.

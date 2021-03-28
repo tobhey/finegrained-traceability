@@ -1,0 +1,15 @@
+Nome caso d'uso
+VisualizzaInformazioni
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.
+Il Cittadino richiede la visualizzazione della informazioni presenti sul territorio.
+2. Il sistema restituisce le informazioni riguardanti il territorio visualizzandone dati come:
+• biblioteche; • eventi; • musei; • promozioni presenti sul territorio.
+Condizione di entrata
+ Questo caso richiede che il cittadino ha effettuato l'accesso al sistema.
+Condizioni di uscita
+ Il Cittadino ha visionato le informazioni, OR
+Nel caso in cui il sistema non sia disponibile richiama il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

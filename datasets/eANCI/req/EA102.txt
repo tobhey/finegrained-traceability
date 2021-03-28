@@ -1,0 +1,15 @@
+Nome caso d'uso
+DownloadIscrizione
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede a questa schermata perché vuole iscriversi al Servizio Civile.
+2.	Il sistema risponde con una pagina dove il Cittadino che ne ha fatto richiesta, può effettuare il download del modulo da compilare e presentare alla sede della Protezione Civile.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il Cittadino ha completato il download del modulo che deve compilare e consegnare personalmente in quanto richiede l'accompagnamento di moduli esterni, e viene richiamato il caso d'uso ServizioCivile.
+ Il Cittadino non riesce a visualizzare il download del modulo, e pertanto si estende	il	caso	d'uso ServizioNonDisponibile, che gestisce i casi di failure tecniche.
+Requisiti di qualita Il tempo di risposta del sistema per caricare il download del modulo varia dai 2 a 4 secondi, OR
+ Il tempo di risposta del sistema varia dai 5 a 7 secondi se il download del modulo non va a buon fine.

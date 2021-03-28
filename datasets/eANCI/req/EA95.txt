@@ -1,0 +1,18 @@
+Nome caso d'uso
+AggiornaCondizioniAtmosferiche
+Attori partecipanti
+Iniziato da Impiegato
+Flusso di eventi
+1.
+3.
+L'impiegato	comunale	dopo	essersi autenticato	nel	sistema	aggiorna	le condizioni atmosferiche del comune e delle province regionali.
+2. Il sistema risponde mettendo a disposizione dell'impiegato un form da completare	per	aggiornare	i	campi: tempMin,	tempMax,	statoAtmosferico, nomeCittà, data.
+L'impiegato completa i campi del form presentato dal sistema e lo sottomette
+4.	Il sistema ne aggiorna il form e permette la visualizzazione di quest'ultimo al Cittadino.
+Condizione di entrata
+ L'impiegato si è autenticato nel sistema.
+Condizioni di uscita
+ La sottomissione è andata a buon fine, OR
+ L'impiegato	non l'aggiornamento	e richiamato	il ServizioNonDisponibile.
+può	completare pertanto	viene caso	d'uso
+Requisiti di qualita Non previsti

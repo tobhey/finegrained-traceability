@@ -1,0 +1,1 @@
+A patient's DLHCP chooses to add or delete a patient's [E1, E2] personal representative by typing that person's MID [E1, E2].

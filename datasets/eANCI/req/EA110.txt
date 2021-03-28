@@ -1,0 +1,15 @@
+Nome caso d'uso
+Rifiuti
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede alla scheda informativa perché vuole conoscere l'effettiva situazione dei rifiuti del suo comune, e se ovviamente, l'ambiente è tutelato dalla Protezione Civile con l'aiuto degli enti comunali.
+2. Il sistema risponde a tale esigenza con una schermata ampia e descrittiva dove vengono puntualizzati gli obiettivi della Giunta Comunale e note informative sui pericoli di incendi dei rifiuti, e di che tipo è la raccolta dei rifiuti nel proprio comune. Inoltre, è possibile visionare il caso d'uso VisualizzaRisultatiTossicologiciAmbiental i.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle informazioni che ha ricevuto dalla scheda descrittiva, OR
+ Il Cittadino non riesce a visualizzare la schermata e pertanto viene esteso il caso d'uso	ServizioNonDisponibile,	che gestisce i casi di failure tecniche.
+Requisiti di qualita I tempi di risposta sono da ricercarsi nell'ordine dei centesimi di secondo se avviene la corretta visualizzazione della pagina, OR
+ Nell'ordine dei secondi, dai 3 ai 6, se non riesce a visionare tale schermata.

@@ -1,0 +1,1 @@
+The LHCP's name, specialty, address, date of office visit, and whether or not the LHCP is a DLHCP for this patient is indicated. The list is sorted by the date of the last office visit (most recent first).

@@ -1,0 +1,1 @@
+The user (patient or personal health representative) can choose to view a list of (1) their own prescriptions or (2) the prescriptions for whom the user is a person health representative by choosing one patient from a a list of these patients. A prescription list is then displayed [S3], sorted by start date (the later date is ranked earlier).

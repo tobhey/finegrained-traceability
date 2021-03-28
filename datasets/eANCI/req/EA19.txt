@@ -1,0 +1,17 @@
+Nome caso d'uso
+RecuperaPasswordCittadino
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino ha dimenticato la password e preme sul bottone Recupera Password.
+2. Il sistema mostra la schermata per il recupero della password che richiede l'inserimento del nome utente e del codice della carta d'identità.
+3. Il cittadino inserisce i suoi dati e preme il tasto di conferma.
+4.	Il sistema verifica la correttezza dei dati e invia la password all'indirizzo email del cittadino.
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema.
+Condizioni di uscita
+➢ Il sistema ha inviato la password, OR ➢ Nel	caso	in	cui	l'amministratore inserisce una matricola non presente nel sistema, il sistema chiama il caso d'uso
+DatiErrati, OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita➢ La stringa del username presente nel sistema e associata al possessore della carta d'identità, è ben formata contiene caratteri[a..zA..Z0..9 .-_]edha lunghezza minore di 30 caratteri e non è vuota.
+➢ La stringa della Carta d'Identità è presente nel sistema, è formata da XXnnnnnnn (X= lettera n= numero) ed ha una lunghezza uguale a 9 caratteri.

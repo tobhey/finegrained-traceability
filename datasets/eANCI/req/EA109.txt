@@ -1,0 +1,15 @@
+Nome caso d'uso
+ProtezioneCivile
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino accede alla scheda descrittiva circa le informazioni di carattere generale riguardo l'organo comunale in questione.
+2. Il sistema risponde alla funzionalità informativa, permettendo la visualizzazione di una descrizione circa i ruoli attivi svolti dalla Protezione Civile.
+Condizione di entrata
+ Il Cittadino è autenticato nel sistema, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	sistema	mette	a	disposizione	del Cittadino la scheda descrittiva ed egli ne prende atto, OR
+ Nel caso in cui il sistema non riesca a far visualizzare la scheda, viene esteso il caso d'uso ServizioNonDisponibile che gestisce I casi di failure tecniche.
+Requisiti di qualita Il	tempo	di	risposta	all'esigenza	del cittadino è nell'ordine dei centesimi di secondo se il Cittadino visualizza correttamente la schermata.
+ I tempi di risposta variano nell'ordine dei secondi, da un minimo di 3 ad un massimo di 7, se il Cittadino non visualizza correttamente la schermata descrittiva.

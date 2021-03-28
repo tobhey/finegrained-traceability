@@ -1,0 +1,1 @@
+If the security question/answer has been set (it is not null) [E2], present security question and obtain answer.

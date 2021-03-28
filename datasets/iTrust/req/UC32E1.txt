@@ -1,0 +1,1 @@
+If there are no patients satisfying the three conditions, an empty list is presented.

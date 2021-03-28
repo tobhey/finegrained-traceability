@@ -1,0 +1,22 @@
+Nome caso d'uso
+InserimentoCittadino
+Attori partecipanti
+Iniziato da impiegato
+Flusso di eventi
+1. L'impiegato accede al sistema, e attiva la procedura di registrazione del cittadino.
+2. Il sistema visualizza il form per l'inserimento di un nuovo cittadino.
+3. L'impiegato inserisce i dati del cittadino e sottomette la richiesta di registrazione.
+4.	Il sistema riceve il form, verifica che nel sistema non sia già presente il cittadino inserito dall'impiegato.
+Condizione di entrata
+ L'impiegato si è autenticato nel sistema.
+Condizioni di uscita
+ Il sistema registra l'Impiegato,OR  Nel caso in cui l'impiegato inserisce una matricola già presente nel sistema, il sistema chiama il caso d'uso DatiErrati,
+OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita➢ La stringa del nome può contiene caratteri [ a..z A..Z ' àéèìòù ] ed ha lunghezza minore a 30 caratteri e non è vuota.
+➢ La stringa del cognome può contenere caratteri [ a..z A..Z ' àéèìòù ] ed ha una lunghezza minore di 30 caratteri e non vuota.
+➢ La stringa del Codice Fiscale deve essere vigente alle normative ed ha una lunghezza di 16 caratteri.
+➢ La stringa della data di nascita deve essere una data esistente e deve essere formata da gg/mm/aaaa di tipo numerico (gg da 1 a 31, mm da 1 a 12, aaaa dal 1900 ad oggi).
+➢ La stringa del luogo di nascita può contenere caratteri [ a..z A..Z ' àéèìòù ] ed una lunghezza minore di 30 caratteri e non vuota.
+➢ La stringa dell'email ha formato x@x.x ed ha una lunghezza minore di 30 caratteri e non vuota.
+➢ La stringa ID del Nucleo Familiare deve essere presente nel sistema deve contenere solo caratteri numerici e deve essere maggiore di 0.

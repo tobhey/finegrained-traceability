@@ -1,0 +1,19 @@
+Nome caso d'uso
+PrenotazioneColloquio
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino richiede un colloquio nel consultorio preselezionato.
+2. Il sistema visualizza un form per la sottomissione della richiesta.
+3. Il cittadino inserisce i dati della richiesta di colloquio in un form.
+4. Il sistema riceve il form, verifica i dati per la prenotazione e sottomette la richiesta.
+5. Cittadino richiede stampa la ricevuta della prenotazione del colloquio.
+6. Ilsistemastampalaprenotazione.
+Condizione di entrata
+ Questo	caso	d'uso	estende InformazioniConsultorioGiovani	e interviene quando un cittadino decide di effettuare una prenotazione di un colloquio.
+ Questo caso richiede che il cittadino ha effettuato la procedura di autenticazione.
+Condizioni di uscita
+ Il sistema ha prenotato il colloquio del richiedente, OR
+ Qualora si verificasse un errore nella fase di prenotazione del colloquio, il sistema	chiama	il	caso	d'uso ServizioNonDisponibile, OR
+ Qualora	il	cittadino	decidesse	di annullare la prenotazione del colloquio, il sistema chiama il caso d'uso PrenotazioneColloquioAnnullato
+Requisiti di qualita Non previsti.

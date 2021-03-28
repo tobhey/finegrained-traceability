@@ -1,0 +1,16 @@
+Nome caso d'uso
+ModificaPasswordImpiegato
+Attori partecipanti
+Iniziato da impiegato
+Flusso di eventi
+1. L'impiegato vuole modificare la password e preme il bottone modifica password.
+2. Il sistema visualizza il form per l'inserimento della vecchia password e della nuova.
+3. L'impiegato inserisce la vecchia password, la nuova password e preme il tasto di conferma.
+4. Il sistema notifica che la password è stata modificata.
+Condizione di entrata
+ L' impiegato si è autenticato nel sistema.
+Condizioni di uscita
+ La password è modificata,OR  Nel caso in cui l'impiegato inserisce una
+password minore di 8 caratteri oppure la vecchia password è errata, il sistema chiama il caso d'uso DatiErrati, OR
+➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita➢ Non previsti

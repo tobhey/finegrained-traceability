@@ -1,0 +1,1 @@
+The LHCP enters a patient medical identification number (MID) [E1] and confirms his/her input [E2].

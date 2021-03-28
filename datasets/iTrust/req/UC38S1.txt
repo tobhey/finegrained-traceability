@@ -1,0 +1,1 @@
+The administer is presented with two lists of NDC codes/names. The administrator chooses a drug from each list to record an interaction between the two drugs [E1] The two drugs and a textual description of the possible effects of the interaction are stored.

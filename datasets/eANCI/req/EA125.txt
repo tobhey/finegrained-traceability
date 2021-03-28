@@ -1,0 +1,22 @@
+Nome caso d'uso
+PagamentoMulte
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino clicca sul pulsante per accedere alla funzionalità di gestione online delle multe.
+2. Il Sistema redirige il cittadino verso la sezione desiderata.
+3. Il Cittadino clicca sul pulsante per il pagamento online delle multe.
+4. Il Sistema effettua una ricerca delle multe a carico del Cittadino presenti nel database per le quali non è ancora pervenuto il pagamento.
+5. Il Cittadino seleziona la multa per la quale desidera effettuare il pagamento.
+6.	Il Sistema mostra il form della multa e il relativo importo da pagare.
+7. Il Cittadino verifica la correttezza delle informazioni e avvia la transazione, selezionando il metodo di pagamento preferito.
+8. Il Sistema effettua la transazione e mostra	un	messaggio	di	avvenuto pagamento.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ Il pagamento è stato effettuato, OR Nel caso in cui vi sia un errore nell'inserimento	dei	dati	o	la disponibilità economica non è sufficiente a coprire il pagamento il Sistema chiama il caso d'uso PagamentoNonRiuscito,
+OR  Il Cittadino clicca sul bottone relativo
+alla contestazione di una determinata multa,in questo caso il Sistema chiama il caso d'uso ContestaMulta, OR
+ Nel caso in cui vi siano errori nei dati inseriti dal cittadino il sistema chiama il caso d'uso DatiErrati, OR
+ Nel caso in cui vi siano errori generici il sistema	chiama	il	caso	d'uso ServizioNonDisponibile.
+Requisiti di qualita Nessuno

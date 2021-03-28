@@ -1,0 +1,26 @@
+Nome caso d'uso
+RichiestaCertificati
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1. Il cittadino seleziona uno specifico certificato(certificati anagrafici, certificati di stato civile).
+2. Il sistema visualizza il form per l'inserimento	dei	dati	della	persona interessata.
+3. Il cittadino inserisce i dati della persona interessata.
+4. Il sistema mostra una schermata con il certificato richiesto.
+5. Il cittadino seleziona la modalità di pagamento e di spedizione.
+6.	Il sistema invia il certificato.
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ Il sistema invia il certificato, OR  Nel caso in cui la persona interessata non è stata trovata il sistema chiama il
+caso d'uso DatiErrati, OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita La	stringa	cognome	può	contenere caratteri come [ a..z A..Z ' àéèìòù ] ed una lunghezza compresa tra 1 e 30 caratteri.
+ La stringa nome può contenere caratteri come [ a..z A..Z ' àéèìòù ] ed una lunghezza compresa tra 1 e 30 caratteri.
+ La stringa luogo nascita può contenere caratteri come [ a..z A..Z ' àéèìòù ] ed una lunghezza di minimo un carattere.
+ La	stringa	provincia	di	nascita	può contenere caratteri come [ a..z A..Z ' àéèìòù ] ed una lunghezza di almeno un carattere.
+ La stringa data di nascita deve essere realmente esistente e formata da gg/mm/ aaaa di tipo numerico (gg da 1 a 31, mm da 1 a 12, aaaa dal 1900 ad oggi).
+ La	stringa	residenza	può	contenere caratteri [ a..z A..Z ' àéèìòù . ] e deve avere la lunghezza di almeno un carattere.
+ La stringa provincia di residenza può contenere caratteri come [ a..z A..Z ' àéèìòù ] ed una lunghezza di almeno un carattere.
+ La	stringa	indirizzo	può	contenere
+caratteri come [ a..z A..Z ' àéèìòù ] ed una lunghezza di almeno un carattere

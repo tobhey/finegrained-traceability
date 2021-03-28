@@ -1,0 +1,1 @@
+If the patient has never stored a security question/answer, the user is asked for the random password assigned on creation of the account.

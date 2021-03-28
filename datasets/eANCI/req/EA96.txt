@@ -1,0 +1,16 @@
+Nome caso d'uso
+AttivitàUtili
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.	Selezionando questo caso d'uso, il Cittadino accede ad una schermata di scelta di due casi d'uso: Boschi, Rifiuti
+2. Il sistema mette a disposizione una semplice ed intuitiva schermata che permette di scegliere quale dei due servizi visitare, per aiutare indirettamente a mantenere	accettabili,	le	condizioni ambientali comunali.
+3. Il Cittadino sceglie uno dei due casi d'uso Boschi, o Rifiuti. 4. Il sistema risponde all'esigenza del Cittadino facendogli visualizzare la pagina desiderata che aveva richiesto.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema.
+Condizioni di uscita
+ Il	Cittadino	ha	correttamente visualizzato la schermata introduttiva e decide di accedere ad una delle schermate proposte richiamando il caso d'uso Boschi, o il caso d'uso Rifiuti.
+ Il Cittadino non riesce a visualizzare la pagina introduttiva ai due casi d'uso, Boschi, Rifiuti e pertanto si estende il caso d'uso ServizioNonDisponibile che gestisce i casi di failure tecniche.
+Requisiti di qualita I tempi di risposta del sistema sono da ricercarsi nell'ordine dei centesimi di secondo se il Cittadino visualizza in modo corretto la pagina di scelta su quale caso d'uso proiettarsi, OR
+ I tempi di risposta sono rallentati a causa di problemi esterni e vanno nell'ordine dei secondi, dai 3 ai 7.

@@ -1,0 +1,15 @@
+Nome caso d'uso
+VisualizzazionePratica
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1. Il cittadino clicca sul bottone visualizza pratiche(Carta	d'Identità,	Cambio Residenza).
+2. Il sistema visualizza una schermata con le pratiche che riguardano il cittadino.
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ Il cittadino visualizza la schermata, OR Nel caso in cui il cittadino vuole cancellare una pratica, il sistema chiama
+il caso d'uso CancellaPratica, OR Nel caso in cui il cittadino vuole modificare una pratica, il sistema chiama
+il caso d'uso ModificaPratica, OR ➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso
+d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsto

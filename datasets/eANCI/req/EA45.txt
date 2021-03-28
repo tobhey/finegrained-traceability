@@ -1,0 +1,16 @@
+Nome caso d'uso
+AccoglienzaNotturna
+Attori partecipanti
+Iniziato da Utente Comunica con Ufficio Servizi Sociali
+Flusso di eventi
+1. L'utente	seleziona	la	funzionalità Assistenza Sociale selezionando “Richiesta Accoglienza Notturna”
+2. Il sistema mostra il form per l'inserimento dei dati del richiedente e del destinatario.
+3. L'utente inserisce i propri dati e se necessario inserisce i dati di una terza persona specificando il rapporto con tale persona. Inoltre specifica un domicilio o recapito alternativo ed una eventuale data di appuntamento con gli assistenti sociali. Quindi sottomette il form.
+4. Il sistema preleva i dati anagrafici del cittadino richiedente e del cittadino destinatario (se diverso dal richiedente), e i dati riguardanti il nucleo familiare del Cittadino destinatario. La richiesta viene inviata all'ufficio dei Servizi Sociali ed all'utente viene notificato l'invio.
+Condizione di entrata
+ L'utente	ha	effettuato	la	login	con successo e ha selezionato la funzionalità Assistenza Sociale.
+Condizioni di uscita
+ Il sistema ha riscontrato un errore nella compilazione del form quindi chiama il caso d'uso DatiErrati, OR
+ L'utente	ritorna	alla	schermata precedente, OR
+ Il sistema ha riscontrato un errore non previsto quindi chiama il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti

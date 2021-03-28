@@ -1,0 +1,103 @@
+precalculated*
+__pycache__/
+output/
+
+!precalculated_spacy_italian_lemmas.csv
+!precalculated_spacy_english_lemmas.csv
+
+*.bak
+
+# SVN
+.svn
+repo/
+
+# VIM locks
+*.swp
+
+# LibreOffice locks
+.~lock.*#
+
+*.tmp
+
+# Word temporary
+~$*.doc*
+#
+# # Excel temporary
+~$*.xls*
+#
+# # Excel Backup File
+*.xlk
+#
+# PowerPoint temporary
+~$*.ppt*
+
+# Protegé catalog files
+*catalog*.xml
+
+# LaTex
+Abschlussvortrag.pdf
+*.acn
+*.acr
+*.alg
+*.aux
+*-blx.bib
+*.bbl
+*.blg
+*.brf
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lol
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.nav
+*.out
+thesis.pdf
+*.ps
+*.run.xml
+*.snm
+*.synctex.gz
+*.tdo
+*.toc
+
+# Elcipse
+.classpath
+.project
+.settings
+target/
+
+# IntelliJ IDE
+.idea/*
+*.iws
+*.iml
+*.eml
+/out/
+
+# Mac
+.DS_Store
+__MACOSX/
+
+# Windows
+Thumbs.db*
+
+# dotNet
+obj/
+bin/
+deploy/
+_ReSharper.*
+*.csproj.user
+*.resharper.user
+*.resharper
+*.suo
+*.cache

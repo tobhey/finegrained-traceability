@@ -1,0 +1,15 @@
+Nome caso d'uso
+CheTempoFa
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede a questa schermata per visualizzare la situazione meteorologica del comune in cui risiede.
+2. Il sistema risponde all'esigenza del Cittadino permettendogli di visualizzare, oltre alla situazione tempo, del suo comune,anche quella delle provincie della regione a cui appartiene, con data di aggiornamento, temperature minime e massime,	e	ovviamente,	condizioni atmosferiche espresse con una piccola immagine descrittiva.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle informazioni ricevute, OR
+ Il Cittadino non riesce a visualizzare la pagina	relativa	alle	condizioni atmosferiche del comune, pertanto, si estende	il	caso	d'uso ServizioNonDisponibile che gestisce i casi eccezionali di failure tecniche.
+Requisiti di qualita Il sistema risponde in un tempo che varia nell'ordine dei centesimi di secondo se l'utente visualizza correttamente la schermata relativa alle condizioni meteo, OR
+ Il	tempo	invece	varia	nell'ordine	dei secondi, da un minimo di 2 ad un massimo di 6, nel momento in cui l'utente Cittadino, non riesce a conoscere le condizioni meteo comunali.

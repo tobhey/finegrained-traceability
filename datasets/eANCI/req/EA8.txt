@@ -1,0 +1,12 @@
+Nome caso d'uso
+LogoutAmministratore
+Attori partecipanti
+Iniziato da Amministratore
+Flusso di eventi
+1. L'amministratore vuole terminare la sessione di lavoro e clicca sul bottone Logout.
+2. Il sistema disconnette l'amministratore dal sistema e ritorna alla schermata principale.
+Condizione di entrata
+ L'amministratore	si	è	autenticato	nel sistema.
+Condizioni di uscita
+ Il	sistema	chiude	la	sessione dell'amministratore.
+Requisiti di qualita➢ Non previsti.

@@ -1,0 +1,15 @@
+Nome caso d'uso
+RichiestaIPPAAccettata
+Attori partecipanti
+Iniziato da Impiegato.
+Flusso di eventi
+1. 3.
+L'Impiegato visualizza la notifica ricevuta. 2. Il Sistema mostra all'Impiegato la
+richiesta effettuata dal cittadino. L'Impiegato certifica la validità della richiesta controllando l'esattezza dei dati e abilita la procedura burocratica per la richiesta del servizio.
+4. Il Sistema invia una e-mail di conferma al cittadino che ha richiesto il servizio.
+Condizione di entrata
+ L'Impiegato si è autenticato nel sistema.  RichiestaIPPAAccettata include il caso
+d'uso RichiestaIPPA
+Condizioni di uscita
+ Il sistema notifica l'esito al cittadino.
+Requisiti di qualita Non previsti.

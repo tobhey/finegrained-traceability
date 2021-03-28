@@ -1,0 +1,15 @@
+Nome caso d'uso
+RichiestaStatoDiFamiglia
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino preme sul bottone Stato di famiglia.
+3.
+2. Il sistema mostra al cittadino lo stato di famiglia. Il cittadino sceglie se stampare o inviare alla propria e-mail lo stato di famiglia.
+4. Il sistema esegue la scelta effettuata dal cittadino.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+➢ Il sistema esegue un'operazione scelta dal cittadino OR,
+➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsti.

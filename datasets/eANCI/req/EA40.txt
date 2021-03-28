@@ -1,0 +1,17 @@
+Nome caso d'uso
+RichiestaTesseraElettorale
+Attori partecipanti
+Iniziato da Cittadino, continuato da impiegato
+Flusso di eventi
+1. Il Cittadino preme sul bottone Tessera Elettorale.
+2.	Il sistema mostra il form per la richiesta della tessera.
+3.	Il cittadino conferma l'operazione 4.	Il	sistema	invia	una	notifica
+all'impiegato. 5. Il cittadino riceverà la tessera elettorale che
+verrà consegnata al proprio domicilio.
+Condizione di entrata
+ Il Cittadino deve essere autenticato nel sistema.
+ La tessera elettorale non è stata inviata.
+Condizioni di uscita
+➢ Il Sistema avvisa l'impiegato, OR ➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso
+d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsti.

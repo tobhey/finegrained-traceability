@@ -1,0 +1,1 @@
+HCP must enter the MID of a patient and then enter or edit demographic information with the exception of the patient's security question/password according to data format 6.1 

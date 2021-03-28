@@ -1,0 +1,17 @@
+Nome caso d'uso
+AutenticazioneAmministratore
+Attori partecipanti
+Iniziato da amministratore
+Flusso di eventi
+1.	L'amministratore accede al sistema. 2.	Il sistema visualizza il form di login per l'immissione dei dati (nome utente e
+password). 3. L' amministratore inserisce i dati e
+sottomette la richiesta di autenticazione. 4.	Il sistema riceve il form, verifica i dati e consente l'accesso all'amministratore al sistema con i permessi di accesso
+specificati.
+Condizione di entrata
+ L' amministratore ha avuto accesso al sistema.
+Condizioni di uscita
+ Il	sistema	consente	l'accesso all'amministratore, OR
+ Nel	caso	in	cui	l'amministratore inserisce login e/o password errati il sistema	chiama	il	caso	d'uso DatiErrati, OR
+➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita➢ La stringa del username è presente nel sistema, è ben formata contiene caratteri [a..zA..Z0..9 .-_]edhalunghezza minore di 30 caratteri e non è vuota.
+➢ La stringa della password è presente nel sistema, è ben formata contiene caratteri [a..zA..Z0..9.-_ * +!?,:; àèéìòù ] ed ha una lunghezza compresa tra 8 e 15caratteri.

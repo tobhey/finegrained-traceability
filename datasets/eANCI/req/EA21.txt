@@ -1,0 +1,16 @@
+Nome caso d'uso
+RecuperoPasswordImpiegato
+Attori partecipanti
+Iniziato da impiegato
+Flusso di eventi
+1. L'impiegato ha dimenticato la password e preme il bottone recupero password.
+2. Il sistema mostra la form per l'inserimento della matricola.
+3. L'impiegato inserisce la propria matricola e preme il tasto di conferma.
+4. Il sistema verifica i dati e invia la password all'indirizzo email dell'impiegato.
+Condizione di entrata
+ L'impiegato si è autenticato nel sistema.
+Condizioni di uscita
+ Il sistema invia la password, OR  Nel caso in cui l'impiegato inserisce una matricola non presente nel sistema, il sistema chiama il caso d'uso DatiErrati,
+OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita➢ Non previsti.

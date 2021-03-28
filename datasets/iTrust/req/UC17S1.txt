@@ -1,0 +1,1 @@
+An alive patient who has not had an office visit for more than one year and who has been diagnosed with diabetes mellitus [is diagnosed with ICD code beginning with 250] asthma [is diagnosed with ICD code beginning with 493], or circulatory-system disease [is diagnosed with an ICD code between 390 and 459 inclusive].

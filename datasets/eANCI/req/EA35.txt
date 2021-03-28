@@ -1,0 +1,16 @@
+Nome caso d'uso
+RichiestaDiMatrimonio
+Attori partecipanti
+Iniziato da Cittadino, continuato da Impiegato
+Flusso di eventi
+1. Il Cittadino preme sul bottone Richiesta di matrimonio.
+2. Il sistema mostra al cittadino il form da compilare.
+3. Il cittadino inserisce tutti i suoi dati, quelli del partner e preme il tasto di conferma.
+4. Il sistema crea automaticamente il modulo da presentare con autocertificazione e stato di famiglia del cittadino richiedente e invia il modulo all'impiegato.
+5. L'impiegato riceve la notifica e pubblica la richiesta di matrimonio.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+➢ Il Sistema crea il documento da consegnare all'ufficio competente, OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

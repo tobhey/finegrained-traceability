@@ -1,0 +1,17 @@
+Nome caso d'uso
+InformazioniInformagiovani
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino richiede la visualizzazione dell'elenco delle notizie di informagiovani.
+3.
+2. Il sistema permette di visualizzare l'elenco delle informazioni riguardanti:
+•	gazzetta ufficiale speciale lavoro; •	informazioni bandi concorso locali, •	viaggi studio.
+Il cittadino sceglie l'informazione desiderata. 4. Il sistema restituisce le informazioni
+riguardanti la notizia specificando: •	data di pubblicazione del bando; •	data di scadenza del bando; • descrizione
+Condizione di entrata
+ Il	cittadino	ha	effettuato	l'accesso	al sistema.
+Condizioni di uscita
+ Il cittadino ha visionato le informazioni sulle iniziative, OR
+ In caso di failure il sistema chiama SevizioNonDisponibile.
+Requisiti di qualita Non previsti

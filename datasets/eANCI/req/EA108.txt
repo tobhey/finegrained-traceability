@@ -1,0 +1,17 @@
+Nome caso d'uso
+NumeriUtili
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede a questa pagina per usufruire dei recapiti telefonici da contattare in caso di pericolo di qualsiasi genere.
+2. Il sistema risponde permettendo la visualizzazione di una scheda descrittiva con i numeri di telefonici degli enti che si occupano dell'incolumità del Cittadino stesso.
+3. Il Cittadino accedendo a questa schermata può, inoltre, visualizzare consigli, e procedure standard, suddivisi per categorie, circa la corretta comunicazione tra lui e l'interlocutore addetto al Call Center di un determinato organo comunale.
+4.	Il sistema risponde con una schermata di supporto all'emergenza corrispondente al servizio che il Cittadino decide di contattare.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il Cittadino è soddisfatto del servizio offertogli e visualizza la schermata dei numeri utili e dei consigli che gli vengono forniti, OR
+ Nel caso in cui il sistema non riesca a far visualizzare la scheda informativa circa numeri da chiamare in caso di emergenza, viene esteso il caso d'uso SerivizioNonDisponibile, che gestisce i casi di failure tecniche.
+Requisiti di qualita Il sistema risponde al servizio richiesto dal Cittadino in pochi centesimi di secondo se la descrizione dei numeri utili, viene visualizzata correttamente.
+ Se ciò, invece, non avviene, il sistema gestisce l'eccezione nell'ordine di 5-8 secondi per far capire all'utente che c'è qualche problema nella richiesta del servizio.

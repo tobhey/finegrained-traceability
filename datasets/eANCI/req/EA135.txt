@@ -1,0 +1,21 @@
+Tabella 163: Caso d'uso TOSAP (lato Cittadino)
+Versione: 1.2
+Nome caso d'uso
+TOSAP
+Attori partecipanti
+Iniziato da Cittadino.
+Flusso di eventi
+1. II Cittadino clicca sul pulsante per accedere all'area Pagamento Online delle tasse.
+2. Il Sistema visualizza la lista delle tasse che possono essere pagate online.
+3. Il Cittadino seleziona la sezione dedicata alla Tassa per l'Occupazione del Suolo e delle Aree Pubbliche e al relativo pagamento ed inserisce il codice della pratica.
+4. Il Sistema redirige il Cittadino verso la sezione necessaria, mostrando il form della relativa tassa e il relativo importo da pagare.
+5. Il Cittadino conferma la correttezza delle informazioni, seleziona il metodo di pagamento preferito e avvia la transazione.
+6. Il Sistema effettua la transazione e mostra	un	messaggio	di	avvenuto pagamento.
+Condizione di entrata
+ Il Cittadino ha effettuato il login.  Il Cittadino ha effettuato la richiesta per
+il servizio specifico  La richiesta del servizio è stata accettata.
+Condizioni di uscita
+ Il pagamento è stato effettuato, OR  Nel	caso	in	cui	la	disponibilità economica non è sufficiente a coprire il pagamento o si verifica un errore nella transazione il Sistema chiama il caso
+d'uso PagamentoNonRiuscito, OR  Nel caso in cui vi siano errori di tipo generale il sistema chiama il caso d'uso
+ServizioNonDisponibile.
+Requisiti di qualita Non previsti

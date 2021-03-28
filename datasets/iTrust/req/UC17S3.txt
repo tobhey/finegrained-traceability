@@ -1,0 +1,1 @@
+An alive patient under the age of 19 who has not had proper immunizations per the immunization schedule. The catch up schedule is relevant when the patient did not begin the immunizations according to the recommended schedule.

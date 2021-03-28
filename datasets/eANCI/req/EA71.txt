@@ -1,0 +1,15 @@
+Nome caso d'uso
+VisualizzazionePrenotazioneConsultorio
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.
+Il Cittadino richiede la visualizzazione della prenotazione effettuata in un consultorio.
+2. Il sistema restituisce le informazioni riguardanti la prenotazione prescelta visualizzandone dati come:
+•	Data e ora; • Consultorio.
+Condizione di entrata
+ Questo caso richiede che il cittadino ha effettuato la procedura di autenticazione.
+Condizioni di uscita
+ Il Cittadino ha visionato le informazioni sulla prenotazione, OR
+Nel caso in cui il cittadino voglia modificare/cancellare una prenotazione, il sistema chiama il caso d'uso, ModificaPrenotazioneColloquio/Elimi nazionePrenotazioneColloquio .
+Requisiti di qualita Non previsti.

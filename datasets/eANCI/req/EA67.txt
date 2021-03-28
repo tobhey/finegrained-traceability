@@ -1,0 +1,14 @@
+Nome caso d'uso
+ModificaPrenotazioneColloquio
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il cittadino richiede la modifica della prenotazione del colloquio nel consultorio.
+2. Il sistema visualizza un form per la modifica dei campi della prenotazione.
+3. Il cittadino effettua le modifiche nel form conferma la prenotazione.
+4. Ilsistemamodificalaprenotazione.
+Condizione di entrata
+ Questo	estende	il	caso	d'uso VisualizzazionePrenotazioneConsultor io considerando il caso in cui il cittadino voglia modificare la prenotazione scelta.
+Condizioni di uscita
+ Il sistema ha effettuato la modifica della prenotazione.
+Requisiti di qualita Non previsti.

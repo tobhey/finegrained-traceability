@@ -1,0 +1,1 @@
+ For the patient, the HCP can choose either height or weight to graph. The HCP is presented with a line chart giving the chosen measurements (either height or weight) of the patient spanning the last 3 calendar years of data, averaged by quarters (January-March, April-June, July-September, October-December) [E3].

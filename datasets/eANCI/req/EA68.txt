@@ -1,0 +1,13 @@
+Nome caso d'uso
+NewsAnnullato
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.
+Cittadino decide di voler annullare le news di informagiovani e quindi inserisce nel form che la vuole annullare.
+2. Il sistema riceve il form notifica l'avvenuto annullamento delle news e ripresenta il form.
+Condizione di entrata
+ Questo	caso	d'uso	estende IscrizioneNewsInformagiovani e si verifica quando un cittadino decide di annullare le news di informagiovani.
+Condizioni di uscita
+ Il sistema ripresenta il form.
+Requisiti di qualita Non previsti

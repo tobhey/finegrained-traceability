@@ -1,0 +1,13 @@
+Nome caso d'uso
+PianoZonaAssistenza
+Attori partecipanti
+Iniziato da Utente
+Flusso di eventi
+1.	L'utente da remoto seleziona la funzionalità Assistenza Sociale selezionando “Piano di zona: servizi assistenza”
+2. Il sistema mostra il piano di zona riguardante i servizi assistenziali.
+Condizione di entrata
+ L'utente avuto accesso al sistema.
+Condizioni di uscita
+ L'utente	ritorna	alla	schermata precedente, OR
+ Il sistema ha riscontrato un errore non previsto quindi chiama il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti.

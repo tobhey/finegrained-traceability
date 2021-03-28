@@ -1,0 +1,1 @@
+The user may try three times. After three failed attempts with a userid in a given session, disallow attempts to log in via IP address for 15 minutes (see comments in the source code).

@@ -1,0 +1,23 @@
+Nome caso d'uso
+RegistrazioneCittadino
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.	Il cittadino accede al form di registrazione. 2. Il sistema mostra il form per la
+registrazione. 3. Il cittadino inserisce i suoi dati e preme il
+tasto di conferma. 4.	Il sistema verifica la correttezza dei dati,
+li salva e invia una e-mail di registrazione avvenuta al cittadino.
+Condizione di entrata
+ Il cittadino ha avuto accesso al sistema.
+Condizioni di uscita
+➢ Il sistema registra il cittadino, OR ➢ Nel caso in cui il cittadino inserisce dei dati errati, il sistema chiama il caso
+d'uso DatiErrati, OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita➢ La stringa del nome corrispondente al nome del possessore della carta d'identità, è ben formata contiene caratteri [ a..z A..Z ' àéèìòù ] ed ha lunghezza minore di 30 caratteri e non è vuota.
+➢ La stringa del cognome corrispondente al nome del possessore della carta d'identità, è ben formata contiene caratteri [ a..z A..Z ' àéèìòù ] ed ha lunghezza minore di 30 caratteri e non è vuota.
+➢ La	stringa	del	Codice	Fiscale corrispondente all'effettivo codice fiscale del	possessore,	è	conforme	alle normative ed ha lunghezza di 16 caratteri.
+➢ La stringa della Carta d'Identità è presente nel sistema, è formata da XXnnnnnnn (X= lettera n= numero) ed ha una lunghezza di 9 caratteri.
+➢ La stringa dell'email è composta da x@x.x ed ha una lunghezza minore di 31 caratteri e non è vuota.
+➢ La stringa del username non è già presente nel sistema, è ben formata contiene caratteri [ a..z A..Z 0..9 . - _ ] ed ha lunghezza minore di 30 caratteri e non è vuota.
+➢ La stringa della password è ben formata contiene caratteri [ a..z A..Z 0..9 . - _	* + ! ? , : ; àèéìòù]edhauna
+lunghezza compresa tra 8 e 15 caratteri.

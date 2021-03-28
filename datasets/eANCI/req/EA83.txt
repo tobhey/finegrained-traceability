@@ -1,0 +1,13 @@
+Nome caso d'uso
+VisionePianoRegolatore
+Attori partecipanti
+Iniziato da cittadino
+Flusso di eventi
+1.	Il cittadino accede all'area Piano Regolatore mediante l'apposito link
+2.	il sistema visualizza il documento
+Condizione di entrata
+ Il cittadino ha avuto accesso al sistema
+Condizioni di uscita
+ Il sistema mostra il piano regolatore, OR  nel caso di fallimenti tecnici il sistema richiama	il	caso	d'uso
+ServizioNonDisponibile
+Requisiti di qualita Non previsti

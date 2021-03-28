@@ -1,0 +1,16 @@
+Nome caso d'uso
+Incendi
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.
+Il Cittadino può accedere a questa sezione se ha scelto di visionare il caso d'uso Rischi, e decida di saperne di più circa le possibili cause che scatenano gli incendi.
+2. Il sistema risponde all'esigenza del Cittadino con una descrizione dettagliata su come prevenire gli incendi, e chi si occupa di essi.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle informazioni che gli sono state fornite, OR
+ Il Cittadino non riesce a visualizzare la scheda descrittiva della funzionalità Incendi ,	mentre	verrà	esteso	il	caso d'uso	ServizioNonDisponibile,	che gestisce i casi di failure tecniche.
+Requisiti di qualita Il tempo di risposta è nell'ordine dei centesimi di secondo se la pagina viene correttamente	visualizzata	dal richiedente del servizio.
+In caso il Cittadino non riuscisse a visualizzare la scheda descrittiva per questa	funzionalità,	il	sistema impiegherebbe qualche secondo per richiamare il caso d'uso che gestisce l'eccezione.

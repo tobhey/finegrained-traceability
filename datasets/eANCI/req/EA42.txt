@@ -1,0 +1,13 @@
+Nome caso d'uso
+PraticaAccettata
+Attori partecipanti
+Iniziato da Impiegato Comunica con Cittadino
+Flusso di eventi
+1.	L'Impiegato accetta la pratica. 2. Il sistema imposta la pratica come
+accettata. Quindi invia una notifica al Cittadino.
+Condizione di entrata
+ L'Impiegato è loggato nel sistema, ha selezionato una pratica in attesa.
+Condizioni di uscita
+➢ E' stata inviata la notifica al Cittadino, OR
+ Il sistema ha riscontrato un errore non previsto quindi chiama il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Questo caso d'uso include i casi d'uso AssistenzaEconomica, AssistenzaDomiciliare, ServizioMobilitaDisabili, AccoglienzaNotturna, AssistenzaRagazzeMadriMinori, AssistenzaAlloggiativi, RilascioParcheggioDisabili.

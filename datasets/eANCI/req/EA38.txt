@@ -1,0 +1,14 @@
+Nome caso d'uso
+SmarrimentoCartaD'identita
+Attori partecipanti
+Iniziato da Cittadino, continuato da impiegato
+Flusso di eventi
+1. Il Cittadino preme sul bottone Smarrimento carta d'identità.
+2.	Il sistema invia direttamente una notifica di smarrimento della carta all'impiegato competente.
+3. Il cittadino si reca all'ufficio dell'impiegato con	una	copia	della	denuncia	di smarrimento.
+Condizione di entrata
+ Il Cittadino deve essere autenticato nel sistema.
+Condizioni di uscita
+➢ Il Sistema crea il documento da consegnare all'ufficio competente, OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsti.

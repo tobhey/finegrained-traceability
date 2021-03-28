@@ -1,0 +1,1 @@
+In the calendar, the date entry with an appointment shall display a label as the appointment type name for the appointment. The date entry including conflicting appointments is highlighted in bold (a conflicting appointment is one that has overlap in its appointment duration period with that of at least another appointment of the same user).

@@ -1,0 +1,19 @@
+Nome caso d'uso
+ContestaMulta
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino clicca sul pulsante per accedere alla funzionalità di gestione online delle multe.
+2. Il Sistema redirige il cittadino verso la sezione desiderata.
+3. Il Cittadino clicca sul pulsante per il pagamento online delle multe.
+4. Il Sistema effettua una ricerca delle multe a carico del Cittadino presenti nel database per le quali non è ancora pervenuto il pagamento.
+5. Il Cittadino seleziona la multa per la quale desidera effettuare una contestazione.
+6. Il Sistema mostra tutte le informazioni disponibili relative alla multa, oltre al form da compilare per la contestazione.
+7. Il Cittadino inserisce le informazioni necessarie.
+8. Il Sistema verifica la correttezza delle informazioni,	inoltra	la	richiesta	di contestazione a chi di dovere e notifica il tutto al Cittadino.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+ Questo	caso	d'uso	estende PagamentoMulte ed è invocato quando il cittadino clicca sul bottone relativo alla contestazione delle multe, OR
+ Nel caso in cui vi siano errori generici il sistema	chiama	il	caso	d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti

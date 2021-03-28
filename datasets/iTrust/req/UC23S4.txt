@@ -1,0 +1,1 @@
+The LHCP views a list of requests he/she has made for reports, with the status and pertinent information about the requests.

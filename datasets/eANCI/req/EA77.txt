@@ -1,0 +1,15 @@
+Nome caso d'uso
+InserimentoInformazione
+Attori partecipanti
+Iniziato da Impiegato
+Flusso di eventi
+1. L'impiegato richiede l'inserimento di una nuova news.
+2. Il sistema visualizza un form per la sottomissione della richiesta.
+3. L'impiegato inserisce i dati relativi alla nuova news in un form.
+4. Il sistema riceve il form, e inserisce la news nel sistema
+Condizione di entrata
+ Questo caso richiede che l'impiegato ha effettuato la procedura di autenticazione.
+Condizioni di uscita
+ Il sistema ha eseguito l'inserimento della news, OR
+ Qualora si verificasse un errore nella richiesta d'inserimento il sistema chiama il caso d'uso ServizioNonDisponibile
+Requisiti di qualita Non previsti.

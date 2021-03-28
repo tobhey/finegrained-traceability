@@ -1,0 +1,15 @@
+Nome caso d'uso
+ModificaImpiegato
+Attori partecipanti
+Iniziato da amministratore
+Flusso di eventi
+1. L'amministratore preme il pulsante di modifica impiegato.
+2. Il sistema mostra un form per la modifica del impiegato.
+3.	L'amministratore inserisce i dati. 4.	Il sistema salva le modifiche apportate.
+Condizione di entrata
+ L'amministratore	si	è	autenticato	nel sistema.
+ Questo	caso	d'uso	include RicercaImpiegato e si verifica quando il l'amministratore vuole modificare un impiegato
+Condizioni di uscita
+ Il sistema modifica l' impiegato, OR ➢ Nel caso in cui il servizio non è disponibile viene richiamato il caso
+d'uso ServizioNonDisponibile.
+Requisiti di qualita Non Previsto.

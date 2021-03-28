@@ -1,0 +1,30 @@
+Nome caso d'uso
+CambioDiResidenza
+Attori partecipanti
+Iniziato da cittadino, continuato impiegato
+Flusso di eventi
+1.
+3.
+5. 6.
+7.
+Il Cittadino preme sul bottone Cambio di residenza.
+2. Il sistema mostra al cittadino il form da compilare. Il cittadino inserisce i dati della sua nuova abitazione.
+4.	Il sistema notifica al cittadino il corretto invio della richiesta e viene memorizzata nel sistema. L'impiegato accede al sistema e visualizza la richiesta ricevuta.
+L'impiegato verifica i dati, compila il documento con il resto dei dati da inserire e conferma l'operazione. Il sistema salva il modulo e aggiorna i dati.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+➢ Il Sistema crea il documento da consegnare all'ufficio competente,OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita La	stringa	nome	comune	nuova residenza può contenere caratteri [ a..z A..Z ' àéèìòù . ] e la stringa deve essere non vuota.
+ La	stringa	indirizzo	può	contenere caratteri [ a..z A..Z ' àéèìòù , . ] e la stringa deve essere non vuota.
+ La stringa numero civico può contenere caratteri [ 0..9 A..Z ]e la stringa deve avere lunghezza minore di 5 caratteri.
+ La	stringa	prefisso	telefono	può contenere solo caratteri numerici e deve essere compresa tra 2 e 5 cifre.
+ La	stringa	numero	telefono	può contenere solo caratteri numerici e deve essere compresa tra 5 e 8 cifre.
+ La	stringa	cognome	componente familiare può comprendere caratteri [ a..z A..Z ' àéèìòù ] e avere una lunghezza massima di 30 carateri e non vuota.
+ La stringa nome componente familiare può comprendere caratteri [ a..z A..Z ' àéèìòù ] e avere una lunghezza massima di 30 carateri e non vuota.
+ La stringa luogo nascita comp familiare può contenere caratteri [ a..z A..Z '
+àéèìòù . ] e deve essere lunga almeno
+un carattere.  La stringa data nascita comp familiare
+deve essere una data esistente e deve avere un formato gg/mm/aaaa di tipo numerico (gg da 1 a 31, mm da 1 a 12, aaaa dal 1900 ad oggi) .
+ La	stringa	codice	carta	richiedente esterno al comune deve essere formata da XXnnnnnnn (X= lettera n= numero) e deve avere una lunghezza di 9 caratteri.

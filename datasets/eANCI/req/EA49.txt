@@ -1,0 +1,18 @@
+Nome caso d'uso
+AssistenzaEconomica
+Attori partecipanti
+Iniziato da Utente Comunica con Ufficio Servizi Sociali
+Flusso di eventi
+1. L'utente seleziona “Richiesta assistenza economica anziani, orfani minori, malati di AIDS, detenuti, adulti in condizioni disagiate”.
+2. Il sistema mostra il form per l'inserimento dei dati del richiedente e del destinatario.
+3. L'utente inserisce i propri dati e se necessario inserisce i dati di una terza persona specificando il rapporto con tale persona.
+4. Il sistema preleva i dati del cittadino richiedente , i dati anagrafici del cittadino destinatario (nel caso in cui il richiedente e il destinatario non fossero la stessa persona), e i dati riguardanti il nucleo familiare del Cittadino destinatario.
+5. L'utente specifica le condizioni psico- fisiche del destinatario specificando i documenti allegati (certificato invalidità rilasciato dalla commissione ASL e/o scheda sanitaria del medico curante e/o certificato	dell'ente	erogatore	della pensione,modello ISEE) specificando in ultimo una eventuale data di appuntamento con gli assistenti sociali. Quindi sottomette il form.
+6. Il sistema preleva i dati riguardanti eventuali servizi socio-assistenziali di cui il destinatario già usufruisce. Quindi inoltra la richiesta all'ufficio dei Servizi Sociali e avvisa l'utente della avvenuta richiesta.
+Condizione di entrata
+ L'utente	ha	effettuato	la	login	con successo e ha selezionato la funzionalità Assistenza Sociale.
+Condizioni di uscita
+ Il sistema ha riscontrato un errore nella compilazione del form quindi chiama il caso d'uso DatiErrati, OR
+ L'utente	ritorna	alla	schermata precedente, OR
+ Il sistema ha riscontrato un errore non previsto quindi chiama il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita Non previsti

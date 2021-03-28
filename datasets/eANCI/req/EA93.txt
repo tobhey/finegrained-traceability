@@ -1,0 +1,16 @@
+Nome caso d'uso
+AggiornaAnalisiAmbientali
+Attori partecipanti
+Iniziato da Impiegato
+Flusso di eventi
+1.	L'impiegato comunale dopo essersi autenticato nel sistema aggiorna il form che prevede semplicemente la copia del referto delle analisi effettuate sull'ambiente dalla Protezione Civile
+2. Il sistema risponde mettendo a disposizione dell'impiegato un form in cui riportare le informazioni redatte dagli esperti chimici.
+3. L'impiegato completa il campo del form presentato dal sistema e lo sottomette.
+4.	Il sistema ne aggiorna il form e permette la visualizzazione di quest'ultimo al Cittadino.
+Condizione di entrata
+ L'impiegato si è autenticato nel sistema.
+Condizioni di uscita
+ La sottomissione è andata a buon fine, OR
+ L'impiegato	non l'aggiornamento	e richiamato	il ServizioNonDisponibile.
+può	completare pertanto	viene caso	d'uso
+Requisiti di qualita Non previsti

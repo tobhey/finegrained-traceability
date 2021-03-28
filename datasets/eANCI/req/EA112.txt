@@ -1,0 +1,16 @@
+Nome caso d'uso
+SanitarioAntropico
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1.
+Il Cittadino accede alla schermata desiderata dall'elenco dei rischi ambientali che è accanto ad ogni descrizione di questi ultimi.
+2. Il sistema risponde alla richiesta del Cittadino	fornendogli	una	dettagliata spiegazioni di cosa significhi questo caso d'uso in termini pratici, e distribuendogli consigli e procedure standard in caso di pericoli.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il	Cittadino	è	soddisfatto	delle informazioni fornitegli, OR
+ Il Cittadino non riesce a visualizzare la schermata descrittiva, perciò verrà esteso il caso d'uso ServizioNonDisponibile, che gestisce i casi di failure tecniche.
+Requisiti di qualita Il	sistema	risponderà	all'esigenza	del Cittadino rispondendo con la pagina descrittiva nell'ordine dei centesimi di secondo,OR
+ Se il Cittadino non può visualizzare la schermata, la risposta da parte del sistema aumenta, nell'ordine dei secondi.

@@ -1,0 +1,13 @@
+Nome caso d'uso
+AssegnoMalattia
+Attori partecipanti
+Iniziato da Utente
+Flusso di eventi
+1. L'utente seleziona “Richiesta assegno malattia”.
+2. Il sistema mostra la pagina con le informazioni per la richiesta all'ufficio INPS dell'assegno di malattia, permettendo inoltre di stampare il tutto.
+Condizione di entrata
+ L'utente ha avuto accesso al sistema e ha	selezionato	la	funzionalità Assistenza Sociale.
+Condizioni di uscita
+ L'utente ha visualizzato la pagina, OR  Il sistema ha riscontrato un errore non previsto quindi chiama il caso d'uso
+ServizioNonDisponibile.
+Requisiti di qualita Non previsti

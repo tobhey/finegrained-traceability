@@ -1,0 +1,18 @@
+Nome caso d'uso
+InformazioniMusei
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino richiede la visualizzazione dell'elenco dei musei.
+3.
+2. Il sistema permette di visualizzare l'elenco dei musei.
+Il cittadino sceglie il museo. 4. Il sistema restituisce le informazioni
+riguardanti	il	museo	prescelto visualizzandone dati come:
+• • •
+la localizzazione; le date e gli orari d'apertura; il link al sito del museo.
+Condizione di entrata
+ Il	cittadino	ha	effettuato	l'accesso	al sistema.
+Condizioni di uscita
+ Il cittadino ha visionato le informazioni sul museo, OR
+Nel caso in cui il cittadino voglia prenotare la visita verrà rimandato al sito del museo.
+Requisiti di qualita Non previsti.

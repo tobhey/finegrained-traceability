@@ -1,0 +1,21 @@
+Nome caso d'uso
+RichiestaTOSAP
+Attori partecipanti
+Iniziato da Cittadino, comunica con Impiegato
+Flusso di eventi
+1. II Cittadino clicca sul pulsante per accedere all'area di richiesta dei servizi del comune.
+2. Il Sistema redirige il cittadino verso la sezione necessaria.
+3. Il Cittadino seleziona la sezione dedicata alla richiesta di Tassa per l'Occupazione del Suolo e delle Aree Pubbliche.
+4. Il Sistema mostra il form della relativa richiesta,ricavando automaticamente i dati necessari.
+5. Il Cittadino inserisce ulteriori dati necessari alla	corretta	compilazione	del form,conferma	la	correttezza	delle informazioni e invia la richiesta.
+6. Il Sistema notifica all'impiegato la richiesta.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema.
+Condizioni di uscita
+➢L'impiegato riceve la pratica e sceglie se accettarla	o	meno,richiamando rispettivamente	il	caso	d'uso
+RichiestaTOSAPAccettata RichiestaTOSAPRifiutata, OR  Nel caso in cui vi siano errori generali il
+o
+sistema	chiama	il	caso	d'uso
+ServizioNonDisponibile, OR  Nel caso in cui vi siano errori nei dati
+inseriti dall'utente il sistema chiama il caso d'uso DatiErrati.
+Requisiti di qualita Non previsti

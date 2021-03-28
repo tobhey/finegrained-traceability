@@ -1,0 +1,17 @@
+Nome caso d'uso
+BandiEConcorsi
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede alla schermata iniziale per poter visionare la possibilità di visionare le associazioni che affiancano la Protezione Civile.
+2.	Il	sistema	risponde	all'esigenza permettendo al Cittadino di visualizzare tutte le associazioni che fanno capo alla Protezione Civile e che assumono personale, con una piccola immagine dell'associazione, con accanto la possibilità di ricevere il download del bando messo a disposizione dalla associazione in questione.
+3.	Il Cittadino prende atto di ciò che fornisce la scheda, e sceglie da quale, tra le associazioni messe a disposizione, ricevere notizie per una eventuale assunzione o partecipazione al concorso, circa le modalità dello stesso.
+4. Il sistema risponde a tale esigenza permettendogli di visualizzare il bando di concorso corrispondente.
+Condizione di entrata
+ Il Cittadino si è autenticato nel sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il Cittadino ha completato il download del bando che è associato univocamente alla associazione per cui ha scelto di partecipare, OR
+ Il Cittadino non riesce a visualizzare la schermata introduttiva con tutte le associazioni e pertanto, verrà esteso il caso d'uso ServizioNonDisponibile che gestisce i casi di failure tecniche.
+Requisiti di qualita Il	Cittadino	riesce	a	visualizzare	la pagina in modo corretto, ciò significa che i tempi di risposta del sistema sono nell'ordine dei centesimi di secondo, OR
+ Il	Cittadino	non	riesce	a	visualizzare correttamente la schermata introduttiva e pertanto il sistema impiegherebbe tempo di risposta nell'ordine dei secondi, da un minimo di 3 ad un massimo di 7.

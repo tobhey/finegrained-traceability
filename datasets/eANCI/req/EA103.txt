@@ -1,0 +1,17 @@
+Nome caso d'uso
+DownloadModulo
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede al download della modulistica in quanto vuole entrare a far parte del Volontariato
+3.
+2.	Il sistema risponde a tale esigenza con la possibilità di visionare il modulo Il Cittadino prende atto del modulo, e decide di avviare il download del file.
+4. Il sistema risponde all'esigenza del Cittadino con il salvataggio del modulo per partecipare all'azione del volontariato.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il Cittadino ha effettuato correttamente il download del modulo con la concessione da parte del sistema, e pertanto verrà richiamato	il	caso	d'uso ComeDiventareVolontari, OR
+ Il Cittadino non riesce a visualizzare la pagina relativa al download del modulo e	verrà	esteso	il	caso	d'uso ServizioNonDisponibile, che gestisce I casi di failure tecniche.
+Requisiti di qualita Il tempo di risposta del sistema varia dai 2 ai 4 secondi per caricare il modulo se il Cittadino	riesce	a	visualizzarlo correttamente.
+ I	tempi	di	risposta	aumentano, nell'ordine dei secondi, se il Cittadino non visualizza correttamente ciò che ha richiesto.

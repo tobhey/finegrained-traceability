@@ -1,0 +1,21 @@
+Nome caso d'uso
+RichiestaNumeroCivico
+Attori partecipanti
+Iniziato da cittadino, comunica con impiegato
+Flusso di eventi
+1. Il cittadino accede all'area richiesta numero civico mediante l'apposito link
+3.
+5.
+2. Il sistema visualizza la form per l'inserimento dei dati necessari alla richiesta
+Il cittadino inserisce i dati richiesti 4. Il sistema verifica correttezza e completezza dei dati quindi mostra una schermata di riepilogo oppure attiva il
+caso d'uso DatiErrati Il cittadino conferma l'operazione
+6. Il sistema visualizza un messaggio di notifica della richiesta
+7. Il sistema invia all'impiegato competente un messaggio di notifica della richiesta
+Condizione di entrata
+ Il cittadino si è autenticato nel sistema
+Condizioni di uscita
+ Il sistema visualizza un messaggio di notifica della richiesta
+ Il sistema invia all'impiegato competente un messaggio di notifica della richiesta, OR
+nel caso in cui i dati inseriti siano scorretti il sistema richiama il caso d'uso DatiErrati, OR
+ nel caso di fallimenti tecnici il sistema richiama	il	caso	d'uso ServizioNonDisponibile
+Requisiti di qualita Non previsti

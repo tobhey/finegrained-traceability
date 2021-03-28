@@ -1,0 +1,22 @@
+Nome caso d'uso
+InserimentoImpiegato
+Attori partecipanti
+Iniziato da amministratore
+Flusso di eventi
+1. L'amministratore accede al sistema, tramite terminale amministrativo, e attiva la procedura di registrazione dell'Impiegato.
+2. Il sistema visualizza il form per l'inserimento di un nuovo impiegato.
+3. L'Amministratore	inserisce	i	dati dell'Impiegato e sottomette la richiesta di registrazione.
+4.	Il sistema riceve il form, verifica che nel sistema non sia già presente la matricola inserita dall'Amministratore e genera una password, salva i dati inseriti e mostra una notifica dell'avvenuta registrazione con la password assegnata all'impiegato.
+Condizione di entrata
+ L'amministratore	si	è	autenticato	nel sistema.
+Condizioni di uscita
+ Il sistema registra l'Impiegato,OR  Nel	caso	in	cui	l'Amministratore inserisce una matricola già presente nel sistema, il sistema chiama il caso d'uso
+DatiErrati, OR ➢ Nel caso in cui il servizio non è
+disponibile viene richiamato il caso d'uso ServizioNonDisponibile.
+Requisiti di qualita➢ La stringa del nome può contenere caratteri quali [ a..z A..Z ' àéèìòù ] e deve avere lunghezza minore di 31 e non vuota.
+➢ La stringa del cognome può contenere caratteri quali [ a..z A..Z ' àéèìòù ] e deve avere lunghezza minore di 31 e non vuota.
+➢ La stringa dell'e-mail è formata da x@x.x ed ha una lunghezza minore di 3 caratteri.
+➢ La	stringa	matricola	contiene	solo caratteri numerici è uguale a 6 caratteri.
+➢ La stringa del username non è già presente nel sistema, è ben formata contiene caratteri [ a..z A..Z 0..9 . - _ ] ed ha lunghezza minore di 31 caratteri e non è vuota.
+➢ La stringa della password è ben formata contiene caratteri [ a..z A..Z 0..9 . - _ * + ! ? , : ; àèéìòù]edhauna lunghezza compresa tra 8 e 15 caratteri.
+➢ La stringa conferma password deve essere coerente con la password inserita.

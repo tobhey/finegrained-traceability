@@ -1,0 +1,17 @@
+Nome caso d'uso
+Rischi
+Attori partecipanti
+Iniziato da Cittadino
+Flusso di eventi
+1. Il Cittadino accede alla schermata circa i significati dei rischi di cui si occupa la Protezione Civile, con immagini specifiche per ogni categoria di pericolo, e video di come opera durante le operazioni di soccorso.
+2. Il sistema risponde alla richiesta del Cittadino, con una schermata dove sono presenti cause, significati, circa le frane, alluvioni, e fenomeni di erosione costiera, e video di interventi.
+3. Il Cittadino, dopo aver visionato la scheda descrittiva può voler conoscere le cause di altri pericoli di cui l'organo si occupa e pertanto decide di visionarle attivando, i casi d'uso	Incendi,	Vulcanico,	Sismico, SanitarioAntropico,MonitoraggioIdro- pluviometrico.
+4. Il sistema mette a disposizione anche delle ulteriori schede informative su altri pericoli di cui si occupa la Protezione Civile.
+Condizione di entrata
+ Il	Cittadino	è	autenticato	nel	sistema comunale, OR
+ Il Cittadino ha avuto accesso al sistema comunale.
+Condizioni di uscita
+ Il Cittadino è soddisfatto della scheda informativa e decide di richiamare le schede circa gli altri pericoli di cui si occupa la Protezione Civile, OR
+ Il	Cittadino	non	ha	possibilità	di visualizzare	la	schermata	iniziale, pertanto verrà esteso il caso d'uso ServizioNonDisponibile, che gestisce I casi di failure tecniche.
+Requisiti di qualita Il Cittadino visualizza in modo corretto la sezione iniziale dei rischi, pertanto, il sistema impiega tempo nell'ordine dei centesimi di secondo per soddisfare l'esigenza, OR
+ Se, la visualizzazione della sezione non avviene, il sistema impiega secondi in un range che va da 3-7.
