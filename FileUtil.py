@@ -1,6 +1,5 @@
 import logging, csv, json, errno
 import shutil, os, ntpath, xlsxwriter
-import pandas as pd
 from  xml.dom.minidom import parse
 from pathlib import Path
 from Paths import RECALL_PREC_CSV_HEADER, CSV_DELIM
@@ -20,21 +19,12 @@ def read_csv_to_list(path):
         reader = csv.reader(file, delimiter = CSV_DELIM)
         return list(reader)
 
-def read_csv_to_dataframe_with_header(path, header):
-    return pd.read_csv(path, delimiter=";", header=0, encoding="utf8", names=header)
-
-def read_csv_to_dataframe(path):
-    return pd.read_csv(path, delimiter=";", header=0, encoding="utf8", index_col=0)
 
 def set_extension(file_path, extension):
     if "." in file_path:
         file_path =  file_path.rpartition(".")[0]
     return file_path + "." + extension
 
-def write_dataframe_to_csv(dataframe, output_filename):
-    create_missing_dirs(output_filename)
-    dataframe.to_csv(output_filename, sep = ";")
-    log.info("Wrote csv file: " + str(output_filename))
 
 def read_textfile_into_string(file_path, encoding='utf-8-sig'):
     text_as_string = ""

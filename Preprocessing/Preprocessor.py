@@ -11,6 +11,7 @@ import Paths
 from enum import Enum
 from Dataset import Dataset
 import pandas
+import PandasUtil
 log = logging.getLogger(__name__)
 CODE_STOPWORD_FILEPATH = Path(__file__).parent / "resources/CodeStopWords.txt"
 ITAL_CODE_STOPWORD_FILEPATH = Path(__file__).parent / "resources/ItalianCodeStopWords.txt"
@@ -81,12 +82,12 @@ class Lemmatizer(PreprocessingStep):
             self._lemmatizer = WordNetLemmatizer()
         elif lemmatizer_type == self.LemmatizerType.english_spacy:
             # Use precalculated files for spacy since google colab can't handle fasttext model and spacy lemmatizer at once
-            self._lemmatizer = FileUtil.read_csv_to_dataframe(Paths.PRECALCULATED_SPACY_ENGLISH_LEMMA_CSV)
+            self._lemmatizer = PandasUtil.read_csv_to_dataframe(Paths.PRECALCULATED_SPACY_ENGLISH_LEMMA_CSV)
         elif lemmatizer_type == self.LemmatizerType.italian_nltk:
             self._lemmatizer = SnowballStemmer("italian")
         elif lemmatizer_type == self.LemmatizerType.italian_spacy:
             # Use precalculated files for spacy since google colab can't handle fasttext model and spacy lemmatizer at once
-            self._lemmatizer = FileUtil.read_csv_to_dataframe(Paths.PRECALCULATED_SPACY_ITALIAN_LEMMA_CSV)
+            self._lemmatizer = PandasUtil.read_csv_to_dataframe(Paths.PRECALCULATED_SPACY_ITALIAN_LEMMA_CSV)
         else:
             log.error(f"Unknown case for LemmatizerType: {lemmatizer_type}")
         
@@ -122,7 +123,7 @@ class Lemmatizer(PreprocessingStep):
             iterate_files(code_tok, code_pre, dataset.code_folder())
         
         word_to_lemma_dataframe = pandas.DataFrame.from_dict(word_to_lemma_map, orient="index", columns=[cls.COLUMN_LEMMA])
-        FileUtil.write_dataframe_to_csv(word_to_lemma_dataframe, output_path)
+        PandasUtil.write_dataframe_to_csv(word_to_lemma_dataframe, output_path)
 
     @classmethod
     def precalculate_spacy_english_lemmatizer(cls, dataset_tuple):
