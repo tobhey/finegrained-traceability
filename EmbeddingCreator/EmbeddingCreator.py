@@ -5,6 +5,7 @@ from Preprocessing.Preprocessor import Preprocessor
 from Preprocessing.FileRepresentation import FileRepresentation
 import FileUtil
 from distutils.tests.test_file_util import FileUtilTestCase
+import Util
 
 log = logging.getLogger(__name__)
 
@@ -30,17 +31,21 @@ class EmbeddingCreator(abc.ABC):
         Returns the embeddings as list
         """
         log.info("Read directory: " + str(input_directory))
-        embedding_list = self.read_directory(input_directory)
+        embedding_list = self.embedd_all_files_in_directory(input_directory)
         if output_emb_filepath is not None:
             FileUtil.write_file(output_emb_filepath, "\n".join(map(str, embedding_list)))
         return embedding_list
         
-    def read_directory(self, directory):
+    def embedd_all_files_in_directory(self, directory):
         all_filenames = FileUtil.get_files_in_directory(directory)
         all_embeddings = []
         for filename in all_filenames:
             file_representation = self._tokenize_and_preprocess(filename)
-            all_embeddings += self._create_embeddings(file_representation)
+            file_embedding = self._create_embeddings(file_representation)
+            if file_embedding:
+                all_embeddings.append(file_embedding)
+            else:
+                log.info(f"No embedding for {filename}")
         return all_embeddings
     
     def _tokenize_and_preprocess(self, file_path):
@@ -56,10 +61,6 @@ class EmbeddingCreator(abc.ABC):
     def _create_word_embedding(self, word: str):
         return self._word_embedding_creator.create_word_embedding(word)
     
-    def _create_word_embedding_2(self, word: str):
-        emb = self._word_embedding_creator.create_word_embedding(word)
-        return emb if emb is not None else 0
-    
     def _create_word_embeddings_from_word_list(self, word_list: [str]):
         result = []
         for word in word_list:
@@ -70,6 +71,9 @@ class EmbeddingCreator(abc.ABC):
                 result.append(word_emb)
         return result
       
+    def _embedd_and_average(self, word_list):
+        word_embd = self._create_word_embeddings_from_word_list(word_list)
+        return [Util.create_averaged_vector(word_embd)] if word_embd else [] # Return as (empty) lists to avoid is-None-check later on
             
     @abc.abstractclassmethod
     def _create_embeddings(self, file_representation: FileRepresentation) -> [Embedding]:
