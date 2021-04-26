@@ -155,7 +155,7 @@ class Etour(Dataset):
         return 6728
     
     def method_callgraph(self):
-        return FileUtil.read_dict_from_json(self.ETOUR_METHOD_CALLGRAPH_PATH)
+        return FileUtil.read_from_json(self.ETOUR_METHOD_CALLGRAPH_PATH)
     
     def method_callgraph_path(self):
         return self.ETOUR_METHOD_CALLGRAPH_PATH
@@ -174,7 +174,7 @@ class Etour(Dataset):
         return self.ETOUR_RAW_CALLGRAPH
     
     def class_callgraph(self):
-        return FileUtil.read_dict_from_json(self.ETOUR_CLASS_CALLGRAPH_PATH)
+        return FileUtil.read_from_json(self.ETOUR_CLASS_CALLGRAPH_PATH)
     
     def packages(self):
         return ["beans", "com.trapan", "unisa.gps"]
@@ -211,7 +211,7 @@ class Itrust(Dataset):
     def _all_req_filenames_file(self):
         return self.ITRUST_ALL_REQ_FILENAMES_FILE
     def method_callgraph(self):
-        return FileUtil.read_dict_from_json(self.ITRUST_METHOD_CALLGRAPH_PATH)
+        return FileUtil.read_from_json(self.ITRUST_METHOD_CALLGRAPH_PATH)
     
     def method_callgraph_path(self):
         return self.ITRUST_METHOD_CALLGRAPH_PATH
@@ -225,7 +225,7 @@ class Itrust(Dataset):
         return self.ITRUST_RAW_CALLGRAPH
     
     def class_callgraph(self):
-        return FileUtil.read_dict_from_json(self.ITRUST_CLASS_CALLGRAPH_PATH)
+        return FileUtil.read_from_json(self.ITRUST_CLASS_CALLGRAPH_PATH)
     
     def packages(self):
         return ["edu.ncsu.csc.itrust"]
@@ -276,7 +276,7 @@ class Smos(Dataset):
         return self.SMOS_ALL_REQ_FILENAMES_FILE
     
     def method_callgraph(self):
-        return FileUtil.read_dict_from_json(self.SMOS_METHOD_CALLGRAPH_PATH)
+        return FileUtil.read_from_json(self.SMOS_METHOD_CALLGRAPH_PATH)
     
     def method_callgraph_path(self):
         return self.SMOS_METHOD_CALLGRAPH_PATH
@@ -294,7 +294,7 @@ class Smos(Dataset):
         return self.SMOS_RAW_CALLGRAPH
     
     def class_callgraph(self):
-        return FileUtil.read_dict_from_json(self.SMOS_CLASS_CALLGRAPH_PATH)
+        return FileUtil.read_from_json(self.SMOS_CLASS_CALLGRAPH_PATH)
     
     def packages(self):
         return ["smos"]
@@ -347,7 +347,7 @@ class EANCI(Dataset):
         return self.EANCI_ALL_REQ_FILENAMES_FILE
     
     def method_callgraph(self):
-        return FileUtil.read_dict_from_json(self.EANCI_METHOD_CALLGRAPH_PATH)
+        return FileUtil.read_from_json(self.EANCI_METHOD_CALLGRAPH_PATH)
     def method_callgraph_path(self):
         return self.EANCI_METHOD_CALLGRAPH_PATH
     
@@ -361,7 +361,7 @@ class EANCI(Dataset):
         return self.EANCI_RAW_CALLGRAPH
     
     def class_callgraph(self):
-        return FileUtil.read_dict_from_json(self.EANCI_CLASS_CALLGRAPH_PATH)
+        return FileUtil.read_from_json(self.EANCI_CLASS_CALLGRAPH_PATH)
     
     def packages(self):
         return ["DB", "Servlet", "Bean"]

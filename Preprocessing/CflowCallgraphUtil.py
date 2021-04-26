@@ -78,7 +78,7 @@ def read_raw_callgraph_txt(dataset: Dataset):
         method_call_graph[entry][CALLS] = list(method_call_graph[entry][CALLS])
         method_call_graph[entry][CALLED_BY] = list(method_call_graph[entry][CALLED_BY])
            
-    FileUtil.write_dict_to_json(output_method_callgraph, method_call_graph)
+    FileUtil.write_to_json(output_method_callgraph, method_call_graph)
             
             
             

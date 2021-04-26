@@ -25,7 +25,7 @@ def generate_classifer_to_file_map(dataset, tokenizer, output_file=None):
             if classifier.get_original_name() in classifier_to_file_map:
                 log.info(f"Duplicate classifier name: {classifier.name} -> {file_name} overwrites {classifier.name} -> {classifier_to_file_map[classifier.name]}")
             classifier_to_file_map[classifier.get_original_name()] = file_name
-    FileUtil.write_dict_to_json(output_file, classifier_to_file_map)
+    FileUtil.write_to_json(output_file, classifier_to_file_map)
     
 generate_classifer_to_file_map(Etour308(), JavaCodeASTTokenizer())
     

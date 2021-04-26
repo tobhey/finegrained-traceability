@@ -3,6 +3,7 @@ import shutil, os, ntpath, xlsxwriter
 from  xml.dom.minidom import parse
 from pathlib import Path
 from Paths import RECALL_PREC_CSV_HEADER, CSV_DELIM
+import Paths
 
 log = logging.getLogger(__name__)
 
@@ -57,7 +58,7 @@ def combine_csv_files(csv_filenames, output_file):
     return combined_csv
 
 
-def write_dict_to_json(file_path, content):
+def write_to_json(file_path, content):
     create_missing_dirs(file_path)
     
     def set_default(obj):# convert sets to lists
@@ -69,7 +70,8 @@ def write_dict_to_json(file_path, content):
         json.dump(content, file, default=set_default)
     log.info("Wrote json file: " + str(file_path))
     
-def read_dict_from_json(file_path):
+
+def read_from_json(file_path):
     if not file_exists(file_path):
         log.error("File does not exist: " + str(file_path))
     with open(file_path, 'r') as file:

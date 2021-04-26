@@ -16,7 +16,7 @@ def generate_inheritance_graph(dataset, tokenizer, output_file=None):
         output_file = Paths.inheritance_graph_filename(dataset)
     
     # Maps classifier name to its containing code file
-    classifier_to_file_map = FileUtil.read_dict_from_json(Paths.classifier_to_file_map_filename(dataset))
+    classifier_to_file_map = FileUtil.read_from_json(Paths.classifier_to_file_map_filename(dataset))
     inheritance_graph = {}
     for file in FileUtil.get_files_in_directory(dataset.code_folder()):
         code_file_representation = tokenizer.tokenize(file)
@@ -40,7 +40,7 @@ def generate_inheritance_graph(dataset, tokenizer, output_file=None):
         else: 
             inheritance_graph[code_file_representation.file_name] = (super_classes, set())
     
-    FileUtil.write_dict_to_json(output_file, inheritance_graph)
+    FileUtil.write_to_json(output_file, inheritance_graph)
     
 def generate_implements_graph(dataset, tokenizer, output_file=None):
     """
@@ -53,7 +53,7 @@ def generate_implements_graph(dataset, tokenizer, output_file=None):
         output_file = Paths.implements_graph_filename(dataset)
     
     # Maps classifier name to its containing code file
-    classifier_to_file_map = FileUtil.read_dict_from_json(Paths.classifier_to_file_map_filename(dataset))
+    classifier_to_file_map = FileUtil.read_from_json(Paths.classifier_to_file_map_filename(dataset))
     implements_graph = {}
     for file in FileUtil.get_files_in_directory(dataset.code_folder()):
         code_file_representation = tokenizer.tokenize(file)
@@ -77,7 +77,7 @@ def generate_implements_graph(dataset, tokenizer, output_file=None):
         else: 
             implements_graph[code_file_representation.file_name] = (super_classes, set())
     
-    FileUtil.write_dict_to_json(output_file, implements_graph)
+    FileUtil.write_to_json(output_file, implements_graph)
     
 #generate_inheritance_graph(Etour308(), JavaCodeASTTokenizer())
 generate_implements_graph(Etour308(), JavaCodeASTTokenizer())
