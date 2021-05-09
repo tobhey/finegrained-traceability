@@ -14,6 +14,12 @@ class TwoDimensionalMatrix:
     def write_to_csv(self, output_csv_path):
         PandasUtil.write_dataframe_to_csv(self._dataframe, output_csv_path)
         
+    def get_row_names(self):
+        return list(self._dataframe.index)
+    
+    def get_column_names(self):
+        return list(self._dataframe.columns)
+    
     @classmethod
     def create_empty(cls, row_names, column_names):
         instance = cls()
