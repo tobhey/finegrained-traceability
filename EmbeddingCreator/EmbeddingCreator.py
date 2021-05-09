@@ -1,6 +1,6 @@
 import abc, logging, os
 from pathlib import Path
-from Embedding import Embedding, MockEmbedding
+from EmbeddingContainer import EmbeddingContainer, MockEmbeddingContainer
 from Preprocessing.Preprocessor import Preprocessor
 from Preprocessing.FileRepresentation import FileRepresentation
 import FileUtil
@@ -24,7 +24,7 @@ class EmbeddingCreator(abc.ABC):
         self._word_embedding_creator = word_embedding_creator
         self._tokenizer = tokenizer
     
-    def create_all_embeddings(self, input_directory, output_emb_filepath=None) -> [Embedding]:
+    def create_all_embeddings(self, input_directory, output_emb_filepath=None) -> [EmbeddingContainer]:
         """
         Creates embeddings for all files in the input directory.
         Writes all embeddings in a file at output_emb_filepath if not None.
@@ -76,7 +76,7 @@ class EmbeddingCreator(abc.ABC):
         return [Util.create_averaged_vector(word_embd)] if word_embd else [] # Return as (empty) lists to avoid is-None-check later on
             
     @abc.abstractclassmethod
-    def _create_embeddings(self, file_representation: FileRepresentation) -> [Embedding]:
+    def _create_embeddings(self, file_representation: FileRepresentation) -> [EmbeddingContainer]:
         """
         Takes a file and creates one or multiple embeddings
         """
@@ -84,11 +84,11 @@ class EmbeddingCreator(abc.ABC):
         
 
 class MockEmbeddingCreator(EmbeddingCreator):
-    """Sets the file representation as vector attribute of the returned Embedding objects"""
+    """Sets the file representation as vector attribute of the returned EmbeddingContainer objects"""
     def __init__(self, preprocessor: Preprocessor, word_embedding_creator, 
                  tokenizer, preprocessed_token_output_directory: Path=None):
         super(MockEmbeddingCreator, self).__init__(preprocessor, word_embedding_creator, tokenizer, preprocessed_token_output_directory)
         
     def _create_embeddings(self, file_representation):
-        return [MockEmbedding(file_representation.file_path, file_representation)]
+        return [MockEmbeddingContainer(file_representation.file_path, file_representation)]
     
