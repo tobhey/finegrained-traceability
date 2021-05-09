@@ -10,7 +10,7 @@ class MethodWordChooser(abc.ABC):
     Determines which words of a method are used for further processing (embedding calculation)
     """
     @abc.abstractmethod
-    def choose_words_from(self, classifier: Classifier, method: Method):
+    def choose_words_from(self, classifier: Classifier, method: Method) -> [str]:
         pass
     
     
