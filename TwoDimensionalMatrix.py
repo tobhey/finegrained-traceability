@@ -1,5 +1,6 @@
 import PandasUtil
 
+
 class TwoDimensionalMatrix:
     
     def __init__(self):
@@ -21,7 +22,7 @@ class TwoDimensionalMatrix:
         return list(self._dataframe.columns)
     
     @classmethod
-    def create_empty(cls, row_names, column_names):
+    def create_empty(cls, row_names=None, column_names=None):
         instance = cls()
         instance._dataframe = PandasUtil.create_dataframe(row_names, column_names)
         return instance
