@@ -5,20 +5,23 @@ Use load_data_from() to load a existing precalculated file or an AllTraceLinkCom
 from abc import abstractmethod
 import abc
 
+import FileUtil
 from TwoDimensionalMatrix import TwoDimensionalMatrix
+from precalculating.ArtifactToElementMap import ArtifactToElementMap
 
 
 class AllTraceLinkCombinations(abc.ABC):
     CSV_FILE_PATTERN = "{folder}/{filename}.csv"
     
-    @abstractmethod
+    def __init__(self, similarity_matrix):
+        self._similarity_matrix = similarity_matrix
+    
     @classmethod
     def load_data_from(cls, folder, file_name_without_extension):
-        pass
+        return cls(TwoDimensionalMatrix.read_from_csv(cls._build_csv_file_name(folder, file_name_without_extension)))
     
-    @abstractmethod
     def write_data(self, folder, file_name_without_extension):
-        pass
+        self._similarity_matrix.write_to_csv(self.CSV_FILE_PATTERN.format(folder, file_name_without_extension))
     
     @abstractmethod
     def all_req_file_names(self):
@@ -41,23 +44,11 @@ class AllTraceLinkCombinations(abc.ABC):
     
     
 class AllFileLevelTraceLinkCombinations(AllTraceLinkCombinations):
-    
-    def __init__(self, similarity_matrix):
-        """
+    """
         Don't use the constructor to instantiate
         
         Rows = req file names; columns = code file names; entry = similarity
         """
-        self._similarity_matrix = similarity_matrix
-    
-    @classmethod
-    def load_data_from(cls, folder, file_name_without_extension):
-        instance = cls()
-        instance._similarity_matrix = TwoDimensionalMatrix.read_from_csv(cls._build_csv_file_name(folder, file_name_without_extension))
-        return instance
-    
-    def write_data(self, folder, file_name_without_extension):
-        pass
     
     def all_req_file_names(self):
         return self._similarity_matrix.get_row_names()
@@ -67,3 +58,39 @@ class AllFileLevelTraceLinkCombinations(AllTraceLinkCombinations):
     
     def similarity_between(self, req_file_name, code_file_name):
         return self._similarity_matrix.get_value(req_file_name, code_file_name)
+
+
+class AllElementLevelTraceLinkCombinations(AllTraceLinkCombinations):
+    ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN = "{folder}/{filename}_a2eMap.json"
+    
+    def __init__(self, similarity_matrix, artifact_to_element_map):
+        super(AllElementLevelTraceLinkCombinations, self).__init__(similarity_matrix)
+        self._artifact_to_element_map = artifact_to_element_map
+    
+    @classmethod
+    def load_data_from(cls, folder, file_name_without_extension):
+        similarity_matrix = TwoDimensionalMatrix.read_from_csv(cls._build_csv_file_name(folder, file_name_without_extension))
+        artifact_to_element_map = ArtifactToElementMap.load_from(cls.ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN.format(folder, file_name_without_extension))
+        return cls(similarity_matrix, artifact_to_element_map)
+    
+    def write_data(self, folder, file_name_without_extension):
+        super(AllElementLevelTraceLinkCombinations, self).write_data(folder, file_name_without_extension)
+        self._artifact_to_element_map.write_to(self.ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN.format(folder, file_name_without_extension))
+    
+    def all_req_file_names(self):
+        return self._artifact_to_element_map.all_req_file_names()
+
+    def all_code_file_names(self):
+        return self._artifact_to_element_map.all_code_file_names()
+    
+    def methods_of(self, code_file_name):
+        return self._artifact_to_element_map.method_keys_of(code_file_name)
+    
+    def non_cg_elements_of(self, code_file_name):
+        return self._artifact_to_element_map.non_cg_keys_of(code_file_name)
+    
+    def req_elements_of(self, req_file_name):
+        return self._artifact_to_element_map.req_element_ids_of(req_file_name)
+    
+    def similarity_between(self, req_element, code_element):
+        return self._similarity_matrix.get_value(req_element, code_element)
