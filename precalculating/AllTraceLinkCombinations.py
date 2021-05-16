@@ -89,6 +89,9 @@ class AllElementLevelTraceLinkCombinations(AllTraceLinkCombinations):
     def non_cg_elements_of(self, code_file_name):
         return self._artifact_to_element_map.non_cg_keys_of(code_file_name)
     
+    def all_code_elements_of(self, code_file_name):
+        return self.methods_of(code_file_name) + self.non_cg_elements_of(code_file_name)
+    
     def req_elements_of(self, req_file_name):
         return self._artifact_to_element_map.req_element_ids_of(req_file_name)
     

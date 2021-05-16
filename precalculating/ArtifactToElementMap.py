@@ -42,3 +42,9 @@ class ArtifactToElementMap:
     
     def all_code_file_names(self):
         return self._code_file_to_method_map.keys()
+    
+    def all_method_keys(self):
+        return self._code_file_to_method_map.keys()
+    
+    def all_non_cg_element_keys(self):
+        return self._code_file_to_non_cg_element_map.keys()
