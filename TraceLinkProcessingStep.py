@@ -1,4 +1,5 @@
 from abc import ABC
+from collections import UserDict
 from enum import Enum
 import logging
 
@@ -6,6 +7,7 @@ from NeighborHandler import NeighborHandler
 from Preprocessing import CallGraphUtil
 from TraceLink import TraceLink
 from TwoDimensionalMatrix import TwoDimensionalMatrix
+import Util
 from precalculating.AllTraceLinkCombinations import AllFileLevelTraceLinkCombinations, \
     AllElementLevelTraceLinkCombinations
 from precalculating.ArtifactToElementMap import ArtifactToElementMap
@@ -65,7 +67,7 @@ class ElementLevelTraceLinkAggregator(TraceLinkProcessingStep):
         return self._req_reduce_func(all_element_level_similarities_to_same_req)
 
 
-class CallGraphTraceLinkAggregator:
+class CallGraphTraceLinkAggregator(TraceLinkProcessingStep):
     
     def __init__(self, method_weight, neighbor_strategy, method_call_graph_dict, code_elem_to_req_similarity_matrix, artifact_to_element_map):
         self._code_elem_to_req_similarity_matrix = code_elem_to_req_similarity_matrix
@@ -93,3 +95,56 @@ class CallGraphTraceLinkAggregator:
             return current_sim
         neighbor_weight = (1 - self.method_weight)
         return self.method_weight * current_sim + neighbor_weight * sum(neighbor_sims) / len(neighbor_sims)
+
+
+class MajorityDecision(TraceLinkProcessingStep):
+
+    def __init__(self, code_element_to_req_similarity_matrix, similarity_filter, code_reduce_function):
+        self._code_element_to_req_similarity_matrix = code_element_to_req_similarity_matrix
+        self._similarity_filter = similarity_filter
+        self._code_reduce_function = code_reduce_function
+    
+    def process(self, majority_drop_thresh) -> (TwoDimensionalMatrix, ArtifactToElementMap):
+        # One majority decision per code file (assumption: one top level class per code file)
+        resulting_trace_links = []
+        for code_file_name in self._artifact_to_element_map.all_code_file_names:
+            votes = []
+            sims_per_req = MajorityDecision.AppendValueDict()
+            for code_elem in self._artifact_to_element_map.all_code_elements_of(code_file_name):
+                for req_file_name in self._artifact_to_element_map.all_req_file_names():
+                    similarity = self._code_element_to_req_similarity_matrix.get_value(req_file_name, code_elem)
+                    if (self._similarity_filter.is_more_similar(similarity, majority_drop_thresh)) :
+                        votes.append(req_file_name)
+                        sims_per_req.append(req_file_name, similarity)
+            if votes:
+                majority_ranked_dict, max_vote_count = Util.majority_count(votes)
+                for req_filename in majority_ranked_dict:
+                    if majority_ranked_dict[req_filename] == max_vote_count:
+                        code_file_to_req_file_similarity = self.code_reduce_func(sims_per_req[req_filename])
+                        # #candidate_link.add_req_candidate(sim, link_dict.get_req_emb(req_filename))
+                        resulting_trace_links.append(TraceLink(req_file_name, code_file_name, code_file_to_req_file_similarity))
+            else:
+                log.info(f"No votes for {code_file_name}")
+        return resulting_trace_links
+                
+    class AppendValueDict:
+        """
+        Value is a list of values.
+        Append new values to a key with the append method.
+        """
+
+        def __init__(self):
+            self._internal_dict = {}
+    
+        def append(self, key, value):
+            if key in self._internal_dict:
+                self._internal_dict[key].append(value)
+            else:
+                self._internal_dict[key] = [value]
+    
+        def __getitem__(self, key):
+            return self._internal_dict[key]
+        
+        def __repr__(self):
+            return self._internal_dict.__repr__()
+

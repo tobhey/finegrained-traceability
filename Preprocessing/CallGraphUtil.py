@@ -1,18 +1,16 @@
-import logging, re
-from Paths import *
-import FileUtil
-from Dataset import Dataset, Etour, Itrust, SmosTrans, EANCI, EANCINoTrans
-
-
 """
 Contains util functions to work with the java call graph parser
     https://github.com/gousiosg/java-callgraph
 
 """
 
+import logging, re
+
+from Dataset import Dataset, Etour, Itrust, EANCI
+import FileUtil
+from Paths import *
 
 log = logging.getLogger(__name__)
-
 
 PARAMS = "params"
 CALLED_BY = "called_by"
@@ -86,11 +84,10 @@ def read_raw_callgraph_txt(dataset: Dataset):
         for dict_key in method_call_graph:
             method_call_graph[dict_key][CALLS] = [callee for callee in method_call_graph[dict_key][CALLS] if callee[0] in method_call_graph]
             method_call_graph[dict_key][CALLED_BY] = [caller for caller in method_call_graph[dict_key][CALLED_BY] if caller[0] in method_call_graph]
-
                     
     for row in text_rows:
         row_split = row.split(":")
-        if row_split[0] == "C": #Class level call
+        if row_split[0] == "C":  # Class level call
             classes = row_split[1].split(" ")
             class_1 = _clean(classes[0])
             class_2 = _clean(classes[1])
@@ -101,15 +98,15 @@ def read_raw_callgraph_txt(dataset: Dataset):
             if caller_class_name == callee_class_name:
                 continue
             if "$" in caller_class_name or "$" in callee_class_name:
-                continue # Leave out inner classes
+                continue  # Leave out inner classes
             
             insert_class(caller_class_name, set([callee_class_name]), set())
             insert_class(callee_class_name, set(), set([caller_class_name]))
                     
-        elif row_split[0] == "M": #method level call
-            #row_split[1] = Class of caller method
-            #row_split[2] = caller method<whitespace>calltype and class of callee method
-            #row_split[3] = callee method
+        elif row_split[0] == "M":  # method level call
+            # row_split[1] = Class of caller method
+            # row_split[2] = caller method<whitespace>calltype and class of callee method
+            # row_split[3] = callee method
             
             split_2 = row_split[2].split(" ")
             split_3 = split_2[1].split(")")
@@ -124,19 +121,19 @@ def read_raw_callgraph_txt(dataset: Dataset):
             caller_class = _extract_name(row_split[1])
             callee_class = _extract_name(split_3[1])
             if "$" in caller_class or "$" in callee_class:
-                continue # Leave out references to inner classes
+                continue  # Leave out references to inner classes
             call_type = split_3[0][1]
             split_4 = caller_method.split("(")
             caller_name = split_4[0]
             caller_param = []
-            if not split_4[1].startswith(")"): # params existing
-                caller_param = _split_param(split_4[1][:-1]) #Leave out last character, which is a )
+            if not split_4[1].startswith(")"):  # params existing
+                caller_param = _split_param(split_4[1][:-1])  # Leave out last character, which is a )
             
             split_5 = callee_method.split("(")
             callee_name = split_5[0]
             callee_param = []
-            if not split_5[1].startswith(")"): # params existing
-                callee_param = _split_param(split_5[1].replace('\r', '').replace('\n', '')[:-1]) #Leave out last character, which is )
+            if not split_5[1].startswith(")"):  # params existing
+                callee_param = _split_param(split_5[1].replace('\r', '').replace('\n', '')[:-1])  # Leave out last character, which is )
             
             caller_dict_key = build_class_method_param_dict_key(caller_class, caller_name, caller_param)
             callee_dict_key = build_class_method_param_dict_key(callee_class, callee_name, callee_param)
@@ -150,7 +147,7 @@ def read_raw_callgraph_txt(dataset: Dataset):
             log.error("Unknow start character: " + row_split[0])
             
     remove_external_calls()
-    #convert all sets to lists since set is not json serializable
+    # convert all sets to lists since set is not json serializable
     for entry in class_call_graph:
         class_call_graph[entry][CALLS] = list(class_call_graph[entry][CALLS])
         class_call_graph[entry][CALLED_BY] = list(class_call_graph[entry][CALLED_BY])
@@ -161,6 +158,7 @@ def read_raw_callgraph_txt(dataset: Dataset):
            
     FileUtil.write_to_json(output_class_callgraph, class_call_graph)
     FileUtil.write_to_json(output_method_callgraph, method_call_graph)
+
             
 def _is_external_class(dataset, fully_qualified_classname):
     starts = dataset.packages()
@@ -169,39 +167,48 @@ def _is_external_class(dataset, fully_qualified_classname):
             return False
     return True
 
+
 def _is_constructor(method):
     return "<init>" == method[:6]
+
         
 def _is_access(method):
     if "access$0" in method or "$SWITCH_TABLE$" in method:
         return True
     return False
+
+
 def _extract_name(fully_qualified_name):
     class_name = fully_qualified_name.split(".")[-1]
-    class_name = re.sub("\$[0-9]", "", class_name) # Delete $<number> references generated by the java call graph
+    class_name = re.sub("\$[0-9]", "", class_name)  # Delete $<number> references generated by the java call graph
     return class_name
+
 
 def build_class_method_param_dict_key(class_name, method_name, param_type_list):
     return class_name + "." + build_method_param_dict_key(method_name, param_type_list)
+
 
 def build_method_param_dict_key(method_name, param_type_list):
     param_string = "(" + ",".join(param_type_list) + ")"
     return method_name + param_string
 
+
 def build_class_method_param_dict_key2(class_name, method_param_dict_key):
     return class_name + "." + method_param_dict_key
+
     
 def _clean(class_name):
-    return re.sub("^\[L", "", class_name) # removes weird prefix generated by the java callgraph generator
+    return re.sub("^\[L", "", class_name)  # removes weird prefix generated by the java callgraph generator
+
 
 def _split_param(params):
-    param_list =  [_extract_name(elem) for elem in params.split(",")]
+    param_list = [_extract_name(elem) for elem in params.split(",")]
     result_param_list = []
     for param in param_list:
-        if "$" in param_list:# param type is a nested type
-            result_param_list += [param.split("$")[-1]] #only use the nested type name
+        if "$" in param_list:  # param type is a nested type
+            result_param_list += [param.split("$")[-1]]  # only use the nested type name
         else:
             result_param_list += [param]
     return result_param_list
 
-#read_raw_callgraph_txt(EANCINoTrans())
+# read_raw_callgraph_txt(EANCINoTrans())
