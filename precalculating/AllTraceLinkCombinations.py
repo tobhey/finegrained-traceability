@@ -60,11 +60,14 @@ class AllFileLevelTraceLinkCombinations(AllTraceLinkCombinations):
         return self._similarity_matrix.get_value(req_file_name, code_file_name)
 
 
-class AllElementLevelTraceLinkCombinations(AllTraceLinkCombinations):
+class TraceLinkProvider(AllTraceLinkCombinations):
+    """
+    Facade for an artifact to element map with the mappings between and a twoDimensionalMatrix containing
+    """
     ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN = "{folder}/{filename}_a2eMap.json"
     
     def __init__(self, similarity_matrix, artifact_to_element_map):
-        super(AllElementLevelTraceLinkCombinations, self).__init__(similarity_matrix)
+        super(TraceLinkProvider, self).__init__(similarity_matrix)
         self._artifact_to_element_map = artifact_to_element_map
     
     @classmethod
@@ -74,26 +77,35 @@ class AllElementLevelTraceLinkCombinations(AllTraceLinkCombinations):
         return cls(similarity_matrix, artifact_to_element_map)
     
     def write_data(self, folder, file_name_without_extension):
-        super(AllElementLevelTraceLinkCombinations, self).write_data(folder, file_name_without_extension)
+        super(TraceLinkProvider, self).write_data(folder, file_name_without_extension)
         self._artifact_to_element_map.write_to(self.ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN.format(folder, file_name_without_extension))
     
-    def all_req_file_names(self):
+    def all_req_file_names(self) -> [str]:
         return self._artifact_to_element_map.all_req_file_names()
 
-    def all_code_file_names(self):
+    def all_code_file_names(self) -> [str]:
         return self._artifact_to_element_map.all_code_file_names()
     
-    def methods_of(self, code_file_name):
+    def methods_of(self, code_file_name) -> [str]:
         return self._artifact_to_element_map.method_keys_of(code_file_name)
     
-    def non_cg_elements_of(self, code_file_name):
+    def non_cg_elements_of(self, code_file_name) -> [str]:
         return self._artifact_to_element_map.non_cg_keys_of(code_file_name)
     
-    def all_code_elements_of(self, code_file_name):
+    def all_code_elements_of(self, code_file_name) -> [str]:
         return self.methods_of(code_file_name) + self.non_cg_elements_of(code_file_name)
     
-    def req_elements_of(self, req_file_name):
+    def req_elements_of(self, req_file_name) -> [str]:
         return self._artifact_to_element_map.req_element_ids_of(req_file_name)
     
-    def similarity_between(self, req_element, code_element):
+    def all_method_keys(self):
+        return self._artifact_to_element_map.all_method_keys()
+    
+    def all_non_cg_element_keys(self):
+        return self._artifact_to_element_map.all_non_cg_element_keys()
+    
+    def similarity_between(self, req_element, code_element) -> float:
         return self._similarity_matrix.get_value(req_element, code_element)
+    
+    def set_matrix(self, new_matrix: TwoDimensionalMatrix):
+        self._similarity_matrix = new_matrix
