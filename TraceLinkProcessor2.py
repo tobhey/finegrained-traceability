@@ -1,3 +1,5 @@
+from test.mp_preload import proc
+
 from TraceLink import normalize_value_range
 from TraceLinkProcessingStep import MajorityDecision, FileLevelTraceLinkCreator
 from precalculating.AllTraceLinkCombinations import TraceLinkProvider
@@ -12,10 +14,12 @@ class TraceLinkProcessor2:
             self._file_level_trace_links = file_level_trace_links
     
     def run(self, file_level_thresholds):
-        # trace_link_provider = TraceLinkProvider.load_data_from(folder, file_name_without_extension)
-        
+        """
+        Returns a dictionary. File level threshold as keys, filtered trace link list as value
+        """
+        filtered_file_level_trace_links = {}
         for file_level_thresh in file_level_thresholds:
-            filtered_file_level_trace_links = self._apply_file_level_threshold(file_level_trace_links, file_level_thresh)
+            filtered_file_level_trace_links[file_level_thresh] = self._apply_file_level_threshold(self._file_level_trace_links, file_level_thresh)
         return filtered_file_level_trace_links
             
     def _apply_file_level_threshold(self, trace_links, drop_thresh):
@@ -44,7 +48,10 @@ class MajProcessor:
         self._file_level_thresholds = file_level_thresholds
     
     def run(self):
+        processed_trace_links = {}
         for maj_threshold in self._maj_thresholds:
             file_level_trace_links = self._maj_decision.process(maj_threshold)
-            filtered_file_level_trace_links = TraceLinkProcessor2(file_level_trace_links, self._normalize).run(self._file_level_thresholds)
-            valid_trace_links = self._evaluate_tracelinks(filtered_file_level_trace_links)
+            processed_trace_links[maj_threshold] = TraceLinkProcessor2(file_level_trace_links, self._normalize).run(self._file_level_thresholds)
+            # eval auslagern?
+            # valid_trace_links = self._evaluate_tracelinks(filtered_file_level_trace_links)
+        return processed_trace_links
