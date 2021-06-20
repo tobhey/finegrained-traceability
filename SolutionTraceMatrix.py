@@ -3,14 +3,18 @@ import random
 
 log = logging.getLogger(__name__)
 
+
 class SolutionTraceMatrix:
     
     def __init__(self, req_ext=None, code_ext=None):
-        self._dictionary = dict() #Requirement file name as key, corrresponding classes as value
+        self._dictionary = dict()  # Requirement file name as key, corrresponding classes as value
         self._number_of_trace_links = 0
-        self._code_count_dict = {} #Counts number of occurences of a code file in self._dictionary 
+        self._code_count_dict = {}  # Counts number of occurences of a code file in self._dictionary 
         self._req_ext = req_ext
         self._code_ext = code_ext
+        
+    def number_of_trace_links(self):
+        return self._number_of_trace_links
         
     def add_trace_pair(self, req_key: str, code_value: str):
         req_key = self._convert_req_key(req_key)
@@ -75,7 +79,7 @@ class SolutionTraceMatrix:
         req_key = self._convert_req_key(req_key)
         code_value = self._convert_code_key(code_value)
         if req_key.lower() not in [key.lower() for key in self._dictionary]:
-            log.debug(str(req_key) +  " is not in the trace matrix")
+            log.debug(str(req_key) + " is not in the trace matrix")
             return False
         elif code_value.lower() in [key.lower() for key in self._dictionary[req_key]]:
             log.debug(str(req_key) + "<->" + str(code_value) + " is in the trace matrix!")
@@ -136,6 +140,7 @@ class SolutionTraceMatrix:
         """ number of trace links that is contained in this solution matrix but not in the other one """
         my_trace_links = set(self.get_all_trace_links())
         return [x for x in my_trace_links if not other_solution_matrix.contains_req_code_pair(x[0], x[1])]
+
     
 class SolutionTraceMatrixWithDuplicates(SolutionTraceMatrix):
     
@@ -171,8 +176,9 @@ class SolutionTraceMatrixWithDuplicates(SolutionTraceMatrix):
     
     def is_same(self, other_solution_matrix):
         return collections.Counter(self.get_all_trace_links()) == collections.Counter(other_solution_matrix.get_all_trace_links())
+
     
 def set_extension(file_path, extension):
     if "." in file_path:
-        file_path =  file_path.rpartition(".")[0]
+        file_path = file_path.rpartition(".")[0]
     return file_path + "." + extension

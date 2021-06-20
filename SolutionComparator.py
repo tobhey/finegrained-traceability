@@ -10,6 +10,9 @@ class SolutionComparator:
         self._solution_trace_matrix = solution_trace_matrix
         self._print_false_positives = print_false_positives
         self._print_false_negatives = print_false_negatives
+        
+    def solution_size(self):
+        return self._solution_trace_matrix.number_of_trace_links()
 
     def get_true_positives(self, trace_link_candidates):
         if not trace_link_candidates:
