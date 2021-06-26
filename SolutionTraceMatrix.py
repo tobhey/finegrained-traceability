@@ -1,7 +1,11 @@
+from collections import Counter
 import logging, copy, collections
 import random
 
+import FileUtil
+
 log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
 
 
 class SolutionTraceMatrix:
@@ -140,8 +144,28 @@ class SolutionTraceMatrix:
         """ number of trace links that is contained in this solution matrix but not in the other one """
         my_trace_links = set(self.get_all_trace_links())
         return [x for x in my_trace_links if not other_solution_matrix.contains_req_code_pair(x[0], x[1])]
-
     
+    def print_links_statistic(self, all_reqs_file_names, all_codes_file_names):
+        original_size_req, original_size_code = len(all_reqs_file_names), len(all_codes_file_names)
+        req_frequency, code_frequency = [], []
+        for req, code in self.get_all_trace_links():
+            req_frequency += [req]
+            code_frequency += [code]
+        req_frequency = Counter(req_frequency)
+        code_frequency = Counter(code_frequency)
+        for req in sorted(req_frequency.keys()):
+            print(f"{req}: {req_frequency[req]}")
+            if req in all_reqs_file_names: all_reqs_file_names.remove(req)
+        print("-----------------------------------")
+        for code in sorted(code_frequency.keys()):
+            print(f"{code}: {code_frequency[code]}")
+            if code in all_codes_file_names: all_codes_file_names.remove(code)
+        print("-----------------------------------")
+        print(f"Not in solution: {len(all_reqs_file_names)} of {original_size_req} reqs, {len(all_codes_file_names)} of {original_size_code} code files")
+        if all_reqs_file_names: print("\n" + "\n".join(all_reqs_file_names))
+        if all_codes_file_names: print("\n" + "\n".join(all_codes_file_names))
+
+        
 class SolutionTraceMatrixWithDuplicates(SolutionTraceMatrix):
     
     @classmethod
