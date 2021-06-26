@@ -1,4 +1,5 @@
 
+from TraceLink import TraceLink
 from TraceLinkProcessingStep import MajorityDecision, FileLevelTraceLinkCreator, \
     MajorityDecisionTraceLinkCreator
 
@@ -10,7 +11,7 @@ class TraceLinkFilter:
         # Hier würde normalisiert werden
         pass
     
-    def run(self, trace_links, drop_thresholds):
+    def run(self, trace_links, drop_thresholds) -> dict[float, [TraceLink]]:
         """
         Returns a dictionary. File level threshold as keys, filtered trace link list as value
         """
@@ -30,7 +31,7 @@ class FileLevelProcessor:
         self._file_level_filter = TraceLinkFilter(similarity_filter)
         self._file_level_thresholds = file_level_thresholds
         
-    def run(self):
+    def run(self) -> dict[float, [TraceLink]]:
         file_level_trace_links = self._trace_link_creator.process()
         return self._file_level_filter.run(file_level_trace_links, self._file_level_thresholds)
 
@@ -43,7 +44,7 @@ class MajProcessor:
         self._maj_thresholds = maj_thresholds
         self._file_level_thresholds = file_level_thresholds
     
-    def run(self):
+    def run(self) -> dict[dict[float, [TraceLink]]]:
         processed_trace_links = {}
         for maj_threshold in self._maj_thresholds:
             file_level_trace_links = self._maj_decision.process(maj_threshold)
