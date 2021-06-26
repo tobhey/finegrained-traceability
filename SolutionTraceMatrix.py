@@ -122,8 +122,8 @@ class SolutionTraceMatrix:
                      
     def print_str(self):
         all_trace_links_string = []
-        for req_name in sorted(self._dictionary.keys()):
-            all_trace_links_string.append(req_name + ":" + " ".join([class_name for class_name in self._dictionary[req_name]]))
+        for req_name, code_name in sorted(self.get_all_trace_links(), key=lambda tup: tup[0]):
+            all_trace_links_string.append(f"{req_name}: {code_name}")
         return "\n".join(all_trace_links_string)
 
     def is_same(self, other_solution_matrix):
