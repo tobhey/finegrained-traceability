@@ -13,6 +13,9 @@ class Evaluator:
         self._compare_function = compare_function
         
     def evaluate(self, trace_links: [TraceLink]) -> "EvalResultObject":
+        if isinstance(trace_links, str):
+            return EmptyResultObject(trace_links)
+        
         total_num_found_links = len(trace_links)
         if total_num_found_links <= 0:
             return EmptyResultObject(self.NO_TRACE_LINKS_MESSAGE)

@@ -43,10 +43,23 @@ class MajProcessor:
         self._file_level_filter = TraceLinkFilter(similarity_filter)
         self._maj_thresholds = maj_thresholds
         self._file_level_thresholds = file_level_thresholds
+        self._similarity_filter = similarity_filter
     
     def run(self) -> dict[dict[float, [TraceLink]]]:
         processed_trace_links = {}
         for maj_threshold in self._maj_thresholds:
             file_level_trace_links = self._maj_decision.process(maj_threshold)
-            processed_trace_links[maj_threshold] = self._file_level_filter.run(file_level_trace_links, self._file_level_thresholds)
+            
+            # Optimization: Skip calculation if file level threshold is more similar than majority threshold
+            file_threholds_to_process, file_thresholds_to_skip = self.determine_relevant_thresholds(maj_threshold)
+            file_level_trace_links = self._file_level_filter.run(file_level_trace_links, file_threholds_to_process)
+            for thresh in file_thresholds_to_skip:
+                file_level_trace_links[thresh] = "Skipped"
+            processed_trace_links[maj_threshold] = file_level_trace_links
         return processed_trace_links
+    
+    def determine_relevant_thresholds(self, maj_threshold):
+        file_threholds_to_process, file_thresholds_to_skip = [], []
+        for thresh in file_threholds_to_process, file_thresholds_to_skip:
+            file_thresholds_to_skip.append(thresh) if self._similarity_filter.is_more_similar(maj_threshold, thresh) else file_threholds_to_process.append(thresh)
+        return file_threholds_to_process, file_thresholds_to_skip
