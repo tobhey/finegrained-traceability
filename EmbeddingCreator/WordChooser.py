@@ -1,6 +1,7 @@
 import abc
 from Preprocessing.CodeFileRepresentation import Classifier, Method
-from Preprocessing.FileRepresentation import UseCaseFileRepresentation
+from Preprocessing.FileRepresentation import UseCaseFileRepresentation, \
+    TextFileGroupedRepresentation
 
 
 class ClassnameWordChooser:
@@ -70,3 +71,9 @@ class UCNameDescFlowWordChooser(RequirementWordChooser):
 
     def choose_words_from(self, use_case_file_representation: UseCaseFileRepresentation) -> [[str]]:
         return [use_case_file_representation.name_words, use_case_file_representation.description_words] + [sentence for sentence in use_case_file_representation.flow_of_events_words]
+
+
+class SentenceChooser(RequirementWordChooser):
+    
+    def choose_words_from(self, text_file_grouped_representation: TextFileGroupedRepresentation):
+        return text_file_grouped_representation.grouped_token_list
