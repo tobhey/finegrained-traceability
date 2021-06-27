@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 
 class TraceLinkDataStructureBuilder(ABC):
     """
-    The AllTraceLinkCombinationsBuilder takes requirement and class embedding containers and creates an TraceLinkDataStructure object.
+    The TraceLinkDataStructureBuilder takes requirement and class embedding containers and creates an TraceLinkDataStructure object.
     """
 
     def __init__(self, _req_embedding_containers, code_embedding_containers, similarity_function):
