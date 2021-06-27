@@ -1,6 +1,7 @@
 import logging, Util
+
 from EmbeddingContainer import RequirementEmbeddingContainer
-from EmbeddingCreator import EmbeddingCreator
+from EmbeddingCreator.EmbeddingCreator import EmbeddingCreator
 from Paths import PREPROCESSED_REQ_OUTPUT_DIR
 
 logging.basicConfig(level=logging.INFO)

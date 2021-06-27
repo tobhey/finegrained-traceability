@@ -1,20 +1,23 @@
 from abc import ABC, abstractmethod
+from enum import Enum
+import logging, re
+
+import it_core_news_lg, en_core_web_trf
+from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer 
 from nltk.stem.snowball import SnowballStemmer
-import logging, re
-from nltk.corpus import stopwords
-from pathlib import Path
-import FileUtil
-from TFIDFData import TFIDFData
-import it_core_news_lg, en_core_web_trf
-import Paths
-from enum import Enum
-from Dataset import Dataset
 import pandas
+from pathlib import Path
+
+from Dataset import Dataset
+import FileUtil
 import PandasUtil
+import Paths
+
 log = logging.getLogger(__name__)
 CODE_STOPWORD_FILEPATH = Path(__file__).parent / "resources/CodeStopWords.txt"
 ITAL_CODE_STOPWORD_FILEPATH = Path(__file__).parent / "resources/ItalianCodeStopWords.txt"
+
 
 class PreprocessingStep(ABC):
     
@@ -41,14 +44,17 @@ class Preprocessor(ABC):
             tokens = step.execute(tokens, file_name, self.javadoc)
         self.javadoc = False
         return tokens
+
     
 class Preprocessable(ABC):
     """Classes who represent text or code data that can be preprocessed
        Returns True, if the preprocessed object became empty after preprocessing
     """
+
     @abstractmethod
     def preprocess(self, preprocessor) -> bool:
         pass
+
     
 class CamelCaseSplitter(PreprocessingStep):
     """
@@ -58,6 +64,7 @@ class CamelCaseSplitter(PreprocessingStep):
     
     def __init__(self, join=False):
         self._join = join
+
     def execute(self, text_tokens, file_name, javadoc):
         result_list = []
         for token in text_tokens:
@@ -66,13 +73,15 @@ class CamelCaseSplitter(PreprocessingStep):
             else:
                 result_list.extend(re.sub('([A-Z][a-z]+)', r' \1', re.sub('([A-Z]+)', r' \1', token)).split())
         return result_list
+
+
 class Lemmatizer(PreprocessingStep):
     COLUMN_LEMMA = "lemma"
     
     class LemmatizerType(Enum):
         english_nltk = 1
         english_spacy = 2
-        italian_nltk = 3 # is a stemmer, nltk does not have an italian lemmatizer
+        italian_nltk = 3  # is a stemmer, nltk does not have an italian lemmatizer
         italian_spacy = 4
         
     def __init__(self, lemmatizer_type=LemmatizerType.english_nltk):
@@ -117,6 +126,7 @@ class Lemmatizer(PreprocessingStep):
                             log.info(f"Different Duplicate Lemma for {word}: {word_to_lemma_dataframe[word]} <-> {lemma}")
                     else:
                         word_to_lemma_map[word] = lemma
+
         for dataset, code_pre, code_tok, req_pre, req_tok in dataset_tuple:
             
             iterate_files(req_tok, req_pre, dataset.req_folder())
@@ -127,12 +137,11 @@ class Lemmatizer(PreprocessingStep):
 
     @classmethod
     def precalculate_spacy_english_lemmatizer(cls, dataset_tuple):
-        cls._precalculate_spacy_lemmatizer(en_core_web_trf.load(disable=['ner', 'parser']), dataset_tuple, Paths.PRECALCULATED_SPACY_ENGLISH_LEMMA_CSV) # we only need the lemmatizer component, disable the other
+        cls._precalculate_spacy_lemmatizer(en_core_web_trf.load(disable=['ner', 'parser']), dataset_tuple, Paths.PRECALCULATED_SPACY_ENGLISH_LEMMA_CSV)  # we only need the lemmatizer component, disable the other
         
     @classmethod
     def precalculate_spacy_italian_lemmatizer(cls, dataset_tuple):
         cls._precalculate_spacy_lemmatizer(it_core_news_lg.load(disable=['ner', 'parser']), dataset_tuple, Paths.PRECALCULATED_SPACY_ITALIAN_LEMMA_CSV)
-        
 
 """
 req_tokenizer = WordTokenizer(EANCI(), True)
@@ -142,10 +151,13 @@ code_pre = Preprocessor([URL, SEP, LETTER, CAMEL, JAVASTOP, LOWER])
 dataset_tuple = [(EANCI(), code_pre, code_tokenizer, req_pre, req_tokenizer)]
 
 """
+
+
 class LowerCaseTransformer(PreprocessingStep):
     
     def execute(self, text_tokens: [str], file_name, javadoc):
         return [token.lower() for token in text_tokens]
+
 
 class Separator(PreprocessingStep):
     """Separates tokens that with slashes and points
@@ -157,6 +169,7 @@ class Separator(PreprocessingStep):
     
     def __init__(self, join=False):
         self._join = join
+
     def execute(self, text_tokens: [str], file_name, javadoc):
         """
         if javadoc:
@@ -202,6 +215,7 @@ class Separator(PreprocessingStep):
                 result3 += token.split("_")
         return result3
 
+
 class StopWordRemover(PreprocessingStep):
     
     def __init__(self, italian=False):
@@ -213,8 +227,10 @@ class StopWordRemover(PreprocessingStep):
         
     def execute(self, text_tokens, file_name, javadoc):
         return [token for token in text_tokens if token not in self._stop_words]
+
     
 class JavaCodeStopWordRemover(StopWordRemover):
+
     def __init__(self, ital=False):
         
         if ital:
@@ -222,26 +238,7 @@ class JavaCodeStopWordRemover(StopWordRemover):
         else:
             stopwords_as_string = FileUtil.read_textfile_into_string(CODE_STOPWORD_FILEPATH)
         self._stop_words = stopwords_as_string.split("\n")
-        
-        
-class TFIDFStopWordRemover(PreprocessingStep):
-    
-    def __init__(self, threshold, tfidf_weights_file):
-        self._threshold = threshold
-        self._tfidf_weights_data = TFIDFData(tfidf_weights_file)
-        
-    def execute(self, text_tokens, file_name, javadoc):
-        
-        result_tokens = []
-        for token in text_tokens:
-            tfidf_weight = None
-            try:
-                tfidf_weight = self._tfidf_weights_data.get_weight(file_name, token)
-            except KeyError:
-                log.debug("SKIPPED: word \"{}\" of {} not found in {}".format(token, file_name, self._tfidf_weights_data._file_path))
-            if tfidf_weight is not None and tfidf_weight > self._threshold:
-                result_tokens.append(token)
-        return result_tokens
+
     
 class TokenFilter(PreprocessingStep):
     """
@@ -252,16 +249,19 @@ class TokenFilter(PreprocessingStep):
     All tokens that fulfills the function (returns true) are retained
     
     """
+
     def __init__(self, filter_function):
         self._filter_function = filter_function
         
     def execute(self, text_tokens, file_name, javadoc):
         return [token for token in text_tokens if self._filter_function(token)]
 
+
 class UrlRemover(PreprocessingStep):
     """
     Removes urls
     """
+
     def execute(self, token_list, file_name, javadoc):
         result = []
         """
@@ -274,6 +274,7 @@ class UrlRemover(PreprocessingStep):
             result = [sentence_string.split() for sentence_string in result]
         """
         return result
+
               
 class NonLetterFilter(PreprocessingStep):
     """
@@ -283,7 +284,9 @@ class NonLetterFilter(PreprocessingStep):
     def execute(self, token_list:[str], file_name, javadoc):
         return [re.compile('[^a-zA-Z- ]').sub("", token) for token in token_list]
 
+
 class JavaDocFilter(PreprocessingStep):
+
     def __init__(self, word_and_sentence=False):
         """
         _word_and_sentence = true if token_list of execute is a nested list: list of sentences, which are list of words
@@ -294,6 +297,7 @@ class JavaDocFilter(PreprocessingStep):
     Ignore complete tokens that contain @throws, @author or @version
     Remove @param, @link and @return
     """
+
     def execute(self, token_list:[str], file_name, javadoc):
         if not javadoc:
             return token_list
@@ -302,27 +306,31 @@ class JavaDocFilter(PreprocessingStep):
             processing_list = [" ".join(word_list) for word_list in token_list]
         result = []
         for token in processing_list:
-            token2 = token.lower() #Dont lowercase the original token
+            token2 = token.lower()  # Dont lowercase the original token
             if "@throws" in token2 or "@author" in token2 or "@version" in token2:
                 continue 
             token = re.sub("@param", "", token, flags=re.RegexFlag.IGNORECASE)
             token = re.sub("@return", "", token, flags=re.RegexFlag.IGNORECASE)
             token = re.sub("@link", "", token, flags=re.RegexFlag.IGNORECASE)
             if token:
-                result += token.split() # Remove white spaces to add single words
+                result += token.split()  # Remove white spaces to add single words
         return result
+
     
 class DuplicateWhiteSpaceFilter(PreprocessingStep):
     """
     Replace consecutive white spaces with one single white space
     """
+
     def execute(self, token_list:[str], file_name, javadoc):
         return [" ".join(token.split()) for token in token_list]
+
     
 class AddFullStop(PreprocessingStep):
     """
     Add full stop if necessary
     """
+
     def execute(self, token_list:[str], file_name, javadoc):
         result = []
         for token in token_list:
@@ -332,10 +340,12 @@ class AddFullStop(PreprocessingStep):
                 result.append(token)
         return result
 
+
 class RemoveLastPunctuatioMark(PreprocessingStep):
     """
     Remove punctuation marks at the end if necessary
     """
+
     def execute(self, token_list:[str], file_name, javadoc):
         result = []
         for token in token_list:
@@ -345,11 +355,13 @@ class RemoveLastPunctuatioMark(PreprocessingStep):
             else:
                 result.append(token)
         return result
+
         
 class WordLengthFilter(PreprocessingStep):
     """
     Discard word if len(word) <= length_to_discard
     """
+
     def __init__(self, length_to_discard: int):
         self._length_to_discard = length_to_discard
     

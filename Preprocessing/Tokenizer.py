@@ -1,32 +1,37 @@
 import abc, logging
+import re
 
 from nltk.tokenize import word_tokenize, sent_tokenize
 
-from Preprocessing.FileRepresentation import FileRepresentation, TextFileRepresentation, TextFileGroupedRepresentation,\
-    UseCaseFileRepresentation
 import FileUtil
-from Dataset import Etour308, Libest
-import re
+from Preprocessing.FileRepresentation import FileRepresentation, TextFileRepresentation, TextFileGroupedRepresentation, \
+    UseCaseFileRepresentation
 
 log = logging.getLogger(__name__)
+
+
 class Tokenizer(abc.ABC):
     
     def __init__(self, dataset):
         self._dataset = dataset
+
     @abc.abstractmethod
     def tokenize(self, file_path) -> FileRepresentation:
         pass
+
     
 class NaturalSpeechTokenizer(Tokenizer):
+
     def __init__(self, dataset, italian=False):
         super(NaturalSpeechTokenizer, self).__init__(dataset)
         self._italian = italian
         
     def tokenize_to_string_list(self, text: str):
         if self._italian:
-            tokenized_text = " ".join(text.split("'")) # The tokenizer does not split apostrophs
+            tokenized_text = " ".join(text.split("'"))  # The tokenizer does not split apostrophs
             return word_tokenize(tokenized_text, "italian")
         return word_tokenize(text)
+
     
 class WordTokenizer(NaturalSpeechTokenizer):
     """
@@ -41,6 +46,7 @@ class WordTokenizer(NaturalSpeechTokenizer):
             return TextFileRepresentation(word_tokenize(tokenized_text), file_path)
         else:
             return TextFileRepresentation(word_tokenize(text_as_string), file_path)
+
     
 class SentenceTokenizer(NaturalSpeechTokenizer):
     """
@@ -48,7 +54,7 @@ class SentenceTokenizer(NaturalSpeechTokenizer):
         > A flat list, each element is a string representing a single sentence
     """
         
-    def tokenize(self, file_path)-> FileRepresentation:
+    def tokenize(self, file_path) -> FileRepresentation:
         text_as_string = FileUtil.read_textfile_into_string(file_path, self._dataset.encoding())
         if self._italian:
             return TextFileRepresentation(sent_tokenize(text_as_string, language="italian"), file_path)
@@ -68,17 +74,18 @@ class SentenceTokenizer(NaturalSpeechTokenizer):
                 sentences += sent_tokenize(FileUtil.read_textfile_into_string(file, self._dataset.encoding()))
         return sentences
 
+
 class WordAndSentenceTokenizer(NaturalSpeechTokenizer):
     """
     Tokenizer result: TextFileGroupedRepresentation
         > A nested list, each element is another list which contains the words of a single sentence.
     """
         
-    def tokenize(self, file_path)-> FileRepresentation:
+    def tokenize(self, file_path) -> FileRepresentation:
         text_as_string = FileUtil.read_textfile_into_string(file_path, self._dataset.encoding())
         word_tokenized_sentences = None
         if self._italian:
-            tokens =  [word_tokenize(" ".join(sent.split("'")), language="italian") for sent in sent_tokenize(text_as_string, language="italian")]
+            tokens = [word_tokenize(" ".join(sent.split("'")), language="italian") for sent in sent_tokenize(text_as_string, language="italian")]
             return TextFileGroupedRepresentation(tokens, file_path) 
         else:
             word_tokenized_sentences = [word_tokenize(sent) for sent in sent_tokenize(text_as_string)]
@@ -89,11 +96,11 @@ class WordAndSentenceTokenizer(NaturalSpeechTokenizer):
             return [word_tokenize(" ".join(sent.split("'")), language="italian") for sent in sent_tokenize(text, language="italian")]
         return [word_tokenize(sent) for sent in sent_tokenize(text)]
 
+
 class UCTokenizer(NaturalSpeechTokenizer):
     
     def __init__(self, dataset=None, italian=False):
         super(UCTokenizer, self).__init__(dataset, italian)
-        
     
     def tokenize(self, file_path):
         text_lines = FileUtil.read_textfile_into_lines_list(file_path, self._dataset.encoding())
@@ -108,7 +115,7 @@ class UCTokenizer(NaturalSpeechTokenizer):
         last_word_category = uc_description_words  # Default
         if isinstance(self._dataset, Libest):
             for line in text_lines:
-                line = line.lstrip() # Remove leading white spaces/tabs
+                line = line.lstrip()  # Remove leading white spaces/tabs
                 if self._dataset.UC_NAME_TEMPLATE_REGEX.match(line):
                     matched_string = self._dataset.UC_NAME_TEMPLATE_REGEX.match(line).group(0)
                     uc_name_words += self.tokenize_to_string_list(line[len(matched_string):])
@@ -116,7 +123,7 @@ class UCTokenizer(NaturalSpeechTokenizer):
                     uc_flow_of_events_words += self.tokenize_to_string_list(line)
         else:
             for line in text_lines:
-                line = line.lstrip() # Remove leading white spaces/tabs
+                line = line.lstrip()  # Remove leading white spaces/tabs
                 if self._dataset.UC_NAME_TEMPLATE_REGEX.match(line):
                     matched_string = self._dataset.UC_NAME_TEMPLATE_REGEX.match(line).group(0)
                     uc_name_words += self.tokenize_to_string_list(line[len(matched_string):])
@@ -160,18 +167,19 @@ class UCTokenizer(NaturalSpeechTokenizer):
                 
         complete_uc_flow_of_events_words_string = " ".join(uc_flow_of_events_words)
         if self._italian:
-            uc_flow_of_events_words =  [word_tokenize(" ".join(sent.split("'")), language="italian") for sent in sent_tokenize(complete_uc_flow_of_events_words_string, language="italian")]
+            uc_flow_of_events_words = [word_tokenize(" ".join(sent.split("'")), language="italian") for sent in sent_tokenize(complete_uc_flow_of_events_words_string, language="italian")]
         else:
             uc_flow_of_events_words = [word_tokenize(sent) for sent in sent_tokenize(complete_uc_flow_of_events_words_string)]
         
         return UseCaseFileRepresentation(file_path, uc_name_words, uc_description_words, uc_actor_words, uc_precond_words, uc_postcond_words,
                                           uc_flow_of_events_words, uc_quality_req_words)
+
         
 class JavaDocDescriptionOnlyTokenizer(NaturalSpeechTokenizer):
     JAVADOC_TAGS_REGEX = re.compile("(@param|@throws|@author|@version|@return)", re.RegexFlag.IGNORECASE)
     JAVADOC_TAGS = r"(@param|@throws|@author|@version|@return)"
     
-    def tokenize(self, file_path)-> FileRepresentation:
+    def tokenize(self, file_path) -> FileRepresentation:
         text_as_string = FileUtil.read_textfile_into_string(file_path, self._dataset.encoding())
         grp = re.search(self.JAVADOC_TAGS, text_as_string, re.RegexFlag.IGNORECASE)
         if grp:
@@ -180,8 +188,6 @@ class JavaDocDescriptionOnlyTokenizer(NaturalSpeechTokenizer):
             text_as_string = text_as_string[:substring_index]
             text_as_string = super(JavaDocDescriptionOnlyTokenizer, self).tokenize_to_string_list(text_as_string)
         return TextFileRepresentation(text_as_string, file_path)
-            
-         
                 
     def tokenize_to_string_list(self, text: str):
         grp = re.search(self.JAVADOC_TAGS, text, re.RegexFlag.IGNORECASE)
