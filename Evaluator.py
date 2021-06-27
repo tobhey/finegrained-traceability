@@ -8,9 +8,8 @@ class Evaluator:
     NO_TRACE_LINKS_MESSAGE = "No trace links found"
     NO_TRUE_POSITIVES_MESSAGE = "No true positives found"
     
-    def __init__(self, solution_comparator, compare_function):
+    def __init__(self, solution_comparator):
         self._solution_comparator = solution_comparator
-        self._compare_function = compare_function
         
     def evaluate(self, trace_links: [TraceLink]) -> "EvalResultObject":
         if isinstance(trace_links, str):
@@ -25,7 +24,7 @@ class Evaluator:
             return EmptyResultObject(self.NO_TRUE_POSITIVES_MESSAGE)
         
         precision, recall, f1 = Util.calc_prec_recall_f1(num_true_positives, total_num_found_links, self._solution_comparator.solution_size())
-        return F1ResultObject(self._compare_function, f1, precision, recall, total_num_found_links, num_true_positives)
+        return F1ResultObject(f1, precision, recall, total_num_found_links, num_true_positives)
     
 
 class EvalResultObject(ABC):
@@ -78,6 +77,9 @@ class EmptyResultObject():
 
 
 class FileLevelEvaluator(Evaluator):
+    """
+    Loeschen
+    """
 
     def evaluate_file_level(self, file_level_trace_links: dict):
         file_level_metric_dict = {}
