@@ -2,6 +2,7 @@ import abc, Util, logging, FileUtil
 
 from EmbeddingContainer import ClassEmbeddingContainer
 from EmbeddingCreator.EmbeddingCreator import EmbeddingCreator
+from Paths import PREPROCESSED_CODE_OUTPUT_DIR
 from Preprocessing.CallGraphUtil import build_method_param_dict_key, \
     build_class_method_param_dict_key2
 
@@ -10,8 +11,8 @@ log = logging.getLogger(__name__)
 
 class CodeEmbeddingCreator(EmbeddingCreator):
 
-    def __init__(self, method_word_chooser, classname_word_chooser, preprocessor, word_embedding_creator, tokenizer, preprocessed_token_output_directory, classname_as_optional_voter=True):
-        super(CodeEmbeddingCreator, self).__init__(preprocessor, word_embedding_creator, tokenizer, preprocessed_token_output_directory)
+    def __init__(self, method_word_chooser, classname_word_chooser, preprocessor, word_embedding_creator, tokenizer, preprocessed_token_output_directory=PREPROCESSED_CODE_OUTPUT_DIR, classname_as_optional_voter=True):
+        super().__init__(preprocessor, word_embedding_creator, tokenizer, preprocessed_token_output_directory)
         
         self._method_word_chooser = method_word_chooser
         self._classname_word_chooser = classname_word_chooser
@@ -34,16 +35,16 @@ class CodeEmbeddingCreator(EmbeddingCreator):
             # Class has no method vectors (e.g. empty class or all methods are not public)
             class_embedding = self._handle_no_method_vectors_case(classifier, class_embedding)
             
-        return [class_embedding]
+        return class_embedding
 
     def _calculate_class_vector(self, classifier):
-        words_to_embedd = classifier.get_name_words()
-        [words_to_embedd.extend(self._method_word_chooser(classifier, method)) for method in classifier.methods]
+        words_to_embedd = [] + classifier.get_name_words()
+        [words_to_embedd.extend(self._method_word_chooser.choose_words_from(classifier, method)) for method in classifier.methods]
         return self._embedd_and_average(words_to_embedd)
     
     def _add_method_vectors(self, classifier, class_embedding):
         for method in classifier.methods:
-            method_vector = self._embedd_and_average(self._method_word_chooser(classifier, method))
+            method_vector = self._embedd_and_average(self._method_word_chooser.choose_words_from(classifier, method))
             if method_vector is None:  # Can happen if e.g. all method words are removed via preprocessing
                 continue 
             method_key = build_method_param_dict_key(method.get_original_name(), method.get_original_param_type_list())
@@ -56,8 +57,11 @@ class CodeEmbeddingCreator(EmbeddingCreator):
         # The class name can be empty due to preprocessing -> no embedding in this case
         class_name_vector = self._embedd_and_average(self._classname_word_chooser.choose_words_from(classifier))
         if class_name_vector:
-            class_embedding.set_non_cg_vector(ClassEmbeddingContainer.CLASS_NAME_VOTER, class_name_vector)
+            class_embedding.set_non_cg_vector(self._build_class_name_voter_key(classifier), class_name_vector)
         return class_embedding
+    
+    def _build_class_name_voter_key(self, classifier):
+        return classifier.get_original_name() + "." + ClassEmbeddingContainer.CLASS_NAME_VOTER
 
                 
 class MockCodeEmbeddingCreator(CodeEmbeddingCreator):
@@ -66,13 +70,13 @@ class MockCodeEmbeddingCreator(CodeEmbeddingCreator):
     """
 
     def _calculate_class_vector(self, classifier):
-        chosen_words = classifier.get_name_words()
-        [chosen_words.extend(self._method_word_chooser(classifier, method)) for method in classifier.methods]
+        chosen_words = [] + classifier.get_name_words()
+        [chosen_words.extend(self._method_word_chooser.choose_words_from(classifier, method)) for method in classifier.methods]
         return chosen_words
     
     def _add_method_vectors(self, classifier, class_embedding):
         for method in classifier.methods:
-            method_words = self._method_word_chooser(classifier, method)
+            method_words = self._method_word_chooser.choose_words_from(classifier, method)
             if method_words is None:  # Can happen if e.g. all method words are removed via preprocessing
                 continue 
             method_key = build_method_param_dict_key(method.get_original_name(), method.get_original_param_type_list())
@@ -85,6 +89,6 @@ class MockCodeEmbeddingCreator(CodeEmbeddingCreator):
         # The class name can be empty due to preprocessing -> no embedding in this case
         class_name_words = self._classname_word_chooser.choose_words_from(classifier)
         if class_name_words:
-            class_embedding.set_non_cg_vector(ClassEmbeddingContainer.CLASS_NAME_VOTER, class_name_words)
+            class_embedding.set_non_cg_vector(self._build_class_name_voter_key(classifier), class_name_words)
         return class_embedding
     
