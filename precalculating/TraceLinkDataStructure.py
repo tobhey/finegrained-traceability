@@ -10,17 +10,16 @@ from precalculating.ArtifactToElementMap import ArtifactToElementMap
 
 
 class TraceLinkDataStructure(abc.ABC):
-    CSV_FILE_PATTERN = "{folder}/{filename}.csv"
     
     def __init__(self, similarity_matrix):
         self._similarity_matrix = similarity_matrix
     
     @classmethod
-    def load_data_from(cls, folder, file_name_without_extension):
-        return cls(TwoDimensionalMatrix.read_from_csv(cls._build_csv_file_name(folder, file_name_without_extension)))
+    def load_data_from(cls, file_path):
+        return cls(TwoDimensionalMatrix.read_from_csv(file_path))
     
-    def write_data(self, folder, file_name_without_extension):
-        self._similarity_matrix.write_to_csv(self.CSV_FILE_PATTERN.format(folder, file_name_without_extension))
+    def write_data(self, file_path):
+        self._similarity_matrix.write_to_csv(file_path)
     
     @abstractmethod
     def all_req_file_names(self):
@@ -36,10 +35,6 @@ class TraceLinkDataStructure(abc.ABC):
         req and code can be files or file elements (depending on sub class)
         """
         pass
-    
-    @classmethod
-    def _build_csv_file_name(cls, folder, file_name_without_extension):
-        return cls.CSV_FILE_PATTERN.format(folder=str(folder), filename=file_name_without_extension)
     
     
 class FileLevelTraceLinkDataStructure(TraceLinkDataStructure):
@@ -67,18 +62,18 @@ class ElementLevelTraceLinkDataStructure(TraceLinkDataStructure):
     ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN = "{folder}/{filename}_a2eMap.json"
     
     def __init__(self, similarity_matrix, artifact_to_element_map):
-        super(ElementLevelTraceLinkDataStructure, self).__init__(similarity_matrix)
+        super().__init__(similarity_matrix)
         self._artifact_to_element_map = artifact_to_element_map
     
     @classmethod
-    def load_data_from(cls, folder, file_name_without_extension):
-        similarity_matrix = TwoDimensionalMatrix.read_from_csv(cls._build_csv_file_name(folder, file_name_without_extension))
-        artifact_to_element_map = ArtifactToElementMap.load_from(cls.ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN.format(folder, file_name_without_extension))
+    def load_data_from(cls, matrix_file_path, artifact_map_file_path):
+        similarity_matrix = TwoDimensionalMatrix.read_from_csv(matrix_file_path)
+        artifact_to_element_map = ArtifactToElementMap.load_from(artifact_map_file_path)
         return cls(similarity_matrix, artifact_to_element_map)
     
-    def write_data(self, folder, file_name_without_extension):
-        super(ElementLevelTraceLinkDataStructure, self).write_data(folder, file_name_without_extension)
-        self._artifact_to_element_map.write_to(self.ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN.format(folder, file_name_without_extension))
+    def write_data(self, matrix_file_path, artifact_map_file_path):
+        super().write_data(matrix_file_path)
+        self._artifact_to_element_map.write_to(artifact_map_file_path)
     
     def all_req_file_names(self) -> [str]:
         return self._artifact_to_element_map.all_req_file_names()
