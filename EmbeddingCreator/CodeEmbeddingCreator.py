@@ -58,4 +58,33 @@ class CodeEmbeddingCreator(EmbeddingCreator):
         if class_name_vector:
             class_embedding.set_non_cg_vector(ClassEmbeddingContainer.CLASS_NAME_VOTER, class_name_vector)
         return class_embedding
+
                 
+class MockCodeEmbeddingCreator(CodeEmbeddingCreator):
+    """
+    Does not embedd, returns the chosen words as bag of words.
+    """
+
+    def _calculate_class_vector(self, classifier):
+        chosen_words = classifier.get_name_words()
+        [chosen_words.extend(self._method_word_chooser(classifier, method)) for method in classifier.methods]
+        return chosen_words
+    
+    def _add_method_vectors(self, classifier, class_embedding):
+        for method in classifier.methods:
+            method_words = self._method_word_chooser(classifier, method)
+            if method_words is None:  # Can happen if e.g. all method words are removed via preprocessing
+                continue 
+            method_key = build_method_param_dict_key(method.get_original_name(), method.get_original_param_type_list())
+            method_key_with_classifier = build_class_method_param_dict_key2(classifier.get_original_name(), method_key)
+            class_embedding.set_method_vector(method_key_with_classifier, method_words)
+        return class_embedding
+
+    def _handle_no_method_vectors_case(self, classifier, class_embedding):
+        # Use class name as replacement 
+        # The class name can be empty due to preprocessing -> no embedding in this case
+        class_name_words = self._classname_word_chooser.choose_words_from(classifier)
+        if class_name_words:
+            class_embedding.set_non_cg_vector(ClassEmbeddingContainer.CLASS_NAME_VOTER, class_name_words)
+        return class_embedding
+    
