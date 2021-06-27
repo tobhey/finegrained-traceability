@@ -4,42 +4,38 @@ from EmbeddingCreator import EmbeddingCreator
 from Paths import PREPROCESSED_REQ_OUTPUT_DIR
 
 logging.basicConfig(level=logging.INFO)
-log = logging.getLogger(__name__ )
+log = logging.getLogger(__name__)
+
 
 class RequirementEmbeddingCreator(EmbeddingCreator):
-    def __init__(self, preprocessor, wordemb_creator,
+
+    def __init__(self, requirements_word_chooser, preprocessor, wordemb_creator,
                   tokenizer, preprocessed_token_output_directory=PREPROCESSED_REQ_OUTPUT_DIR): 
-        super(RequirementEmbeddingCreator, self).__init__(preprocessor, wordemb_creator,
-                                                           tokenizer, preprocessed_token_output_directory)
-        
-class AverageWordEmbeddingCreator(RequirementEmbeddingCreator):
-    """Creates a requirement embedding by averaging its word vectors"""
+        super().__init__(preprocessor, wordemb_creator, tokenizer, preprocessed_token_output_directory)
+        self._requirements_word_chooser = requirements_word_chooser
+
+    
+class UCEmbeddingCreator(RequirementEmbeddingCreator):
     
     def _create_embeddings(self, file_representation):
-        word_vectors = self._create_word_embeddings_from_word_list(file_representation.token_list)
-        if word_vectors:
-            return RequirementEmbeddingContainer(file_representation.file_path, Util.create_averaged_vector(word_vectors), word_vectors)
-        return None
-    
-    
-class AverageSentenceEmbeddingCreator(RequirementEmbeddingCreator):
-    """Creates a requirement embedding by averaging its sentence vectors which are averages of its word vectors"""
-        
-    def _create_embeddings(self, file_representation):
-        sentence_vectors = [Util.create_averaged_vector(self._create_word_embeddings_from_word_list(sen)) for sen in file_representation.grouped_token_list]
-        if sentence_vectors:
-            return RequirementEmbeddingContainer(file_representation.file_path, Util.create_averaged_vector(sentence_vectors), sentence_vectors)
-        return None
-    
-class UCAverageWordEmbeddingCreator(RequirementEmbeddingCreator):
-    
-    def _create_embeddings(self, file_representation):
-        partial_req_embeddings = []
-        partial_req_embeddings += self._embedd_and_average(file_representation.name_words)
-        partial_req_embeddings += self._embedd_and_average(file_representation.description_words)
-        for sentence_group in file_representation.flow_of_events_words:
-            partial_req_embeddings += self._embedd_and_average(sentence_group)
+        chosen_word_groups = self._requirements_word_chooser.choose_words_from(file_representation)
+        chosen_word_groups_embeddings = []
+        requirement_element_vectors = []
+        for word_group in chosen_word_groups:
+            word_embeddings = self._create_word_embeddings_from_word_list(word_group)
+            chosen_word_groups_embeddings.append(word_embeddings)
+            requirement_element_vectors.append(Util.create_averaged_vector(word_embeddings))
             
-        if partial_req_embeddings:
-            return RequirementEmbeddingContainer(file_representation.file_path, Util.create_averaged_vector(partial_req_embeddings), partial_req_embeddings)
-        return None
+        file_vector = Util.create_averaged_vector([word for word_group in chosen_word_groups for word in word_group])  # flat average over all (nested) word embeddings in chosen_word_groups
+        
+        return RequirementEmbeddingContainer(file_representation.file_path, file_vector, requirement_element_vectors)
+    
+    
+class MockUCEmbeddingCreator(RequirementEmbeddingCreator):
+
+    def _create_embeddings(self, file_representation):
+        chosen_word_groups = self._requirements_word_chooser.choose_words_from(file_representation)
+        file_vector = [word for word_group in chosen_word_groups for word in word_group]  # flat list over all (nested) words in chosen_word_groups
+        
+        return RequirementEmbeddingContainer(file_representation.file_path, file_vector, chosen_word_groups)
+    
