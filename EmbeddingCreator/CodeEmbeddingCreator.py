@@ -59,24 +59,3 @@ class CodeEmbeddingCreator(EmbeddingCreator):
             class_embedding.set_non_cg_vector(ClassEmbeddingContainer.CLASS_NAME_VOTER, class_name_vector)
         return class_embedding
                 
-    
-class MethodSignatureCallGraphEmbeddingCreator(CodeEmbeddingCreator):
-    
-    def _calculate_method_vector(self, classifier, method):
-        method_words = classifier.get_name_words()
-        method_words += method.get_name_words()
-        method_words += method.get_returntype_words()
-        method_words += method.get_param_plain_list()
-        return Util.create_averaged_vector(self._create_word_embeddings_from_word_list(method_words, False))
-
-    
-class MethodCommentSignatureCallGraphEmbeddingCreator(CodeEmbeddingCreator):
-    
-    def _calculate_method_vector(self, classifier, method):
-        method_words = classifier.get_name_words()
-        method_words += method.get_name_words()
-        method_words += method.get_returntype_words()
-        method_words += method.get_param_plain_list()
-        method_words += method.get_comment_tokens()
-        method_subvectors = self._create_word_embeddings_from_word_list(method_words, False)
-        return Util.create_averaged_vector(method_subvectors)
