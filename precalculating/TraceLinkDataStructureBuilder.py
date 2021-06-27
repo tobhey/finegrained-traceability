@@ -2,16 +2,16 @@ from abc import ABC, abstractmethod
 import logging
 
 from TwoDimensionalMatrix import TwoDimensionalMatrix
-from precalculating.AllTraceLinkCombinations import AllTraceLinkCombinations, \
-    AllFileLevelTraceLinkCombinations, TraceLinkProvider
 from precalculating.ArtifactToElementMap import ArtifactToElementMap
+from precalculating.TraceLinkDataStructure import TraceLinkDataStructure, \
+    FileLevelTraceLinkDataStructure, ElementLevelTraceLinkDataStructure
 
 log = logging.getLogger(__name__)
 
 
-class AllTraceLinkCombinationsBuilder(ABC):
+class TraceLinkDataStructureBuilder(ABC):
     """
-    The AllTraceLinkCombinationsBuilder takes requirement and class embedding containers and creates an AllTraceLinkCombinations object.
+    The AllTraceLinkCombinationsBuilder takes requirement and class embedding containers and creates an TraceLinkDataStructure object.
     """
 
     def __init__(self, _req_embedding_containers, code_embedding_containers, similarity_function):
@@ -20,11 +20,11 @@ class AllTraceLinkCombinationsBuilder(ABC):
         self._similarity_function = similarity_function
         
     @abstractmethod
-    def build(self) -> AllTraceLinkCombinations: 
+    def build(self) -> TraceLinkDataStructure: 
         pass
 
 
-class AllFileLevelTraceLinkCombinationsBuilder(AllTraceLinkCombinationsBuilder):
+class FileLevelTraceLinkDataStructureBuilder(TraceLinkDataStructure):
     
     def build(self):
         
@@ -37,10 +37,10 @@ class AllFileLevelTraceLinkCombinationsBuilder(AllTraceLinkCombinationsBuilder):
                 file_level_similarity = self._similarity_function(req_emb_cont.file_vector, code_vector)
                 similarity_matrix.set_value(req_emb_cont.file_name, code_file_name, file_level_similarity)
         
-        return AllFileLevelTraceLinkCombinations(similarity_matrix)
+        return FileLevelTraceLinkDataStructure(similarity_matrix)
 
 
-class AllElementLevelTraceLinkCombinationsBuilder(AllTraceLinkCombinationsBuilder):
+class ElementLevelTraceLinkDataStructureBuilder(TraceLinkDataStructure):
 
     def build(self):
         similarity_matrix = TwoDimensionalMatrix.create_empty()
@@ -58,7 +58,7 @@ class AllElementLevelTraceLinkCombinationsBuilder(AllTraceLinkCombinationsBuilde
             
         artifact_to_element_map = ArtifactToElementMap(req_file_to_req_element_id_map, code_file_to_method_map, code_file_to_non_cg_element_map)
 
-        return TraceLinkProvider(similarity_matrix, artifact_to_element_map)
+        return ElementLevelTraceLinkDataStructure(similarity_matrix, artifact_to_element_map)
         
     def _calculate_similarities_for_all_code_elements(self, similarity_matrix, req_emb_cont, code_emb_cont):
         similarity_matrix, method_keys = self._calculate_similarities_for_code_element(similarity_matrix, req_emb_cont, code_emb_cont.method_dict)

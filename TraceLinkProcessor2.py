@@ -26,8 +26,8 @@ class TraceLinkFilter:
             
 class FileLevelProcessor:
 
-    def __init__(self, trace_link_provider, similarity_filter, file_level_thresholds):
-        self._trace_link_creator = FileLevelTraceLinkCreator(trace_link_provider)
+    def __init__(self, trace_link_data_structure, similarity_filter, file_level_thresholds):
+        self._trace_link_creator = FileLevelTraceLinkCreator(trace_link_data_structure)
         self._file_level_filter = TraceLinkFilter(similarity_filter)
         self._file_level_thresholds = file_level_thresholds
         
@@ -38,8 +38,8 @@ class FileLevelProcessor:
 
 class MajProcessor:
 
-    def __init__(self, trace_link_provider, similarity_filter, req_reduce_func, code_reduce_function, file_level_thresholds, maj_thresholds, callgraph_aggregator=None):
-        self._maj_decision = MajorityDecisionTraceLinkCreator(trace_link_provider, similarity_filter, req_reduce_func, code_reduce_function, callgraph_aggregator)
+    def __init__(self, trace_link_data_structure, similarity_filter, req_reduce_func, code_reduce_function, file_level_thresholds, maj_thresholds, callgraph_aggregator=None):
+        self._maj_decision = MajorityDecisionTraceLinkCreator(trace_link_data_structure, similarity_filter, req_reduce_func, code_reduce_function, callgraph_aggregator)
         self._file_level_filter = TraceLinkFilter(similarity_filter)
         self._maj_thresholds = maj_thresholds
         self._file_level_thresholds = file_level_thresholds

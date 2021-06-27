@@ -5,12 +5,11 @@ Use load_data_from() to load a existing precalculated file or an AllTraceLinkCom
 from abc import abstractmethod
 import abc
 
-import FileUtil
 from TwoDimensionalMatrix import TwoDimensionalMatrix
 from precalculating.ArtifactToElementMap import ArtifactToElementMap
 
 
-class AllTraceLinkCombinations(abc.ABC):
+class TraceLinkDataStructure(abc.ABC):
     CSV_FILE_PATTERN = "{folder}/{filename}.csv"
     
     def __init__(self, similarity_matrix):
@@ -43,12 +42,12 @@ class AllTraceLinkCombinations(abc.ABC):
         return cls.CSV_FILE_PATTERN.format(folder=str(folder), filename=file_name_without_extension)
     
     
-class AllFileLevelTraceLinkCombinations(AllTraceLinkCombinations):
+class FileLevelTraceLinkDataStructure(TraceLinkDataStructure):
     """
         Don't use the constructor to instantiate
         
         Rows = req file names; columns = code file names; entry = similarity
-        """
+    """
     
     def all_req_file_names(self):
         return self._similarity_matrix.get_row_names()
@@ -60,14 +59,15 @@ class AllFileLevelTraceLinkCombinations(AllTraceLinkCombinations):
         return self._similarity_matrix.get_value(req_file_name, code_file_name)
 
 
-class TraceLinkProvider(AllTraceLinkCombinations):
+class ElementLevelTraceLinkDataStructure(TraceLinkDataStructure):
     """
-    Facade for an artifact to element map with the mappings between and a twoDimensionalMatrix containing
+    Contains an artifact to element map with the mappings between code classes and their elements
+    and a TwoDimensionalMatrix containing the actual similarity values
     """
     ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN = "{folder}/{filename}_a2eMap.json"
     
     def __init__(self, similarity_matrix, artifact_to_element_map):
-        super(TraceLinkProvider, self).__init__(similarity_matrix)
+        super(ElementLevelTraceLinkDataStructure, self).__init__(similarity_matrix)
         self._artifact_to_element_map = artifact_to_element_map
     
     @classmethod
@@ -77,7 +77,7 @@ class TraceLinkProvider(AllTraceLinkCombinations):
         return cls(similarity_matrix, artifact_to_element_map)
     
     def write_data(self, folder, file_name_without_extension):
-        super(TraceLinkProvider, self).write_data(folder, file_name_without_extension)
+        super(ElementLevelTraceLinkDataStructure, self).write_data(folder, file_name_without_extension)
         self._artifact_to_element_map.write_to(self.ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN.format(folder, file_name_without_extension))
     
     def all_req_file_names(self) -> [str]:

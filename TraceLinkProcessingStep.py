@@ -8,8 +8,8 @@ from Preprocessing import CallGraphUtil
 from TraceLink import TraceLink
 from TwoDimensionalMatrix import TwoDimensionalMatrix
 import Util
-from precalculating.AllTraceLinkCombinations import AllFileLevelTraceLinkCombinations, \
-    TraceLinkProvider
+from precalculating.AllTraceLinkCombinations import FileLevelTraceLinkDataStructure, \
+    ElementLevelTraceLinkDataStructure, TraceLinkDataStructure
 from precalculating.ArtifactToElementMap import ArtifactToElementMap
 
 log = logging.getLogger(__name__)
@@ -23,9 +23,9 @@ class TraceLinkProcessingStep(ABC):
     
 class FileLevelTraceLinkCreator(TraceLinkProcessingStep):
 
-    def __init__(self, all_trace_link_combinations):
-        assert isinstance(all_trace_link_combinations, AllFileLevelTraceLinkCombinations)
-        super(FileLevelTraceLinkCreator, self).__init__(all_trace_link_combinations)
+    def __init__(self, trace_link_data_structure):
+        assert isinstance(trace_link_data_structure, FileLevelTraceLinkDataStructure)
+        super().__init__(trace_link_data_structure)
 
     def process(self) -> [TraceLink]:
         all_trace_links = []
@@ -38,8 +38,9 @@ class FileLevelTraceLinkCreator(TraceLinkProcessingStep):
 
 class MajorityDecisionTraceLinkCreator:
     
-    def __init__(self, trace_link_provider, similarity_filter, req_reduce_func, code_reduce_function, callgraph_aggregator=None):
-        super(MajorityDecisionTraceLinkCreator, self).__init__(trace_link_provider)
+    def __init__(self, trace_link_data_structure, similarity_filter, req_reduce_func, code_reduce_function, callgraph_aggregator=None):
+        assert isinstance(trace_link_data_structure, ElementLevelTraceLinkDataStructure)
+        super(MajorityDecisionTraceLinkCreator, self).__init__(trace_link_data_structure)
         self._element_level_trace_link_aggregator = ElementLevelTraceLinkAggregator(req_reduce_func)
         self._callgraph_aggregator = callgraph_aggregator
         self._majority_decision = MajorityDecision(similarity_filter, code_reduce_function)
@@ -66,7 +67,7 @@ class ElementLevelTraceLinkAggregator:
     def __init__(self, req_reduce_func):
         self._req_reduce_func = req_reduce_func
 
-    def process(self, trace_link_data_structure) -> TraceLinkProvider:
+    def process(self, trace_link_data_structure) -> TraceLinkDataStructure:
         self._trace_link_provider = trace_link_data_structure
         method_to_req_similarities = TwoDimensionalMatrix.create_empty()
         for code_file_name in self._trace_link_provider.all_code_file_names():
@@ -99,7 +100,7 @@ class CallGraphTraceLinkAggregator:
         self.neighbor_handler = NeighborHandler(neighbor_strategy, method_call_graph_dict)
         self.method_weight = method_weight
             
-    def process(self, trace_link_data_structure) -> TraceLinkProvider:
+    def process(self, trace_link_data_structure) -> TraceLinkDataStructure:
         self._trace_link_data_structure = trace_link_data_structure
         method_to_req_similarity_matrix_with_cg = TwoDimensionalMatrix.create_empty()
         for method_key in self._trace_link_data_structure.all_method_keys():
