@@ -65,8 +65,8 @@ class F1ExcelOutputService(OutputService):
         
     def process_trace_link_dict(self, trace_link_dict: dict[float, [TraceLink]], excel_output_file_path):
         print_str_dict, best_eval_result, best_thresh = self._process_trace_link_dict(trace_link_dict)
-        header_row = []
-        value_row = []
+        header_row = []  # Contains thresholds
+        value_row = []  # Contains evaluated f1 metrics
         for file_level_thresh in sorted(print_str_dict.keys()):
             header_row.append(self.FILE_LEVEL_DROP_THRESH_PATTERN.format(file_level_thresh))
             value_row.append(print_str_dict[file_level_thresh])
@@ -92,7 +92,7 @@ class F1ExcelOutputService(OutputService):
         
         excel_array = [header_row]
         for maj_thresh in sorted(print_str_dict):
-            next_row = [self.MAJ_DROP_THRESH_PATTERN.format(maj_thresh)]
+            next_row = [self.MAJ_DROP_THRESH_PATTERN.format(maj_thresh)]  # First cell is the maj thresh, followed by the evaluated f1 metrics for this maj thresh
             
             for file_level_thresh in sorted(print_str_dict[maj_thresh]):
                 next_row.append([print_str_dict[maj_thresh][file_level_thresh]])
