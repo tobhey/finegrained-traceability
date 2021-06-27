@@ -1,6 +1,6 @@
 
 from TraceLink import TraceLink
-from TraceLinkProcessingStep import MajorityDecision, FileLevelTraceLinkCreator, \
+from TraceLinkCreator import MajorityDecision, FileLevelTraceLinkCreator, \
     MajorityDecisionTraceLinkCreator
 
 

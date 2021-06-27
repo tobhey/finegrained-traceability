@@ -8,20 +8,20 @@ from Preprocessing import CallGraphUtil
 from TraceLink import TraceLink
 from TwoDimensionalMatrix import TwoDimensionalMatrix
 import Util
-from precalculating.AllTraceLinkCombinations import FileLevelTraceLinkDataStructure, \
-    ElementLevelTraceLinkDataStructure, TraceLinkDataStructure
 from precalculating.ArtifactToElementMap import ArtifactToElementMap
+from precalculating.TraceLinkDataStructure import FileLevelTraceLinkDataStructure, \
+    ElementLevelTraceLinkDataStructure, TraceLinkDataStructure
 
 log = logging.getLogger(__name__)
 
 
-class TraceLinkProcessingStep(ABC):
+class TraceLinkCreator(ABC):
     
     def __init__(self, trace_link_data_structure):
         self._trace_link_data_structure = trace_link_data_structure
     
     
-class FileLevelTraceLinkCreator(TraceLinkProcessingStep):
+class FileLevelTraceLinkCreator(TraceLinkCreator):
 
     def __init__(self, trace_link_data_structure):
         assert isinstance(trace_link_data_structure, FileLevelTraceLinkDataStructure)
@@ -36,11 +36,11 @@ class FileLevelTraceLinkCreator(TraceLinkProcessingStep):
         return all_trace_links
 
 
-class MajorityDecisionTraceLinkCreator:
+class MajorityDecisionTraceLinkCreator(TraceLinkCreator):
     
     def __init__(self, trace_link_data_structure, similarity_filter, req_reduce_func, code_reduce_function, callgraph_aggregator=None):
         assert isinstance(trace_link_data_structure, ElementLevelTraceLinkDataStructure)
-        super(MajorityDecisionTraceLinkCreator, self).__init__(trace_link_data_structure)
+        super().__init__(trace_link_data_structure)
         self._element_level_trace_link_aggregator = ElementLevelTraceLinkAggregator(req_reduce_func)
         self._callgraph_aggregator = callgraph_aggregator
         self._majority_decision = MajorityDecision(similarity_filter, code_reduce_function)
