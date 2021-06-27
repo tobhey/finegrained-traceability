@@ -116,11 +116,15 @@ class Dataset(abc.ABC):
     @abc.abstractmethod
     def class_callgraph(self):
         pass
+    
+    @abc.abstractmethod
+    def is_english(self):
+        pass
 
 
 class Etour(Dataset):
     ETOUR_FOLDER = DATASETS / "eTour"
-    ETOUR_SOLUTION_MATRIX_PATH = ETOUR_FOLDER / "etour_solution_links_engish.txt"
+    ETOUR_SOLUTION_MATRIX_PATH = ETOUR_FOLDER / "etour_solution_links_english.txt"
     ETOUR_ITAL_SOLUTION_MATRIX_PATH = ETOUR_FOLDER / "etour_solution_links_italian.txt"
     ETOUR_REQ_DIR = ETOUR_FOLDER / "req"
     ETOUR_CODE_DIR = ETOUR_FOLDER / "code"
@@ -187,6 +191,9 @@ class Etour(Dataset):
     
     def packages(self):
         return ["beans", "com.trapan", "unisa.gps"]
+    
+    def is_english(self):
+        return True
 
 
 class Itrust(Dataset):
@@ -242,6 +249,9 @@ class Itrust(Dataset):
     
     def packages(self):
         return ["edu.ncsu.csc.itrust"]
+
+    def is_english(self):
+        return True
 
 
 class Smos(Dataset):
@@ -315,6 +325,9 @@ class Smos(Dataset):
     def encoding(self):
         return "ISO-8859-1"
 
+    def is_english(self):
+        return False
+
     
 class EANCI(Dataset):
     
@@ -383,6 +396,9 @@ class EANCI(Dataset):
     def encoding(self):
         return "ISO-8859-1"
     
+    def is_english(self):
+        return False
+
     
 def read_xml_format_solution_matrix(file_path, req_ext=None, code_ext=None):
     """
