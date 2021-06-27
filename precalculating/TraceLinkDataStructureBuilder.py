@@ -14,8 +14,8 @@ class TraceLinkDataStructureBuilder(ABC):
     The TraceLinkDataStructureBuilder takes requirement and class embedding containers and creates an TraceLinkDataStructure object.
     """
 
-    def __init__(self, _req_embedding_containers, code_embedding_containers, similarity_function):
-        self._req_embedding_containers = _req_embedding_containers
+    def __init__(self, req_embedding_containers, code_embedding_containers, similarity_function):
+        self._req_embedding_containers = req_embedding_containers
         self._code_embedding_containers = code_embedding_containers
         self._similarity_function = similarity_function
         
@@ -24,7 +24,7 @@ class TraceLinkDataStructureBuilder(ABC):
         pass
 
 
-class FileLevelTraceLinkDataStructureBuilder(TraceLinkDataStructure):
+class FileLevelTraceLinkDataStructureBuilder(TraceLinkDataStructureBuilder):
     
     def build(self):
         
@@ -40,7 +40,7 @@ class FileLevelTraceLinkDataStructureBuilder(TraceLinkDataStructure):
         return FileLevelTraceLinkDataStructure(similarity_matrix)
 
 
-class ElementLevelTraceLinkDataStructureBuilder(TraceLinkDataStructure):
+class ElementLevelTraceLinkDataStructureBuilder(TraceLinkDataStructureBuilder):
 
     def build(self):
         similarity_matrix = TwoDimensionalMatrix.create_empty()
@@ -61,7 +61,7 @@ class ElementLevelTraceLinkDataStructureBuilder(TraceLinkDataStructure):
         return ElementLevelTraceLinkDataStructure(similarity_matrix, artifact_to_element_map)
         
     def _calculate_similarities_for_all_code_elements(self, similarity_matrix, req_emb_cont, code_emb_cont):
-        similarity_matrix, method_keys = self._calculate_similarities_for_code_element(similarity_matrix, req_emb_cont, code_emb_cont.method_dict)
+        similarity_matrix, method_keys = self._calculate_similarities_for_code_element(similarity_matrix, req_emb_cont, code_emb_cont.methods_dict)
         similarity_matrix, non_cg_elems = self._calculate_similarities_for_code_element(similarity_matrix, req_emb_cont, code_emb_cont.non_cg_dict)
         
         return similarity_matrix, method_keys, non_cg_elems
@@ -77,7 +77,7 @@ class ElementLevelTraceLinkDataStructureBuilder(TraceLinkDataStructure):
     
     def _calculate_similarities_to_all_req_elements(self, similarity_matrix, req_emb_cont, element_key, element_vector):
         for req_emb_cont in self._req_embedding_containers:
-            for index, req_element in enumerate(req_emb_cont.requirement_element_vector):
+            for index, req_element in enumerate(req_emb_cont.requirement_element_vectors):
                 req_elem_key = self._build_req_element_key(req_emb_cont.file_name, index)
                 similarity_matrix.set_value(element_key, req_elem_key, self._similarity_function(req_element, element_vector))
         return similarity_matrix
