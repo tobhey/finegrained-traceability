@@ -1,6 +1,6 @@
 from abc import ABC , abstractmethod
 import logging
-
+from typing import Dict, List
 import FileUtil
 from TraceLink import TraceLink
 
@@ -12,7 +12,7 @@ class OutputService(ABC):
     def __init__(self, evaluator):
         self._evaluator = evaluator
         
-    def _process_trace_link_dict(self, trace_link_dict: dict[float, [TraceLink]]):
+    def _process_trace_link_dict(self, trace_link_dict: Dict[float, List[TraceLink]]):
         """
         trace_link_dict: Dictionary with trace link lists as value
         """
@@ -31,7 +31,7 @@ class OutputService(ABC):
             
         return print_str_dict, best_eval_result, best_thresh
     
-    def _process_trace_link_2D_dict(self, trace_link_2D_dict: dict[dict[float, [TraceLink]]]):
+    def _process_trace_link_2D_dict(self, trace_link_2D_dict: Dict[float, Dict[float, List[TraceLink]]]):
         """
         trace_link_dict: Dictionary with dictionaries as values that have trace link lists as values
         """
@@ -59,11 +59,12 @@ class F1ExcelOutputService(OutputService):
     BEST_F1_2D_MESSAGE_PATTERN = "Best f1: %d at m%d f%d"
     NO_BEST_F1_MESSAGE = "No best F1"
     
-    def __init__(self, evaluator, also_print_log=True):
+    def __init__(self, evaluator, excel_output_file_path, also_print_log=True):
         super().__init__(evaluator)
+        self._excel_output_file_path = excel_output_file_path
         self._also_print_log = also_print_log
         
-    def process_trace_link_dict(self, trace_link_dict: dict[float, [TraceLink]], excel_output_file_path):
+    def process_trace_link_dict(self, trace_link_dict: Dict[float, List[TraceLink]]):
         print_str_dict, best_eval_result, best_thresh = self._process_trace_link_dict(trace_link_dict)
         header_row = []  # Contains thresholds
         value_row = []  # Contains evaluated f1 metrics
@@ -82,9 +83,9 @@ class F1ExcelOutputService(OutputService):
         else:
             excel_array.append([self.NO_BEST_F1_MESSAGE])
 
-        FileUtil.write_eval_to_excel(excel_array, excel_output_file_path)
+        FileUtil.write_eval_to_excel(excel_array, self._excel_output_file_path)
             
-    def process_trace_link_2D_dict(self, trace_link_2D_dict: dict[dict[float, [TraceLink]]], excel_output_file_path):
+    def process_trace_link_2D_dict(self, trace_link_2D_dict: Dict[float, Dict[float, List[TraceLink]]]):
         print_str_dict, best_eval_result, best_file_level_thresh, best_maj_thresh = self._process_trace_link_2D_dict(trace_link_2D_dict)
         
         header_row = [""]  # First header cell is empty -> needed for header column
@@ -109,7 +110,7 @@ class F1ExcelOutputService(OutputService):
         else:
             excel_array.append([self.NO_BEST_F1_MESSAGE])
             
-        FileUtil.write_eval_to_excel(excel_array, excel_output_file_path)
+        FileUtil.write_eval_to_excel(excel_array, self._excel_output_file_path)
         
     def _add_best_f1_excel_rows(self, excel_array, print_str_dict, best_eval_result, best_thresh):
         best_f1_message = self.BEST_F1_MESSAGE_PATTERN.format(best_eval_result.get_defining_value(), best_thresh)
