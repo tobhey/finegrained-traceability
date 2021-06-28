@@ -1,3 +1,5 @@
+from _functools import partial
+
 import gensim
 from pathlib import Path
 
@@ -22,6 +24,7 @@ from SimilarityFilter import SimilarityFilter
 from SolutionComparator import SolutionComparator
 from TraceLinkProcessor import MajProcessor
 import TraceLinkProcessor
+import Util
 from precalculating.TraceLinkDataStructure import ElementLevelTraceLinkDataStructure
 from precalculating.TraceLinkDataStructureBuilder import ElementLevelTraceLinkDataStructureBuilder
 
@@ -81,6 +84,7 @@ class WMDRunner(TraceabilityRunner):
 class BaseLineRunner(WMDRunner):
     ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN = "{dataset_folder}/{folder}/{dataset_name}_{name_suffix}_a2eMap.json"
     LABEL = "BaseLine"
+    WMD_VALUE_MAP_FUNCTION = partial(Util.map_value_range, 0, 2)  # Map the wmd distances from [0,2] to [0,1]
     
     def __init__(self, dataset: Dataset):
         super().__init__(dataset)
@@ -121,7 +125,7 @@ class BaseLineRunner(WMDRunner):
             
         req_embedding_containers = MockUCEmbeddingCreator(self.requirements_word_chooser, self.req_preprocessor, self.word_embedding_creator, self.req_tokenizer).create_all_embeddings(self.dataset.req_folder())
         code_embedding_containers = MockCodeEmbeddingCreator(self.method_word_chooser, self.classname_word_chooser, self.code_preprocessor, self.word_embedding_creator, self.code_tokenizer, classname_as_optional_voter=True).create_all_embeddings(self.dataset.code_folder())
-        data_structure_builder = ElementLevelTraceLinkDataStructureBuilder(req_embedding_containers, code_embedding_containers, self.word_embedding_creator.word_movers_distance)
+        data_structure_builder = ElementLevelTraceLinkDataStructureBuilder(req_embedding_containers, code_embedding_containers, self.word_embedding_creator.word_movers_distance, self.WMD_VALUE_MAP_FUNCTION)
         trace_link_data_structure = data_structure_builder.build()
         trace_link_data_structure.write_data(matrix_file_path, artifact_map_file_path)
     
