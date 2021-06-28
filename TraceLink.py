@@ -14,12 +14,12 @@ class TraceLink:
     def get_req_key(self, with_extension=False):
         if with_extension:
             return self.req_embedding.file_name
-        return self.req_embedding.file_name_without_extension
+        return self.req_embedding
     
     def get_code_key(self, with_extension=False):
         if with_extension:
             return self.code_embedding.file_name
-        return self.code_embedding.file_name_without_extension
+        return self.code_embedding
     
     def __repr__(self):
         return str(self.valid) + " " + str(self.similarity) + " | " + str(self.req_embedding) + " <-> " + str(self.code_embedding)

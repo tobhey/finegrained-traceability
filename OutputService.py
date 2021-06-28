@@ -53,10 +53,10 @@ class OutputService(ABC):
 
     
 class F1ExcelOutputService(OutputService):
-    FILE_LEVEL_DROP_THRESH_PATTERN = "file_level_drop_thresh: %d"
-    MAJ_DROP_THRESH_PATTERN = "majority_drop_thresh: %d"
-    BEST_F1_MESSAGE_PATTERN = "Best f1: %d at f%d"
-    BEST_F1_2D_MESSAGE_PATTERN = "Best f1: %d at m%d f%d"
+    FILE_LEVEL_DROP_THRESH_PATTERN = "file_level_drop_thresh: {}"
+    MAJ_DROP_THRESH_PATTERN = "majority_drop_thresh: {}"
+    BEST_F1_MESSAGE_PATTERN = "Best f1: {} at f{}"
+    BEST_F1_2D_MESSAGE_PATTERN = "Best f1: {} at m{} f{}"
     NO_BEST_F1_MESSAGE = "No best F1"
     
     def __init__(self, evaluator, excel_output_file_path, also_print_log=True):
@@ -96,7 +96,7 @@ class F1ExcelOutputService(OutputService):
             next_row = [self.MAJ_DROP_THRESH_PATTERN.format(maj_thresh)]  # First cell is the maj thresh, followed by the evaluated f1 metrics for this maj thresh
             
             for file_level_thresh in sorted(print_str_dict[maj_thresh]):
-                next_row.append([print_str_dict[maj_thresh][file_level_thresh]])
+                next_row.append(print_str_dict[maj_thresh][file_level_thresh])
                 
                 if self._also_print_log:
                     log.info(f"m{maj_thresh} f{file_level_thresh}\n"
@@ -105,7 +105,7 @@ class F1ExcelOutputService(OutputService):
             excel_array.append(next_row)
             
         excel_array.append([""])  # Add empty row as divider
-        if best_eval_result.is_greater_than(0):
+        if best_eval_result.f1 > 0:
             excel_array = self._add_best_f1_2D_excel_rows(excel_array, print_str_dict, best_eval_result, best_file_level_thresh, best_maj_thresh)
         else:
             excel_array.append([self.NO_BEST_F1_MESSAGE])
@@ -132,7 +132,7 @@ class F1ExcelOutputService(OutputService):
             log.info(best_f1_message)
             
         # Create an 3x3 excel matrix that additionally contains the right and left neighbor threshold of the best f1 threshold as context
-        file_level_context_threshs = self._get_context_thresholds(print_str_dict.keys(), best_file_level_thresh)
+        file_level_context_threshs = self._get_context_thresholds(list(print_str_dict.values())[0].keys(), best_file_level_thresh)
         excel_array.append([""] + [self.FILE_LEVEL_DROP_THRESH_PATTERN.format(thresh) for thresh in file_level_context_threshs])
         
         maj_context_threshs = self._get_context_thresholds(print_str_dict.keys(), best_maj_thresh)

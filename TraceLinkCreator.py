@@ -48,7 +48,7 @@ class MajorityDecisionTraceLinkCreator(TraceLinkCreator):
     def process(self, majority_drop_thresh) -> [TraceLink]:
         
         # Step 1: Calculate code element to (whole) req trace links
-        trace_link_data_structure = self._element_level_trace_link_aggregator.process(self._trace_link_data_structure)
+        trace_link_data_structure = self._element_level_trace_link_aggregator.process(Util.deep_copy(self._trace_link_data_structure))
         
         # Step 2: (optional) Update code element to (whole) req trace links according to call graph neighbors
         if self._callgraph_aggregator:
@@ -133,7 +133,7 @@ class MajorityDecision:
         self._trace_link_data_structure = trace_link_data_structure
         # One majority decision per code file (assumption: one top level class per code file)
         resulting_trace_links = []
-        for code_file_name in self._trace_link_data_structure.all_code_file_names:
+        for code_file_name in self._trace_link_data_structure.all_code_file_names():
             votes, sims_per_req = self._collect_votes_and_similarities(majority_drop_thresh, code_file_name)
             resulting_trace_links += self._do_majority_decision(code_file_name, votes, sims_per_req)
         return resulting_trace_links
@@ -155,7 +155,7 @@ class MajorityDecision:
             majority_ranked_dict, max_vote_count = Util.majority_count(votes)
             for req_file_name in majority_ranked_dict:
                 if majority_ranked_dict[req_file_name] == max_vote_count:
-                    code_file_to_req_file_similarity = self.code_reduce_func(sims_per_req[req_file_name])
+                    code_file_to_req_file_similarity = self._code_reduce_function(sims_per_req[req_file_name])
                     # #candidate_link.add_req_candidate(sim, link_dict.get_req_emb(req_filename))
                     voted_trace_links.append(TraceLink(req_file_name, code_file_name, code_file_to_req_file_similarity))
         

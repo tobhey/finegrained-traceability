@@ -5,7 +5,8 @@ from EmbeddingCreator.CodeEmbeddingCreator import MockCodeEmbeddingCreator
 from EmbeddingCreator.RequirementEmbeddingCreator import MockUCEmbeddingCreator
 from EmbeddingCreator.WordChooser import SentenceChooser, MethodSignatureChooser, \
     ClassnameWordChooser
-from EmbeddingCreator.WordEmbeddingCreator import RandomWordEmbeddingCreator
+from EmbeddingCreator.WordEmbeddingCreator import RandomWordEmbeddingCreator, \
+    FastTextEmbeddingCreator
 from Evaluator import Evaluator
 import FileUtil, logging
 from OutputService import F1ExcelOutputService
@@ -24,6 +25,9 @@ from precalculating.TraceLinkDataStructure import ElementLevelTraceLinkDataStruc
 from precalculating.TraceLinkDataStructureBuilder import ElementLevelTraceLinkDataStructureBuilder
 
 log = logging.getLogger(__name__)
+
+ENGLISH_FASTTEXT_MODEL_PATH = "/content/drive/My Drive/models/cc.en.300.bin"
+ITALIAN_FASTTEXT_MODEL_PATH = "/content/drive/My Drive/models/cc.it.300.bin"
 
 
 class TraceabilityRunner:
@@ -54,6 +58,7 @@ class TraceabilityRunner:
         self.code_preprocessor = self.CODE_PREPROCESSOR if dataset.is_english() else self.CODE_PREPROCESSOR_IT
         self.code_tokenizer = JavaCodeASTTokenizer(dataset, WordTokenizer(dataset, not dataset.is_english()))
         self.word_embedding_creator = RandomWordEmbeddingCreator()
+        # self.word_embedding_creator = FastTextEmbeddingCreator(ENGLISH_FASTTEXT_MODEL_PATH) if dataset.is_english() else FastTextEmbeddingCreator(ITALIAN_FASTTEXT_MODEL_PATH)
 
 
 class WMDRunner(TraceabilityRunner):
@@ -77,7 +82,7 @@ class BaseLineRunner(WMDRunner):
     def __init__(self, dataset: Dataset):
         super().__init__(dataset)
         self.req_tokenizer = WordAndSentenceTokenizer(self.dataset, not self.dataset.is_english())
-        self.excel_output_file_path = Paths.OUTPUT_DIR
+        self.excel_output_file_path = Paths.OUTPUT_DIR / f"{self.dataset.name()}_{self.LABEL}_eval_result.xlsx"
         self.requirements_word_chooser = SentenceChooser()
         self.method_word_chooser = MethodSignatureChooser()
         self.classname_word_chooser = ClassnameWordChooser()

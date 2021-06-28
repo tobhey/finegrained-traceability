@@ -16,11 +16,7 @@ class ArtifactToElementMap:
     @classmethod
     def load_from(cls, file_path):
         loaded_json = FileUtil.read_from_json(file_path)
-        instance = cls()
-        instance._req_file_to_req_element_id_map = loaded_json[cls.REQ_FILE_TO_REQ_ELEMENT_ID_MAP]
-        instance._code_file_to_method_map = loaded_json[cls.CODE_FILE_TO_METHOD_MAP]
-        instance._code_file_to_non_cg_element_map = loaded_json[cls.CODE_FILE_TO_NON_CG_ELEMENT_MAP]
-        return instance
+        return cls(loaded_json[cls.REQ_FILE_TO_REQ_ELEMENT_ID_MAP], loaded_json[cls.CODE_FILE_TO_METHOD_MAP], loaded_json[cls.CODE_FILE_TO_NON_CG_ELEMENT_MAP])
     
     def write_to(self, file_path):
         json_to_write = {self.REQ_FILE_TO_REQ_ELEMENT_ID_MAP : self._req_file_to_req_element_id_map,

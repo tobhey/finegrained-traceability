@@ -42,25 +42,6 @@ class EvalResultObject(ABC):
         pass
 
 
-class F1ResultObject(EvalResultObject):
-    
-    def __init__(self, f1, precision, recall, num_found_links, num_true_positives):
-        self.f1 = f1
-        self.precision = precision
-        self.recall = recall
-        self.num_found_links = num_found_links
-        self.num_true_positives = num_true_positives
-        
-    def get_print_str(self):
-        return Util.build_prec_recall_f1_print_str(self.precision, self.recall, self.f_1, self.num_true_positives, self.num_found_links)
-    
-    def is_greater_than(self, other):
-        return self.f1 > other.f1
-    
-    def get_defining_value(self):
-        return self.f1
-
-
 class EmptyResultObject():
 
     def __init__(self, message: str):
@@ -74,6 +55,27 @@ class EmptyResultObject():
     
     def get_defining_value(self):
         return self._message
+
+
+class F1ResultObject(EvalResultObject):
+    
+    def __init__(self, f1, precision, recall, num_found_links, num_true_positives):
+        self.f1 = f1
+        self.precision = precision
+        self.recall = recall
+        self.num_found_links = num_found_links
+        self.num_true_positives = num_true_positives
+        
+    def get_print_str(self):
+        return Util.build_prec_recall_f1_print_str(self.precision, self.recall, self.f1, self.num_true_positives, self.num_found_links)
+    
+    def is_greater_than(self, other):
+        if isinstance(other, EmptyResultObject):
+            return True
+        return self.f1 > other.f1
+    
+    def get_defining_value(self):
+        return self.f1
 
 
 class FileLevelEvaluator(Evaluator):

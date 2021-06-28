@@ -21,7 +21,7 @@ class TraceLinkFilter:
         return filtered_trace_links
             
     def _apply_threshold(self, trace_links, drop_thresh):
-        return [self._similarity_filter(trace_link.similarity, drop_thresh) for trace_link in trace_links]
+        return [trace_link for trace_link in trace_links if self._similarity_filter.is_more_similar(trace_link.similarity, drop_thresh)]
 
             
 class FileLevelProcessor:
@@ -60,6 +60,6 @@ class MajProcessor:
     
     def determine_relevant_thresholds(self, maj_threshold):
         file_threholds_to_process, file_thresholds_to_skip = [], []
-        for thresh in file_threholds_to_process, file_thresholds_to_skip:
+        for thresh in self._file_level_thresholds:
             file_thresholds_to_skip.append(thresh) if self._similarity_filter.is_more_similar(maj_threshold, thresh) else file_threholds_to_process.append(thresh)
         return file_threholds_to_process, file_thresholds_to_skip

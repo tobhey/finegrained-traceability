@@ -79,7 +79,7 @@ class ElementLevelTraceLinkDataStructureBuilder(TraceLinkDataStructureBuilder):
         for req_emb_cont in self._req_embedding_containers:
             for index, req_element in enumerate(req_emb_cont.requirement_element_vectors):
                 req_elem_key = self._build_req_element_key(req_emb_cont.file_name, index)
-                similarity_matrix.set_value(element_key, req_elem_key, self._similarity_function(req_element, element_vector))
+                similarity_matrix.set_value(req_elem_key, element_key, self._similarity_function(req_element, element_vector))
         return similarity_matrix
                 
     def _build_req_element_key(self, req_file_name, index):
