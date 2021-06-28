@@ -1,3 +1,4 @@
+import gensim
 from pathlib import Path
 
 from Dataset import Dataset
@@ -24,6 +25,8 @@ import TraceLinkProcessor
 from precalculating.TraceLinkDataStructure import ElementLevelTraceLinkDataStructure
 from precalculating.TraceLinkDataStructureBuilder import ElementLevelTraceLinkDataStructureBuilder
 
+gensim.logger.setLevel(logging.ERROR)
+logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
 ENGLISH_FASTTEXT_MODEL_PATH = "/content/drive/My Drive/models/cc.en.300.bin"

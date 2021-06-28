@@ -1,5 +1,4 @@
 import abc, logging, os
-from distutils.tests.test_file_util import FileUtilTestCase
 
 from pathlib import Path
 

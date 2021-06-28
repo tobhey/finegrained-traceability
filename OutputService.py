@@ -1,6 +1,10 @@
 from abc import ABC , abstractmethod
 import logging
 from typing import Dict, List
+
+from autograd.builtins import isinstance
+
+from Evaluator import F1ResultObject
 import FileUtil
 from TraceLink import TraceLink
 
@@ -78,7 +82,7 @@ class F1ExcelOutputService(OutputService):
         
         excel_array = [header_row] + [value_row]
         excel_array.append([""])  # Add empty row as divider
-        if best_eval_result.is_greater_than(0):
+        if isinstance(best_eval_result, F1ResultObject):
             excel_array = self._add_best_f1_excel_rows(excel_array, print_str_dict, best_eval_result, best_thresh)
         else:
             excel_array.append([self.NO_BEST_F1_MESSAGE])
@@ -105,7 +109,7 @@ class F1ExcelOutputService(OutputService):
             excel_array.append(next_row)
             
         excel_array.append([""])  # Add empty row as divider
-        if best_eval_result.f1 > 0:
+        if isinstance(best_eval_result, F1ResultObject):
             excel_array = self._add_best_f1_2D_excel_rows(excel_array, print_str_dict, best_eval_result, best_file_level_thresh, best_maj_thresh)
         else:
             excel_array.append([self.NO_BEST_F1_MESSAGE])
