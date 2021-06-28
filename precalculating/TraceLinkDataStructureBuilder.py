@@ -85,7 +85,7 @@ class ElementLevelTraceLinkDataStructureBuilder(TraceLinkDataStructureBuilder):
                 similarity = self._similarity_function(req_element, element_vector)
                 if self._map_similarity_value_range_function:
                     similarity = self._map_similarity_value_range_function(similarity)
-                similarity_matrix.set_value(req_elem_key, element_key,)
+                similarity_matrix.set_value(req_elem_key, element_key, similarity)
         return similarity_matrix
                 
     def _build_req_element_key(self, req_file_name, index):
