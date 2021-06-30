@@ -38,6 +38,30 @@ class SolutionComparator:
             
         return valid_trace_links
     
+    def get_similarity_relevance_dict(self, trace_links):
+        """
+        Returns a dict with the shape: req_dict["req_name"] = [(sim_to_code_1: float, relevant: bool), (sim_to_code_2, relevant), ...]
+        This is used for the average precision calculation
+        """
+        req_dict = {}
+        sol_matrix_copy = Util.deep_copy(self._solution_trace_matrix)  # Use copy to track false negatives and avoid duplicate trace links
+        for trace_link in trace_links:
+            req_name = trace_link.get_req_key()
+            code_name = trace_link.get_code_key()
+            sim_rel_tuple_to_add = (trace_link.similarity, False)
+            if sol_matrix_copy.contains_req_code_pair(req_name, code_name):
+                sim_rel_tuple_to_add = (trace_link.similarity, True)
+                sol_matrix_copy.remove_trace_pair(req_name, code_name)
+            if req_name in req_dict:
+                req_dict[req_name].append(sim_rel_tuple_to_add)
+            else:
+                req_dict[req_name] = [sim_rel_tuple_to_add]
+                
+        if self._print_false_negatives:
+            self._print_false_negatives(sol_matrix_copy)
+            
+        return req_dict
+    
     def _print_false_negatives(self, sol_matrix_with_false_negatives):
         log.info(f"\nFalse Negatives: {sol_matrix_with_false_negatives._number_of_trace_links} Links, {sol_matrix_with_false_negatives.num_unique_reqs()} unique Reqs, {sol_matrix_with_false_negatives.num_unique_code()} unique Code")
         log.info("\n" + sol_matrix_with_false_negatives.print_str())

@@ -35,20 +35,6 @@ def calculate_discrete_integral_average_precision(recall_prec_dict):
     return avg_prec
 
 
-def calculate_mean_average_precision(req_dict, k, num_reqs, reverse_compare=False):
-    """
-    req_dict["req_name"] = [(sim_to_code_1: float, relevant: bool), (sim_to_code_2, relevant), ...]
-    """
-    precision_sum = 0
-    for req in req_dict:
-        first_k_links = sorted(list(req_dict[req]), key=lambda sim_rel_tuple: sim_rel_tuple[0], reverse=not reverse_compare)  # most similar first
-        if k is not None:
-            first_k_links = first_k_links[:k]
-        precision_sum += calculate_query_average_precision(first_k_links, reverse_compare)[0]
-        
-    return  precision_sum / num_reqs
-
-
 def calculate_mean_average_precision_and_recall(req_dict, k, num_reqs, num_solution_links, reverse_compare=False):
     """
     req_dict["req_name"] = [(sim_to_code_1: float, relevant: bool), (sim_to_code_2, relevant), ...]
@@ -64,37 +50,6 @@ def calculate_mean_average_precision_and_recall(req_dict, k, num_reqs, num_solut
         precision_sum += calculate_query_average_precision(first_k_links, reverse_compare)[0]
         
     return  precision_sum / num_reqs, num_relevant_links / num_solution_links
-
-
-def calculate_query_average_precision(similarity_relevance_list, reverse_compare=False):
-    """
-    Input: similarity_relevance_list = [(similarity, relevant)]
-    reverse_compare = True if smaller sim == better
-    
-    """
-    if not similarity_relevance_list:
-        text = "No Trace Link candidates!"
-        log.info(text)
-        return 0, "No Trace Link candidates!"
-    
-    similarity_relevance_list.sort(key=lambda sim_rel_tuple: sim_rel_tuple[0], reverse=not reverse_compare)  # most similar first
-    prec_at_k = []
-    relevant_links_at_k = 0
-    for index, (sim, relevant) in enumerate(similarity_relevance_list):
-        relevant_links_at_k += relevant
-        prec_at_k.append(((relevant_links_at_k / (index + 1)), relevant, relevant_links_at_k))  # index + 1 == #retrieved links
-        
-    ap = 0
-    prec_k_print_str = ""
-    for index, (precK, relevant, rel_linksK) in  enumerate(prec_at_k):
-        ap += precK * relevant
-        prec_k_print_str += f"\nprec@{index+1}: {precK} with {rel_linksK} correct links"
-    if relevant_links_at_k == 0:
-        ap = 0
-    else:
-        ap /= relevant_links_at_k
-        
-    return ap, prec_k_print_str
 
 
 def build_prec_recall_f1_print_str(precision, recall, f_1, true_positives, num_found_links):
@@ -210,3 +165,4 @@ def numpy_array(l):
 def top_percent(num_files, percent):
     assert percent > 0 and percent <= 1, str(percent) + " is not in (0,1]"
     return int(round(percent * num_files))
+

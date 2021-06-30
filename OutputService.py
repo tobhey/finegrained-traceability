@@ -4,17 +4,32 @@ from typing import Dict, List
 
 from autograd.builtins import isinstance
 
-from Evaluator import F1ResultObject
+from Dataset import Dataset
+from Evaluator import F1ResultObject, F1Evaluator, MAPEvaluator
 import FileUtil
+from SolutionComparator import SolutionComparator
 from TraceLink import TraceLink
 
 log = logging.getLogger(__name__)
 
 
 class OutputService(ABC):
-    
+
     def __init__(self, evaluator):
         self._evaluator = evaluator
+
+    
+class F1ExcelOutputService(OutputService):
+    FILE_LEVEL_DROP_THRESH_PATTERN = "file_level_drop_thresh: {}"
+    MAJ_DROP_THRESH_PATTERN = "majority_drop_thresh: {}"
+    BEST_F1_MESSAGE_PATTERN = "Best f1: {} at f{}"
+    BEST_F1_2D_MESSAGE_PATTERN = "Best f1: {} at m{} f{}"
+    NO_BEST_F1_MESSAGE = "No best F1"
+    
+    def __init__(self, dataset, excel_output_file_path, also_print_eval=True):
+        super().__init__(F1Evaluator(SolutionComparator(dataset.solution_matrix())))
+        self._excel_output_file_path = excel_output_file_path
+        self._also_print_eval = also_print_eval
         
     def _process_trace_link_dict(self, trace_link_dict: Dict[float, List[TraceLink]]):
         """
@@ -54,20 +69,7 @@ class OutputService(ABC):
                 best_file_level_thresh = best_local_thresh
                 
         return print_str_dict, best_eval_result, best_file_level_thresh, best_maj_thresh
-
     
-class F1ExcelOutputService(OutputService):
-    FILE_LEVEL_DROP_THRESH_PATTERN = "file_level_drop_thresh: {}"
-    MAJ_DROP_THRESH_PATTERN = "majority_drop_thresh: {}"
-    BEST_F1_MESSAGE_PATTERN = "Best f1: {} at f{}"
-    BEST_F1_2D_MESSAGE_PATTERN = "Best f1: {} at m{} f{}"
-    NO_BEST_F1_MESSAGE = "No best F1"
-    
-    def __init__(self, evaluator, excel_output_file_path, also_print_log=True):
-        super().__init__(evaluator)
-        self._excel_output_file_path = excel_output_file_path
-        self._also_print_log = also_print_log
-        
     def process_trace_link_dict(self, trace_link_dict: Dict[float, List[TraceLink]]):
         print_str_dict, best_eval_result, best_thresh = self._process_trace_link_dict(trace_link_dict)
         header_row = []  # Contains thresholds
@@ -76,7 +78,7 @@ class F1ExcelOutputService(OutputService):
             header_row.append(self.FILE_LEVEL_DROP_THRESH_PATTERN.format(file_level_thresh))
             value_row.append(print_str_dict[file_level_thresh])
             
-            if self._also_print_log:
+            if self._also_print_eval:
                 log.info(f"f{file_level_thresh}\n"
                          f"{value_row[-1]}\n")
         
@@ -102,7 +104,7 @@ class F1ExcelOutputService(OutputService):
             for file_level_thresh in sorted(print_str_dict[maj_thresh]):
                 next_row.append(print_str_dict[maj_thresh][file_level_thresh])
                 
-                if self._also_print_log:
+                if self._also_print_eval:
                     log.info(f"m{maj_thresh} f{file_level_thresh}\n"
                              f"{next_row[-1]}\n")
                     
@@ -132,7 +134,7 @@ class F1ExcelOutputService(OutputService):
     def _add_best_f1_2D_excel_rows(self, excel_array, print_str_dict, best_eval_result, best_file_level_thresh, best_maj_thresh):
         best_f1_message = self.BEST_F1_2D_MESSAGE_PATTERN.format(best_eval_result.get_defining_value(), best_maj_thresh, best_file_level_thresh)
         excel_array.append([best_f1_message])
-        if self._also_print_log:
+        if self._also_print_eval:
             log.info(best_f1_message)
             
         # Create an 3x3 excel matrix that additionally contains the right and left neighbor threshold of the best f1 threshold as context
@@ -161,3 +163,22 @@ class F1ExcelOutputService(OutputService):
             return context_threshs
         return [best_thresh]
         
+
+class MAPOutputService(OutputService):
+    
+    def __init__(self, dataset: Dataset, fully_connected, bigger_is_more_similar, k):
+        super().__init__(MAPEvaluator(SolutionComparator(dataset.solution_matrix()), dataset.all_original_req_file_names(),
+                                      dataset.all_original_code_file_names(), fully_connected, bigger_is_more_similar, k))
+        self._k = k
+
+    def process_trace_link_dict(self, trace_link_dict: Dict[float, List[TraceLink]]):
+        for thresh in trace_link_dict:
+            mAP = self._evaluator.evaluate(trace_link_dict[thresh])
+            log.info(f"file_level_thresh={thresh}: MAP@{self._k if self._k else 'All'}={mAP}")
+            
+    def process_trace_link_2D_dict(self, trace_link_2D_dict: Dict[float, Dict[float, List[TraceLink]]]):
+        for maj_thresh in trace_link_2D_dict:
+            for file_thresh in trace_link_2D_dict[maj_thresh]:
+                mAP = self._evaluator.evaluate(trace_link_2D_dict[maj_thresh][file_thresh])
+                log.info(f"file_level_thresh={file_thresh}, maj_thresh={maj_thresh}: MAP@{self._k if self._k else 'All'}={mAP}")
+            
