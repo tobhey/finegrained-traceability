@@ -87,6 +87,7 @@ ITouristClientManager.java
 LimitedDocument.java
 ListCategory.java
 News.java
+NewsTableModelTest.java
 OperatorAgency.java
 Point3D.java
 Point3DRenderer.java
@@ -97,6 +98,7 @@ RefreshmentPointAgencyManager.java
 RefreshmentPointCommonManager.java
 ReportStatistic.java
 ReportTableModel.java
+RicercaAvanzata.java
 ScrollableTable.java
 Search.java
 SiteTableModel.java
@@ -105,6 +107,7 @@ Tag.java
 TagAgencyOperatorManager.java
 TagCommonManager.java
 TagTableModel.java
+TestoNewsRendererTest.java
 Tourist.java
 TouristAgencyManager.java
 TouristCard.java
