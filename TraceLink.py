@@ -22,13 +22,13 @@ class TraceLink:
         return self.code_embedding
     
     def __repr__(self):
-        return str(self.valid) + " " + str(self.similarity) + " | " + str(self.req_embedding) + " <-> " + str(self.code_embedding)
+        return f"{self.req_embedding} <-> {self.code_embedding}: {self.similarity}"
 
     def __eq__(self, other):
-        return self.get_req_key(True) == other.get_req_key(True) and self.get_code_key(True) == other.get_code_key(True)
+        return self.get_req_key() == other.get_req_key() and self.get_code_key() == other.get_code_key()
     
     def __hash__(self):
-        return hash((self.get_req_key(True), self.get_code_key(True)))
+        return hash((self.get_req_key(), self.get_code_key()))
 
            
 class CodeToRequirementsCandidates:
