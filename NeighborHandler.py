@@ -20,13 +20,13 @@ class NeighborHandler:
     def get_neighbor_method_keys_of(self, method_key):
         method_callgraph_entry = self._method_call_graph_dict[method_key]
         all_neighbor_keys = None
-        if self.neighbor_strategy == NeighborStrategy.both:
+        if self._neighbor_strategy == NeighborStrategy.both:
             all_neighbor_keys = method_callgraph_entry[CallGraphUtil.CALLED_BY] + method_callgraph_entry[CallGraphUtil.CALLS]
-        elif self.neighbor_strategy == NeighborStrategy.up:
+        elif self._neighbor_strategy == NeighborStrategy.up:
             all_neighbor_keys = method_callgraph_entry[CallGraphUtil.CALLED_BY]
-        elif self.neighbor_strategy == self.NeighborStrategy.down:
+        elif self._neighbor_strategy == self.NeighborStrategy.down:
             all_neighbor_keys = method_callgraph_entry[CallGraphUtil.CALLS]
         else:
-            log.error("Unknown neighbor strategy: " + str(self.neighbor_strategy))
-        return all_neighbor_keys
+            log.error("Unknown neighbor strategy: " + str(self._neighbor_strategy))
+        return [elem[0] for elem in all_neighbor_keys]
 

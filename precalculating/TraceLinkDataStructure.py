@@ -6,6 +6,7 @@ from abc import abstractmethod
 import abc
 
 from TwoDimensionalMatrix import TwoDimensionalMatrix
+import Util
 from precalculating.ArtifactToElementMap import ArtifactToElementMap
 
 
@@ -104,3 +105,9 @@ class ElementLevelTraceLinkDataStructure(TraceLinkDataStructure):
     
     def set_matrix(self, new_matrix: TwoDimensionalMatrix):
         self._similarity_matrix = new_matrix
+
+    def contains_method_key(self, method_key):
+        return self._artifact_to_element_map.contains_method_key(method_key)
+
+    def get_copy_of_similarity_matrix(self):
+        return Util.deep_copy(self._similarity_matrix)

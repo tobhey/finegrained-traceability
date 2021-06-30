@@ -43,7 +43,10 @@ class ArtifactToElementMap:
         return self._code_file_to_method_map.keys()
     
     def all_method_keys(self):
-        return self._code_file_to_method_map.keys()
+        return [method_key for method_keys_of_class in self._code_file_to_method_map.values() for method_key in method_keys_of_class]
     
     def all_non_cg_element_keys(self):
-        return self._code_file_to_non_cg_element_map.keys()
+        return [non_cg_element_key for non_cg_element_keys_in_class in self._code_file_to_non_cg_element_map.values() for non_cg_element_key in non_cg_element_keys_in_class]
+
+    def contains_method_key(self, method_key):
+        return method_key in self.all_method_keys()

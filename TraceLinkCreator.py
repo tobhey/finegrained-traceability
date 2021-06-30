@@ -3,7 +3,9 @@ from collections import UserDict
 from enum import Enum
 import logging
 
+import FileUtil
 from NeighborHandler import NeighborHandler
+import Paths
 from Preprocessing import CallGraphUtil
 from TraceLink import TraceLink
 from TwoDimensionalMatrix import TwoDimensionalMatrix
@@ -52,9 +54,9 @@ class MajorityDecisionTraceLinkCreator(TraceLinkCreator):
         
         # Step 2: (optional) Update code element to (whole) req trace links according to call graph neighbors
         if self._callgraph_aggregator:
-            trace_link_data_structure = self._callgraph_aggregator.process(self._trace_link_data_structure)
-
+            trace_link_data_structure = self._callgraph_aggregator.process(trace_link_data_structure)
         # Step 3: Do majority decision to obtain (whole) code file to (whole) req similarities
+        
         return self._majority_decision.process(trace_link_data_structure, majority_drop_thresh)
 
         
@@ -102,10 +104,10 @@ class CallGraphTraceLinkAggregator:
             
     def process(self, trace_link_data_structure) -> TraceLinkDataStructure:
         self._trace_link_data_structure = trace_link_data_structure
-        method_to_req_similarity_matrix_with_cg = TwoDimensionalMatrix.create_empty()
+        method_to_req_similarity_matrix_with_cg = self._trace_link_data_structure.get_copy_of_similarity_matrix()
         for method_key in self._trace_link_data_structure.all_method_keys():
             if not method_key in self.method_call_graph_dict:
-                log.info(f"SKIP: {method_key} is not in the call graph")
+                log.debug(f"SKIP: {method_key} is not in the call graph")
             else:
                 all_neighbor_keys = self.neighbor_handler.get_neighbor_method_keys_of(method_key)
                 for req_file_name in self._trace_link_data_structure.all_req_file_names():
@@ -116,9 +118,15 @@ class CallGraphTraceLinkAggregator:
     
     def _weighted_simialrity_sum_of(self, method_key, all_neighbor_keys, req_file_name):
         current_sim = self._trace_link_data_structure.similarity_between(req_file_name, method_key)
-        neighbor_sims = [self._trace_link_data_structure.similarity_between(req_file_name, neighbor_key) for neighbor_key in all_neighbor_keys]
+        neighbor_sims = []
+        for neighbor_key in all_neighbor_keys:
+            if not self._trace_link_data_structure.contains_method_key(neighbor_key):
+                log.debug(f"The neighbor method {neighbor_key} is not in the precalculated trace link file. (Maybe it's not public)")
+            else:
+                neighbor_sims.append(self._trace_link_data_structure.similarity_between(req_file_name, neighbor_key))
         if not neighbor_sims:  # Method has no neighbors
             return current_sim
+
         neighbor_weight = (1 - self.method_weight)
         return self.method_weight * current_sim + neighbor_weight * sum(neighbor_sims) / len(neighbor_sims)
 
