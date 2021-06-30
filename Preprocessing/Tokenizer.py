@@ -113,57 +113,49 @@ class UCTokenizer(NaturalSpeechTokenizer):
         uc_quality_req_words = []
         uc_flow_of_events_words = []
         last_word_category = uc_description_words  # Default
-        if isinstance(self._dataset, Libest):
-            for line in text_lines:
-                line = line.lstrip()  # Remove leading white spaces/tabs
-                if self._dataset.UC_NAME_TEMPLATE_REGEX.match(line):
-                    matched_string = self._dataset.UC_NAME_TEMPLATE_REGEX.match(line).group(0)
-                    uc_name_words += self.tokenize_to_string_list(line[len(matched_string):])
-                else: 
-                    uc_flow_of_events_words += self.tokenize_to_string_list(line)
-        else:
-            for line in text_lines:
-                line = line.lstrip()  # Remove leading white spaces/tabs
-                if self._dataset.UC_NAME_TEMPLATE_REGEX.match(line):
-                    matched_string = self._dataset.UC_NAME_TEMPLATE_REGEX.match(line).group(0)
-                    uc_name_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_name_words
-                elif self._dataset.UC_DESCRIPTION_TEMPLATE_REGEX.match(line):
-                    matched_string = self._dataset.UC_DESCRIPTION_TEMPLATE_REGEX.match(line).group(0)
-                    uc_description_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_description_words
-                elif self._dataset.UC_ACTOR_TEMPLATE_REGEX.match(line):
-                    matched_string = self._dataset.UC_ACTOR_TEMPLATE_REGEX.match(line).group(0)
-                    uc_actor_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_actor_words
-                elif self._dataset.UC_PRECONDITION_TEMPLATE_REGEX.match(line):
-                    matched_string = self._dataset.UC_PRECONDITION_TEMPLATE_REGEX.match(line).group(0)
-                    uc_precond_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_precond_words
-                elif self._dataset.UC_POSTCONDITION_TEMPLATE_REGEX.match(line):
-                    matched_string = self._dataset.UC_POSTCONDITION_TEMPLATE_REGEX.match(line).group(0)
-                    uc_postcond_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_postcond_words
-                elif self._dataset.UC_FLOW_OF_EVENTS_TEMPLATE_REGEX.match(line):
-                    matched_string = self._dataset.UC_FLOW_OF_EVENTS_TEMPLATE_REGEX.match(line).group(0)
-                    uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_flow_of_events_words
-                elif self._dataset.UC_QUALI_REQ_TEMPLATE_REGEX.match(line):
-                    matched_string = self._dataset.UC_QUALI_REQ_TEMPLATE_REGEX.match(line).group(0)
-                    uc_quality_req_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_quality_req_words
-                elif self._dataset.UC_USER_TEMPLATE_REGEX.match(line):
-                    # part of flow of evnts
-                    matched_string = self._dataset.UC_USER_TEMPLATE_REGEX.match(line).group(0)
-                    uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_flow_of_events_words
-                elif self._dataset.UC_SYSTEM_TEMPLATE_REGEX.match(line):
-                    # part of flow of evnts
-                    matched_string = self._dataset.UC_SYSTEM_TEMPLATE_REGEX.match(line).group(0)
-                    uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
-                    last_word_category = uc_flow_of_events_words    
-                else:
-                    last_word_category += self.tokenize_to_string_list(line)
+
+        for line in text_lines:
+            line = line.lstrip()  # Remove leading white spaces/tabs
+            if self._dataset.UC_NAME_TEMPLATE_REGEX.match(line):
+                matched_string = self._dataset.UC_NAME_TEMPLATE_REGEX.match(line).group(0)
+                uc_name_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_name_words
+            elif self._dataset.UC_DESCRIPTION_TEMPLATE_REGEX.match(line):
+                matched_string = self._dataset.UC_DESCRIPTION_TEMPLATE_REGEX.match(line).group(0)
+                uc_description_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_description_words
+            elif self._dataset.UC_ACTOR_TEMPLATE_REGEX.match(line):
+                matched_string = self._dataset.UC_ACTOR_TEMPLATE_REGEX.match(line).group(0)
+                uc_actor_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_actor_words
+            elif self._dataset.UC_PRECONDITION_TEMPLATE_REGEX.match(line):
+                matched_string = self._dataset.UC_PRECONDITION_TEMPLATE_REGEX.match(line).group(0)
+                uc_precond_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_precond_words
+            elif self._dataset.UC_POSTCONDITION_TEMPLATE_REGEX.match(line):
+                matched_string = self._dataset.UC_POSTCONDITION_TEMPLATE_REGEX.match(line).group(0)
+                uc_postcond_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_postcond_words
+            elif self._dataset.UC_FLOW_OF_EVENTS_TEMPLATE_REGEX.match(line):
+                matched_string = self._dataset.UC_FLOW_OF_EVENTS_TEMPLATE_REGEX.match(line).group(0)
+                uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_flow_of_events_words
+            elif self._dataset.UC_QUALI_REQ_TEMPLATE_REGEX.match(line):
+                matched_string = self._dataset.UC_QUALI_REQ_TEMPLATE_REGEX.match(line).group(0)
+                uc_quality_req_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_quality_req_words
+            elif self._dataset.UC_USER_TEMPLATE_REGEX.match(line):
+                # part of flow of evnts
+                matched_string = self._dataset.UC_USER_TEMPLATE_REGEX.match(line).group(0)
+                uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_flow_of_events_words
+            elif self._dataset.UC_SYSTEM_TEMPLATE_REGEX.match(line):
+                # part of flow of evnts
+                matched_string = self._dataset.UC_SYSTEM_TEMPLATE_REGEX.match(line).group(0)
+                uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_flow_of_events_words    
+            else:
+                last_word_category += self.tokenize_to_string_list(line)
                 
         complete_uc_flow_of_events_words_string = " ".join(uc_flow_of_events_words)
         if self._italian:
