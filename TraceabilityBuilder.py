@@ -7,7 +7,8 @@ from Dataset import Dataset
 from EmbeddingCreator.CodeEmbeddingCreator import MockCodeEmbeddingCreator
 from EmbeddingCreator.RequirementEmbeddingCreator import MockUCEmbeddingCreator
 from EmbeddingCreator.WordChooser import SentenceChooser, MethodSignatureChooser, \
-    ClassnameWordChooser
+    ClassnameWordChooser, MethodCommentSignatureChooser, \
+    UCNameDescFlowWordChooser
 from EmbeddingCreator.WordEmbeddingCreator import RandomWordEmbeddingCreator, \
     FastTextEmbeddingCreator
 from Evaluator import Evaluator
@@ -21,7 +22,7 @@ from Preprocessing.Preprocessor import Preprocessor, CamelCaseSplitter, \
     JavaCodeStopWordRemover, StopWordRemover, Lemmatizer, WordLengthFilter, \
     JavaDocFilter
 from Preprocessing.Tokenizer import WordAndSentenceTokenizer, WordTokenizer, \
-    JavaDocDescriptionOnlyTokenizer
+    JavaDocDescriptionOnlyTokenizer, UCTokenizer
 from SimilarityFilter import SimilarityFilter
 from SolutionComparator import SolutionComparator
 from TraceLinkCreator import CallGraphTraceLinkAggregator
@@ -138,12 +139,36 @@ class BaseLineRunner(WMDRunner):
         trace_link_data_structure.write_data(matrix_file_path, artifact_map_file_path)
 
     
+class BaseLineMCRunner(BaseLineRunner):
+    """
+    BaseLine + Method Comments
+    """
+
+    LABEL = "BaseLineMc"
+
+    def __init__(self, dataset: Dataset):
+        super().__init__(dataset)
+        self.method_word_chooser = MethodCommentSignatureChooser()
+
+
 class BaseLineCDRunner(BaseLineRunner):
     """
     BaseLine + Call Graph Dependency
     """
-
+    # Don't override the LABEL because this runner uses the same default precalculated file-(name) as BaseLine
+    
     def __init__(self, dataset: Dataset):
         super().__init__(dataset)
         self.callgraph_aggregator = CallGraphTraceLinkAggregator(0.9, NeighborStrategy.both, dataset.method_callgraph())
+
+        
+class BaseLineUCTRunner(BaseLineRunner):
+    """
+    BaseLine + Use Case Templates
+    """
+    LABEL = "BaseLineUct"
     
+    def __init__(self, dataset: Dataset):
+        super().__init__(dataset)
+        self.req_tokenizer = UCTokenizer(self.dataset, not self.dataset.is_english())
+        self.requirements_word_chooser = UCNameDescFlowWordChooser()
