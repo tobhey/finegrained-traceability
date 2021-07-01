@@ -3,8 +3,7 @@ import abc, Util, logging, FileUtil
 from EmbeddingContainer import ClassEmbeddingContainer
 from EmbeddingCreator.EmbeddingCreator import EmbeddingCreator
 from Paths import PREPROCESSED_CODE_OUTPUT_DIR
-from Preprocessing.CallGraphUtil import build_method_param_dict_key, \
-    build_class_method_param_dict_key2
+from Preprocessing.CallGraphUtil import build_class_method_param_dict_key
 
 log = logging.getLogger(__name__)
 
@@ -47,8 +46,7 @@ class CodeEmbeddingCreator(EmbeddingCreator):
             method_vector = self._embedd_and_average(self._method_word_chooser.choose_words_from(classifier, method))
             if method_vector is None:  # Can happen if e.g. all method words are removed via preprocessing
                 continue 
-            method_key = build_method_param_dict_key(method.get_original_name(), method.get_original_param_type_list())
-            method_key_with_classifier = build_class_method_param_dict_key2(classifier.get_original_name(), method_key)
+            method_key_with_classifier = build_class_method_param_dict_key(classifier.get_original_name(), method.get_original_name(), method.get_original_param_type_list())
             class_embedding.set_method_vector(method_key_with_classifier, method_vector)
         return class_embedding
 
@@ -79,8 +77,7 @@ class MockCodeEmbeddingCreator(CodeEmbeddingCreator):
             method_words = self._method_word_chooser.choose_words_from(classifier, method)
             if method_words is None:  # Can happen if e.g. all method words are removed via preprocessing
                 continue 
-            method_key = build_method_param_dict_key(method.get_original_name(), method.get_original_param_type_list())
-            method_key_with_classifier = build_class_method_param_dict_key2(classifier.get_original_name(), method_key)
+            method_key_with_classifier = build_class_method_param_dict_key(classifier.get_original_name(), method.get_original_name(), method.get_original_param_type_list())
             class_embedding.set_method_vector(method_key_with_classifier, method_words)
         return class_embedding
 

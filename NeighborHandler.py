@@ -28,5 +28,5 @@ class NeighborHandler:
             all_neighbor_keys = method_callgraph_entry[CallGraphUtil.CALLS]
         else:
             log.error("Unknown neighbor strategy: " + str(self._neighbor_strategy))
-        return [elem[0] for elem in all_neighbor_keys]
+        return [elem for elem in all_neighbor_keys]
 
