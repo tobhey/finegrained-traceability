@@ -79,8 +79,8 @@ class F1ExcelOutputService(OutputService):
             value_row.append(print_str_dict[file_level_thresh])
             
             if self._also_print_eval:
-                log.info(f"f{file_level_thresh}\n"
-                         f"{value_row[-1]}\n")
+                log.info(f"\nf{file_level_thresh}\n"
+                         f"{value_row[-1]}")
         
         excel_array = [header_row] + [value_row]
         excel_array.append([""])  # Add empty row as divider
@@ -105,8 +105,8 @@ class F1ExcelOutputService(OutputService):
                 next_row.append(print_str_dict[maj_thresh][file_level_thresh])
                 
                 if self._also_print_eval:
-                    log.info(f"m{maj_thresh} f{file_level_thresh}\n"
-                             f"{next_row[-1]}\n")
+                    log.info(f"\nm{maj_thresh} f{file_level_thresh}\n"
+                             f"{next_row[-1]}")
                     
             excel_array.append(next_row)
             
@@ -122,7 +122,7 @@ class F1ExcelOutputService(OutputService):
         best_f1_message = self.BEST_F1_MESSAGE_PATTERN.format(best_eval_result.get_defining_value(), best_thresh)
         excel_array.append([best_f1_message])
         if self._also_print_log:
-            log.info(best_f1_message)
+            log.info(best_f1_message + "\n")
             
         # Create an excel row that additionally contains the right and left neighbor threshold of the best f1 threshold as context
         context_threshs = self._get_context_thresholds(print_str_dict.keys(), best_thresh)
@@ -135,7 +135,7 @@ class F1ExcelOutputService(OutputService):
         best_f1_message = self.BEST_F1_2D_MESSAGE_PATTERN.format(best_eval_result.get_defining_value(), best_maj_thresh, best_file_level_thresh)
         excel_array.append([best_f1_message])
         if self._also_print_eval:
-            log.info(best_f1_message)
+            log.info(best_f1_message + "\n")
             
         # Create an 3x3 excel matrix that additionally contains the right and left neighbor threshold of the best f1 threshold as context
         file_level_context_threshs = self._get_context_thresholds(list(print_str_dict.values())[0].keys(), best_file_level_thresh)
