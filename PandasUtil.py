@@ -1,5 +1,7 @@
 import logging
 
+import numpy
+
 from FileUtil import create_missing_dirs
 import pandas as pd
 
@@ -17,7 +19,7 @@ def read_csv_to_dataframe_with_header(path, header):
 
 
 def read_csv_to_dataframe(path):
-    return pd.read_csv(path, delimiter=CSV_DELIMITER, header=0, encoding="utf8", index_col=0)
+    return pd.read_csv(path, delimiter=CSV_DELIMITER, header=0, encoding="utf8", index_col=0, float_precision="round_trip")
 
 
 def write_dataframe_to_csv(dataframe, output_filename):
