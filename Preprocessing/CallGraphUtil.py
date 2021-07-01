@@ -202,5 +202,3 @@ def _split_param(params):
             result_param_list += [param]
     return result_param_list
 
-
-read_raw_callgraph_txt(EANCI())
