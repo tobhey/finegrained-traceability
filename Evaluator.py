@@ -100,7 +100,7 @@ class MAPEvaluator(Evaluator):
                 first_k_links = first_k_links[:self._k]
             precision_sum += self._calculate_average_precision(first_k_links)
             
-        return  precision_sum / len(self._original_req_file_names)
+        return  MAPResultObject(precision_sum / len(self._original_req_file_names), self._k)
 
     def _calculate_average_precision(self, similarity_relevance_list):
         """
@@ -181,23 +181,19 @@ class F1ResultObject(EvalResultObject):
         return self.f1
 
 
-class FileLevelEvaluator(Evaluator):
-    """
-    Loeschen
-    """
+class MAPResultObject(ABC):
 
-    def evaluate_file_level(self, file_level_trace_links: dict):
-        file_level_metric_dict = {}
-        for file_level_thresh in file_level_trace_links:
-            file_level_metric_dict[file_level_thresh] = self.evaluate(file_level_trace_links[file_level_thresh])
-        return file_level_metric_dict
-        # print_str = Util.build_prec_recall_f1_print_str(precision, recall, f_1, true_positives, total_num_found_links, self._sol_matrix_size)
+    def __init__(self, mAP, k):
+        self.mAP = mAP
+        self.k = k
 
+    def get_print_str(self):
+        return f"MAP@{self.k if self.k else 'All'}={self.mAP}"
+    
+    def is_greater_than(self, other):
+        if isinstance(other, EmptyResultObject):
+            return True
+        return self.mAP > other.mAP
 
-class MajorityEvaluator(Evaluator):
-
-    def evaluate_maj_level(self, file_level_trace_links: dict):
-        file_level_metric_dict = {}
-        for file_level_thresh in file_level_trace_links:
-            file_level_metric_dict[file_level_thresh] = self.evaluate(file_level_trace_links[file_level_thresh])
-        return file_level_metric_dict
+    def get_defining_value(self):
+        return self.mAP

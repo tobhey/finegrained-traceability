@@ -169,16 +169,15 @@ class MAPOutputService(OutputService):
     def __init__(self, dataset: Dataset, fully_connected, bigger_is_more_similar, k):
         super().__init__(MAPEvaluator(SolutionComparator(dataset.solution_matrix()), dataset.all_original_req_file_names(),
                                       dataset.all_original_code_file_names(), fully_connected, bigger_is_more_similar, k))
-        self._k = k
 
     def process_trace_link_dict(self, trace_link_dict: Dict[float, List[TraceLink]]):
         for thresh in trace_link_dict:
-            mAP = self._evaluator.evaluate(trace_link_dict[thresh])
-            log.info(f"file_level_thresh={thresh}: MAP@{self._k if self._k else 'All'}={mAP}")
+            map_result_object = self._evaluator.evaluate(trace_link_dict[thresh])
+            log.info(f"file_level_thresh={thresh}: {map_result_object.get_print_str()}")
             
     def process_trace_link_2D_dict(self, trace_link_2D_dict: Dict[float, Dict[float, List[TraceLink]]]):
         for maj_thresh in trace_link_2D_dict:
             for file_thresh in trace_link_2D_dict[maj_thresh]:
-                mAP = self._evaluator.evaluate(trace_link_2D_dict[maj_thresh][file_thresh])
-                log.info(f"file_level_thresh={file_thresh}, maj_thresh={maj_thresh}: MAP@{self._k if self._k else 'All'}={mAP}")
+                map_result_object = self._evaluator.evaluate(trace_link_2D_dict[maj_thresh][file_thresh])
+                log.info(f"file_level_thresh={file_thresh}, maj_thresh={maj_thresh}: {map_result_object.get_print_str()}")
             
