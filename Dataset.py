@@ -144,6 +144,11 @@ class Etour(Dataset):
     UC_USER_TEMPLATE_REGEX = re.compile("a^", re.RegexFlag.IGNORECASE)  # Should not match anything
     UC_SYSTEM_TEMPLATE_REGEX = re.compile("a^", re.RegexFlag.IGNORECASE)  # Should not match anything
     
+    def __init__(self, use_italian_solution_matrix=False):
+        super().__init__()
+        if use_italian_solution_matrix:
+            self.ETOUR_SOLUTION_MATRIX_PATH = self.ETOUR_ITAL_SOLUTION_MATRIX_PATH
+
     def name(self):
         return "etour"
     
@@ -277,6 +282,11 @@ class Smos(Dataset):
     UC_SYSTEM_TEMPLATE_REGEX = re.compile("^Sistema(:)?", re.RegexFlag.IGNORECASE)
     UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^Sequenza degli eventi(:)?", re.RegexFlag.IGNORECASE)
     
+    def __init__(self, use_english_solution_matrix=False):
+        super().__init__()
+        if use_english_solution_matrix:
+            self.SMOS_SOLUTION_MATRIX_PATH = self.SMOS_ENGLISH_SOLUTION_MATRIX_PATH
+            
     def name(self):
         return "smos"
     
