@@ -87,6 +87,7 @@ class WMDRunner(TraceabilityRunner):
 class BaseLineRunner(WMDRunner):
     ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN = "{dataset_folder}/{folder}/{dataset_name}_{name_suffix}_a2eMap.json"
     LABEL = "BaseLine"
+    DEFAULT_DATASOURCE_SUFFIX = "BaseLine"
     WMD_VALUE_MAP_FUNCTION = partial(Util.map_value_range, 0, 2)  # Map the wmd distances from [0,2] to [0,1]
     
     def __init__(self, dataset: Dataset):
@@ -123,7 +124,7 @@ class BaseLineRunner(WMDRunner):
         output_service.process_trace_link_2D_dict(self._run([1], [1], matrix_file_path, artifact_map_file_path))
         
     def default_a2eMap_path(self):
-        return self.ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN.format(dataset_folder=self.dataset.folder(), folder=self.LABEL, dataset_name=self.dataset.name(), name_suffix=self.LABEL)
+        return self.ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN.format(dataset_folder=self.dataset.folder(), folder=self.DEFAULT_DATASOURCE_SUFFIX, dataset_name=self.dataset.name(), name_suffix=self.DEFAULT_DATASOURCE_SUFFIX)
     
     def precalculate(self, matrix_file_path=None, artifact_map_file_path=None):
         if not matrix_file_path:
@@ -145,6 +146,7 @@ class BaseLineMCRunner(BaseLineRunner):
     """
 
     LABEL = "BaseLineMc"
+    DEFAULT_DATASOURCE_SUFFIX = "BaseLineMc"
 
     def __init__(self, dataset: Dataset):
         super().__init__(dataset)
@@ -155,7 +157,8 @@ class BaseLineCDRunner(BaseLineRunner):
     """
     BaseLine + Call Graph Dependency
     """
-    # Don't override the LABEL because this runner uses the same default precalculated file-(name) as BaseLine
+    LABEL = "BaseLineCd"
+    # Don't override the DEFAULT_DATASOURCE_SUFFIX because this runner uses the same default precalculated file-(name) as BaseLine
     
     def __init__(self, dataset: Dataset):
         super().__init__(dataset)
@@ -167,8 +170,59 @@ class BaseLineUCTRunner(BaseLineRunner):
     BaseLine + Use Case Templates
     """
     LABEL = "BaseLineUct"
+    DEFAULT_DATASOURCE_SUFFIX = "BaseLineUct"
     
     def __init__(self, dataset: Dataset):
         super().__init__(dataset)
         self.req_tokenizer = UCTokenizer(self.dataset, not self.dataset.is_english())
         self.requirements_word_chooser = UCNameDescFlowWordChooser()
+
+
+class BaseLineUCTCDRunner(BaseLineUCTRunner):
+    """
+    BaseLine + Use Case Templates + Call Graph Dependency
+    """
+    LABEL = "BaseLineUctCd"
+    # Don't override the DEFAULT_DATASOURCE_SUFFIX because this runner uses the same default precalculated file-(name) as BaseLineUct
+    
+    def __init__(self, dataset: Dataset):
+        super().__init__(dataset)
+        self.callgraph_aggregator = CallGraphTraceLinkAggregator(0.9, NeighborStrategy.both, dataset.method_callgraph())
+
+
+class BaseLineMCCDRunner(BaseLineMCRunner):
+    """
+    BaseLine + Method Comments + Call Graph Dependency
+    """
+    LABEL = "BaseLineMcCd"
+    # Don't override the DEFAULT_DATASOURCE_SUFFIX because this runner uses the same default precalculated file-(name) as BaseLineMc
+    
+    def __init__(self, dataset: Dataset):
+        super().__init__(dataset)
+        self.callgraph_aggregator = CallGraphTraceLinkAggregator(0.9, NeighborStrategy.both, dataset.method_callgraph())
+
+        
+class BaseLineMCUCTRunner(BaseLineUCTRunner):
+    """
+    BaseLine + Method Comments + Use Case Templates
+    """
+
+    LABEL = "BaseLineMcUct"
+    DEFAULT_DATASOURCE_SUFFIX = "BaseLineMcUct"
+
+    def __init__(self, dataset: Dataset):
+        super().__init__(dataset)
+        self.method_word_chooser = MethodCommentSignatureChooser()
+
+
+class BaseLineMCUCTCDRunner(BaseLineMCUCTRunner):
+    """
+    BaseLine + Method Comments + Use Case Templates + Call Dependency
+    """
+
+    LABEL = "BaseLineMcUctCd"
+    # Don't override the DEFAULT_DATASOURCE_SUFFIX because this runner uses the same default precalculated file-(name) as BaseLineMcUct
+
+    def __init__(self, dataset: Dataset):
+        super().__init__(dataset)
+        self.callgraph_aggregator = CallGraphTraceLinkAggregator(0.9, NeighborStrategy.both, dataset.method_callgraph())
