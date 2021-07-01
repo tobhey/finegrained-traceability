@@ -81,7 +81,7 @@ class WMDRunner(TraceabilityRunner):
         self.similarity_filter = SimilarityFilter(False)
     
     def default_matrix_path(self):
-        return self.DEFAULT_FILE_PATH.format(dataset_folder=self.dataset.folder(), folder=self.LABEL, dataset_name=self.dataset.name(), name_suffix=self.LABEL)
+        return self.DEFAULT_FILE_PATH.format(dataset_folder=self.dataset.folder(), folder=self.DEFAULT_DATASOURCE_SUFFIX, dataset_name=self.dataset.name(), name_suffix=self.DEFAULT_DATASOURCE_SUFFIX)
 
 
 class BaseLineRunner(WMDRunner):
