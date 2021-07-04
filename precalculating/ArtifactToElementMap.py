@@ -1,7 +1,18 @@
-import FileUtil
+from utility import FileUtil
 
 
 class ArtifactToElementMap:
+    """
+    This is part of an ElementLevelTracelinkDataStructure and contains the mappings from code files to its containing code elements
+    and from requirement files to its containing requirement elements (e. g. sentences, represented by an id)
+    You DON'T need to create it by yourself, the ElementLevelTracelinkDataStructureBuilder will do it automatically.
+    
+    ArtifactToElementMap contains 3 dictionaries:
+    - REQ_FILE_TO_REQ_ELEMENT_ID_MAP: key = Requirement file name; value = list of Requirement element ids (custom ids for each requirement sentence)
+    - CODE_FILE_TO_METHOD_MAP: key = Code file name; value = list of method keys. For the method key shape see CallgraphUtil.build_class_method_param_dict_key
+    - CODE_FILE_TO_NON_CG_ELEMENT_MAP: key = Code file name; value = list of non call graph element keys. The key is defined by the used CodeEmbeddingCreator.
+    
+    """
     REQ_FILE_TO_REQ_ELEMENT_ID_MAP = "req_file_to_req_element_id_map"
     CODE_FILE_TO_METHOD_MAP = "code_file_to_method_map"
     CODE_FILE_TO_NON_CG_ELEMENT_MAP = "code_file_to_non_cg_element_map"

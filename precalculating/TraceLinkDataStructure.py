@@ -1,17 +1,21 @@
-"""
-Use load_data_from() to load a existing precalculated file or an AllTraceLinkCombinationsBuilder to create from embeddings
-"""
+
 
 from abc import abstractmethod
 import abc
 
-from TwoDimensionalMatrix import TwoDimensionalMatrix
-import Util
 from precalculating.ArtifactToElementMap import ArtifactToElementMap
+from precalculating.TwoDimensionalMatrix import TwoDimensionalMatrix
+from utility import Util
 
 
 class TraceLinkDataStructure(abc.ABC):
+    """
+    This data structure contains similarity values between artifacts or artifact elements.
+    The data structure can be persisted and serves as precalculated traceability data.
     
+    Use load_data_from() to load a existing precalculated file or a TraceLinkDataStructureBuilder to create it from embeddings
+    """
+
     def __init__(self, similarity_matrix):
         self._similarity_matrix = similarity_matrix
     
@@ -40,7 +44,8 @@ class TraceLinkDataStructure(abc.ABC):
     
 class FileLevelTraceLinkDataStructure(TraceLinkDataStructure):
     """
-        Don't use the constructor to instantiate
+        Don't use the constructor to instantiate; either use the FileLevelTraceLinkDataStructureBuilder
+        to create a new data structure from embeddings or load a precalculated data structure with load_data_from()
         
         Rows = req file names; columns = code file names; entry = similarity
     """
@@ -57,8 +62,11 @@ class FileLevelTraceLinkDataStructure(TraceLinkDataStructure):
 
 class ElementLevelTraceLinkDataStructure(TraceLinkDataStructure):
     """
-    Contains an artifact to element map with the mappings between code classes and their elements
-    and a TwoDimensionalMatrix containing the actual similarity values
+    Don't use the constructor to instantiate; either use the ElementLevelTraceLinkDataStructureBuilder
+    to create a new data structure from embeddings or load a precalculated data structure with load_data_from()
+    
+    Contains an artifact to element map with the mappings between code/ req files and their elements
+    and a TwoDimensionalMatrix containing the actual similarity values between req elements and code elements
     """
     ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN = "{folder}/{filename}_a2eMap.json"
     

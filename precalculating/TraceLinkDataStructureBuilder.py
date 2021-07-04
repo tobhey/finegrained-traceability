@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 import logging
 
-from TwoDimensionalMatrix import TwoDimensionalMatrix
 from precalculating.ArtifactToElementMap import ArtifactToElementMap
 from precalculating.TraceLinkDataStructure import TraceLinkDataStructure, \
     FileLevelTraceLinkDataStructure, ElementLevelTraceLinkDataStructure
+from precalculating.TwoDimensionalMatrix import TwoDimensionalMatrix
 
 log = logging.getLogger(__name__)
 
