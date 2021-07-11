@@ -173,11 +173,11 @@ class MAPOutputService(OutputService):
     def process_trace_link_dict(self, trace_link_dict: Dict[float, List[TraceLink]]):
         for thresh in trace_link_dict:
             map_result_object = self._evaluator.evaluate(trace_link_dict[thresh])
-            log.info(f"file_level_thresh={thresh}: {map_result_object.get_print_str()}")
+            log.info(f"\nfile_level_thresh={thresh}: {map_result_object.get_print_str()}")
             
     def process_trace_link_2D_dict(self, trace_link_2D_dict: Dict[float, Dict[float, List[TraceLink]]]):
         for maj_thresh in trace_link_2D_dict:
             for file_thresh in trace_link_2D_dict[maj_thresh]:
                 map_result_object = self._evaluator.evaluate(trace_link_2D_dict[maj_thresh][file_thresh])
-                log.info(f"file_level_thresh={file_thresh}, maj_thresh={maj_thresh}: {map_result_object.get_print_str()}")
+                log.info(f"\nfile_level_thresh={file_thresh}, maj_thresh={maj_thresh}: {map_result_object.get_print_str()}")
             
