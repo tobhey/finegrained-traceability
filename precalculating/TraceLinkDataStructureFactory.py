@@ -9,9 +9,9 @@ from precalculating.TwoDimensionalMatrix import TwoDimensionalMatrix
 log = logging.getLogger(__name__)
 
 
-class TraceLinkDataStructureBuilder(ABC):
+class TraceLinkDataStructureFactory(ABC):
     """
-    The TraceLinkDataStructureBuilder takes requirement and class embedding containers and creates an TraceLinkDataStructure object.
+    The TraceLinkDataStructureFactory takes requirement and class embedding containers and creates an TraceLinkDataStructure object.
     """
 
     def __init__(self, req_embedding_containers, code_embedding_containers, similarity_function, map_similarity_value_range_function=None):
@@ -21,13 +21,13 @@ class TraceLinkDataStructureBuilder(ABC):
         self._map_similarity_value_range_function = map_similarity_value_range_function  # Use this to normalize similarity value range (e.g. for wmd)
         
     @abstractmethod
-    def build(self) -> TraceLinkDataStructure: 
+    def create(self) -> TraceLinkDataStructure: 
         pass
 
 
-class FileLevelTraceLinkDataStructureBuilder(TraceLinkDataStructureBuilder):
+class FileLevelTraceLinkDataStructureFactory(TraceLinkDataStructureFactory):
     
-    def build(self):
+    def create(self):
         
         similarity_matrix = TwoDimensionalMatrix.create_empty()
         
@@ -43,9 +43,9 @@ class FileLevelTraceLinkDataStructureBuilder(TraceLinkDataStructureBuilder):
         return FileLevelTraceLinkDataStructure(similarity_matrix)
 
 
-class ElementLevelTraceLinkDataStructureBuilder(TraceLinkDataStructureBuilder):
+class ElementLevelTraceLinkDataStructureFactory(TraceLinkDataStructureFactory):
 
-    def build(self):
+    def create(self):
         similarity_matrix = TwoDimensionalMatrix.create_empty()
         req_file_to_req_element_id_map, code_file_to_method_map, code_file_to_non_cg_element_map = {}, {}, {}
         

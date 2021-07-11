@@ -13,7 +13,7 @@ from embeddingCreator.WordChooser import MethodSignatureChooser, SentenceChooser
 from embeddingCreator.WordEmbeddingCreator import FastTextEmbeddingCreator
 from evaluation.OutputService import F1ExcelOutputService, MAPOutputService
 from precalculating.TraceLinkDataStructure import ElementLevelTraceLinkDataStructure
-from precalculating.TraceLinkDataStructureBuilder import ElementLevelTraceLinkDataStructureBuilder
+from precalculating.TraceLinkDataStructureFactory import ElementLevelTraceLinkDataStructureFactory
 from preprocessing.JavaCodeASTTokenizer import JavaCodeASTTokenizer
 from preprocessing.Preprocessor import CamelCaseSplitter, LowerCaseTransformer, \
     NonLetterFilter, UrlRemover, Separator, JavaCodeStopWordRemover, \
@@ -62,7 +62,7 @@ class TraceabilityRunner:
 
 
 class WMDRunner(TraceabilityRunner):
-    DEFAULT_FILE_PATH = "{dataset_folder}/{folder}/{dataset_name}_{name_suffix}_matrix.csv"
+    DEFAULT_MATRIX_FILE_PATH = "{dataset_folder}/{folder}/{dataset_name}_{name_suffix}_matrix.csv"
 
     def __init__(self, dataset: Dataset):
         super().__init__(dataset)
@@ -72,7 +72,7 @@ class WMDRunner(TraceabilityRunner):
         self.similarity_filter = SimilarityFilter(False)
     
     def default_matrix_path(self):
-        return self.DEFAULT_FILE_PATH.format(dataset_folder=self.dataset.folder(), folder=self.DEFAULT_DATASOURCE_SUFFIX, dataset_name=self.dataset.name(), name_suffix=self.DEFAULT_DATASOURCE_SUFFIX)
+        return self.DEFAULT_MATRIX_FILE_PATH.format(dataset_folder=self.dataset.folder(), folder=self.DEFAULT_DATASOURCE_SUFFIX, dataset_name=self.dataset.name(), name_suffix=self.DEFAULT_DATASOURCE_SUFFIX)
 
 
 class BaseLineRunner(WMDRunner):
@@ -108,8 +108,8 @@ class BaseLineRunner(WMDRunner):
         req_embedding_containers = MockUCEmbeddingCreator(self.requirements_word_chooser, self.req_preprocessor, word_emb_creator, self.req_tokenizer).create_all_embeddings(self.dataset.req_folder())
         code_embedding_containers = MockCodeEmbeddingCreator(self.method_word_chooser, self.classname_word_chooser, self.code_preprocessor, word_emb_creator, self.code_tokenizer, classname_as_optional_voter=True).create_all_embeddings(self.dataset.code_folder())
         
-        data_structure_builder = ElementLevelTraceLinkDataStructureBuilder(req_embedding_containers, code_embedding_containers, word_emb_creator.word_movers_distance, self.WMD_VALUE_MAP_FUNCTION)
-        trace_link_data_structure = data_structure_builder.build()
+        data_structure_builder = ElementLevelTraceLinkDataStructureFactory(req_embedding_containers, code_embedding_containers, word_emb_creator.word_movers_distance, self.WMD_VALUE_MAP_FUNCTION)
+        trace_link_data_structure = data_structure_builder.create()
         trace_link_data_structure.write_data(matrix_file_path, artifact_map_file_path)
 
     def _run(self, file_level_thresholds, maj_thresholds, matrix_file_path=None, artifact_map_file_path=None):
