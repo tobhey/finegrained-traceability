@@ -161,7 +161,7 @@ class MajorityDecision:
                     voted_trace_links.append(TraceLink(req_file_name, code_file_name, code_file_to_req_file_similarity))
         
         else:
-            log.info(f"No votes for {code_file_name}")
+            log.debug(f"No votes for {code_file_name}")
         return voted_trace_links
     
     class AppendValueDict:
