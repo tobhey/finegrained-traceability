@@ -1,5 +1,7 @@
-import abc, logging
+import abc, logging, traceback
 
+from javalang.parser import JavaSyntaxError, JavaParserError
+from javalang.tokenizer import LexerError
 from pathlib import Path
 
 from embeddingCreator.EmbeddingContainer import EmbeddingContainer
@@ -22,6 +24,7 @@ class EmbeddingCreator(abc.ABC):
 
     def __init__(self, preprocessor: Preprocessor, word_embedding_creator,
                  tokenizer, preprocessed_token_output_directory: Path):
+        
         self._preprocessed_token_output_directory = preprocessed_token_output_directory
         self._preprocessor = preprocessor
         self._word_embedding_creator = word_embedding_creator
@@ -43,7 +46,17 @@ class EmbeddingCreator(abc.ABC):
         all_filenames = FileUtil.get_files_in_directory(directory)
         all_embeddings = []
         for filename in all_filenames:
-            file_representation = self._tokenize_and_preprocess(filename)
+            try:
+                file_representation = self._tokenize_and_preprocess(filename)
+            except (FileNotFoundError, IsADirectoryError, PermissionError, UnicodeDecodeError,) as e:
+                log.info(f"SKIPPED: Error on reading or tokenizing {filename}: {e}")
+                continue
+            except JavaSyntaxError as j:
+                log.info(f"SKIPPED: JavaSyntaxError on tokenizing {filename} (Note: code files needs to be compilable): {j.at}")
+                continue
+            except (JavaParserError, LexerError) as j:
+                log.info(f"SKIPPED: Error on tokenizing {filename} (Note: code files needs to be compilable): {j}")
+                continue
             file_embedding = self._create_embeddings(file_representation)
             if file_embedding:
                 all_embeddings.append(file_embedding)
