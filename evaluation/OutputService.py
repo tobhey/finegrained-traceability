@@ -20,8 +20,8 @@ class OutputService(ABC):
 
     
 class F1ExcelOutputService(OutputService):
-    FILE_LEVEL_DROP_THRESH_PATTERN = "file_level_drop_thresh: {}"
-    MAJ_DROP_THRESH_PATTERN = "majority_drop_thresh: {}"
+    FILE_LEVEL_DROP_THRESH_PATTERN = "final_threshold: {}"
+    MAJ_DROP_THRESH_PATTERN = "majority_threshold: {}"
     BEST_F1_MESSAGE_PATTERN = "Best f1: {} at f{}"
     BEST_F1_2D_MESSAGE_PATTERN = "Best f1: {} at m{} f{}"
     NO_BEST_F1_MESSAGE = "No best F1"
