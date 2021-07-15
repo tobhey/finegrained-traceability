@@ -18,7 +18,7 @@ Run these lines one after another in your command line:
 
 In the paper, we used the spacy lemmatizer for both english and italian. It is possible to use the `nltk` lemmatizer instead by setting the appropriate `LemmatizerType` in the [Lemmatizer class](./preprocessing/Preprocessor.py). However, this is not recommended since `nltk` doesn't provide an italian lemmatizer, but a stemmer.
 
-The fastText model files (for english and italian) are not included in this repository. You only need these if you wish to re-precalculate the similarity data (See [Precalculation phase](#Precalculation-phase)). The model files can be found on the [website of fastText](https://fasttext.cc/docs/en/pretrained-vectors.html). For the paper we used `cc.en.300.bin` and `cc.it.300.bin`.
+The fastText model files (for english and italian) are not included in this repository. You only need these if you wish to re-precalculate the similarity data (See [Precalculation phase](#Precalculation-phase)). The model files can be found on the [website of fastText](https://fasttext.cc/docs/en/crawl-vectors.html). For the paper we used `cc.en.300.bin` and `cc.it.300.bin`.
 
 # Running the code
 
