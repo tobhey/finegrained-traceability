@@ -31,36 +31,36 @@ class CodeEmbeddingCreator(EmbeddingCreator):
             log.info(f"{FileUtil.get_filename_from_path(file_representation.file_path)} has more than one top level classifier. Only processing the first: {classifier.get_original_name()}")
         
         class_vector = self._calculate_class_vector(classifier)
-        class_embedding = ClassEmbeddingContainer(file_representation.file_path, class_vector, classifier.get_original_name())
-        class_embedding = self._add_method_vectors(classifier, class_embedding)
+        class_embedding_container = ClassEmbeddingContainer(file_representation.file_path, class_vector, classifier.get_original_name())
+        class_embedding_container = self._add_method_vectors(classifier, class_embedding_container)
         
-        if not class_embedding.has_method_entries():
+        if self._classname_as_optional_vote and not class_embedding_container.has_method_entries() :
             # Class has no method vectors (e.g. empty class or all methods are not public)
-            class_embedding = self._handle_no_method_vectors_case(classifier, class_embedding)
+            class_embedding_container = self._handle_no_method_vectors_case(classifier, class_embedding_container)
             
-        return class_embedding
+        return class_embedding_container
 
     def _calculate_class_vector(self, classifier):
         words_to_embedd = [] + classifier.get_name_words()
         [words_to_embedd.extend(self._method_word_chooser.choose_words_from(classifier, method)) for method in classifier.methods]
         return self._embedd_and_average(words_to_embedd)
     
-    def _add_method_vectors(self, classifier, class_embedding):
+    def _add_method_vectors(self, classifier, class_embedding_container):
         for method in classifier.methods:
             method_vector = self._embedd_and_average(self._method_word_chooser.choose_words_from(classifier, method))
             if method_vector is None:  # Can happen if e.g. all method words are removed via preprocessing
                 continue 
             method_key_with_classifier = build_class_method_param_dict_key(classifier.get_original_name(), method.get_original_name(), method.get_original_param_type_list())
-            class_embedding.set_method_vector(method_key_with_classifier, method_vector)
-        return class_embedding
+            class_embedding_container.set_method_vector(method_key_with_classifier, method_vector)
+        return class_embedding_container
 
-    def _handle_no_method_vectors_case(self, classifier, class_embedding):
+    def _handle_no_method_vectors_case(self, classifier, class_embedding_container):
         # Use class name as replacement element vector
         # The class name can be empty due to preprocessing -> no embedding in this case
         class_name_vector = self._embedd_and_average(self._classname_word_chooser.choose_words_from(classifier))
         if class_name_vector:
-            class_embedding.set_non_cg_vector(self._build_class_name_voter_key(classifier), class_name_vector)
-        return class_embedding
+            class_embedding_container.set_non_cg_vector(self._build_class_name_voter_key(classifier), class_name_vector)
+        return class_embedding_container
     
     def _build_class_name_voter_key(self, classifier):
         return classifier.get_original_name() + "." + ClassEmbeddingContainer.CLASS_NAME_VOTER
