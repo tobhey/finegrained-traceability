@@ -7,8 +7,8 @@ from datasets.Dataset import Etour, Itrust, Smos, Eanci
 from utility import Util
 from utility.FileUtil import setup_clear_dir
 
-ENGLISH_FASTTEXT_MODEL_PATH = "/content/drive/My Drive/models/cc.en.300.bin"
-ITALIAN_FASTTEXT_MODEL_PATH = "/content/drive/My Drive/models/cc.it.300.bin"
+ENGLISH_FASTTEXT_MODEL_PATH = "/content/models/cc.en.300.bin"
+ITALIAN_FASTTEXT_MODEL_PATH = "/content/models/cc.it.300.bin"
 
 FINAL_THRESHOLDS = [0.44]
 MAJORITY_THRESHOLDS = [0.59]
