@@ -90,9 +90,9 @@ class BaseLineRunner(WMDRunner):
         self.classname_word_chooser = ClassnameWordChooser()
         self.callgraph_aggregator = None
         
-    def calculate_f1(self, file_level_thresholds, maj_thresholds, matrix_file_path=None, artifact_map_file_path=None):
+    def calculate_f1(self, final_thresholds, maj_thresholds, matrix_file_path=None, artifact_map_file_path=None):
         output_service = F1ExcelOutputService(self.dataset, self.excel_output_file_path)
-        output_service.process_trace_link_2D_dict(self._run(file_level_thresholds, maj_thresholds, matrix_file_path, artifact_map_file_path))
+        output_service.process_trace_link_2D_dict(self._run(final_thresholds, maj_thresholds, matrix_file_path, artifact_map_file_path))
         
     def calculate_map(self, matrix_file_path=None, artifact_map_file_path=None):
         output_service = MAPOutputService(self.dataset, True, False, None)
@@ -108,11 +108,11 @@ class BaseLineRunner(WMDRunner):
         req_embedding_containers = MockUCEmbeddingCreator(self.requirements_word_chooser, self.req_preprocessor, word_emb_creator, self.req_tokenizer).create_all_embeddings(self.dataset.req_folder())
         code_embedding_containers = MockCodeEmbeddingCreator(self.method_word_chooser, self.classname_word_chooser, self.code_preprocessor, word_emb_creator, self.code_tokenizer, classname_as_optional_voter=True).create_all_embeddings(self.dataset.code_folder())
         
-        data_structure_builder = ElementLevelTraceLinkDataStructureFactory(req_embedding_containers, code_embedding_containers, word_emb_creator.word_movers_distance, self.WMD_VALUE_MAP_FUNCTION)
-        trace_link_data_structure = data_structure_builder.create()
+        data_structure_factory = ElementLevelTraceLinkDataStructureFactory(req_embedding_containers, code_embedding_containers, word_emb_creator.word_movers_distance, self.WMD_VALUE_MAP_FUNCTION)
+        trace_link_data_structure = data_structure_factory.create()
         trace_link_data_structure.write_data(matrix_file_path, artifact_map_file_path)
 
-    def _run(self, file_level_thresholds, maj_thresholds, matrix_file_path=None, artifact_map_file_path=None):
+    def _run(self, final_thresholds, maj_thresholds, matrix_file_path=None, artifact_map_file_path=None):
         if not matrix_file_path:
             matrix_file_path = self.default_matrix_path()
         if not artifact_map_file_path:
@@ -125,7 +125,7 @@ class BaseLineRunner(WMDRunner):
                       f"Please pass a valid file path or call {self.__class__.__name__}().precalculate() first")
             
         trace_link_data_structure = ElementLevelTraceLinkDataStructure.load_data_from(matrix_file_path, artifact_map_file_path)
-        trace_link_processor = MajProcessor(trace_link_data_structure, self.similarity_filter, self.req_reduce_func, self.code_reduce_function, file_level_thresholds, maj_thresholds, self.callgraph_aggregator)
+        trace_link_processor = MajProcessor(trace_link_data_structure, self.similarity_filter, self.req_reduce_func, self.code_reduce_function, final_thresholds, maj_thresholds, self.callgraph_aggregator)
         return trace_link_processor.run()
     
     def _default_a2eMap_path(self):

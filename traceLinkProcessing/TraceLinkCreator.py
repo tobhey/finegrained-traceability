@@ -25,9 +25,9 @@ class FileLevelTraceLinkCreator(TraceLinkCreator):
 
     def process(self) -> [TraceLink]:
         all_trace_links = []
-        for req_file_name in self._trace_link_provider.all_req_file_names:
-            for code_file_name in self._trace_link_provider.all_code_file_names:
-                similarity = self._trace_link_provider.similarity_between(req_file_name, code_file_name)
+        for req_file_name in self._trace_link_data_structure.all_req_file_names:
+            for code_file_name in self._trace_link_data_structure.all_code_file_names:
+                similarity = self._trace_link_data_structure.similarity_between(req_file_name, code_file_name)
                 all_trace_links.append(TraceLink(req_file_name, code_file_name, similarity))
         return all_trace_links
 
@@ -64,25 +64,25 @@ class ElementLevelTraceLinkAggregator:
         self._req_reduce_func = req_reduce_func
 
     def process(self, trace_link_data_structure) -> TraceLinkDataStructure:
-        self._trace_link_provider = trace_link_data_structure
+        self._trace_link_data_structure = trace_link_data_structure
         method_to_req_similarities = TwoDimensionalMatrix.create_empty()
-        for code_file_name in self._trace_link_provider.all_code_file_names():
+        for code_file_name in self._trace_link_data_structure.all_code_file_names():
             method_to_req_similarities = self._calculate_reduced_similarity_for_each_code_element(method_to_req_similarities, code_file_name)
         
-        self._trace_link_provider.set_matrix(method_to_req_similarities)
-        return self._trace_link_provider
+        self._trace_link_data_structure.set_matrix(method_to_req_similarities)
+        return self._trace_link_data_structure
 
     def _calculate_reduced_similarity_for_each_code_element(self, method_to_req_similarities, code_file_name):
-        for code_element in self._trace_link_provider.all_code_elements_of(code_file_name):
-            for req_file_name in self._trace_link_provider.all_req_file_names():
+        for code_element in self._trace_link_data_structure.all_code_elements_of(code_file_name):
+            for req_file_name in self._trace_link_data_structure.all_req_file_names():
                 code_element_to_req_similarity = self._calculate_reduced_similarity_to_all_reqs(code_element, req_file_name)
                 method_to_req_similarities.set_value(req_file_name, code_element, code_element_to_req_similarity)
         return method_to_req_similarities
         
     def _calculate_reduced_similarity_to_all_reqs(self, code_element, req_file_name):
         all_element_level_similarities_to_same_req = []
-        for req_element in self._trace_link_provider.req_elements_of(req_file_name):
-            all_element_level_similarities_to_same_req.append(self._trace_link_provider.similarity_between(req_element, code_element))
+        for req_element in self._trace_link_data_structure.req_elements_of(req_file_name):
+            all_element_level_similarities_to_same_req.append(self._trace_link_data_structure.similarity_between(req_element, code_element))
         
         if not all_element_level_similarities_to_same_req:
             log.info(f"Skip: No similarities for {code_element}")
