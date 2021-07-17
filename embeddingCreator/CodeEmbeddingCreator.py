@@ -34,7 +34,7 @@ class CodeEmbeddingCreator(EmbeddingCreator):
         class_embedding_container = ClassEmbeddingContainer(file_representation.file_path, class_vector, classifier.get_original_name())
         class_embedding_container = self._add_method_vectors(classifier, class_embedding_container)
         
-        if self._classname_as_optional_vote and not class_embedding_container.has_method_entries() :
+        if self._classname_as_optional_voter and not class_embedding_container.has_method_entries() :
             # Class has no method vectors (e.g. empty class or all methods are not public)
             class_embedding_container = self._handle_no_method_vectors_case(classifier, class_embedding_container)
             
