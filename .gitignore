@@ -101,3 +101,8 @@ _ReSharper.*
 *.resharper
 *.suo
 *.cache
+
+# PyDev and Eclipse project settings
+.project
+.pydevproject
+.settings
