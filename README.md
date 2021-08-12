@@ -20,6 +20,8 @@ Open the [Jupyter notebook](./finegrained-traceability.ipynb) in Google Colab an
 
 See [INSTALL](./INSTALL.md) for the local installation.
 
+## Process
+
 Since instantiating the fastText model and the spacy lemmatizer is expensive, the trace link recovery process is split into two phases: precalculation and trace link processing.
 The following image shows a simplified architecture of the process.
 
@@ -56,11 +58,15 @@ This phase consists of the following activities:
 * Apply similarity threshold filters
 * Do the evaluation: calculate F1 or Mean Average Precision (MAP)
 
-There is a corresponding [TraceabilityRunner](./TraceabilityRunner.py) for each configuration of the paper which automatically does this setup. Since the precalculated files are also included in the repository, you only have to instantiate a `TraceabilityRunner` and call the `calculate_f1` or the `calculate_map` method. See [App.py](./App.py) for an example.
+There is a corresponding [TraceabilityRunner](./TraceabilityRunner.py) for each configuration of the paper which automatically does this setup. Since the precalculated files are also included in the repository, you only have to instantiate a `TraceabilityRunner` and call the `calculate_f1` or the `calculate_map` method. See [App.py](./App.py) or [Jupyter notebook](./finegrained-traceability.ipynb) for an example.
 
 **Note 1:** Both `calculate_f1` and `calculate_map` have the optional parameters `matrix_file_path` and `artifact_map_file_path` to locate the precalculated files. The default value is `None` which means that the precalculated files are loaded from their default locations.
 
 **Note 2:** Itrust doesn't uses use case templates. Therefore, running Itrust with any `BaseLineUCT*Runner` will not work.
+
+## Step-by-Step
+
+A step-by-step description of how to reproduce the results in the paper is given in the [Jupyter notebook](./finegrained-traceability.ipynb).
 
 ## Datasets
 
