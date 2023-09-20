@@ -1,0 +1,5 @@
+The patient list is titled with the HCP 's name
+The patient list includes the patient 's name ie first name and last name phone number and contact email address E E so that confirmation calls or emails can be made or sent outside of the i Trust system
+The list is sorted based on the ascending alphabetical order of the patients ' last names and then first names
+When a chronic special-diagnosis-history patient satisfies all three conditions and has multiple prescriptions satisfying the third condition the patient is listed in the list only once
+The list is a static list with no link on the patient 's name phone number or contact email address

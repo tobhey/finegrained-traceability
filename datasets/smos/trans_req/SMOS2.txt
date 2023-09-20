@@ -1,0 +1,11 @@
+Name: LoginError
+Actors: registered user
+Description: occurs when the user has entered incorrect authentication data.
+Preconditions:
+• The data provided for the login are incorrect
+Events sequence
+User
+System
+1. Displays the login form
+Postconditions:
+• The user can try to log in

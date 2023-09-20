@@ -1,0 +1,6 @@
+Iscrizione News Informagiovani
+
+Il cittadino richiede l ' iscrizione alle news di informagiovani per ricevere advertise relative al servizio
+Il sistema visualizza un form per la sottomissione della richiesta
+Il cittadino inserisce i dati della richiesta di news in un form
+Il sistema riceve il form verifica i dati e sottomette la richiesta

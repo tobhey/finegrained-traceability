@@ -1,0 +1,15 @@
+Name: Edit user
+Actors: Administrator
+Description: Changing one or more data concerning a user present in the system
+Preconditions:
+• The user is logged in as an administrator • The user has carried out the case of use "viewdetTailsente" and the system is
+Displaying a user details • The user changes one or more information contained in the form of
+Displaying user details.
+Events sequence
+User
+1. Click on the "Edit" button
+System
+2. Checks on the validity of the data entered and changed the user;In the event that the data entered are not valid, activates the case of "Errodati" use
+Postconditions:
+• • • •
+The user has been modified is notified the data error The administrator interrupts the connection operation to the SMOS server interrupted

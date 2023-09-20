@@ -1,0 +1,4 @@
+Che Tempo Fa
+
+Il Cittadino accede a questa schermata per visualizzare la situazione meteorologica del comune in cui risiede
+Il sistema risponde all ' esigenza del Cittadino permettendogli di visualizzare oltre alla situazione tempo del suo comune anche quella delle provincie della regione a cui appartiene con data di aggiornamento temperature minime e massime e ovviamente condizioni atmosferiche espresse con una piccola immagine descrittiva

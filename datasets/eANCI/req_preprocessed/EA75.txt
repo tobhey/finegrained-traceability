@@ -1,0 +1,6 @@
+Informazioni Musei
+
+Il Cittadino richiede la visualizzazione dell ' elenco dei musei
+Il sistema permette di visualizzare l ' elenco dei musei
+Il cittadino sceglie il museo
+Il sistema restituisce le informazioni riguardanti il museo prescelto visualizzandone dati come la localizzazione le date e gli orari d ' apertura il link al sito del museo

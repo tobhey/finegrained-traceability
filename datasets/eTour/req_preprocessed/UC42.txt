@@ -1,0 +1,8 @@
+Delete Menu
+Delete a daily menu of a restaurant
+Enable the functionality of deleting a menu
+Displays a form containing the seven days of the week
+Select a day of the week and submit the form
+Calls to confirm the deletion
+Confirm the operation
+Delete the daily menu selection

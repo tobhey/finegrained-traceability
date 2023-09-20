@@ -1,0 +1,6 @@
+Search Cultural Heritage
+Returns the list of cultural objects in the system according to certain parameters
+Activate the search functionality of a cultural object
+Show the form for research
+Fill in the search form and submit
+Processing the request

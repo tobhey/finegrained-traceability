@@ -1,0 +1,6 @@
+Forms
+
+The citizen click on the button to access section dedicated to the forms
+The system redirects the citizen to the requested section and shows the various modules available for download
+The citizen selects the desired form
+The system starts download

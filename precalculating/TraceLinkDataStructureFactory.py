@@ -14,11 +14,12 @@ class TraceLinkDataStructureFactory(ABC):
     The TraceLinkDataStructureFactory takes requirement and class embedding containers and creates an TraceLinkDataStructure object.
     """
 
-    def __init__(self, req_embedding_containers, code_embedding_containers, similarity_function, map_similarity_value_range_function=None):
+    def __init__(self, req_embedding_containers, code_embedding_containers, similarity_function, map_similarity_value_range_function=None, wsd=False):
         self._req_embedding_containers = req_embedding_containers
         self._code_embedding_containers = code_embedding_containers
         self._similarity_function = similarity_function
         self._map_similarity_value_range_function = map_similarity_value_range_function  # Use this to normalize similarity value range (e.g. for wmd)
+        self.wsd = wsd
         
     @abstractmethod
     def create(self) -> TraceLinkDataStructure: 
@@ -50,7 +51,7 @@ class ElementLevelTraceLinkDataStructureFactory(TraceLinkDataStructureFactory):
         req_file_to_req_element_id_map, code_file_to_method_map, code_file_to_non_cg_element_map = {}, {}, {}
         
         for req_emb_cont in self._req_embedding_containers:
-            req_file_to_req_element_id_map[req_emb_cont.file_name] = [self._build_req_element_key(req_emb_cont.file_name, index) for index, _ in enumerate(req_emb_cont.requirement_element_vectors)]
+            req_file_to_req_element_id_map[req_emb_cont.file_name] = list(req_emb_cont.requirement_element_vectors.keys())
         
         num_code_files = len(self._code_embedding_containers)
         for i, code_emb_cont in enumerate(self._code_embedding_containers):
@@ -80,12 +81,16 @@ class ElementLevelTraceLinkDataStructureFactory(TraceLinkDataStructureFactory):
     
     def _calculate_similarities_to_all_req_elements(self, similarity_matrix, req_emb_cont, element_key, element_vector):
         for req_emb_cont in self._req_embedding_containers:
-            for index, req_element in enumerate(req_emb_cont.requirement_element_vectors):
-                req_elem_key = self._build_req_element_key(req_emb_cont.file_name, index)
-                similarity = self._similarity_function(req_element, element_vector)
+            for key in req_emb_cont.requirement_element_vectors.keys():
+                #req_elem_key = self._build_req_element_key(req_emb_cont.file_name, index)
+                similarity = 0
+                if self.wsd is True:
+                    similarity = self._similarity_function(req_emb_cont.requirement_element_vectors[key], element_vector, element_key, key)
+                else:
+                    similarity = self._similarity_function(req_emb_cont.requirement_element_vectors[key], element_vector)
                 if self._map_similarity_value_range_function:
                     similarity = self._map_similarity_value_range_function(similarity)
-                similarity_matrix.set_value(req_elem_key, element_key, similarity)
+                similarity_matrix.set_value(key, element_key, similarity)
         return similarity_matrix
                 
     def _build_req_element_key(self, req_file_name, index):

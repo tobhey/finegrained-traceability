@@ -1,0 +1,16 @@
+Use case name
+WelcomeNight
+Participating Actors
+Initiated by User Communicates with Social Services Office
+Flow of events
+1. User selects Social Work feature by selecting "Night Reception Request"
+2. The system displays the form for entering applicant and recipient data.
+3. The user enters his/her own data and if necessary enters the data of a third person specifying the relationship with that person. He also specifies an alternative home or address and a possible date of appointment with social workers. He then submits the form.
+4. The system picks up the master data of the requesting citizen and the receiving citizen (if different from the requestor), and data regarding the receiving Citizen's household. The request is sent to the Social Services office and the user is notified of the submission.
+Entry Condition.
+The user has successfully logged in and selected the Social Assistance feature.
+Exit condition
+The system has encountered an error in filling out the form so it calls the use case DataErrati, OR
+The user returns to the previous screen, OR
+The system encountered an unanticipated error so it calls the use case ServiceNotAvailable.
+Quality RequirementsUnanticipated

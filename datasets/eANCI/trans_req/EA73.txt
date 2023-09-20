@@ -1,0 +1,18 @@
+Use case name
+InformationLibraries
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen requests to view list of libraries.
+3.
+2. The system allows to view the list of libraries.
+The Citizen chooses the library. 4. The system returns information
+concerning the chosen library by displaying data such as:
+- - -
+location; opening dates and times; and link to the library's website.
+Entry condition
+The citizen has logged into the system.
+Exit condition
+The citizen has viewed the library information, OR.
+In case the citizen wants to view a book he/she will be referred to the library website.
+Quality requirements Not provided.

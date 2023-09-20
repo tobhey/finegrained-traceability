@@ -1,0 +1,3 @@
+REQUIREMENT 8: HTTP-BASED CLIENT AUTHENTICATION
+     
+The EST server can optionally also request that the EST client submit a username/password using the HTTP Basic or Digest authentication methods (see Section 3.2.3). This approach is desirable if the EST client cannot be authenticated during the TLS handshake (see Section 3.3.2) or the EST server policy requires additional authentication information; see Section 3.2.3. In all cases, HTTP-based client authentication is only to be performed over a TLS-protected transport (see Section 3.3).

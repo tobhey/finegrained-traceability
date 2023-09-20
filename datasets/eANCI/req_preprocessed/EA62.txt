@@ -1,0 +1,6 @@
+Eliminazione Prenotazione Colloquio
+
+Il cittadino richiede la cancellazione della prenotazione del colloquio nel consultorio
+Il sistema visualizza un form per la conferma della richiesta
+Il cittadino conferma l ' eliminazione della prenotazione
+Ilsistemaeliminalaprenotazione

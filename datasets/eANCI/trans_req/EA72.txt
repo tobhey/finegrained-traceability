@@ -1,0 +1,17 @@
+Use Case Name
+DeleteInformation
+Participating Actors
+Started by Employee
+Event Flow.
+1. Employee requests the deletion of a news item.
+2. The system displays the list of existing news items
+3. The employee chooses a news item. 4. The system displays a form the
+confirmation of the operation. 5. The employee confirms the operation
+through the form. 6. The system receives the form, and deletes the data
+of the news from the system
+Entry condition
+This case requires that the employee has gone through the authentication procedure.
+Exit condition
+The system has performed the deletion of the news, OR
+If an error occurred in the deletion request, the system calls the use case ServiceNotAvailable
+Quality RequirementsNot Available.

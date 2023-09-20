@@ -1,0 +1,9 @@
+Accoglienza Notturna
+
+L ' utente seleziona la funzionalit Assistenza Sociale selezionando Richiesta Accoglienza Notturna
+Il sistema mostra il form per l ' inserimento dei dati del richiedente e del destinatario
+L ' utente inserisce i propri dati e se necessario inserisce i dati di una terza persona specificando il rapporto con tale persona
+Inoltre specifica un domicilio o recapito alternativo ed una eventuale data di appuntamento con gli assistenti sociali
+Quindi sottomette il form
+Il sistema preleva i dati anagrafici del cittadino richiedente e del cittadino destinatario se diverso dal richiedente e i dati riguardanti il nucleo familiare del Cittadino destinatario
+La richiesta viene inviata all ' ufficio dei Servizi Sociali ed all ' utente viene notificato l ' invio

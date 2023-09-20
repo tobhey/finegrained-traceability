@@ -1,0 +1,15 @@
+Use case name
+Waste
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses the fact sheet because he wants to know the actual waste situation in his municipality, and whether of course, the environment is protected by the Civil Defense with the help of municipal agencies.
+2. The system responds to this need with a large and descriptive screen where the goals of the Municipal Council and informative notes on the dangers of waste fires are pointed out, and what kind of waste collection is in one's municipality. In addition, you can view the use case ViewToxicologicalAmbiental Results.
+Entry Condition.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information he/she received from the descriptive sheet, OR
+The Citizen is unable to view the screen and therefore the use case ServiceNotAvailable, which handles technical failure cases, is extended.
+Quality requirements Response times are to be found in the hundredths of a second range if correct display of the page occurs, OR
+On the order of seconds, 3 to 6, if it fails to view that screen.

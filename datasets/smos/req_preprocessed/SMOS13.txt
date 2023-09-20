@@ -1,0 +1,6 @@
+Visualizza Elenco Classi
+Permette di visualizzare lelenco delle classi
+Seleziona lanno accademico di interesse
+Permette di selezionare lanno accademico di cui si vuole visualizzare lelenco delle classi
+Cerca le classi nellarchivio e visualizza la schermata di gestione delle classi
+Visualizza lelenco delle classi dellanno accademico selezionato

@@ -1,0 +1,7 @@
+Request identity card accepted
+
+The employee displays the received notification
+The system shows the employee the request for the creation of the identity card by the citizen
+The employee certifies the validity of the request by controlling the accuracy of the data and enables the procedure for creating the identity card
+The system sends a confirmation e-mail to the citizen who requested the creation of the identity card
+The citizen goes to the counter

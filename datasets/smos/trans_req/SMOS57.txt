@@ -1,0 +1,12 @@
+Name: ViewRegister
+Actors: Professor
+Description: Class Registry View
+Preconditions:
+• The user is logged in to the system as a teacher • The user has held the case "VisualLancoclasses" and the system is
+By displaying the list of all classes in which it teaches • The user click on the "Register" button associated with one of the classes
+Events sequence
+User
+System
+1. Displays information about the class register and in particular: date, absences, disciplinary notes, delays and justification.
+Postconditions ::
+• The class registry information has been shown • Connection to the interrupted SMOS server.

@@ -1,0 +1,15 @@
+Use case name
+VisualizationPractice
+Participating actors
+Started by citizen
+Flow of events
+1. Citizen clicks on the button view practices(ID Card, Change of Residence).
+2. The system displays a screen with the practices that concern the citizen.
+Entry condition
+The citizen has authenticated in the system.
+Exit condition
+The citizen displays the screen, OR In the case where the citizen wants to delete a file, the system calls
+the use case DeletePractice, OR In the case where the citizen wants to edit a practice, the system calls
+the use case EditPractice, OR ➢ In the case where the service is not available, the use case is called
+of use case ServiceNotAvailable.
+Quality RequirementsNotAvailable

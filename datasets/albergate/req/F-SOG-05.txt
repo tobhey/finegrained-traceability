@@ -1,0 +1,26 @@
+Requisito:
+Stampa dell'ammontare conto.
+Descrizione:
+Al momento in cui il cliente sta per lasciare l'albergo si deve recuperare il 
+conto finale e provvedere alla sua stampa con questa forma:
+VOCE                  NUM.                             AMM. L.
+Persone                    #
+Notti                         #                                        ###
+Scatti tel.                  #                                        ###
+PARZIALE1                                                  #####
+Desc. extra                #                                       ###
+  ...                             ...                                        ...
+PARZIALE2                                                 #####
+-----------------------------------------------------------------------
+TOTALE                                                   #######
+Input richiesto:
+Dati relativi al pernottamento presi dall'archivio dei clienti e delle stanze.
+Output desiderato:
+Stampa del conto.
+Criterio di accettazione:
+La stampa deve riportare i dati visualizzati a video.
+Aspettative collegate:
+Chiara rappresentazione delle spese del cliente.
+Requisiti collegati:
+F-SOG-04.
+

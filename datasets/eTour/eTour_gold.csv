@@ -1,0 +1,572 @@
+file,ID,text,functional,Function,Behavior,Data,OnlyF,F,OnlyQ,Q,UserRelated
+UC1.txt,UC1.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC1.txt,UC1.txt.description,Delete a cultural object in the system,1,1,1,1,1,1,0,0,0
+UC1.txt,UC1.txt.flow_of_events.0,View the list of Cultural Heritage as a result of the use case Search Cultural Heritage it selects and activates a function of elimination,1,1,1,1,1,1,0,0,1
+UC1.txt,UC1.txt.flow_of_events.1,Asks confirmation,1,0,1,0,1,1,0,0,0
+UC1.txt,UC1.txt.flow_of_events.2,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC1.txt,UC1.txt.flow_of_events.3,Delete the cultural choice,1,1,1,1,1,1,0,0,0
+UC1.txt,UC1.txt.name,Delete Cultural Heritage,1,1,1,1,1,1,0,0,0
+UC1.txt,UC1.txt.postcondition,The system shall notify the successful elimination of the cultural Operator Agency cancels the operation Interruption of connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC1.txt,UC1.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC1.txt,UC1.txt.quality_requirement,The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation,1,0,1,0,1,1,0,0,0
+UC2.txt,UC2.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC2.txt,UC2.txt.description,Inserts a new cultural object in the system,1,1,1,1,1,1,0,0,0
+UC2.txt,UC2.txt.flow_of_events.0,Activate the feature for the insertion of a new cultural good,1,1,0,0,1,1,0,0,1
+UC2.txt,UC2.txt.flow_of_events.1,Displays the corresponding form,1,0,1,0,1,1,0,0,0
+UC2.txt,UC2.txt.flow_of_events.2,Fill out the form with the data of the cultural and submit,1,0,0,1,1,1,0,0,1
+UC2.txt,UC2.txt.flow_of_events.3,Verify the data entered and asks for confirmation of the transaction,1,1,1,0,1,1,0,0,0
+UC2.txt,UC2.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC2.txt,UC2.txt.flow_of_events.5,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC2.txt,UC2.txt.flow_of_events.6,Memorize your new cultural good,1,1,1,1,1,1,0,0,0
+UC2.txt,UC2.txt.name,Insert Cultural Heritage,1,1,1,1,1,1,0,0,0
+UC2.txt,UC2.txt.postcondition,The system shall notify the proper inclusion of the cultural Operator Agency cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC2.txt,UC2.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC2.txt,UC2.txt.quality_requirement,The system requirements will not accept duplicates cultural heritage,1,0,1,0,1,1,0,0,0
+UC3.txt,UC3.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC3.txt,UC3.txt.description,Change data of a cultural object in the system,1,1,1,1,1,1,0,0,0
+UC3.txt,UC3.txt.flow_of_events.0,View the list of cultural goods as a result of the use case Search Cultural Heritage it selects and activates a function of change,1,1,1,1,1,1,0,0,1
+UC3.txt,UC3.txt.flow_of_events.1,Load the data of the cultural and displays the form for editing,1,1,1,1,1,1,0,0,0
+UC3.txt,UC3.txt.flow_of_events.2,Change data in the form and submit,1,0,0,0,1,1,0,0,1
+UC3.txt,UC3.txt.flow_of_events.3,Verify the data entered and asks for confirmation of the transaction,1,1,1,0,1,1,0,0,0
+UC3.txt,UC3.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC3.txt,UC3.txt.flow_of_events.5,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC3.txt,UC3.txt.flow_of_events.6,Stores the modified data of the cultural,1,1,1,1,1,1,0,0,0
+UC3.txt,UC3.txt.name,Modify Cultural Heritage,1,1,1,1,1,1,0,0,0
+UC3.txt,UC3.txt.postcondition,The notification system has been changing the data of the cultural Operator Agency cancels the operation Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,1
+UC3.txt,UC3.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC3.txt,UC3.txt.quality_requirement,The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation,1,0,1,0,1,1,0,0,0
+UC4.txt,UC4.txt.description,Returns the list of cultural objects in the system according to certain parameters,1,1,1,1,1,1,0,0,0
+UC4.txt,UC4.txt.flow_of_events.0,Activate the search functionality of a cultural object,1,1,0,1,1,1,0,0,0
+UC4.txt,UC4.txt.flow_of_events.1,Show the form for research,1,1,1,0,1,1,0,0,0
+UC4.txt,UC4.txt.flow_of_events.2,Fill in the search form and submit,1,0,0,0,1,1,0,0,1
+UC4.txt,UC4.txt.flow_of_events.3,Processing the request,1,1,1,0,1,1,0,0,0
+UC4.txt,UC4.txt.name,Search Cultural Heritage,1,1,1,1,1,1,0,0,0
+UC4.txt,UC4.txt.postcondition,The system returns a list of cultural goods that meet the search criteria Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC4.txt,UC4.txt.quality_requirement,The system requirements should return the results within a set time,0,0,0,0,0,0,1,1,0
+UC5.txt,UC5.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC5.txt,UC5.txt.description,View the details of the selected cultural,1,1,1,1,1,1,0,0,0
+UC5.txt,UC5.txt.flow_of_events.0,View the list of cultural goods as a result of the use case Search Cultural Heritage it selects and activates a function to view the card,1,1,1,1,1,1,0,0,1
+UC5.txt,UC5.txt.flow_of_events.1,Loads the data for the selected cultural,1,1,1,1,1,1,0,0,0
+UC5.txt,UC5.txt.name,View Cultural Heritage Card,1,1,1,1,1,1,0,0,0
+UC5.txt,UC5.txt.postcondition,The system displays the details of the selected cultural Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC5.txt,UC5.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC6.txt,UC6.txt.actor,initialization Operator Agency,0,0,0,0,0,0,0,0,1
+UC6.txt,UC6.txt.description,Delete a refreshment from the system,1,1,1,1,1,1,0,0,0
+UC6.txt,UC6.txt.flow_of_events.0,View a list of points of rest as a result of the use case Search Cultural Heritage it selects and activates a function of elimination,1,1,1,1,1,1,0,0,1
+UC6.txt,UC6.txt.flow_of_events.1,Asks for confirmation of the transaction,1,0,1,0,1,1,0,0,0
+UC6.txt,UC6.txt.flow_of_events.2,Confirm the deletion,1,0,0,0,1,1,0,0,1
+UC6.txt,UC6.txt.flow_of_events.3,Deletes the selected point of rest,1,1,1,1,1,1,0,0,0
+UC6.txt,UC6.txt.name,Delete Refreshment Point,1,1,1,1,1,1,0,0,0
+UC6.txt,UC6.txt.postcondition,The system shall notify the successful elimination of the point of rest Operator Agency cancels the operation Interruption ETOUR connection to the server,1,1,1,0,1,1,0,0,1
+UC6.txt,UC6.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC7.txt,UC7.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC7.txt,UC7.txt.description,Convention active request by a refreshment point,1,1,1,1,1,1,0,0,0
+UC7.txt,UC7.txt.flow_of_events.0,Enable the activation function of the Convention,1,1,0,0,1,1,0,0,0
+UC7.txt,UC7.txt.flow_of_events.1,Load the data request of the Convention from the point of rest and displays the corresponding form,1,1,1,1,1,1,0,0,0
+UC7.txt,UC7.txt.flow_of_events.2,Check the data of the agreement and decide for activation,1,0,0,0,1,1,0,0,1
+UC7.txt,UC7.txt.flow_of_events.3,Asks for confirmation of the activation,1,0,1,0,1,1,0,0,0
+UC7.txt,UC7.txt.flow_of_events.4,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC7.txt,UC7.txt.flow_of_events.5,Processing the request,1,1,1,0,1,1,0,0,0
+UC7.txt,UC7.txt.name,Active Convention,1,1,1,1,1,1,0,0,0
+UC7.txt,UC7.txt.postcondition,The system shall notify the activation of the convention Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,0
+UC7.txt,UC7.txt.precondition,The Agency is in the form of a designated point of rest,0,0,0,0,0,0,0,0,1
+UC8.txt,UC8.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC8.txt,UC8.txt.description,Edit the data pertaining to a designated point of rest,1,1,1,1,1,1,0,0,0
+UC8.txt,UC8.txt.flow_of_events.0,View a list of points of rest as a result of the use case Search Refreshment Point it selects an active and functional data changes,1,1,1,1,1,1,0,0,1
+UC8.txt,UC8.txt.flow_of_events.1,Upload data from the point of rest and displays the form of change,1,1,1,1,1,1,0,0,0
+UC8.txt,UC8.txt.flow_of_events.2,Change data in the form and submit,1,0,0,0,1,1,0,0,1
+UC8.txt,UC8.txt.flow_of_events.3,Verify the data entered in form and asks for confirmation of the transaction,1,1,1,0,1,1,0,0,0
+UC8.txt,UC8.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC8.txt,UC8.txt.flow_of_events.5,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC8.txt,UC8.txt.flow_of_events.6,Stores the modified data of the point of rest,1,1,1,1,1,1,0,0,0
+UC8.txt,UC8.txt.name,Modify Data Refreshment Point Agency,1,1,1,1,1,1,0,0,0
+UC8.txt,UC8.txt.postcondition,The system has been reporting the information required by the point of rest Operator Agency cancels the operation Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC8.txt,UC8.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC8.txt,UC8.txt.quality_requirement,The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation,1,0,1,0,1,1,0,0,0
+UC9.txt,UC9.txt.description,Returns the list of points of rest in the system according to certain parameters,1,1,1,1,1,1,0,0,0
+UC9.txt,UC9.txt.flow_of_events.0,Activate the search functionality of a point of rest,1,1,0,0,1,1,0,0,0
+UC9.txt,UC9.txt.flow_of_events.1,Show the form for research,1,1,1,0,1,1,0,0,0
+UC9.txt,UC9.txt.flow_of_events.2,Fill in the search form and submit,1,0,0,0,1,1,0,0,1
+UC9.txt,UC9.txt.flow_of_events.3,Processing the request,1,1,1,0,1,1,0,0,0
+UC9.txt,UC9.txt.name,Search Refreshment Point,1,1,1,0,1,1,0,0,0
+UC9.txt,UC9.txt.postcondition,The system returns a list of points of rest which meet your search criteria Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC9.txt,UC9.txt.quality_requirement,The system performs the operation in seconds maximum,0,0,0,0,0,0,1,1,0
+UC10.txt,UC10.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC10.txt,UC10.txt.description,View the details of a selected point of rest,1,1,1,1,1,1,0,0,0
+UC10.txt,UC10.txt.flow_of_events.0,View the list of points of rest as a result of the use case Search Refreshment Point it selects and activates a function to view the card,1,1,1,1,1,1,0,0,1
+UC10.txt,UC10.txt.flow_of_events.1,Upload data to a selected restaurant,1,1,1,1,1,1,0,0,0
+UC10.txt,UC10.txt.name,View Refreshment Point Card,1,1,1,1,1,1,0,0,0
+UC10.txt,UC10.txt.postcondition,The system displays the details of the selected point of rest Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC10.txt,UC10.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC11.txt,UC11.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC11.txt,UC11.txt.description,View the history of conventions derived from a selected point of rest,1,1,1,1,1,1,0,0,0
+UC11.txt,UC11.txt.flow_of_events.0,Access the features on the display of historical conventions,1,1,0,0,1,1,0,0,1
+UC11.txt,UC11.txt.flow_of_events.1,Upload data on conventions from the restaurant selected,1,1,1,1,1,1,0,0,0
+UC11.txt,UC11.txt.name,View Convention History,1,1,1,1,1,1,0,0,0
+UC11.txt,UC11.txt.postcondition,The system displays the history of conventions concerning the point of eating selected Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC11.txt,UC11.txt.precondition,The Agency is in the form of a designated point of rest,0,0,0,0,0,0,0,0,1
+UC12.txt,UC12.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC12.txt,UC12.txt.description,View the details of a selected account Tourist,1,1,1,1,1,1,0,0,0
+UC12.txt,UC12.txt.flow_of_events.0,Tourists from the list obtained by activating the use case Search Tourist will select and activate a function for displaying the card,1,1,1,1,1,1,0,0,1
+UC12.txt,UC12.txt.flow_of_events.1,Upload data to the selected account,1,1,1,0,1,1,0,0,0
+UC12.txt,UC12.txt.name,View Tourist Card,1,1,1,1,1,1,0,0,0
+UC12.txt,UC12.txt.postcondition,The system displays the card 's Tourist selected Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC12.txt,UC12.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC13.txt,UC13.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC13.txt,UC13.txt.description,Enable or disable the account of a tourist,1,1,1,1,1,1,0,0,0
+UC13.txt,UC13.txt.flow_of_events.0,Activate the feature for the activation deactivation by a given sheet tourist,1,1,0,0,1,1,0,0,1
+UC13.txt,UC13.txt.flow_of_events.1,Asks for confirmation of activation deactivation,1,0,1,0,1,1,0,0,0
+UC13.txt,UC13.txt.flow_of_events.2,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC13.txt,UC13.txt.flow_of_events.3,Enable disable the account of the visitor you selected,1,1,1,1,1,1,0,0,0
+UC13.txt,UC13.txt.name,Active Inactive Tourist Account,1,1,1,1,1,1,0,0,0
+UC13.txt,UC13.txt.postcondition,The notification of the outcome Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,0
+UC13.txt,UC13.txt.precondition,The Agency is in the form of a tourist,0,0,0,0,0,0,0,0,1
+UC14.txt,UC14.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC14.txt,UC14.txt.description,Returns the list of tourist account in the system according to certain parameters,1,1,1,1,1,1,0,0,0
+UC14.txt,UC14.txt.flow_of_events.0,Access the search functionality of a tourist,1,1,0,0,1,1,0,0,1
+UC14.txt,UC14.txt.flow_of_events.1,Show the form,1,1,1,0,1,1,0,0,0
+UC14.txt,UC14.txt.flow_of_events.2,Fill out the form and submit,1,0,0,0,1,1,0,0,1
+UC14.txt,UC14.txt.flow_of_events.3,Processing the request,1,1,1,0,1,1,0,0,0
+UC14.txt,UC14.txt.name,Search Tourist,1,1,1,1,1,1,0,0,0
+UC14.txt,UC14.txt.postcondition,The system returns a list of accounts that meet Tourist your search criteria Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,0
+UC14.txt,UC14.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC15.txt,UC15.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC15.txt,UC15.txt.description,Change data of a selected account Tourist,1,1,1,1,1,1,0,0,0
+UC15.txt,UC15.txt.flow_of_events.0,Tourists from the list obtained by activating the use case Search Tourist it selects and activates a function to modify data,1,1,1,1,1,1,0,0,1
+UC15.txt,UC15.txt.flow_of_events.1,Loads the data selected and displays them in a form allowing the change,1,0,1,0,1,1,0,0,0
+UC15.txt,UC15.txt.flow_of_events.2,Edit the fields in the form and submit,1,0,0,0,1,1,0,0,1
+UC15.txt,UC15.txt.flow_of_events.3,Verify the information and asks for confirmation of the change,1,1,1,0,1,1,0,0,0
+UC15.txt,UC15.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC15.txt,UC15.txt.flow_of_events.5,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC15.txt,UC15.txt.flow_of_events.6,Stores the modified data selected account,1,1,1,1,1,1,0,0,0
+UC15.txt,UC15.txt.name,Modify Tourist Account Data,1,1,1,1,1,1,0,0,0
+UC15.txt,UC15.txt.postcondition,The system has been reporting the information required by the selected account Tourist Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,0
+UC15.txt,UC15.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC16.txt,UC16.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC16.txt,UC16.txt.description,Delete the account of a tourist from the system,1,1,1,1,1,1,0,0,0
+UC16.txt,UC16.txt.flow_of_events.0,Tourists from the list obtained by activating the use case Search Tourist will select and activate a feature for disposal,1,1,1,1,1,1,0,0,1
+UC16.txt,UC16.txt.flow_of_events.1,Asks for confirmation of the transaction,1,0,1,0,1,1,0,0,0
+UC16.txt,UC16.txt.flow_of_events.2,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC16.txt,UC16.txt.flow_of_events.3,Delete the selected data,1,1,1,0,1,1,0,0,0
+UC16.txt,UC16.txt.name,Delete Tourist Account,1,1,1,1,1,1,0,0,0
+UC16.txt,UC16.txt.postcondition,The notification system has been elimination of selected accounts Tourist Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC16.txt,UC16.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC17.txt,UC17.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC17.txt,UC17.txt.description,Changing the image of a banner ad,1,1,1,1,1,1,0,0,0
+UC17.txt,UC17.txt.flow_of_events.0,Receives a list of turning points of the rest use case Search Refreshment Point and select one from accessing the function of editing a banner,1,1,1,1,1,1,0,0,1
+UC17.txt,UC17.txt.flow_of_events.1,View the list of banner associated with the point of rest,1,1,1,1,1,1,0,0,0
+UC17.txt,UC17.txt.flow_of_events.2,Select a banner from the list and enter the editing functionality,1,1,0,1,1,1,0,0,1
+UC17.txt,UC17.txt.flow_of_events.3,Displays a form for the selection of an image,1,1,1,0,1,1,0,0,0
+UC17.txt,UC17.txt.flow_of_events.4,Select a picture and send the request to change the system,1,0,0,0,1,1,0,0,1
+UC17.txt,UC17.txt.flow_of_events.5,Check the characteristics of the inserted and asks for confirmation of the change of the banner,1,1,1,0,1,1,0,0,0
+UC17.txt,UC17.txt.flow_of_events.6,In the event that the inserted image is not valid enable the use case Errored,1,0,1,0,1,1,0,0,0
+UC17.txt,UC17.txt.flow_of_events.7,Confirmation of the transaction change,1,0,0,0,1,1,0,0,1
+UC17.txt,UC17.txt.flow_of_events.8,Bookmark this new image for the selected banner,1,1,1,0,1,1,0,0,1
+UC17.txt,UC17.txt.name,Modify Banner,1,1,1,1,1,1,0,0,0
+UC17.txt,UC17.txt.postcondition,The system shall notify the successful modification of the banner Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,0
+UC17.txt,UC17.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC18.txt,UC18.txt.description,Check if a point Refreshments included the maximum number of allowed banners to it,1,1,1,1,1,1,0,0,0
+UC18.txt,UC18.txt.flow_of_events.0,Load the data of the Convention of refreshment point and verify that the number of banners is less than the specified number of the current banner,1,1,1,1,1,1,0,0,0
+UC18.txt,UC18.txt.flow_of_events.1,If not checked will end the operation input and displays a notification,1,0,1,0,1,1,0,0,0
+UC18.txt,UC18.txt.flow_of_events.2,Confirmation of the reading of the notification,1,0,0,0,1,1,0,0,1
+UC18.txt,UC18.txt.flow_of_events.3,Recovers the previous state,1,1,1,0,1,1,0,0,0
+UC18.txt,UC18.txt.name,Check Banner Number,1,1,1,1,1,1,0,0,0
+UC18.txt,UC18.txt.postcondition,The system returns control to the user interaction Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC18.txt,UC18.txt.precondition,The agency wants to put a new banner,0,0,0,0,0,0,0,0,1
+UC19.txt,UC19.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC19.txt,UC19.txt.description,Delete a banner ad associated with a refreshment bar on the computer,1,1,1,1,1,1,0,0,0
+UC19.txt,UC19.txt.flow_of_events.0,Receives a list of turning points of the rest use case Search Refreshment Point and select one from accessing the function of removal of the banner,1,1,1,1,1,1,0,0,1
+UC19.txt,UC19.txt.flow_of_events.1,View the list of banner associated with the point of rest,1,1,1,1,1,1,0,0,0
+UC19.txt,UC19.txt.flow_of_events.2,Select a banner from the list and enter the function of elimination,1,0,0,0,1,1,0,0,1
+UC19.txt,UC19.txt.flow_of_events.3,Displays a message confirming the deletion,1,1,1,0,1,1,0,0,0
+UC19.txt,UC19.txt.flow_of_events.4,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC19.txt,UC19.txt.flow_of_events.5,Removes the banner,1,1,1,0,1,1,0,0,0
+UC19.txt,UC19.txt.name,Delete Banner,1,1,1,1,1,1,0,0,0
+UC19.txt,UC19.txt.postcondition,The system shall notify the successful elimination of the selected banner Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,0
+UC19.txt,UC19.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC20.txt,UC20.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC20.txt,UC20.txt.description,Inserting a new banner associated with a point of rest,1,1,1,1,1,1,0,0,0
+UC20.txt,UC20.txt.flow_of_events.0,Receives a list of turning points of the rest use case Search Refreshment Point and select one from the list and access to the function of inserting banners,1,1,1,1,1,1,0,0,1
+UC20.txt,UC20.txt.flow_of_events.1,Displays a form for the selection of an image,1,1,1,0,1,1,0,0,0
+UC20.txt,UC20.txt.flow_of_events.2,Select an image and sends the request for entering the system,1,0,0,0,1,1,0,0,1
+UC20.txt,UC20.txt.flow_of_events.3,Check the characteristics of the inserted check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner,1,1,1,0,1,1,0,0,0
+UC20.txt,UC20.txt.flow_of_events.4,In the event that the inserted image is not valid enable the use case Errored,1,0,1,0,1,1,0,0,0
+UC20.txt,UC20.txt.flow_of_events.5,Confirm the operation of insertion,1,0,0,0,1,1,0,0,1
+UC20.txt,UC20.txt.flow_of_events.6,Remember the banners associated with the selected point of rest,1,1,1,0,1,1,0,0,0
+UC20.txt,UC20.txt.name,Insert Banner,1,1,1,1,1,1,0,0,0
+UC20.txt,UC20.txt.postcondition,The notification about the insertion of new banner to the Refreshments selected The Operator Agency cancels the operation The point of eating has already entered the maximum number of banners allowed Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC20.txt,UC20.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC21.txt,UC21.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC21.txt,UC21.txt.description,Inserts a new news in the system,1,1,1,1,1,1,0,0,0
+UC21.txt,UC21.txt.flow_of_events.0,Activate the feature to insert a news,1,1,0,0,1,1,0,0,1
+UC21.txt,UC21.txt.flow_of_events.1,Displays the corresponding form,1,1,1,0,1,1,0,0,0
+UC21.txt,UC21.txt.flow_of_events.2,Fill out the form and submit,1,0,0,0,1,1,0,0,1
+UC21.txt,UC21.txt.flow_of_events.3,Verify the data entered and asks for confirmation of the transaction,1,1,1,0,1,1,0,0,0
+UC21.txt,UC21.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC21.txt,UC21.txt.flow_of_events.5,Confirm the operation of insertion,1,0,0,0,1,1,0,0,1
+UC21.txt,UC21.txt.flow_of_events.6,Stores the data of the new news,1,1,1,1,1,1,0,0,0
+UC21.txt,UC21.txt.name,Insert News,1,1,1,1,1,1,0,0,0
+UC21.txt,UC21.txt.postcondition,The system shall notify the proper placement of the news The Operator Agency cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC21.txt,UC21.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC22.txt,UC22.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC22.txt,UC22.txt.description,Delete a news in the system,1,1,1,1,1,1,0,0,0
+UC22.txt,UC22.txt.flow_of_events.0,Activate the function of elimination of a news,1,1,0,0,1,1,0,0,1
+UC22.txt,UC22.txt.flow_of_events.1,View all news in a form,1,1,1,0,1,1,0,0,0
+UC22.txt,UC22.txt.flow_of_events.2,Select a news from the list and submit the form,1,0,0,1,1,1,0,0,1
+UC22.txt,UC22.txt.flow_of_events.3,Asks for confirmation of the transaction,1,0,1,0,1,1,0,0,0
+UC22.txt,UC22.txt.flow_of_events.4,Confirm the deletion of the news,1,0,0,0,1,1,0,0,1
+UC22.txt,UC22.txt.flow_of_events.5,Delete the data news,1,1,1,1,1,1,0,0,0
+UC22.txt,UC22.txt.name,Delete News,1,1,1,1,1,1,0,0,0
+UC22.txt,UC22.txt.postcondition,The system shall notify the successful elimination of the news The Operator Agency cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC22.txt,UC22.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC23.txt,UC23.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC23.txt,UC23.txt.description,Change data of a news on the computer,1,1,1,1,1,1,0,0,0
+UC23.txt,UC23.txt.flow_of_events.0,Activate the editing functionality of a news,1,1,0,0,1,1,0,0,1
+UC23.txt,UC23.txt.flow_of_events.1,View all news in a form,1,1,1,0,1,1,0,0,0
+UC23.txt,UC23.txt.flow_of_events.2,Select a news from the list and submit the form,1,0,0,1,1,1,0,0,1
+UC23.txt,UC23.txt.flow_of_events.3,Load the data of news and displays them in a form for editing,1,1,1,1,1,1,0,0,0
+UC23.txt,UC23.txt.flow_of_events.4,Change data in the form and submit,1,0,0,0,1,1,0,0,1
+UC23.txt,UC23.txt.flow_of_events.5,Check the modified information and asks for confirmation of the transaction,1,1,1,0,1,1,0,0,0
+UC23.txt,UC23.txt.flow_of_events.6,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC23.txt,UC23.txt.flow_of_events.7,Confirm the operation of changing the data news,1,0,0,0,1,1,0,0,1
+UC23.txt,UC23.txt.flow_of_events.8,Stores data modified news,1,1,1,0,1,1,0,0,0
+UC23.txt,UC23.txt.name,Modify News,1,1,1,1,1,1,0,0,0
+UC23.txt,UC23.txt.postcondition,The system shall notify the successful amendment of news The Operator Agency cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC23.txt,UC23.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC24.txt,UC24.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC24.txt,UC24.txt.description,View all feedback for a particular site,1,1,1,1,1,1,0,0,0
+UC24.txt,UC24.txt.flow_of_events.0,View the list of sites as a result of the use case Search Site it selects and activates a function to view the feedback,1,1,1,1,1,1,0,0,1
+UC24.txt,UC24.txt.flow_of_events.1,Upload Site Feedback selected,1,1,1,1,1,1,0,0,0
+UC24.txt,UC24.txt.name,View Feedback,1,1,1,1,1,1,0,0,0
+UC24.txt,UC24.txt.postcondition,The system displays all feedback regarding the site selected Interruption of the connection to the server,1,0,1,1,1,1,0,0,0
+UC24.txt,UC24.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC25.txt,UC25.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC25.txt,UC25.txt.description,View statistical report relating to a selected location,1,1,1,1,1,1,0,0,0
+UC25.txt,UC25.txt.flow_of_events.0,Activate the feature on the statistical report,1,1,0,0,1,1,0,0,1
+UC25.txt,UC25.txt.flow_of_events.1,Upload the list of places in the system and displays them in a form,1,1,1,1,1,1,0,0,0
+UC25.txt,UC25.txt.flow_of_events.2,Select a location and submit the form,1,0,0,0,1,1,0,0,1
+UC25.txt,UC25.txt.flow_of_events.3,Upload midsize site feedback obtained by activating the Search Site use case for the location selected,1,1,1,1,1,1,0,0,1
+UC25.txt,UC25.txt.flow_of_events.4,Prepare the statistical report,1,1,1,0,1,1,0,0,0
+UC25.txt,UC25.txt.name,View Report Statistic,1,1,1,1,1,1,0,0,0
+UC25.txt,UC25.txt.postcondition,The system displays the statistical report for the selected location Interruption of the connection to the server,1,0,1,1,1,1,0,0,0
+UC25.txt,UC25.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC26.txt,UC26.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC26.txt,UC26.txt.description,Editing a comment by a feedback selected,1,1,1,1,1,1,0,0,0
+UC26.txt,UC26.txt.flow_of_events.0,View the list of sites as a result of the use case Search Site it selects and activates a function of change in the selected comment,1,1,1,1,1,1,0,0,1
+UC26.txt,UC26.txt.flow_of_events.1,Upload feedback issued to that site and displays them in a form,1,1,1,0,1,1,0,0,0
+UC26.txt,UC26.txt.flow_of_events.2,Select a feedback from the list and submit the form,1,0,0,1,1,1,0,0,1
+UC26.txt,UC26.txt.flow_of_events.3,Displays a form for editing the comment of feedback selected,1,1,1,0,1,1,0,0,0
+UC26.txt,UC26.txt.flow_of_events.4,Edit the comment and submit the form,1,0,0,0,1,1,0,0,1
+UC26.txt,UC26.txt.flow_of_events.5,Verify the data entered and asks for confirmation of the change,1,1,1,0,1,1,0,0,0
+UC26.txt,UC26.txt.flow_of_events.6,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC26.txt,UC26.txt.flow_of_events.7,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC26.txt,UC26.txt.flow_of_events.8,Remember the comment changed,1,1,1,0,1,1,0,0,0
+UC26.txt,UC26.txt.name,Modify Comment,1,1,1,1,1,1,0,0,0
+UC26.txt,UC26.txt.postcondition,The notification system has been modified for the comment feedback selected Operator Agency cancels the operation Interruption of the connection to the server,1,0,1,1,1,1,0,0,1
+UC26.txt,UC26.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC27.txt,UC27.txt.description,Searching for a specific site on the computer,1,1,1,0,1,1,0,0,0
+UC27.txt,UC27.txt.flow_of_events.0,Activate the search functionality of a site,1,1,0,0,1,1,0,0,1
+UC27.txt,UC27.txt.flow_of_events.1,Show the form for research Fill in the form of research and submit Processing the request,1,1,1,0,1,1,0,0,1
+UC27.txt,UC27.txt.name,Search Site,1,1,1,0,1,1,0,0,0
+UC27.txt,UC27.txt.postcondition,The system returns a list of sites found Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC27.txt,UC27.txt.quality_requirement,The system requirements should return the results within a time limit set,0,0,0,0,0,0,1,1,0
+UC28.txt,UC28.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC28.txt,UC28.txt.description,Removes one or more search tags in the system,1,1,1,1,1,1,0,0,0
+UC28.txt,UC28.txt.flow_of_events.0,Access the functionality to delete a tag,1,1,0,0,1,1,0,0,1
+UC28.txt,UC28.txt.flow_of_events.1,Research in the existing system the tags and displays them in a form,1,1,1,0,1,1,0,0,0
+UC28.txt,UC28.txt.flow_of_events.2,Select one or more tags from the list and sends the request for deletion,1,0,0,1,1,1,0,0,1
+UC28.txt,UC28.txt.flow_of_events.3,Delete the selected search tag,1,1,1,1,1,1,0,0,0
+UC28.txt,UC28.txt.name,Delete Tag,1,1,1,1,1,1,0,0,0
+UC28.txt,UC28.txt.postcondition,The system shall notify the successful elimination of selected tags Interruption of the connection to the server ETOUR,1,1,1,1,1,1,0,0,0
+UC28.txt,UC28.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC29.txt,UC29.txt.description,He was asked to enter a search tags already in the system,1,0,0,1,1,1,0,0,1
+UC29.txt,UC29.txt.flow_of_events.0,Notice the error message and asks for confirmation of its reading,1,0,1,0,1,1,0,0,0
+UC29.txt,UC29.txt.flow_of_events.1,Confirmation of the reading of the notification,1,0,0,0,1,1,0,0,1
+UC29.txt,UC29.txt.flow_of_events.2,Recovers the previous state,1,1,1,0,1,1,0,0,0
+UC29.txt,UC29.txt.name,Existing Error Tag,1,1,1,1,1,1,0,0,0
+UC29.txt,UC29.txt.postcondition,The system returns control to the user interaction,1,0,1,0,1,1,0,0,1
+UC29.txt,UC29.txt.precondition,He was asked to enter a search tags already in the system,0,0,0,0,0,0,0,0,1
+UC30.txt,UC30.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC30.txt,UC30.txt.description,Inserts a new tag search,1,1,1,1,1,1,0,0,0
+UC30.txt,UC30.txt.flow_of_events.0,Access the functionality of inserting new tag search,1,1,0,0,1,1,0,0,1
+UC30.txt,UC30.txt.flow_of_events.1,Show the form for entering a tag,1,1,1,1,1,1,0,0,0
+UC30.txt,UC30.txt.flow_of_events.2,Fill out the form with the required information and submit,1,0,0,0,1,1,0,0,1
+UC30.txt,UC30.txt.flow_of_events.3,Verify the data entered and check if the tag is already present in the system,1,1,1,1,1,1,0,0,0
+UC30.txt,UC30.txt.flow_of_events.4,In the latter case the active use case Existing Error Tag,0,0,0,0,0,0,0,0,0
+UC30.txt,UC30.txt.flow_of_events.5,Instead if the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC30.txt,UC30.txt.name,Insert Tag,1,1,1,1,1,1,0,0,0
+UC30.txt,UC30.txt.postcondition,The notification about the inclusion of the tag Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC30.txt,UC30.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC31.txt,UC31.txt.actor,initialization Agency Operator,0,0,0,0,0,0,0,0,1
+UC31.txt,UC31.txt.description,The Agency Operator chooses to change the password associated with your account,1,1,0,1,1,1,0,0,1
+UC31.txt,UC31.txt.flow_of_events.0,Choose to change your password by pressing the appropriate Button,1,1,0,0,1,1,0,0,1
+UC31.txt,UC31.txt.flow_of_events.1,Upload the form to change the password associated with that work agency Change your password by entering the new choice and confirming Save your changes,1,1,1,0,1,1,0,0,1
+UC31.txt,UC31.txt.name,Modify Password,1,1,1,1,1,1,0,0,0
+UC31.txt,UC31.txt.postcondition,The system confirms the success of Operation Interruption of the connection to the server,1,0,1,0,1,1,0,0,0
+UC31.txt,UC31.txt.precondition,The agency has logged,0,0,0,0,0,0,0,0,1
+UC32.txt,UC32.txt.description,He was asked to enter a password but is not confirmed in a correct way,1,0,1,0,1,1,0,0,1
+UC32.txt,UC32.txt.flow_of_events.0,Notify an error message,1,0,1,0,1,1,0,0,0
+UC32.txt,UC32.txt.flow_of_events.1,Confirmation of the reading of the notification,1,0,0,0,1,1,0,0,1
+UC32.txt,UC32.txt.flow_of_events.2,Back to change your password,1,0,1,0,1,1,0,0,1
+UC32.txt,UC32.txt.name,Modify Password Error,1,1,1,0,1,1,0,0,0
+UC32.txt,UC32.txt.postcondition,The system returns control to the user interaction,1,0,1,0,1,1,0,0,1
+UC32.txt,UC32.txt.precondition,It has been pressed the button to confirm the password change,0,0,0,0,0,0,0,0,1
+UC33.txt,UC33.txt.actor,initialized by Guest User,0,0,0,0,0,0,0,0,1
+UC33.txt,UC33.txt.description,Requires the creation of a new system,0,0,0,0,0,0,0,0,0
+UC33.txt,UC33.txt.flow_of_events.0,Enable the logging feature,1,1,0,0,1,1,0,0,1
+UC33.txt,UC33.txt.flow_of_events.1,View the registration form,1,1,1,0,1,1,0,0,0
+UC33.txt,UC33.txt.flow_of_events.2,Fill out the form and submit,1,0,0,0,1,1,0,0,1
+UC33.txt,UC33.txt.flow_of_events.3,Verify the data entered and asks for confirmation of the transaction,1,1,1,0,1,1,0,0,0
+UC33.txt,UC33.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC33.txt,UC33.txt.flow_of_events.5,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC33.txt,UC33.txt.flow_of_events.6,Create a new account with the data entered,1,1,1,1,1,1,0,0,0
+UC33.txt,UC33.txt.name,Registration,1,1,1,0,1,1,0,0,0
+UC33.txt,UC33.txt.postcondition,The system shall notify the successful operation of recording Guest User cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC33.txt,UC33.txt.precondition,Guest User have access to the system,0,0,0,0,0,0,0,0,1
+UC34.txt,UC34.txt.actor,initialized by Guest User,0,0,0,0,0,0,0,0,1
+UC34.txt,UC34.txt.description,Research and cultural heritage for all,1,1,1,1,1,1,0,0,0
+UC34.txt,UC34.txt.flow_of_events.0,Activate the search functionality,1,1,0,0,1,1,0,0,1
+UC34.txt,UC34.txt.flow_of_events.1,Displays the corresponding form,1,1,1,0,1,1,0,0,0
+UC34.txt,UC34.txt.flow_of_events.2,Fill out the form and submit,1,0,0,0,1,1,0,0,1
+UC34.txt,UC34.txt.flow_of_events.3,Gets the position of the Guest citing the case of use location and process research,1,0,1,1,1,1,0,0,0
+UC34.txt,UC34.txt.name,SEARCH,1,1,1,1,1,1,0,0,0
+UC34.txt,UC34.txt.postcondition,The system displays a list of sites that meet the search criteria Interruption of the connection to the server ETOUR,1,0,1,1,1,1,0,0,0
+UC34.txt,UC34.txt.precondition,Guest User logs on,0,0,0,0,0,0,0,0,1
+UC35.txt,UC35.txt.actor,initialization Registered User,0,0,0,0,0,0,0,0,1
+UC35.txt,UC35.txt.description,Ensures a registered user to access the system with the privileges that fall,1,0,1,0,1,1,0,0,0
+UC35.txt,UC35.txt.flow_of_events.0,Activate the login feature,1,1,0,0,1,1,0,0,1
+UC35.txt,UC35.txt.flow_of_events.1,Displays the corresponding form,1,1,1,0,1,1,0,0,0
+UC35.txt,UC35.txt.flow_of_events.2,Fill out the form with login information and submit,1,0,0,0,1,1,0,0,1
+UC35.txt,UC35.txt.flow_of_events.3,Check the correctness of the data if not corrected on the use case Login Error,1,1,1,0,1,1,0,0,0
+UC35.txt,UC35.txt.name,LOGIN,1,1,1,0,1,1,0,0,0
+UC35.txt,UC35.txt.postcondition,The system displays the area of work registered The registered user cancels the operation Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC35.txt,UC35.txt.precondition,A registered user has access to the system,0,0,0,0,0,0,0,0,1
+UC36.txt,UC36.txt.description,The data supplied for the login is incorrect,0,0,0,0,0,0,0,0,0
+UC36.txt,UC36.txt.flow_of_events.0,Notice that the data entered for the login is not valid and asks for confirmation of the reading,1,1,1,0,1,1,0,0,0
+UC36.txt,UC36.txt.flow_of_events.1,Confirmation of the reading of the notification,1,0,0,0,1,1,0,0,1
+UC36.txt,UC36.txt.flow_of_events.2,Recovers the previous state,1,1,1,0,1,1,0,0,0
+UC36.txt,UC36.txt.name,Login Error,1,1,1,0,1,1,0,0,0
+UC36.txt,UC36.txt.postcondition,The system returns control to the user interaction,1,0,1,0,1,1,0,0,1
+UC36.txt,UC36.txt.precondition,The data supplied for the login is incorrect,0,0,0,0,0,0,0,0,1
+UC37.txt,UC37.txt.actor,initialization Registered User,0,0,0,0,0,0,0,0,1
+UC37.txt,UC37.txt.description,Ends the current session,1,1,1,0,1,1,0,0,0
+UC37.txt,UC37.txt.flow_of_events.0,Access the functionality of disconnection from the system,1,1,0,0,1,1,0,0,1
+UC37.txt,UC37.txt.flow_of_events.1,Asks for confirmation of the transaction,1,0,1,0,1,1,0,0,0
+UC37.txt,UC37.txt.flow_of_events.2,Confirm the request for disconnection,1,0,0,0,1,1,0,0,1
+UC37.txt,UC37.txt.flow_of_events.3,Disconnects the Registered User,1,1,1,1,1,1,0,0,0
+UC37.txt,UC37.txt.name,Logout,1,1,1,1,1,1,0,0,0
+UC37.txt,UC37.txt.postcondition,The system shall notify the successful operation logout,1,1,1,0,1,1,0,0,0
+UC37.txt,UC37.txt.precondition,A registered user has previously made a successful Login,0,0,0,0,0,0,0,0,1
+UC38.txt,UC38.txt.actor,initialization Operator Point Of Restaurants,0,0,0,0,0,0,0,0,1
+UC38.txt,UC38.txt.description,Inserting a new banner associated with the point of rest,1,1,1,1,1,1,0,0,0
+UC38.txt,UC38.txt.flow_of_events.0,Select the feature for the insertion of a new banner,1,1,0,0,1,1,0,0,1
+UC38.txt,UC38.txt.flow_of_events.1,Displays a form for the selection of an image,1,1,1,0,1,1,0,0,0
+UC38.txt,UC38.txt.flow_of_events.2,Select an image and sends the request for entering the system,1,0,0,0,1,1,0,0,1
+UC38.txt,UC38.txt.flow_of_events.3,Check the characteristics of the inserted check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner,1,1,1,0,1,1,0,0,0
+UC38.txt,UC38.txt.flow_of_events.4,In the event that the inserted image is not valid enable the use case Errored,1,0,1,0,1,1,0,0,0
+UC38.txt,UC38.txt.flow_of_events.5,Confirm the operation of insertion,1,0,0,0,1,1,0,0,1
+UC38.txt,UC38.txt.flow_of_events.6,Remember the banners associated with the point of rest,1,1,1,1,1,1,0,0,0
+UC38.txt,UC38.txt.name,Insert Banner,1,1,1,1,1,1,0,0,0
+UC38.txt,UC38.txt.postcondition,The notification about the insertion of new banner The Point Of Operator Restaurant cancels the operation The point of eating has already entered the maximum number of banners allowed Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC38.txt,UC38.txt.precondition,The Point Of Restaurant Operator has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC39.txt,UC39.txt.actor,initialization Operator Point Of Restaurants,0,0,0,0,0,0,0,0,1
+UC39.txt,UC39.txt.description,Changing the image of a banner ad,1,1,1,1,1,1,0,0,0
+UC39.txt,UC39.txt.flow_of_events.0,Select the editing functionality of the banner,1,1,0,0,1,1,0,0,1
+UC39.txt,UC39.txt.flow_of_events.1,View the list of banner associated with the point of rest,1,1,1,1,1,1,0,0,0
+UC39.txt,UC39.txt.flow_of_events.2,Select a banner from the list and enter the editing functionality,1,0,0,1,1,1,0,0,1
+UC39.txt,UC39.txt.flow_of_events.3,Displays a form for the selection of an image,1,1,1,0,1,1,0,0,0
+UC39.txt,UC39.txt.flow_of_events.4,Select a picture and send the request to change the system,1,0,0,0,1,1,0,0,1
+UC39.txt,UC39.txt.flow_of_events.5,Check the characteristics of the inserted and asks for confirmation of the change of the banner,1,1,1,0,1,1,0,0,0
+UC39.txt,UC39.txt.flow_of_events.6,In the event that the inserted image is not valid enable the use case Errored,1,0,1,0,1,1,0,0,0
+UC39.txt,UC39.txt.flow_of_events.7,Confirmation of the transaction change,1,0,0,0,1,1,0,0,1
+UC39.txt,UC39.txt.flow_of_events.8,Bookmark this new image for the selected banner,1,1,1,0,1,1,0,0,1
+UC39.txt,UC39.txt.name,Modify Banner,1,1,1,1,1,1,0,0,0
+UC39.txt,UC39.txt.postcondition,The system shall notify the successful modification of the banner The Point Of Operator Restaurant cancels the operation Interruption of the connection to the server ETOUR,1,1,1,1,1,1,0,0,1
+UC39.txt,UC39.txt.precondition,The Point Of Restaurant Operator has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC40.txt,UC40.txt.actor,initialization Operator Point Of Restaurants,0,0,0,0,0,0,0,0,1
+UC40.txt,UC40.txt.description,Delete a banner ad associated with the point of rest,1,1,1,1,1,1,0,0,0
+UC40.txt,UC40.txt.flow_of_events.0,Select the feature for removal of the banner,1,1,0,0,1,1,0,0,1
+UC40.txt,UC40.txt.flow_of_events.1,View the list of banner associated with the point of rest,1,1,1,1,1,1,0,0,0
+UC40.txt,UC40.txt.flow_of_events.2,Select a banner from the list and enter the function of elimination,1,0,0,1,1,1,0,0,1
+UC40.txt,UC40.txt.flow_of_events.3,Displays a message confirming the deletion,1,1,1,0,1,1,0,0,0
+UC40.txt,UC40.txt.flow_of_events.4,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC40.txt,UC40.txt.flow_of_events.5,Removes the banner,1,1,1,1,1,1,0,0,0
+UC40.txt,UC40.txt.name,Delete Banner,1,1,1,1,1,1,0,0,0
+UC40.txt,UC40.txt.postcondition,The system shall notify the successful elimination of the selected banner The Point Of Operator Restaurant cancels the operation Interruption of the connection to the server ETOUR,1,1,1,1,1,1,0,0,1
+UC40.txt,UC40.txt.precondition,The Point Of Restaurant Operator has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC41.txt,UC41.txt.actor,initialization Operator Point Of Restaurants,0,0,0,0,0,0,0,0,1
+UC41.txt,UC41.txt.description,Change the daily menu of a restaurant,1,1,1,1,1,1,0,0,0
+UC41.txt,UC41.txt.flow_of_events.0,Activate the editing functionality of the menu,1,1,0,0,1,1,0,0,1
+UC41.txt,UC41.txt.flow_of_events.1,Displays a form with seven days of the week,1,1,1,0,1,1,0,0,0
+UC41.txt,UC41.txt.flow_of_events.2,Select a day of the week and submit the form,1,0,0,0,1,1,0,0,1
+UC41.txt,UC41.txt.flow_of_events.3,Upload the data menu for the selected day and loads them into a form,1,1,1,1,1,1,0,0,0
+UC41.txt,UC41.txt.flow_of_events.4,Edit menu of the selected day and submit the form,1,0,0,1,1,1,0,0,1
+UC41.txt,UC41.txt.flow_of_events.5,Verify the data entered and asks for confirmation of the edit menu,1,1,1,0,1,1,0,0,0
+UC41.txt,UC41.txt.flow_of_events.6,Where the data are insufficient or invalid the active use case Errored,1,0,1,0,1,1,0,0,0
+UC41.txt,UC41.txt.flow_of_events.7,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC41.txt,UC41.txt.flow_of_events.8,Saves changes to the menu selected,1,1,1,1,1,1,0,0,1
+UC41.txt,UC41.txt.name,Modify Menu,1,1,1,1,1,1,0,0,0
+UC41.txt,UC41.txt.postcondition,The system shall notify the successful modification of the menu Restaurant Point Of Operator cancels the operation Interruption of the connection to the server ETOUR,1,1,1,1,1,1,0,0,1
+UC41.txt,UC41.txt.precondition,The Point Of Restaurant Operator has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC42.txt,UC42.txt.actor,initialization Operator Point Of Restaurants,0,0,0,0,0,0,0,0,1
+UC42.txt,UC42.txt.description,Delete a daily menu of a restaurant,1,1,1,1,1,1,0,0,0
+UC42.txt,UC42.txt.flow_of_events.0,Enable the functionality of deleting a menu,1,1,0,0,1,1,0,0,1
+UC42.txt,UC42.txt.flow_of_events.1,Displays a form containing the seven days of the week,1,1,1,0,1,1,0,0,0
+UC42.txt,UC42.txt.flow_of_events.2,Select a day of the week and submit the form,1,0,0,0,1,1,0,0,1
+UC42.txt,UC42.txt.flow_of_events.3,Calls to confirm the deletion,1,0,1,0,1,1,0,0,0
+UC42.txt,UC42.txt.flow_of_events.4,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC42.txt,UC42.txt.flow_of_events.5,Delete the daily menu selection,1,1,1,1,1,1,0,0,0
+UC42.txt,UC42.txt.name,Delete Menu,1,1,1,1,1,1,0,0,0
+UC42.txt,UC42.txt.postcondition,The system shall notify the successful elimination of the daily menu selection Restaurant Point Of Operator cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC42.txt,UC42.txt.precondition,The Point Of Restaurant Operator has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC43.txt,UC43.txt.actor,initialization Operator Point Of Restaurants,0,0,0,0,0,0,0,0,1
+UC43.txt,UC43.txt.description,Change data point associated refreshment,1,1,1,1,1,1,0,0,0
+UC43.txt,UC43.txt.flow_of_events.0,Enable the functionality of the information required by the point of rest,1,1,0,0,1,1,0,0,1
+UC43.txt,UC43.txt.flow_of_events.1,Upload data point Refreshments and displays them in a form,1,1,1,1,1,1,0,0,0
+UC43.txt,UC43.txt.flow_of_events.2,Change data in the form and submit,1,0,0,0,1,1,0,0,1
+UC43.txt,UC43.txt.flow_of_events.3,Verify the data entered and asks for confirmation of the change,1,1,1,0,1,1,0,0,0
+UC43.txt,UC43.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC43.txt,UC43.txt.flow_of_events.5,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC43.txt,UC43.txt.flow_of_events.6,Stores the modified data of the point of rest,1,1,1,1,1,1,0,0,0
+UC43.txt,UC43.txt.name,Modify Refreshment Point,1,1,1,1,1,1,0,0,0
+UC43.txt,UC43.txt.postcondition,The notification system has been changing the data point selected restaurants Restaurant Point Of Operator cancels the operation Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC43.txt,UC43.txt.precondition,The Point Restaurant Operator has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC44.txt,UC44.txt.actor,initialization Operator Point Of Restaurants,0,0,0,0,0,0,0,0,1
+UC44.txt,UC44.txt.description,Require to conclude a Convention between the points of rest and the agency involved,1,1,1,1,1,1,0,0,0
+UC44.txt,UC44.txt.flow_of_events.0,Enable the functionality to request the Convention to the Agency,1,1,0,0,1,1,0,0,1
+UC44.txt,UC44.txt.flow_of_events.1,Displays a form for entering data of the Convention,1,1,1,0,1,1,0,0,0
+UC44.txt,UC44.txt.flow_of_events.2,Inserts the data in the form of the agreement and submit,1,0,0,0,1,1,0,0,1
+UC44.txt,UC44.txt.flow_of_events.3,Verify the data entered and asks for confirmation of the request,1,1,1,0,1,1,0,0,0
+UC44.txt,UC44.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC44.txt,UC44.txt.flow_of_events.5,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC44.txt,UC44.txt.flow_of_events.6,Send the request to the Convention,1,1,1,0,1,1,0,0,0
+UC44.txt,UC44.txt.name,Convention Request,1,1,1,0,1,1,0,0,0
+UC44.txt,UC44.txt.postcondition,The notification about the call for the Convention to the Agency Restaurant Point Of Operator cancels the operation Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC44.txt,UC44.txt.precondition,The Point Of Restaurant Operator has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC45.txt,UC45.txt.actor,initialization Operator Point Of Restaurants,0,0,0,0,0,0,0,0,1
+UC45.txt,UC45.txt.description,Viewing statistics for Point Of Restaurants,1,1,1,1,1,1,0,0,0
+UC45.txt,UC45.txt.flow_of_events.0,Select the feature to display personal statistics,1,1,0,0,1,1,0,0,1
+UC45.txt,UC45.txt.flow_of_events.1,Displays a form that shows data for the statistics associated refreshment point,1,1,1,1,1,1,0,0,0
+UC45.txt,UC45.txt.name,View Personal Statistic,1,1,1,1,1,1,0,0,0
+UC45.txt,UC45.txt.postcondition,The system displays the data on the screen Interruption of the connection to the server,1,0,1,0,1,1,0,0,0
+UC45.txt,UC45.txt.precondition,The Point Of Restaurant Operator has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC46.txt,UC46.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC46.txt,UC46.txt.description,Edit your personal search preferences,1,1,1,1,1,1,0,0,1
+UC46.txt,UC46.txt.flow_of_events.0,Access to functionality for the modification of personal search preferences,1,1,0,0,1,1,0,0,1
+UC46.txt,UC46.txt.flow_of_events.1,Upload your search preferences and displays them in a form,1,1,1,1,1,1,0,0,0
+UC46.txt,UC46.txt.flow_of_events.2,Edit the fields in the form and submit,1,0,0,0,1,1,0,0,1
+UC46.txt,UC46.txt.flow_of_events.3,Asks confirmation,1,0,1,0,1,1,0,0,0
+UC46.txt,UC46.txt.flow_of_events.4,Confirmation for changing search preferences,1,0,0,0,1,1,0,0,1
+UC46.txt,UC46.txt.flow_of_events.5,Memorize search preferences changed,1,1,1,1,1,1,0,0,0
+UC46.txt,UC46.txt.name,Modify Search Preference,1,1,1,1,1,1,0,0,0
+UC46.txt,UC46.txt.postcondition,The system shall notify the successful modification of search preferences The Tourist cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC46.txt,UC46.txt.precondition,The Tourist has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC47.txt,UC47.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC47.txt,UC47.txt.description,Change data associated with your account,1,1,1,1,1,1,0,0,1
+UC47.txt,UC47.txt.flow_of_events.0,Access to functionality for the modification of data,1,1,0,0,1,1,0,0,1
+UC47.txt,UC47.txt.flow_of_events.1,Loads the data and displays them in a form,1,1,1,0,1,1,0,0,0
+UC47.txt,UC47.txt.flow_of_events.2,Edit the fields in the form and submit,1,0,0,0,1,1,0,0,1
+UC47.txt,UC47.txt.flow_of_events.3,Check the modified information and asks for confirmation of the change,1,1,1,0,1,1,0,0,0
+UC47.txt,UC47.txt.flow_of_events.4,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC47.txt,UC47.txt.flow_of_events.5,Confirmation of the transaction change,1,0,0,0,1,1,0,0,1
+UC47.txt,UC47.txt.flow_of_events.6,Stores the modified data,1,1,1,0,1,1,0,0,0
+UC47.txt,UC47.txt.name,Modify Tourist Data,1,1,1,0,1,1,0,0,0
+UC47.txt,UC47.txt.postcondition,The system shall notify the successful modification of data The Tourist cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC47.txt,UC47.txt.precondition,Tourism has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC48.txt,UC48.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC48.txt,UC48.txt.description,Edit Preferences generic personal,1,1,1,1,1,1,0,0,0
+UC48.txt,UC48.txt.flow_of_events.0,Access to functionality for the modification of generic personal preferences,1,1,0,0,1,1,0,0,1
+UC48.txt,UC48.txt.flow_of_events.1,Upload your preferences and the general view in a form,1,1,0,1,1,1,0,0,1
+UC48.txt,UC48.txt.flow_of_events.2,Edit the fields in the form and submit,1,0,0,0,1,1,0,0,1
+UC48.txt,UC48.txt.flow_of_events.3,Asks for confirmation of the change,1,0,1,0,1,1,0,0,0
+UC48.txt,UC48.txt.flow_of_events.4,Confirm the operation,1,0,0,0,1,1,0,0,1
+UC48.txt,UC48.txt.flow_of_events.5,Stores preferences changed,1,1,1,1,1,1,0,0,0
+UC48.txt,UC48.txt.name,Modify Generic Preference,1,1,1,1,1,1,0,0,0
+UC48.txt,UC48.txt.postcondition,The system shall notify the successful modification of general preferences The Tourist cancels the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC48.txt,UC48.txt.precondition,Tourism has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC49.txt,UC49.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC49.txt,UC49.txt.description,View the list of personal favorites,1,1,1,1,1,1,0,0,0
+UC49.txt,UC49.txt.flow_of_events.0,Select the feature to display the list of personal favorites,1,1,0,1,1,1,0,0,1
+UC49.txt,UC49.txt.flow_of_events.1,Upload the list of bookmarks,1,1,1,1,1,1,0,0,0
+UC49.txt,UC49.txt.name,View Preferred Site,1,1,1,1,1,1,0,0,0
+UC49.txt,UC49.txt.postcondition,The system displays the list of bookmarks Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,0
+UC49.txt,UC49.txt.precondition,The Tourist has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC50.txt,UC50.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC50.txt,UC50.txt.description,View the list of sites for which it has issued a feedback,1,1,1,1,1,1,0,0,1
+UC50.txt,UC50.txt.flow_of_events.0,Select the feature to display the list of sites visited personal,1,1,0,1,1,1,0,0,1
+UC50.txt,UC50.txt.flow_of_events.1,Upload the list of sites for which the tourist has issued a Feedback,1,1,1,1,1,1,0,0,0
+UC50.txt,UC50.txt.name,View Visited Sites,1,1,1,1,1,1,0,0,0
+UC50.txt,UC50.txt.postcondition,The system displays a list of sites visited Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,0
+UC50.txt,UC50.txt.precondition,Tourist has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC51.txt,UC51.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC51.txt,UC51.txt.description,Inserts a site selected in the list of bookmarks,1,1,1,1,1,1,0,0,0
+UC51.txt,UC51.txt.flow_of_events.0,Activate the feature for the insertion of the selected site from the bookmarks,1,1,0,0,1,1,0,0,1
+UC51.txt,UC51.txt.flow_of_events.1,Prompt the inclusion Confirm the input,1,1,1,0,1,1,0,0,1
+UC51.txt,UC51.txt.flow_of_events.2,Inserts the selected site in the list of bookmarks,1,1,1,1,1,1,0,0,1
+UC51.txt,UC51.txt.name,Insert Preference Site,1,1,1,1,1,1,0,0,0
+UC51.txt,UC51.txt.postcondition,The notification about the insertion site to favorites Interruption of connection to the server ETOUR,1,0,1,0,1,1,0,0,0
+UC51.txt,UC51.txt.precondition,The tourist card is in a particular site,0,0,0,0,0,0,0,0,1
+UC52.txt,UC52.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC52.txt,UC52.txt.description,Tourism delete a site from the list of bookmarks,1,1,1,1,1,1,0,0,1
+UC52.txt,UC52.txt.flow_of_events.0,Choose to remove your site from the list of bookmarks by specific features,1,1,0,1,1,1,0,0,1
+UC52.txt,UC52.txt.flow_of_events.1,Prompt removal Confirm the removal,1,1,1,0,1,1,0,0,1
+UC52.txt,UC52.txt.flow_of_events.2,Removes the selected site from the list of bookmarks,1,1,1,1,1,1,0,0,1
+UC52.txt,UC52.txt.name,Delete Site From Preferences,1,1,1,1,1,1,0,0,0
+UC52.txt,UC52.txt.postcondition,The notification system has been removed from the site bookmarks The Tourist cancel the operation Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,1
+UC52.txt,UC52.txt.precondition,The tourist card is in a particular site,0,0,0,0,0,0,0,0,1
+UC53.txt,UC53.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC53.txt,UC53.txt.description,Inserts a feedback for the selected site,1,1,1,1,1,1,0,0,0
+UC53.txt,UC53.txt.flow_of_events.0,Activate the feature on the issue of feedback,1,0,0,0,1,1,0,0,1
+UC53.txt,UC53.txt.flow_of_events.1,Verify that the visitor has not already issued a feedback for the site and displays a form for entering the feedback for the selected site,1,1,1,0,1,1,0,0,0
+UC53.txt,UC53.txt.flow_of_events.2,In case the visitor has already issued a feedback for the site selected activates the use case Feedback Already Released,1,0,1,0,1,1,0,0,0
+UC53.txt,UC53.txt.flow_of_events.3,Fill out the form selecting one vote and inserting a comment then submit,1,0,0,0,1,1,0,0,1
+UC53.txt,UC53.txt.flow_of_events.4,Verify the data entered and confirm the cheide,1,1,1,0,1,1,0,0,0
+UC53.txt,UC53.txt.flow_of_events.5,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC53.txt,UC53.txt.flow_of_events.6,Confirming the issue of feedback,1,0,0,0,1,1,0,0,1
+UC53.txt,UC53.txt.flow_of_events.7,Remember feedback and inserts the selected site in the list of sites visited,1,1,1,1,1,1,0,0,0
+UC53.txt,UC53.txt.name,Insert Feedback,1,1,1,1,1,1,0,0,0
+UC53.txt,UC53.txt.postcondition,The system shall notify the successful combination of feedback to the site The Tourist cancel the operation Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,1
+UC53.txt,UC53.txt.precondition,The tourist card is in a particular site,0,0,0,0,0,0,0,0,1
+UC54.txt,UC54.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC54.txt,UC54.txt.description,Edit the comment previously issued,1,1,1,1,1,1,0,0,0
+UC54.txt,UC54.txt.flow_of_events.0,Choose to change the comment on the feedback for the site issued by the appropriate functionality,1,1,0,0,1,1,0,0,1
+UC54.txt,UC54.txt.flow_of_events.1,Verify the data entered and asks for confirmation of the change,1,1,1,0,1,1,0,0,0
+UC54.txt,UC54.txt.flow_of_events.2,Where the data is invalid or insufficient the system activates the use case Errored,1,0,1,0,1,1,0,0,0
+UC54.txt,UC54.txt.flow_of_events.3,Confirm the change of the comment,1,0,0,0,1,1,0,0,1
+UC54.txt,UC54.txt.flow_of_events.4,Edit commentary on selected feedback,1,1,1,1,1,1,0,0,1
+UC54.txt,UC54.txt.name,Modify Comment,1,1,1,1,1,1,0,0,0
+UC54.txt,UC54.txt.postcondition,The system shall notify the alterations of the comment Interruption of the connection to the server ETOUR,1,1,1,0,1,1,0,0,0
+UC54.txt,UC54.txt.precondition,is in the details of a particular site,0,0,0,0,0,0,0,0,1
+UC55.txt,UC55.txt.actor,initialization,0,0,0,0,0,0,0,0,1
+UC55.txt,UC55.txt.flow_of_events.0,Notification that the user has already issued a feedback for the site and cancel the operation to insert a new feedback,1,1,1,0,1,1,0,0,0
+UC55.txt,UC55.txt.flow_of_events.1,Confirmation of the reading of the notification,1,0,0,0,1,1,0,0,1
+UC55.txt,UC55.txt.flow_of_events.2,Recovers the previous state,1,1,1,0,1,1,0,0,0
+UC55.txt,UC55.txt.name,Feedback Already Released,1,1,0,0,1,1,0,0,0
+UC55.txt,UC55.txt.postcondition,The system returns control to the user interaction,1,0,1,0,1,1,0,0,1
+UC55.txt,UC55.txt.precondition,He already been issued with a feedback for the selected site,0,0,0,0,0,0,0,0,1
+UC56.txt,UC56.txt.actor,System initialization,0,0,0,0,0,0,0,0,1
+UC56.txt,UC56.txt.description,Returns the current position of the tourist,1,1,1,0,1,1,0,0,0
+UC56.txt,UC56.txt.flow_of_events.0,The system requires the data for the position,1,0,1,0,1,1,0,0,0
+UC56.txt,UC56.txt.flow_of_events.1,The GPS calculates the position of the tourist,1,0,1,0,1,1,0,0,0
+UC56.txt,UC56.txt.flow_of_events.2,The system is on hold until the data of the position,1,0,1,0,1,1,0,0,0
+UC56.txt,UC56.txt.name,Localization,1,1,1,0,1,1,0,0,0
+UC56.txt,UC56.txt.postcondition,The system receives the position of the tourist The position of the tourist is not detectable by GPS,1,0,1,0,1,1,0,0,0
+UC56.txt,UC56.txt.precondition,He began a search or an advanced search,0,0,0,0,0,0,0,0,1
+UC56.txt,UC56.txt.quality_requirement,The GPS requirements into the transaction in more than seconds,0,0,0,0,0,0,1,1,0
+UC57.txt,UC57.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC57.txt,UC57.txt.description,The tourist searching for a site using the potential offered by the Advanced Search,1,1,1,0,1,1,0,0,1
+UC57.txt,UC57.txt.flow_of_events.0,Enable the advanced search feature from your personal area,1,1,0,0,1,1,0,0,1
+UC57.txt,UC57.txt.flow_of_events.1,View the advanced search form,1,1,1,0,1,1,0,0,0
+UC57.txt,UC57.txt.flow_of_events.2,Fill in the form of advanced search and submit,1,0,0,0,1,1,0,0,1
+UC57.txt,UC57.txt.flow_of_events.3,Gets the position of relying on the tourist event of the use location and process the request,1,0,1,0,1,1,0,0,0
+UC57.txt,UC57.txt.name,Advanced Search,1,1,1,0,1,1,0,0,0
+UC57.txt,UC57.txt.postcondition,The system displays a list of results Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,0
+UC57.txt,UC57.txt.precondition,The Tourist has successfully authenticated to the system,0,0,0,0,0,0,0,0,1
+UC57.txt,UC57.txt.quality_requirement,The system requirements into the transaction in more than seconds,0,0,0,0,0,0,1,1,0
+UC58.txt,UC58.txt.actor,initialized by Tourist,0,0,0,0,0,0,0,0,1
+UC58.txt,UC58.txt.description,View the details of a particular site,1,1,1,0,1,1,0,0,0
+UC58.txt,UC58.txt.flow_of_events.0,Select the function for displaying the card on a site chosen,1,1,0,0,1,1,0,0,1
+UC58.txt,UC58.txt.flow_of_events.1,Upload data from the database,1,1,1,0,1,1,0,0,0
+UC58.txt,UC58.txt.name,View Site Card,1,1,1,0,1,1,0,0,0
+UC58.txt,UC58.txt.postcondition,The system displays the details of the selected site Interruption of the connection to the server ETOUR,1,0,1,0,1,1,0,0,0
+UC58.txt,UC58.txt.precondition,The Tourist has successfully authenticated to the system and is located in one of the following areas Research Results List of Sites Visited Sites and List of Favorites,0,0,0,0,0,0,0,0,1

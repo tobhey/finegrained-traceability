@@ -1,0 +1,6 @@
+New user
+Inserting a new user in the system
+Fill the fields of the form
+Click on the Save button
+Displays the user entry form consisting of the following fields Name Surname E-mail Cell Login Password Confirm password
+Check out controls on the validity of the data entered and inserts the new user to the store if the data entered are not valid to activate the data error data

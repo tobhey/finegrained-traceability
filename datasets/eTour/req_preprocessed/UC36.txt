@@ -1,0 +1,5 @@
+Login Error
+The data supplied for the login is incorrect
+Notice that the data entered for the login is not valid and asks for confirmation of the reading
+Confirmation of the reading of the notification
+Recovers the previous state

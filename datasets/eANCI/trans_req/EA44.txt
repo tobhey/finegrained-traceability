@@ -1,0 +1,14 @@
+Use Case Name
+ViewPracticesAttendedEmployee
+Participating Actors
+Started by Employee
+Flow of events
+1. Employee selects "View Pending Requests"
+2. System shows the list of pending files.
+Entry Condition.
+The Employee has logged in correctly.
+Exit condition
+➢ The Employee selects a pending request and the use case "ShowPracticeAwaitingEmployee" is invoked, OR
+➢ The Employee returns to the previous screen, OR
+The System encountered an unanticipated error so calls the use case ServiceNotAvailable, OR
+Unanticipated Quality Requirements.

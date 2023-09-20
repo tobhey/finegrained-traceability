@@ -1,0 +1,3 @@
+Wrong login
+Occurs when the user has entered incorrect authentication data
+View the login form

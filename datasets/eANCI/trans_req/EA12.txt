@@ -1,0 +1,16 @@
+Use Case Name
+EditEMailAdministrator
+Participating actors
+Started by administrator
+Event Flow
+1. Administrator accesses the email edit form.
+2. The system shows the form the new e-mail entry.
+3. The administrator enters the new e-mail and presses the confirmation button.
+4. The system updates the new email.
+Entry condition
+The administrator has authenticated into the system.
+Exit condition
+➢ The system saves the new e-mail. ➢ The system detects an error and retrieves the
+use case DataErrati OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is invoked.
+Quality Requirements Not Provided.

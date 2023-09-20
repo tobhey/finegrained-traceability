@@ -1,0 +1,7 @@
+Informazioni Consultorio Giovani
+
+Il Cittadino richiede la visualizzazione dell ' elenco dei consultori
+Il sistema permette di visualizzare l ' elenco dei consultori
+Il cittadino sceglie il consultorio
+Il sistema restituisce le informazioni riguardanti il consultorio prescelto visualizzandone dati come la localizzazione le date e gli orari d ' apertura
+l ' eventuale lista dei colloqui prenotati invocando il caso d ' uso Visualizzazione Prenotazione Consu ltorio

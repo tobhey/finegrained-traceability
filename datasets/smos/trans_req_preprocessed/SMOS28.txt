@@ -1,0 +1,4 @@
+View Details Single Registry
+View the details of one of the class registers
+View on video The information contained in the registry organized by date
+In particular, it shows for today's dates of pupils specifying absent repented and a form from which possible to manage justifications and disciplinary notes

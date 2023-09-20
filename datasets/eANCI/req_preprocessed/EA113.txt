@@ -1,0 +1,4 @@
+Servizio Civile
+
+Il Cittadino accede a questa sezione per avere informazioni circa la propria utilit a favore degli altri
+Il sistema risponde con una visualizzazione di una schermata dove chiarisce gli obiettivi del servizio civile informazioni di carattere generale e la possibilit di chiamare il caso d ' uso Download Iscrizione

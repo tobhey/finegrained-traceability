@@ -1,0 +1,22 @@
+Use case name
+EntryEmployee
+Participating actors
+Started by administrator
+Flow of events
+1. The administrator logs into the system, via administrative terminal, and activates the procedure of Employee registration.
+2. The system displays the form for entering a new employee.
+3. The Administrator enters the Employee's data and submits the registration request.
+4. The system receives the form, verifies that the registration number entered by the Administrator is not already in the system, and generates a password, saves the entered data, and displays a notification of successful registration with the password assigned to the Employee.
+Entry Condition.
+The administrator has authenticated into the system.
+Exit condition
+The system registers the Employee,OR In the case where the Administrator enters a serial number already in the system, the system calls the use case
+DataErrati, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is called.
+Quality Requirements➢ The name string may contain characters such as [ a..z A..Z ' àéèìòù ] and must be less than 31 in length and not empty.
+➢ The surname string can contain characters such as [ a..z A..Z ' àéèìòù ] and must have length less than 31 and not empty.
+➢ Email string consists of x@x.x and has a length less than 3 characters.
+➢ Matriculation string contains only numeric characters is equal to 6 characters.
+➢ The username string is not already in the system, is well formed contains characters [ a..z A..Z 0..9 . - _ ] and has length less than 31 characters and is not empty.
+➢ Password string is well formed contains characters [ a..z A..Z 0..9 . - _ * + ! ? , : ; àèéìòù]and has length between 8 and 15 characters.
+➢ The password confirmation string must be consistent with the password entered.

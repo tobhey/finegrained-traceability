@@ -1,0 +1,20 @@
+Use Case Name
+SubmitBuildingProject
+Participating actors
+Initiated by citizen, communicates with employee
+Flow of events
+1. Citizen accesses the submit construction project area via the appropriate link
+2. The system displays the form for entering the required data.
+The citizen enters the required data 4. The system verifies the correctness and completeness of the data then displays a summary screen or activates the
+DatiErrati use case 5. The citizen confirms the operation
+6. The system displays the form for printing
+7. The system sends a message notifying the appropriate employee of the request.
+Citizen makes the printout to be delivered to the municipal office with the required documents and a revenue stamp attached 8.
+Entry condition
+The citizen has authenticated in the system
+Exit condition
+The system displays a message that the request has been notified
+The system sends a message notifying the relevant clerk of the request, OR
+in the case of incorrect data entered the system invokes the use case DataErrati, OR
+in the case of technical failures the system invokes the use case ServiceNotAvailable
+Quality RequirementsNotAvailable

@@ -1,0 +1,16 @@
+Use Case Name
+RecoveryPasswordAdministrator
+Participating Actors
+Started by administrator
+Event Flow
+1. The administrator has forgotten the password and presses the password recovery button.
+2. The system shows the form for entering the freshman.
+3. The administrator enters his/her matriculation number and presses the confirmation button.
+4. The system verifies the data and sends the password to the administrator's email address.
+Entry condition
+The administrator has access to the system
+Exit condition
+The system sends the password, OR In the case where the administrator enters a serial number that is not in the system, the system calls the use case
+DataErrati, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is called.
+Quality requirements➢ Not expected.

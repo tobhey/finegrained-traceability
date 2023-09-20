@@ -1,0 +1,5 @@
+Pratica Respinta
+
+L ' Impiegato respinge la pratica
+Il sistema imposta la pratica come respinta
+Quindi invia una notifica al Cittadino

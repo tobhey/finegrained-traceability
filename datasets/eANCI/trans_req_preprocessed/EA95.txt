@@ -1,0 +1,6 @@
+Update atmospheric conditions
+
+The municipal clerk after authenticated in the system updates the atmospheric conditions of the municipality and regional provinces
+The system responds by making a form to be completed to be completed to update the fields TEMP Min Temp Max atmospheric name CITT DATE
+The employee completes the fields of the form presented by the system and submits
+The system updates the form and allows the visualization of the latter to the citizen

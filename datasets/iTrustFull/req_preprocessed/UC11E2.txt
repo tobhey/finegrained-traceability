@@ -1,0 +1,2 @@
+The patient chosen is not the desired patient
+The health care personnel does not confirm the selection and is prompted to try again

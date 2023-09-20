@@ -1,0 +1,6 @@
+Richiesta TOSAP Rifiutata
+
+L ' Impiegato visualizza la notifica ricevuta
+Il Sistema mostra all ' Impiegato la richiesta effettuata dal cittadino
+L ' Impiegato rivela un errore nella richiesta e rifiuta la procedura la richiesta
+Il Sistema invia una notifica al cittadino che ha richiesto il servizio

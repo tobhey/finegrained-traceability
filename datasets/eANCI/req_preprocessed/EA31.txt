@@ -1,0 +1,7 @@
+Richiesta Carta Di Identit Accettata
+
+L ' impiegato visualizza la notifica ricevuta
+Il sistema mostra all ' impiegato la richiesta di creazione della carta d ' identit da parte del cittadino
+L ' impiegato certifica la validit della richiesta controllando l ' esattezza dei dati e abilita la procedura per la creazione della carta d ' identit
+Il sistema invia una e-mail di conferma al cittadino che ha richiesto la creazione della carta d ' identit
+Il cittadino si reca allo sportello

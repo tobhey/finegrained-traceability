@@ -1,0 +1,13 @@
+Use Case Name
+PracticeAccepted
+Participating Actors
+Started by Employee Communicates with Citizen
+Flow of Events.
+1. Clerk accepts the practice. 2. The system sets the practice as
+accepted. Then sends a notification to the Citizen.
+Entry Condition.
+The Employee is logged into the system, has selected a pending practice.
+Exit condition
+➢ A notification was sent to the Citizen, OR.
+The system encountered an unexpected error so calls the use case ServiceNotAvailable.
+Quality Requirements This use case includes the use cases AssistanceEconomic, AssistanceDomestic, ServiceMobilityDisabled, AccommodationsNight, AssistanceGirlsMothersMinor, AssistanceHousing, ReleaseParkingDisabled.

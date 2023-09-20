@@ -1,0 +1,11 @@
+Modify News
+Change data of a news on the computer
+Activate the editing functionality of a news
+View all news in a form
+Select a news from the list and submit the form
+Load the data of news and displays them in a form for editing
+Change data in the form and submit
+Check the modified information and asks for confirmation of the transaction
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation of changing the data news
+Stores data modified news

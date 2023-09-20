@@ -1,0 +1,4 @@
+Visualizza Informazioni
+
+Il Cittadino richiede la visualizzazione della informazioni presenti sul territorio
+Il sistema restituisce le informazioni riguardanti il territorio visualizzandone dati come biblioteche eventi musei promozioni presenti sul territorio

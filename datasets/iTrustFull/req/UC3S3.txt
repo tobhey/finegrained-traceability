@@ -1,0 +1,1 @@
+Electronic sessions must terminate after a pre-determined period of inactivity. Allow the administrator to set the length of this period of time and ensure that all authorization is disabled after a period of inactivity that exceeds this length.

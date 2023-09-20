@@ -1,0 +1,6 @@
+Informagiovani News Registration
+
+The citizen requires registration to informagiovani news to receive advertises related to the service
+The system displays a form for submission of the request
+The citizen inserts the news request data in a form
+The system receives the form verifies the data and submits the request

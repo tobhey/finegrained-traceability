@@ -1,0 +1,6 @@
+Informazioni Biblioteche
+
+Il Cittadino richiede la visualizzazione dell ' elenco delle biblioteche
+Il sistema permette di visualizzare l ' elenco delle biblioteche
+Il cittadino sceglie la biblioteca
+Il sistema restituisce le informazioni riguardanti la biblioteca prescelta visualizzandone dati come la localizzazione le date e gli orari d ' apertura il link al sito della biblioteca

@@ -1,0 +1,6 @@
+Family State Change
+
+The citizen presses the family state change button
+The system shows the citizen the form to be completed
+The citizen inserts the data of the new family unit and sends the request
+The system sends the request to the competent employee

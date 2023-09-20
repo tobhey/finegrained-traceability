@@ -1,0 +1,4 @@
+Card Annullata
+
+Cittadino decide di voler annullare la card giovani e quindi inserisce nel form che la vuole annullare
+Il sistema riceve il form notifica l ' avvenuto annullamento della card e ripresenta il form

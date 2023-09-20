@@ -1,0 +1,6 @@
+Numeri Utili
+
+Il Cittadino accede a questa pagina per usufruire dei recapiti telefonici da contattare in caso di pericolo di qualsiasi genere
+Il sistema risponde permettendo la visualizzazione di una scheda descrittiva con i numeri di telefonici degli enti che si occupano dell ' incolumit del Cittadino stesso
+Il Cittadino accedendo a questa schermata pu inoltre visualizzare consigli e procedure standard suddivisi per categorie circa la corretta comunicazione tra lui e l ' interlocutore addetto al Call Center di un determinato organo comunale
+Il sistema risponde con una schermata di supporto all ' emergenza corrispondente al servizio che il Cittadino decide di contattare

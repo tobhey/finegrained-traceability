@@ -1,0 +1,15 @@
+Use case name
+Forms
+Participating Actors
+Initiated by Citizen.
+Flow of events
+1. Citizen clicks button to access forms section.
+3.
+2. The System redirects the Citizen to the required section and displays the various forms available for download. The Citizen selects the desired form.
+4. The System starts the download.
+Entry Condition.
+The Citizen is logged in.
+Exit condition.
+The download has been initialized, OR In case there are general errors, the system calls the use case
+ServiceNotAvailable.
+Quality requirements Not expected.

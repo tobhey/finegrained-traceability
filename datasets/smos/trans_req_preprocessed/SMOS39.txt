@@ -1,0 +1,3 @@
+View Details Note
+View the details of a note
+Show a form with the details of the student note Description Professor Date

@@ -1,0 +1,8 @@
+Cancella Informazione
+
+L ' impiegato richiede la cancellazione di una news
+Il sistema visualizza l ' elenco delle news esistenti
+L ' impiegato sceglie una news
+Il sistema visualizza un form la conferma dell ' operazione
+L ' impiegato conferma l ' operazione attraverso il form
+Il sistema riceve il form e cancella i dati della news dal sistema

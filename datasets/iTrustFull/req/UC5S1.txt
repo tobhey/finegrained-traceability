@@ -1,0 +1,1 @@
+For Login Failures, the IP Address of the machine, transaction type = 1, and timestamp are recorded.

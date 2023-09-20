@@ -1,0 +1,16 @@
+Use Case Name
+RequestCardOfIdentityReferred
+Participating Actors
+Started by Employee, continued citizen
+Flow of events
+1.
+3.
+Employee views the notification received. 2. The system shows the clerk the request for the creation of the ID card by
+by the citizen. The clerk detects an error in the data and rejects the ID card creation procedure.
+The system shall send an e-mail notification to the citizen who requested the ID card creation 4.
+Entry condition
+The employee has authenticated into the system. This use case extends RequestIdentityCard and occurs when the clerk does not confirm the
+citizen's request.
+Exit condition
+➢ The system notifies the citizen.
+Quality Requirements Not Provided.

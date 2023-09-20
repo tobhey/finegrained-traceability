@@ -1,0 +1,5 @@
+REQUIREMENT 29: CLIENT AUTHORIZATION
+     
+The decision to issue a certificate to a client is always controlled by local CA policy. The EST server configuration reflects this CA policy. This document does not specify any constraints on such policy. EST provides the EST server access to each client's authenticated identity -- e.g., the TLS client's certificate in addition to any HTTP user authentication credentials -- to help in implementing such policy.
+
+If the client's certificate was issued by the EST CA, and it includes the id-kp-cmcRA [RFC6402] extended key usage extension, then the client is a Registration Authority (RA) as described in [RFC5272] and [RFC6402]. In this case, the EST server SHOULD apply authorization policy consistent with an RA client. For example, when handling /simpleenroll requests, the EST server could be configured to accept POP linking information that does not match the current TLS session because the authenticated EST client RA has verified this information when acting as an EST server (as specified in Section 3.5). More specific RA mechanisms are available if the EST client uses /fullcmc methods.

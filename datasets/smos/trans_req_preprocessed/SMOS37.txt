@@ -1,0 +1,6 @@
+Enter Note
+Disciplinary notes insertion
+Fill out the form
+Click on Save
+Show a form with the fields of note Student Teaching Date Description
+Save the note and send a notification via e-mail to the parent

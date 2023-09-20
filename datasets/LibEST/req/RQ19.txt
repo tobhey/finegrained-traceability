@@ -1,0 +1,42 @@
+REQUIREMENT 19: MESSAGE TYPES
+     
+This document uses existing media types for the messages as specified by FTP and HTTP [RFC2585], application/pkcs10 [RFC5967], and CMC [RFC5272].
+
+For consistency with [RFC5273], each distinct EST message type uses an HTTP Content-Type header with a specific media type.
+
+The EST messages and their corresponding media types for each operation are:
+
+   +--------------------+--------------------------+-------------------+
+   | Message type       | Request media type       | Request section(s)|
+   |                    | Response media type(s)   | Response section  |
+   | (per operation)    | Source(s) of types       |                   |
+   +====================+==========================+===================+
+   | Distribution of CA | N/A                      | Section 4.1       |
+   | Certificates       | application/pkcs7-mime   | Section 4.1.1     |
+   |                    | [RFC5751]                |                   |
+   | /cacerts           |                          |                   |
+   +--------------------+--------------------------+-------------------+
+   | Client Certificate | application/pkcs10       | Sections 4.2/4.2.1|
+   | Request Functions  | application/pkcs7-mime   | Section 4.2.2     |
+   |                    | [RFC5967] [RFC5751]      |                   |
+   | /simpleenroll      |                          |                   |
+   | /simplereenroll    |                          |                   |
+   +--------------------+--------------------------+-------------------+
+   | Full CMC           | application/pkcs7-mime   | Section 4.3.1     |
+   |                    | application/pkcs7-mime   | Section 4.3.2     |
+   | /fullcmc           | [RFC5751]                |                   |
+   +--------------------+--------------------------+-------------------+
+   | Server-Side Key    | application/pkcs10       | Section 4.4.1     |
+   | Generation         | multipart/mixed          | Section 4.4.2     |
+   |                    | (application/pkcs7-mime &|                   |
+   |                    | application/pkcs8)       |                   |
+   |                    | [RFC5967] [RFC5751]      |                   |
+   | /serverkeygen      | [RFC5958]                |                   |
+   +--------------------+--------------------------+-------------------+
+   | CSR Attributes     | N/A                      | Section 4.5.1     |
+   |                    | application/csrattrs     | Section 4.5.2     |
+   |                    | (This document)          |                   |
+   | /csrattrs          |                          |                   |
+   +--------------------+--------------------------+-------------------+
+
+                                 Figure 6

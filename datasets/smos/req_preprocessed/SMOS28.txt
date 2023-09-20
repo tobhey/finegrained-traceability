@@ -1,0 +1,4 @@
+Visualizza Dettagli Singolo Registro
+Visualizza i dettagli di uno dei registri di classe
+Visualizza a video le informazioni contenute nel registro organizzate per data
+In particolare mostra per la data odierna lelenco degli alunni specificando assentipresenti entrate in ritardo ed un form dal quale possibile gestire giustifiche e note disciplinari

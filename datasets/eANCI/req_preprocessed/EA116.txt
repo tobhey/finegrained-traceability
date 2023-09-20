@@ -1,0 +1,6 @@
+Volontariato
+
+Il Cittadino accede alla schermata introduttiva
+Il sistema risponde visualizzando la scheda descrittiva circa le informazioni di carattere generale su questo aspetto della Protezione Civile e la possibilit di conoscere i prerequisiti per partecipare
+Il Cittadino prende coscienza di ci che scritto e pertanto seleziona il link dove viene chiamato il caso d ' uso Come Diventare Volontari
+Il sistema risponde permettendogli la visualizzazione di questa descrizione

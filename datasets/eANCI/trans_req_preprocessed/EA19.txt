@@ -1,0 +1,6 @@
+Recover citizen password
+
+The citizen has forgotten the password and presses on the Retrieve Password button
+The system shows the password recovery screen that requires the insertion of the user name and identity card code
+The citizen inserts his data and presses the confirmation key
+The system verifies the correctness of the data and sends the password to the email address of the citizen

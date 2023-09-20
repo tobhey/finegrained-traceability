@@ -1,0 +1,8 @@
+An administrator enters a LHCP ER or public health agent as a user of i Trust Medical Records system initially only the name and email are provided
+A secret key is personally provided to the user with which the user can reset hisher password
+The admin must specify a specialty for a new LHCP one of General Physician Heart Surgeon OBGYN Pediatrician Surgeon and for a new LT one of blood tissue or general
+The data for personnel can be edited according to Data Format all fields mandatory except for associated MID and Street Address S E
+The administrator shall be allowed to assign a LHCP to multiple hospitals and the administrator can choose among only the hospitals provided in the hospital list pull down menu
+The hospital ID numbers for a LHCP are stored in the Medical Care Personnel Affiliation database data format
+The administrator shall be allowed to assign a LT to a single hospital and the administrator can choose among only the hospitals provided in the hospital list pull down menu
+The hospital ID numbers for a LT are stored in the Medical Care Personnel Affiliation database data format

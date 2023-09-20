@@ -1,0 +1,15 @@
+Use Case Name
+RequestCopyFileConstruction
+Participating Actors
+Initiated by citizen, communicates with clerk
+Flow of events
+1. Citizen requests copy of file using appropriate button
+2. The system sends the request to the clerk 3. The system notifies the citizen that the request has been forwarded and the copy
+will be sent shortly
+Entry Condition
+Includes SearchFileBuilding
+Exit condition
+The system proceeds to send the request to the clerk
+The system notifies the citizen that the request has been submitted and the copy will be sent to them shortly, OR
+in the case of technical failures, the system invokes the use case ServiceNotAvailable
+Quality requirementsNot available

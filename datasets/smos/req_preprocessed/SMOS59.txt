@@ -1,0 +1,5 @@
+Visualizzazione Di Una Pagella Studente
+Viene visualizzata la pagella dellalunno che lo richiede
+Seleziona la pagella di interesse
+Il sistema visualizza le pagelle dello studente loggato presenti in archivio
+Visualizza i dettagli della pagella selezionata

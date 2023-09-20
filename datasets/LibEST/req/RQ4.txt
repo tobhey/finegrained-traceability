@@ -1,0 +1,16 @@
+REQUIREMENT 4: OBTAINING CA CERTIFICATES
+     
+The EST client can request a copy of the current EST CA certificate(s) from the EST server. The EST client is assumed to perform this operation before performing other operations.
+
+Throughout this document we assume the EST CA has a certificate that is used by the client to verify signed objects issued by the CA, e.g., certificates and certificate revocation lists (CRLs), and that a different certificate than the one used to verify signatures on certificates and CRLs is used when EST protocol communication requires additional encryption.
+
+The EST client authenticates and verifies the authorization scope of the EST server when requesting the current CA certificate(s). As detailed in Sections 3.3.1 and 3.3.3, available options include:
+
+Verifying the EST server's HTTPS URI against the EST server's certificate using Implicit TAs (similar to a common HTTPS exchange). This allows the EST server and client to leverage existing TAs that might be known to the EST client.
+ 
+The client can leverage a previously distributed trust anchor specific to the EST server. This allows the EST client to use an existing, potentially older, CA certificate to request a current CA certificate.
+ 
+For bootstrapping, the EST client can rely upon manual authentication performed by the end-user as detailed in Section 4.1.1.
+ 
+The client can leverage the binding of a shared credential to a specific EST server with a certificate-less TLS cipher suite.
+Client authentication is not required for this exchange, so it is trivially supported by the EST server.

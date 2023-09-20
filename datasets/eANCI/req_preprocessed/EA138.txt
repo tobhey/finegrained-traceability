@@ -1,0 +1,5 @@
+Dati Errati
+
+Il sistema mostra un messaggio al video del terminale indicante che la richiesta immessa era incorretta
+Cittadino legge il messaggio di notifica
+Il sistema ripresenta il form di input

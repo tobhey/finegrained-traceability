@@ -1,0 +1,13 @@
+Use case name
+CardAnnulled
+Participating Actors
+Started by Citizen
+Flow of events
+1.
+Citizen decides he wants to cancel the youth card and then enters in the form that he wants to cancel it.
+2. The system receives the form notifies that the card has been cancelled and resubmits the form.
+Entry Condition
+This use case extends EnrollmentCardYouth and checks when a citizen decides to cancel the youth card.
+Exit condition
+The system resubmits the form.
+Quality requirements Not provided.

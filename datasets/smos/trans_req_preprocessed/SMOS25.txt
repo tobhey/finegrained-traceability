@@ -1,0 +1,5 @@
+Edit teaching
+Edit details of a teaching
+Click on the Save button
+Make controls on the validity of the data entered and modifying stringentstruction in the event that the data entered are not valid to activate the data error data
+View Lench of updated teachings

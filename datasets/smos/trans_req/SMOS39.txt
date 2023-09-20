@@ -1,0 +1,13 @@
+Name: ViewNoteDetails
+Actors: Administrator
+Description: Displays the details of a note
+Preconditions:
+• • •
+The user must be logged in to the system as an administrator, the user took the case of use "ViewElOnconte" Click on the "Details" button associated with one of the notes
+Events sequence
+User
+System
+1. Show a form with the details of the note: student, description, teacher, date.
+Postconditions:
+• • •
+The system is displaying the details of a note. The administrator interrupts the connection to the SMOS server interrupted

@@ -1,0 +1,6 @@
+Assign Removals to a user
+Allows you to assign or remove roles to a user
+Select roles to be assigned or removed at the user
+Click on the Send button
+View the role management form
+Assigns or removes the user's roles as indicated by the administrator

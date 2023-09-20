@@ -1,0 +1,6 @@
+Assegna Rimuovi Studenti Ad Un Genitore
+Consente di associare nuovi studenti ad un genitore o di rimuovere le associazioni precedentemente inserite
+Selezione gli studenti da assegnare o rimuovere al genitore
+Clicca sul pulsante Invia
+Visualizza il form di gestione dei figli per il genitore in oggetto
+Assegna Rimuove gli studenti associati ad un Genitore

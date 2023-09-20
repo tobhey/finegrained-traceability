@@ -1,0 +1,4 @@
+Elimina Classe
+Elimina una classe dallarchivio
+Elimina la classe dallarchivio
+Visualizza lelenco delle classi aggiornato

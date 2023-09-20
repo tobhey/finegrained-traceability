@@ -1,0 +1,7 @@
+REQUIREMENT 23: CERTIFICATE-LESS TLS MUTUAL AUTHENTICATION
+     
+Certificate-less TLS cipher suites provide a way to perform mutual authentication in situations where neither the client nor server have certificates, do not desire to use certificates, or do not have the trust anchors necessary to verify a certificate. The client and server MAY negotiate a certificate-less cipher suite for mutual authentication.
+
+When using certificate-less mutual authentication in TLS for enrollment, the cipher suite MUST be based on a protocol that is resistant to dictionary attack and MUST be based on a zero knowledge protocol. Transport Layer Security-Secure Remote Password (TLS-SRP) cipher suites, i.e., those with _SRP_ in the name, listed in Section 2.7 of [RFC5054] are suitable for this purpose. Section 6 lists the characteristics of a cipher suite that are suitable for use in certificate-less mutual authentication for enrollment.
+
+Successful authentication using a certificate-less cipher suite proves knowledge of a pre-shared secret that implicitly authorizes a peer in the exchange.

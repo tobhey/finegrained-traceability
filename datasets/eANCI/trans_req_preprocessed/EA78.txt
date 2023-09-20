@@ -1,0 +1,8 @@
+Edit information
+
+The employee requests a news change
+The system displays the list of existing news
+The employee chooses a news
+The system displays a form to change the news
+The employee inserts the data relating to the news in a form
+The system receives the form and update the news data in the system

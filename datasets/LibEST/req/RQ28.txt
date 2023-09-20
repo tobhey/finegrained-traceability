@@ -1,0 +1,3 @@
+REQUIREMENT 28: CLIENT USE OF IMPLICIT TA DATABASE
+     
+When the EST client Implicit TA database is used to validate the EST server certificate, the client MUST check the configured URI and each HTTP redirection URI according to the rules specified in [RFC6125], Section 6.4. The provisioned URI or the most recent HTTP redirection URI provides the basis for authorization, and the server's authenticated identity confirms it is the authorized server.

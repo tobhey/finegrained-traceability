@@ -1,0 +1,15 @@
+NAME: InsertNewClass
+Actors: Administrator
+Description: Insert a new class into the archive
+Preconditions:
+• The user is logged in to the system as an administrator • The user has already performed the case of use "ViewingLancoclasses" and the system
+The list of classes of a particular academic year is viewing.• The user click on the "New Class" button
+Events sequence
+User
+2. Fill out the form 3. Click on the "Save" button
+System
+1. The system shows the form to be completed with: name, address, academic year.
+4. Make checks on the validity of the data entered and inserts the new class into the archive;In the event that the data entered are not valid, activates the case of "Errodati" use.
+Postconditions:
+• • • •
+The user has entered a class in the system and 'notified the data error Connection to the SMOS server interrupted the administrator interrupts the operation

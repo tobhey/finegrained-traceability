@@ -1,0 +1,4 @@
+Visualizza Dettagli Insegnamento
+Permette di visualizzare i dettagli di un insegnamento
+sta visualizzando lelenco degli insegnamenti Lutente clicca sul pulsante dettagli insegnamento
+Visualizza la schermata con i dettagli di un singolo insegnamento

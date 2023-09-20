@@ -1,0 +1,21 @@
+Use Case Name
+SearchFileBuilding
+Participating actors
+Initiated by citizen
+Flow of events
+1.
+3. 5.
+Citizen accesses the search area 2. The system displays the form for
+entering the search key Citizen enters the search key
+4. The system displays the results of the search The citizen selects the file
+6. The system displays the file
+Entry condition
+The citizen has authenticated in the system
+Exit condition
+The system displays the file, OR ➢ In the case where the citizen is not found the system invokes the use case
+DataErrati, OR In the case of technical failures the system
+invokes the use case
+ServiceNotAvailable, OR If the citizen wants a copy of the
+file found, it calls the use case
+RequestCopyFileEdossier
+Quality RequirementsNot Provided

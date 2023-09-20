@@ -1,0 +1,5 @@
+Feedback Already Released
+
+Notification that the user has already issued a feedback for the site and cancel the operation to insert a new feedback
+Confirmation of the reading of the notification
+Recovers the previous state

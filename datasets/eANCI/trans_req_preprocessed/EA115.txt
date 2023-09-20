@@ -1,0 +1,4 @@
+Show environmental toxicological results
+
+The citizen accesses this sheet to be able to realize the environmental situation of the municipality in which he resides if he is under control and what are the values at risk and why this situation
+The system responds with a descriptive screen about the toxicological values received by the chemical and toxicological analyzes carried out by the civil protection on the environment and on the municipal terrain

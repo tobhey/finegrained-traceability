@@ -1,0 +1,6 @@
+Aggiorna Condizioni Atmosferiche
+
+L ' impiegato comunale dopo essersi autenticato nel sistema aggiorna le condizioni atmosferiche del comune e delle province regionali
+Il sistema risponde mettendo a disposizione dell ' impiegato un form da completare per aggiornare i campi temp Min temp Max stato Atmosferico nome Citt data
+L ' impiegato completa i campi del form presentato dal sistema e lo sottomette
+Il sistema ne aggiorna il form e permette la visualizzazione di quest ' ultimo al Cittadino

@@ -1,0 +1,8 @@
+Delete information
+
+The clerk requires the cancellation of a news
+The system displays the list of existing news
+The employee chooses a news
+The system displays a form confirmation of the operation
+The employee confirms the operation through the form
+The system receives the form and delete news data from the system

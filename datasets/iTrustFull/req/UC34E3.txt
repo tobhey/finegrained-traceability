@@ -1,0 +1,1 @@
+The patient, UAP, or personal representative enters a glucose level outside the range 0-250. He/she is notified of an error and is prompted to try again.

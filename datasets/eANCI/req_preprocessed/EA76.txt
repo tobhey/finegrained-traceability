@@ -1,0 +1,6 @@
+Informazioni Promozione Territoriale
+
+Il Cittadino richiede la visualizzazione dell ' elenco delle promozioni territoriali
+Il sistema permette di visualizzare l ' elenco delle promozioni
+Il cittadino sceglie la promozione
+Il sistema restituisce le informazioni riguardanti la promozione prescelta

@@ -1,0 +1,4 @@
+Effettua Monitoraggio Studenti
+Consente di interrogare il sistema circa il numero di assenze e note associate agli studenti
+Cerca nell ' archivio gli studenti che abbiano per l ' anno scolastico in corso un numero di assenze e note superiori ad una soglia prestabilita
+Visualizza una schermata di presentazione dei dati ottenuti

@@ -1,0 +1,10 @@
+Fine dispute
+
+The citizen clicks on the button to access the online fines management functionality
+The system redirects the citizen towards the desired section
+The citizen clicks on the button for online payment of fines
+The system makes a search for fines to the citizen present in the database for which the payment has not yet been received
+The citizen selects the fine for which you want to carry out a dispute
+The system shows all available information relating to the fine in addition to the form to be completed for the dispute
+The citizen inserts the necessary information
+The system verifies the correctness of the information forwards the request for dispute to those who to and notify everything to the citizen

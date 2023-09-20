@@ -1,0 +1,11 @@
+Change of residence Other municipality
+
+The citizen presses the change of residence on the button
+The system shows the citizen the form to be completed
+The citizen inserts the data of his new home
+The system notifies the citizen the correct sending of the request and this is memorized
+The employee accesses the system and displays the received request
+The employee checks the data fills out the document with the rest of the data to be inserted and confirmed the operation
+The system saves the form and update the data
+The employee sends a document with the request made by the citizen to the employee of the other municipality
+The other commune employee checks the document and sends a positive notification to the other employee and a notification to the citizen

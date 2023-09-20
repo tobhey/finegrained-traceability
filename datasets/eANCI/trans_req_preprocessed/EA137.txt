@@ -1,0 +1,6 @@
+Online Help Consultation
+
+The citizen enters the section dedicated to the Online Help
+The system has a screen containing the list of functionality
+The citizen accesses Help information by clicking on the link related to the functionality he wants to receive
+The system has help information by explaining the modalities and actions to be performed for the specification functionality

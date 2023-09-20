@@ -1,0 +1,6 @@
+Aggiorna Analisi Ambientali
+
+L ' impiegato comunale dopo essersi autenticato nel sistema aggiorna il form che prevede semplicemente la copia del referto delle analisi effettuate sull ' ambiente dalla Protezione Civile
+Il sistema risponde mettendo a disposizione dell ' impiegato un form in cui riportare le informazioni redatte dagli esperti chimici
+L ' impiegato completa il campo del form presentato dal sistema e lo sottomette
+Il sistema ne aggiorna il form e permette la visualizzazione di quest ' ultimo al Cittadino

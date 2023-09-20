@@ -1,0 +1,4 @@
+View Cultural Heritage Card
+View the details of the selected cultural
+View the list of cultural goods as a result of the use case Search Cultural Heritage it selects and activates a function to view the card
+Loads the data for the selected cultural

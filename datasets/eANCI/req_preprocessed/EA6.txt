@@ -1,0 +1,6 @@
+Inserimento Cittadino
+
+L ' impiegato accede al sistema e attiva la procedura di registrazione del cittadino
+Il sistema visualizza il form per l ' inserimento di un nuovo cittadino
+L ' impiegato inserisce i dati del cittadino e sottomette la richiesta di registrazione
+Il sistema riceve il form verifica che nel sistema non sia gi presente il cittadino inserito dall ' impiegato

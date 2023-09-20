@@ -1,0 +1,6 @@
+Employee insertion
+
+The administrator accesses the system via administrative terminal and activates the registration procedure of the employee
+The system displays the form for the insertion of a new employee
+The administrator inserts the data of the employee and submits the registration request
+The system receives the form verification which in the system does not already present the serial number entered by the administrator and generates a password saves the data entered and shows a notification of the recording with the password assigned to the employee

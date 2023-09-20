@@ -1,0 +1,5 @@
+Modifica Di Una Pagella
+Caso duso per modificare la pagella di un alunno
+Inserisce i nuovi dati e clicca il tasto di conferma
+Visualizza il form con i campi da poter modificare tra cui i voti delle diverse materie
+Il sistema visualizza un messaggio di conferma e visualizza il form con l ' elenco degli alunni

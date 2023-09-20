@@ -1,0 +1,3 @@
+View user details
+View a user details
+View the detailed information of the user and in particular name surname E-mail Cell Login Password

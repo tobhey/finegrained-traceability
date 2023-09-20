@@ -1,0 +1,1 @@
+The administrator selects one drug and is presented with a listing of all drug interactions with that drug. The administrator can select a particular pair of drugs and delete the interaction between the two drugs.

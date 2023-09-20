@@ -1,0 +1,7 @@
+Iscrizione Card Giovani
+
+Il cittadino richiede l ' iscrizione alla card giovani
+Il sistema visualizza un form per la sottomissione della richiesta
+Il cittadino inserisce i dati della richiesta della card in un form
+Il sistema riceve il form verifica i dati e sottomette la richiesta
+Il sistema comunica l ' avvenuto inserimento della card e visualizza in un form il numero della card e il riepilogo dei dati inseriti

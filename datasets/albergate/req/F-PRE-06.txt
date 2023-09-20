@@ -1,0 +1,23 @@
+Requisito:
+Modifica di una prenotazione.
+Descrizione:
+Deve essere possibile apportare delle modifiche ad una prenotazione già 
+registrata nel sistema. Tali modifiche dovranno naturalmente aggiornare la 
+prenotazione del cliente nonché le disponibilità dell'albergo nel caso in cui sia 
+stato ritoccato il periodo di soggiorno.
+Input richiesto:
+Sarà richiesto il nominativo del cliente fornito al momento della prenotazione 
+e il tipo di modifica che vuole apportare.
+Output desiderato:
+Modifica della prenotazione esistente ed eventualmente delle disponibilità 
+dell'albergo.
+Criterio di accettazione:
+Quando si cerca un prenotazione da modificare, se essa non esiste deve essere 
+mostrato un messaggio d'errore altrimenti devono essere mostrati i dati della 
+prenotazione precedente. Effettuate tutte le modifiche verrà richiesta la loro 
+conferma.
+Aspettative collegate:
+Modifica della prenotazione esistente.
+Requisiti collegati:
+F-PRE-02, F-PRE-05.
+

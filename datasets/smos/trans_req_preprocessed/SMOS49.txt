@@ -1,0 +1,3 @@
+View registration requests
+Allows the administrator to view the list of registration requests to the system
+View the list of registrations yet to be activated

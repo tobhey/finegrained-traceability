@@ -1,0 +1,2 @@
+The software tester authenticates himself or herself in the i Trust Medical Records system UC
+He or she is then presented with the actual operational profile of the operations of the i Trust Medical Records where the use percentage is the of total transactions for each particular transaction logging type broken-down by each of the user types patient LHCP UHCP admin tester

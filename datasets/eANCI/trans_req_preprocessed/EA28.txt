@@ -1,0 +1,6 @@
+Clear Practice
+
+The citizen presses the practical cancellation button identity card change if the practice has not been initialized
+The system asks the citizen a confirmation
+The citizen confirms the operation
+The system cancels the practice

@@ -1,0 +1,16 @@
+Name: InsertNote
+Actors: Administrator
+Description: disciplinary notes insertion
+Preconditions:
+• • • •
+The user must be logged in to the system as an administrator, the user has carried out the case of use "SviewTetTingloregister" the user has already done the case of use "ViewElonconote" the user click on the "New Note" button
+Events sequence
+User
+System
+2. Fill out the form 3. Click on "Save"
+1. Show a form with the fields of note (student, date, teacher, description).
+4. Save the note and send a notification via e-mail to the parent
+Postconditions:
+•
+•
+The data of the note were entered into the system, and the system sent the notification to parents. The system returns to the registry screen. The administrator interrupts the connection to the SMOS server interrupted

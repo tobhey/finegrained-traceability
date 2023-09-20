@@ -1,0 +1,9 @@
+Modify Tourist Data
+Change data associated with your account
+Access to functionality for the modification of data
+Loads the data and displays them in a form
+Edit the fields in the form and submit
+Check the modified information and asks for confirmation of the change
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirmation of the transaction change
+Stores the modified data

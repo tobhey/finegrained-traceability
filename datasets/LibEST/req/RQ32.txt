@@ -1,0 +1,9 @@
+REQUIREMENT 32: BOOTSTRAP DISTRIBUTION OF CA CERTIFICATES
+     
+It is possible that the client was not configured with an Implicit TA database that allows a bootstrap installation of the Explicit TA database as described in 4.1.3. This section describes an alternate method by which minimally configured EST clients can populate their Explicit TA database.
+
+If the EST client application does not specify either an Explicit TA database or an Implicit TA database, then the initial TLS server authentication and authorization will fail. The client MAY provisionally continue the TLS handshake to completion for the purposes of accessing the /cacerts or /fullcmc method. If the EST client continues with an unauthenticated connection, the client MUST extract the HTTP content data from the response (Sections 4.1.3 or 4.3.2) and engage a human user to authorize the CA certificate using out-of-band data such as a CA certificate "fingerprint" (e.g., a SHA-256 or SHA-512 [SHS] hash on the whole CA certificate). In a /fullcmc response, it is the Publish Trust Anchors control (CMC [RFC5272], Section 6.15) within the Full PKI Response that must be accepted manually. It is incumbent on the user to properly verify the TA information, or to provide the "fingerprint" data during configuration that is necessary to verify the TA information.
+
+HTTP authentication requests MUST NOT be responded to if the server has not been authenticated as specified in Section 3.3.1 or if the optional certificate-less authentication is used as specified in Section 3.3.3.
+
+The EST client uses the /cacerts response to establish an Explicit Trust Anchor database for subsequent TLS authentication of the EST server. EST clients MUST NOT engage in any other protocol exchange until after the /cacerts response has been accepted and a new TLS session has been established (using TLS certificate-based authentication).

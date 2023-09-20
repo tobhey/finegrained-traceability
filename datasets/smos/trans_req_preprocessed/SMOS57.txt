@@ -1,0 +1,3 @@
+View Registry
+Display of the class registry
+Displays information about the class registry and in particular data absences disciplinary notes Delays and justification

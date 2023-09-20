@@ -1,0 +1,1 @@
+The administrator will store hospital Id number for the hospital E and up to alphanumeric characters giving the name of the hospital

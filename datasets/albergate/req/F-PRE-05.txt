@@ -1,0 +1,31 @@
+Requisito:
+Cancellazione di una prenotazione.
+Descrizione:
+A partire dai dati forniti dal cliente deve essere possibile disdire una 
+prenotazione. In tal caso le stanze che erano in stato di bloccato o assegnato 
+torneranno ad essere disponibili. Se le stanze per le quali è stato richiesto 
+l'annullamento della prenotazione erano state date in gestione ad  un'agenzia 
+viaggi esse dovranno:
+  riassumere lo stato di commissionate nel caso in cui la data di disdetta sia 
+precedente alla data stabilita tra albergatore e agenzia come scadenza del 
+commissionamento;
+  ritornare ad essere disponibili nel caso in cui tale data sia altrepassata.
+Input richiesto:
+Nominativo del cliente che era stato lasciato al momento della prenotazione.
+Output desiderato:
+Modifica dello stato delle stanze che erano state prenotate ed eliminazione 
+della prenotazione dall'elenco delle prenotazioni.
+Criterio di accettazione:
+Se i dati forniti corrispondono a quelli di una prenotazione esistente, essa 
+viene visualizzata e, dopo una richiesta di conferma, cancellata e lo stato delle 
+stanze coinvolte cambiato in disponibile (o commissionata). Se al contrario 
+non esiste una corrispondenza nell'elenco viene visualizzato un messaggio di 
+errore e viene data la possibilità di modificare i dati forniti o di annullare 
+l'operazione.
+Aspettative collegate:
+Cancellazione della prenotazione con conseguente aggiornamento a stanza 
+disponibile. Se la prenotazione da eliminare risulta inesistente un messaggio a 
+video ci avviserà dell'errore verificatosi.
+Requisiti collegati:
+F-PRE-02.
+

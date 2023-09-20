@@ -1,0 +1,6 @@
+Volcanic
+
+The citizen accesses this tab from the case of use risks if he intends to know about the volcanic situation of his common membership and the possibility to view the monitoring modes of civil protection
+The system responds with the correct viewing of a descriptive screen about the different types of eruption of a volcano by making the possibility to display the current volcanic situation of the Municipality
+The citizen wants to know the monitoring modes of the volcanoes present and therefore recalls the case of use volcanic monitoring
+The system makes available to the citizen a link to the case of use volcanic monitoring to learn about the real situation

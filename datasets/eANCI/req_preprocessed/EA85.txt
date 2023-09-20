@@ -1,0 +1,6 @@
+Ricerca Fascicolo Edilizio
+
+Il cittadino accede all ' area di ricerca
+Il sistema visualizza la form per l ' inserimento della chiave di ricerca Il cittadino inserisce la chiave di ricerca
+Ilsistemamostrairisultatidellaricerca Il cittadino seleziona il fascicolo
+Ilsistemavisualizzailfascicolo

@@ -1,0 +1,523 @@
+file,ID,text,functional,Function,Behavior,Data,OnlyF,F,OnlyQ,Q,UserRelated
+SMOS1.txt,SMOS1.txt.name,Login,1,1,1,1,1,1,0,0,0
+SMOS1.txt,SMOS1.txt.description,allows a user to log in to the system,1,1,0,0,1,1,0,0,0
+SMOS1.txt,SMOS1.txt.actor,registered user,0,0,0,0,0,0,0,0,1
+SMOS1.txt,SMOS1.txt.flow_of_events.0,Check that username and password have length,1,1,1,0,1,1,0,0,0
+SMOS1.txt,SMOS1.txt.flow_of_events.1,If the condition is respected goes to point two otherwise it notifies the user error,1,0,1,0,1,1,0,0,0
+SMOS1.txt,SMOS1.txt.flow_of_events.2,Search in the archive if Username and password entered by the user are present among the loggable users,1,0,1,1,1,1,0,0,0
+SMOS1.txt,SMOS1.txt.flow_of_events.3,If the search was successful the user is logged in to the system,1,1,1,0,1,1,0,0,0
+SMOS1.txt,SMOS1.txt.postcondition,The system displays the registered user workspace Interruption of the connection to the SMOS server,1,0,1,0,1,1,0,0,0
+SMOS1.txt,SMOS1.txt.precondition,The user is not logged in to the system the user has username and password fills out and submits the form for the login,0,0,0,0,0,0,0,0,1
+SMOS10.txt,SMOS10.txt.name,Assign Remove Roles To A User,1,1,1,1,1,1,0,0,0
+SMOS10.txt,SMOS10.txt.description,Allows you to assign or remove roles to a user,1,1,0,1,1,1,0,0,0
+SMOS10.txt,SMOS10.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS10.txt,SMOS10.txt.flow_of_events.0,Select the roles to be assigned or removed to the user,1,0,0,0,1,1,0,0,1
+SMOS10.txt,SMOS10.txt.flow_of_events.1,Click on the Send '' button,1,0,0,0,1,1,0,0,1
+SMOS10.txt,SMOS10.txt.flow_of_events.2,Displays the role management form,1,1,1,0,1,1,0,0,0
+SMOS10.txt,SMOS10.txt.flow_of_events.3,Assign or remove the user 's roles as indicated by the administrator,1,1,0,1,1,1,0,0,0
+SMOS10.txt,SMOS10.txt.precondition,The user is logged in as an administrator The user has carried out the case of use viewdet Tailsente '' and the system is Viewing the details of a user The user click on the User Roles '' button,0,0,0,0,0,0,0,0,1
+SMOS10.txt,SMOS10.txt.postcondition,User roles are modified The administrator interrupts the connection to the SMOS server interrupted,1,1,1,1,1,1,0,0,1
+SMOS11.txt,SMOS11.txt.name,Assign Remove Teachers To A Teacher,1,1,1,1,1,1,0,0,0
+SMOS11.txt,SMOS11.txt.description,Allows you to assign or remove teachers to a teacher,1,1,0,1,1,1,0,0,0
+SMOS11.txt,SMOS11.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS11.txt,SMOS11.txt.flow_of_events.0,Select the academic year,1,0,0,0,1,1,0,0,1
+SMOS11.txt,SMOS11.txt.flow_of_events.1,Select the desired class,1,0,0,0,1,1,0,0,1
+SMOS11.txt,SMOS11.txt.flow_of_events.2,Select the teachings to associate or remove the teacher,1,1,0,1,1,1,0,0,1
+SMOS11.txt,SMOS11.txt.flow_of_events.3,Displays the teaching management form for the teacher in question,1,1,1,0,1,1,0,0,0
+SMOS11.txt,SMOS11.txt.flow_of_events.4,View the list of classes available for the selected year,1,1,1,1,1,1,0,0,0
+SMOS11.txt,SMOS11.txt.flow_of_events.5,Displays the list of teachings associated with that class,1,1,1,1,1,1,0,0,0
+SMOS11.txt,SMOS11.txt.flow_of_events.6,Assigns or removes the teaching teachings as indicated by the administrator,1,1,1,1,1,1,0,0,0
+SMOS11.txt,SMOS11.txt.postcondition,One or more teachers have been assigned or removed to the teacher the administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS11.txt,SMOS11.txt.precondition,The user is logged in as an administrator The user has carried out the case of use viewdet Tailsente '' and the system is Viewing the details of a teacher The user click on the Teaching Teaching '' button,0,0,0,0,0,0,0,0,1
+SMOS12.txt,SMOS12.txt.name,Assign Remove Students To A Parent,1,1,1,1,1,1,0,0,0
+SMOS12.txt,SMOS12.txt.description,It allows you to associate new students to a parent or remove the associations previously inserted,1,1,0,1,1,1,0,0,0
+SMOS12.txt,SMOS12.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS12.txt,SMOS12.txt.flow_of_events.0,Select students to be assigned or removed from the parent,1,1,0,0,1,1,0,0,1
+SMOS12.txt,SMOS12.txt.flow_of_events.1,Click on the Send '' button,1,0,0,0,1,1,0,0,1
+SMOS12.txt,SMOS12.txt.flow_of_events.2,Displays the child management form for the parent in question,1,1,1,0,1,1,0,0,0
+SMOS12.txt,SMOS12.txt.flow_of_events.3,Assign remove students associated with a parent,1,1,1,1,1,1,0,0,0
+SMOS12.txt,SMOS12.txt.postcondition,One or more children to a parent were associated or removed The administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS12.txt,SMOS12.txt.precondition,The user is logged in as an administrator The user has carried out the case of use viewdet Tailsente '' and the system is Viewing the details of a parent The user click on the Parentela '' button,0,0,0,0,0,0,0,0,1
+SMOS13.txt,SMOS13.txt.name,View Classes List,1,1,1,1,1,1,0,0,0
+SMOS13.txt,SMOS13.txt.description,allows you to view the list of classes,1,1,0,1,1,1,0,0,0
+SMOS13.txt,SMOS13.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS13.txt,SMOS13.txt.flow_of_events.0,Select the academic year of interest,1,0,0,0,1,1,0,0,1
+SMOS13.txt,SMOS13.txt.flow_of_events.1,Allows you to select the academic year you want to view the list of classes,1,1,0,0,1,1,0,0,1
+SMOS13.txt,SMOS13.txt.flow_of_events.2,Search for classes in the archive and displays the class management screen,1,1,1,1,1,1,0,0,0
+SMOS13.txt,SMOS13.txt.flow_of_events.3,Displays the list of selected academic year classes,1,1,1,1,1,1,0,0,0
+SMOS13.txt,SMOS13.txt.postcondition,The system shows the list of classes of the selected academic year The administrator interrupts the operations Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS13.txt,SMOS13.txt.precondition,The user is logged in to the system with the administrator role The user click on the Class Management '' button,0,0,0,0,0,0,0,0,1
+SMOS14.txt,SMOS14.txt.name,Insert New Class,1,1,1,1,1,1,0,0,0
+SMOS14.txt,SMOS14.txt.description,Insert a new class into the archive,1,1,0,1,1,1,0,0,0
+SMOS14.txt,SMOS14.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS14.txt,SMOS14.txt.flow_of_events.0,Fill out the form,0,0,0,0,0,0,0,0,1
+SMOS14.txt,SMOS14.txt.flow_of_events.1,Click on the Save '' button,1,0,0,0,1,1,0,0,1
+SMOS14.txt,SMOS14.txt.flow_of_events.2,The system shows the form to be completed with name address academic year,1,0,1,0,1,1,0,0,0
+SMOS14.txt,SMOS14.txt.flow_of_events.3,Make checks on the validity of the data entered and inserts the new class into the archive In the event that the data entered are not valid activates the case of Errodati '' use,1,1,1,0,1,1,0,0,0
+SMOS14.txt,SMOS14.txt.precondition,The user is logged in to the system as an administrator The user has already performed the case of use Viewing Lancoclasses '' and the system The list of classes of a particular academic year is viewing The user click on the New Class '' button,0,0,0,0,0,0,0,0,1
+SMOS14.txt,SMOS14.txt.postcondition,The user has entered a class in the system and 'notified the data error Connection to the SMOS server interrupted the administrator interrupts the operation,1,1,1,1,1,1,0,0,1
+SMOS15.txt,SMOS15.txt.precondition,The user has already logged in The user has already performed the case of use Viewing Lancoclasses '' and the system The list of classes of an academic year is displayed Click on the Show class details '' button,0,0,0,0,0,0,0,0,1
+SMOS15.txt,SMOS15.txt.name,View Class Details,1,1,1,1,1,1,0,0,0
+SMOS15.txt,SMOS15.txt.description,allows you to view the details of a class,1,1,0,1,1,1,0,0,0
+SMOS15.txt,SMOS15.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS15.txt,SMOS15.txt.flow_of_events.0,Displays the fencing with the details of a single class Name address school year,1,1,1,1,1,1,0,0,0
+SMOS15.txt,SMOS15.txt.postcondition,The user displays detailed information related to a class Connection to the SMOS server interrupted,1,1,1,0,1,1,0,0,1
+SMOS16.txt,SMOS16.txt.name,Delete Class,1,1,1,1,1,1,0,0,0
+SMOS16.txt,SMOS16.txt.description,Delete a class from the archive,1,1,1,1,1,1,0,0,0
+SMOS16.txt,SMOS16.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS16.txt,SMOS16.txt.flow_of_events.0,Delete the class from the archive,1,1,1,1,1,1,0,0,0
+SMOS16.txt,SMOS16.txt.flow_of_events.1,Displays the list of updated classes,1,1,1,1,1,1,0,0,0
+SMOS16.txt,SMOS16.txt.precondition,The user is logged in to the system as an administrator the user has made the case of use viewdettagli Slasse '' the user displays the detailed information of a class the user click on the Delete '' button,0,0,0,0,0,0,0,0,1
+SMOS16.txt,SMOS16.txt.postcondition,The user has deleted a class Connection to the interrupted SMOS server,1,1,1,1,1,1,0,0,1
+SMOS17.txt,SMOS17.txt.name,View Address List,1,1,1,1,1,1,0,0,0
+SMOS17.txt,SMOS17.txt.description,allows you to view the address list,1,1,0,1,1,1,0,0,0
+SMOS17.txt,SMOS17.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS17.txt,SMOS17.txt.flow_of_events.0,Displays the address list,1,1,1,1,1,1,0,0,0
+SMOS17.txt,SMOS17.txt.postcondition,The system shows the list of addresses in the archive Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,0
+SMOS17.txt,SMOS17.txt.precondition,The user is logged in to the system with the administrator role The user click on the Address Management '' button,0,0,0,0,0,0,0,0,1
+SMOS18.txt,SMOS18.txt.name,Enter New Address,1,1,1,1,1,1,0,0,0
+SMOS18.txt,SMOS18.txt.description,Enter a new address in the archive,1,1,1,1,1,1,0,0,0
+SMOS18.txt,SMOS18.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS18.txt,SMOS18.txt.flow_of_events.0,Fill out the form,0,0,0,0,0,0,0,0,1
+SMOS18.txt,SMOS18.txt.flow_of_events.1,Click on the Save '' button,1,0,0,0,1,1,0,0,1
+SMOS18.txt,SMOS18.txt.flow_of_events.2,The system shows the form to be completed with address name,1,0,1,0,1,1,0,0,0
+SMOS18.txt,SMOS18.txt.flow_of_events.3,Checks on the validity of the data entered and inserts a new address in the archive In the event that the data entered are not valid activates the case of Errodati '' use,1,1,1,1,1,1,0,0,0
+SMOS18.txt,SMOS18.txt.precondition,The user is logged in to the system as an administrator The user has already taken the case of Viewing Lenchindirizzi '' and the system is displaying the list of addresses The user click on the New address '' button,0,0,0,0,0,0,0,0,1
+SMOS18.txt,SMOS18.txt.postcondition,The user has entered an address is notified the connection data error to the SMOS server interrupted the administrator interrupts the operation,1,1,1,1,1,1,0,0,1
+SMOS19.txt,SMOS19.txt.precondition,The user has already logged in the user has already performed the case of use Viewing Lench Indirizzi '' and the system is viewing the address list The user click on the Show address details '' button,0,0,0,0,0,0,0,0,1
+SMOS19.txt,SMOS19.txt.name,View Address Details,1,1,1,1,1,1,0,0,0
+SMOS19.txt,SMOS19.txt.description,allows you to view the details of an address,1,1,0,1,1,1,0,0,0
+SMOS19.txt,SMOS19.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS19.txt,SMOS19.txt.flow_of_events.0,Displays the screen with the details of a single address In particular address name,1,1,1,1,1,1,0,0,0
+SMOS19.txt,SMOS19.txt.postcondition,The user displays detailed information relating to a single address Connection to the SMOS server interrupted connection to the interrupted SMOS server,1,1,1,0,1,1,0,0,1
+SMOS2.txt,SMOS2.txt.precondition,The data provided for the login are incorrect,0,0,0,0,0,0,0,0,0
+SMOS2.txt,SMOS2.txt.name,Login Error,1,1,1,0,1,1,0,0,0
+SMOS2.txt,SMOS2.txt.description,occurs when the user has entered incorrect authentication data,1,0,1,0,1,1,0,0,0
+SMOS2.txt,SMOS2.txt.actor,registered user,0,0,0,0,0,0,0,0,1
+SMOS2.txt,SMOS2.txt.flow_of_events.0,Displays the login form,1,1,1,0,1,1,0,0,0
+SMOS2.txt,SMOS2.txt.postcondition,The user can try to log in,1,1,0,0,1,1,0,0,1
+SMOS20.txt,SMOS20.txt.name,Delete address,1,1,1,1,1,1,0,0,0
+SMOS20.txt,SMOS20.txt.description,Delete an address from the archive,1,1,1,1,1,1,0,0,0
+SMOS20.txt,SMOS20.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS20.txt,SMOS20.txt.flow_of_events.0,Check if the address has associated classes If so shows an error message Unable to delete the address delete the associated classes and try again '' otherwise it deletes the address,1,1,1,1,1,1,0,0,0
+SMOS20.txt,SMOS20.txt.flow_of_events.1,Displays the list of updated addresses,1,1,1,1,1,1,0,0,0
+SMOS20.txt,SMOS20.txt.precondition,The user is logged in to the system as an administrator the user has taken the case of use viewdettaglizzazione '' the user displays the detailed information of an address the user click on the Delete '' button,0,0,0,0,0,0,0,0,1
+SMOS20.txt,SMOS20.txt.postcondition,The user has deleted an address Connection to the interrupted SMOS server,1,1,1,1,1,1,0,0,1
+SMOS21.txt,SMOS21.txt.postcondition,The administrator interrupts the operation connection to the SMOS server interrupted the system has changed the teachings relating to the address,1,0,1,1,1,1,0,0,1
+SMOS21.txt,SMOS21.txt.name,Assign Remove Teachings,1,1,1,1,1,1,0,0,0
+SMOS21.txt,SMOS21.txt.description,Assigns or removes one or more teachings from an address,1,1,1,1,1,1,0,0,0
+SMOS21.txt,SMOS21.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS21.txt,SMOS21.txt.flow_of_events.0,Select the teachings to be assigned or removed at,1,1,0,0,1,1,0,0,1
+SMOS21.txt,SMOS21.txt.flow_of_events.1,Click on the Send '' button,1,0,0,0,1,1,0,0,1
+SMOS21.txt,SMOS21.txt.flow_of_events.2,Displays a form from which you can add and or remove lessons at the address,1,1,1,0,1,1,0,0,1
+SMOS21.txt,SMOS21.txt.flow_of_events.3,Associate or removes selected teachings at the address,1,1,0,1,1,1,0,0,0
+SMOS21.txt,SMOS21.txt.flow_of_events.4,Back to display details of the address,1,1,1,1,1,1,0,0,0
+SMOS21.txt,SMOS21.txt.precondition,The user is logged in to the system as an administrator The user has made the case of use viewdettaglizzizzo '' The user displays the detailed information of an address the user click on the Teachings Address '' button,0,0,0,0,0,0,0,0,1
+SMOS22.txt,SMOS22.txt.name,View Teachings List,1,1,1,1,1,1,0,0,0
+SMOS22.txt,SMOS22.txt.description,allows you to view the list of teachings,1,1,0,1,1,1,0,0,0
+SMOS22.txt,SMOS22.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS22.txt,SMOS22.txt.flow_of_events.0,Look for the archive and teacher screen View teachings Teachings View the management of the list of,1,1,1,1,1,1,0,0,0
+SMOS22.txt,SMOS22.txt.postcondition,The system shows the list of teachings present in the archive Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,0
+SMOS22.txt,SMOS22.txt.precondition,The user is logged in to the system with the administrator role The user click on the Management Management '' button,0,0,0,0,0,0,0,0,1
+SMOS23.txt,SMOS23.txt.name,Insert New Teaching,1,1,1,1,1,1,0,0,0
+SMOS23.txt,SMOS23.txt.description,Insert a new teaching into the archive,1,1,1,1,1,1,0,0,0
+SMOS23.txt,SMOS23.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS23.txt,SMOS23.txt.flow_of_events.0,Fill out the form,0,0,0,0,0,0,0,0,1
+SMOS23.txt,SMOS23.txt.flow_of_events.1,Click on the Save '' button,1,0,0,0,1,1,0,0,1
+SMOS23.txt,SMOS23.txt.flow_of_events.2,The system shows the form to be completed with Teaching name,1,0,1,0,1,1,0,0,0
+SMOS23.txt,SMOS23.txt.flow_of_events.3,Checks on the validity of the data entered and inserts the new teaching into the archive In the event that the data entered are not valid activates the case of Errodati '' use,1,1,1,1,1,1,0,0,0
+SMOS23.txt,SMOS23.txt.precondition,The user is logged in to the system as an administrator The user has already performed the case of viewing technology '' and the system is displaying the list of teachings The user click on the New Teaching '' button,0,0,0,0,0,0,0,0,1
+SMOS23.txt,SMOS23.txt.postcondition,The user has entered a teaching is notified the error connection to the SMOS server interrupted the administrator interrupts the operation,1,1,1,1,1,1,0,0,1
+SMOS24.txt,SMOS24.txt.precondition,The user has already logged in System is viewing the list of teachings The user click on the Teaching details '' button,0,0,0,0,0,0,0,0,1
+SMOS24.txt,SMOS24.txt.name,View Teaching Details,1,1,1,1,1,1,0,0,0
+SMOS24.txt,SMOS24.txt.description,allows you to view the details of a teaching,1,1,0,1,1,1,0,0,0
+SMOS24.txt,SMOS24.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS24.txt,SMOS24.txt.flow_of_events.0,Displays the screen with the details of a single teaching,1,1,1,1,1,1,0,0,0
+SMOS24.txt,SMOS24.txt.postcondition,The user displays the detailed information of a single teaching Connection to the interrupted SMOS server,1,1,1,0,1,1,0,0,1
+SMOS25.txt,SMOS25.txt.name,Edit Teaching,1,1,1,1,1,1,0,0,0
+SMOS25.txt,SMOS25.txt.description,Edit details of a teaching,1,1,1,1,1,1,0,0,0
+SMOS25.txt,SMOS25.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS25.txt,SMOS25.txt.flow_of_events.0,Click on the Save '' button,1,0,0,0,1,1,0,0,1
+SMOS25.txt,SMOS25.txt.flow_of_events.1,Make checks on the validity of the data entered and changes the teaching in the archive In the event that the data entered are not valid activates the case of Errodati '' use,1,1,1,1,1,1,0,0,0
+SMOS25.txt,SMOS25.txt.flow_of_events.2,View the list of updated teachings,1,1,1,1,1,1,0,0,0
+SMOS25.txt,SMOS25.txt.precondition,The user is logged in to the system as an administrator The user has taken the case of use displaydeddailsigning '' the user displays the detailed information of a teaching the user edit one of the information contained in the form of Display of teaching details,0,0,0,0,0,0,0,0,1
+SMOS25.txt,SMOS25.txt.postcondition,The user has changed a teaching is notified the data error Connection to the SMOS server interrupted the administrator interrupts the operation,1,0,1,1,1,1,0,0,1
+SMOS26.txt,SMOS26.txt.name,Delete teaching,1,1,1,1,1,1,0,0,0
+SMOS26.txt,SMOS26.txt.description,Eliminates a teaching from the archive,1,1,1,1,1,1,0,0,0
+SMOS26.txt,SMOS26.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS26.txt,SMOS26.txt.flow_of_events.0,Eliminate teaching from the archive,1,1,1,1,1,1,0,0,0
+SMOS26.txt,SMOS26.txt.flow_of_events.1,Displays the list of updated teachings,1,1,1,1,1,1,0,0,0
+SMOS26.txt,SMOS26.txt.precondition,The user is logged in to the system as an administrator the user has taken the case of use displaydeddailsignment '' The user displays the detailed information of a teaching the user click on the Delete '' button,0,0,0,0,0,0,0,0,1
+SMOS26.txt,SMOS26.txt.postcondition,The user has eliminated a teaching Connection to the SMOS server interrupted,1,1,1,1,1,1,0,0,1
+SMOS27.txt,SMOS27.txt.name,View Registers List,1,1,1,1,1,1,0,0,0
+SMOS27.txt,SMOS27.txt.description,View the list of registers for an academic year,1,1,1,1,1,1,0,0,0
+SMOS27.txt,SMOS27.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS27.txt,SMOS27.txt.flow_of_events.0,Select the school year,1,0,0,0,1,1,0,0,1
+SMOS27.txt,SMOS27.txt.flow_of_events.1,Shows a screen for the selection of the academic year of interest,1,1,1,0,1,1,0,0,0
+SMOS27.txt,SMOS27.txt.flow_of_events.2,Search in the archive all the digital records of that year and displays them associated with the class to which they belong,1,1,1,1,1,1,0,0,0
+SMOS27.txt,SMOS27.txt.postcondition,The system is displaying the list of registers related to a particular academic year the administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS27.txt,SMOS27.txt.precondition,The user must be logged in to the system as an administrator Click on the Digital Register '' button,0,0,0,0,0,0,0,0,1
+SMOS28.txt,SMOS28.txt.name,View Details Single Register,1,1,1,1,1,1,0,0,0
+SMOS28.txt,SMOS28.txt.description,View the details of one of the class registers,1,1,1,1,1,1,0,0,0
+SMOS28.txt,SMOS28.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS28.txt,SMOS28.txt.flow_of_events.0,Review the information contained in the registry organized by date,1,1,1,1,1,1,0,0,0
+SMOS28.txt,SMOS28.txt.flow_of_events.1,In particular for today 's date the list of students specifying absent present late and a form from which it is possible to manage justifications and disciplinary notes,1,1,0,1,1,1,0,0,0
+SMOS28.txt,SMOS28.txt.postcondition,The system is displaying the details of a class registry Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,0
+SMOS28.txt,SMOS28.txt.precondition,The user must be logged in to the system as an administrator the user must have carried out the case of use Viewing El Coregistri '' click on the Details '' button associated with one of the registers,0,0,0,0,0,0,0,0,1
+SMOS29.txt,SMOS29.txt.postcondition,The data of absences and delays have been entered in the system and the system sent notifications to parents The system remains on the registry screen The administrator interrupts the operation Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,1
+SMOS29.txt,SMOS29.txt.name,Enter Absences Admin,1,1,1,1,1,1,0,0,0
+SMOS29.txt,SMOS29.txt.description,Register digitization data entry by the administrator,1,1,1,1,1,1,0,0,1
+SMOS29.txt,SMOS29.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS29.txt,SMOS29.txt.flow_of_events.0,Fill out the form by entering absent students present and click Save '',1,0,0,0,1,1,0,0,1
+SMOS29.txt,SMOS29.txt.flow_of_events.1,Update the screen displayed according to the date,1,0,1,0,1,1,0,0,0
+SMOS29.txt,SMOS29.txt.flow_of_events.2,Send data to the server,1,1,1,0,1,1,0,0,0
+SMOS29.txt,SMOS29.txt.flow_of_events.3,The server for each absence sends a notification e-mail to the parent of the student,1,1,1,1,1,1,0,0,0
+SMOS29.txt,SMOS29.txt.flow_of_events.4,Displays the updated log data,1,1,1,1,1,1,0,0,0
+SMOS29.txt,SMOS29.txt.precondition,The user must be logged in to the system as an administrator the user took the case of use Several Tet Tingloregister '' selects the date on which he wants to enter the information,0,0,0,0,0,0,0,0,1
+SMOS3.txt,SMOS3.txt.name,Logout,1,1,1,0,1,1,0,0,0
+SMOS3.txt,SMOS3.txt.description,allows a user to exit the system,1,1,0,0,1,1,0,0,0
+SMOS3.txt,SMOS3.txt.actor,registered user,0,0,0,0,0,0,0,0,1
+SMOS3.txt,SMOS3.txt.flow_of_events.0,Displays the login form,1,1,1,0,1,1,0,0,0
+SMOS3.txt,SMOS3.txt.precondition,The user is logged in to the system Click on the logout button,0,0,0,0,0,0,0,0,1
+SMOS3.txt,SMOS3.txt.postcondition,The user can re-log in to the system,1,1,0,0,1,1,0,0,1
+SMOS30.txt,SMOS30.txt.postcondition,The delay data has been entered in the system and the system sent notifications to parents The system remains on the registry screen The administrator interrupts the operation Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,1
+SMOS30.txt,SMOS30.txt.name,Insert Delay Admin,1,1,1,1,1,1,0,0,0
+SMOS30.txt,SMOS30.txt.description,Register digitization data entry by the administrator,1,1,1,1,1,1,0,0,1
+SMOS30.txt,SMOS30.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS30.txt,SMOS30.txt.flow_of_events.0,Fill out the form by entering students with delay and click Save '',1,0,0,0,1,1,0,0,1
+SMOS30.txt,SMOS30.txt.flow_of_events.1,Update the screen displayed according to the date,1,0,1,0,1,1,0,0,0
+SMOS30.txt,SMOS30.txt.flow_of_events.2,Send data to the server,1,0,1,0,1,1,0,0,0
+SMOS30.txt,SMOS30.txt.flow_of_events.3,Displays the updated log data,1,1,1,1,1,1,0,0,0
+SMOS30.txt,SMOS30.txt.precondition,The user must be logged in to the system as an administrator the user took the case of use Several Tet Tingloregister '' selects the date on which he wants to enter the information,0,0,0,0,0,0,0,0,1
+SMOS31.txt,SMOS31.txt.name,Edit Absence,1,1,1,1,1,1,0,0,0
+SMOS31.txt,SMOS31.txt.description,Changing absences by the administrator The change is to be intended as the integration cancellation of the absence,1,1,1,1,1,1,0,0,1
+SMOS31.txt,SMOS31.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS31.txt,SMOS31.txt.flow_of_events.0,Change the absence insert or delete and click Save '',1,0,0,1,1,1,0,0,1
+SMOS31.txt,SMOS31.txt.flow_of_events.1,Update the screen based on the selected date,1,0,1,0,1,1,0,0,0
+SMOS31.txt,SMOS31.txt.flow_of_events.2,Send modified data to the server,1,0,1,0,1,1,0,0,0
+SMOS31.txt,SMOS31.txt.flow_of_events.3,The system sends a grinding e-mail to the parent of the student,1,0,1,0,1,1,0,0,0
+SMOS31.txt,SMOS31.txt.postcondition,The system has changed the selected absence and sent parents a modification notification The system remains on the registry screen The administrator interrupts the operation Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS31.txt,SMOS31.txt.precondition,The user must be logged in to the system as an administrator the user took the case of use Sview Tet Tingloregistration '' selects the date on which you want to change an absence,0,0,0,0,0,0,0,0,1
+SMOS32.txt,SMOS32.txt.name,Edit Delay,1,1,1,1,1,1,0,0,0
+SMOS32.txt,SMOS32.txt.description,Changing a delay by the administrator,1,1,0,1,1,1,0,0,1
+SMOS32.txt,SMOS32.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS32.txt,SMOS32.txt.flow_of_events.0,The user edit the delay and click on Save '',1,1,1,0,1,1,0,0,1
+SMOS32.txt,SMOS32.txt.flow_of_events.1,Update the screen based on the selected date,1,0,1,0,1,1,0,0,0
+SMOS32.txt,SMOS32.txt.flow_of_events.2,The system sends the data modified to the server,1,1,1,0,1,1,0,0,0
+SMOS32.txt,SMOS32.txt.postcondition,The system has changed the delays on the date inserted The system remains on the registry screen The administrator interrupts the operation Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS32.txt,SMOS32.txt.precondition,The user must be logged in to the system as an administrator the user did the case of use Sview Tet Tingloregistration '' selects the date on which you want to change the delay,0,0,0,0,0,0,0,0,1
+SMOS33.txt,SMOS33.txt.name,Delete Delay,1,1,1,1,1,1,0,0,0
+SMOS33.txt,SMOS33.txt.description,Elimination of a delay by the administrator,1,1,0,1,1,1,0,0,1
+SMOS33.txt,SMOS33.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS33.txt,SMOS33.txt.flow_of_events.0,Remove the late input of a student and click Save '',1,0,1,0,1,1,0,0,1
+SMOS33.txt,SMOS33.txt.flow_of_events.1,Update the screen based on the selected date,1,0,1,0,1,1,0,0,0
+SMOS33.txt,SMOS33.txt.flow_of_events.2,Delete late entry from the archive,1,1,1,1,1,1,0,0,0
+SMOS33.txt,SMOS33.txt.postcondition,The system has eliminated the delay The system remains on the registry screen The administrator interrupts the operation Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS33.txt,SMOS33.txt.precondition,The user must be logged in to the system as an administrator the user took the case Split Ta Tt Allore Gloregistration '' selects the date he wants to eliminate a delay,0,0,0,0,0,0,0,0,1
+SMOS34.txt,SMOS34.txt.name,View Listof Justifications,1,1,1,1,1,1,0,0,0
+SMOS34.txt,SMOS34.txt.description,View the list of justifications,1,1,1,1,1,1,0,0,0
+SMOS34.txt,SMOS34.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS34.txt,SMOS34.txt.flow_of_events.0,Show all the assences of the student School recorded selected the absences already justified come displayed in green those to justify in red during the year,1,1,1,1,1,1,0,0,0
+SMOS34.txt,SMOS34.txt.postcondition,The system is displaying the list of justifications inherent to the student The administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS34.txt,SMOS34.txt.precondition,The user must be logged in to the system as an administrator the user has carried out the case of use Split Ta Tt Al Teloregistration '' click the justification '' button related to a student,0,0,0,0,0,0,0,0,1
+SMOS35.txt,SMOS35.txt.name,View Notes List,1,1,1,1,1,1,0,0,0
+SMOS35.txt,SMOS35.txt.description,View the list of notes concerning the student,1,1,1,1,1,1,0,0,0
+SMOS35.txt,SMOS35.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS35.txt,SMOS35.txt.flow_of_events.0,Show all the student notes recorded during the school year,1,1,1,1,1,1,0,0,0
+SMOS35.txt,SMOS35.txt.postcondition,The system is displaying the list notes referred to the student The administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS35.txt,SMOS35.txt.precondition,The user must be logged in to the system as an administrator the user took the case of use Sview Tet Tingloregister '' click on the Notes '' button associated with a student,0,0,0,0,0,0,0,0,1
+SMOS36.txt,SMOS36.txt.postcondition,The justification data has been entered into the system The system returns to the registry screen The administrator interrupts the operation Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS36.txt,SMOS36.txt.name,Insert Justification,1,1,1,1,1,1,0,0,0
+SMOS36.txt,SMOS36.txt.description,Justification insertion,1,1,0,1,1,1,0,0,0
+SMOS36.txt,SMOS36.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS36.txt,SMOS36.txt.flow_of_events.0,Fill out the form,1,0,0,0,1,1,0,0,1
+SMOS36.txt,SMOS36.txt.flow_of_events.1,Click on Save '',1,0,0,0,1,1,0,0,1
+SMOS36.txt,SMOS36.txt.flow_of_events.2,Show a form in which to insert the fields of justice date justification,1,0,1,0,1,1,0,0,0
+SMOS36.txt,SMOS36.txt.flow_of_events.3,Save the justification,1,0,1,1,1,1,0,0,0
+SMOS36.txt,SMOS36.txt.precondition,The user must be logged in to the system as an administrator the user has carried out the case of use Sview Tet Tingloregister '' the user has held the case of use viewellacogiustifies '' the user clicks on one of the absences in red,0,0,0,0,0,0,0,0,1
+SMOS37.txt,SMOS37.txt.postcondition,The data of the note were entered into the system and the system sent the notification to parents The system returns to the registry screen The administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS37.txt,SMOS37.txt.name,Insert Note,1,1,1,1,1,1,0,0,0
+SMOS37.txt,SMOS37.txt.description,disciplinary notes insertion,1,1,0,1,1,1,0,0,0
+SMOS37.txt,SMOS37.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS37.txt,SMOS37.txt.flow_of_events.0,Fill out the form,1,0,0,0,1,1,0,0,1
+SMOS37.txt,SMOS37.txt.flow_of_events.1,Click on Save '',1,0,0,0,1,1,0,0,1
+SMOS37.txt,SMOS37.txt.flow_of_events.2,Show a form with the fields of note student date teacher description,1,0,1,1,1,1,0,0,0
+SMOS37.txt,SMOS37.txt.flow_of_events.3,Save the note and send a notification via e-mail to the parent,1,0,1,0,1,1,0,0,0
+SMOS37.txt,SMOS37.txt.precondition,The user must be logged in to the system as an administrator the user has carried out the case of use Sview Tet Tingloregister '' the user has already done the case of use View Elonconote '' the user click on the New Note '' button,0,0,0,0,0,0,0,0,1
+SMOS38.txt,SMOS38.txt.name,View Justification Details,1,1,1,1,1,1,0,0,0
+SMOS38.txt,SMOS38.txt.description,View the details of a justice,1,1,1,1,1,1,0,0,0
+SMOS38.txt,SMOS38.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS38.txt,SMOS38.txt.flow_of_events.0,Show a form with the details of the justification and the possibility of modifying or eliminating the justification,1,1,1,1,1,1,0,0,0
+SMOS38.txt,SMOS38.txt.postcondition,The system is viewing the details of a justice The administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS38.txt,SMOS38.txt.precondition,The user must be logged in to the system as an administrator the user has held the case of use Viewing Lancogiustifies '' click on one of the green absences,0,0,0,0,0,0,0,0,1
+SMOS39.txt,SMOS39.txt.name,View Note Details,1,1,1,1,1,1,0,0,0
+SMOS39.txt,SMOS39.txt.description,Displays the details of a note,1,1,1,1,1,1,0,0,0
+SMOS39.txt,SMOS39.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS39.txt,SMOS39.txt.flow_of_events.0,Show a form with the details of the note student description teacher date,1,1,1,1,1,1,0,0,0
+SMOS39.txt,SMOS39.txt.postcondition,The system is displaying the details of a note The administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS39.txt,SMOS39.txt.precondition,The user must be logged in to the system as an administrator the user took the case of use View El Onconte '' Click on the Details '' button associated with one of the notes,0,0,0,0,0,0,0,0,1
+SMOS4.txt,SMOS4.txt.name,Change Password,1,1,1,0,1,1,0,0,0
+SMOS4.txt,SMOS4.txt.description,Allows a user to change your password,1,1,1,0,1,1,0,0,0
+SMOS4.txt,SMOS4.txt.actor,registered user,0,0,0,0,0,0,0,0,1
+SMOS4.txt,SMOS4.txt.flow_of_events.0,Fill out the form and submits,1,0,0,0,1,1,0,0,1
+SMOS4.txt,SMOS4.txt.flow_of_events.1,View the form with the fields Old password new password confirms new password,1,0,1,0,1,1,0,0,0
+SMOS4.txt,SMOS4.txt.flow_of_events.2,Confirm the password change,1,0,1,0,1,1,0,0,0
+SMOS4.txt,SMOS4.txt.precondition,The user is logged in to the system Click on the Change password '' button,0,0,0,0,0,0,0,0,1
+SMOS4.txt,SMOS4.txt.postcondition,The user password has been changed the user cancels the connection interruption to the smos server,1,0,1,0,1,1,0,0,1
+SMOS40.txt,SMOS40.txt.postcondition,The justification has been modified The system returns to the registry screen The administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS40.txt,SMOS40.txt.name,Edit Justification,1,1,1,1,1,1,0,0,0
+SMOS40.txt,SMOS40.txt.description,Changing a justice,1,1,1,1,1,1,0,0,0
+SMOS40.txt,SMOS40.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS40.txt,SMOS40.txt.flow_of_events.0,Change one or more fields of the displayed form date justification,1,0,0,0,1,1,0,0,1
+SMOS40.txt,SMOS40.txt.flow_of_events.1,Click on Save '',1,0,0,0,1,1,0,0,1
+SMOS40.txt,SMOS40.txt.flow_of_events.2,Change the justification,1,1,1,1,1,1,0,0,0
+SMOS40.txt,SMOS40.txt.precondition,The user must be logged in to the system as an administrator The user has carried out the case of use viewdetalticaustifica '' and the system is Viewing the details of a justice,0,0,0,0,0,0,0,0,1
+SMOS41.txt,SMOS41.txt.postcondition,Note data has been modified The system returns to the registry screen The administrator interrupts the operation Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS41.txt,SMOS41.txt.name,Edit Note,1,1,1,1,1,1,0,0,0
+SMOS41.txt,SMOS41.txt.description,Changing a disciplinary note,1,1,1,1,1,1,0,0,0
+SMOS41.txt,SMOS41.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS41.txt,SMOS41.txt.flow_of_events.0,The user edit one or more fields of the displayed form student description teacher date,1,0,0,1,1,1,0,0,1
+SMOS41.txt,SMOS41.txt.flow_of_events.1,The user click on Save '',1,0,0,0,1,1,0,0,1
+SMOS41.txt,SMOS41.txt.flow_of_events.2,The system saves the changes,1,0,1,0,1,1,0,0,0
+SMOS41.txt,SMOS41.txt.precondition,The user must be logged in to the system as an administrator The user has held the case of use view indicatettettettettettettettettettettettettettettettettettails,0,0,0,0,0,0,0,0,1
+SMOS42.txt,SMOS42.txt.postcondition,The justification was eliminated by the system The system returns to the registry screen The administrator interrupts the operation Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS42.txt,SMOS42.txt.name,Eliminate Justification,1,1,1,1,1,1,0,0,0
+SMOS42.txt,SMOS42.txt.description,Eliminate Justification,1,1,1,1,1,1,0,0,0
+SMOS42.txt,SMOS42.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS42.txt,SMOS42.txt.flow_of_events.0,Eliminate justification,1,1,1,1,1,1,0,0,0
+SMOS42.txt,SMOS42.txt.precondition,The user must be logged in to the system as an administrator the user has held the case of use viewdetalticaustifica '' and the System is viewing the details of a justification Click on Delete '',0,0,0,0,0,0,0,0,1
+SMOS43.txt,SMOS43.txt.postcondition,The note has been canceled and the system sent notification to parents The system returns to the registry screen The administrator interrupts the operation Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS43.txt,SMOS43.txt.name,Delete Note,1,1,1,1,1,1,0,0,0
+SMOS43.txt,SMOS43.txt.description,Deleting disciplinary notes,1,1,1,1,1,1,0,0,0
+SMOS43.txt,SMOS43.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS43.txt,SMOS43.txt.flow_of_events.0,The system sends a notification of incorrect corrige to the student 's parents then eliminates the data of the note from the archive,1,0,1,1,1,1,0,0,0
+SMOS43.txt,SMOS43.txt.precondition,The user must be logged in to the system as an administrator The user has carried out the case of use SHOWDDETTICLETA '' and the system is Viewing the details of a note The user clicks the Delete '' button,0,0,0,0,0,0,0,0,1
+SMOS44.txt,SMOS44.txt.precondition,The user is logged in to the system as an administrator The user click on the Student Monitoring '' button,0,0,0,0,0,0,0,0,1
+SMOS44.txt,SMOS44.txt.name,Do Students Monitoring,1,1,0,1,1,1,0,0,0
+SMOS44.txt,SMOS44.txt.description,allows you to query the system about the number of absences and notes associated with students,1,1,0,1,1,1,0,0,0
+SMOS44.txt,SMOS44.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS44.txt,SMOS44.txt.flow_of_events.0,Search in the archive the students who have for the school year in progress a number of absences and notes higher than a predetermined threshold,1,1,1,1,1,1,0,0,0
+SMOS44.txt,SMOS44.txt.flow_of_events.1,Displays a data presentation screen,1,1,1,0,1,1,0,0,0
+SMOS44.txt,SMOS44.txt.postcondition,There was information about absences and notes of the students Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,0
+SMOS45.txt,SMOS45.txt.precondition,The user has been logged in to the system as an administrator The user click on the Online reports '' button,0,0,0,0,0,0,0,0,1
+SMOS45.txt,SMOS45.txt.postcondition,The system displays a student 's report The user stops the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS45.txt,SMOS45.txt.name,View One Page,1,1,1,1,1,1,0,0,0
+SMOS45.txt,SMOS45.txt.description,Display of a report card,1,1,1,1,1,1,0,0,0
+SMOS45.txt,SMOS45.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS45.txt,SMOS45.txt.flow_of_events.0,Select the academic year,1,0,0,0,1,1,0,0,1
+SMOS45.txt,SMOS45.txt.flow_of_events.1,Choose the pupil class to view the report card,1,0,0,0,1,1,0,0,1
+SMOS45.txt,SMOS45.txt.flow_of_events.2,Select the student and four months to view the report by clicking on the relevant button,1,0,0,0,1,1,0,0,1
+SMOS45.txt,SMOS45.txt.flow_of_events.3,Displays the list of classes in the system with a report cards '' button next to each class,1,1,1,1,1,1,0,0,0
+SMOS45.txt,SMOS45.txt.flow_of_events.4,Displays the list of class students chosen by the user,1,1,1,1,1,1,0,0,0
+SMOS45.txt,SMOS45.txt.flow_of_events.5,Displays the chosen student report referred to the selected four months,1,1,1,1,1,1,0,0,0
+SMOS46.txt,SMOS46.txt.precondition,The user has been logged in to the system as an administrator The user click on the Online reports '' button,0,0,0,0,0,0,0,0,1
+SMOS46.txt,SMOS46.txt.postcondition,The report relative to a student was added to the system The user interrupts the operation Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS46.txt,SMOS46.txt.name,Insert Page,1,1,1,1,1,1,0,0,0
+SMOS46.txt,SMOS46.txt.description,Inserting a student 's report card performed by the administrator,1,1,0,1,1,1,0,0,1
+SMOS46.txt,SMOS46.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS46.txt,SMOS46.txt.flow_of_events.0,Choose the pupil class to insert the report card,1,0,0,0,1,1,0,0,1
+SMOS46.txt,SMOS46.txt.flow_of_events.1,Select the pupil to which to insert the report card by clicking on the relevant key,1,0,0,0,1,1,0,0,1
+SMOS46.txt,SMOS46.txt.flow_of_events.2,Inserts the votes of the report card all or part and click on the Save '' button,1,0,0,0,1,1,0,0,1
+SMOS46.txt,SMOS46.txt.flow_of_events.3,Displays the list of classes in the system referred to the academic year in progress with a report cards '' button beside each class,1,1,1,1,1,1,0,0,0
+SMOS46.txt,SMOS46.txt.flow_of_events.4,View the list of class students chosen by the user,1,1,1,1,1,1,0,0,0
+SMOS46.txt,SMOS46.txt.flow_of_events.5,Displays the form for inserting a report card,1,0,1,0,1,1,0,0,0
+SMOS46.txt,SMOS46.txt.flow_of_events.6,Enter the votes entered in the archive and reports the user to the class student view page,1,1,1,1,1,1,0,0,0
+SMOS47.txt,SMOS47.txt.postcondition,A report relative to a student modified the user interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS47.txt,SMOS47.txt.precondition,The user has been logged in to the system as an administrator the user has carried out the case of use Displayed Unapagella '' the user click on the edit button,0,0,0,0,0,0,0,0,1
+SMOS47.txt,SMOS47.txt.name,Edit Of One Page,1,1,1,1,1,1,0,0,0
+SMOS47.txt,SMOS47.txt.description,Use case to change the report card of a student,1,1,0,1,1,1,0,0,0
+SMOS47.txt,SMOS47.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS47.txt,SMOS47.txt.flow_of_events.0,Enter the new data and click the confirmation key,1,0,0,0,1,1,0,0,1
+SMOS47.txt,SMOS47.txt.flow_of_events.1,Displays the form with the fields to be modified including the votes of the different subjects,1,0,1,0,1,1,0,0,0
+SMOS47.txt,SMOS47.txt.flow_of_events.2,The system displays a confirmation message and displays the form with the list of students,1,1,1,1,1,1,0,0,0
+SMOS48.txt,SMOS48.txt.postcondition,A report relative to a student is canceled Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,0
+SMOS48.txt,SMOS48.txt.precondition,The user has been logged in to the system as an administrator the user took the case of use Displaying a report card '' the user click on the Delete '' button,0,0,0,0,0,0,0,0,1
+SMOS48.txt,SMOS48.txt.name,Delete Of One Page,1,1,1,1,1,1,0,0,0
+SMOS48.txt,SMOS48.txt.description,The administrator eliminates a report card from the system,1,1,0,1,1,1,0,0,1
+SMOS48.txt,SMOS48.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS48.txt,SMOS48.txt.flow_of_events.0,The user accepts the cancellation by pressing the confirmation key,1,0,0,0,1,1,0,0,1
+SMOS48.txt,SMOS48.txt.flow_of_events.1,The system displays a form to confirm the cancellation,1,0,1,0,1,1,0,0,0
+SMOS48.txt,SMOS48.txt.flow_of_events.2,Displays a message of correct deletion and displays the form with the list of classes,1,1,1,1,1,1,0,0,0
+SMOS49.txt,SMOS49.txt.precondition,The user is logged in to the system as an administrator The user click on the View list request list '' button Present in the home,0,0,0,0,0,0,0,0,1
+SMOS49.txt,SMOS49.txt.name,View Requests Subscription,1,1,1,1,1,1,0,0,0
+SMOS49.txt,SMOS49.txt.description,Allows the administrator to view the list of registration requests to the system,1,1,0,1,1,1,0,0,0
+SMOS49.txt,SMOS49.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS49.txt,SMOS49.txt.flow_of_events.0,Displays the list of registrations yet to be activated,1,1,1,1,1,1,0,0,0
+SMOS49.txt,SMOS49.txt.postcondition,The user is viewing the list of requests for registration to the system by students the user interrupts the connection to the SMOS server interrupted,1,1,1,1,1,1,0,0,1
+SMOS5.txt,SMOS5.txt.precondition,The user is logged in as administrator The user click on the User Manager '' button,0,0,0,0,0,0,0,0,1
+SMOS5.txt,SMOS5.txt.postcondition,The system displays the list of users in the system Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,0
+SMOS5.txt,SMOS5.txt.name,View User List,1,1,1,1,1,1,0,0,0
+SMOS5.txt,SMOS5.txt.description,Displays the list of users in the system,1,1,1,1,1,1,0,0,0
+SMOS5.txt,SMOS5.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS5.txt,SMOS5.txt.flow_of_events.0,Search for users in the archive and displays the list,1,1,1,1,1,1,0,0,0
+SMOS50.txt,SMOS50.txt.precondition,The user has already done the case of use View Registration Requests '' The user clicks on the Accept '' button associated with a registration request,0,0,0,0,0,0,0,0,1
+SMOS50.txt,SMOS50.txt.name,Accept Enrollment Student,1,1,1,1,1,1,0,0,0
+SMOS50.txt,SMOS50.txt.description,Allows the administrator to accept a student 's system enrollment,1,1,0,1,1,1,0,0,0
+SMOS50.txt,SMOS50.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS50.txt,SMOS50.txt.flow_of_events.0,Activate the new user in the system,1,1,1,1,1,1,0,0,0
+SMOS50.txt,SMOS50.txt.flow_of_events.1,Displays the list of registrations yet to be activated,1,1,1,1,1,1,0,0,0
+SMOS50.txt,SMOS50.txt.postcondition,The user has accepted a system registration request the user interrupts the connection to the SMOS server interrupted,1,1,1,1,1,1,0,0,1
+SMOS51.txt,SMOS51.txt.precondition,The user has already done the case of use View Registration Requests '' The user clicks on the Reject '' button associated with a registration request,0,0,0,0,0,0,0,0,1
+SMOS51.txt,SMOS51.txt.name,Reject Enrollment Student,1,1,1,1,1,1,0,0,0
+SMOS51.txt,SMOS51.txt.description,It allows the administrator to refuse the registration to the system of a student,1,1,0,1,1,1,0,0,0
+SMOS51.txt,SMOS51.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS51.txt,SMOS51.txt.flow_of_events.0,Eliminates the registration request to the system,1,1,1,1,1,1,0,0,0
+SMOS51.txt,SMOS51.txt.flow_of_events.1,Displays the list of registrations yet to be activated,1,1,1,1,1,1,0,0,0
+SMOS51.txt,SMOS51.txt.postcondition,The user refused a request for registration to the system The user interrupts the connection operation to the interrupted SMOS server,1,1,1,1,1,1,0,0,1
+SMOS52.txt,SMOS52.txt.precondition,The user is logged in to the system as administrator The user inserts the text to search for and click on the Search '' button,0,0,0,0,0,0,0,0,1
+SMOS52.txt,SMOS52.txt.name,Entity Search Administrator,1,1,1,1,1,1,0,0,0
+SMOS52.txt,SMOS52.txt.description,Allows the administrator to search through the system all the entities characterized by the keywords entered,1,1,0,1,1,1,0,0,0
+SMOS52.txt,SMOS52.txt.flow_of_events.0,Displays the list of entities related to the searched keywords In particular they are shown in an active list classes teachings addresses users found,1,1,1,1,1,1,0,0,0
+SMOS52.txt,SMOS52.txt.postcondition,The user is displaying an active list of entities corresponding to the keywords entered The user stops the operation Connection to the interrupted SMOS server,1,1,1,1,1,1,0,0,1
+SMOS53.txt,SMOS53.txt.postcondition,The user displays a list from which to choose the class,1,1,0,1,1,1,0,0,1
+SMOS53.txt,SMOS53.txt.precondition,The user must be logged in to the system as aa staff,0,0,0,0,0,0,0,0,1
+SMOS53.txt,SMOS53.txt.name,View Classes List,1,1,1,1,1,1,0,0,0
+SMOS53.txt,SMOS53.txt.description,Display of classes,1,1,1,1,1,1,0,0,0
+SMOS53.txt,SMOS53.txt.actor,ATA staff,0,0,0,0,0,0,0,0,1
+SMOS53.txt,SMOS53.txt.flow_of_events.0,The system shows a screen with all the classes in the database with a key to access the registry of each class,1,1,1,1,1,1,0,0,0
+SMOS54.txt,SMOS54.txt.postcondition,Absence data has been entered in the system and the system sent notifications to parents The initial screen is shown again Connection to the interrupted SMOS server The user interrupts the operation,1,0,1,1,1,1,0,0,1
+SMOS54.txt,SMOS54.txt.name,Insert Absences,1,1,1,1,1,1,0,0,0
+SMOS54.txt,SMOS54.txt.description,Register digitization data collection from ATA class personnel per class,1,1,1,1,1,1,0,0,0
+SMOS54.txt,SMOS54.txt.actor,ATA staff,0,0,0,0,0,0,0,0,1
+SMOS54.txt,SMOS54.txt.flow_of_events.0,The user selects absent students,1,0,0,0,1,1,0,0,1
+SMOS54.txt,SMOS54.txt.flow_of_events.1,Click on Save,1,0,0,0,1,1,0,0,1
+SMOS54.txt,SMOS54.txt.flow_of_events.2,Shows the user a screen with pupils and radio button to select if a student is absent or present,1,0,1,0,1,1,0,0,0
+SMOS54.txt,SMOS54.txt.flow_of_events.3,By default the student is present,1,0,1,0,1,1,0,0,0
+SMOS54.txt,SMOS54.txt.flow_of_events.4,The system sends data to the server,1,0,1,0,1,1,0,0,0
+SMOS54.txt,SMOS54.txt.flow_of_events.5,The server for each absence sends a notification email to the parent of the student,1,0,1,1,1,1,0,0,0
+SMOS54.txt,SMOS54.txt.precondition,The user must be logged in to the system as the ATA staff the user has carried out the case of use View Lancoclassiata selection a class to enter the data in the system,0,0,0,0,0,0,0,0,1
+SMOS55.txt,SMOS55.txt.postcondition,The delay data has been entered in the system The initial screen is shown again Connection to the interrupted SMOS server The user interrupts the operations,1,0,1,1,1,1,0,0,1
+SMOS55.txt,SMOS55.txt.name,Insert Delay Ata,1,1,1,1,1,1,0,0,0
+SMOS55.txt,SMOS55.txt.description,Register digitization data collection from ATA class personnel per class,1,1,1,1,1,1,0,0,0
+SMOS55.txt,SMOS55.txt.actor,ATA staff,0,0,0,0,0,0,0,0,1
+SMOS55.txt,SMOS55.txt.flow_of_events.0,The user selects delays,1,0,0,0,1,1,0,0,1
+SMOS55.txt,SMOS55.txt.flow_of_events.1,The user click Confirm '',1,0,0,0,1,1,0,0,1
+SMOS55.txt,SMOS55.txt.flow_of_events.2,The system shows a screen with all the students present alongside a delay '' checkbox,1,1,1,1,1,1,0,0,0
+SMOS55.txt,SMOS55.txt.flow_of_events.3,If selected you activate Select fields to the side to select the time of the delay,1,0,0,0,1,1,0,0,1
+SMOS55.txt,SMOS55.txt.flow_of_events.4,The system sends data to the server,1,0,1,0,1,1,0,0,0
+SMOS55.txt,SMOS55.txt.precondition,The user must be logged in to the system as the ATA staff the user has carried out the case of use View Lancoclassiata selects a class to enter the data in the system,0,0,0,0,0,0,0,0,1
+SMOS56.txt,SMOS56.txt.postcondition,The list of all classes in which teaches the teacher is shown Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,0
+SMOS56.txt,SMOS56.txt.precondition,The user is logged in to the system as a teacher The user clicks the Digital Log '' button,0,0,0,0,0,0,0,0,1
+SMOS56.txt,SMOS56.txt.name,View Class List Teacher,1,1,1,1,1,1,0,0,0
+SMOS56.txt,SMOS56.txt.description,This use case allows a teacher to view the list of classes in which she teaches,1,1,0,1,1,1,0,0,0
+SMOS56.txt,SMOS56.txt.actor,Professor,0,0,0,0,0,0,0,0,1
+SMOS56.txt,SMOS56.txt.flow_of_events.0,Select the academic year of interest,1,0,0,0,1,1,0,0,1
+SMOS56.txt,SMOS56.txt.flow_of_events.1,Displays the list of academic years in which at least one class in which the teacher teaches,1,1,1,1,1,1,0,0,0
+SMOS56.txt,SMOS56.txt.flow_of_events.2,View the classes associated with the selected school year,1,1,1,1,1,1,0,0,0
+SMOS57.txt,SMOS57.txt.postcondition,The class registry information has been shown Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,0
+SMOS57.txt,SMOS57.txt.precondition,The user is logged in to the system as a teacher The user has held the case Visual Lancoclasses '' and the system is By displaying the list of all classes in which it teaches The user click on the Register '' button associated with one of the classes,0,0,0,0,0,0,0,0,1
+SMOS57.txt,SMOS57.txt.name,View Register,1,1,1,1,1,1,0,0,0
+SMOS57.txt,SMOS57.txt.description,Class Registry View,1,1,1,1,1,1,0,0,0
+SMOS57.txt,SMOS57.txt.actor,Professor,0,0,0,0,0,0,0,0,1
+SMOS57.txt,SMOS57.txt.flow_of_events.0,Displays information about the class register and in particular date absences disciplinary notes delays and justification,1,1,1,1,1,1,0,0,0
+SMOS58.txt,SMOS58.txt.precondition,The user has been logged in to the system as a teacher The user click on the On-line report cards '' button,0,0,0,0,0,0,0,0,1
+SMOS58.txt,SMOS58.txt.postcondition,The system displays a student 's report The user stops the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS58.txt,SMOS58.txt.name,Display Of A Page Teacher,1,1,1,1,1,1,0,0,0
+SMOS58.txt,SMOS58.txt.description,Display of a report card,1,1,1,1,1,1,0,0,0
+SMOS58.txt,SMOS58.txt.actor,Professor,0,0,0,0,0,0,0,0,1
+SMOS58.txt,SMOS58.txt.flow_of_events.0,Select the academic year of interest,1,0,0,0,1,1,0,0,1
+SMOS58.txt,SMOS58.txt.flow_of_events.1,Select one of the displayed classes,1,0,0,0,1,1,0,0,1
+SMOS58.txt,SMOS58.txt.flow_of_events.2,Select the pupil to be displayed the report card and the reference quadrimestre by clicking on the appropriate button,1,0,0,0,1,1,0,0,1
+SMOS58.txt,SMOS58.txt.flow_of_events.3,View the list of academic years in which at least one class in which the teacher teaches,1,1,1,1,1,1,0,0,0
+SMOS58.txt,SMOS58.txt.flow_of_events.4,View the classes associated with the selected school year,1,1,1,1,1,1,0,0,0
+SMOS58.txt,SMOS58.txt.flow_of_events.5,Displays the list of class students chosen by the user,1,1,1,1,1,1,0,0,0
+SMOS58.txt,SMOS58.txt.flow_of_events.6,Displays the chosen student report referred to the specified quarter,1,1,1,1,1,1,0,0,0
+SMOS59.txt,SMOS59.txt.precondition,The user has been logged in to the system as a student the user click on Online report '',0,0,0,0,0,0,0,0,1
+SMOS59.txt,SMOS59.txt.postcondition,The system displays a student 's report Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,0
+SMOS59.txt,SMOS59.txt.name,Display Of A Page Student,1,1,1,1,1,1,0,0,0
+SMOS59.txt,SMOS59.txt.description,The student report is displayed that requests it,1,0,1,1,1,1,0,0,0
+SMOS59.txt,SMOS59.txt.actor,student,0,0,0,0,0,0,0,0,1
+SMOS59.txt,SMOS59.txt.flow_of_events.0,Select the report card,1,0,0,0,1,1,0,0,1
+SMOS59.txt,SMOS59.txt.flow_of_events.1,The system displays the student 's reports logged in in the archive,1,1,1,1,1,1,0,0,0
+SMOS59.txt,SMOS59.txt.flow_of_events.2,Displays the details of the selected report card,1,1,1,1,1,1,0,0,0
+SMOS6.txt,SMOS6.txt.postcondition,A new user has been created is notified the data error the administrator interrupts the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS6.txt,SMOS6.txt.precondition,The user is logged in as an administrator The user has carried out the case of use viewing the Coutenti '' and the system is Viewing the list of users in the system The user click on the New user '' button,0,0,0,0,0,0,0,0,1
+SMOS6.txt,SMOS6.txt.name,new user,1,1,1,1,1,1,0,0,0
+SMOS6.txt,SMOS6.txt.description,Inserting a new user in the system,1,1,1,1,1,1,0,0,0
+SMOS6.txt,SMOS6.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS6.txt,SMOS6.txt.flow_of_events.0,Fill the fields of the form,1,0,0,0,1,1,0,0,1
+SMOS6.txt,SMOS6.txt.flow_of_events.1,Click on the Save '' button,1,0,0,0,1,1,0,0,1
+SMOS6.txt,SMOS6.txt.flow_of_events.2,Displays the user entry form consisting of the following fields Name Surname E-mail Cell Login Password Confirm password,1,1,1,1,1,1,0,0,0
+SMOS6.txt,SMOS6.txt.flow_of_events.3,Make checks on the validity of the data entered and enter the new user in the archive In the event that the data entered are not valid activates the case of Errodati '' use,1,0,1,1,1,1,0,0,0
+SMOS60.txt,SMOS60.txt.postcondition,The student 's class registry data was shown Connecting to the SMOS server interrupted,1,0,1,1,1,1,0,0,0
+SMOS60.txt,SMOS60.txt.precondition,The user is logged in to the system as a student The user clicks the Digital Log '' button,0,0,0,0,0,0,0,0,1
+SMOS60.txt,SMOS60.txt.name,View School Data Student,1,1,1,1,1,1,0,0,0
+SMOS60.txt,SMOS60.txt.description,Display of school information regarding the user,1,1,1,1,1,1,0,0,0
+SMOS60.txt,SMOS60.txt.actor,student,0,0,0,0,0,0,0,0,1
+SMOS60.txt,SMOS60.txt.flow_of_events.0,Search the archive the data relating to the class register to which the student belongs Displays the data relating to the student and in particular date absences disciplinary notes delays and justification,1,1,1,1,1,1,0,0,0
+SMOS61.txt,SMOS61.txt.postcondition,Information relating to one of the user 's children Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,0
+SMOS61.txt,SMOS61.txt.precondition,The user is logged in to the system as a parent The user clicks the Register '' button associated with one of his children,0,0,0,0,0,0,0,0,1
+SMOS61.txt,SMOS61.txt.name,View Student Data,1,1,1,1,1,1,0,0,0
+SMOS61.txt,SMOS61.txt.description,This use case allows a parent to view information about their children,1,1,0,1,1,1,0,0,0
+SMOS61.txt,SMOS61.txt.actor,parent,0,0,0,0,0,0,0,0,1
+SMOS61.txt,SMOS61.txt.flow_of_events.0,Displays a summary table with the information relating to children and in particular date absences disciplinary notes delays and justification,1,1,1,1,1,1,0,0,0
+SMOS62.txt,SMOS62.txt.precondition,The user has been logged in to the system as a parent The user click on the Magine button associated with one of his children,0,0,0,0,0,0,0,0,1
+SMOS62.txt,SMOS62.txt.postcondition,The system displays a student 's reporting Connection to the interrupted SMOS server,1,0,1,1,1,1,0,0,0
+SMOS62.txt,SMOS62.txt.name,View One Page,1,1,1,1,1,1,0,0,0
+SMOS62.txt,SMOS62.txt.description,The student report is displayed,1,0,1,1,1,1,0,0,0
+SMOS62.txt,SMOS62.txt.actor,parent,0,0,0,0,0,0,0,0,1
+SMOS62.txt,SMOS62.txt.flow_of_events.0,Select the report card,1,0,0,0,1,1,0,0,1
+SMOS62.txt,SMOS62.txt.flow_of_events.1,View selected student report cards,1,1,1,1,1,1,0,0,0
+SMOS62.txt,SMOS62.txt.flow_of_events.2,Displays the details of the selected report card,1,1,1,1,1,1,0,0,0
+SMOS63.txt,SMOS63.txt.postcondition,The information collected in the data collected Connect to the interrupted SMOS server were displayed,1,0,1,0,1,1,0,0,0
+SMOS63.txt,SMOS63.txt.precondition,The user is logged in to the system as direction The user click on the Student Monitoring '' button,0,0,0,0,0,0,0,0,1
+SMOS63.txt,SMOS63.txt.name,Perform Student Monitoring,1,1,1,1,1,1,0,0,0
+SMOS63.txt,SMOS63.txt.description,View students with a number of notes and absences higher than a user-indicated threshold,1,1,1,1,1,1,0,0,0
+SMOS63.txt,SMOS63.txt.actor,Direction,0,0,0,0,0,0,0,0,1
+SMOS63.txt,SMOS63.txt.flow_of_events.0,Look for students with a number of absences and notes superior to the established threshold,1,0,1,1,1,1,0,0,0
+SMOS63.txt,SMOS63.txt.flow_of_events.1,Displays the recovered information,1,0,1,0,1,1,0,0,0
+SMOS64.txt,SMOS64.txt.postcondition,The system is viewing the list of registers related to a particular academic year the direction interrupts the operation connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS64.txt,SMOS64.txt.name,View Registers List,1,1,1,1,1,1,0,0,0
+SMOS64.txt,SMOS64.txt.description,View the list of registers for an academic year,1,1,1,1,1,1,0,0,0
+SMOS64.txt,SMOS64.txt.actor,Direction,0,0,0,0,0,0,0,0,1
+SMOS64.txt,SMOS64.txt.flow_of_events.0,Select the academic year,1,0,0,0,1,1,0,0,1
+SMOS64.txt,SMOS64.txt.flow_of_events.1,Show a screen for the selection of the academic year of interest,1,1,1,0,1,1,0,0,0
+SMOS64.txt,SMOS64.txt.flow_of_events.2,Search in the archive all the digital registers of that year and displays them associated with the class to which they belong,1,0,1,1,1,1,0,0,0
+SMOS64.txt,SMOS64.txt.precondition,The user must be logged in to the system as direction the user click on the Digital Register '' button,0,0,0,0,0,0,0,0,1
+SMOS65.txt,SMOS65.txt.postcondition,The class registry information Connection to the SMOS server interrupted were shown,1,0,1,1,1,1,0,0,0
+SMOS65.txt,SMOS65.txt.precondition,The user is logged in to the system direction the user took the case viewelcoregistri '' and the system is displaying the list of all the registers of a particular academic year the user clicks the Register '' button associated with oneclasses,0,0,0,0,0,0,0,0,1
+SMOS65.txt,SMOS65.txt.name,View Register,1,0,1,1,1,1,0,0,0
+SMOS65.txt,SMOS65.txt.description,Details for the registry of a class,1,0,0,1,1,1,0,0,0
+SMOS65.txt,SMOS65.txt.actor,Direction,0,0,0,0,0,0,0,0,1
+SMOS65.txt,SMOS65.txt.flow_of_events.0,Review the information contained in the registry organized by date,1,0,1,0,1,1,0,0,0
+SMOS65.txt,SMOS65.txt.flow_of_events.1,In particular for the selected date the list of students specifying absent present delayed and a form from which it is possible to manage justifications and disciplinary notes,1,0,1,1,1,1,0,0,0
+SMOS66.txt,SMOS66.txt.precondition,The user has been logged in to the system as direction The user click on the Online report cards '' button,0,0,0,0,0,0,0,0,1
+SMOS66.txt,SMOS66.txt.postcondition,The system displays a student 's report The user stops the connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS66.txt,SMOS66.txt.name,View One Page,1,1,1,1,1,1,0,0,0
+SMOS66.txt,SMOS66.txt.description,Display of a report card,1,1,1,1,1,1,0,0,0
+SMOS66.txt,SMOS66.txt.actor,Direction,0,0,0,0,0,0,0,0,1
+SMOS66.txt,SMOS66.txt.flow_of_events.0,Select the academic year,1,0,0,0,1,1,0,0,1
+SMOS66.txt,SMOS66.txt.flow_of_events.1,Choose the pupil class whose report card wants to display,1,0,0,0,1,1,0,0,1
+SMOS66.txt,SMOS66.txt.flow_of_events.2,Select the student to which the report card is displayed and the quadrimestre of interest by clicking on the relevant key,1,0,0,0,1,1,0,0,1
+SMOS66.txt,SMOS66.txt.flow_of_events.3,Displays the list of classes in the system with a report cards '' button next to each class,1,1,1,1,1,1,0,0,0
+SMOS66.txt,SMOS66.txt.flow_of_events.4,Displays the list of class students chosen by the user,1,1,1,1,1,1,0,0,0
+SMOS66.txt,SMOS66.txt.flow_of_events.5,Displays the chosen student report referred to the selected semester,1,1,1,1,1,1,0,0,0
+SMOS67.txt,SMOS67.txt.precondition,The user click on the Register '' button on the home page,0,0,0,0,0,0,0,0,1
+SMOS67.txt,SMOS67.txt.postcondition,The user has requested a request to the system the user interrupts the connection to the SMOS server interrupted,1,1,0,1,1,1,0,0,1
+SMOS67.txt,SMOS67.txt.name,Registration At Site,1,1,1,1,1,1,0,0,0
+SMOS67.txt,SMOS67.txt.description,allows a student to register to the system,1,1,0,1,1,1,0,0,0
+SMOS67.txt,SMOS67.txt.actor,Visitor,0,0,0,0,0,0,0,0,1
+SMOS67.txt,SMOS67.txt.flow_of_events.0,Fill the fields of the form,1,0,0,0,1,1,0,0,1
+SMOS67.txt,SMOS67.txt.flow_of_events.1,Submit the form,1,0,0,0,1,1,0,0,1
+SMOS67.txt,SMOS67.txt.flow_of_events.2,View the registration form containing name surname mobile phone e-mail username password confirmation password,1,1,1,1,1,1,0,0,0
+SMOS67.txt,SMOS67.txt.flow_of_events.3,Inserts the registration request into the system,1,1,1,1,1,1,0,0,0
+SMOS7.txt,SMOS7.txt.precondition,The user is logged in as administrator The user took the case of use Viewing Lanciutenti '' and the system is viewing the list of users in the system the user click on the Details '' button,0,0,0,0,0,0,0,0,1
+SMOS7.txt,SMOS7.txt.postcondition,The system displays detailed information about a user Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,0
+SMOS7.txt,SMOS7.txt.name,View User Details,1,1,1,1,1,1,0,0,0
+SMOS7.txt,SMOS7.txt.description,View a user details,1,1,1,1,1,1,0,0,0
+SMOS7.txt,SMOS7.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS7.txt,SMOS7.txt.flow_of_events.0,Displays the detailed user information and in particular Name Surname E-mail Cell Login Password,1,1,1,1,1,1,0,0,0
+SMOS8.txt,SMOS8.txt.precondition,The user is logged in as an administrator The user has carried out the case of use viewdet Tailsente '' and the system is Displaying a user details The user changes one or more information contained in the form of Displaying user details,0,0,0,0,0,0,0,0,1
+SMOS8.txt,SMOS8.txt.postcondition,The user has been modified is notified the data error The administrator interrupts the connection operation to the SMOS server interrupted,1,0,1,1,1,1,0,0,1
+SMOS8.txt,SMOS8.txt.name,Edit user,1,1,1,1,1,1,0,0,0
+SMOS8.txt,SMOS8.txt.description,Changing one or more data concerning a user present in the system,1,0,0,1,1,1,0,0,0
+SMOS8.txt,SMOS8.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS8.txt,SMOS8.txt.flow_of_events.0,Click on the Edit '' button,1,0,0,0,1,1,0,0,1
+SMOS8.txt,SMOS8.txt.flow_of_events.1,Checks on the validity of the data entered and changed the user In the event that the data entered are not valid activates the case of Errodati '' use,1,1,1,1,1,1,0,0,0
+SMOS9.txt,SMOS9.txt.precondition,The user is logged in as an administrator The user has carried out the case of use viewdet Tailsente '' and the system is Displaying the details of a user The user click on the Delete '' button,0,0,0,0,0,0,0,0,1
+SMOS9.txt,SMOS9.txt.postcondition,The user has been canceled Connection to the SMOS server interrupted,1,0,1,1,1,1,0,0,0
+SMOS9.txt,SMOS9.txt.name,Delete User,1,1,1,1,1,1,0,0,0
+SMOS9.txt,SMOS9.txt.description,Delete a user from the system,1,1,1,1,1,1,0,0,0
+SMOS9.txt,SMOS9.txt.actor,Administrator,0,0,0,0,0,0,0,0,1
+SMOS9.txt,SMOS9.txt.flow_of_events.0,Delete the user from the archive,1,1,1,1,1,1,0,0,0
+SMOS9.txt,SMOS9.txt.flow_of_events.1,Displays the list of updated users,1,1,1,1,1,1,0,0,0

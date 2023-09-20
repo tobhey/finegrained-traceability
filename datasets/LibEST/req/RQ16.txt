@@ -1,0 +1,7 @@
+REQUIREMENT 16: HTTP HEADERS FOR CONTROL
+     
+The HTTP Status value is used to communicate success or failure of an EST function. HTTP authentication is used by a client when requested by the server.
+
+The media types specified in the HTTP Content-Type header indicate which EST message is being transferred. Media types used by EST are specified in Section 3.2.4.
+
+HTTP redirections (3xx status codes) to the same web origin (see [RFC6454]) SHOULD be handled by the client without user input so long as all applicable security checks (Sections 3.3 and 3.6) have been enforced on the initial connection. The client initiates a new TLS connection and performs all applicable security checks when redirected to other web origin servers. Redirections to other web origins require the EST client to obtain user input for non-GET or HEAD requests as specified in [RFC2616]. Additionally, if the client has already generated a CSR that includes linking identity and POP information (Section 3.5), then the CSR will need to be recreated to incorporate the tls-unique from the new, redirected session. Note: the key pair need not be regenerated. These are processing and interface burdens on the client. EST server administrators are advised to take this into consideration.

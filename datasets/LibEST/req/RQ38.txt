@@ -1,0 +1,13 @@
+REQUIREMENT 38: SIMPLE ENROLL AND RE-ENROLL RESPONSE
+     
+If the enrollment is successful, the server response MUST contain an HTTP 200 response code with a content-type of "application/pkcs7-mime".
+
+A successful response MUST be a certs-only CMC Simple PKI Response, as defined in [RFC5272], containing only the certificate that was issued. The HTTP content-type of "application/pkcs7-mime" with an smime-type parameter "certs-only" is used, as specified in [RFC5273].
+
+The server MUST answer with a suitable 4xx or 5xx HTTP [RFC2616] error code when a problem occurs. A Simple PKI Response with an HTTP content-type of "application/pkcs7-mime" (see Section 4.3.2) MAY be included in the response data to convey an error response. If the content-type is not set, the response data MUST be a plaintext human- readable error message containing explanatory information describing why the request was rejected (for example, indicating that CSR attributes are incomplete).
+
+If the server responds with an HTTP [RFC2616] 202, this indicates that the request has been accepted for processing but that a response is not yet available. The server MUST include a Retry-After header as defined for HTTP 503 responses. The server also MAY include informative human-readable content. The client MUST wait at least the specified "retry-after" time before repeating the same request. The client repeats the initial enrollment request after the appropriate "retry-after" interval has expired. The client SHOULD log or inform the end-user of this event. The server is responsible for maintaining all states necessary to recognize and handle retry operations as the client is stateless in this regard; it simply sends the same request repeatedly until it receives a different response code. All other return codes are handled as specified in HTTP [RFC2616].
+
+If the client closes the TLS connections while waiting for the Retry- After time to expire, then the client initiates a new TLS connection and performs all applicable security checks. If the client has already generated a CSR that includes linking identity and POP information (Section 3.5), then the CSR will need to be recreated to incorporate the tls-unique from the new, redirected session. Note: the key pair need not be regenerated. These are processing and interface burdens on the client. EST server administrators are advised to take this into consideration.
+
+The EST client MAY also make the certificate response, and associated private key, available to end-entity software for use as an end-entity certificate.

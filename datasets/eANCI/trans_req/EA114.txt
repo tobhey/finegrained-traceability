@@ -1,0 +1,18 @@
+Use case name
+Seismic
+Participating Actors
+Initiated by Citizen
+Event Flow.
+1. The Citizen accesses the descriptive screen of how the seismic monitoring of the territory takes place and the possibility of acquiring information about the causes of an earthquake, and the measurement and prevention technologies used by the specialists of the operational core.
+2. The system shall respond by providing the Citizen with the opportunity to view in a always descriptive manner, the characteristics of the instruments, the work done by the specialists, and the national agencies with which they collaborate.
+Condition of Entry.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the
+information retrieved, put
+a
+available from the Civil Defense,OR The Citizen is unable to obtain the descriptive screen, and therefore the use case ServiceNotAvailable is extended,
+which handles cases of technical failure.
+Quality requirementsThe system's reaction time to the Citizen's request is in the hundredths of a second range, if the display is successful, OR
+If the Citizen fails to display the information card correctly, the system will respond in 4 to 6 seconds.

@@ -1,0 +1,16 @@
+Use case name
+EditPractice
+Participating actors
+Started by citizen
+Flow of events
+1. Citizen presses the Edit Practice button (ID Card, Change of Residence) if the practice has not been initialized.
+3.
+2. The system displays a form for editing the practice. The citizen enters the data.
+4. The system saves the changes made.
+Entry condition
+The citizen has authenticated into the system. This use case extends ViewPractice and occurs when the
+citizen wants to edit the file.
+Exit condition
+The system edits the practice, OR ➢ In the case where the service is not available the use case is invoked.
+of use ServiceNotAvailable.
+Quality Requirements Not Provided.

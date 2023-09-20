@@ -1,0 +1,15 @@
+Use case name
+Committee
+Participating actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses this service in order to take note of the hierarchical composition of the Civil Defense.
+2. The system responds to the curiosity of the Citizen with a screen where there is an organizational chart of the components of the Municipal Civil Defense in accordance with the other governmental institutions in the area according to the law of the Municipal Council approved by all.
+Condition of entry
+The Citizen is authenticated within the municipal system,OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen becomes aware of the components of the municipal body,OR
+If unable to view the page, the use case is extended, ServiceNotAvailable which handles technical failure cases.
+Quality Requirements The response time to the Citizen's curiosity is in the hundredths of a second range if the screen describing the use case Committee , is displayed correctly.
+If the screen cannot be provided, the system will respond in times ranging in the range of 3-8 seconds.

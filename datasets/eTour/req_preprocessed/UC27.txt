@@ -1,0 +1,4 @@
+Search Site
+Searching for a specific site on the computer
+Activate the search functionality of a site
+Show the form for research Fill in the form of research and submit Processing the request

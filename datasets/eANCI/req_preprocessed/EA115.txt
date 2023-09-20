@@ -1,0 +1,4 @@
+Visualizza Risultati Tossicologici Ambientali
+
+Il Cittadino accede a tale scheda per potersi rendere conto personalmente della situazione ambientale del comune in cui risiede se tenuta sotto controllo e quali sono i valori a rischio e del perch di questa situazione
+Il sistema risponde con una schermata descrittiva circa i valori tossicologici pervenuti dalle analisi chimiche e tossicologiche effettuate dalla Protezione Civile sull ' ambiente e sul terreno comunale

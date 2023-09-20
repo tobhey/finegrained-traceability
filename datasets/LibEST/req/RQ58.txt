@@ -1,0 +1,98 @@
+REQUIREMENT 58: SERVER KEY GENERATION
+     
+The following is an example of a valid /serverkeygen exchange. During this exchange, the EST client authenticates itself using an existing certificate issued by the CA the EST server provides services for.
+
+The initial TLS handshake is identical to the enrollment example handshake. An example HTTP POSTed message is:
+
+                
+   POST /.well-known/est/serverkeygen HTTP/1.1
+   Host: 192.0.2.1:8085
+   Accept: */*
+   Expect: 100-continue
+   Content-Type: application/pkcs10
+   Content-Transfer-Encoding: base64
+   Content-Length: 963
+
+   MIICwTCCAakCAQAwWzE+MDwGA1UEAxM1c2VydmVyS2V5R2VuIHJlcSBieSBjbGll
+   bnQgaW4gZGVtbyBzdGVwIDEyIDEzNjgxNDE5NTUxGTAXBgNVBAUTEFBJRDpXaWRn
+   ZXQgU046MTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCvE1/6m4A/
+   3/L32Suyzbf28LM9y8CQfp0aepa7o20BSfluvm8HXR44mlV+wpieM8H5n3Ub3RIo
+   RUun/FllIzK9uV7UrkqJ3Yzmq2NOoTd4C+OPsV/RPTu873dhFrssDk3P4NIphlSS
+   sSIkt5rhz7wYbCqCFR5Aphe/30Jx7D+xBI5Rs8e6vRS8IpuImh71BHiLfhq9AFhz
+   4ZJsOUSVpUmqUogFsM7SOQ6XI4dl+djhpjT+YTJ6hQ2PXrqdch3KsTQ8c6aKs+e2
+   5QJxh7O8JHVlPHo4YIxXtAYSutcbbTN5TXWFCWSrWDJ+zuMmk2yU+dio1oW7YR7V
+   ftAvazJ3laQbAgMBAAGgITAfBgkqhkiG9w0BCQcxEhMQZEZzQVhtSm5qb2tCdER2
+   cjANBgkqhkiG9w0BAQUFAAOCAQEAR+I0EQB+hSjrLCAjnVH6bZdHUNGszIdwx1iu
+   L4n+0XK3SfEzeOMkC4T74yFGKj3redS1Ht9atYUPb0D1Qi9Jf9Co8eLblo1l19A6
+   GaS798ofxIF0Pl0Dr6/GqjheqJEIbcDTAJq+kvDihyQ4GQnhosygIZHvKppQlebA
+   gvp2RJSnMroPCe6RgTU9E2fmI9rin/9PyXeWFF1namp+lYbTGwjv1aE1ikhjCLlH
+   veHhCdgOExPw+fqhKhHjp+0ZKBlo2bC3pqRWvDTiZuwt9UpFFfGtuxvpTp44oS/j
+   M/965hWIw/5dshY/wQjIfYs07bbq2ERbpJiw9bAQY34gyoVmEQ==
+                
+                
+Because the DecryptKeyIdentifier attribute is not included in this request, the response does not include additional encryption beyond the TLS session. The EST server response is:
+
+                
+   HTTP/1.1 200 OK
+   Status: 200 OK
+   Content-Type: multipart/mixed ; boundary=estServerExampleBoundary
+   Content-Length: 3219
+                
+                
+This is the preamble. It is to be ignored, though it is a handy place for estServer to include an explanatory note, including contact or support information.
+
+                
+   f--estServerExampleBoundary
+   Content-Type: application/pkcs8
+   Content-Transfer-Encoding: base64
+
+   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPwKtwJ7TjMgA+
+   Poj64V909ryql0foP1hU4Yq5y8/bOP5ZTe6ArgVhUye099Ac+dfdwpyP/DESiujU
+   F/dS62Vck3UWNbnw+4O38FUp0enLbbjSTud48KpEW6+FzkeuAanPGZMA1wKyrYy9
+   rD5tQOOJU/CBVhUrITyYLZNYUe4agbpcR0wMtrRr2E58Mu8wQ80ryk6nkL7COk5Z
+   IQdNRxldk7DFvpA85Yn1stumoGRtVLW51iXeTS1LtXwhuUb/j6Lds3vvAiJ2SiZ0
+   Y3rxPlnJVyFmR8Mf2TBOjzuFqva/VLD2ayQjgaGEjq2ZWHXelQAOZ6N3lrChojEK
+   FGq93yOhAgMBAAECggEBALQ5az/nYjd5x9Y3f7NMUffwl+jRRfMHCMTRx/u4AEAo
+   KBYm0hFVZZtxfM+z7xlD8G0Th6gs2hFA6gwcIlUPmiX+UaOLxht0xWaLGgYmcNAm
+   BiCDjLBQ7xRQCWtlcK9WCA5+HBWtcEy6244rXxh+IyWd6NT6bXC165AEcX87y/e3
+   JFJ7XFNeDP656s2DmxSCci+iDte6SaEm7sJvYGu16qevJeMThcQcC9/rJjXkvpGL
+   IKK2px5idad4Pb6+QHpqj3d4oM8djO6wYUvrH8XQLqAaF8Hd5lFWVU57nSYY+H79
+   GaNDTfRTUL6AXr7kmMsKVFOJ0JjZExUCVMZtGiqhB6UCgYEA639OtdWLZCzyZFMe
+   p7VlRddoz0VAtrU2dxnEb4cWD8Gerg8uNvp8OG84gH+6MbPwz4ZYWKCgDFqyrAlw
+   SF02n9Sovh93eoJ5latSbfeYUkLtB8L/HVk5/CBGEsV9MUkdMF0+B43YlhyEDyKW
+   fX2+0UeHLFgRrfpSzP2cXduEieMCgYEA4db/SIrwN2+g1Gjo3oE09kd89VGjVRer
+   srbcqc7DcPXP6Lw42sx96h4jVWWqHVo3DfwFBdUb1LH2cnVXQjgDUHdNdpl01cf/
+   BFYCFINi2qKMqiJYswkhYxZ1BLz/zuQTDbPFL2PgLniKFG2aFLrTS3S/tgeB5QwI
+   RPigH3kfI6sCgYAPqsCJyFMlrvfRRNZdQewi4VnPsEPF4/hjpAs1gD8vfSoZWlkw
+   vylUd9HCerzgYaA7rixieQ0sxTvtxhL6PXlM2NEBFQbV16hPFL6/IiG4F0u9oHNo
+   eG8rHtqKlSjnBn4yoYFm70Dhe7QtbZelcaAoPCH6CUHj2St5B8ZHWDtREQKBgHNp
+   wER+XIy4C2UByCANv9csaXulIOdXlXNbaCGPfOm5dWrm5ddLMf33MO9vaSRe+ku3
+   Q4nbgsGLwPp1ZQZ+QZNZpMi7W6306yp4GdAJ5Pb+oww/ST0VqW5OB7dILyK4A9S4
+   zkiNrf+Rsl8GM/vsDhc9rsuDwqofIAq/VHVBHNzJAoGBAOHQof5L6iGHOHcxLazx
+   4MGvRTpmzU/PX6Q3QxqpetEGFEDZAaL58L67SSS3fFBnKrVAidF6llC1bAH1aoRa
+   fYHUDi45xBoroy0hBwrnTKRxppua4UK75FUH5PPJfR6cCvw5stRkzIevTZHhozkX
+   pM7PYH/x4BiBmgQ3bhOqTp4H
+   --estServerExampleBoundary
+   Content-Type: application/pkcs7-mime; smime-type=certs-only
+   Content-Transfer-Encoding: base64
+   MIIDRQYJKoZIhvcNAQcCoIIDNjCCAzICAQExADALBgkqhkiG9w0BBwGgggMYMIID
+   FDCCAfygAwIBAgIBFjANBgkqhkiG9w0BAQUFADAbMRkwFwYDVQQDExBlc3RFeGFt
+   cGxlQ0EgTndOMB4XDTEzMDUwOTIzMjU1NloXDTE0MDUwOTIzMjU1NlowLDEqMCgG
+   A1UEAxMhc2VydmVyc2lkZSBrZXkgZ2VuZXJhdGVkIHJlc3BvbnNlMIIBIjANBgkq
+   hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz8CrcCe04zIAPj6I+uFfdPa8qpdH6D9Y
+   VOGKucvP2zj+WU3ugK4FYVMntPfQHPnX3cKcj/wxEoro1Bf3UutlXJN1FjW58PuD
+   t/BVKdHpy2240k7nePCqRFuvhc5HrgGpzxmTANcCsq2Mvaw+bUDjiVPwgVYVKyE8
+   mC2TWFHuGoG6XEdMDLa0a9hOfDLvMEPNK8pOp5C+wjpOWSEHTUcZXZOwxb6QPOWJ
+   9bLbpqBkbVS1udYl3k0tS7V8IblG/4+i3bN77wIidkomdGN68T5ZyVchZkfDH9kw
+   To87har2v1Sw9mskI4GhhI6tmVh13pUADmejd5awoaIxChRqvd8joQIDAQABo1Iw
+   UDAOBgNVHQ8BAf8EBAMCBLAwHQYDVR0OBBYEFKeZixu9F+appDX2SS5HaxmV6Jr4
+   MB8GA1UdIwQYMBaAFLHEaeZbowSn2Jejizu/uWqyMkI8MA0GCSqGSIb3DQEBBQUA
+   A4IBAQBHhLmRAKrnTapqqBObDM9IQDQPuwW+fW1gYwZKlSm/IWIwHEZL1igXhpjj
+   rf4xqpIkiJMmkaOeoXA8PFniX0/lZM9FQSM/j89CUf5dMoAqWj8s17xuXu9L/hVe
+   XjjXHsL40WuDG6tMPN9vcT8tE3ruor608MKSHFX/NEM6+AaNVSUPTmB33BgYB1Wa
+   E7pn3JMN6pjIxsHnF4pKi8qvoTSVVjaCEwUe8Q/fw1yvjoHoYJtyMn4v5Kb3Rt+m
+   s8Yie1tcfVQrjQutqr34/IJsKdPziZwi92KZa+1958A6M9O/p5OI0up9ZXKg2DEC
+   1O9qT0GyYJ6sxAyKiGTOxk6jMddDoQAxAA==
+   --estServerExampleBoundary--
+                
+This is the epilogue. It is also to be ignored.

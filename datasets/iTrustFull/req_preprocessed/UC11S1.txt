@@ -1,0 +1,6 @@
+The HCP enters a MID E or name of a patient and confirms their selection E
+The HCP documents the office visit date hospital location of the office visit if any the default should be the HCP 's home location and notes numbers characters - ' blankspace and carriage return are all allowed input values about an office visit
+The HCP 's medical identification number should also be maintained
+Additionally the HCP can document none one or more medications NDC see Data Format prescribed S none one or more lab procedures that are ordered LOINC code see Data Format UC none one or more diagnoses via the ICD- CM code none one or more medical procedures CPT code performed and none one or more immunizations given CPT Code see UC S chosen from appropriate pull-down lists
+The HCP may also add a patient referral UC
+All events are logged UC S

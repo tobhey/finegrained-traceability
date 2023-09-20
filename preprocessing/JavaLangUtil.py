@@ -119,6 +119,7 @@ def _extract_methods(method_nodes, file_name):
     """Returns a method object list. """
     meth_list = []
     for meth in method_nodes:
+        #if not(ONLY_PUBLIC_METHODS) or not("private" in meth.modifiers or "protected" in meth.modifiers):
         if not(ONLY_PUBLIC_METHODS) or "public" in meth.modifiers:  # logical Implication
             meth_obj = Method(IdentifierString(file_name, ""), IdentifierString(file_name, meth.name), IdentifierString(file_name, ""),
                               IdentifierString(file_name, ""), IdentifierString(file_name, ""))
@@ -192,7 +193,7 @@ def _parse_left_side_identifiers(node):
     elif isinstance(node, javalang.tree.Assignment):
         if isinstance(node.expressionl, javalang.tree.MemberReference):
             return [node.expressionl.qualifier, node.expressionl.member]
-        elif isinstance(node.expressionl, javalang.tree.This):
+        elif isinstance(node.expressionl, javalang.tree.This) or isinstance(node.expressionl, javalang.tree.Cast):
             if len(node.expressionl.selectors) == 1 and isinstance(node.expressionl.selectors[0], javalang.tree.MemberReference):
                 return [node.expressionl.selectors[0].member]
             else:

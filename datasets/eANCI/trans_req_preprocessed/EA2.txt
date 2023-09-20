@@ -1,0 +1,6 @@
+Citizen authentication
+
+The citizen accesses the authentication session
+The system shows the login form for data entry username and password
+The citizen inserts the data and submits the request for authentication
+The system verifies the accuracy of the data and allows access to the citizen

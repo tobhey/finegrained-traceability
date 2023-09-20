@@ -1,0 +1,4 @@
+Assegno Malattia
+
+L ' utente seleziona Richiesta assegno malattia
+Il sistema mostra la pagina con le informazioni per la richiesta all ' ufficio INPS dell ' assegno di malattia permettendo inoltre di stampare il tutto

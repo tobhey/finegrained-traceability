@@ -1,0 +1,14 @@
+Name: ViewAddressDetails
+Actors: Administrator
+Description: allows you to view the details of an address
+Preconditions:
+•
+•
+The user has already logged in the user has already performed the case of use "ViewingLenchIndirizzi" and the system is viewing the address list The user click on the "Show address details" button
+Events sequence
+User
+System
+1. Displays the screen with the details of a single address;In particular: address name.
+Postconditions:
+• The user displays detailed information relating to a single address.
+• Connection to the SMOS server interrupted connection to the interrupted SMOS server

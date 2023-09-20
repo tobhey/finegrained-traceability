@@ -1,0 +1,9 @@
+Convention Request
+Require to conclude a Convention between the points of rest and the agency involved
+Enable the functionality to request the Convention to the Agency
+Displays a form for entering data of the Convention
+Inserts the data in the form of the agreement and submit
+Verify the data entered and asks for confirmation of the request
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation
+Send the request to the Convention

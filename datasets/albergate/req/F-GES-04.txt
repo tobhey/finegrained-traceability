@@ -1,0 +1,26 @@
+Requisito:
+Configurazione delle opzioni di sistema.
+Descrizione:
+Alcuni parametri e dati che il sistema utilizza per svolgere le attività per cui è 
+stato realizzato devono poter essere impostate dal gestore dell'albergo. Dovrà 
+essere prevista perciò la possibilità di configurare il sistema in base alle 
+esigenze dell'utente. Ciò che dovrà sicuramente comparire sono le seguenti 
+impostazioni:
+  date di inizio e fine delle varie stagionalità
+  sconti e riduzioni da effettuare a neonati e bambini
+  durata massima per la quale una stanza può restare bloccata
+  supplemento per le varie stagionalità
+  costo di uno scatto telefonico
+Input richiesto:
+I dati di configurazione con le modifiche ritenute opportune dal gestore.
+Output desiderato:
+Aggiornamento configurazione di sistema.
+Criterio di accettazione:
+I dati dovranno influire sulla gestione dell'albergo in base all'area di 
+competenza. Es. se viene previsto uno sconto per i bambini tale sconto dovrà 
+apparire chiaramente nel calcolo del conto finale e nella sua stampa.
+Aspettative collegate:
+Permettere una maggiore flessibilità al sistema.
+Requisiti collegati:
+F-PRE-03, F-SOG-03, F-SOG-04, F-GES-01
+

@@ -1,0 +1,9 @@
+Insert Cultural Heritage
+Inserts a new cultural object in the system
+Activate the feature for the insertion of a new cultural good
+Displays the corresponding form
+Fill out the form with the data of the cultural and submit
+Verify the data entered and asks for confirmation of the transaction
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation
+Memorize your new cultural good

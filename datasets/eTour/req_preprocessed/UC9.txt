@@ -1,0 +1,6 @@
+Search Refreshment Point
+Returns the list of points of rest in the system according to certain parameters
+Activate the search functionality of a point of rest
+Show the form for research
+Fill in the search form and submit
+Processing the request

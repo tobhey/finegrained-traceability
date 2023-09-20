@@ -1,0 +1,1 @@
+The patient, UAP, or personal representative tries to enter more than ten physiologic data points for one day and is told additional data cannot be entered.

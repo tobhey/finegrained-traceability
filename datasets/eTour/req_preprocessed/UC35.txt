@@ -1,0 +1,6 @@
+LOGIN
+Ensures a registered user to access the system with the privileges that fall
+Activate the login feature
+Displays the corresponding form
+Fill out the form with login information and submit
+Check the correctness of the data if not corrected on the use case Login Error

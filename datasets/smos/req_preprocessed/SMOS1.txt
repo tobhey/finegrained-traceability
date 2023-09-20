@@ -1,0 +1,6 @@
+Login
+Permette ad un utente di loggarsi al sistema
+Verifica che username e password abbiano lunghezza
+Se la condizione rispettata passa al punto due altrimenti notifica l ' errore all ' utente
+Cerca nellarchivio se username e password inseriti dallutente sono presenti tra gli utenti loggabili
+Se la ricerca ha avuto successo lutente viene loggato al sistema

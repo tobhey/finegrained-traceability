@@ -1,0 +1,11 @@
+Name: ViewClassesList
+Actors: ATA staff
+Description: Display of classes
+Preconditions:
+• The user must be logged in to the system as aa staff
+Events sequence
+User
+System
+1. The system shows a screen with all the classes in the database, with a key to access the registry of each class.
+Postconditions:
+The user displays a list from which to choose the class.

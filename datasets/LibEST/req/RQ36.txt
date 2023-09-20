@@ -1,0 +1,11 @@
+REQUIREMENT 36: SIMPLE ENROLLMENT OF CLIENTS
+     
+When HTTPS POSTing to /simpleenroll, the client MUST include a Simple PKI Request as specified in CMC [RFC5272], Section 3.1 (i.e., a PKCS https://tools.ietf.org/html/rfc7030#10 Certification Request [RFC2986]).
+
+The Certification Signing Request (CSR) signature provides proof-of-possession of the client-possessed private key to the EST server. If the CSR KeyUsage extension indicates that the private key can be used to generate digital signatures, then the client MUST generate the CSR signature using the private key. If the key can be used to generate digital signatures but the requested CSR KeyUsage extension prohibits generation of digital signatures, then the CSR signature MAY still be generated using the private key, but the key MUST NOT be used for any other signature operations (this is consistent with the recommendations concerning submission of proof-of-possession to an RA or CA as described in [SP-800-57-Part-1]). The use of /fullcmc operations provides access to more advanced proof-of-possession methods that are used when the key pair cannot be used for digital signature generation (see Section 4.3).
+
+The HTTP content-type of "application/pkcs10" is used here. The format of the message is as specified in [RFC5967] with a Content- Transfer-Encoding of "base64" [RFC2045].
+
+If the EST client authenticated using a previously installed certificate issued by a third-party CA (see Section 2.2.1), the client MAY include the ChangeSubjectName attribute, as defined in [RFC6402], in the CSR to request that the subjectName and SubjectAltName be changed in the new certificate.
+
+The EST client MAY request additional certificates even when using an existing certificate in the TLS client authentication. For example, the client can use an existing certificate for TLS client authentication when requesting a certificate that cannot be used for TLS client authentication.

@@ -1,0 +1,15 @@
+Name: EditAbsence
+Actors: Administrator
+Description: Changing absences by the administrator. The change is to be intended as the integration / cancellation of the absence.
+Preconditions:
+• • •
+The user must be logged in to the system as an administrator, the user took the case of use "SviewTetTingloregistration" selects the date on which you want to change an absence
+Events sequence
+User
+System
+2. Change the absence (insert or delete) and click "Save"
+1. Update the screen based on the selected date
+3. Send modified data to the server. The system sends a grinding e-mail to the parent of the student.
+Postconditions:
+• The system has changed the selected absence and sent parents a modification notification. The system remains on the registry screen.
+• The administrator interrupts the operation • Connection to the SMOS server interrupted

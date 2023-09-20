@@ -1,0 +1,2 @@
+The patient UAP or personal representative enters a glucose level outside the range -
+Heshe is notified of an error and is prompted to try again

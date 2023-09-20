@@ -1,0 +1,15 @@
+Use Case Name
+SearchVerbalsMultices
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen clicks on the button to access the online fines management feature.
+3.
+2. The System redirects the Citizen to the desired section. The Citizen clicks on the button to search for fines (only charged to him/her).
+4. The System searches the citizen's charge fines (paid and unpaid) in the database and displays them in a list in which you can browse to show all the information available for a given fine.
+Entry Condition.
+The Citizen has authenticated into the system.
+Exit condition
+The System has performed the search, OR In case there are generic errors, the system calls the use case
+ServiceNotAvailable.
+Quality requirements Not expected.

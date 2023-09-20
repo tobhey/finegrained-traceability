@@ -1,0 +1,6 @@
+Fine verbal search
+
+The citizen clicks on the button to access the online fines management functionality
+The system redirects the citizen towards the desired section
+The citizen clicks on the button for verbal search only to your load
+The system does a search for fines to be paid by the citizen paid and not present in the database and shows them in a list where you can browse to show all the information available for a certain fine

@@ -1,0 +1,11 @@
+Richiesta Servizio Catastale
+
+Il cittadino accede all ' area servizio catasto comunale mediante l ' apposito link
+Il sistema visualizza la form per l ' inserimento dei dati necessari per la richiesta
+Il cittadino inserisce i dati richiesti
+Il sistema verifica correttezza e completezza dei dati quindi mostra una schermata di riepilogo oppure attiva il caso d ' uso Dati Errati
+Il cittadino conferma l ' operazione
+Il sistema visualizza il metodi di pagamento
+Il cittadino effettua la scelta
+Il sistema invia all ' impiegato competente un messaggio di notifica della richiesta
+Il sistema notifica al cittadino che la richiesta stata inoltrata e la copia gli sar a breve inviata

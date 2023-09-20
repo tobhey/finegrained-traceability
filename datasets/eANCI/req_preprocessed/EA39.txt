@@ -1,0 +1,5 @@
+Smarrimento Tessera Elettorale
+
+Il Cittadino preme sul bottone Smarrimento tessera elettorale
+Il sistema invia direttamente una notifica di smarrimento della carta all ' impiegato competente
+Il cittadino si reca all ' ufficio dell ' impiegato con una copia della denuncia di smarrimento

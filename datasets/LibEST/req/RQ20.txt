@@ -1,0 +1,7 @@
+REQUIREMENT 20: TLS LAYER
+     
+TLS provides authentication, which in turn enables authorization decisions. The EST server and EST client are responsible for ensuring that an acceptable cipher suite is negotiated and that mutual authentication has been performed. TLS authentication is most commonly enabled with the use of certificates [RFC5280]. Alternately, certificate-less TLS authentication, where neither the client nor server present a certificate, is also an acceptable method for EST mutual authentication (Section 3.3.3). The EST server MUST be authenticated during the TLS handshake unless the client is requesting Bootstrap Distribution of CA certificates (Section 4.1.1) or Full CMC (Section 4.3).
+
+HTTPS [RFC2818] specifies how HTTP messages are carried over TLS. HTTPS MUST be used. TLS 1.1 [RFC4346] (or a later version) MUST be used for all EST communications. TLS session resumption [RFC5077] SHOULD be supported.
+
+TLS channel-binding information can be inserted into a certificate request, as detailed in Section 3.5, in order to provide the EST server with assurance that the authenticated TLS client has access to the private key for the certificate being requested. The EST server MUST implement Section 3.5.

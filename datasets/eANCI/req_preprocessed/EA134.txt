@@ -1,0 +1,8 @@
+TIA
+
+II Cittadino clicca sul pulsante per accedere all ' area Pagamento Online delle tasse
+Il Sistema visualizza la lista delle tasse che possono essere pagate online
+Il Cittadino seleziona la sezione dedicata alla Tassa per l ' Igiene Ambientale e al relativo pagamento
+Il Sistema redirige il Cittadino verso la sezione necessaria mostrando il form della relativa tassa e il relativo importo da pagare
+Il Cittadino conferma la correttezza delle informazioni seleziona il metodo di pagamento preferito e avvia la transazione
+Il Sistema effettua la transazione e mostra un messaggio di avvenuto pagamento

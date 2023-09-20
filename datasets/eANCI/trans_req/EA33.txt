@@ -1,0 +1,26 @@
+Use Case Name
+RequestCertificates
+Participating Actors
+Initiated by citizen
+Flow of events
+1. Citizen selects a specific certificate(birth certificates, marital status certificates).
+2. The system displays the form for entering the data of the person concerned.
+3. The citizen enters the data of the person concerned.
+4. The system displays a screen with the requested certificate.
+5. The citizen selects the payment and shipping method.
+6. The system sends the certificate.
+Entry condition
+The citizen has authenticated in the system.
+Exit condition
+The system sends the certificate, OR In the case where the relevant person has not been found, the system calls the
+use case DataErrati, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is called.
+Quality Requirements The last name string can contain characters such as [ a..z A..Z ' àéèìòù ] and a length between 1 and 30 characters.
+The name string may contain characters such as [ a..z A..Z ' àéèìòù ] and a length between 1 and 30 characters.
+The birthplace string can contain characters such as [ a..z A..Z ' àéèìòù ] and a length of at least one character.
+The birth province string may contain characters such as [ a..z A..Z ' àéèìòù ] and a length of at least one character.
+The date of birth string must actually exist and consist of dd/mm/ yyyyy of numeric type (dd from 1 to 31, mm from 1 to 12, yyyy from 1900 to present).
+The residence string may contain characters [ a..z A..Z ' àéèìòù . ] and must be at least one character long.
+The province of residence string may contain characters such as [ a..z A..Z ' àéèìòù ] and a length of at least one character.
+The address string can contain
+characters such as [ a..z A..Z ' àéèìòù ] and a length of at least one character

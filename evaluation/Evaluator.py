@@ -142,6 +142,79 @@ class MAPEvaluator(Evaluator):
         return ap
 
 
+class LagEvaluator(Evaluator):
+    """
+    Calculate LAG.
+    1. Input: List of trace links
+    2. For each requirement, build a code files list sorted by their similarity to this requirement
+    4. Calculate LAG
+
+    If fully_connected = True: For comparability with related papers
+        The list in step 2. contains all possible code files in related papers. This is not always the case in our approach, because
+        we can't process broken code files.
+        In the map calculation, the missing code files are replaced with placeholder with the lowest similarity to ensure comparability.
+        For this, we need the original list of code files names.
+
+    Note: We did not leave out any requirement files, so this is identical with the actual number of requirements.
+    """
+
+    def __init__(self, solution_comparator, original_req_file_names, original_code_file_names, fully_connected=True,
+                 bigger_is_more_similar=True, k=None):
+        super().__init__(solution_comparator)
+        self._original_req_file_names = original_req_file_names
+        self._original_code_file_names = original_code_file_names
+        self._k = k
+        self._fully_connected = fully_connected
+        self._bigger_is_more_similar = bigger_is_more_similar
+
+    def evaluate(self, trace_links: [TraceLink]) -> "EvalResultObject":
+        if isinstance(trace_links, str):
+            return EmptyResultObject(trace_links)
+
+        total_num_found_links = len(trace_links)
+        if total_num_found_links <= 0:
+            return EmptyResultObject(self.NO_TRACE_LINKS_MESSAGE)
+
+        trace_links = list(dict.fromkeys(trace_links))  # Deterministic duplicate removal (set is not stable)
+
+        if self._fully_connected and len(trace_links) < len(self._original_req_file_names) * len(
+                self._original_code_file_names):
+            trace_links = self._fill_up_with_dummy_trace_links(trace_links)
+
+        req_dict = self._solution_comparator.get_similarity_relevance_dict(trace_links)
+
+        return self._calculate_lag(req_dict)
+
+    def _fill_up_with_dummy_trace_links(self, trace_links):
+        # Add missing links as dummy links with lowest similarity
+        for req_name in self._original_req_file_names:
+            for code_name in self._original_code_file_names:
+                lowest_similarity = 0 if self._bigger_is_more_similar else 1
+                dummy_trace_link = TraceLink(req_name, code_name, lowest_similarity)
+                if not dummy_trace_link in trace_links:
+                    trace_links.append(dummy_trace_link)
+        return trace_links
+
+    def _calculate_lag(self, req_dict):
+        """
+        req_dict["req_name"] = [(sim_to_code_1: float, relevant: bool), (sim_to_code_2, relevant), ...]
+        """
+        lag_sum = 0
+        total_relevant_links = 0
+        for req in sorted(req_dict.keys()):
+            sorted_links = sorted(list(req_dict[req]), key=lambda sim_rel_tuple: sim_rel_tuple[0],
+                                   reverse=self._bigger_is_more_similar)  # most similar first
+
+            relevant_links_at_index = 0
+            for index, (sim, relevant) in enumerate(sorted_links):
+                if relevant:
+                    relevant_links_at_index += relevant
+                    total_relevant_links += relevant
+                    lag_sum += (index + 1) - relevant_links_at_index
+
+        return LagResultObject(lag_sum / total_relevant_links)
+
+
 class EvalResultObject(ABC):
     
     @abstractmethod
@@ -192,6 +265,12 @@ class F1ResultObject(EvalResultObject):
     def get_defining_value(self):
         return self.f1
     
+    def get_precision(self):
+        return self.precision
+    
+    def get_recall(self):
+        return self.recall
+    
     @staticmethod
     def build_prec_recall_f1_print_str(precision, recall, f_1, true_positives, num_found_links):
         print_str = (f"Precision: {precision}\n"
@@ -218,3 +297,20 @@ class MAPResultObject(ABC):
 
     def get_defining_value(self):
         return self.mAP
+
+
+class LagResultObject(ABC):
+
+    def __init__(self, lag):
+        self.lag = lag
+
+    def get_print_str(self):
+        return f"LAG={self.lag}"
+
+    def is_greater_than(self, other):
+        if isinstance(other, EmptyResultObject):
+            return True
+        return self.lag > other.lag
+
+    def get_defining_value(self):
+        return self.lag

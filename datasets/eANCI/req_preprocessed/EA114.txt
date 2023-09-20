@@ -1,0 +1,4 @@
+Sismico
+
+Il Cittadino accede alla schermata descrittiva di come avviene il monitoraggio sismico del territorio e la possibilit di acquisire informazioni circa le cause di un terremoto e le tecnologie di misurazione e prevenzione utilizzate dagli specialisti del nucleo operativo
+Il sistema risponde fornendo al Cittadino la possibilit di visionare in modo sempre descrittivo le caratteristiche degli strumenti il lavoro svolto dagli specialisti e gli enti nazionali con cui essi collaborano

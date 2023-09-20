@@ -1,0 +1,7 @@
+Richiesta Tessera Elettorale
+
+Il Cittadino preme sul bottone Tessera Elettorale
+Il sistema mostra il form per la richiesta della tessera
+Il cittadino conferma l ' operazione
+Il sistema invia una notifica all ' impiegato
+Il cittadino ricever la tessera elettorale che verr consegnata al proprio domicilio

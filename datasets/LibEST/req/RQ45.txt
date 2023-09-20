@@ -1,0 +1,11 @@
+REQUIREMENT 45: REQUESTS FOR ASYMMETRIC ENCRYPTION OF THE PRIVATE KEY
+     
+To specify an asymmetric encryption key to be used to encrypt the server-generated private key, the client MUST include an AsymmetricDecryptKeyIdentifier attribute. The AsymmetricDecryptKeyIdentifier attribute is defined as:
+
+id-aa-asymmDecryptKeyID OBJECT IDENTIFIER ::= { id-aa 54 }
+
+The asymmetric-decrypt-key-identifier attribute values have ASN.1 type AsymmetricDecryptKeyIdentifier (where ASN.1 is defined in [X.680])::
+
+AsymmetricDecryptKeyIdentifier ::= OCTET STRING
+
+If the server does not have a public key matching the identifier specified by the client, the request MUST be terminated and an error returned to the client. Distribution of the key specified by the AsymmetricDecryptKeyIdentifier to the key generator and the client is outside the scope of this document. If the key identified is bound to an X.509 certificate, then the key MUST either explicitly support keyTransport or keyAgreement or its use MUST be unrestricted.

@@ -1,0 +1,9 @@
+Residential assistance
+
+The user selects request request residential and semi-residential
+The system shows the form for the insertion of the applicant's data and the recipient
+The user inserts his data and if necessary entering the data of a third person specifying the relationship with that person
+The system picks up the personal data of the applicant of the citizen recipient if the recipient a third person and the data concerning the family unit of the citizen recipient
+The user specifies the psycho-physical conditions of the recipient the reasons for the request The type of service required the hours requested
+Then submit the form
+The system forwards the request to the competent ASL and warns the user of the request

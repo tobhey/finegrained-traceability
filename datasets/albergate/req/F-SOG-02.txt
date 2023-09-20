@@ -1,0 +1,22 @@
+Requisito:
+Addebito servizi e spese extra per stanza.
+Descrizione:
+Tale requisito permette di valutare le eventuali spese extra effettuate dai 
+clienti occupanti una certa stanza e di addebitare i relativi prezzi sul conto-
+spese previsto per ogni stanza. Il sistema dovrà quindi essere in grado, una 
+volta fissati i prezzi relativi ad ogni bene o servizio, di fornire al momento 
+della loro richiesta il relativo costo e di addebitarlo sul conto-spese delle 
+stanze i cui occupanti hanno usufruito di tale servizio. 
+Input richiesto:
+Tipo e quantità del bene consumato.
+Output desiderato:
+Addebito sul conto-spese della stanza del consumatore.
+Criterio di accettazione:
+Per soddisfare tale requisito il sistema dovrà tenere traccia di ogni spesa o 
+servizio extra di cui il cliente usufruisce. Tali informazioni dovranno essere 
+poi recuperate ogni qual volta un cliente richieda l'ammontare del conto. 
+Aspettative collegate:
+Contabilizzazione automatica delle spese straordinarie.
+Requisiti collegati:
+F-SOG-04.
+

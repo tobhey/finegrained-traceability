@@ -1,0 +1,16 @@
+Use case name
+EditEMailCitizen
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen accesses the e-email edit form.
+3.
+2. The system shows the form the enter the new email. The citizen enters the new e-mail and presses the confirmation button.
+4. The system updates the new e-mail.
+Entry condition
+The citizen has authenticated in the system.
+Exit condition
+➢ The system saves the new email. ➢ The system detects an error and retrieves the
+use case DatiErrati, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is invoked.
+Quality Requirements Not Provided.

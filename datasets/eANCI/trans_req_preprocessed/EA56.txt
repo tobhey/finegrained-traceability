@@ -1,0 +1,5 @@
+REDUCE WAR QUALIFICATION
+
+The user selects the functionality request recognition qualification of reduce or work orphan
+The system shows the information and the related modules to download and to be sent to the Prefecture by offering the possibility to print everything
+Also shows a direct link to the page for the request of the deed of birth to the certificate of residence and the death certificate

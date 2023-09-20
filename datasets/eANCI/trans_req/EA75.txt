@@ -1,0 +1,18 @@
+Use Case Name
+InformationMuseums
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen requests to view the list of museums.
+3.
+2. The system allows the list of museums to be displayed.
+The Citizen chooses the museum. 4. The system returns information
+regarding the chosen museum by displaying data such as:
+- - -
+location; opening dates and times; link to the museum's website.
+Entry condition
+The citizen has logged into the system.
+Exit condition
+The citizen has viewed the information about the museum, OR.
+In case the citizen wants to book the visit he/she will be referred to the museum website.
+Quality requirements Not provided.

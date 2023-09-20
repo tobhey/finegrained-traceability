@@ -1,0 +1,3 @@
+The administrator will maintain a listing of allowable diagnoses that an LHCP can use
+The administrator will store the ICD- CM code The International Statistical Classification of Diseases and Related Health Problems most commonly known by the abbreviation ICD provides codes to classify diseases and a wide variety of signs symptoms abnormal findings complaints social circumstances and external causes of injury or disease
+NHCS Classification of Diseases Functioning and Disability for the diagnosis E a classification that the diagnosis is either chroniclong-term OR short term and up to alphanumeric characters giving the name E of the diagnosis

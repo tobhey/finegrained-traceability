@@ -1,0 +1,2 @@
+The input is not a valid zip code see Data Format
+The user is asked to try again

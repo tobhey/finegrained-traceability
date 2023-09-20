@@ -1,0 +1,51 @@
+REQUIREMENT 17: HTTP URIS FOR CONTROL
+     
+The EST server MUST support the use of the path-prefix of "/.well- known/" as defined in [RFC5785] and the registered name of "est". Thus, a valid EST server URI path begins with "https://www.example.com/.well-known/est". Each EST operation is indicated by a path-suffix that indicates the intended operation:
+
+Operations and their corresponding URIs:
+
+
+   +------------------------+-----------------+-------------------+
+   | Operation              |Operation path   | Details           |
+   +========================+=================+===================+
+   | Distribution of CA     | /cacerts        | Section 4.1       |
+   | Certificates (MUST)    |                 |                   |
+   +------------------------+-----------------+-------------------+
+   | Enrollment of          | /simpleenroll   | Section 4.2       |
+   | Clients (MUST)         |                 |                   |
+   +------------------------+-----------------+-------------------+
+   | Re-enrollment of       | /simplereenroll | Section 4.2.2     |
+   | Clients (MUST)         |                 |                   |
+   +------------------------+-----------------+-------------------+
+   | Full CMC (OPTIONAL)    | /fullcmc        | Section 4.3       |
+   +------------------------+-----------------+-------------------+
+   | Server-Side Key        | /serverkeygen   | Section 4.4       |
+   | Generation (OPTIONAL)  |                 |                   |
+   +------------------------+-----------------+-------------------+
+   | CSR Attributes         | /csrattrs       | Section 4.5       |
+   | (OPTIONAL)             |                 |                   |
+   +------------------------+-----------------+-------------------+
+
+                                 Figure 5
+
+                
+The operation path (Figure 5) is appended to the path-prefix to form the URI used with HTTP GET or POST to perform the desired EST operation. An example valid URI absolute path for the "/cacerts" operation is "/.well-known/est/cacerts". To retrieve the CA's certificates, the EST client would use the following HTTP request-line:
+
+GET /.well-known/est/cacerts HTTP/1.1
+
+Likewise, to request a new certificate in this example scheme, the EST client would use the following request-line:
+
+POST /.well-known/est/simpleenroll HTTP/1.1
+
+The use of distinct operation paths simplifies implementation for servers that do not perform client authentication when distributing /cacerts responses.
+
+An EST server MAY provide service for multiple CAs as indicated by an OPTIONAL additional path segment between the registered application name and the operation path. To avoid conflict, the CA label MUST NOT be the same as any defined operation path segment. The EST server MUST provide services regardless of whether the additional path segment is present. The following are three example valid URIs:
+
+https://www.example.com/.well-known/est/cacerts
+ 
+https://www.example.com/.well-known/est/arbitraryLabel1/cacerts
+ 
+https://www.example.com/.well-known/est/arbitraryLabel2/cacerts
+In this specification, the distinction between enroll and renew/rekey is explicitly indicated by the HTTP URI. When requesting /fullcmc operations, CMC [RFC5272] uses the same messages for certificate renewal and certificate rekey.
+
+An EST server can provide additional services using other URIs.

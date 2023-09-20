@@ -1,0 +1,9 @@
+Modify Refreshment Point
+Change data point associated refreshment
+Enable the functionality of the information required by the point of rest
+Upload data point Refreshments and displays them in a form
+Change data in the form and submit
+Verify the data entered and asks for confirmation of the change
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation
+Stores the modified data of the point of rest

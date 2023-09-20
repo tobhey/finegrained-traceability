@@ -1,0 +1,4 @@
+Remove address
+Delete a DAL STRUCTION address
+Check if the address has associated classes in the affirmative shows an error message Unable to delete the address to delete the associated classes and try otherwise eliminates the address
+View Lench of updated addresses

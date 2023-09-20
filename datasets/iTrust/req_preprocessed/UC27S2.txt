@@ -1,0 +1,2 @@
+The status of a laboratory procedure has been updated UC S
+The patient is notified with the following information the LOINC number and the updated status

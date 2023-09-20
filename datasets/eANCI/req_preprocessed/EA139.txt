@@ -1,0 +1,5 @@
+Servizio Non Disponibile
+
+Il sistema mostra un messaggio al video del terminale indicante che non possibile effettuare la richiesta
+Cittadino legge il messaggio di notifica
+Il sistema ripresenta il form di input

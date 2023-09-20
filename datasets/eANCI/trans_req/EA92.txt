@@ -1,0 +1,16 @@
+Use case name
+VisionCirculars
+Participating actors
+Started by citizen
+Flow of events
+1.
+3.
+Citizen accesses the circulars area using the appropriate link.
+2. The system displays the numbered list of circulars
+The citizen chooses the circular by means of link 4. The system displays the circular chosen
+Entry condition
+The citizen has accessed the system
+Exit condition
+The system displays the circular, OR in the case of technical failures the system recalls the use case
+ServiceNotAvailable
+Quality requirementsNot available

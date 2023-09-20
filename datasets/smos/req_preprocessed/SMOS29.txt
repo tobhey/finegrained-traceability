@@ -1,0 +1,7 @@
+Inserisci Assenze Admin
+Digitalizzazione del Registro inserimento dati da parte dell Amministratore
+Compila il form inserendo studenti assentipresenti e clicca Salva
+Aggiorna la schermata visualizzata in base alla data
+Invia i dati al server
+Il server per ogni assenza invia una e-mail di notifica al genitore dell ' alunno
+Visualizza i dati del registro aggiornati

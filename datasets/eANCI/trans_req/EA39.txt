@@ -1,0 +1,14 @@
+Use case name
+LostElectricCard
+Participating Actors
+Started by Citizen, continued by employee
+Flow of events
+1. The Citizen presses on the Lost Electoral Card button.
+2. The system directly sends a lost card notification to the appropriate clerk.
+3. The Citizen goes to the clerk's office with a copy of the lost card report.
+Condition of entry
+The Citizen must be authenticated in the system.
+Exit condition
+➢ The System creates the document to be delivered to the appropriate office, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is invoked.
+Quality Requirements Not Provided.

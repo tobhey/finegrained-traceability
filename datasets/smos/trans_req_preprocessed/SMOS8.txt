@@ -1,0 +1,4 @@
+User modification
+Modification of one or more data concerning a user present in the system
+Click on the Edit button
+Make controls on the validity of the data entered and modified in the event in the event that the data entered are not valid to activate the Data error case

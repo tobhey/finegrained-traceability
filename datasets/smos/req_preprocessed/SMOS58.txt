@@ -1,0 +1,9 @@
+Visualizzazione Di Una Pagella Docente
+Visualizzazione di una pagella
+Seleziona l ' anno accademico di interesse
+Seleziona una delle classi visualizzate
+Seleziona l ' alunno di cui visualizzare la pagella e il quadrimestre di riferimento cliccando sull ' apposito pulsante
+Visualizza l ' elenco degli anni accademici in cui presente almeno una classe in cui il docente insegna
+Visualizza le classi associate all ' anno scolastico selezionato
+Visualizza l ' elenco degli alunni della classe scelta dall ' utente
+Visualizza la pagella dell ' alunno scelto riferita al quadrimestre specificato

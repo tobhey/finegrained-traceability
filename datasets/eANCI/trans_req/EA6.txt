@@ -1,0 +1,22 @@
+Use case name
+EntryCitizen
+Participating actors
+Initiated by employee
+Flow of events
+1. The clerk logs into the system, and activates the citizen registration process.
+2. The system displays the form for entering a new citizen.
+3. The clerk enters the citizen's data and submits the registration request.
+4. The system receives the form, checks that the citizen entered by the clerk is not already in the system.
+Entry condition
+The clerk has authenticated in the system.
+Exit condition
+The system registers the Employee,OR In the case where the employee enters a citizen already in the system, the system calls the use case DataErrati,
+OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is called.
+Quality Requirements➢ The name string may contain characters [ a..z A..Z ' àéèìòù ] and be less than 30 characters long and not empty.
+➢ The last name string may contain characters [ a..z A..Z ' àéèìòù ] and has length less than 30 characters and is not empty.
+➢ The Tax Code string must be current to regulations and has a length of 16 characters.
+➢ The Date of Birth string must be an existing date and be dd/mm/yyyyy of numeric type (dd from 1 to 31, mm from 1 to 12, yyyy from 1900 to present).
+➢ The birthplace string can contain characters [ a..z A..Z ' àéèìòù ] and a length of less than 30 characters and not empty.
+➢ Email string has format x@x.x and has a length less than 30 characters and non-empty.
+➢ Household ID string must be present in the system must contain only numeric characters and must be greater than 0.

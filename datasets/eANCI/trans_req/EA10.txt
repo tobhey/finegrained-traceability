@@ -1,0 +1,12 @@
+Use case name
+LogoutEmployee
+Participating actors
+Started by employee
+Flow of events
+1. The employee wants to end the work session and clicks on the Logout button.
+2. The system logs the employee out of the system and returns to the main screen.
+Entry Condition.
+The employee has logged into the system.
+Logout condition
+The system closes the employee's session.
+Quality requirements➢ Not provided.

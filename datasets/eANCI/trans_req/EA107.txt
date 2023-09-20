@@ -1,0 +1,15 @@
+Use Case Name.
+MonitoringVulcanic
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses this screen because he or she wants to know more about the actual operation of how Civil Defense conducts monitoring of volcanoes in the municipality and nationwide territory, with a detailed description of the information technology adopted.
+2. The system responds to the request by displaying an information sheet describing everything the Civil Defense does to keep track of volcanic activity
+Condition of Entry.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information provided to him,OR
+The Citizen cannot properly view the information sheet about the monitoring of volcanoes in the municipal and national territory, so the use case ServiceNotAvailable, which handles technical failure cases, is extended.
+Quality Requirements The response time varies in the range of hundredths of a second.
+But if the Citizen does not display the information sheet correctly, then times can vary in the order of seconds, from a minimum of 3 to a maximum of 7

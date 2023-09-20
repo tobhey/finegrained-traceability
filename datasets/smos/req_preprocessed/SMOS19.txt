@@ -1,0 +1,3 @@
+Visualizza Dettagli Indirizzo
+Permette di visualizzare i dettagli di un indirizzo
+Visualizza la schermata con i dettagli di un singolo indirizzo in particolare nome indirizzo

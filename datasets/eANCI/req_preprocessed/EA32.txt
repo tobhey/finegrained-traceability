@@ -1,0 +1,6 @@
+Richiesta Carta Di Identit Rifiutata
+
+L ' impiegato visualizza la notifica ricevuta
+Il sistema mostra all ' impiegato la richiesta di creazione della carta d ' identit da parte del cittadino
+L ' impiegato rileva un errore nei dati e rifiuta la procedura di creazione della carta d ' identit
+Il sistema invia una notifica via e-mail al cittadino che ha richiesto la creazione della carta d ' identit

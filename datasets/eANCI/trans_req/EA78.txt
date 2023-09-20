@@ -1,0 +1,17 @@
+Use case name
+EditInformation
+Participating Actors
+Started by Employee
+Flow of events
+1. Employee requests an edit of a news item.
+2. The system displays the list of existing news items
+3. The employee chooses a news item. 4. The system displays a form for
+edit the news. 5. The employee enters data about the news
+in a form. 6. The system receives the form, and updates the
+news data in the system
+Entry condition
+This case requires that the employee has gone through the authentication procedure.
+Exit condition
+The system has performed the modification of the news, OR
+If an error occurred in the change request, the system calls the use case ServiceNotAvailable
+Quality RequirementsNot Available.

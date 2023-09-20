@@ -1,0 +1,5 @@
+Richiesta Copia Fascicolo Edilizio
+
+Il cittadino richiede la copia del fascicolo mediante apposito pulsante
+Ilsistemainvialarichiestaall ' impiegato
+Il sistema notifica al cittadino che la richiesta stata inoltrata e la copia gli sar a breve inviata

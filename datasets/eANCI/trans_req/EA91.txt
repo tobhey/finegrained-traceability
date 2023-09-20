@@ -1,0 +1,20 @@
+Use case name
+IssueCertificates
+Participating Actors
+Initiated by citizen, communicates with employee
+Flow of events
+Citizen accesses the certificate and permit issuance area using the appropriate link 1.
+2. The system displays the form for entering the data necessary for the issuance of the certificate (e.g. certificate of fitness, certificate of habitability, ...).
+The citizen enters the required data 4. The system verifies the correctness and completeness of the data then displays a summary screen or activates the
+DatiErrati use case 5. The citizen confirms the operation
+6. The system displays the form for printing
+7. The system sends a message notifying the appropriate employee of the request
+8. The citizen makes the printout to be handed in at the municipal office with the revenue stamp
+Entry condition
+The citizen has authenticated in the system
+Exit condition
+The system displays the form for printing
+The system sends a message notifying the relevant clerk of the request, OR
+in the case of incorrect data entry the system invokes the use case DatiErrati, OR
+in the case of technical failures the system invokes the use case ServiceNotAvailable
+Quality RequirementsNotAvailable

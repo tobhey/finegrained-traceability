@@ -1,0 +1,15 @@
+Name: ViewRegistersList
+Actors: Administrator
+Description: View the list of registers for an academic year
+Preconditions:
+• The user must be logged in to the system as an administrator • Click on the "Digital Register" button
+Events sequence
+User
+System
+2. Select the school year
+1. Shows a screen for the selection of the academic year of interest.
+3. Search in the archive all the digital records of that year and displays them associated with the class to which they belong.
+Postconditions:
+•
+•
+The system is displaying the list of registers related to a particular academic year the administrator interrupts the connection to the SMOS server interrupted

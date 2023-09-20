@@ -1,0 +1,8 @@
+Prenotazione Colloquio
+
+Il cittadino richiede un colloquio nel consultorio preselezionato
+Il sistema visualizza un form per la sottomissione della richiesta
+Il cittadino inserisce i dati della richiesta di colloquio in un form
+Il sistema riceve il form verifica i dati per la prenotazione e sottomette la richiesta
+Cittadino richiede stampa la ricevuta della prenotazione del colloquio
+Ilsistemastampalaprenotazione

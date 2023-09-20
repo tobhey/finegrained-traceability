@@ -1,0 +1,13 @@
+Use case name
+ReservationInterviewCanceled
+Participating actors
+Started by Citizen
+Flow of events
+1.
+Citizen decides he/she wants to cancel the interview reservation and then enters in the form that he/she wants to cancel it.
+2. System receives the form notifies cancellation of interview booking and resubmits the form.
+Condition of Entry
+This use case extends BookingInterview and checks when a citizen decides to cancel the interview booking.
+Exit condition
+The system resubmits the form.
+Quality requirements Not provided.

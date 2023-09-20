@@ -1,0 +1,4 @@
+Show information
+
+The citizen requires the visualization of the information on the territory
+The system returns information regarding the territory by displaying data as libraries events museums promotions present in the territory

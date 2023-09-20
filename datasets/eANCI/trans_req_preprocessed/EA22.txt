@@ -1,0 +1,6 @@
+Citizen registration
+
+The citizen accesses the registration form
+The system shows the form for registration
+The citizen inserts his data and presses the confirmation key
+The system verifies the correctness of the data saving and sends a registration e-mail to the citizen

@@ -1,0 +1,15 @@
+Use Case Name.
+Hydro-pluviometric monitoring
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses this screen as he wants to satisfy his curiosity in knowing the situation monitored by the Civil Defense of municipal waters
+2. The system responds with a screen where he/she can view information about how the municipal water is being monitored, the bacteriological situation, and an update of the latest analysis performed on the samples taken.
+Entry condition
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information received from the form he/she was offered, OR
+The Citizen is unable to view the page he/she requested, and the use case ServiceNotAvailable that handles technical failure cases is extended.
+Quality RequirementsSystem response time is in the hundredths of a second range if it correctly displays the card.
+The response time increases, and falls within the terms of seconds, from a minimum of 3 to a maximum of 7.

@@ -1,0 +1,22 @@
+Use case name
+PaymentFees
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen clicks on the button to access the online fines management feature.
+2. The System redirects the Citizen to the desired section.
+3. The Citizen clicks on the button to pay fines online.
+4. The System searches for fines against the Citizen in the database for which payment has not yet been received.
+5. The Citizen selects the fine for which he/she wishes to make payment.
+6. The System displays the fine form and the relevant amount to be paid.
+7. The Citizen verifies that the information is correct and initiates the transaction, selecting the preferred payment method.
+8. The System performs the transaction and displays a successful payment message.
+Entry Condition.
+The Citizen has authenticated in the system.
+Exit condition
+The payment has been made, OR In case there is an error in data entry or the available funds are not sufficient to cover the payment the System calls the use case PaymentNotReceived,
+OR The Citizen clicks on the button related
+to dispute a particular fine,in which case the System calls the use case ContestaMulta, OR
+In the case where there are errors in the data entered by the Citizen, the System calls the use case DatiErrati, OR
+In the case where there are generic errors the system calls the use case ServiceNotAvailable.
+Quality Requirements None

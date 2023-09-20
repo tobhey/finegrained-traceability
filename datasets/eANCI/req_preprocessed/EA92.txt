@@ -1,0 +1,5 @@
+Visione Circolari
+
+Il cittadino accede all ' area circolari mediante l ' apposito link
+Il sistema visualizza l ' elenco numerato delle circolari Il cittadino sceglie la circolare mediante link
+Ilsistemavisualizzalacircolarescelta

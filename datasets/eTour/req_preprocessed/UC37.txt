@@ -1,0 +1,6 @@
+Logout
+Ends the current session
+Access the functionality of disconnection from the system
+Asks for confirmation of the transaction
+Confirm the request for disconnection
+Disconnects the Registered User

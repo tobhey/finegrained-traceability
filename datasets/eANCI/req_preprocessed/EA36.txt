@@ -1,0 +1,6 @@
+Richiesta Stato Di Famiglia
+
+Il Cittadino preme sul bottone Stato di famiglia
+Il sistema mostra al cittadino lo stato di famiglia
+Il cittadino sceglie se stampare o inviare alla propria e-mail lo stato di famiglia
+Il sistema esegue la scelta effettuata dal cittadino

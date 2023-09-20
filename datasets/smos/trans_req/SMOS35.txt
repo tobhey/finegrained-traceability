@@ -1,0 +1,13 @@
+Name: ViewNotesList
+Actors: Administrator
+Description: View the list of notes concerning the student
+Preconditions:
+• • •
+The user must be logged in to the system as an administrator, the user took the case of use "SviewTetTingloregister" click on the "Notes" button associated with a student
+Events sequence
+User
+System
+1. Show all the student notes recorded during the school year
+Postconditions:
+• • •
+The system is displaying the list notes referred to the student The administrator interrupts the connection to the SMOS server interrupted

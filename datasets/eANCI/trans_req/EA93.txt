@@ -1,0 +1,16 @@
+Use Case Name
+UpdateEnvironmentalAnalysis
+Participating Actors
+Started by Employee
+Flow of events
+1. Municipal employee after authenticating in the system updates the form that simply provides for the copy of the report of the analysis performed on the environment by the Civil Defense
+2. The system responds by providing the clerk with a form in which to report the information compiled by the chemical experts.
+3. The employee completes the form field presented by the system and submits it.
+4. The system updates the form and allows it to be viewed by the Citizen.
+Entry Condition.
+The employee has authenticated into the system.
+Exit condition
+The submission was successful, OR
+The clerk does not the update and retrieved the ServiceNotAvailable.
+Can complete therefore comes use case
+Quality requirements Not expected

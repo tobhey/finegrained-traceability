@@ -1,0 +1,19 @@
+Name: Assign/RemoveTeachersToATeacher
+Actors: Administrator
+Description: Allows you to assign or remove teachers to a teacher
+Preconditions:
+• The user is logged in as an administrator • The user has carried out the case of use "viewdetTailsente" and the system is
+Viewing the details of a teacher • The user click on the "Teaching Teaching" button
+Events sequence
+User
+2. Select the academic year
+4. Select the desired class
+6. Select the teachings to associate or remove the teacher
+System
+1. Displays the teaching management form for the teacher in question
+3. View the list of classes available for the selected year
+5. Displays the list of teachings associated with that class
+7. Assigns or removes the teaching teachings as indicated by the administrator
+Postconditions:
+• • •
+One or more teachers have been assigned or removed to the teacher the administrator interrupts the connection to the SMOS server interrupted

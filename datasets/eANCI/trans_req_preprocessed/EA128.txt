@@ -1,0 +1,8 @@
+IPPA request
+
+The citizen click on the button to access the request area of the municipality services
+The system redirects the citizen to the necessary section
+The citizen selects the section dedicated to the tax request on advertising and public bills
+The system shows the form of the relevant request by automatically obtaining the necessary data
+The citizen inserts additional data necessary for the correct compilation of the form confirms the correctness of the information and sends the request
+The system notifies the request to the request

@@ -1,0 +1,13 @@
+Use case name
+PracticeResponse
+Participating Actors
+Initiated by Employee Communicates with Citizen
+Flow of Events.
+1. Clerk rejects the practice. 2. The system sets the file as
+rejected. It then sends a notification to the Citizen.
+Entry Condition.
+The Employee is logged into the system, has selected a pending file.
+Exit condition
+➢ A notification was sent to the Citizen, OR.
+The system encountered an unanticipated error so calls the use case ServiceNotAvailable.
+Quality Requirements This use case includes the use cases AssistanceEconomic, AssistanceDomestic, ServiceMobilityDisabled, AccommodationsNight, AssistanceGirlsMothersMinor, AssistanceHousing, ReleaseParkingDisabled.

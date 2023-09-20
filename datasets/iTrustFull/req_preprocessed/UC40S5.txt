@@ -1,0 +1,2 @@
+The user selects an office visit from the calendar to read its details by clicking the Read Details link beside or below the ICD- CM code ie diagnose displayed for the visit
+Then the details for the visit shall be displayed in a new page including date of office visit note text diagnoses ie ICD- CM codes medical procedures performed ie CPT code lab procedures ordered LOINC code see Data Format medications prescribed ie NDC see Data Format immunizations given ie CPT Code see UC S and the name of the doctor who prescribed the medication

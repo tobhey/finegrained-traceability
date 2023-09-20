@@ -1,0 +1,16 @@
+Use Case Name
+HowToBecomeVolunteer
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses this descriptive screen.
+2. The system responds to the need by letting him know how to become a Civil Defense volunteer, and of the requirements that the Citizen will necessarily have to meet.
+3. The Citizen takes note of what is written and therefore wishes to access the associated forms, and therefore, the use case DownloadModule will be called.
+Condition of Entry.
+The Citizen is authenticated within the municipal system, OR
+The Citizen has been accessed within the municipal system.
+Exit condition.
+The Citizen satisfied with what they viewed from the description page and therefore invokes the DownloadModule use case, OR
+The Citizen fails to view the requested in-depth page, while the system extends the use case ServiceNotAvailable that handles technical failure cases.
+Quality Requirements The response time of the system is to be found in a range that varies in the unit of hundredths of a second if the Citizen correctly displays the in-depth form.
+The response time increases when the Citizen does not use the in-depth service, the times of which vary from a minimum of 3 to a maximum of 6 seconds.

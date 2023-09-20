@@ -1,0 +1,5 @@
+Editing a report card
+Forced case to change the report card of a student
+Enter the new data and click the confirmation key
+View the form with the fields to be modified including the votes of the different subjects
+The system displays a confirmation message and displays the form with the list of students

@@ -1,0 +1,17 @@
+Use case name
+Volcanic
+Participating Actors
+Started by Citizen
+Flow of Events.
+1. The Citizen accesses this tab, from the Risks use case if they want to know more, about the volcanic situation in their municipality, and the ability to view the Civil Defense monitoring methods.
+2. The system responds with the correct display of a descriptive screen about the different types of eruptions of a volcano, making available, the possibility to view the current volcanic situation of the municipality.
+3. The Citizen wants to know how the present volcanoes are monitored, and therefore, will invoke the use case MonitorVulcanic
+4. The system provides the Citizen with a link to the MonitorVulcanic use case, so that they can learn about the actual situation.
+Entry Condition.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information provided to him/her, OR
+The Citizen is unable to view the descriptive sheet of the Vulcan feature, so the ServiceNotAvailable use case is extended, which handles cases of technical failure.
+Quality RequirementsSystem response time is in the hundredths of a second range if the Citizen correctly displays the card with inherent components.
+The response time to the requested service changes if the Citizen fails to properly view the descriptive page.

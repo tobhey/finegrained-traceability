@@ -1,0 +1,8 @@
+Tia
+
+The citizen click on the button to access the taxes online tax area
+The system displays the list of taxes that can be paid online
+The citizen selects the section dedicated to the tax for environmental hygiene and the relative payment
+The system redirects the citizen towards the necessary section showing the form of the relative fee and the relative amount to be paid
+The citizen confirms the correctness of the information selects the preferred payment method and starts the transaction
+The system makes the transaction and show a message of payment

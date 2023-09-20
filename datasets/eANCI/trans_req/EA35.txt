@@ -1,0 +1,16 @@
+Use Case Name
+RequestToWedding
+Participating Actors
+Started by Citizen, continued by Employee
+Flow of events
+1. Citizen presses on the Marriage Request button.
+2. The system shows the citizen the form to fill out.
+3. The citizen enters all his/her data, the data of the partner and presses the confirmation button.
+4. The system automatically creates the form to be submitted with self-certification and family status of the applicant citizen and sends the form to the clerk.
+5. The clerk receives the notification and publishes the marriage application.
+Entry condition
+The Citizen has authenticated in the system.
+Exit condition
+➢ The System creates the document to be delivered to the appropriate office, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is invoked.
+Quality RequirementsNot Available.

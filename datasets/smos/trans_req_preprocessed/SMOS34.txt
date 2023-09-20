@@ -1,0 +1,3 @@
+View justification list
+View the list of justifications
+Show all the absences of the student Register School selected The absences Gi Giusified are displayed in green those to be justified in red during the year

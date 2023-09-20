@@ -1,0 +1,4 @@
+View Tourist Card
+View the details of a selected account Tourist
+Tourists from the list obtained by activating the use case Search Tourist will select and activate a function for displaying the card
+Upload data to the selected account

@@ -1,0 +1,9 @@
+Richiesta Certificati Terzi
+
+Il cittadino seleziona uno specifico certificato certificati anagrafici certificati di stato civile
+Il sistema visualizza il form per l ' inserimento dei dati della persona interessata
+Il cittadino inserisce i dati della persona interessata vedi nota
+Il sistema memorizza in un apposito modulo i dati del cittadino e dell ' interessato
+Il sistema mostra una schermata con il certificato richiesto
+Il cittadino seleziona la modalit di pagamento e di spedizione
+Il sistema invia il certificato

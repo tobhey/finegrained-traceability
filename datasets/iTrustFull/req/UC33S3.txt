@@ -1,0 +1,1 @@
+A sending HCP views a list of previously sent patient referrals. The HCP may sort the list of referrals by patient name, receiving HCP name, time generated, and/or priority. The HCP chooses a specific referral from the list to view complete details about the referral: patient name, receiving HCP name and specialty, time generated, priority, office visit date, and notes.

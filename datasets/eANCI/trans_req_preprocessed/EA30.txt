@@ -1,0 +1,8 @@
+ID card request
+
+The citizen displays the family status and select a family component
+The system shows a form for insertion of personal data height particular signs etc.
+The citizen inserts the data selects the payment mode and presses the Confirm key
+The system shows the screen with the documentation to be exhibited at the door in the days and opening hours of the office
+The citizen confirms the operation
+The system notifies the request to the request

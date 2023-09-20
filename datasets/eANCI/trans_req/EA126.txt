@@ -1,0 +1,16 @@
+Use case name
+PaymentUnsuccessful
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen clicks on the button to access the Online Payment area for taxes or fines.
+2. The System displays the list of fees/fines that can be paid online.
+3. The Citizen selects the tax/fine of interest
+5.
+4. The System redirects the Citizen to the necessary section, showing the form to the Citizen. The Citizen initiates the transaction.
+6. The System does not allow the transaction because there were problems with the selected payment method.
+Entry Condition.
+This use case extends ICI,IRPEF,TIA,TOSAP,IPPA and PaymentMulta and is invoked when errors occur due to the payment method.
+Exit Conditions.
+The System notifies the error and displays the form again for completion.
+Quality requirements Not provided.

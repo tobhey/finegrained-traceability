@@ -1,0 +1,6 @@
+Requested IPPA Request
+
+The employee displays the received notification
+The system shows the employee the request made by the citizen
+The employee reveals an error in the request and rejects the procedure the request
+The system sends a notification to the citizen who requested the service

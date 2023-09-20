@@ -1,0 +1,6 @@
+Informazioni Eventi Nel Territorio
+
+Il Cittadino richiede la visualizzazione dell ' elenco degli eventi
+Il sistema permette di visualizzare l ' elenco degli eventi
+Il cittadino sceglie l ' evento
+Il sistema restituisce le informazioni riguardanti l ' evento prescelto visualizzandone dati come il luogo la data e l ' ora dell ' evento sito che gestisce l ' evento Pro-loco

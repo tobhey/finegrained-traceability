@@ -1,0 +1,6 @@
+The HCP enters a patient as a new user of i Trust Medical Records system
+Only the name and email are is provided
+The patient 's assigned MID and a secret key the initial password is personally provided to the user with which the user can reset hisher password
+The HCP can edit the patient according to data format E with all initial values except patient MID defaulting to null andor as appropriate
+Patient MID should be the number assigned when the patient is added to the system and can not be edited
+The HCP does not have the ability to entereditview the patient 's security questionpassword

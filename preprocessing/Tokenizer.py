@@ -28,7 +28,7 @@ class NaturalSpeechTokenizer(Tokenizer):
         
     def tokenize_to_string_list(self, text: str):
         if self._italian:
-            tokenized_text = " ".join(text.split("'"))  # The italian tokenizer does not split apostrophes
+            tokenized_text = "' ".join(text.split("'"))  # The italian tokenizer does not split apostrophes
             return word_tokenize(tokenized_text, "italian")
         return word_tokenize(text)
 
@@ -42,7 +42,7 @@ class WordTokenizer(NaturalSpeechTokenizer):
     def tokenize(self, file_path):
         text_as_string = FileUtil.read_textfile_into_string(file_path, self._dataset.encoding())
         if self._italian:
-            tokenized_text = " ".join(text_as_string.split("'"))
+            tokenized_text = "' ".join(text_as_string.split("'"))
             return TextFileRepresentation(word_tokenize(tokenized_text), file_path)
         else:
             return TextFileRepresentation(word_tokenize(text_as_string), file_path)
@@ -85,7 +85,7 @@ class WordAndSentenceTokenizer(NaturalSpeechTokenizer):
         text_as_string = FileUtil.read_textfile_into_string(file_path, self._dataset.encoding())
         word_tokenized_sentences = None
         if self._italian:
-            tokens = [word_tokenize(" ".join(sent.split("'")), language="italian") for sent in sent_tokenize(text_as_string, language="italian")]
+            tokens = [word_tokenize("' ".join(sent.split("'")), language="italian") for sent in sent_tokenize(text_as_string, language="italian")]
             return TextFileGroupedRepresentation(tokens, file_path) 
         else:
             word_tokenized_sentences = [word_tokenize(sent) for sent in sent_tokenize(text_as_string)]
@@ -93,7 +93,7 @@ class WordAndSentenceTokenizer(NaturalSpeechTokenizer):
     
     def tokenize_to_string_list(self, text: str):
         if self._italian:
-            return [word_tokenize(" ".join(sent.split("'")), language="italian") for sent in sent_tokenize(text, language="italian")]
+            return [word_tokenize("' ".join(sent.split("'")), language="italian") for sent in sent_tokenize(text, language="italian")]
         return [word_tokenize(sent) for sent in sent_tokenize(text)]
 
 
@@ -113,6 +113,7 @@ class UCTokenizer(NaturalSpeechTokenizer):
         uc_quality_req_words = []
         uc_flow_of_events_words = []
         last_word_category = uc_description_words  # Default
+        in_flow_of_events = False
 
         for line in text_lines:
             line = line.lstrip()  # Remove leading white spaces/tabs
@@ -120,36 +121,43 @@ class UCTokenizer(NaturalSpeechTokenizer):
                 matched_string = self._dataset.UC_NAME_TEMPLATE_REGEX.match(line).group(0)
                 uc_name_words += self.tokenize_to_string_list(line[len(matched_string):])
                 last_word_category = uc_name_words
+                in_flow_of_events = False
             elif self._dataset.UC_DESCRIPTION_TEMPLATE_REGEX.match(line):
                 matched_string = self._dataset.UC_DESCRIPTION_TEMPLATE_REGEX.match(line).group(0)
                 uc_description_words += self.tokenize_to_string_list(line[len(matched_string):])
                 last_word_category = uc_description_words
+                in_flow_of_events = False
             elif self._dataset.UC_ACTOR_TEMPLATE_REGEX.match(line):
                 matched_string = self._dataset.UC_ACTOR_TEMPLATE_REGEX.match(line).group(0)
                 uc_actor_words += self.tokenize_to_string_list(line[len(matched_string):])
                 last_word_category = uc_actor_words
+                in_flow_of_events = False
             elif self._dataset.UC_PRECONDITION_TEMPLATE_REGEX.match(line):
                 matched_string = self._dataset.UC_PRECONDITION_TEMPLATE_REGEX.match(line).group(0)
                 uc_precond_words += self.tokenize_to_string_list(line[len(matched_string):])
                 last_word_category = uc_precond_words
+                in_flow_of_events = False
             elif self._dataset.UC_POSTCONDITION_TEMPLATE_REGEX.match(line):
                 matched_string = self._dataset.UC_POSTCONDITION_TEMPLATE_REGEX.match(line).group(0)
                 uc_postcond_words += self.tokenize_to_string_list(line[len(matched_string):])
                 last_word_category = uc_postcond_words
+                in_flow_of_events = False
             elif self._dataset.UC_FLOW_OF_EVENTS_TEMPLATE_REGEX.match(line):
                 matched_string = self._dataset.UC_FLOW_OF_EVENTS_TEMPLATE_REGEX.match(line).group(0)
                 uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
                 last_word_category = uc_flow_of_events_words
+                in_flow_of_events = True
             elif self._dataset.UC_QUALI_REQ_TEMPLATE_REGEX.match(line):
                 matched_string = self._dataset.UC_QUALI_REQ_TEMPLATE_REGEX.match(line).group(0)
                 uc_quality_req_words += self.tokenize_to_string_list(line[len(matched_string):])
                 last_word_category = uc_quality_req_words
-            elif self._dataset.UC_USER_TEMPLATE_REGEX.match(line):
+                in_flow_of_events = False
+            elif self._dataset.UC_USER_TEMPLATE_REGEX.match(line) and in_flow_of_events:
                 # part of flow of events
                 matched_string = self._dataset.UC_USER_TEMPLATE_REGEX.match(line).group(0)
                 uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
                 last_word_category = uc_flow_of_events_words
-            elif self._dataset.UC_SYSTEM_TEMPLATE_REGEX.match(line):
+            elif self._dataset.UC_SYSTEM_TEMPLATE_REGEX.match(line) and in_flow_of_events:
                 # part of flow of events
                 matched_string = self._dataset.UC_SYSTEM_TEMPLATE_REGEX.match(line).group(0)
                 uc_flow_of_events_words += self.tokenize_to_string_list(line[len(matched_string):])
@@ -159,12 +167,52 @@ class UCTokenizer(NaturalSpeechTokenizer):
                 
         complete_uc_flow_of_events_words_string = " ".join(uc_flow_of_events_words)
         if self._italian:
-            uc_flow_of_events_words = [word_tokenize(" ".join(sent.split("'")), language="italian") for sent in sent_tokenize(complete_uc_flow_of_events_words_string, language="italian")]
+            uc_flow_of_events_words = [word_tokenize("' ".join(sent.split("'")), language="italian") for sent in sent_tokenize(complete_uc_flow_of_events_words_string, language="italian")]
         else:
             uc_flow_of_events_words = [word_tokenize(sent) for sent in sent_tokenize(complete_uc_flow_of_events_words_string)]
         
         return UseCaseFileRepresentation(file_path, uc_name_words, uc_description_words, uc_actor_words, uc_precond_words, uc_postcond_words,
                                           uc_flow_of_events_words, uc_quality_req_words)
+
+
+class NameAndDescriptionTokenizer(NaturalSpeechTokenizer):
+
+    def __init__(self, dataset=None, italian=False):
+        super(NameAndDescriptionTokenizer, self).__init__(dataset, italian)
+
+    def tokenize(self, file_path):
+        text_lines = FileUtil.read_textfile_into_lines_list(file_path, self._dataset.encoding())
+
+        uc_name_words = []
+        uc_actor_words = []
+        uc_precond_words = []
+        uc_postcond_words = []
+        uc_description_words = []
+        uc_quality_req_words = []
+        uc_flow_of_events_words = []
+        last_word_category = uc_description_words  # Default
+
+        for line in text_lines:
+            line = line.lstrip()  # Remove leading white spaces/tabs
+            if self._dataset.UC_NAME_TEMPLATE_REGEX.match(line):
+                matched_string = self._dataset.UC_NAME_TEMPLATE_REGEX.match(line).group(0)
+                uc_name_words += self.tokenize_to_string_list(line[len(matched_string):])
+                last_word_category = uc_name_words
+            else:
+                uc_description_words += self.tokenize_to_string_list(line)
+                last_word_category = uc_description_words
+
+        complete_uc_flow_of_events_words_string = " ".join(uc_description_words)
+        if self._italian:
+            uc_flow_of_events_words = [word_tokenize("' ".join(sent.split("'")), language="italian") for sent in
+                                       sent_tokenize(complete_uc_flow_of_events_words_string, language="italian")]
+        else:
+            uc_flow_of_events_words = [word_tokenize(sent) for sent in
+                                       sent_tokenize(complete_uc_flow_of_events_words_string)]
+
+        return UseCaseFileRepresentation(file_path, uc_name_words, [], uc_actor_words,
+                                         uc_precond_words, uc_postcond_words,
+                                         uc_flow_of_events_words, uc_quality_req_words)
 
         
 class JavaDocDescriptionOnlyTokenizer(NaturalSpeechTokenizer):

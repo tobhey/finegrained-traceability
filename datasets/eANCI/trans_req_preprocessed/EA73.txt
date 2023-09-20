@@ -1,0 +1,6 @@
+Information libraries
+
+The citizen requests the list of libraries
+The system allows you to view the list of libraries
+The citizen chooses the library
+The system returns the information regarding the chosen library by displaying data such as location the dates and opening times the link to the library site

@@ -1,0 +1,11 @@
+REQUIREMENT 18: HTTP-BASED CLIENT AUTHENTICATION
+     
+The EST server MAY request HTTP-based client authentication. This request can be in addition to successful TLS client authentication (Section 3.3.2) if EST server policy requires additional authentication. (For example, the EST server may require that an EST client "knows" a password in addition to "having" an existing client certificate.) Or, HTTP-based client authentication can be an EST server policy-specified fallback in situations where the EST client did not successfully complete the TLS client authentication. (This might arise if the EST client is enrolling for the first time or if the certificates available to an EST client cannot be used for TLS client authentication.)
+
+HTTP Basic and Digest authentication MUST only be performed over TLS 1.1 [RFC4346] or later versions. NULL and anon cipher suites MUST NOT be used because they do not provide confidentiality or support mutual certificate-based or certificate-less authentication, respectively. As specified in "Certificate Management over CMS (CMC): Transport Protocols" [RFC5273], the server "MUST NOT assume client support for any type of HTTP authentication such as cookies, Basic authentication, or Digest authentication". Clients SHOULD support the Basic and Digest authentication mechanism.
+
+Servers that wish to use Basic and Digest authentication reject the HTTP request using the HTTP-defined WWW-Authenticate response-header ([RFC2616], Section 14.47). The client is expected to retry the request, including the appropriate Authorization Request header ([RFC2617], Section 3.2.2), if the client is capable of using the Basic or Digest authentication. If the client is not capable of retrying the request or it is not capable of Basic or Digest authentication, then the client MUST terminate the connection.
+
+A client MAY set the username to the empty string ("") if it is presenting a password that is not associated with a username.
+
+Support for HTTP-based client authentication has security ramifications as discussed in Section 6. The client MUST NOT respond to the server's HTTP authentication request unless the client has authorized the EST server (as per Section 3.6).

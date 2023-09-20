@@ -1,0 +1,4 @@
+Monitoraggio Vulcanico
+
+Il Cittadino accede a questa schermata in quanto ne vuole sapere di pi circa il funzionamento effettivo di come la Protezione Civile svolge il monitoraggio dei vulcani presenti sul territorio comunale e nazionale con una descrizione dettagliata delle tecnologie informatiche adottate
+Il sistema risponde alla richiesta con la visualizzazione di una scheda informativa nella quale viene descritto tutto ci che la Protezione Civile fa per avere sotto controllo l ' attivit vulcanica

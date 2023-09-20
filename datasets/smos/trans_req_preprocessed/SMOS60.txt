@@ -1,0 +1,3 @@
+Show school data student
+Viewing school information regarding user
+Search in the Archive The data relating to the class register to which the student belongs displays the data relating to the student and in particular date absences known disciplinary delays and justification

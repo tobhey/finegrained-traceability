@@ -1,0 +1,5 @@
+Identite card renewal
+
+The citizen presses the identity card renewal button
+The system directly sends a request for renewal by the citizen to the competent employee
+The citizen goes to the counter to renew the identity card

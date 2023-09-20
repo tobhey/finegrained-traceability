@@ -1,0 +1,1 @@
+A patient whose at least one physiologic data type is specified to be under monitoring chooses to report their physiologic data. He or she can report his or her blood pressure (systolic and diastolic) [E2] and/or glucose levels [E3]. The input data, a timestamp, and the fact that the status is self-reported are saved.

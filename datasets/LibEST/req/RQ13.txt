@@ -1,0 +1,141 @@
+REQUIREMENT 13: PROTOCOL DESIGN AND LAYERING
+     
+Figure 2 provides an expansion of Figure 1, describing how the layers are used. Each aspect is described in more detail in the sections that follow.
+
+EST Layering:
+
+Protocols and uses:
+
+
+   +----------------------------------------------------+
+   |                                                    |
+   | Message types:                                     |
+   |   - "Simple PKI" messages                          |
+   |     (incorporates proof-of-possession)             |
+   |   - CA certificate retrieval                       |
+   |   - "Full PKI" messages (OPTIONAL)                 |
+   |     (incorporates proof-of-possession)             |
+   |   - CSR Attributes Request (OPTIONAL)              |
+   |   - Server-generated key request (OPTIONAL)        |
+   |                                                    |
+   +----------------------------------------------------+
+   |                                                    |
+   | HTTP:                                              |
+   |   - HTTP headers and URIs for control              |
+   |      - Content-Type headers specify message type   |
+   |      - Headers for control/error messages          |
+   |      - URIs for selecting functions                |
+   |   - Basic or Digest authentication (OPTIONAL)      |
+   |                                                    |
+   +----------------------------------------------------+
+   |                                                    |
+   | TLS for transport security:                        |
+   |   - Authentication of the EST server               |
+   |   - Authentication of the EST client (OPTIONAL)    |
+   |   - Provides communications integrity              |
+   |     and confidentiality                            |
+   |   - Supplies channel-binding [RFC5929] information |
+   |     to link proof-of-identity with message-based   |
+   |     proof-of-possession (OPTIONAL)                 |
+   |                                                    |
+   +----------------------------------------------------+
+
+                                 Figure 2
+
+                
+Specifying HTTPS as the secure transport for enrollment messages introduces two "layers" to communicate authentication and control messages: TLS and HTTP.
+
+The TLS layer provides integrity and confidentiality during transport. The proof-of-identity is supplied by TLS handshake authentication and optionally also by the HTTP layer headers. The message type and control/error messages are included in the HTTP headers.
+
+CMC ([RFC5272], Section 3.1) notes that "the Simple PKI Request MUST NOT be used if a proof-of-identity needs to be included". Since the TLS and HTTP layers can provide proof-of-identity for EST clients and servers, the Simple PKI message types are used.
+
+The TLS layer certificate exchange provides a method for authorizing client enrollment requests using existing certificates. Such certificates may have been issued by the CA (from which the client is requesting a certificate), or they may have been issued under a distinct PKI (e.g., an IEEE 802.1AR Initial Device Identifier (IDevID) [IDevID] credential).
+
+Proof-of-possession (POP) is a distinct issue from proof-of-identity and is included in the Simple PKI message type as described in Section 3.4. A method of linking proof-of-identity and proof-of-possession is described in Section 3.5.
+
+This document also defines transport for CMC [RFC5272] that complies with the CMC Transport Protocols [RFC5273]. CMC's POP and proof-of-identity mechanisms are defined in CMC, but the mechanisms here can also be used in conjunction with those mechanisms in "Full PKI" messages.
+
+During protocol exchanges, different certificates can be used. The following table provides an informative overview. End-entities can have one or more certificates of each type listed in Figure 3 and use one or more trust anchor databases of each type listed in Figure 4.
+
+Certificates and their corresponding uses:
+
+
+   +--------------+--------------------+-------------------------------+
+   | Certificate  | Issuer             | Use and section references    |
+   +==============+====================+===============================+
+   | EST server   | The CA served by   | Presented by the EST server   |
+   | certificate  | the EST server     | during the TLS handshake.     |
+   |              |                    |                               |
+   |              |                    | Section 3.3.1                 |
+   +--------------+--------------------+-------------------------------+
+   | EST server   | A CA               | Presented by the EST server   |
+   | certificate  | authenticatable by | during the TLS handshake.     |
+   |              | a third-party TA,  |                               |
+   |              | e.g., a web server | Section 3.3.1 and             |
+   |              | CA                 | Security Considerations       |
+   +--------------+--------------------+-------------------------------+
+   | Third-party  | A CA               | Presented by the EST client   |
+   | EST client   | authenticatable by | to the EST server by clients  |
+   | certificate  | a third-party TA,  | that have not yet enrolled.   |
+   |              | e.g., a device     |                               |
+   |              | manufacturer       | Section 3.3.2                 |
+   +--------------+--------------------+-------------------------------+
+   | EST client   | The CA served by   | Presented to the EST server   |
+   | certificate  | the EST server     | during future EST operations. |
+   |              |                    |                               |
+   |              |                    | Section 3.3.2                 |
+   +--------------+--------------------+-------------------------------+
+   | End-entity   | The CA served by   | Clients can obtain certs      |
+   | certificate  | the EST server     | that are intended for         |
+   |              |                    | non-EST uses.  This includes  |
+   |              |                    | certs that cannot be used     |
+   |              |                    | for EST operations.           |
+   |              |                    |                               |
+   |              |                    | Section 4.2.3                 |
+   +--------------+--------------------+-------------------------------+
+
+
+                                 Figure 3
+
+                
+Trust anchor databases and their corresponding uses:
+
+  
+
+   +--------------+----------------------------------------------------+
+   | TA database  | Use and section references                         |
+   +==============+====================================================+
+   | EST server   | EST servers use this TA database to authenticate   |
+   | Explicit     | certificates issued by the EST CA, including EST   |
+   | TA database  | client certificates during enroll/re-enroll        |
+   |              | operations.                                        |
+   |              |                                                    |
+   |              | Section 3.3.2                                      |
+   +--------------+----------------------------------------------------+
+   | EST server   | EST servers use this TA database to authenticate   |
+   | Implicit     | certificates issued by third-party TAs;            |
+   | TA database  | e.g., EST client certificates issued by a device   |
+   |              | manufacturer.                                      |
+   |              | An Implicit TA database can be disabled.           |
+   |              |                                                    |
+   |              | Section 3.3.2                                      |
+   +--------------+----------------------------------------------------+
+   | EST client   | EST clients use this TA database to authenticate   |
+   | Explicit     | certificates issued by the EST CA, including EST   |
+   | TA database  | server certificates.                               |
+   |              |                                                    |
+   |              | Sections 3.1, 3.3.1, 3.6.1, and 4.1.1              |
+   +--------------+----------------------------------------------------+
+   | EST client   | EST clients use this TA database to                |
+   | Implicit     | authenticate an EST server that uses an externally |
+   | TA database  | issued certificate.                                |
+   |              | An Implicit TA database can be disabled.           |
+   |              |                                                    |
+   |              | Sections 3.1, 3.3.1, 3.6.2, and                    |
+   |              | Security Considerations                            |
+   +--------------+----------------------------------------------------+
+
+
+                                 Figure 4
+
+  

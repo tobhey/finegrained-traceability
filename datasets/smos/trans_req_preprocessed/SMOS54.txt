@@ -1,0 +1,8 @@
+Enter absences
+Digitization of the data collection log from ATA class personnel per class
+The user selects absent students
+Click on Save
+Show a screen with a screen with pupils and radio button to select if an absent or present student
+By default the student present
+The system sends data to the server
+The server for each absence sends a notification email to the parent of the student

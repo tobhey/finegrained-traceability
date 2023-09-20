@@ -1,0 +1,4 @@
+View Visited Sites
+View the list of sites for which it has issued a feedback
+Select the feature to display the list of sites visited personal
+Upload the list of sites for which the tourist has issued a Feedback

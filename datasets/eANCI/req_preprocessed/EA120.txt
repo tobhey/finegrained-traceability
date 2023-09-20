@@ -1,0 +1,10 @@
+Contesta Multa
+
+Il Cittadino clicca sul pulsante per accedere alla funzionalit di gestione online delle multe
+Il Sistema redirige il cittadino verso la sezione desiderata
+Il Cittadino clicca sul pulsante per il pagamento online delle multe
+Il Sistema effettua una ricerca delle multe a carico del Cittadino presenti nel database per le quali non ancora pervenuto il pagamento
+Il Cittadino seleziona la multa per la quale desidera effettuare una contestazione
+Il Sistema mostra tutte le informazioni disponibili relative alla multa oltre al form da compilare per la contestazione
+Il Cittadino inserisce le informazioni necessarie
+Il Sistema verifica la correttezza delle informazioni inoltra la richiesta di contestazione a chi di dovere e notifica il tutto al Cittadino

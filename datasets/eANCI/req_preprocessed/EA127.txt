@@ -1,0 +1,6 @@
+Ricerca Verbali Multe
+
+Il Cittadino clicca sul pulsante per accedere alla funzionalit di gestione online delle multe
+Il Sistema redirige il cittadino verso la sezione desiderata
+Il Cittadino clicca sul pulsante per la ricerca dei verbali solo a suo carico
+Il Sistema effettua una ricerca delle multe a carico del cittadino pagate e non presenti nel database e le mostra in una lista nella quale possibile navigare per mostrare tutte le informazioni disponibili per una determinata multa

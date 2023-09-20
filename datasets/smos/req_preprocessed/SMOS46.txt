@@ -1,0 +1,9 @@
+Inserimento Pagella
+Inserimento di una pagella di uno studente eseguito dall Amministratore
+Sceglie la classe dell ' alunno di cui inserire la pagella
+Seleziona l ' alunno a cui inserire la pagella cliccando sul relativo tasto
+Inserisce i voti della pagella tutti o in parte e clicca sul tasto salva
+Visualizza lelenco delle classi presenti nel sistema riferito allanno accademico in corso con accanto un pulsante Pagelle associato ad ogni classe
+Visualizza l ' elenco degli alunni della classe scelta dall ' utente
+Visualizza il form per l ' inserimento di una pagella
+Inserisce i voti inseriti nell ' archivio e riporta l ' utente alla pagina di visualizzazione degli studenti della classe

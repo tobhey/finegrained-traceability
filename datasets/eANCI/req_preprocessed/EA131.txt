@@ -1,0 +1,8 @@
+Richiesta TOSAP
+
+II Cittadino clicca sul pulsante per accedere all ' area di richiesta dei servizi del comune
+Il Sistema redirige il cittadino verso la sezione necessaria
+Il Cittadino seleziona la sezione dedicata alla richiesta di Tassa per l ' Occupazione del Suolo e delle Aree Pubbliche
+Il Sistema mostra il form della relativa richiesta ricavando automaticamente i dati necessari
+Il Cittadino inserisce ulteriori dati necessari alla corretta compilazione del form conferma la correttezza delle informazioni e invia la richiesta
+Il Sistema notifica all ' impiegato la richiesta

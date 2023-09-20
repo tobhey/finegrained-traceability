@@ -1,0 +1,6 @@
+Changes management
+
+The employee after authenticated in the system accesses the Civil Protection functionality to modify the related forms
+The system responds to this need with the possibility to display a screen with cases of use Update atmospheric conditions Update environmental analysis Update Bandie competitions
+The employee selects the functionality to be modified
+The system responds to the requirement of the employee with the required modification form

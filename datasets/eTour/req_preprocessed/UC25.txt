@@ -1,0 +1,7 @@
+View Report Statistic
+View statistical report relating to a selected location
+Activate the feature on the statistical report
+Upload the list of places in the system and displays them in a form
+Select a location and submit the form
+Upload midsize site feedback obtained by activating the Search Site use case for the location selected
+Prepare the statistical report

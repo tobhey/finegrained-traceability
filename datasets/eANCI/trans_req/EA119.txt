@@ -1,0 +1,15 @@
+Use Case Name
+CalculateAmountNotResult
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen presses the button related to the tax calculation function.
+2. The System presents the list of taxes and fees for which the amount can be calculated.
+3. The Citizen selects the tax of interest. 4. The System shows a form to be filled in
+for calculation. 5. The Citizen enters the necessary data.
+6. The System verifies the correctness of the data but fails to perform the calculation, notifying the user of the reason for failure.
+Entry Condition.
+This use case extends CalculateImport and is invoked when the Citizen enters incorrect data OR an error has occurred in the calculation of the amount.
+Output Condition.
+The System notifies the error and resubmits the form to the Citizen.
+Quality Requirements Not Provided.

@@ -1,0 +1,12 @@
+Name: ViewTeachingDetails
+Actors: Administrator
+Description: allows you to view the details of a teaching
+Preconditions:
+• The user has already logged in.
+System is viewing the list of teachings • The user click on the "Teaching details" button
+Events sequence
+User
+System
+1. Displays the screen with the details of a single teaching.
+Postconditions:
+• The user displays the detailed information of a single teaching • Connection to the interrupted SMOS server

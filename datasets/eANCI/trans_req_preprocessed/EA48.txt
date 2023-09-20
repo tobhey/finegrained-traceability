@@ -1,0 +1,10 @@
+House assistance
+
+The User Select Request Home Assistance Seniors Minors Disabled Handicap
+The system shows the form for the insertion of the applicant's data and the recipient
+The user inserts the applicant's personal data and if necessary enter the data of a third person specifying the relationship with that person
+The system picks up the data of the citizen requesting the personal data of the citizen recipient in the event that the applicant and the recipient were not the same person and the data concerning the family unit of the citizen recipient
+The User specifies the psycho-physical conditions of the recipient by specifying the documents Attached Invalidit certificate issued by the ASL committee and the health card of the attending physician and the certified of the authority provider of the Pension Isee model specifically specifying a possible date of appointment with social workers
+Then submit the form
+The system picks up the data concerning any socio-assistance services of which the recipient gi uses
+Therefore forwards the request to the Social Services Office and warns the citizen of the request

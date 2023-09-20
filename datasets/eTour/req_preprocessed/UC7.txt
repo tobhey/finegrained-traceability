@@ -1,0 +1,8 @@
+Active Convention
+Convention active request by a refreshment point
+Enable the activation function of the Convention
+Load the data request of the Convention from the point of rest and displays the corresponding form
+Check the data of the agreement and decide for activation
+Asks for confirmation of the activation
+Confirm the operation
+Processing the request

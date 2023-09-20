@@ -1,0 +1,15 @@
+Use Case Name
+RequestStatusOfFamily
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen presses on the Family Status button.
+3.
+2. The system displays the family status to the citizen. The Citizen chooses whether to print or send to his/her e-mail the family status.
+4. The system executes the choice made by the citizen.
+Entry condition
+The Citizen has authenticated into the system.
+Exit condition
+➢ The system performs an operation chosen by the citizen OR,
+➢ In case the service is not available the use case ServiceNotAvailable is invoked.
+Quality Requirements Not Provided.

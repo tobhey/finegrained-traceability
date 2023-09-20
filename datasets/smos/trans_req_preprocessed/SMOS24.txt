@@ -1,0 +1,4 @@
+View Details Teaching
+Allows you to view the details of a teaching
+Lench Lelenco Lelemo Loente Click on the Teaching Details button
+View the screen with the details of a single teaching

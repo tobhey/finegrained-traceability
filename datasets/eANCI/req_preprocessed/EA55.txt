@@ -1,0 +1,4 @@
+Piano Zona Assistenza
+
+L ' utente da remoto seleziona la funzionalit Assistenza Sociale selezionando Piano di zona servizi assistenza
+Il sistema mostra il piano di zona riguardante i servizi assistenziali

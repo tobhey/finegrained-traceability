@@ -37,7 +37,9 @@ def get_range_array(a, b, delta):
 
 
 def calculate_cos_sim(vector_1, vector_2):
-    sim = cosine_similarity([vector_1], [vector_2])  # function expects 2D array
+    if len(vector_1) == 0 or len(vector_2) == 0:
+        return 0
+    sim = cosine_similarity(vector_1, vector_2)  # function expects 2D array
     sim = sim[0][0].item()  # unpack numpy 2D array and convert to python float
     return sim
 
@@ -66,4 +68,14 @@ def random_numpy_array(low, high, dim):
 
 def numpy_array(l):
     return numpy.array(l)
+
+
+def remove_suffix(input_string, suffix):
+    if suffix and input_string.endswith(suffix):
+        return input_string[:-len(suffix)]
+    return input_string
+
+def normalize(array: []):
+    return array / numpy.linalg.norm(array)
+
 

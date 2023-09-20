@@ -1,0 +1,15 @@
+Name: InsertAbsences
+Actors: ATA staff
+Description: Register digitization, data collection from ATA class personnel per class
+Preconditions:
+• • •
+The user must be logged in to the system as the ATA staff, the user has carried out the case of use ViewLancoclassiata selection a class to enter the data in the system
+Events sequence
+User
+System
+2. The user selects absent students 3. Click on Save
+1. Shows the user a screen with pupils and radio button to select if a student is absent or present. By default the student is present.
+4. The system sends data to the server. The server for each absence sends a notification email to the parent of the student.
+Postconditions:
+• Absence data has been entered in the system, and the system sent notifications to parents. The initial screen is shown again.
+• Connection to the interrupted SMOS server.• The user interrupts the operation.

@@ -1,0 +1,24 @@
+Requisito:
+Gestione archivio storico dei clienti.
+Descrizione:
+Il sistema deve tenere alcuni dati del cliente per tutto l'anno successivo a 
+quello di soggiorno. Se un cliente è già presente nell'elenco, dovranno essere 
+aggiornati i suoi dati. Nell’archivio saranno inseriti: nome, cognome e 
+indirizzo del cliente e il numero dell’ultima stanza da lui occupata 
+nell’albergo. Deve inoltre essere possibile recuperare e visualizzare i dati 
+contenuti nell’archivio storico perché l’albergatore possa avere informazioni a 
+lui utili in qualsiasi momento ne abbia necessità.
+Input richiesto:
+I dati del cliente che si ritiene utile salvare verranno presi dall'archivio clienti.
+Output desiderato:
+Aggiornamento archivio storico clienti.
+Criterio di accettazione:
+I dati devono durare nell’archivio almeno fino alla fine dell'anno seguente a 
+quello di inserimento. Se un cliente è già presente nell'archivio i suoi dati 
+verranno aggiornati in base all'ultimo soggiorno.
+Aspettative collegate:
+Poter mantenere il contatto con i clienti più recenti al fine di promuovere e 
+pubblicizzare le offerte dell'albergo per la stagione seguente.
+Requisiti collegati:
+nn.
+

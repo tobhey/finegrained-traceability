@@ -1,0 +1,9 @@
+Modify Cultural Heritage
+Change data of a cultural object in the system
+View the list of cultural goods as a result of the use case Search Cultural Heritage it selects and activates a function of change
+Load the data of the cultural and displays the form for editing
+Change data in the form and submit
+Verify the data entered and asks for confirmation of the transaction
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation
+Stores the modified data of the cultural

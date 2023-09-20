@@ -1,0 +1,6 @@
+Delete Tourist Account
+Delete the account of a tourist from the system
+Tourists from the list obtained by activating the use case Search Tourist will select and activate a feature for disposal
+Asks for confirmation of the transaction
+Confirm the operation
+Delete the selected data

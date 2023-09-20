@@ -1,0 +1,9 @@
+Viewing a teaching report card
+Viewing a report card
+Select the academic year of interest
+Select one of the displayed classes
+Select the student to display the report card and the reference fourmenders by clicking on the appropriate button
+View the list of academic years in which at least one class in which the teacher teaches
+View the classes associated with the selected school year
+View the list of class students chosen by the user
+View the puppet of the chosen student referring to the specified quarter

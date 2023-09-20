@@ -1,0 +1,19 @@
+Use case name
+CancellationCardYouth
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen requests cancellation of CardGiovani.
+2. The system displays a form for entering the Card number.
+3. The citizen enters the number. 4. The system verifies the existence of the card and
+the citizen's membership. 5. The system displays a form for
+confirmation of the request. 6. The citizen confirms the deletion of the
+card. 7. The system deletes the youth card from the
+repository.
+Entry condition
+This case requires that the citizen has gone through the authentication procedure and has a CardGiovani.
+Exit condition
+The system has performed the deletion of the card.
+In case the citizen has entered the number of a card that does not exist or is not owned by the citizen, the system calls the use case DatiErrati.
+In case there is a failure in the request the system calls the use case ServiceNotAvailable.
+Quality RequirementsNot Provided.

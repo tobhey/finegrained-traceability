@@ -1,0 +1,2 @@
+The user LHCP selects a patient from the list of requested reports
+At this point the LHCP can view a prescription list for that patient S sorted by start date the later date is ranked earlier

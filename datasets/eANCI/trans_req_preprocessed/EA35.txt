@@ -1,0 +1,7 @@
+Marriage request
+
+The citizen presses the marriage request button
+The system shows the citizen the form to be completed
+The citizen inserts all the data of her partner and presses the confirmation key
+The system automatically creates the form to be presented with self-certification and family status of the applicant citizen and sends the module to the employee
+The employee receives the notification and publishes the marriage request

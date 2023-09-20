@@ -1,0 +1,4 @@
+Disease check
+
+The user selects request request disease
+The system shows the page with the information for requesting the INPS office of the disease allowance allowing you to print everything

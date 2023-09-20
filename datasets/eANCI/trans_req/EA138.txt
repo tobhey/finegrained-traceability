@@ -1,0 +1,12 @@
+Use Case Name
+DataErrati
+Participating Actors
+Started by Citizen
+Flow of events
+1. System displays a message to the terminal screen indicating that the request entered was incorrect.
+2. Citizen reads the notification message. 3. System resubmits the input form.
+Input condition
+This use case extends use cases, and handles exceptional cases of failure due to incorrect input.
+Output condition
+The input form is resubmitted.
+Quality requirements Not expected

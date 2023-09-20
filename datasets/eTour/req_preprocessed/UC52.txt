@@ -1,0 +1,5 @@
+Delete Site From Preferences
+Tourism delete a site from the list of bookmarks
+Choose to remove your site from the list of bookmarks by specific features
+Prompt removal Confirm the removal
+Removes the selected site from the list of bookmarks

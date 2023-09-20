@@ -78,7 +78,7 @@ thesis.pdf
 target/
 
 # IntelliJ IDE
-.idea/*
+/*.idea/*
 *.iws
 *.iml
 *.eml

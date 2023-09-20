@@ -1,0 +1,1 @@
+The status of a laboratory procedure has been updated (UC26, S3). The patient is notified with the following information: the LOINC number and the updated status.

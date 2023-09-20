@@ -1,0 +1,3 @@
+Visualizza Elenco Giustifiche
+Visualizza i l ' elenco delle giustifiche
+Mostra tutte le assenze dell ' alunno registrate scolastico selezionato Le assenze gi giustificate vengono visualizzate in verde quelle da giustificare in rosso durante l ' anno

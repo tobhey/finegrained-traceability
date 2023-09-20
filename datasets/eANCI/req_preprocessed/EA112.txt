@@ -1,0 +1,4 @@
+Sanitario Antropico
+
+Il Cittadino accede alla schermata desiderata dall ' elenco dei rischi ambientali che accanto ad ogni descrizione di questi ultimi
+Il sistema risponde alla richiesta del Cittadino fornendogli una dettagliata spiegazioni di cosa significhi questo caso d ' uso in termini pratici e distribuendogli consigli e procedure standard in caso di pericoli

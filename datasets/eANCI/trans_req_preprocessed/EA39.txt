@@ -1,0 +1,5 @@
+Electoral card loss
+
+The citizen presses the electoral card loss button
+The system directly sends a notification of loss of the paper to the competent employee
+The citizen goes to the Office of the Employee with a copy of the denunciation of loss

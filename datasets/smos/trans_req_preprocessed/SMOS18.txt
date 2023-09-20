@@ -1,0 +1,6 @@
+Enter the new address
+Insert a new address on the archive
+Fill out the form
+Click on the Save button
+The system shows the form to be filled with address name
+Check out controls on the validity of the data entered and inserts a new address on the archive in the event that the data entered are not valid Activates the Data error case

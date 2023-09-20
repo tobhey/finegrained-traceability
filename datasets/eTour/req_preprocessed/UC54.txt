@@ -1,0 +1,7 @@
+Modify Comment
+Edit the comment previously issued
+Choose to change the comment on the feedback for the site issued by the appropriate functionality
+Verify the data entered and asks for confirmation of the change
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the change of the comment
+Edit commentary on selected feedback

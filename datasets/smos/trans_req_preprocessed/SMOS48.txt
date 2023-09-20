@@ -1,0 +1,5 @@
+Cancellation of a report card
+The administrator eliminates a report card from the system
+The user accepts the cancellation by pressing the confirmation key
+The system displays a form to confirm the cancellation
+Displays a message of correct deletion and displays the form with the list of classes

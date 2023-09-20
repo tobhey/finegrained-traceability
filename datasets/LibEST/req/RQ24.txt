@@ -1,0 +1,5 @@
+REQUIREMENT 24: PROOF-OF-POSSESSION
+     
+As defined in Section 2.1 of CMC [RFC5272], proof-of-possession (POP) "refers to a value that can be used to prove that the private key corresponding to the public key is in the possession of and can be used by an end-entity".
+
+The signed enrollment request provides a signature-based proof-of-possession. The mechanism described in Section 3.5 strengthens this by optionally including "Direct"-based proof-of-possession [RFC5272] by including TLS session-specific information within the data covered by the enrollment request signature (thus linking the enrollment request to the authenticated end point of the TLS connection).

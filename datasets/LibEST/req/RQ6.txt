@@ -1,0 +1,3 @@
+REQUIREMENT 6: CERTIFICATE TLS AUTHENTICATION
+     
+If the EST client has a previously installed certificate issued by a third-party CA, this certificate can be used to authenticate the client's request for a certificate from the EST server (if that CA is recognized by the EST server). An EST client responds to the EST server's TLS certificate request message with the existing certificate already held by the client. The EST server will verify the client's existing certificate and authorize the client's request as described in Section 3.3.2.

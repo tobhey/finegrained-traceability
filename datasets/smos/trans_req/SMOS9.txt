@@ -1,0 +1,13 @@
+Name: DeleteUser
+Actors: Administrator
+Description: Delete a user from the system
+Preconditions:
+• The user is logged in as an administrator • The user has carried out the case of use "viewdetTailsente" and the system is
+Displaying the details of a user • The user click on the "Delete" button
+Events sequence
+User
+System
+1. Delete the user from the archive
+2. Displays the list of updated users
+Postconditions:
+• The user has been canceled • Connection to the SMOS server interrupted

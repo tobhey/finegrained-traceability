@@ -1,0 +1,5 @@
+Visualizzazione Di Una Pagella
+Viene visualizzata la pagella dellalunno richiesto
+Seleziona la pagella di interesse
+Visualizza le pagelle dello studente selezionato
+Visualizza i dettagli della pagella selezionata

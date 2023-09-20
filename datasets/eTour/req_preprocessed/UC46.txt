@@ -1,0 +1,8 @@
+Modify Search Preference
+Edit your personal search preferences
+Access to functionality for the modification of personal search preferences
+Upload your search preferences and displays them in a form
+Edit the fields in the form and submit
+Asks confirmation
+Confirmation for changing search preferences
+Memorize search preferences changed

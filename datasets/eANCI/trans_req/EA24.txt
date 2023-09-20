@@ -1,0 +1,18 @@
+Use Case Name
+ResearchEmployee
+Participating actors
+Started by administrator
+Flow of events
+1. The administrator presses on the Search Employee button.
+3.
+The system displays the form to search for an employee 2. The administrator performs a search using the employee's data.
+4. The system returns the data of the searched employee.
+Entry condition
+The administrator has authenticated into the system.
+Exit condition
+➢ The system displays the screen of the clerk, OR
+➢ In the case where the clerk is not found the system retrieves the use case DataErrati, OR
+In case the administrator wants to delete an employee , the system calls the use case DeleteEmployee, OR
+In the case where the administrator wants to edit an employee , the system calls the use case EditEmployee, OR
+➢ In the case where the service is not available the use case ServiceNotAvailable is called.
+Quality Requirements The matricula string is present in the system, contains only numeric characters and has a length of 6 characters.

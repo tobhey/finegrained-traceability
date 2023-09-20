@@ -1,0 +1,8 @@
+Viewing a report card
+Viewing a report card
+Select Academician Lanno
+He chooses the class of the student he wants to view the report card
+Select the student to display the report card and the four-month interest by clicking on the relevant key
+View the classes in the system with a page button associated with each class next
+View the list of class students chosen by the user
+Displays the student reported referred to the selected semester

@@ -1,0 +1,6 @@
+Cancellazione Impiegato
+
+L ' amministratore preme il pulsante di cancellazione impiegato
+Il sistema chiede all ' amministratore una conferma
+L ' amministratore conferma l ' operazione
+Il sistema cancella l ' impiegato

@@ -1,0 +1,9 @@
+Registration
+Requires the creation of a new system
+Enable the logging feature
+View the registration form
+Fill out the form and submit
+Verify the data entered and asks for confirmation of the transaction
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation
+Create a new account with the data entered

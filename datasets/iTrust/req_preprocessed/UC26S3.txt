@@ -1,0 +1,3 @@
+An HCP can reassign a previously created lab procedure to a different Lab Technician if the lab procedure is not yet in the testing state
+The HCP selects a different Lab Technician from the list of available Lab Technicians displayed with Lab Technician specialty and the number of pending lab procedures in hisher priority queue grouped by priority
+The HCP confirms the reassignment or cancels the reassignment E

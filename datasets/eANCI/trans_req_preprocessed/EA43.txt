@@ -1,0 +1,5 @@
+Rejected practice
+
+The clerk rejects the practice
+The system sets the practice as rejected
+So send a notification to the citizen

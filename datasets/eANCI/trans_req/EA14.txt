@@ -1,0 +1,16 @@
+Use Case Name
+EditEMailEmployee
+Participating actors
+Started by employee
+Flow of events
+1. The 'employee accesses the edit-email form.
+2. The system shows the form the entry of the new e-mail.
+3. The employee enters the new e-mail and presses the confirmation button.
+4. The system updates the new e-mail.
+Entry condition
+The 'employee has authenticated into the system.
+Exit condition
+➢ The system saves the new e-mail . ➢ The system detects an error and retrieves the
+use case DataErrati OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is invoked.
+Quality Requirements Not Provided.

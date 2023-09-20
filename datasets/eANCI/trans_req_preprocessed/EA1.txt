@@ -1,0 +1,6 @@
+Administrator authentication
+
+The administrator accesses the system
+The system displays the login form for data entry username and password
+The administrator inserts the data and submits the request for authentication
+The system receives the form verifies the data and allows access to the administrator to the system with the access permissions specified

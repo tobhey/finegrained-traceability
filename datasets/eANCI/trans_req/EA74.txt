@@ -1,0 +1,18 @@
+Use Case Name
+InformationEventsInTheTerritory
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen requests to view the list of events.
+3.
+2. The system allows to view the list of events.
+The Citizen chooses the event. 4. The system returns information
+regarding the chosen event by displaying data such as:
+- - -
+the location; date and time of the event; site managing the event (Pro-loco).
+Entry condition
+The citizen has logged into the system.
+Exit condition.
+The citizen has viewed the event information, OR
+In case the citizen wants to book the event will be referred to the event site.
+Quality requirements Not provided.

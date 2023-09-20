@@ -1,0 +1,6 @@
+Richiesta IPPA Accettata
+
+L ' Impiegato visualizza la notifica ricevuta
+Il Sistema mostra all ' Impiegato la richiesta effettuata dal cittadino
+L ' Impiegato certifica la validit della richiesta controllando l ' esattezza dei dati e abilita la procedura burocratica per la richiesta del servizio
+Il Sistema invia una e-mail di conferma al cittadino che ha richiesto il servizio

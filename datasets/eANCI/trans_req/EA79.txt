@@ -1,0 +1,15 @@
+Use Case Name
+ViewInformation
+Participating Actors
+Started by Citizen
+Flow of events
+1.
+The Citizen requests to view the information in the area.
+2. The system returns information regarding the territory by displaying data such as:
+- libraries; - events; - museums; - promotions present in the territory.
+Entry condition
+This case requires that the citizen has logged into the system.
+Exit condition
+The Citizen has viewed the information, OR
+In case the system is not available it invokes the use case ServiceNotAvailable.
+Quality RequirementsNot Available.

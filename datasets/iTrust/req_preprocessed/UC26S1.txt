@@ -1,0 +1,4 @@
+An HCP can create a lab procedure for a given office visit
+The HCP selects a procedure code a priority from to most important not as important and Lab Technician listed with hisher specialty and the number of pending lab procedures in hisher priority queue grouped by priority
+The HCP saves the new lab procedure or cancels the lab procedure creation E E
+The status of the lab procedure is marked as in transit

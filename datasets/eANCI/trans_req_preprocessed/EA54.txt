@@ -1,0 +1,5 @@
+Exhibition Practice waiting for employee
+
+The system shows the information regarding the practice selected with the related practical acceptance or rejection options
+The employee can accept or reject the practice if already completes the entire documentation the necessary signatures and after verifying it
+It can also print the data of the practice if necessary

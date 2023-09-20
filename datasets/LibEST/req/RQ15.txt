@@ -1,0 +1,5 @@
+REQUIREMENT 15: HTTP LAYER
+     
+HTTP is used to transfer EST messages. URIs are defined for handling each media type (i.e., message type) as described in Section 3.2.2. HTTP is also used for client authentication services when TLS client authentication is not available, due to the lack of a client certificate suitable for use by TLS (see Section 3.2.3). HTTP authentication can also be used in addition to TLS client authentication if the EST server wishes additional authentication information, as noted in Section 2.2.3. Registered media types are used to convey EST messages as specified in Figure 6.
+
+HTTP 1.1 [RFC2616] and above support persistent connections. As described in Section 8.1 of RFC 2616, persistent connections may be used to reduce network and processing loads associated with multiple HTTP requests. EST does not require or preclude persistent HTTP connections.

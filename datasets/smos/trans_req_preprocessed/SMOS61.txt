@@ -1,0 +1,3 @@
+Show student data
+This case allows a parent to view information about their children
+Displays a summary table with the information relating to children and in particular data absences disciplinary notes Delays and justification

@@ -1,0 +1,19 @@
+Use case name
+DeclarationSubstituteActNotoriety
+Participating actors
+Initiated by citizen, communicates with employee
+Flow of events
+1. Citizen accesses the Declaration in Lieu of Affidavit area using the appropriate link
+2. The system displays the form for entering the data necessary for the request.
+The citizen enters the required data 4. The system verifies the correctness and completeness of the data then displays a summary screen or activates the
+DatiErrati use case 5. The citizen confirms the operation
+6. The system displays a notification message
+7. The system sends a message notifying the appropriate employee of the request
+Entry condition
+The citizen has authenticated in the system
+Exit condition
+The system displays a message notifying the request
+The system sends a request notification message to the relevant clerk, OR
+in the case of incorrect data entry the system invokes the use case DataErrati, OR
+in the case of technical failures the system invokes the use case ServiceNotAvailable
+Quality RequirementsNotAvailable

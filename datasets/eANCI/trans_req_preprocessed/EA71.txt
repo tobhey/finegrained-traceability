@@ -1,0 +1,4 @@
+Consultory booking view
+
+The citizen requests the viewing of the reservation made in a consultatory
+The system returns the information regarding the chosen booking by visualizing data as a consultatory date and time

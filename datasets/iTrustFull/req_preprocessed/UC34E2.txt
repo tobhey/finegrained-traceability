@@ -1,0 +1,2 @@
+The patient UAP or personal representative enters a systolic blood pressure outside the range - or a diastolic blood pressure outside the range -
+Heshe is notified of an error and is prompted to try again

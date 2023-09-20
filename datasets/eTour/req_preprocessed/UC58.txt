@@ -1,0 +1,4 @@
+View Site Card
+View the details of a particular site
+Select the function for displaying the card on a site chosen
+Upload data from the database

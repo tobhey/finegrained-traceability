@@ -1,0 +1,6 @@
+Request identity paper refused
+
+The employee displays the received notification
+The system shows the employee the request for the creation of the identity card by the citizen
+The employee detects an error in the data and rejects the identity card creation procedure
+The system sends an e-mail notification to the citizen who requested the creation of the identity card

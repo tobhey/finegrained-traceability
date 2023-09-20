@@ -1,0 +1,7 @@
+Request civic number
+
+The citizen accesses the Request area of the number of street number by means of the appropriate link
+The system displays the form for the insertion of the necessary data to the request the citizen inserts the requested data
+The system verifies correctness and completeness of the data then shows a summary screen or activates the case of use incorrect data The citizen confirms the operation
+The system displays a notification message of the request
+The system sends a notification message of the request to the competent employee

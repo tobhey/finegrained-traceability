@@ -1,0 +1,566 @@
+file,ID,text
+RQ7.txt,RQ7.txt.name,CERTIFICATE- LESS TLS AUTHENTICATION
+RQ7.txt,RQ7.txt.flow_of_events.0,The EST client and EST server can be mutually authenticated using a certificate-less TLS cipher suite see Section
+RQ25.txt,RQ25.txt.name,LINKING IDENTITY AND POP INFORMATION
+RQ25.txt,RQ25.txt.flow_of_events.0,Server policy will determine whether clients are required to use the mechanism specified in this section
+RQ25.txt,RQ25.txt.flow_of_events.1,This specification provides a method of linking identity and proof-of-possession by including information specific to the current authenticated TLS session within the signed certification request
+RQ25.txt,RQ25.txt.flow_of_events.2,The client can determine if the server requires the linking of identity and POP by examining the CSR Attributes Response see Section
+RQ25.txt,RQ25.txt.flow_of_events.3,Regardless of the CSR Attributes Response clients SHOULD link identity and POP by embedding tls-unique information in the certification request
+RQ25.txt,RQ25.txt.flow_of_events.4,If tls-unique information is included by the client the server MUST verify it
+RQ25.txt,RQ25.txt.flow_of_events.5,The EST server MAY reject requests without tls-unique information as indicated by server policy
+RQ25.txt,RQ25.txt.flow_of_events.6,Linking identity and proof-of-possession proves to the server that the authenticated TLS client has possession of the private key associated with the certification request and that the client was able to sign the certification request after the TLS session was established
+RQ25.txt,RQ25.txt.flow_of_events.7,This is an alternative to the Linking Identity and POP Information '' method defined by Section of RFC that is available if Full PKI messages are used
+RQ25.txt,RQ25.txt.flow_of_events.8,The client generating the CSR obtains the tls-unique value from the TLS subsystem as described in Channel Bindings for TLS RFC
+RQ25.txt,RQ25.txt.flow_of_events.9,The EST client operations between obtaining the tls-unique value through generation of the CSR that contains the current tls-unique value and the subsequent verification of this value by the EST server are the phases of the application protocol during which application- layer authentication occurs '' these operations are protected by the synchronization interoperability mechanism described in the Channel Bindings for TLS '' interoperability notes in Section of RFC
+RQ25.txt,RQ25.txt.flow_of_events.10,When performing renegotiation TLS securerenegotiation '' RFC MUST be used
+RQ25.txt,RQ25.txt.flow_of_events.11,The tls-unique value is base encoded as specified in Section of RFC and the resulting string is placed in the certification request challenge-password field RFC Section
+RQ25.txt,RQ25.txt.flow_of_events.12,The challenge-password field is limited to bytes Section of RFC indicates that no existing cipher suite would result in an issue with this limitation
+RQ25.txt,RQ25.txt.flow_of_events.13,If the challenge-password attribute is absent the client did not include the optional channel-binding information the presence of the challenge-password attribute indicates the inclusion of tls-unique information
+RQ25.txt,RQ25.txt.flow_of_events.14,If the EST server makes use of a back-end infrastructure for processing it is RECOMMENDED that the results of this verification be communicated
+RQ25.txt,RQ25.txt.flow_of_events.15,For example this communication might use the CMC RFC RA POP Witness Control '' in a CMC Full PKI Request message
+RQ25.txt,RQ25.txt.flow_of_events.16,Or an EST server might TLS-authenticate an EST client as being a trusted infrastructure element that does not forward invalid requests
+RQ25.txt,RQ25.txt.flow_of_events.17,A detailed discussion of back-end processing is out of scope
+RQ25.txt,RQ25.txt.flow_of_events.18,When rejecting requests the EST server response is as described for all enroll responses Section
+RQ25.txt,RQ25.txt.flow_of_events.19,If a Full PKI Response is included the CMC Fail Info MUST be set to pop Failed
+RQ25.txt,RQ25.txt.flow_of_events.20,If a human- readable reject message is included it SHOULD include an informative text message indicating that the linking of identity and POP information is required
+RQ42.txt,RQ42.txt.name,SERVER- SIDE KEY GENERATION
+RQ42.txt,RQ42.txt.flow_of_events.0,An EST client may request a private key and associated certificate from an EST server using an HTTPS POST with an operation path value of serverkeygen ''
+RQ42.txt,RQ42.txt.flow_of_events.1,Support for the serverkeygen function is OPTIONAL
+RQ42.txt,RQ42.txt.flow_of_events.2,A client MUST authenticate an EST server as specified in Section if certificate-based authentication is used or Section if the optional certificate-less authentication is used and check the server 's authorization as given in Section
+RQ42.txt,RQ42.txt.flow_of_events.3,The EST server MUST authenticate the client as specified in Section if certificate-based authenticated is used or Section if the optional certificate-less authentication is used and check the client 's authorization as given in Section
+RQ42.txt,RQ42.txt.flow_of_events.4,The EST server applies whatever authorization or logic it chooses to determine if the private key and certificate should be provided
+RQ42.txt,RQ42.txt.flow_of_events.5,Cipher suites that have a NULL confidentiality algorithm MUST NOT be used as they will disclose the contents of an unprotected private key
+RQ42.txt,RQ42.txt.flow_of_events.6,Proper random number and key generation RFC is a server implementation responsibility and server archiving of generated keys is determined by CA policy
+RQ42.txt,RQ42.txt.flow_of_events.7,The key pair and certificate are transferred over the TLS session
+RQ42.txt,RQ42.txt.flow_of_events.8,The cipher suite used to return the private key and certificate MUST offer confidentiality commensurate with the private key being delivered to the client
+RQ42.txt,RQ42.txt.flow_of_events.9,The EST client MAY request additional certificates even when using an existing certificate in the TLS client authentication
+RQ42.txt,RQ42.txt.flow_of_events.10,For example the client can use an existing certificate for TLS client authentication when requesting a certificate that can not be used for TLS client authentication
+RQ58.txt,RQ58.txt.name,SERVER KEY GENERATION
+RQ58.txt,RQ58.txt.flow_of_events.0,The following is an example of a valid serverkeygen exchange
+RQ58.txt,RQ58.txt.flow_of_events.1,During this exchange the EST client authenticates itself using an existing certificate issued by the CA the EST server provides services for
+RQ58.txt,RQ58.txt.flow_of_events.2,The initial TLS handshake is identical to the enrollment example handshake
+RQ58.txt,RQ58.txt.flow_of_events.3,An example HTTP POS Ted message is POST well-knownestserverkeygen HTTP Host Accept Expect -continue Content- Type applicationpkcs Content- Transfer- Encoding base Content- Length MII Cw TCC Aak CAQ Aw Wz EM Dw GAUE Ax Mc Vydm Vy SVR Vu IH Jlc S Bie S Bjb Gll bn Qga Wg ZG Vtby Bzd G Vw ID Ey ID Ez Njgx NDENT Ux GTAX Bg NVBAUTEFBJR Dp Xa W Rn ZX Qg UMT Awgg Ei MAGC Sq GS Ib DQEBAQUAAIB Dw Awgg EK Ao IBAQ Cv Em A L Suyzbf L My C Qfpaepao B Sfluvm HX Rml Vwpie M Hn Ub R Io R Uun Fll Iz Ku V Urkq J Yzmq N Oo Td CO Ps VRP Tudh Frss Dk PN Iphl SS s S Iktrhzw Yb Cq CFR Aphe Jx Dx BI Rsev RS Ipu Imh B Hi Lfhq A Fhz Z Js OUS Vp Umq Uog Fs MSOQX Idldjhpj TYT Jh QP Xrqdch Ks T Qca Kse Q Jxh OJH Vl P Ho Y Ix Xt AY Sutcbb TNTXWFCW Sr WD Jzu Mmky Udioo WYRV ft Avaz Jla Qb Ag MBAA Gg IT Af Bgkqhki Gw BC Qcx Eh MQZE Zz Q Vht Smqbt Cd ER cj AN Bgkqhki Gw BAQUFAAOCAQEARIEQ Bh Sjr LC Ajn V Hb Zd HUN Gsz Idwxiu Ln XK Sf Eze O Mk C Ty FG Kjred S Htat YU Pb D Qi Jf Coe Lblol A Ga Sofx IF Pl Dr Gqjheq JE Ibc DTA Jqkv Dihy QG Qnhosyg IZ Hv Kpp Qleb A gvp RJ Sn Mro P Ce Rg TU Efm Irin Py Xe WF Fnampl Yb T Gwjva Eikhj C Ll H ve Hh Cdg O Ex Pwfqh Kh Hjp ZK Blob Cpq R Wv D Ti Zuwt Up F Ff Gtuxvp Tpo Sj Mh W Iwdsh Yw Qj If Ysbbq E Rbp Jiwb AQ Ygyo Vm EQ Because the Decrypt Key Identifier attribute is not included in this request the response does not include additional encryption beyond the TLS session
+RQ58.txt,RQ58.txt.flow_of_events.4,The EST server response is HTTP OK Status OK Content- Type multipartmixed boundaryest Server Example Boundary Content- Length This is the preamble
+RQ58.txt,RQ58.txt.flow_of_events.5,It is to be ignored though it is a handy place for est Server to include an explanatory note including contact or support information
+RQ58.txt,RQ58.txt.flow_of_events.6,f -- est Server Example Boundary Content- Type applicationpkcs Content- Transfer- Encoding base MII Evg IBADAN Bgkqhki Gw BAQEFAASCB Kgwgg Sk Ag EA Ao IBAQD Pw Ktw J Tj Mg A Poj Vryqlfo Ph U Yqyb OPZ Te Arg Vh Uye Acdfdwpy PDE Siuj U Fd S Vck UW Nbnw OF Upen Lbbj S Tud Kp EW Fzkeu Aan PGZM Aw Kyr Yy r Dt QOOJUCB Vh Ur I Ty YLZNY Ueagbpc Rw Mtr Rr E Muw Qryknk LC Ok Z I Qd N Rxldk D Fvp A Ynstumo G Rt VL Wi Xe TS Lt Xwhu Ubj Ldsvv Ai J Si Z Yrx Pln J Vy Fm R Mf TB Ojzu Fqva VL Day Qjga G Ejq ZWH Xel QAOZ Nlr Choj EK F Gqy Oh Ag MBAAE Cgg EBAL Qazn Yjdx Yf NM Uffwlj R Rf MHCMT Rxu AE Ao KB Ymh FVZ Ztxf Mzxl DG Thgsh F Agwc Il U Pmi X Ua O Lxhtx Wa L Gg Ymc N Am Bi C Dj LB Qx RQC Wtlc KWCAHB Wtc Eyr Xxh Iy Wd N Tb XCA Ec Xye JFJXF Ne D Ps Dmx S Ccii Dte Sa Ems Jv Y Guqev Je M Thc Qc Cr Jj Xkvp GL IK Kpxidad Pb Q Hpqjdo Mdj Ow Y Uvr HXQ Lq Aa F Hdl FWV Un SYYH Ga ND Tf RTULA Xrkm Ms KVFOJ Jj Z Ex UCVM Zt Giqh BU Cg YEA Otd WLZ Czy ZF Me p Vl Rddoz V Atr Udxn Ebc WD Gergu Nvp O Gg H Mb Pwz ZYWK Cg D Fqyr Alw S Fn Sovheo Jlat Sbfe Y Uk Lt BLH Vk CBG Es VM Ukd MFB Ylhy E Dy KW f X Ue HL Fg Rrfp Sz Pc Xdu Eie M Cg YE Adb S Irw Ng Gjoo Ekd V Gj V Rer srbcqc Dc PXP Lwsxhj VW Wq H Vo Dfw F Bd Ub L Hcn VX Qjg DU Hd Ndplcf BFYCFI Niq K Mqi J Yswkh Yx ZB Lzzu QT Db PFL Pg Lni KF Ga F Lr TS Stge B Qw I R Pig Hkf Is Cg YA Pqs C Jy F Mlrvf RRN Zd Qewi Vn Ps EP Fhjp Asg Dvf So Z Wlkw vyl Ud H Cerzg Ya Arixie Qsx Tvtxh LP Xl MNEBF Qb Vh PFL Ii G Fuo H No e Gr Htq Kl Sjn Bnyo Y Fm Dhe Qtb Zelca Ao PCHCU Hj St BZHW Dt REQK Bg H Np w ERX Iy CU By CA Nvcsa Xul I Od Xl X Nba CG Pf Omd Wrmdd L Mf M Ova S Reku Qnbgs G Lw Pp ZQZQZN Zp Mi Wyp Gd AJ Pboww ST Vq WO Bd I Ly KAS zki Nrf Rsl G Mvs Dhcrsu Dwqof I Aq VHVBH Nz J Ao GBAOH Qof Li GHO Hcx Lazx M Gv R Tpmz UPXQ Qxqpet EGFEDZ Aa LLSS Sf F Bn Kr V Aid Fll Cb A Hao Ra f YHU Dix Boroyh Bwrn TK Rxppua UKFUHPP Jf Rc Cvwst Rkz Iev TZ Hhozk X p MPY Hx Bi Bmg Qbh Oq Tp H -- est Server Example Boundary Content- Type applicationpkcs-mime smime-typecerts-only Content- Transfer- Encoding base MIIDRQYJ Ko Z Ihvc NA Qc Co IID Nj CC Az ICAQ Ex ADAL Bgkqhki Gw B Bw Gggg MYMIID FDCC Afyg Aw IB Ag IB Fj AN Bgkqhki Gw BAQUFAD Ab M Rkw Fw YDVQQD Ex Blc R Fe G Ft c Gxl Q Eg Tnd OMBXDT Ez MD Uw OT Iz Mj U Nlo XDTEMD Uw OT Iz Mj U Nlow LD Eq M Cg G AUE Ax Mhc Vydm Vyclk ZS Br Z Xkg Z Vu ZX Jhd G Vk IH Jlc Bvbn Nl MIIB Ij AN Bgkq hki Gw BAQEFAAOCAQAMIIB Cg KCAQE Az Crc Cez IA Pj Iu Ffd Paqpd HDY VOG Kucv Pzj W Uug KFYV Mnt Pf QH Pn Xc Kcjwx Eoro Bf Uutl XJN Fj W Pu D t BV Kd Hpykne P Cq R Fuvhc Hrg Gpzxm TA Nc Csq Mvawb U Dji V Pwg VYV Ky E m CTWF Hu Go GX Ed MD Laah Of D Lv MEPN Kp Op Cwjp OWSEHT Uc ZXZ Owxb QPOWJ b Lbpq Bkb V Sud Ylkt SV Ibl Gib Nw Iidkomd GNT Zy Vch Zkf D Hkw Toharv Swmsk I Ghh Itm Vhp UA Dmejdawoa Ix Ch Rqvdjo QIDAQA Bo Iw UDAO Bg NVHQB Af EBAMCBL Aw HQYDVROBBYEF Ke Zixu Fapp DXSS Haxm V Jr MBGA Ud Iw QYM Ba AFLH Eae Zbow Sn Jejizuu Wqy Mk IMAGC Sq GS Ib DQEBBQUA AIBAQB Hh Lm RA Krn Tapqq B Ob DMIQDQ Puw Wf Wg Yw Z Kl Sm IW Iw HEZ Lig Xhpjj rfxqp Iki J Mmka Oeo XAP Fni Xl ZMFQS Mj C Ufd Mo Aq Wjsxu Xu Lh Ve Xjj X Hs L Wu D Gt MP Nvc Tt Eruor MKSHFXNEM Aa NVSUP Tm B Bg YB Wa Epn JM Npj Ixs Hn Fp Kiqvo TSV Vja C Ew Ue Qfwyvjo Ho Y Jty Mnv Kb Rtm s Yietcf V Qrj Qutqr I Js Kd Pzi Zwi K Za AM Op O Iup ZX Kg DEC Oq T Gy Y Jsx Ay Ki GT Oxkj Mdd Do Q Ax AA -- est Server Example Boundary -- This is the epilogue
+RQ58.txt,RQ58.txt.flow_of_events.7,It is also to be ignored
+RQ29.txt,RQ29.txt.name,CLIENT AUTHORIZATION
+RQ29.txt,RQ29.txt.flow_of_events.0,The decision to issue a certificate to a client is always controlled by local CA policy
+RQ29.txt,RQ29.txt.flow_of_events.1,The EST server configuration reflects this CA policy
+RQ29.txt,RQ29.txt.flow_of_events.2,This document does not specify any constraints on such policy
+RQ29.txt,RQ29.txt.flow_of_events.3,EST provides the EST server access to each client 's authenticated identity -- eg
+RQ29.txt,RQ29.txt.flow_of_events.4,the TLS client 's certificate in addition to any HTTP user authentication credentials -- to help in implementing such policy
+RQ29.txt,RQ29.txt.flow_of_events.5,If the client 's certificate was issued by the EST CA and it includes the id-kp-cmc RA RFC extended key usage extension then the client is a Registration Authority RA as described in RFC and RFC
+RQ29.txt,RQ29.txt.flow_of_events.6,In this case the EST server SHOULD apply authorization policy consistent with an RA client
+RQ29.txt,RQ29.txt.flow_of_events.7,For example when handling simpleenroll requests the EST server could be configured to accept POP linking information that does not match the current TLS session because the authenticated EST client RA has verified this information when acting as an EST server as specified in Section
+RQ29.txt,RQ29.txt.flow_of_events.8,More specific RA mechanisms are available if the EST client uses fullcmc methods
+RQ22.txt,RQ22.txt.flow_of_events.0,TLS client authentication is the RECOMMENDED method for identifying EST clients
+RQ22.txt,RQ22.txt.flow_of_events.1,HTTP-based client authentication Section MAY be used
+RQ22.txt,RQ22.txt.flow_of_events.2,The EST server authenticates the EST client as defined for the cipher suite negotiated
+RQ22.txt,RQ22.txt.flow_of_events.3,The following text provides details assuming a certificate-based cipher suite such as the TLS RFC mandatory cipher suite TLSRSAWITHDESEDECBCSHA
+RQ22.txt,RQ22.txt.flow_of_events.4,The EST server MUST support certificate-based client authentication
+RQ22.txt,RQ22.txt.flow_of_events.5,Generally the client will use an existing certificate for renew or rekey operations
+RQ22.txt,RQ22.txt.flow_of_events.6,If the certificate to be renewed or rekeyed is appropriate for the negotiated cipher suite then the client MUST use it for the TLS handshake otherwise the client SHOULD use an alternate certificate that is suitable for the cipher suite and contains the same subject identity information
+RQ22.txt,RQ22.txt.flow_of_events.7,When requesting an enroll operation the client MAY use a client certificate issued by a third party to authenticate itself
+RQ22.txt,RQ22.txt.flow_of_events.8,Certificate validation MUST be performed as per RFC
+RQ22.txt,RQ22.txt.flow_of_events.9,The EST client certificate MUST conform to the RFC certificate profile
+RQ22.txt,RQ22.txt.flow_of_events.10,The server validates the TLS client certificate using the EST server Explicit and if enabled Implicit TA database s
+RQ22.txt,RQ22.txt.flow_of_events.11,The server MUST maintain a distinction between the use of Explicit and Implicit TA databases during authentication in order to support proper authorization
+RQ22.txt,RQ22.txt.flow_of_events.12,The EST server MUST perform authorization checks as specified in Section
+RQ22.txt,RQ22.txt.flow_of_events.13,If a client does not support TLS client authentication then it MUST support HTTP-based client authentication Section or certificate-less TLS authentication Section
+RQ28.txt,RQ28.txt.name,CLIENT USE OF IMPLICIT TA DATABASE
+RQ28.txt,RQ28.txt.flow_of_events.0,When the EST client Implicit TA database is used to validate the EST server certificate the client MUST check the configured URI and each HTTP redirection URI according to the rules specified in RFC Section
+RQ28.txt,RQ28.txt.flow_of_events.1,The provisioned URI or the most recent HTTP redirection URI provides the basis for authorization and the server 's authenticated identity confirms it is the authorized server
+RQ32.txt,RQ32.txt.name,BOOTSTRAP DISTRIBUTION OF CA CERTIFICATES
+RQ32.txt,RQ32.txt.flow_of_events.0,It is possible that the client was not configured with an Implicit TA database that allows a bootstrap installation of the Explicit TA database as described in
+RQ32.txt,RQ32.txt.flow_of_events.1,This section describes an alternate method by which minimally configured EST clients can populate their Explicit TA database
+RQ32.txt,RQ32.txt.flow_of_events.2,If the EST client application does not specify either an Explicit TA database or an Implicit TA database then the initial TLS server authentication and authorization will fail
+RQ32.txt,RQ32.txt.flow_of_events.3,The client MAY provisionally continue the TLS handshake to completion for the purposes of accessing the cacerts or fullcmc method
+RQ32.txt,RQ32.txt.flow_of_events.4,If the EST client continues with an unauthenticated connection the client MUST extract the HTTP content data from the response Sections or and engage a human user to authorize the CA certificate using out-of-band data such as a CA certificate fingerprint '' eg
+RQ32.txt,RQ32.txt.flow_of_events.5,a SHA- or SHA- SHS hash on the whole CA certificate
+RQ32.txt,RQ32.txt.flow_of_events.6,In a fullcmc response it is the Publish Trust Anchors control CMC RFC Section within the Full PKI Response that must be accepted manually
+RQ32.txt,RQ32.txt.flow_of_events.7,It is incumbent on the user to properly verify the TA information or to provide the fingerprint '' data during configuration that is necessary to verify the TA information
+RQ32.txt,RQ32.txt.flow_of_events.8,HTTP authentication requests MUST NOT be responded to if the server has not been authenticated as specified in Section or if the optional certificate-less authentication is used as specified in Section
+RQ32.txt,RQ32.txt.flow_of_events.9,The EST client uses the cacerts response to establish an Explicit Trust Anchor database for subsequent TLS authentication of the EST server
+RQ32.txt,RQ32.txt.flow_of_events.10,EST clients MUST NOT engage in any other protocol exchange until after the cacerts response has been accepted and a new TLS session has been established using TLS certificate-based authentication
+RQ55.txt,RQ55.txt.name,OBTAINING CA CERTIFICATES
+RQ55.txt,RQ55.txt.flow_of_events.0,The following is an example of a valid cacerts exchange
+RQ55.txt,RQ55.txt.flow_of_events.1,During the initial TLS handshake the client can ignore the optional server-generated certificate request '' and can instead proceed with the HTTP GET request GET well-knownestcacerts HTTP User- Agent curl i-pc-linux-gnu libcurl Open S SL zlib libidn librtmp Host Accept In response the server provides the current CA certificates HTTP OK Status OK Content- Type applicationpkcs-mime Content- Transfer- Encoding base Content- Length MIIMOQYJ Ko Z Ihvc NA Qc Co IIM Kj CCDCYCAQ Ex ADAL Bgkqhki Gw B Bw Ggggw MMIIC z CC Ae Og Aw IB Ag IJA Jp Yn UZ Oqc MAGC Sq GS Ib DQEBBQUAM Bsx GTAX Bg NVBAMT EG Vzd EVY Wwb GVDQSB Pdw Hhc NMT Mw NTAMDM Mz Mx Whc NMT Qw NTAMDM Mz Mx Wj Ab M Rkw Fw YDVQQD Ex Blc R Fe G Ftc Gxl Q Eg Td PMIIB Ij AN Bgkqhki Gw BAQEF AAOCAQAMIIB Cg KCAQE Aw Dqpi Hopa I Cubp Rqbp EN Lq T Iq WELFI Aq D Dhe HI Kuy O HWZAP Rl SZ Uga L Wksse B Uxdmox K Nyvtyjeh Iof Tue Z Whgy LCEGWRP Kfg PB Al Jf J Roe X Zao LV Qch Ik Ceqj F Msbi Y Hvp Rluhfty Zkz Qy H E Gs Rkwq U Kk TZPCFV Fl Yfqm Uoqsa R Ty Zbj IIJ Yj E Gp Qre Wzczs Pe cuhw MLOW Qk Zt Ks Qtgo Cpf Y Mju Amk Qjo Qqvcxlc WNK Hfwbr Db OR Zril I Sl Ioumc Rzu BG Ygzhd Dfasmdfbpg OSNFQIDAQA Bo Iw QDAP Bg NVHRMB Af EBTADAQHMBGA Ud Dg QWBBQITT Kx Mq AT Xrfcffp C Ibt Gszj AO Bg NVHQB Af EBAMCAQ Yw DQYJ Ko Z Ihvc NAQEFBQA Dgg EBAC Pn Q Pu W Re U Gu CM Sn BO Gat Xh u Z Pm S Jq Ef De Pam Ii Ussy Ydc Dwh Vv K Mo Pg Iyu X Fqhdp Ioy Py DTMT KAD Cx Xkhr M Iq Mui Fv BKLWY Gdysj Efw Ak Bj H Be TMON Nwu E Ly ON Sk H Ivo Xpua Pmmmo I My Gini Fsei Wl X Xld G Lk O Qshe Uwp BX Qp Or KB Yfu A KYS Wz E Gb Ux Xlvcb U Mg AND Gjrzni KL Vl Apipi Cu VEE Oc Z Ulm Jj VLQWA xievo Mp Ioji GMCX Wc Vl KK Egc M Os N Slvm Ptpq G Lo IJYNT Dwgg MD MIIBAD Ag EC Ag EBMAGC Sq GS Ib DQEBBQUAM Bsx GTAX Bg NVBAMTEG Vzd EVY Ww b GVDQSB Pdw Hhc NMT Mw NTAMDM Mz My Whc NMT Qw NTAMDM Mz My Wj Ab M Rkw Fw YD VQQD Ex Blc R Fe G Ftc Gxl Q Eg Tnd PMIIB Ij AN Bgkqhki Gw BAQEFAAOCAQAMIIB Cg KCAQE Annr Zr MJ Hwf MD Kmubx H Avtdnrs Qf Ofgt Mh RI Lae P Nh Adg Pyj C lox Og DUT Vd Q Vi Oz Vx P Naciko Onk Id Rpjp Opky Mo Kkv HMQX Gn Q Tbs M Avq Wt SD Mpo GO Ae Geud YPOT Rq Pvj NI Ew Y Kks G Cglw Zw B Jbwh Yr Du bt Gltri R Vix P Wrvtwz I Tprcjh RSL Et Qyk T Nh JF Yes Rs Sg Oi P Ng Ito CA Tysba INE Pr Memq M Lt Dp Ra Gy Qes Ly M Fv Dletpmm Byk A Cn Oatpw U l Bs NDX Agz Z Kv Wrkh Za Orhw IDAQA Bo Iw UDAO Bg NVHQB Af EBAMCBL Aw HQYDVROBBYEFLH Eae Zbow Sn Jejizuu Wqy Mk IMBGA Ud Iw QYM Ba AF Ah N Mr Ey o B Netzhk Ihuoaz PSMAGC Sq GS Ib DQEBBQUAAIBAQCL Dk La LN Vh S Ok Iq H qsh VYL Otjv Yj Vskg D Hkd BO Gort K Vu Gavav Trl Jnsb NW Ntv zk D Ehmd Aka Psiw RHL Fgtt Uf Hd EH Au Tk AESPTU Diptjkf Hht B Mfs Fr Ckd sx Wz Czpr DOMH Yf U Ekh RV Vzy GE Xov Ap I Up EA Sih Lamx TEQ Asbwj UTI Rzo Ln M Pzpb Ke Zi Me EBV Fs Due A Hjowo Ljg Jq Vycv CH Ax U Ohxc WTY Gc R Bg Ly Oy QL Ki YTKBH Oj Qvh F Hmco O Dkc NLYJ Ogessxog B Hul Vg F XJ Jj MIID Az CC Aeug Aw IB Ag IB Aj AN Bgkqhki Gw BAQUFAD Ab M Rkw Fw YDVQQD Ex Bl c R Fe G Ftc Gxl Q Eg Tnd OMBXDT Ez MD Uw OT Az NT Mz Mlo XDTEMD Uw OT Az NT Mz Mlow Gz EZM Bc GAUE Ax MQZXNR Xhhb X Bs ZUNBIE Tj CCAS Iw DQYJ Ko Z Ihvc NAQEBBQAD gg EPADCCA Qo Cgg EBAM Aq Yh K Wi Arm Uam R Deyky Klh Cx SA Pagw Xhy Crsjhv QD Ze Eu WV Oo Giv LL Hg VMX Zq Mdyjcrcoo SK Htv Hm Vo Y Muvywh Blkdzyvn Dw QN Jd C Xy Uf K Hl Wu KCUHNSOJ Anqox TL Pmm B Lf Zbo Xcme ZM Mh R Br EZM Nfl Cp Ef Dwhf FRZW Hpl K Kr Gk Um Wy CO Cfm Ovx Bvqe Klvc ML Dv NP oc D Czlk J Gb Sr ELYKO Qq XD Ig Jp OE No E Ktr MZX Plj Shs Gwd Tk Wapf SE p S Pe K Lpn Ecg Rt WIONX Qr Jn Xf I Dkj RUC Aw EA Aa NSMF Aw Dg YDVRPAQH BAQD Ag Sw MBGA Ud Dg QWBBQITT Kx Mq AT Xrfcffp C Ibt Gszj Af Bg NVHSMEGDAW g B Sxx Gnm WM Epi Xosvlqsj JCPDAN Bgkqhki Gw BAQUFAAOCAQEA Lh Da E Mp BIN Bs Jozdb Xlijr Wx LC Svf Gwp U Fk Cg Zjibtq W Uoa NR Ey Ropu Ehjw FZK w Yt Rqx I Zo Fhco Lkp B Dfg L Lwhoztzb Yv OVKQ Midj Blk BEVNRM Wdrs F Ax Wuy i Z An R Gwq E Ib CD Ax Ighm WE Mh BVICG Lqd Px Kr T Aju Df Epfd Wh Uu Y Km K c LX Db Swrj E Qya TVW Tn Ufuxdw DQZ Js G Mws AG Cp I Sy OI Fm Xb U Dp JXG Li Lwf J Caumnyl Yu GCJ Bu Tr Cs K Gf XEX Imd FFCL Ta V Rkjsg ck Z Me E Zz CC Avswgg Hjo AMCAQICCQ Dprp Dmj Oy ETAN Bgkqhki Gw BAQUF AD Ab M Rkw Fw YDVQQD Ex Blc R Fe G Ftc Gxl Q Eg Tnd OMBXDT Ez MD Uw OT Az NT Mz Mlo X DTEMD Uw OT Az NT Mz Mlow Gz EZM Bc GAUE Ax MQZXNR Xhhb X Bs ZUNBIE Tj CCAS Iw DQYJ Ko Z Ihvc NAQEBBQA Dgg EPADCCA Qo Cgg EBA Jdz CR Hz A Su Jrm Rw LX ZEH Tn LTIUSC Gnjz YQHY Do Apa M To A Efn UNV Yjsc Tzen Ip K Dp CH Ua Y Tq Z Mj K Pip Lxz E Fxp EDA Lalrf Utdgz Ka N Bjg N Xu Bntne W Dzkfujzed SBMG Cp L Buwo Jc Gc Afu SWIW Kg Lm Rpbak V Ys Tqfs My Eea If E Utyx PLU Mt Ez YS Rd Pr Edr Eo Dojz YC La Ag Er Gi DRDD Hpqj CLQ Ufhvcvv E Hu N Sj Bbw Xradppgcp A Avzmrfc FJ Qd L Dedu A Vw IMG Srq Ifm Wjqc C Aw EA Aa NCME Aw Dw YDVRTAQHBA Uw Aw E Bz Ad Bg NVHQE Fg Q Usc Rpluj B Kf Yl OLO ar Iy Qjww Dg YDVRPAQHBAQD Ag EGMAGC Sq GS Ib DQEBBQUAAIBAQB Cz C Wd Yvn GM Sd Cd Eiom A Vxa Wn Kg C Wg Ey Wt A Iia H Qu Vi Bj TUA Elona Mb Jo FHW Ue d C Pr Jp AUYX Xh Wv F Qzd Z Wpmsw U Ytjgqqd Kor JI Au Pig Vngy Kytx Mc Vmx Qnhauxa En Ey RG Ah Gal Hp Ra Kdg P Rz Ua Gtip JTN Bk SV Sk Dy DCPHM Nb Bu Ocluerw Epbz Gv E Cp Xljr TBZ Sq Bs Felqizkk Cnw Zwr Vgdzklh Rf J Zj Nk Lruwb Qo Nv B Zs Xi Kx Nfn Ko SK Aua Ey D Wkqrjcfpr R Ox YT Wm X Pq j MMAGNDE Wo Q Ax AA
+RQ40.txt,RQ40.txt.name,FULL CMC REQUEST
+RQ40.txt,RQ40.txt.flow_of_events.0,If the HTTP POST to fullcmc is not a valid Full PKI Request the server MUST reject the message
+RQ40.txt,RQ40.txt.flow_of_events.1,The HTTP content-type used is applicationpkcs-mime '' with an smime-type parameter CMC-request '' as specified in RFC
+RQ40.txt,RQ40.txt.flow_of_events.2,The body of the message is the binary value of the encoding of the PKI Request with a Content- Transfer- Encoding of base '' RFC
+RQ45.txt,RQ45.txt.name,REQUESTS FOR ASYMMETRIC ENCRYPTION OF THE PRIVATE KEY
+RQ45.txt,RQ45.txt.flow_of_events.0,To specify an asymmetric encryption key to be used to encrypt the server-generated private key the client MUST include an Asymmetric Decrypt Key Identifier attribute
+RQ45.txt,RQ45.txt.flow_of_events.1,The Asymmetric Decrypt Key Identifier attribute is defined as id-aa-asymm Decrypt Key ID OBJECT IDENTIFIER id-aa The asymmetric-decrypt-key-identifier attribute values have ASN type Asymmetric Decrypt Key Identifier where ASN is defined in X Asymmetric Decrypt Key Identifier OCTET STRING If the server does not have a public key matching the identifier specified by the client the request MUST be terminated and an error returned to the client
+RQ45.txt,RQ45.txt.flow_of_events.2,Distribution of the key specified by the Asymmetric Decrypt Key Identifier to the key generator and the client is outside the scope of this document
+RQ45.txt,RQ45.txt.flow_of_events.3,If the key identified is bound to an X certificate then the key MUST either explicitly support key Transport or key Agreement or its use MUST be unrestricted
+RQ46.txt,RQ46.txt.name,SERVER- SIDE KEY GENERATION RESPONSE
+RQ46.txt,RQ46.txt.flow_of_events.0,If the request is successful the server response MUST have an HTTP response code with a content-type of multipartmixed '' consisting of two parts one part is the private key data and the other part is the certificate data
+RQ46.txt,RQ46.txt.flow_of_events.1,The format in which the private key data part is returned is dependent on whether the private key is being returned with additional encryption on top of that provided by TLS
+RQ46.txt,RQ46.txt.flow_of_events.2,If additional encryption is not being employed the private key data MUST be placed in an applicationpkcs ''
+RQ46.txt,RQ46.txt.flow_of_events.3,An applicationpkcs '' part consists of the base-encoded DER-encoded X Private Key Info with a Content- Transfer- Encoding of base '' RFC
+RQ46.txt,RQ46.txt.flow_of_events.4,If additional encryption is being employed the private key is placed inside of a CMS Signed Data
+RQ46.txt,RQ46.txt.flow_of_events.5,The Signed Data is signed by the party that generated the private key which may or may not be the EST server or the EST CA
+RQ46.txt,RQ46.txt.flow_of_events.6,The Signed Data is further protected by placing it inside of a CMS Enveloped Data as described in Section of RFC
+RQ46.txt,RQ46.txt.flow_of_events.7,The following list shows how the Encrypted Data is used depending on the type of protection key specified by the client
+RQ46.txt,RQ46.txt.flow_of_events.8,If the client specified a symmetric encryption key to protect the server-generated private key the Enveloped Data content is encrypted using the secret key identified in the request
+RQ46.txt,RQ46.txt.flow_of_events.9,The Enveloped Data Recipient Info field MUST indicate the key-encryption kekri key management technique
+RQ46.txt,RQ46.txt.flow_of_events.10,The values are as follows version is set to key-encryption key identifier kekid is set to the value of the Decrypt Key Identifier from Section key Encryption Algorithm is set to one of the key wrap algorithms that the client included in the SMIME Capabilities accompanying the request and encrypted Key is the encrypted key
+RQ46.txt,RQ46.txt.flow_of_events.11,If the client specified an asymmetric encryption key suitable for key transport operations to protect the server-generated private key the Enveloped Data content is encrypted using a randomly generated symmetric encryption key
+RQ46.txt,RQ46.txt.flow_of_events.12,The cryptographic strength of the symmetric encryption key SHOULD be equivalent to the client- specified asymmetric key
+RQ46.txt,RQ46.txt.flow_of_events.13,The Enveloped Data Recipient Info field MUST indicate the Key Trans Recipient Info ktri key management technique
+RQ46.txt,RQ46.txt.flow_of_events.14,In Key Trans Recipient Info the Recipient Identifier rid is either the subject Key Identifier copied from the attribute defined in Section or the server determines an associated issuer And Serial Number from the attribute version is derived from the choice of rid RFC key Encryption Algorithm is set to one of the key wrap algorithms that the client included in the SMIME Capabilities accompanying the request and encrypted Key is the encrypted key
+RQ46.txt,RQ46.txt.flow_of_events.15,If the client specified an asymmetric encryption key suitable for key agreement operations to protect the server-generated private key the Enveloped Data content is encrypted using a randomly generated symmetric encryption key
+RQ46.txt,RQ46.txt.flow_of_events.16,The cryptographic strength of the symmetric encryption key SHOULD be equivalent to the client- specified asymmetric key
+RQ46.txt,RQ46.txt.flow_of_events.17,The Enveloped Data Recipient Info field MUST indicate the Key Agree Recipient Info kari key management technique
+RQ46.txt,RQ46.txt.flow_of_events.18,In the Key Agree Recipient Info type version originator and user keying material ukm are as in RFC and key Encryption Algorithm is set to one of the key wrap algorithms that the client included in the SMIME Capabilities accompanying the request
+RQ46.txt,RQ46.txt.flow_of_events.19,The recipient 's key identifier is either copied from the attribute defined in Section to subject Key Identifier or the server determines an Issuer And Serial Number that corresponds to the value provided in the attribute
+RQ46.txt,RQ46.txt.flow_of_events.20,In all three additional encryption cases the Enveloped Data is returned in the response as an applicationpkcs-mime '' part with an smime-type parameter of server-generated-key '' and a Content- Transfer- Encoding of base ''
+RQ46.txt,RQ46.txt.flow_of_events.21,The certificate data part is an applicationpkcs-mime '' and exactly matches the certificate response to simpleenroll
+RQ46.txt,RQ46.txt.flow_of_events.22,When rejecting a request the server MUST specify either an HTTP xx error or an HTTP xx error
+RQ46.txt,RQ46.txt.flow_of_events.23,If the content-type is not set the response data MUST be a plaintext human-readable error message
+RQ6.txt,RQ6.txt.name,CERTIFICATE TLS AUTHENTICATION
+RQ6.txt,RQ6.txt.flow_of_events.0,If the EST client has a previously installed certificate issued by a third-party CA this certificate can be used to authenticate the client 's request for a certificate from the EST server if that CA is recognized by the EST server
+RQ6.txt,RQ6.txt.flow_of_events.1,An EST client responds to the EST server 's TLS certificate request message with the existing certificate already held by the client
+RQ6.txt,RQ6.txt.flow_of_events.2,The EST server will verify the client 's existing certificate and authorize the client 's request as described in Section
+RQ34.txt,RQ34.txt.name,CA CERTIFICATES RESPONSE
+RQ34.txt,RQ34.txt.flow_of_events.0,If successful the server response MUST have an HTTP response code
+RQ34.txt,RQ34.txt.flow_of_events.1,Any other response code indicates an error and the client MUST abort the protocol
+RQ34.txt,RQ34.txt.flow_of_events.2,A successful response MUST be a certs-only CMC Simple PKI Response as defined in RFC containing the certificates described in the following paragraph
+RQ34.txt,RQ34.txt.flow_of_events.3,The HTTP content-type of applicationpkcs-mime '' is used
+RQ34.txt,RQ34.txt.flow_of_events.4,The Simple PKI Response is sent with a Content- Transfer- Encoding of base '' RFC
+RQ34.txt,RQ34.txt.flow_of_events.5,The EST server MUST include the current root CA certificate in the response
+RQ34.txt,RQ34.txt.flow_of_events.6,The EST server MUST include any additional certificates the client would need to build a chain from an EST CA-issued certificate to the current EST CA TA
+RQ34.txt,RQ34.txt.flow_of_events.7,For example if the EST CA is a subordinate CA then all the appropriate subordinate CA certificates necessary to build a chain to the root EST CA are included in the response
+RQ34.txt,RQ34.txt.flow_of_events.8,The EST server SHOULD include the three Root CA Key Update '' certificates Old With Old Old With New and New With Old in the response chain
+RQ34.txt,RQ34.txt.flow_of_events.9,These are defined in Section of CMP RFC
+RQ34.txt,RQ34.txt.flow_of_events.10,The EST client MUST be able to handle these certificates in the response
+RQ34.txt,RQ34.txt.flow_of_events.11,The EST CA 's most recent self-signed certificate eg
+RQ34.txt,RQ34.txt.flow_of_events.12,New With New certificate is self-signed and has the latest Not After date
+RQ34.txt,RQ34.txt.flow_of_events.13,If the EST server does not include these in the response then after the current EST CA certificate expires the EST clients will need to be reinitialized with the PKI using the Bootstrap Distribution of CA certificates Section method which involves user interaction
+RQ34.txt,RQ34.txt.flow_of_events.14,After out-of-band validation occurs all the other certificates MUST be validated using normal RFC certificate path validation using the most recent CA certificate as the TA before they can be used to build certificate paths during certificate validation
+RQ34.txt,RQ34.txt.flow_of_events.15,The EST client MUST store the extracted EST CA certificate as an Explicit TA database entry for subsequent EST server authentication
+RQ34.txt,RQ34.txt.flow_of_events.16,The EST client SHOULD disable use of Implicit TA database entries for this EST server now that an Explicit TA database entry is available
+RQ34.txt,RQ34.txt.flow_of_events.17,If the client disables the Implicit TA database and if the EST server certificate was verified using an Implicit TA database entry then the client MUST include the Trusted CA Indication '' extension in future TLS sessions RFC
+RQ34.txt,RQ34.txt.flow_of_events.18,This indicates to the server that only an EST server certificate authenticatable by the Explicit TA database entry is now acceptable otherwise the EST server might continue to use a server certificate that is only verifiable by a now disabled Implicit TA
+RQ34.txt,RQ34.txt.flow_of_events.19,The EST client SHOULD also make the CA Certificate response information available to the end-entity software for use when validating peer certificates
+RQ4.txt,RQ4.txt.name,OBTAINING CA CERTIFICATES
+RQ4.txt,RQ4.txt.flow_of_events.0,The EST client can request a copy of the current EST CA certificate s from the EST server
+RQ4.txt,RQ4.txt.flow_of_events.1,The EST client is assumed to perform this operation before performing other operations
+RQ4.txt,RQ4.txt.flow_of_events.2,Throughout this document we assume the EST CA has a certificate that is used by the client to verify signed objects issued by the CA eg
+RQ4.txt,RQ4.txt.flow_of_events.3,certificates and certificate revocation lists CR Ls and that a different certificate than the one used to verify signatures on certificates and CR Ls is used when EST protocol communication requires additional encryption
+RQ4.txt,RQ4.txt.flow_of_events.4,The EST client authenticates and verifies the authorization scope of the EST server when requesting the current CA certificate s
+RQ4.txt,RQ4.txt.flow_of_events.5,As detailed in Sections and available options include Verifying the EST server 's HTTPS URI against the EST server 's certificate using Implicit T As similar to a common HTTPS exchange
+RQ4.txt,RQ4.txt.flow_of_events.6,This allows the EST server and client to leverage existing T As that might be known to the EST client
+RQ4.txt,RQ4.txt.flow_of_events.7,The client can leverage a previously distributed trust anchor specific to the EST server
+RQ4.txt,RQ4.txt.flow_of_events.8,This allows the EST client to use an existing potentially older CA certificate to request a current CA certificate
+RQ4.txt,RQ4.txt.flow_of_events.9,For bootstrapping the EST client can rely upon manual authentication performed by the end-user as detailed in Section
+RQ4.txt,RQ4.txt.flow_of_events.10,The client can leverage the binding of a shared credential to a specific EST server with a certificate-less TLS cipher suite
+RQ4.txt,RQ4.txt.flow_of_events.11,Client authentication is not required for this exchange so it is trivially supported by the EST server
+RQ52.txt,RQ52.txt.name,REFERENCES
+RQ52.txt,RQ52.txt.flow_of_events.0,RFC Freed N and N Borenstein Multipurpose Internet Mail Extensions MIME Part One Format of Internet Message Bodies '' RFC November
+RQ52.txt,RQ52.txt.flow_of_events.1,RFC Bradner S Key words for use in RF Cs to Indicate Requirement Levels '' BCP RFC March
+RQ52.txt,RQ52.txt.flow_of_events.2,RFC Housley R and P Hoffman Internet X Public Key Infrastructure Operational Protocols FTP and HTTP '' RFC May
+RQ52.txt,RQ52.txt.flow_of_events.3,RFC Fielding R Gettys J Mogul J Frystyk H Masinter L Leach P and T Berners- Lee Hypertext Transfer Protocol -- HTTP '' RFC June
+RQ52.txt,RQ52.txt.flow_of_events.4,RFC Franks J Hallam- Baker P Hostetler J Lawrence S Leach P Luotonen A and L Stewart HTTP Authentication Basic and Digest Access Authentication '' RFC June
+RQ52.txt,RQ52.txt.flow_of_events.5,RFC Ramsdell B SMIME Version Message Specification '' RFC June
+RQ52.txt,RQ52.txt.flow_of_events.6,RFC Nystrom M and B Kaliski PKCS https toolsietforghtmlrfc Certification Request Syntax Specification Version '' RFC November
+RQ52.txt,RQ52.txt.flow_of_events.7,RFC Berners- Lee T Fielding R and L Masinter Uniform Resource Identifier URI Generic Syntax '' STD RFC January
+RQ52.txt,RQ52.txt.flow_of_events.8,RFC Eastlake D Schiller J and S Crocker Randomness Requirements for Security '' BCP RFC June
+RQ52.txt,RQ52.txt.flow_of_events.9,RFC Housley R Using Cryptographic Message Syntax CMS to Protect Firmware Packages '' RFC August
+RQ52.txt,RQ52.txt.flow_of_events.10,RFC Adams C Farrell S Kause T and T Mononen Internet X Public Key Infrastructure Certificate Management Protocol CMP '' RFC September
+RQ52.txt,RQ52.txt.flow_of_events.11,RFC Dierks T and E Rescorla The Transport Layer Security TLS Protocol Version '' RFC April
+RQ52.txt,RQ52.txt.flow_of_events.12,RFC Josefsson S The Base Base and Base Data Encodings '' RFC October
+RQ52.txt,RQ52.txt.flow_of_events.13,RFC Salowey J Zhou H Eronen P and H Tschofenig Transport Layer Security TLS Session Resumption without Server- Side State '' RFC January
+RQ52.txt,RQ52.txt.flow_of_events.14,RFC Dierks T and E Rescorla The Transport Layer Security TLS Protocol Version '' RFC August
+RQ52.txt,RQ52.txt.flow_of_events.15,RFC Schaad J and M Myers Certificate Management over CMS CMC '' RFC June
+RQ52.txt,RQ52.txt.flow_of_events.16,RFC Schaad J and M Myers Certificate Management over CMS CMC Transport Protocols '' RFC June
+RQ52.txt,RQ52.txt.flow_of_events.17,RFC Schaad J and M Myers Certificate Management Messages over CMS CMC Compliance Requirements '' RFC June
+RQ52.txt,RQ52.txt.flow_of_events.18,RFC Cooper D Santesson S Farrell S Boeyen S Housley R and W Polk Internet X Public Key Infrastructure Certificate and Certificate Revocation List CRL Profile '' RFC May
+RQ52.txt,RQ52.txt.flow_of_events.19,RFC Housley R Cryptographic Message Syntax CMS '' STD RFC September
+RQ52.txt,RQ52.txt.flow_of_events.20,RFC Rescorla E Ray M Dispensa S and N Oskov Transport Layer Security TLS Renegotiation Indication Extension '' RFC February
+RQ52.txt,RQ52.txt.flow_of_events.21,RFC Ramsdell B and S Turner Secure Multipurpose Internet Mail Extensions SMIME Version Message Specification '' RFC January
+RQ52.txt,RQ52.txt.flow_of_events.22,RFC Nottingham M and E Hammer- Lahav Defining Well- Known Uniform Resource Identifiers UR Is '' RFC April
+RQ52.txt,RQ52.txt.flow_of_events.23,RFC Altman J Williams N and L Zhu Channel Bindings for TLS '' RFC July
+RQ52.txt,RQ52.txt.flow_of_events.24,RFC Turner S Asymmetric Key Packages '' RFC August
+RQ52.txt,RQ52.txt.flow_of_events.25,RFC Eastlake D Transport Layer Security TLS Extensions Extension Definitions '' RFC January
+RQ52.txt,RQ52.txt.flow_of_events.26,RFC Saint- Andre P and J Hodges Representation and Verification of Domain- Based Application Service Identity within Internet Public Key Infrastructure Using X PKIX Certificates in the Context of Transport Layer Security TLS '' RFC March
+RQ52.txt,RQ52.txt.flow_of_events.27,RFC Schaad J Certificate Management over CMS CMC Updates '' RFC November
+RQ52.txt,RQ52.txt.flow_of_events.28,RFC Barth A The Web Origin Concept '' RFC December
+RQ52.txt,RQ52.txt.flow_of_events.29,RFC Freed N Klensin J and T Hansen Media Type Specifications and Registration Procedures '' BCP RFC January
+RQ52.txt,RQ52.txt.flow_of_events.30,X ITU- T Recommendation X ISOIEC - Abstract Syntax Notation One ASN Specification of basic notation '' November http wwwituintrec T- REC- X-- Ien
+RQ52.txt,RQ52.txt.flow_of_events.31,X ITU- T Recommendation X ISOIEC - ASN encoding rules Specification of Basic Encoding Rules BER Canonical Encoding Rules CER and Distinguished Encoding Rules DER '' November http wwwituintrec T- REC- X-- Ien
+RQ10.txt,RQ10.txt.name,SERVER KEY GENERATION
+RQ10.txt,RQ10.txt.flow_of_events.0,The EST client can request a server-generated certificate and key pair see Section
+RQ9.txt,RQ9.txt.name,CLIENT CERTIFICATE REISSUANCE
+RQ9.txt,RQ9.txt.flow_of_events.0,An EST client can renewrekey its existing client certificate by submitting a re-enrollment request to an EST server
+RQ9.txt,RQ9.txt.flow_of_events.1,When the current EST client certificate can be used for TLS client authentication Section the client presents this certificate to the EST server for client authentication
+RQ9.txt,RQ9.txt.flow_of_events.2,When the to be reissued EST client certificate can not be used for TLS client authentication any of the authentication methods used for initial enrollment can be used
+RQ9.txt,RQ9.txt.flow_of_events.3,For example if the client has an alternative certificate issued by the EST CA that can be used for TLS client authentication then it can be used
+RQ9.txt,RQ9.txt.flow_of_events.4,The certificate request message includes the same Subject and Subject Alt Name as the current certificate
+RQ9.txt,RQ9.txt.flow_of_events.5,Name changes are requested as specified in Section
+RQ21.txt,RQ21.txt.name,TLS- BASED SERVER AUTHENTICATION
+RQ21.txt,RQ21.txt.flow_of_events.0,TLS server authentication with certificates MUST be supported
+RQ21.txt,RQ21.txt.flow_of_events.1,The EST client authenticates the EST server as defined for the cipher suite negotiated
+RQ21.txt,RQ21.txt.flow_of_events.2,The following text provides details assuming a certificate-based cipher suite such as the TLS RFC mandatory cipher suite TLSRSAWITHDESEDECBCSHA
+RQ21.txt,RQ21.txt.flow_of_events.3,Certificate validation MUST be performed as per RFC
+RQ21.txt,RQ21.txt.flow_of_events.4,The EST server certificate MUST conform to the RFC certificate profile
+RQ21.txt,RQ21.txt.flow_of_events.5,The client validates the TLS server certificate using the EST client Explicit and if enabled Implicit TA database s
+RQ21.txt,RQ21.txt.flow_of_events.6,The client MUST maintain a distinction between the use of Explicit and Implicit TA databases during authentication in order to support proper authorization
+RQ21.txt,RQ21.txt.flow_of_events.7,The EST client MUST perform authorization checks as specified in Section
+RQ21.txt,RQ21.txt.flow_of_events.8,If certificate validation fails the client MAY follow the procedure outlined in Section for Bootstrap Distribution of CA certificates
+RQ41.txt,RQ41.txt.name,FULL CMC RESPONSE
+RQ41.txt,RQ41.txt.flow_of_events.0,If the enrollment is successful the server response MUST include an HTTP response code with a content-type of applicationpkcs-mime '' as specified in RFC
+RQ41.txt,RQ41.txt.flow_of_events.1,The response data includes either the Simple PKI Response with an smime-type parameter of certs-only '' or the Full PKI Response with an smime-type parameter CMC-response '' as specified in Section of RFC
+RQ41.txt,RQ41.txt.flow_of_events.2,The body of the message is the binary value of the encoding of the PKI Response with a Content- Transfer- Encoding of base '' RFC
+RQ41.txt,RQ41.txt.flow_of_events.3,When rejecting a request the server MUST specify either an HTTP xx error or an HTTP xx error
+RQ41.txt,RQ41.txt.flow_of_events.4,A CMC response with the content-type of applicationpkcs-mime '' MUST be included in the response data for any CMC error response
+RQ41.txt,RQ41.txt.flow_of_events.5,All other return codes are handled as specified in Section or HTTP RFC
+RQ41.txt,RQ41.txt.flow_of_events.6,For example a client interprets an HTTP or response to indicate that this service is not implemented
+RQ1.txt,RQ1.txt.flow_of_events.0,REQUIREMENT This document profiles certificate enrollment for clients using Certificate Management over CMS CMC RFC messages over a secure transport
+RQ1.txt,RQ1.txt.flow_of_events.1,Enrollment over Secure Transport EST describes the use of Transport Layer Security TLS RFC RFC or any future version and Hypertext Transfer Protocol HTTP RFC to provide an authenticated and authorized channel for Simple Public Key Infrastructure PKI Requests and Responses RFC
+RQ1.txt,RQ1.txt.flow_of_events.2,Architecturally the EST service is located between a Certification Authority CA and a client
+RQ1.txt,RQ1.txt.flow_of_events.3,It performs several functions traditionally allocated to the Registration Authority RA role in a PKI
+RQ1.txt,RQ1.txt.flow_of_events.4,The nature of communication between an EST server and a CA is not described in this document
+RQ1.txt,RQ1.txt.flow_of_events.5,EST adopts the Certificate Management Protocol CMP RFC model for CA certificate rollover but it does not use the CMP message syntax or protocol
+RQ1.txt,RQ1.txt.flow_of_events.6,EST servers are extensible in that new functions may be defined to provide additional capabilities not specified in CMC RFC and this document defines two such extensions one for requesting Certificate Signing Request attributes and another for requesting server-generated keys
+RQ1.txt,RQ1.txt.flow_of_events.7,EST specifies how to transfer messages securely via HTTP over TLS HTTPS RFC where the HTTP headers and media types are used in conjunction with TLS
+RQ1.txt,RQ1.txt.flow_of_events.8,HTTPS operates over TCP this document does not specify EST over HTTP Datagram Transport Layer Security User Datagram Protocol HTTPDTLSUDP
+RQ1.txt,RQ1.txt.flow_of_events.9,With a suitable specification for combining HTTP DTLS and UDP there are no EST requirements that would prevent it from working over such a stack
+RQ1.txt,RQ1.txt.flow_of_events.10,Figure shows how the layers build upon each other
+RQ1.txt,RQ1.txt.flow_of_events.11,EST Layering Protocols -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- EST requestresponse messages -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- HTTP for message transfer and signaling -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- TLS for transport security -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- TCP for transport -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- Figure
+RQ48.txt,RQ48.txt.name,CSR ATTRIBUTES REQUEST
+RQ48.txt,RQ48.txt.flow_of_events.0,The EST client requests a list of CA-desired CSR attributes from the CA by sending an HTTPS GET message to the EST server with an operations path of csrattrs ''
+RQ2.txt,RQ2.txt.name,TERMINOLOGY
+RQ2.txt,RQ2.txt.flow_of_events.0,The key words MUST '' MUST NOT '' REQUIRED '' SHALL '' SHALL NOT '' SHOULD '' SHOULD NOT '' RECOMMENDED '' NOT RECOMMENDED '' MAY '' and OPTIONAL '' in this document are to be interpreted as described in RFC
+RQ2.txt,RQ2.txt.flow_of_events.1,It is assumed that the reader is familiar with the terms and concepts described in Public Key Cryptography Standard PKCS RFC HTTPS RFC CMP RFC CMC RFC RFC RFC and TLS RFC
+RQ2.txt,RQ2.txt.flow_of_events.2,In addition to the terms defined in the terminology section of CMC RFC the following terms are defined for clarity EST CA For certificate issuing services the EST CA is reached through the EST server the CA could be logically behind '' the EST server or embedded within it
+RQ2.txt,RQ2.txt.flow_of_events.3,Third- Party Trust Anchor Any trust anchor TA that is not authoritative for the PKI hierarchy for which the EST server is providing services
+RQ2.txt,RQ2.txt.flow_of_events.4,Explicit Trust Anchor Any TA that is explicitly configured on the client or server for use during EST TLS authentication for example a TA that is manually configured on the EST client or bootstrapped as described in Section
+RQ2.txt,RQ2.txt.flow_of_events.5,See more details in Sections and
+RQ2.txt,RQ2.txt.flow_of_events.6,Implicit Trust Anchor Any third-party TA that is available on the client or server for use during TLS authentication but is not specifically indicated for use during EST TLS authentication for example T As commonly used by web browsers to authenticate web servers or T As used by servers to authenticate manufacturer- installed client credentials such as certificates populated into cable modems or routers in the factory
+RQ2.txt,RQ2.txt.flow_of_events.7,The authorization model for these T As is different from the authorization model for Explicit Trust Anchors
+RQ2.txt,RQ2.txt.flow_of_events.8,See more details in Sections and
+RQ2.txt,RQ2.txt.flow_of_events.9,Certificate- Less TLS Certificate-less TLS cipher suites provide a way to perform mutual authentication in situations where neither the client nor server have certificates or are willing to use them
+RQ2.txt,RQ2.txt.flow_of_events.10,The credential used for authentication is a word phrase code or key that is shared between the client and server
+RQ2.txt,RQ2.txt.flow_of_events.11,The credential must be uniquely shared between the client and server in order to provide authentication of an individual client to an individual server
+RQ14.txt,RQ14.txt.name,APPLICATION LAYER
+RQ14.txt,RQ14.txt.flow_of_events.0,The EST client MUST be capable of generating and parsing Simple PKI messages see Section
+RQ14.txt,RQ14.txt.flow_of_events.1,Generating and parsing Full PKI messages is OPTIONAL see Section
+RQ14.txt,RQ14.txt.flow_of_events.2,The client MUST also be able to request CA certificates from the EST server and parse the returned bag '' of certificates see Section
+RQ14.txt,RQ14.txt.flow_of_events.3,Requesting CSR attributes and parsing the returned list of attributes is OPTIONAL see Section
+RQ14.txt,RQ14.txt.flow_of_events.4,Details of the EST client application configuration are out of scope of the protocol discussion but are necessary for understanding the prerequisites of initiating protocol operations
+RQ14.txt,RQ14.txt.flow_of_events.5,The EST client is RECOMMENDED to be configured with TA databases for Section or with a secret key for Section
+RQ14.txt,RQ14.txt.flow_of_events.6,Implementations conforming to this standard MUST provide the ability to designate Explicit T As
+RQ14.txt,RQ14.txt.flow_of_events.7,For human usability reasons a fingerprint '' of an Explicit TA database entry can be configured for bootstrapping as discussed in Section
+RQ14.txt,RQ14.txt.flow_of_events.8,Configuration of an Implicit TA database perhaps by its inclusion within the EST client distribution or available from the operating system provides flexibility along with the caveats detailed in Section
+RQ14.txt,RQ14.txt.flow_of_events.9,Implementations conforming to this standard MUST provide the ability to disable use of any Implicit TA database
+RQ14.txt,RQ14.txt.flow_of_events.10,The EST client is configured with sufficient information to form the EST server URI
+RQ14.txt,RQ14.txt.flow_of_events.11,This can be the full operation path segment eg
+RQ14.txt,RQ14.txt.flow_of_events.12,https wwwexamplecomwell-knownest or https wwwexamplecomwell-knownestarbitrary Label or the EST client can be configured with a tuple composed of the authority portion of the URI along with the OPTIONAL label eg
+RQ14.txt,RQ14.txt.flow_of_events.13,wwwexamplecom '' and arbitrary Label '' or just the authority portion of the URI
+RQ53.txt,RQ53.txt.name,INFORMATIVE REFERENCES
+RQ53.txt,RQ53.txt.flow_of_events.0,I Dev ID IEEE Standards Association IEEE AR Secure Device Identifier '' December http standardsieeeorg findstdsstandard AR-html
+RQ53.txt,RQ53.txt.flow_of_events.1,RFC Howard L An Approach for Using LDAP as a Network Information Service '' RFC March
+RQ53.txt,RQ53.txt.flow_of_events.2,RFC Rescorla E HTTP Over TLS '' RFC May
+RQ53.txt,RQ53.txt.flow_of_events.3,RFC Nystrom M and B Kaliski PKCS https toolsietforghtmlrfc Selected Object Classes and Attribute Types Version '' RFC November
+RQ53.txt,RQ53.txt.flow_of_events.4,RFC Schaad J and R Housley Advanced Encryption Standard AES Key Wrap Algorithm '' RFC September
+RQ53.txt,RQ53.txt.flow_of_events.5,RFC Taylor D Wu T Mavrogiannopoulos N and T Perrin Using the Secure Remote Password SRP Protocol for TLS Authentication '' RFC November
+RQ53.txt,RQ53.txt.flow_of_events.6,RFC Turner S The applicationpkcs Media Type '' RFC August
+RQ53.txt,RQ53.txt.flow_of_events.7,RFC Zieglar L Turner S and M Peck Suite B Profile of Certificate Management over CMS '' RFC November
+RQ53.txt,RQ53.txt.flow_of_events.8,SHS National Institute of Standards and Technology Secure Hash Standard SHS '' Federal Information Processing Standard Publication - March http csrcnistgovpublicationsfips fips-fips--pdf
+RQ53.txt,RQ53.txt.flow_of_events.9,SP--- Part- National Institute of Standards and Technology Recommendation for Key Management - Part General Revision '' July http csrcnistgovpublicationsnistpubs- sp-partrevgeneralpdf
+RQ57.txt,RQ57.txt.name,ENROLLRE- ENROLL
+RQ57.txt,RQ57.txt.flow_of_events.0,The following is an example of a valid simpleenroll exchange
+RQ57.txt,RQ57.txt.flow_of_events.1,The data messages for simplereenroll are similar
+RQ57.txt,RQ57.txt.flow_of_events.2,During this exchange the EST client uses an out-of-band distributed usernamepassword to authenticate itself to the EST server
+RQ57.txt,RQ57.txt.flow_of_events.3,This is the normal HTTP WWW- Authenticate behavior and is included here for informative purposes
+RQ57.txt,RQ57.txt.flow_of_events.4,When an existing TLS client certificate is used the server might skip requesting the HTTP WWW- Authenticate header such as during a simplereenroll operation
+RQ57.txt,RQ57.txt.flow_of_events.5,During the initial TLS handshake the client can ignore the optional server-generated certificate request '' and can instead proceed with the HTTP POST request
+RQ57.txt,RQ57.txt.flow_of_events.6,In response to the initial HTTP POST attempt the server requests WWW- Authenticate from the client this might occur even if the client used a client certificate as detailed in the normative text above HTTP Unauthorized Content- Length WWW- Authenticate Digest qop '' auth '' realm '' estrealm '' nonce '' '' In the subsequent HTTP POST the usernamepassword is included along with the complete applicationpkcs content POST well-knownestsimpleenroll HTTP Authorization Digest username '' estuser '' realm '' estrealm '' nonc e '' '' uri '' well-knownestsimpleenroll '' cnonce '' M T Yw Mzg '' nc qop '' auth '' response '' ccffde bdbff '' Host Accept Content- Type applicationpkcs Content- Transfer- Encoding base Content- Length MII Ch TCCAWCAQ Aw Hz Ed M Bs GAUE Ax MUZG Vtb NZXAID Ez Njgx ND Ez NT Iwgg Ei MAGC Sq GS Ib DQEBAQUAAIB Dw Awgg EK Ao IBAQ Cl Npkdz Nj Xp Epkaum Wx DZ e FY Jp Q Kzdd De Oz Ue Cm ZIXQ Ixce Vt M Catn Rrdn ZRC Ax Gjwbqo Be Kt XS Qff Vvodbyw Wdk QO Ibnt C Qry Ydc BZ Lj IN Mkrmjmo S Lm Lw U Va N Kf Y MLR Krmah Ikjm YC Svw Tnvmxprp TJ Javh TEI Itf A Yq R Yhk MC Xo B Ly h Eo Dan N Tz Cskf SV Vf J Sk Ux T Ycy Rwk V Xfx Wwyc SKEPR El Ik Ye K t DEV Ag BIEYMLSRXT Lujirwnq S Rj Oquzk Ak DBEKZ Cxe Y Grhxa RP Ag MB AA Gg IT Af Bgkqhki Gw BC Qcx Eh MQK Jy Qly Lzcr R Vl NTBUNDAN Bgkqhki Gw B AQUFAAOCAQEAR Bv A Je Xa Hpl MF Idz Wqoid O Cf Uqa Y Wc Bzp LA Dv Jr P Kqxpq w XMAO Rvr Fvnyd V Frl Mr Np Is Ku ALYWI Bj Ve L Xo B Od B Kxr Ylc VUS Yydima Daft YSR Gol M Lt Weiqbc SD Brk HXWT Rh Icpwmrk C Kzur thsuj FG Lv Pud Rf G Qfx W Wau AH Bgzt W Cep Zsr U Kepf Vhro Hx Ap Yh c HGBQDQHVTF Vj Hccd Uj A Xicrtbs Vh Uol Pvfl E Apv SB Qm Jcaq O Bz Hwn Py M Fc M Egt U Vee Cb Vwuktbn Gsbw Q The EST server uses the usernamepassword to perform authenticationauthorization and responds with the issued certificate HTTP OK Status OK Content- Type applicationpkcs-mime smime-typecerts-only Content- Transfer- Encoding base Content- Length MIIDOAYJ Ko Z Ihvc NA Qc Co IIDKTCC Ay UCAQ Ex ADAL Bgkqhki Gw B Bw Gggg MLMIID Bz CC Aeg Aw IB Ag IBFTAN Bgkqhki Gw BAQUFAD Ab M Rkw Fw YDVQQD Ex Blc R Fe G Ft c Gxl Q Eg Tnd OMBXDT Ez MD Uw OT Iz MTU Mo XDTEMD Uw OT Iz MTU Mow Hz Ed M Bs G AUE Ax MUZG Vtb NZXAID Ez Njgx ND Ez NT Iwgg Ei MAGC Sq GS Ib DQEBAQUAAIB Dw Awgg EK Ao IBAQ Cl Npkdz Nj Xp Epkaum Wx D Ze FY Jp Q Kzdd De Oz Ue Cm ZIXQ Ixce Vt M Catn Rrdn ZRC Ax Gjwbqo Be Kt XS Qff Vvodbyw Wdk QO Ibnt C Qry Ydc BZ Lj IN Mkrmjmo S Lm Lw U Va N Kf YMLR Krmah Ikjm YC Svw Tnv mxprp TJ Javh TEI Itf A Yq R Yhk MC Xo B Lyh Eo Dan N Tz Cskf SV Vf J Sk Ux T Ycy Rwk V Xfx Wwyc SKEPR El Ik Ye Kt DEV Ag BIEYMLSRXT Luji rwnq S Rj Oquzk Ak DBEKZ Cxe Y Grhxa RP Ag MBAA Gj Uj BQMAGA Ud Dw E Bw QE Aw I Es D Ad Bg NVHQE Fg Q Uq Dd Biiic Qw GM Xvyjf Ext Uw Hw YDV Rj B Bgw Fo AU sc Rpluj B Kf Yl OL Oar Iy Qjww DQYJ Ko Z Ihvc NAQEFBQA Dgg EBA Cmxghv L al FTA Roxain Bxgxd Zom Sb Lq LP Dvg K Hz Ks Dn M Crc UMY Pn ED Km Ga l Yfb E Tttju Jgixb Thvuctwk Gr DET Tfqy Hnrbh Xl Ahn B Ja ogv C Wxh Ia Ra T Xdp OHO Rv NSM Xdcrl Cysvrt Ol Lj Rakaj J Oe Qle Odz F Ql Zf O Pha L Wene BLNJ Ivs C Fa LM Cnf C Xf GA La Aef NHXWZ Bj XZLB Cza r Es Mlh Cj Aoc SC Wxm Mvd Eqnt Fpgg Ry FIZS Rv Ba RU Ct G Elg Dmu AF Uxce RP Or Txz Ch ADEA
+RQ8.txt,RQ8.txt.name,HTTP- BASED CLIENT AUTHENTICATION
+RQ8.txt,RQ8.txt.flow_of_events.0,The EST server can optionally also request that the EST client submit a usernamepassword using the HTTP Basic or Digest authentication methods see Section
+RQ8.txt,RQ8.txt.flow_of_events.1,This approach is desirable if the EST client can not be authenticated during the TLS handshake see Section or the EST server policy requires additional authentication information see Section
+RQ8.txt,RQ8.txt.flow_of_events.2,In all cases HTTP-based client authentication is only to be performed over a TLS-protected transport see Section
+RQ31.txt,RQ31.txt.name,DISTRIBUTION OF CA CERTIFICATES
+RQ31.txt,RQ31.txt.flow_of_events.0,The EST client can request a copy of the current CA certificates
+RQ31.txt,RQ31.txt.flow_of_events.1,This function is generally performed before other EST functions
+RQ50.txt,RQ50.txt.name,IANA CONSIDERATIONS
+RQ50.txt,RQ50.txt.flow_of_events.0,Section defines an OID that has been registered in an arc delegated by the IANA to the PKIX working group
+RQ50.txt,RQ50.txt.flow_of_events.1,IANA has registered the following IANA updated the well-known URI registry with the following filled-in template from RFC
+RQ50.txt,RQ50.txt.flow_of_events.2,URI suffix est Change controller IETF IANA has updated the Application Media Types '' registry with the following filled-in templates from RFC
+RQ50.txt,RQ50.txt.flow_of_events.3,The media subtype for CSR attributes in a CSR Attributes Response is applicationcsrattrs
+RQ50.txt,RQ50.txt.flow_of_events.4,Type name application Subtype name csrattrs Required parameters None Optional parameters None Encoding considerations binary Security Considerations Clients request a list of attributes that servers wish to be in certification requests
+RQ50.txt,RQ50.txt.flow_of_events.5,The requestresponse is normally done in a TLS-protected tunnel
+RQ50.txt,RQ50.txt.flow_of_events.6,Interoperability considerations None Published specification This memo
+RQ50.txt,RQ50.txt.flow_of_events.7,Applications which use this media type Enrollment over Secure Transport EST Additional information Magic number s None File extension csrattrs Person email address to contact for further information Dan Harkins dharkins arubanetworkscom Restrictions on usage None Author Dan Harkins dharkins arubanetworkscom Intended usage COMMON Change controller The IESG iesg ietforg The applicationpkcs-mime content-type defines the optional smime-type '' parameter RFC with a set of specific values
+RQ50.txt,RQ50.txt.flow_of_events.8,This document adds another value server-generated-key '' as the parameter value for Server-side Key Generation Response
+RQ56.txt,RQ56.txt.name,CSR ATTRIBUTES
+RQ56.txt,RQ56.txt.flow_of_events.0,The following is an example of a valid csrattrs exchange
+RQ56.txt,RQ56.txt.flow_of_events.1,During this exchange the EST client authenticates itself using an existing certificate issued by the CA for which the EST server provides services
+RQ56.txt,RQ56.txt.flow_of_events.2,The initial TLS handshake is identical to the enrollment example handshake
+RQ56.txt,RQ56.txt.flow_of_events.3,The HTTP GET request GET well-knownestcsrattrs HTTP User- Agent curl i-pc-linux-gnu libcurl Open S SL zlib libidn librtmp Host Accept In response the server provides suggested attributes that are appropriate for the authenticated client
+RQ56.txt,RQ56.txt.flow_of_events.4,In this example the EST server also includes two example attributes that the client would ignore unless the attribute type is known to the client HTTP OK Status OK Content- Type applicationcsrattrs Content- Transfer- Encoding base Content- Length M Hw G Bys GAQEBAR Yw Ig Y Di Dc BM Rs TGV Bhcn Nl IFNFVC Bhcy Ay Ljk O Sx IG Rhd GEG C Sq GS Ib DQEJ Bz As Bg OI Nw Ix JQY Di Dc D Bg OI Nw QTGV Bhcn Nl IFNFVC Bhcy Ay Ljk O Sy IG Rhd GEGC Ssk Aw MCCAEB Cw YJYIZIAWUDBAIC
+RQ11.txt,RQ11.txt.name,FULL PKI REQUEST MESSAGES
+RQ11.txt,RQ11.txt.flow_of_events.0,Full PKI Request RFC messages can be transported via EST using the Full CMC Request function
+RQ11.txt,RQ11.txt.flow_of_events.1,This affords access to functions not provided by the Simple Enrollment functions
+RQ11.txt,RQ11.txt.flow_of_events.2,Full PKI Request messages are defined in Sections and of RFC
+RQ11.txt,RQ11.txt.flow_of_events.3,See Section for a discussion of how EST provides a transport for these messages
+RQ38.txt,RQ38.txt.name,SIMPLE ENROLL AND RE- ENROLL RESPONSE
+RQ38.txt,RQ38.txt.flow_of_events.0,If the enrollment is successful the server response MUST contain an HTTP response code with a content-type of applicationpkcs-mime ''
+RQ38.txt,RQ38.txt.flow_of_events.1,A successful response MUST be a certs-only CMC Simple PKI Response as defined in RFC containing only the certificate that was issued
+RQ38.txt,RQ38.txt.flow_of_events.2,The HTTP content-type of applicationpkcs-mime '' with an smime-type parameter certs-only '' is used as specified in RFC
+RQ38.txt,RQ38.txt.flow_of_events.3,The server MUST answer with a suitable xx or xx HTTP RFC error code when a problem occurs
+RQ38.txt,RQ38.txt.flow_of_events.4,A Simple PKI Response with an HTTP content-type of applicationpkcs-mime '' see Section MAY be included in the response data to convey an error response
+RQ38.txt,RQ38.txt.flow_of_events.5,If the content-type is not set the response data MUST be a plaintext human- readable error message containing explanatory information describing why the request was rejected for example indicating that CSR attributes are incomplete
+RQ38.txt,RQ38.txt.flow_of_events.6,If the server responds with an HTTP RFC this indicates that the request has been accepted for processing but that a response is not yet available
+RQ38.txt,RQ38.txt.flow_of_events.7,The server MUST include a Retry- After header as defined for HTTP responses
+RQ38.txt,RQ38.txt.flow_of_events.8,The server also MAY include informative human-readable content
+RQ38.txt,RQ38.txt.flow_of_events.9,The client MUST wait at least the specified retry-after '' time before repeating the same request
+RQ38.txt,RQ38.txt.flow_of_events.10,The client repeats the initial enrollment request after the appropriate retry-after '' interval has expired
+RQ38.txt,RQ38.txt.flow_of_events.11,The client SHOULD log or inform the end-user of this event
+RQ38.txt,RQ38.txt.flow_of_events.12,The server is responsible for maintaining all states necessary to recognize and handle retry operations as the client is stateless in this regard it simply sends the same request repeatedly until it receives a different response code
+RQ38.txt,RQ38.txt.flow_of_events.13,All other return codes are handled as specified in HTTP RFC
+RQ38.txt,RQ38.txt.flow_of_events.14,If the client closes the TLS connections while waiting for the Retry- After time to expire then the client initiates a new TLS connection and performs all applicable security checks
+RQ38.txt,RQ38.txt.flow_of_events.15,If the client has already generated a CSR that includes linking identity and POP information Section then the CSR will need to be recreated to incorporate the tls-unique from the new redirected session
+RQ38.txt,RQ38.txt.flow_of_events.16,Note the key pair need not be regenerated
+RQ38.txt,RQ38.txt.flow_of_events.17,These are processing and interface burdens on the client
+RQ38.txt,RQ38.txt.flow_of_events.18,EST server administrators are advised to take this into consideration
+RQ38.txt,RQ38.txt.flow_of_events.19,The EST client MAY also make the certificate response and associated private key available to end-entity software for use as an end-entity certificate
+RQ49.txt,RQ49.txt.name,CSR ATTRIBUTES RESPONSE
+RQ49.txt,RQ49.txt.flow_of_events.0,If locally configured policy for an authenticated EST client indicates a CSR Attributes Response is to be provided the server response MUST include an HTTP response code
+RQ49.txt,RQ49.txt.flow_of_events.1,An HTTP response code of or indicates that a CSR Attributes Response is not available
+RQ49.txt,RQ49.txt.flow_of_events.2,Regardless of the response code the EST server and CA MAY reject any subsequent enrollment requests for any reason eg
+RQ49.txt,RQ49.txt.flow_of_events.3,incomplete CSR attributes in the request
+RQ49.txt,RQ49.txt.flow_of_events.4,Responses to attribute request messages MUST be encoded as the content-type of applicationcsrattrs '' with a Content- Transfer- Encoding of base '' RFC
+RQ49.txt,RQ49.txt.flow_of_events.5,The syntax for applicationcsrattrs body is as follows Csr Attrs SEQUENCE SIZE MAX OF Attr Or OID Attr Or OID CHOICE oid OBJECT IDENTIFIER attribute Attribute Attribute ATTRIBUTE IO Set SEQUENCE type ATTRIBUTE
+RQ49.txt,RQ49.txt.flow_of_events.6,id IO Set values SET SIZE MAX OF ATTRIBUTE
+RQ49.txt,RQ49.txt.flow_of_events.7,Type IO Set type An EST server includes zero or more OI Ds or attributes RFC that it requests the client to use in the certification request
+RQ49.txt,RQ49.txt.flow_of_events.8,The client MUST ignore any OID or attribute it does not recognize
+RQ49.txt,RQ49.txt.flow_of_events.9,When the server encodes CSR Attributes as an empty SEQUENCE it means that the server has no specific additional information it desires in a client certification request this is functionally equivalent to an HTTP response code of or
+RQ49.txt,RQ49.txt.flow_of_events.10,If the CA requires a particular crypto system or use of a particular signature scheme eg
+RQ49.txt,RQ49.txt.flow_of_events.11,certification of a public key based on a certain elliptic curve or signing using a certain hash algorithm it MUST provide that information in the CSR Attribute Response
+RQ49.txt,RQ49.txt.flow_of_events.12,If an EST server requires the linking of identity and POP information see Section it MUST include the challenge Password OID in the CSR Attributes Response
+RQ49.txt,RQ49.txt.flow_of_events.13,The structure of the CSR Attributes Response SHOULD to the greatest extent possible reflect the structure of the CSR it is requesting
+RQ49.txt,RQ49.txt.flow_of_events.14,Requests to use a particular signature scheme eg
+RQ49.txt,RQ49.txt.flow_of_events.15,using a particular hash function are represented as an OID to be reflected in the Signature Algorithm of the CSR
+RQ49.txt,RQ49.txt.flow_of_events.16,Requests to use a particular crypto system eg
+RQ49.txt,RQ49.txt.flow_of_events.17,certification of a public key based on a certain elliptic curve are represented as an attribute to be reflected as the Algorithm Identifier of the Subject Public Key Info with a type indicating the algorithm and the values indicating the particular parameters specific to the algorithm
+RQ49.txt,RQ49.txt.flow_of_events.18,Requests for descriptive information from the client are made by an attribute to be represented as Attributes of the CSR with a type indicating the RFC extension Request and the values indicating the particular attributes desired to be included in the resulting certificate 's extensions
+RQ49.txt,RQ49.txt.flow_of_events.19,The sequence is Distinguished Encoding Rules DER encoded X and then base encoded Section of RFC
+RQ49.txt,RQ49.txt.flow_of_events.20,The resulting text forms the applicationcsrattr body without headers
+RQ49.txt,RQ49.txt.flow_of_events.21,For example if a CA requests a client to submit a certification request containing the challenge Password indicating that linking of identity and POP information is requested see Section an extension Request with the Media Access Control MAC address RFC of the client and to use the secpr elliptic curve and to sign with the SHA hash function
+RQ49.txt,RQ49.txt.flow_of_events.22,Then it takes the following OID challenge Password Attribute type extension Request value mac Address Attribute type id-ec Public Key value secpr OID ecdsa With SHA and encodes them into an ASN SEQUENCE to produce a f d a ce d b a f d e b a ce d and then base encodes the resulting ASN SEQUENCE to produce MEEGC Sq GS Ib DQEJ Bz AS Bgcqhkj OPQIBM Qc GB Su BBA Ai MBYGC Sq GS Ib DQEJ Dj EJ Bgcr Bg EBAQEW Bggqhkj OPQQD Aw
+RQ5.txt,RQ5.txt.name,INTIAL ENROLLMENT
+RQ5.txt,RQ5.txt.flow_of_events.0,After authenticating an EST server and verifying that it is authorized to provide services to the client an EST client can acquire a certificate for itself by submitting an enrollment request to that server
+RQ5.txt,RQ5.txt.flow_of_events.1,The EST server authenticates and authorizes the EST client as specified in Sections and
+RQ5.txt,RQ5.txt.flow_of_events.2,The methods described in the normative text that are discussed in this overview include TLS with a previously issued client certificate eg
+RQ5.txt,RQ5.txt.flow_of_events.3,an existing certificate issued by the EST CA TLS with a previously installed certificate eg
+RQ5.txt,RQ5.txt.flow_of_events.4,manufacturer- installed certificate or a certificate issued by some other party Certificate-less TLS eg
+RQ5.txt,RQ5.txt.flow_of_events.5,with a shared credential distributed out-of-band HTTP-based with a usernamepassword distributed out-of-band
+RQ23.txt,RQ23.txt.name,CERTIFICATE- LESS TLS MUTUAL AUTHENTICATION
+RQ23.txt,RQ23.txt.flow_of_events.0,Certificate-less TLS cipher suites provide a way to perform mutual authentication in situations where neither the client nor server have certificates do not desire to use certificates or do not have the trust anchors necessary to verify a certificate
+RQ23.txt,RQ23.txt.flow_of_events.1,The client and server MAY negotiate a certificate-less cipher suite for mutual authentication
+RQ23.txt,RQ23.txt.flow_of_events.2,When using certificate-less mutual authentication in TLS for enrollment the cipher suite MUST be based on a protocol that is resistant to dictionary attack and MUST be based on a zero knowledge protocol
+RQ23.txt,RQ23.txt.flow_of_events.3,Transport Layer Security- Secure Remote Password TLS- SRP cipher suites ie
+RQ23.txt,RQ23.txt.flow_of_events.4,those with SRP in the name listed in Section of RFC are suitable for this purpose
+RQ23.txt,RQ23.txt.flow_of_events.5,Section lists the characteristics of a cipher suite that are suitable for use in certificate-less mutual authentication for enrollment
+RQ23.txt,RQ23.txt.flow_of_events.6,Successful authentication using a certificate-less cipher suite proves knowledge of a pre-shared secret that implicitly authorizes a peer in the exchange
+RQ37.txt,RQ37.txt.name,SIMPLE RE- ENROLLMENT OF CLIENTS
+RQ37.txt,RQ37.txt.flow_of_events.0,EST clients renewrekey certificates with an HTTPS POST using the operation path value of simplereenroll ''
+RQ37.txt,RQ37.txt.flow_of_events.1,A certificate request employs the same format as the simpleenroll '' request using the same HTTP content-type
+RQ37.txt,RQ37.txt.flow_of_events.2,The request Subject field and Subject Alt Name extension MUST be identical to the corresponding fields in the certificate being renewedrekeyed
+RQ37.txt,RQ37.txt.flow_of_events.3,The Change Subject Name attribute as defined in RFC MAY be included in the CSR to request that these fields be changed in the new certificate
+RQ37.txt,RQ37.txt.flow_of_events.4,If the Subject Public Key Info in the certification request is the same as the current client certificate then the EST server renews the client certificate
+RQ37.txt,RQ37.txt.flow_of_events.5,If the public key information in the certification request is different than the current client certificate then the EST server rekeys the client certificate
+RQ39.txt,RQ39.txt.name,FULL CMC
+RQ39.txt,RQ39.txt.flow_of_events.0,An EST client can request a certificate from an EST server with an HTTPS POST using the operation path value of fullcmc ''
+RQ39.txt,RQ39.txt.flow_of_events.1,Support for the fullcmc function is OPTIONAL for both clients and servers
+RQ18.txt,RQ18.txt.name,HTTP- BASED CLIENT AUTHENTICATION
+RQ18.txt,RQ18.txt.flow_of_events.0,The EST server MAY request HTTP-based client authentication
+RQ18.txt,RQ18.txt.flow_of_events.1,This request can be in addition to successful TLS client authentication Section if EST server policy requires additional authentication
+RQ18.txt,RQ18.txt.flow_of_events.2,For example the EST server may require that an EST client knows '' a password in addition to having '' an existing client certificate
+RQ18.txt,RQ18.txt.flow_of_events.3,Or HTTP-based client authentication can be an EST server policy-specified fallback in situations where the EST client did not successfully complete the TLS client authentication
+RQ18.txt,RQ18.txt.flow_of_events.4,This might arise if the EST client is enrolling for the first time or if the certificates available to an EST client can not be used for TLS client authentication
+RQ18.txt,RQ18.txt.flow_of_events.5,HTTP Basic and Digest authentication MUST only be performed over TLS RFC or later versions
+RQ18.txt,RQ18.txt.flow_of_events.6,NULL and anon cipher suites MUST NOT be used because they do not provide confidentiality or support mutual certificate-based or certificate-less authentication respectively
+RQ18.txt,RQ18.txt.flow_of_events.7,As specified in Certificate Management over CMS CMC Transport Protocols '' RFC the server MUST NOT assume client support for any type of HTTP authentication such as cookies Basic authentication or Digest authentication ''
+RQ18.txt,RQ18.txt.flow_of_events.8,Clients SHOULD support the Basic and Digest authentication mechanism
+RQ18.txt,RQ18.txt.flow_of_events.9,Servers that wish to use Basic and Digest authentication reject the HTTP request using the HTTP-defined WWW- Authenticate response-header RFC Section
+RQ18.txt,RQ18.txt.flow_of_events.10,The client is expected to retry the request including the appropriate Authorization Request header RFC Section if the client is capable of using the Basic or Digest authentication
+RQ18.txt,RQ18.txt.flow_of_events.11,If the client is not capable of retrying the request or it is not capable of Basic or Digest authentication then the client MUST terminate the connection
+RQ18.txt,RQ18.txt.flow_of_events.12,A client MAY set the username to the empty string '' if it is presenting a password that is not associated with a username
+RQ18.txt,RQ18.txt.flow_of_events.13,Support for HTTP-based client authentication has security ramifications as discussed in Section
+RQ18.txt,RQ18.txt.flow_of_events.14,The client MUST NOT respond to the server 's HTTP authentication request unless the client has authorized the EST server as per Section
+RQ33.txt,RQ33.txt.name,CA CERTIFICATES REQUEST
+RQ33.txt,RQ33.txt.flow_of_events.0,EST clients request the EST CA TA database information of the CA in the form of certificates with an HTTPS GET message using an operation path of cacerts ''
+RQ33.txt,RQ33.txt.flow_of_events.1,EST clients and servers MUST support the cacerts function
+RQ33.txt,RQ33.txt.flow_of_events.2,Clients SHOULD request an up-to-date response before stored information has expired in order to ensure the EST CA TA database is up to date
+RQ33.txt,RQ33.txt.flow_of_events.3,The EST server SHOULD NOT require client authentication or authorization to reply to this request
+RQ33.txt,RQ33.txt.flow_of_events.4,The client MUST authenticate the EST server as specified in Section if certificate-based authentication is used or Section if the optional certificate-less authentication is used and check the server 's authorization as given in Section or follow the procedure outlined in Section
+RQ24.txt,RQ24.txt.name,PROOF- OF- POSSESSION
+RQ24.txt,RQ24.txt.flow_of_events.0,As defined in Section of CMC RFC proof-of-possession POP refers to a value that can be used to prove that the private key corresponding to the public key is in the possession of and can be used by an end-entity ''
+RQ24.txt,RQ24.txt.flow_of_events.1,The signed enrollment request provides a signature-based proof-of-possession
+RQ24.txt,RQ24.txt.flow_of_events.2,The mechanism described in Section strengthens this by optionally including Direct '' -based proof-of-possession RFC by including TLS session-specific information within the data covered by the enrollment request signature thus linking the enrollment request to the authenticated end point of the TLS connection
+RQ15.txt,RQ15.txt.name,HTTP LAYER
+RQ15.txt,RQ15.txt.flow_of_events.0,HTTP is used to transfer EST messages
+RQ15.txt,RQ15.txt.flow_of_events.1,UR Is are defined for handling each media type ie
+RQ15.txt,RQ15.txt.flow_of_events.2,message type as described in Section
+RQ15.txt,RQ15.txt.flow_of_events.3,HTTP is also used for client authentication services when TLS client authentication is not available due to the lack of a client certificate suitable for use by TLS see Section
+RQ15.txt,RQ15.txt.flow_of_events.4,HTTP authentication can also be used in addition to TLS client authentication if the EST server wishes additional authentication information as noted in Section
+RQ15.txt,RQ15.txt.flow_of_events.5,Registered media types are used to convey EST messages as specified in Figure
+RQ15.txt,RQ15.txt.flow_of_events.6,HTTP RFC and above support persistent connections
+RQ15.txt,RQ15.txt.flow_of_events.7,As described in Section of RFC persistent connections may be used to reduce network and processing loads associated with multiple HTTP requests
+RQ15.txt,RQ15.txt.flow_of_events.8,EST does not require or preclude persistent HTTP connections
+RQ16.txt,RQ16.txt.name,HTTP HEADERS FOR CONTROL
+RQ16.txt,RQ16.txt.flow_of_events.0,The HTTP Status value is used to communicate success or failure of an EST function
+RQ16.txt,RQ16.txt.flow_of_events.1,HTTP authentication is used by a client when requested by the server
+RQ16.txt,RQ16.txt.flow_of_events.2,The media types specified in the HTTP Content- Type header indicate which EST message is being transferred
+RQ16.txt,RQ16.txt.flow_of_events.3,Media types used by EST are specified in Section
+RQ16.txt,RQ16.txt.flow_of_events.4,HTTP redirections xx status codes to the same web origin see RFC SHOULD be handled by the client without user input so long as all applicable security checks Sections and have been enforced on the initial connection
+RQ16.txt,RQ16.txt.flow_of_events.5,The client initiates a new TLS connection and performs all applicable security checks when redirected to other web origin servers
+RQ16.txt,RQ16.txt.flow_of_events.6,Redirections to other web origins require the EST client to obtain user input for non- GET or HEAD requests as specified in RFC
+RQ16.txt,RQ16.txt.flow_of_events.7,Additionally if the client has already generated a CSR that includes linking identity and POP information Section then the CSR will need to be recreated to incorporate the tls-unique from the new redirected session
+RQ16.txt,RQ16.txt.flow_of_events.8,Note the key pair need not be regenerated
+RQ16.txt,RQ16.txt.flow_of_events.9,These are processing and interface burdens on the client
+RQ16.txt,RQ16.txt.flow_of_events.10,EST server administrators are advised to take this into consideration
+RQ26.txt,RQ26.txt.name,SERVER AUTHORIZATION
+RQ26.txt,RQ26.txt.flow_of_events.0,The client MUST check EST server authorization before accepting any server responses or responding to HTTP authentication requests
+RQ26.txt,RQ26.txt.flow_of_events.1,The EST client authorization method depends on which method was used to authenticate the server
+RQ26.txt,RQ26.txt.flow_of_events.2,When the Explicit TA database is used to authenticate the EST server then Section applies
+RQ26.txt,RQ26.txt.flow_of_events.3,When the Implicit TA database is used to authenticate the EST server then Section applies
+RQ26.txt,RQ26.txt.flow_of_events.4,Successful authentication using a certificate-less cipher suite implies authorization of the server
+RQ26.txt,RQ26.txt.flow_of_events.5,The client MAY perform bootstrapping as specified in Section even if these checks fail
+RQ47.txt,RQ47.txt.name,CSR ATTRIBUTES
+RQ47.txt,RQ47.txt.flow_of_events.0,CA policy may allow inclusion of client-provided attributes in certificates that it issues and some of these attributes may describe information that is not available to the CA
+RQ47.txt,RQ47.txt.flow_of_events.1,In addition a CA may desire to certify a certain type of public key and a client may not have a priori knowledge of that fact
+RQ47.txt,RQ47.txt.flow_of_events.2,Therefore clients SHOULD request a list of expected attributes that are required or desired by the CA in an enrollment request or if dictated by local policy
+RQ47.txt,RQ47.txt.flow_of_events.3,The EST server SHOULD NOT require client authentication or authorization to reply to this request
+RQ47.txt,RQ47.txt.flow_of_events.4,Requesting CSR attributes is optional but clients are advised that C As may refuse enrollment requests that are not encoded according to the CA 's policy
+RQ17.txt,RQ17.txt.name,HTTP URIS FOR CONTROL
+RQ17.txt,RQ17.txt.flow_of_events.0,The EST server MUST support the use of the path-prefix of well- known '' as defined in RFC and the registered name of est ''
+RQ17.txt,RQ17.txt.flow_of_events.1,Thus a valid EST server URI path begins with https wwwexamplecomwell-knownest ''
+RQ17.txt,RQ17.txt.flow_of_events.2,Each EST operation is indicated by a path-suffix that indicates the intended operation Operations and their corresponding UR Is -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- -- -- -- -- -- - Operation Operation path Details Distribution of CA cacerts Section Certificates MUST -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- -- -- -- -- -- - Enrollment of simpleenroll Section Clients MUST -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- -- -- -- -- -- - Re-enrollment of simplereenroll Section Clients MUST -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- -- -- -- -- -- - Full CMC OPTIONAL fullcmc Section -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- -- -- -- -- -- - Server- Side Key serverkeygen Section Generation OPTIONAL -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- -- -- -- -- -- - CSR Attributes csrattrs Section OPTIONAL -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - -- -- -- -- -- -- -- -- -- - Figure The operation path Figure is appended to the path-prefix to form the URI used with HTTP GET or POST to perform the desired EST operation
+RQ17.txt,RQ17.txt.flow_of_events.3,An example valid URI absolute path for the cacerts '' operation is well-knownestcacerts ''
+RQ17.txt,RQ17.txt.flow_of_events.4,To retrieve the CA 's certificates the EST client would use the following HTTP request-line GET well-knownestcacerts HTTP Likewise to request a new certificate in this example scheme the EST client would use the following request-line POST well-knownestsimpleenroll HTTP The use of distinct operation paths simplifies implementation for servers that do not perform client authentication when distributing cacerts responses
+RQ17.txt,RQ17.txt.flow_of_events.5,An EST server MAY provide service for multiple C As as indicated by an OPTIONAL additional path segment between the registered application name and the operation path
+RQ17.txt,RQ17.txt.flow_of_events.6,To avoid conflict the CA label MUST NOT be the same as any defined operation path segment
+RQ17.txt,RQ17.txt.flow_of_events.7,The EST server MUST provide services regardless of whether the additional path segment is present
+RQ17.txt,RQ17.txt.flow_of_events.8,The following are three example valid UR Is https wwwexamplecomwell-knownestcacerts https wwwexamplecomwell-knownestarbitrary Labelcacerts https wwwexamplecomwell-knownestarbitrary Labelcacerts In this specification the distinction between enroll and renewrekey is explicitly indicated by the HTTP URI
+RQ17.txt,RQ17.txt.flow_of_events.9,When requesting fullcmc operations CMC RFC uses the same messages for certificate renewal and certificate rekey
+RQ17.txt,RQ17.txt.flow_of_events.10,An EST server can provide additional services using other UR Is
+RQ36.txt,RQ36.txt.name,SIMPLE ENROLLMENT OF CLIENTS
+RQ36.txt,RQ36.txt.flow_of_events.0,When HTTPS POS Ting to simpleenroll the client MUST include a Simple PKI Request as specified in CMC RFC Section ie
+RQ36.txt,RQ36.txt.flow_of_events.1,a PKCS https toolsietforghtmlrfc Certification Request RFC
+RQ36.txt,RQ36.txt.flow_of_events.2,The Certification Signing Request CSR signature provides proof-of-possession of the client-possessed private key to the EST server
+RQ36.txt,RQ36.txt.flow_of_events.3,If the CSR Key Usage extension indicates that the private key can be used to generate digital signatures then the client MUST generate the CSR signature using the private key
+RQ36.txt,RQ36.txt.flow_of_events.4,If the key can be used to generate digital signatures but the requested CSR Key Usage extension prohibits generation of digital signatures then the CSR signature MAY still be generated using the private key but the key MUST NOT be used for any other signature operations this is consistent with the recommendations concerning submission of proof-of-possession to an RA or CA as described in SP--- Part-
+RQ36.txt,RQ36.txt.flow_of_events.5,The use of fullcmc operations provides access to more advanced proof-of-possession methods that are used when the key pair can not be used for digital signature generation see Section
+RQ36.txt,RQ36.txt.flow_of_events.6,The HTTP content-type of applicationpkcs '' is used here
+RQ36.txt,RQ36.txt.flow_of_events.7,The format of the message is as specified in RFC with a Content- Transfer- Encoding of base '' RFC
+RQ36.txt,RQ36.txt.flow_of_events.8,If the EST client authenticated using a previously installed certificate issued by a third-party CA see Section the client MAY include the Change Subject Name attribute as defined in RFC in the CSR to request that the subject Name and Subject Alt Name be changed in the new certificate
+RQ36.txt,RQ36.txt.flow_of_events.9,The EST client MAY request additional certificates even when using an existing certificate in the TLS client authentication
+RQ36.txt,RQ36.txt.flow_of_events.10,For example the client can use an existing certificate for TLS client authentication when requesting a certificate that can not be used for TLS client authentication
+RQ27.txt,RQ27.txt.name,CLIENT USE OF EXPLICIT TA DATABASE
+RQ27.txt,RQ27.txt.flow_of_events.0,When the EST client Explicit TA database is used to validate the EST server certificate the client MUST check either the configured URI or the most recent HTTP redirection URI against the server 's identity according to the rules specified in RFC Section or the EST server certificate MUST contain the id-kp-cmc RA RFC extended key usage extension
+RQ13.txt,RQ13.txt.name,PROTOCOL DESIGN AND LAYERING
+RQ13.txt,RQ13.txt.flow_of_events.0,Figure provides an expansion of Figure describing how the layers are used
+RQ13.txt,RQ13.txt.flow_of_events.1,Each aspect is described in more detail in the sections that follow
+RQ13.txt,RQ13.txt.flow_of_events.2,EST Layering Protocols and uses -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- Message types - Simple PKI '' messages incorporates proof-of-possession - CA certificate retrieval - Full PKI '' messages OPTIONAL incorporates proof-of-possession - CSR Attributes Request OPTIONAL - Server-generated key request OPTIONAL -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- HTTP - HTTP headers and UR Is for control - Content- Type headers specify message type - Headers for controlerror messages - UR Is for selecting functions - Basic or Digest authentication OPTIONAL -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- TLS for transport security - Authentication of the EST server - Authentication of the EST client OPTIONAL - Provides communications integrity and confidentiality - Supplies channel-binding RFC information to link proof-of-identity with message-based proof-of-possession OPTIONAL -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- Figure Specifying HTTPS as the secure transport for enrollment messages introduces two layers '' to communicate authentication and control messages TLS and HTTP
+RQ13.txt,RQ13.txt.flow_of_events.3,The TLS layer provides integrity and confidentiality during transport
+RQ13.txt,RQ13.txt.flow_of_events.4,The proof-of-identity is supplied by TLS handshake authentication and optionally also by the HTTP layer headers
+RQ13.txt,RQ13.txt.flow_of_events.5,The message type and controlerror messages are included in the HTTP headers
+RQ13.txt,RQ13.txt.flow_of_events.6,CMC RFC Section notes that the Simple PKI Request MUST NOT be used if a proof-of-identity needs to be included ''
+RQ13.txt,RQ13.txt.flow_of_events.7,Since the TLS and HTTP layers can provide proof-of-identity for EST clients and servers the Simple PKI message types are used
+RQ13.txt,RQ13.txt.flow_of_events.8,The TLS layer certificate exchange provides a method for authorizing client enrollment requests using existing certificates
+RQ13.txt,RQ13.txt.flow_of_events.9,Such certificates may have been issued by the CA from which the client is requesting a certificate or they may have been issued under a distinct PKI eg
+RQ13.txt,RQ13.txt.flow_of_events.10,an IEEE AR Initial Device Identifier I Dev ID I Dev ID credential
+RQ13.txt,RQ13.txt.flow_of_events.11,Proof-of-possession POP is a distinct issue from proof-of-identity and is included in the Simple PKI message type as described in Section
+RQ13.txt,RQ13.txt.flow_of_events.12,A method of linking proof-of-identity and proof-of-possession is described in Section
+RQ13.txt,RQ13.txt.flow_of_events.13,This document also defines transport for CMC RFC that complies with the CMC Transport Protocols RFC
+RQ13.txt,RQ13.txt.flow_of_events.14,CMC 's POP and proof-of-identity mechanisms are defined in CMC but the mechanisms here can also be used in conjunction with those mechanisms in Full PKI '' messages
+RQ13.txt,RQ13.txt.flow_of_events.15,During protocol exchanges different certificates can be used
+RQ13.txt,RQ13.txt.flow_of_events.16,The following table provides an informative overview
+RQ13.txt,RQ13.txt.flow_of_events.17,End-entities can have one or more certificates of each type listed in Figure and use one or more trust anchor databases of each type listed in Figure
+RQ13.txt,RQ13.txt.flow_of_events.18,Certificates and their corresponding uses -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - Certificate Issuer Use and section references EST server The CA served by Presented by the EST server certificate the EST server during the TLS handshake
+RQ13.txt,RQ13.txt.flow_of_events.19,Section -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - EST server A CA Presented by the EST server certificate authenticatable by during the TLS handshake
+RQ13.txt,RQ13.txt.flow_of_events.20,a third-party TA eg
+RQ13.txt,RQ13.txt.flow_of_events.21,a web server Section and CA Security Considerations -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - Third-party A CA Presented by the EST client EST client authenticatable by to the EST server by clients certificate a third-party TA that have not yet enrolled
+RQ13.txt,RQ13.txt.flow_of_events.22,eg
+RQ13.txt,RQ13.txt.flow_of_events.23,a device manufacturer Section -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - EST client The CA served by Presented to the EST server certificate the EST server during future EST operations
+RQ13.txt,RQ13.txt.flow_of_events.24,Section -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - End-entity The CA served by Clients can obtain certs certificate the EST server that are intended for non- EST uses
+RQ13.txt,RQ13.txt.flow_of_events.25,This includes certs that can not be used for EST operations
+RQ13.txt,RQ13.txt.flow_of_events.26,Section -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - Figure Trust anchor databases and their corresponding uses -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- TA database Use and section references EST server EST servers use this TA database to authenticate Explicit certificates issued by the EST CA including EST TA database client certificates during enrollre-enroll operations
+RQ13.txt,RQ13.txt.flow_of_events.27,Section -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- EST server EST servers use this TA database to authenticate Implicit certificates issued by third-party T As TA database eg
+RQ13.txt,RQ13.txt.flow_of_events.28,EST client certificates issued by a device manufacturer
+RQ13.txt,RQ13.txt.flow_of_events.29,An Implicit TA database can be disabled
+RQ13.txt,RQ13.txt.flow_of_events.30,Section -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- EST client EST clients use this TA database to authenticate Explicit certificates issued by the EST CA including EST TA database server certificates
+RQ13.txt,RQ13.txt.flow_of_events.31,Sections and -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- EST client EST clients use this TA database to Implicit authenticate an EST server that uses an externally TA database issued certificate
+RQ13.txt,RQ13.txt.flow_of_events.32,An Implicit TA database can be disabled
+RQ13.txt,RQ13.txt.flow_of_events.33,Sections and Security Considerations -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- Figure
+RQ19.txt,RQ19.txt.name,MESSAGE TYPES
+RQ19.txt,RQ19.txt.flow_of_events.0,This document uses existing media types for the messages as specified by FTP and HTTP RFC applicationpkcs RFC and CMC RFC
+RQ19.txt,RQ19.txt.flow_of_events.1,For consistency with RFC each distinct EST message type uses an HTTP Content- Type header with a specific media type
+RQ19.txt,RQ19.txt.flow_of_events.2,The EST messages and their corresponding media types for each operation are -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - Message type Request media type Request section s Response media type s Response section per operation Source s of types Distribution of CA NA Section Certificates applicationpkcs-mime Section RFC cacerts -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - Client Certificate applicationpkcs Sections Request Functions applicationpkcs-mime Section RFC RFC simpleenroll simplereenroll -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - Full CMC applicationpkcs-mime Section applicationpkcs-mime Section fullcmc RFC -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - Server- Side Key applicationpkcs Section Generation multipartmixed Section applicationpkcs-mime applicationpkcs RFC RFC serverkeygen RFC -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - CSR Attributes NA Section applicationcsrattrs Section This document csrattrs -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- - Figure
+RQ35.txt,RQ35.txt.name,CLIENT CERTIFICATE REQUEST FUNCTIONS
+RQ35.txt,RQ35.txt.flow_of_events.0,EST clients request a certificate from the EST server with an HTTPS POST using the operation path value of simpleenroll ''
+RQ35.txt,RQ35.txt.flow_of_events.1,EST clients request a renewrekey of existing certificates with an HTTP POST using the operation path value of simplereenroll ''
+RQ35.txt,RQ35.txt.flow_of_events.2,EST servers MUST support the simpleenroll and simplereenroll functions
+RQ35.txt,RQ35.txt.flow_of_events.3,It is RECOMMENDED that a client obtain the current CA certificates as described in Section before performing certificate request functions
+RQ35.txt,RQ35.txt.flow_of_events.4,This ensures that the client will be able to validate the EST server certificate
+RQ35.txt,RQ35.txt.flow_of_events.5,The client MUST authenticate the EST server as specified in Section if certificate-based authentication is used or Section if the optional certificate-less authentication is used
+RQ35.txt,RQ35.txt.flow_of_events.6,The client MUST verify the authorization of the EST server as specified in Section
+RQ35.txt,RQ35.txt.flow_of_events.7,The server MUST authenticate the client as specified in Section if certificate-based authentication is used or Section if the optional certificate-less authentication is used
+RQ35.txt,RQ35.txt.flow_of_events.8,The server MUST verify client authorization as specified in Section
+RQ35.txt,RQ35.txt.flow_of_events.9,The EST server MUST check the tls-unique value as described in Section if one is submitted by the client
+RQ35.txt,RQ35.txt.flow_of_events.10,The server MAY accept a certificate request for manual authorization checking by an administrator
+RQ35.txt,RQ35.txt.flow_of_events.11,Section describes the use of an HTTP response to the EST client if this occurs
+RQ51.txt,RQ51.txt.name,SECURITY CONSIDERATIONS
+RQ51.txt,RQ51.txt.flow_of_events.0,Support for Basic authentication as specified in HTTP RFC allows the server access to a client 's cleartext password
+RQ51.txt,RQ51.txt.flow_of_events.1,This provides support for legacy usernamepassword databases but requires exposing the plaintext password to the EST server
+RQ51.txt,RQ51.txt.flow_of_events.2,Use of a PIN or one-time password can help mitigate such exposure but it is RECOMMENDED that EST clients use such credentials only once to obtain a client certificate that will be used during future interactions with the EST server
+RQ51.txt,RQ51.txt.flow_of_events.3,When a client uses the Implicit TA database for certificate validation see Section then authorization proceeds as specified in Section
+RQ51.txt,RQ51.txt.flow_of_events.4,In this situation the client has validated the server as being a responder that is certified by a third party for the URI configured but it can not verify that the responder is authorized to act as an RA for the PKI in which the client is trying to enroll
+RQ51.txt,RQ51.txt.flow_of_events.5,Clients using an Implicit Trust Anchor database are RECOMMENDED to use only TLS-based client authentication to prevent exposing HTTP-based client authentication information
+RQ51.txt,RQ51.txt.flow_of_events.6,It is RECOMMENDED that such clients include Linking Identity and POP Information '' Section in requests to prevent such requests from being forwarded to a real EST server by a man in the middle
+RQ51.txt,RQ51.txt.flow_of_events.7,It is RECOMMENDED that the Implicit Trust Anchor database used for EST server authentication be carefully managed to reduce the chance of a third-party CA with poor certification practices from being trusted
+RQ51.txt,RQ51.txt.flow_of_events.8,Disabling the Implicit Trust Anchor database after successfully receiving the Distribution of CA certificates response Section limits any vulnerability to the first TLS exchange
+RQ51.txt,RQ51.txt.flow_of_events.9,Certificate-less TLS cipher suites that maintain security and perform the mutual authentication necessary for enrollment have the following properties the only information leaked by an active attack is whether or not a single guess of the secret is correct
+RQ51.txt,RQ51.txt.flow_of_events.10,any advantage an adversary gains is through interaction and not computation
+RQ51.txt,RQ51.txt.flow_of_events.11,it is possible to perform countermeasures such as exponential backoff after a certain number of failed attempts to frustrate repeated active attacks
+RQ51.txt,RQ51.txt.flow_of_events.12,Using a certificate-less cipher suite that does not have the properties listed above would render the results of enrollment void and potentially result in certificates being issued to unauthenticated andor unauthorized entities
+RQ51.txt,RQ51.txt.flow_of_events.13,When using a certificate-less TLS cipher suite the shared secret used for authentication and authorization can not be shared with an entity that is not a party to the exchange someone other than the client and the server
+RQ51.txt,RQ51.txt.flow_of_events.14,Any additional sharing of secrets voids the security afforded by a certificate-less cipher suite
+RQ51.txt,RQ51.txt.flow_of_events.15,Exposure of a shared secret used by a certificate-less cipher suite to a third party enables client impersonation that can result in corruption of a client 's trust anchor database
+RQ51.txt,RQ51.txt.flow_of_events.16,TLS cipher suites that include EXPORT '' and DES '' in their names MUST NOT be used
+RQ51.txt,RQ51.txt.flow_of_events.17,These ciphers do not offer a sufficient level of protection -bit crypto in does n't offer acceptable protection and the use of DES is deprecated
+RQ51.txt,RQ51.txt.flow_of_events.18,As described in CMC Section of RFC For keys that can be used as signature keys signing the certification request with the private key serves as a POP on that key pair ''
+RQ51.txt,RQ51.txt.flow_of_events.19,The inclusion of tls- unique within the certification request links the proof-of-possession to the TLS proof-of-identity by enforcing that the POP operation occurred while the TLS session was active
+RQ51.txt,RQ51.txt.flow_of_events.20,This implies to the server that the authenticated client currently has access to the private key
+RQ51.txt,RQ51.txt.flow_of_events.21,If the authenticated client is known to have specific capabilities such as hardware protection for authentication credentials and key storage this implication is strengthened but not proven
+RQ51.txt,RQ51.txt.flow_of_events.22,The server-side key generation method allows keys to be transported over the TLS connection to the client without any application-layer protection
+RQ51.txt,RQ51.txt.flow_of_events.23,The distribution of private key material is inherently risky
+RQ51.txt,RQ51.txt.flow_of_events.24,Private key distribution uses the encryption mode of the negotiated TLS cipher suite
+RQ51.txt,RQ51.txt.flow_of_events.25,Keys are not protected by preferred key wrapping methods such as AES Key Wrap RFC or as specified in RFC as encryption of the private key beyond that provided by TLS is optional
+RQ51.txt,RQ51.txt.flow_of_events.26,It is RECOMMENDED that EST servers not support this operation by default
+RQ51.txt,RQ51.txt.flow_of_events.27,It is RECOMMENDED that clients not request this service unless there is a compelling operational benefit
+RQ51.txt,RQ51.txt.flow_of_events.28,Use of an Implicit Trust Anchor database is NOT RECOMMENDED when server-side key generation is employed
+RQ51.txt,RQ51.txt.flow_of_events.29,The use of an encrypted CMS Server- Side Key Generation Response is RECOMMENDED
+RQ51.txt,RQ51.txt.flow_of_events.30,Regarding the CSR attributes that the CA may list for inclusion in an enrollment request there are no real inherent security issues with the content being conveyed but an adversary who is able to interpose herself into the conversation could exclude attributes that a server may want include attributes that a server may not want and render meaningless other attributes that a server may want
+RQ51.txt,RQ51.txt.flow_of_events.31,ASN encoding rules eg
+RQ51.txt,RQ51.txt.flow_of_events.32,DER and BER have a type-length-value structure and it is easy to construct malicious content with invalid length fields that can cause buffer overrun conditions
+RQ51.txt,RQ51.txt.flow_of_events.33,ASN encoding rules allow for arbitrary levels of nesting which may make it possible to construct malicious content that will cause a stack overflow
+RQ51.txt,RQ51.txt.flow_of_events.34,Interpreters of ASN structures should be aware of these issues and should take appropriate measures to guard against buffer overflows and stack overruns in particular and malicious content in general
+RQ20.txt,RQ20.txt.name,TLS LAYER
+RQ20.txt,RQ20.txt.flow_of_events.0,TLS provides authentication which in turn enables authorization decisions
+RQ20.txt,RQ20.txt.flow_of_events.1,The EST server and EST client are responsible for ensuring that an acceptable cipher suite is negotiated and that mutual authentication has been performed
+RQ20.txt,RQ20.txt.flow_of_events.2,TLS authentication is most commonly enabled with the use of certificates RFC
+RQ20.txt,RQ20.txt.flow_of_events.3,Alternately certificate-less TLS authentication where neither the client nor server present a certificate is also an acceptable method for EST mutual authentication Section
+RQ20.txt,RQ20.txt.flow_of_events.4,The EST server MUST be authenticated during the TLS handshake unless the client is requesting Bootstrap Distribution of CA certificates Section or Full CMC Section
+RQ20.txt,RQ20.txt.flow_of_events.5,HTTPS RFC specifies how HTTP messages are carried over TLS
+RQ20.txt,RQ20.txt.flow_of_events.6,HTTPS MUST be used
+RQ20.txt,RQ20.txt.flow_of_events.7,TLS RFC or a later version MUST be used for all EST communications
+RQ20.txt,RQ20.txt.flow_of_events.8,TLS session resumption RFC SHOULD be supported
+RQ20.txt,RQ20.txt.flow_of_events.9,TLS channel-binding information can be inserted into a certificate request as detailed in Section in order to provide the EST server with assurance that the authenticated TLS client has access to the private key for the certificate being requested
+RQ20.txt,RQ20.txt.flow_of_events.10,The EST server MUST implement Section

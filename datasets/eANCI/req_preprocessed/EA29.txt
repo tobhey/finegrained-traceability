@@ -1,0 +1,6 @@
+Modifica Pratica
+
+Il cittadino preme il pulsante di modifica pratica Carta d ' identit Cambio Residenza se la pratica non stata inizializzata
+Il sistema mostra un form per la modifica della pratica
+Il cittadino inserisce i dati
+Il sistema salva le modifiche apportate

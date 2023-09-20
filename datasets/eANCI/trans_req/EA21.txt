@@ -1,0 +1,16 @@
+Use Case Name
+RecoveryPasswordEmployee
+Participating Actors
+Started by employee
+Flow of events
+1. The employee has forgotten the password and presses the password recovery button.
+2. The system displays the form for entering the matriculation number.
+3. The employee enters his/her matriculation number and presses the confirmation button.
+4. The system verifies the data and sends the password to the employee's email address.
+Entry condition
+The employee has authenticated into the system.
+Exit condition
+The system sends the password, OR In the case where the employee enters a serial number that is not in the system, the system calls the use case DataErrati,
+OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is called.
+Quality requirements➢ Not expected.

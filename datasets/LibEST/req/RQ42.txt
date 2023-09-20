@@ -1,0 +1,13 @@
+REQUIREMENT 42: SERVER-SIDE KEY GENERATION
+     
+An EST client may request a private key and associated certificate from an EST server using an HTTPS POST with an operation path value of "/serverkeygen". Support for the /serverkeygen function is OPTIONAL.
+
+A client MUST authenticate an EST server, as specified in Section 3.3.1 if certificate-based authentication is used or Section 3.3.3 if the optional certificate-less authentication is used, and check the server's authorization as given in Section 3.6.
+
+The EST server MUST authenticate the client, as specified in Section 3.3.2 if certificate-based authenticated is used or Section 3.3.3 if the optional certificate-less authentication is used, and check the client's authorization as given in Section 3.7. The EST server applies whatever authorization or logic it chooses to determine if the private key and certificate should be provided.
+
+Cipher suites that have a NULL confidentiality algorithm MUST NOT be used as they will disclose the contents of an unprotected private key.
+
+Proper random number and key generation [RFC4086] is a server implementation responsibility, and server archiving of generated keys is determined by CA policy. The key pair and certificate are transferred over the TLS session. The cipher suite used to return the private key and certificate MUST offer confidentiality commensurate with the private key being delivered to the client.
+
+The EST client MAY request additional certificates even when using an existing certificate in the TLS client authentication. For example, the client can use an existing certificate for TLS client authentication when requesting a certificate that cannot be used for TLS client authentication.

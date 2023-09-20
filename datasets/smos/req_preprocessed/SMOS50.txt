@@ -1,0 +1,4 @@
+Accetta Iscrizione Studente
+Consente all ' amministratore di accettare l ' iscrizione al sistema di uno studente
+Attiva il nuovo utente nel sistema
+Visualizza l ' elenco delle iscrizioni ancora da attivare

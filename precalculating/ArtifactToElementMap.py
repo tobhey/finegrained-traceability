@@ -40,7 +40,19 @@ class ArtifactToElementMap:
     
     def method_keys_of(self, code_file_name):
         return self._code_file_to_method_map[code_file_name]
-    
+
+    def remove_req_file(self, req_file_name):
+        self._req_file_to_req_element_id_map.pop(req_file_name)
+        
+    def remove_req_file_element(self, req_file_name, req_file_element_name):
+        if req_file_name in self._req_file_to_req_element_id_map:
+            elements = self._req_file_to_req_element_id_map[req_file_name]
+            if req_file_element_name in elements:
+                elements.remove(req_file_element_name)
+                self._req_file_to_req_element_id_map[req_file_name] = elements
+            if not elements:
+                self.remove_req_file(req_file_name)
+
     def non_cg_keys_of(self, code_file_name):
         return self._code_file_to_non_cg_element_map[code_file_name]
 
@@ -49,7 +61,10 @@ class ArtifactToElementMap:
 
     def all_req_file_names(self):
         return self._req_file_to_req_element_id_map.keys()
-    
+
+    def add_req_file_with_elements(self, req_file_name, elements):
+        self._req_file_to_req_element_id_map[req_file_name] = elements
+
     def all_code_file_names(self):
         return self._code_file_to_method_map.keys()
     

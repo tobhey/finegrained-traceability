@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO,
                     handlers=[logging.FileHandler("log_output.log", mode='w'), logging.StreamHandler()])
 
 log = logging.getLogger(__name__)
-COMET_DATA_FOLDER = Path(__file__).parent / "Data"
+COMET_DATA_FOLDER = Path(__file__).parent / "data"
 
 """
 Utility class to calculate f1 and MAP from the data of the related work by Moran et al.'s 
@@ -42,7 +42,7 @@ def eval_f1_comet_data(file_path, dataset, drop_threshs):
         if not best or eval_result_object.is_greater_than(best):
             best = eval_result_object
             best_thresh = thresh
-    log.info(f"\nBest f1 at {best_thresh}: \n{best.get_defining_value()}")
+    log.info(f"\nBest f1 at {best_thresh}: \nP:{best.get_precision()} \nR:{best.get_recall()} \nF1:{best.get_defining_value()}")
 
 
 def convert_comet_to_recall_prec_csv(file_path, dataset, drop_threshs, output_file_name):
@@ -88,8 +88,8 @@ def _extract_comet_trace_links(file_path):
     for line in lines:
         req, code, sim = line.split(" ")
         code = _remove_package_prefix(code)
-        if code.endswith(".jsp") or  code.endswith(".txt"):
-            continue
+        #if code.endswith(".jsp"):# or  code.endswith(".txt"):
+        #    continue
         sim = float(sim)
         trace_links.append(TraceLink(req, code, sim))
     return trace_links

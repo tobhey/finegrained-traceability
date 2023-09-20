@@ -1,0 +1,21 @@
+Table 163: TOSAP use case (Citizen side)
+Version: 1.2
+Use Case Name.
+TOSAP
+Participating Actors
+Initiated by Citizen.
+Flow of events
+1. The Citizen clicks on the button to access the Online Tax Payment area.
+2. The System displays the list of fees that can be paid online.
+3. The Citizen selects the section dedicated to the Tax for the Occupation of Public Land and Areas and its payment and enters the file code.
+4. The System redirects the Citizen to the necessary section, showing the form of the relevant fee and the relevant amount to be paid.
+5. The Citizen confirms that the information is correct, selects the preferred payment method and initiates the transaction.
+6. The System performs the transaction and displays a successful payment message.
+Entry condition
+The Citizen has logged in. The Citizen has made the request for
+the specific service The request for the service has been accepted.
+Exit condition
+Payment has been made, OR In the case where there is insufficient funds to cover the payment or an error occurs in the transaction the System calls the case
+use case PaymentNotReceived, OR In the case where there are general errors the System calls the use case
+ServiceNotAvailable.
+Quality RequirementsNot Provided.

@@ -1,0 +1,4 @@
+Accept student inscription
+Allows the administrator to accept the registration to the system of a student
+Activate the new user in the system
+View the list of registrations yet to be activated

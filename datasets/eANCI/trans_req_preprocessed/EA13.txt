@@ -1,0 +1,6 @@
+Edit and Mail Citizen
+
+The citizen accesses the e-mail modification form
+The system shows the form the insertion of the new e-mail
+The citizen inserts the new email and press the confirmation key
+The system updates the new e-mail

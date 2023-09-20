@@ -1,0 +1,6 @@
+Useful numbers
+
+The citizen accesses this page to take advantage of telephone numbers to contact in case of danger of any kind
+The system responds allowing the visualization of a descriptive card with the telephone numbers of the bodies dealing with the 'citizen's inclumeness itself
+The citizen accessing this screen can also view standard tips and procedures divided by categories about the correct communication between him and the interlocutor who was call center in a specific municipal body
+The system responds with an emergency support screen corresponding to the service that the citizen decides to contact

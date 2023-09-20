@@ -1,0 +1,15 @@
+REQUIREMENT 34: CA CERTIFICATES RESPONSE
+     
+If successful, the server response MUST have an HTTP 200 response code. Any other response code indicates an error and the client MUST abort the protocol.
+
+A successful response MUST be a certs-only CMC Simple PKI Response, as defined in [RFC5272], containing the certificates described in the following paragraph. The HTTP content-type of "application/pkcs7-mime" is used. The Simple PKI Response is sent with a Content-Transfer-Encoding of "base64" [RFC2045].
+
+The EST server MUST include the current root CA certificate in the response. The EST server MUST include any additional certificates the client would need to build a chain from an EST CA-issued certificate to the current EST CA TA. For example, if the EST CA is a subordinate CA, then all the appropriate subordinate CA certificates necessary to build a chain to the root EST CA are included in the response.
+
+The EST server SHOULD include the three "Root CA Key Update" certificates OldWithOld, OldWithNew, and NewWithOld in the response chain. These are defined in Section 4.4 of CMP [RFC4210]. The EST client MUST be able to handle these certificates in the response. The EST CA's most recent self-signed certificate (e.g., NewWithNew certificate) is self-signed and has the latest NotAfter date. If the EST server does not include these in the response, then after the current EST CA certificate expires, the EST clients will need to be reinitialized with the PKI using the Bootstrap Distribution of CA certificates (Section 4.1.1) method, which involves user interaction.
+
+After out-of-band validation occurs, all the other certificates MUST be validated using normal [RFC5280] certificate path validation (using the most recent CA certificate as the TA) before they can be used to build certificate paths during certificate validation.
+
+The EST client MUST store the extracted EST CA certificate as an Explicit TA database entry for subsequent EST server authentication. The EST client SHOULD disable use of Implicit TA database entries for this EST server now that an Explicit TA database entry is available. If the client disables the Implicit TA database, and if the EST server certificate was verified using an Implicit TA database entry, then the client MUST include the "Trusted CA Indication" extension in future TLS sessions [RFC6066]. This indicates to the server that only an EST server certificate authenticatable by the Explicit TA database entry is now acceptable (otherwise, the EST server might continue to use a server certificate that is only verifiable by a now disabled Implicit TA).
+
+The EST client SHOULD also make the CA Certificate response information available to the end-entity software for use when validating peer certificates.

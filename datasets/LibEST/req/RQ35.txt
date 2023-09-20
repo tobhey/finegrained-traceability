@@ -1,0 +1,9 @@
+REQUIREMENT 35: CLIENT CERTIFICATE REQUEST FUNCTIONS
+     
+EST clients request a certificate from the EST server with an HTTPS POST using the operation path value of "/simpleenroll". EST clients request a renew/rekey of existing certificates with an HTTP POST using the operation path value of "/simplereenroll". EST servers MUST support the /simpleenroll and /simplereenroll functions.
+
+It is RECOMMENDED that a client obtain the current CA certificates, as described in Section 4.1, before performing certificate request functions. This ensures that the client will be able to validate the EST server certificate. The client MUST authenticate the EST server as specified in Section 3.3.1 if certificate-based authentication is used or Section 3.3.3 if the optional certificate-less authentication is used. The client MUST verify the authorization of the EST server as specified in Section 3.6.
+
+The server MUST authenticate the client as specified in Section 3.3.2 if certificate-based authentication is used or Section 3.3.3 if the optional certificate-less authentication is used. The server MUST verify client authorization as specified in Section 3.7. The EST server MUST check the tls-unique value, as described in Section 3.5, if one is submitted by the client.
+
+The server MAY accept a certificate request for manual authorization checking by an administrator. (Section 4.2.3 describes the use of an HTTP 202 response to the EST client if this occurs.)

@@ -1,0 +1,14 @@
+Name: RegistrationAtSite
+Actors: Visitor
+Description: allows a student to register to the system
+Preconditions:
+• The user click on the "Register" button on the home page
+Events sequence
+User
+System
+2. Fill the fields of the form 3. Submit the form
+1. View the registration form containing: name, surname, mobile phone, e-mail, username, password, confirmation password.
+4. Inserts the registration request into the system
+Postconditions:
+• • •
+The user has requested a request to the system the user interrupts the connection to the SMOS server interrupted

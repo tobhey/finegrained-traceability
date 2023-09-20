@@ -1,0 +1,18 @@
+Name: InsertPage
+Actors: Administrator
+Description: Inserting a student's report card performed by the administrator
+Preconditions:
+• The user has been logged in to the system as an administrator • The user click on the "Online reports" button
+Events sequence
+User
+2. Choose the pupil class to insert the report card
+4. Select the pupil to which to insert the report card by clicking on the relevant key
+6. Inserts the votes of the report card, all or part, and click on the "Save" button
+System
+1. Displays the list of classes in the system referred to the academic year in progress with a "report cards" button beside each class
+3. View the list of class students chosen by the user
+5. Displays the form for inserting a report card
+7. Enter the votes entered in the archive and reports the user to the class student view page.
+Postconditions:
+• • •
+The report relative to a student was added to the system. The user interrupts the operation Connection to the SMOS server interrupted

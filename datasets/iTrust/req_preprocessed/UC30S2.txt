@@ -1,0 +1,6 @@
+An LHCP chooses to send a message to a patientrepresentative no multiple recipients allowed in a single message
+The LHCP enters and confirms the patientrepresentative 's MID E E
+The LHCP types the subject up to characters and the text of a message up to characters and clicks the send button
+A row for showing the message subject the name of the recipient and the timestamp is then visible in the LHCP 's message outbox
+A bolded row for showing the message subject the name of the sender and the timestamp is then visible in the patientrepresentative 's message inbox and a fake email is sent to the patientrepresentative that indicates that heshe has a new message from an LHCP
+After a message is sent the LHCP is directed to to hisher message outbox

@@ -1,0 +1,15 @@
+Name: ViewClassesList
+Actors: Administrator
+Description: allows you to view the list of classes
+Preconditions:
+• The user is logged in to the system with the administrator role • The user click on the "Class Management" button
+Events sequence
+User
+2. Select the academic year of interest.
+System
+1. Allows you to select the academic year you want to view the list of classes.
+3. Search for classes in the archive and displays the class management screen
+4. Displays the list of selected academic year classes.
+Postconditions:
+• • •
+The system shows the list of classes of the selected academic year. The administrator interrupts the operations. Connection to the SMOS server interrupted

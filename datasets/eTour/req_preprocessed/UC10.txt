@@ -1,0 +1,4 @@
+View Refreshment Point Card
+View the details of a selected point of rest
+View the list of points of rest as a result of the use case Search Refreshment Point it selects and activates a function to view the card
+Upload data to a selected restaurant

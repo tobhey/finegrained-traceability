@@ -1,0 +1,8 @@
+Visualizzazione Di Una Pagella
+Visualizzazione di una pagella
+Seleziona lanno accademico
+Sceglie la classe dell ' alunno di cui vuole visualizzare la pagella
+Seleziona l ' alunno di cui visualizzare la pagella e il quadrimestre di interesse cliccando sul relativo tasto
+Visualizza lelenco delle classi presenti nel sistema con accanto un pulsante Pagelle associato ad ogni classe
+Visualizza l ' elenco degli alunni della classe scelta dall ' utente
+Visualizza la pagella dell ' alunno scelto riferita al semestre selezionato

@@ -1,0 +1,7 @@
+REQUIREMENT 26: SERVER AUTHORIZATION
+     
+The client MUST check EST server authorization before accepting any server responses or responding to HTTP authentication requests.
+
+The EST client authorization method depends on which method was used to authenticate the server. When the Explicit TA database is used to authenticate the EST server, then Section 3.6.1 applies. When the Implicit TA database is used to authenticate the EST server, then Section 3.6.2 applies. Successful authentication using a certificate-less cipher suite implies authorization of the server.
+
+The client MAY perform bootstrapping as specified in Section 4.1.1 even if these checks fail.

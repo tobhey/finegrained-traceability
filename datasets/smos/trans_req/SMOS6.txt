@@ -1,0 +1,15 @@
+Name: new user
+Actors: Administrator
+Description: Inserting a new user in the system
+Preconditions:
+• The user is logged in as an administrator • The user has carried out the case of use "viewing theCoutenti" and the system is
+Viewing the list of users in the system • The user click on the "New user" button
+Events sequence
+User
+2. Fill the fields of the form 3. Click on the "Save" button
+System
+1. Displays the user entry form consisting of the following fields: Name, Surname, E-mail, Cell, Login, Password, Confirm password.
+4. Make checks on the validity of the data entered and enter the new user in the archive;In the event that the data entered are not valid, activates the case of "Errodati" use
+Postconditions:
+• • • •
+A new user has been created is notified the data error the administrator interrupts the connection to the SMOS server interrupted

@@ -1,0 +1,17 @@
+Use Case Name
+RequestElectricalCase
+Participating Actors
+Started by Citizen, continued by employee
+Flow of events
+1. The Citizen presses on the Electoral Card button.
+2. The system displays the card request form.
+The Citizen confirms the operation 4. The system sends a notification
+to the clerk. 5. The citizen will receive the election card which
+Will be delivered to his/her home address.
+Condition of entry
+The Citizen must be authenticated in the system.
+The voter card has not been sent.
+Exit condition
+➢ The System alerts the clerk, OR ➢ In the case where the service is not available the case is invoked
+of use ServiceNotAvailable.
+Quality Requirements Not Provided.

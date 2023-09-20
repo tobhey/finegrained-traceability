@@ -1,0 +1,6 @@
+Inserisci Ritardi Admin
+Digitalizzazione del Registro inserimento dati da parte dell Amministratore
+Compila il form inserendo studenti con ritardo e clicca Salva
+Aggiorna la schermata visualizzata in base alla data
+Invia i dati al server
+Visualizza i dati del registro aggiornati

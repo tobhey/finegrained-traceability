@@ -1,0 +1,6 @@
+Assign removals students to a parent
+It allows you to associate new students to a parent or remove previously inserted associations
+Students selection to be assigned or removed from the parent
+Click on the Send button
+Displays the child management form for the parent in question
+Assign removes students associated with a parent

@@ -1,0 +1,24 @@
+Requisito:
+Gestione dei prezzi delle camere.
+Descrizione:
+Per ogni camera deve essere possibile stabilire il suo prezzo base. Questo 
+prezzo deve essere impostabile dal gestore dell'albergo ogni qual volta egli lo 
+ritenga opportuno. Se si desidera modificare il prezzo base di una stanza che 
+in quel momento risulta occupata, il sistema dovrà avvisare l'operatore con un 
+messaggio per evitare che il cliente si lamenti di non aver pagato quanto 
+pattuito.
+Input richiesto:
+Si dovrà inserire l'identificatore di stanza e il prezzo ad essa relativo.
+Output desiderato:
+Conferma a video della modifica avvenuta, o eventuali messaggi di errore.
+Criterio di accettazione:
+Si deve poter accedere alla modifica del listino delle camere in ogni momento, 
+richiamare ogni stanza attraverso un opportuno identificatore (es. numero di 
+stanza); se la stanza richiesta non esiste dovrà essere visualizzato un 
+messaggio d'errore. Se la stanza risulta occupata, dovrà essere avvisato 
+l'operatore che sta facendo un'operazione rischiosa. 
+Aspettative collegate:
+Supervisione e gestione dei prezzi delle stanze.
+Requisiti collegati:
+F-SOG-04, F-GES-05.
+

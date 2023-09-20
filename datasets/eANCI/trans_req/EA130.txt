@@ -1,0 +1,15 @@
+Use Case Name
+RequestIPPARifiied
+Participating Actors
+Started by Employee.
+Flow of events
+1. 3.
+The Employee displays the notification received. 2. The System displays to the Clerk the
+request made by the citizen. The Clerk reveals an error in the request and rejects the procedure the request.
+4. The System sends a notification to the citizen who requested the service.
+Entry condition
+The Clerk has authenticated in the system. RequestIPPARifiied includes the case
+of use RequestIPPA
+Exit condition.
+The system notifies the citizen of the outcome.
+Quality requirements Not expected

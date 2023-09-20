@@ -1,0 +1,13 @@
+Name: EliminateJustification
+Actors: Administrator
+Description: Eliminate Justification
+Preconditions:
+• The user must be logged in to the system as an administrator • the user has held the case of use "viewdetalticaustifica" and the
+System is viewing the details of a justification.• Click on "Delete"
+Events sequence
+User
+System
+1. Eliminate justification.
+Postconditions:
+• The justification was eliminated by the system. The system returns to the registry screen.
+• The administrator interrupts the operation • Connection to the SMOS server interrupted

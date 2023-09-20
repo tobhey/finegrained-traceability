@@ -1,0 +1,3 @@
+Visualizza Dettagli Utente
+Visualizza i dettagli di un utente
+Visualizza le informazioni dettagliate dellutente ed in particolare Nome Cognome e-mail cell login password

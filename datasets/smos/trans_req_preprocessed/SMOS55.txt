@@ -1,0 +1,7 @@
+Enter ATA delays
+Digitization of the data collection log from ATA class personnel per class
+The user selects delays
+The user clicks confirm
+The system shows the user a screen with all the students present with a late checkbox next to
+If selected you activate SELECT fields to the side to select the time of the delay
+The system sends data to the server

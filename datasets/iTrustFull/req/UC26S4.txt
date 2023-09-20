@@ -1,0 +1,1 @@
+An HCP can remove a previously created lab procedure for a given office visit. The HCP chooses to remove the lab procedure as long as the status is either in transit or received. The HCP is prompted to confirm that he/she wishes to remove the lab procedure.

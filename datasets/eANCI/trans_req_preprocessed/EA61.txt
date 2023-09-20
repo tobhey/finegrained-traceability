@@ -1,0 +1,4 @@
+CANCELED CARD
+
+Citizen decides to want to cancel the young card and then inserts into the form that wants to cancel it
+The system receives the form notifies the Card cancellation and resumes the form

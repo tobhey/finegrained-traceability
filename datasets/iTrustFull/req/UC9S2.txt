@@ -1,0 +1,6 @@
+The patient or personal health representative can see an abbreviated health history of their siblings, parents, and both sets of grandparents for which MIDs are available in iTrust.
+They can see diagnoses related to the following [presented as a table with an x if the family member suffered from that diagnosis]:
+High blood pressure (Systolic blood pressure over 240 mmHg and/or a diastolic blood pressure over 120 mmHg);
+high cholesterol (HDL (good) cholesterol levels under 35 mg/dL (milligrams per deciliter) and/or a triglyceride level over 250 mg/dL);
+diabetes [is diagnosed with ICD-9CM code beginning with 250; cancer [is diagnosed with ICD-9CM code beginning with 199; heart disease [is diagnosed with ICD=9CM code beginning with 402;
+smoking and the cause of death if the family member is deceased.

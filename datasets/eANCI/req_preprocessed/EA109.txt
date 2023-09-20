@@ -1,0 +1,4 @@
+Protezione Civile
+
+Il cittadino accede alla scheda descrittiva circa le informazioni di carattere generale riguardo l ' organo comunale in questione
+Il sistema risponde alla funzionalit informativa permettendo la visualizzazione di una descrizione circa i ruoli attivi svolti dalla Protezione Civile

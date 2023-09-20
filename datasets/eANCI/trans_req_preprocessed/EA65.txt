@@ -1,0 +1,7 @@
+Young card registration
+
+The citizen requires the inscription to the young card
+The system displays a form for submission of the request
+The citizen inserts the data of the card request in a form
+The system receives the form verifies the data and submits the request
+The system communicates the card insertion to be inserted and displays the card number in a form and the summary of the data entered

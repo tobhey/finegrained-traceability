@@ -1,0 +1,8 @@
+Payment failed
+
+The citizen click on the button to access the online payment area of taxes or fines
+The system displays the list of fines that can be paid online
+The citizen selects the tassamult of interest
+The system redirects the citizen towards the necessary section showing the form to the citizen
+The citizen starts the transaction
+The system does not allow the transaction since problems occurred with the selected payment method

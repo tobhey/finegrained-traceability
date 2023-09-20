@@ -1,0 +1,17 @@
+Use case name
+UsefulNumbers
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses this page to take advantage of phone numbers to contact in case of danger of any kind.
+2. The system responds by allowing the display of a descriptive card with the telephone numbers of the agencies concerned with the safety of the Citizen himself.
+3. The Citizen by accessing this screen can, in addition, view advice, and standard procedures, divided into categories, about the correct communication between him and the Call Center contact person of a given municipal body.
+4. The system shall respond with an emergency support screen corresponding to the service the Citizen decides to contact.
+Entry Condition.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the service provided to him/her and views the screen of useful numbers and advice provided to him/her, OR
+In case the system fails to display the information sheet about numbers to call in case of emergency, the use case ServiceNotAvailable, which handles cases of technical failure, is extended.
+Quality Requirements The system responds to the service requested by the Citizen in a few hundredths of a second if the description of useful numbers, is displayed correctly.
+If this, however, is not the case, the system handles the exception in the range of 5-8 seconds to let the user know that there is some problem with the service request.

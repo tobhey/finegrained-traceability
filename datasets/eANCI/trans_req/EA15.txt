@@ -1,0 +1,15 @@
+Use case name
+EditEmployee
+Participating actors
+Started by administrator
+Flow of events
+1. The administrator presses the edit-employee button.
+2. The system displays a form for editing the clerk.
+3. The administrator enters the data. 4. The system saves the changes made.
+Entry condition
+The administrator has authenticated into the system.
+This use case includes SearchEmployee and occurs when the administrator wants to edit an employee
+Exit condition
+The system modifies the 'employee, OR ➢ In the case where the service is not available the use case is invoked
+of use ServiceNotAvailable.
+Quality Requirements Not Provided.

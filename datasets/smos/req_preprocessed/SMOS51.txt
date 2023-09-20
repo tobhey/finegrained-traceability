@@ -1,0 +1,4 @@
+Rifiuta Iscrizione Studente
+Consente all ' amministratore di rifiutare l ' iscrizione al sistema di uno studente
+Elimina la richiesta di iscrizione al sistema
+Visualizza l ' elenco delle iscrizioni ancora da attivare

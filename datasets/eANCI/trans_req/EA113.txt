@@ -1,0 +1,15 @@
+Use case name
+ServiceCivil
+Participating Actors
+Initiated by Citizen
+Flow of events
+1. The Citizen accesses this section to get information about his or her service to others.
+2. The system responds with a screen display where it clarifies the goals of community service, general information, and the ability to call DownloadIscrizione use case.
+Entry Condition.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen acknowledges the information received, OR
+The Citizen fails to view the information page, and therefore the use case ServiceNotAvailable, which handles technical failure cases, is extended.
+Quality Requirements The response time is in the hundredths of a second range if the user is able to view the information page with its link to the form download, OR
+The system's response time to the Citizen's need increases in the order of seconds if he/she fails to view the form.

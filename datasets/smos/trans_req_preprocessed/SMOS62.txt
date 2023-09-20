@@ -1,0 +1,5 @@
+Viewing a report card
+The requested report card is displayed
+Select the report card
+View the selected student report cards
+View the details of the selected report card

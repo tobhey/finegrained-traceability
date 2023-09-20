@@ -1,0 +1,5 @@
+REQUIREMENT 9: CLIENT CERTIFICATE REISSUANCE
+     
+An EST client can renew/rekey its existing client certificate by submitting a re-enrollment request to an EST server. When the current EST client certificate can be used for TLS client authentication (Section 3.3.2), the client presents this certificate to the EST server for client authentication. When the to be reissued EST client certificate cannot be used for TLS client authentication, any of the authentication methods used for initial enrollment can be used. For example, if the client has an alternative certificate issued by the EST CA that can be used for TLS client authentication, then it can be used.
+
+The certificate request message includes the same Subject and SubjectAltName as the current certificate. Name changes are requested as specified in Section 4.2.2.

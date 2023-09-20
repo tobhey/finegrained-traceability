@@ -1,0 +1,10 @@
+Present building project
+
+The citizen accesses the building project presentation area through the appropriate link
+The system displays the form for the insertion of the necessary data
+The citizen inserts the requested data
+The system verifies the correctness and completeness of the data then shows a summary screen or activates the accordance of the incorrect data
+The citizen confirms the operation
+The system displays the print form
+The system sends a notification message of the request to the competent employee
+The citizen carries out the press to be delivered to the municipal office with attachments the requested documents and a stamp duty

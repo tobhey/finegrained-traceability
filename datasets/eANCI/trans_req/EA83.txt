@@ -1,0 +1,13 @@
+Use Case Name
+VisionPlanRegulator
+Participating Actors
+Initiated by citizen
+Flow of events
+Citizen accesses the Regulatory Plan area via the appropriate link 1.
+2. the system displays the document
+Entry condition
+The citizen has accessed the system
+Exit condition
+The system displays the master plan, OR in the case of technical failures the system retrieves the use case
+ServiceNotAvailable
+Quality requirementsNot available

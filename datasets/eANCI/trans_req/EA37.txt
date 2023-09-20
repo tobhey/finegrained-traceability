@@ -1,0 +1,14 @@
+Use case name
+identityCardRenewal
+Participating Actors
+Started by Citizen, continued employed
+Event Flow
+1. Citizen presses on the Renew ID Card button.
+2. The system directly sends a renewal request from the Citizen to the appropriate clerk.
+3. The Citizen goes to the counter to renew the ID card.
+Condition of Entry
+The Citizen must be authenticated in the system.
+Exit condition
+➢ The System creates the document to be delivered to the appropriate office, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is invoked.
+Quality Requirements Not Provided.

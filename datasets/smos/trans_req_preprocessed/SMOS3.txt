@@ -1,0 +1,3 @@
+Logout
+It allows a user to exit the system
+View the login form

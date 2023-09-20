@@ -1,0 +1,15 @@
+Use case name
+CompensationAccompaniment
+Participating Actors
+Started by User
+Flow of events
+1. User selects "Application for accompaniment allowance."
+2. The system displays the information about the disability pension and shows the link to download the relevant form to send to INPS, providing the option to print it out. It also shows direct links to the request for family status and marital status.
+Entry condition
+The user has accessed the system and selected the Social Assistance feature.
+Exit condition
+The user has viewed the page, OR The user has selected one of the direct links then the use case RequestFamilyState or
+RequestCertificate, OR The system encountered an unanticipated error
+expected so it calls the use case
+ServiceNotAvailable.
+Unanticipated Quality Requirements.

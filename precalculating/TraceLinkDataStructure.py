@@ -87,9 +87,18 @@ class ElementLevelTraceLinkDataStructure(TraceLinkDataStructure):
     def all_req_file_names(self) -> [str]:
         return self._artifact_to_element_map.all_req_file_names()
 
+    def add_req_file_with_elements(self, req_file_name, elements):
+        self._artifact_to_element_map.add_req_file_with_elements(req_file_name, elements)
+
     def all_code_file_names(self) -> [str]:
         return self._artifact_to_element_map.all_code_file_names()
-    
+
+    def remove_req_file(self, req_file_name):
+        self._artifact_to_element_map.remove_req_file(req_file_name)
+
+    def remove_req_file_element(self, req_file_name, req_file_element_name):
+        self._artifact_to_element_map.remove_req_file_element(req_file_name, req_file_element_name)
+
     def methods_of(self, code_file_name) -> [str]:
         return self._artifact_to_element_map.method_keys_of(code_file_name)
     
@@ -110,6 +119,11 @@ class ElementLevelTraceLinkDataStructure(TraceLinkDataStructure):
     
     def similarity_between(self, req_element, code_element) -> float:
         return self._similarity_matrix.get_value(req_element, code_element)
+
+    def adapt_similarity(self, req_element, code_element, factor:float):
+        value = self._similarity_matrix.get_value(req_element, code_element)
+        value = value * factor
+        self._similarity_matrix.set_value(req_element, code_element, value)
     
     def set_matrix(self, new_matrix: TwoDimensionalMatrix):
         self._similarity_matrix = new_matrix

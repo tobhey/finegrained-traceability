@@ -1,0 +1,27 @@
+REQUIREMENT 56: CSR ATTRIBUTES
+     
+The following is an example of a valid /csrattrs exchange. During this exchange, the EST client authenticates itself using an existing certificate issued by the CA for which the EST server provides services.
+
+The initial TLS handshake is identical to the enrollment example handshake. The HTTP GET request:
+
+
+   GET /.well-known/est/csrattrs HTTP/1.1
+   User-Agent: curl/7.22.0 (i686-pc-linux-gnu) libcurl/7.22.0 OpenS
+   SL/1.0.1 zlib/1.2.3.4 libidn/1.23 librtmp/2.3
+   Host: 192.0.2.1:8085
+   Accept: */*
+
+                
+In response, the server provides suggested attributes that are appropriate for the authenticated client. In this example, the EST server also includes two example attributes that the client would ignore unless the attribute type is known to the client:
+
+                    
+   HTTP/1.1 200 OK
+   Status: 200 OK
+   Content-Type: application/csrattrs
+   Content-Transfer-Encoding: base64
+   Content-Length: 171
+
+   MHwGBysGAQEBARYwIgYDiDcBMRsTGVBhcnNlIFNFVCBhcyAyLjk5OS4xIGRhdGEG
+   CSqGSIb3DQEJBzAsBgOINwIxJQYDiDcDBgOINwQTGVBhcnNlIFNFVCBhcyAyLjk5
+   OS4yIGRhdGEGCSskAwMCCAEBCwYJYIZIAWUDBAIC
+                    

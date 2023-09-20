@@ -23,7 +23,7 @@ UC13.txt: BeanTourist.java
 UC14.txt: IDBTourist.java
 UC14.txt: TouristAgencyManager.java
 UC14.txt: ITouristAgencyManager.java
-UC14.txt: RicercaAvanzata.java
+UC14.txt: AdvancedSearch.java
 UC14.txt: BeanTourist.java
 UC15.txt: IDBTourist.java
 UC15.txt: TouristAgencyManager.java
@@ -177,7 +177,7 @@ UC4.txt: ICulturalHeritageAgencyManager.java
 UC4.txt: CulturalHeritageAgencyManager.java
 UC4.txt: Search.java
 UC4.txt: StandardSearch.java
-UC4.txt: RicercaAvanzata.java
+UC4.txt: AdvancedSearch.java
 UC4.txt: BeanCulturalHeritage.java
 UC4.txt: ISearch.java
 UC4.txt: CulturalHeritage.java
@@ -303,6 +303,6 @@ UC9.txt: RefreshmentPointAgencyManager.java
 UC9.txt: IRefreshmentPointAgencyManager.java
 UC9.txt: Search.java
 UC9.txt: StandardSearch.java
-UC9.txt: RicercaAvanzata.java
+UC9.txt: AdvancedSearch.java
 UC9.txt: BeanRefreshmentPoint.java
 UC9.txt: ISearch.java

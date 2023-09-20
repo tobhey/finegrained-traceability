@@ -1,0 +1,3 @@
+Visualizza Elenco Classi
+Visualizzazione delle classi
+Il sistema mostra all ' utente una schermata con tutte le classi presenti nel database con un tasto per accedere al registro di ogni classe

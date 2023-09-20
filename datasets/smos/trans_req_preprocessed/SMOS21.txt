@@ -1,0 +1,7 @@
+Assign Remove Teachings
+Assign or remove one or more teachings from an address
+Select the teachings to be assigned or removed at the address
+Click on the Send button
+View a form from which you can add EO removing teachings at the address
+Associate or removes selected teachings at the address
+Back to display details of the address

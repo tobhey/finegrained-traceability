@@ -1,0 +1,6 @@
+Information entry
+
+The clerk requires the insertion of a new news
+The system displays a form for submission of the request
+The employee inserts the data relating to the new news in a form
+The system receives the form and enter the news in the system

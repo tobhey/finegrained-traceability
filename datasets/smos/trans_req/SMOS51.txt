@@ -1,0 +1,13 @@
+Name: RejectEnrollmentStudent
+Actors: Administrator
+Description: It allows the administrator to refuse the registration to the system of a student
+Preconditions:
+• The user has already done the case of use "View Registration Requests" • The user clicks on the "Reject" button associated with a registration request
+Events sequence
+User
+System
+1. Eliminates the registration request to the system.
+2. Displays the list of registrations yet to be activated
+Postconditions:
+• • •
+The user refused a request for registration to the system The user interrupts the connection operation to the interrupted SMOS server

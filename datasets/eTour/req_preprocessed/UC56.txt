@@ -1,0 +1,5 @@
+Localization
+Returns the current position of the tourist
+The system requires the data for the position
+The GPS calculates the position of the tourist
+The system is on hold until the data of the position

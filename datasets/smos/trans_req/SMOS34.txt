@@ -1,0 +1,16 @@
+Name: ViewListofJustifications
+Actors: Administrator
+Description: View the list of justifications
+Preconditions:
+• • •
+The user must be logged in to the system as an administrator, the user has carried out the case of use "SplitTaTtAlTeloregistration" click the "justification" button related to a student
+Events sequence
+User
+System
+1. Show all the assences of the student
+School recorded selected the absences already justified come
+displayed in green, those to justify in red
+during the year
+Postconditions:
+• • •
+The system is displaying the list of justifications inherent to the student The administrator interrupts the connection to the SMOS server interrupted

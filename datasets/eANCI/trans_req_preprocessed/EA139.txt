@@ -1,0 +1,5 @@
+Service Unavailable
+
+The system shows a message to the video of the indicating terminal that you cannot make the request
+Citizen reads the notification message
+The system resumes the input form

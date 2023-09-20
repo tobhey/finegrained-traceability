@@ -1,0 +1,9 @@
+Assegna Rimuovi Insegnamenti Ad Un Docente
+Consente di assegnare o rimuovere insegnamenti ad un docente
+Seleziona l ' anno accademico
+Seleziona la classe desiderata
+Seleziona gli insegnamenti da associare o rimuovere al docente
+Visualizza il form di gestione degli insegnamenti per il docente in oggetto
+Visualizza l ' elenco delle classi disponibili per l ' anno selezionato
+Visualizza l ' elenco degli insegnamenti associati a quella classe
+Assegna o rimuove gli insegnamenti del docente come indicato dall Amministratore

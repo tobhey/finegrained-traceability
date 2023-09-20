@@ -1,0 +1,12 @@
+Name: ViewClassDetails
+Actors: Administrator
+Description: allows you to view the details of a class
+Preconditions:
+• The user has already logged in • The user has already performed the case of use "ViewingLancoclasses" and the system
+The list of classes of an academic year is displayed • Click on the "Show class details" button
+Events sequence
+User
+System
+1. Displays the fencing with the details of a single class: Name, address, school year.
+Postconditions:
+• The user displays detailed information related to a class.• Connection to the SMOS server interrupted

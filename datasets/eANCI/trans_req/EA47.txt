@@ -1,0 +1,16 @@
+Use Case Name
+AssistanceHousing
+Participating Actors
+Initiated by User Communicates with Social Services Office
+Flow of events
+1. User selects the Social Assistance feature by selecting "Housing Assistance Request (evictions)"
+2. The system displays the form for entering applicant and recipient data (if different).
+3. The user enters his/her own data and those of the recipient (if the recipient is a third person)if necessary specifying the relationship with that person, also specifies the new domicile. The user selects the attached documentation (minutes of enforceable eviction, the new registered lease and the ISEE model). He/she then submits the form.
+4. The system retrieves the master data of the recipient citizen, and data regarding the recipient Citizen's household. The request is sent to the Social Services office and the user is notified of the submission.
+Condition of Entry
+The user has successfully logged in and selected the Social Assistance feature.
+Exit condition
+The system has encountered an error in filling out the form so it calls the use case DataErrati, OR
+The user returns to the previous screen, OR
+The system encountered an unanticipated error so it calls the use case ServiceNotAvailable.
+Quality RequirementsUnanticipated

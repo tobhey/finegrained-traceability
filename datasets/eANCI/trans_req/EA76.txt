@@ -1,0 +1,16 @@
+Use Case Name
+InformationPromotionTerritorial
+Participating Actors
+Started by Citizen
+Flow of events.
+1. The Citizen requests to view the list of territorial promotions.
+3.
+2. The system allows viewing the list of promotions.
+The Citizen chooses the promotion. 4. The system returns the information
+regarding the chosen promotion.
+Entry condition
+The citizen has logged into the system.
+Exit condition.
+The citizen has viewed the information about the territorial promotion, OR
+In case the citizen wants to view a territorial promotion he/she will be referred to the website of the tourist board.
+Quality requirements Not provided.

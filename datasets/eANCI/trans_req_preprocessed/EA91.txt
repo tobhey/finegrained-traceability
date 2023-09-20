@@ -1,0 +1,11 @@
+Release certificates
+
+The citizen accesses the certificate release area and authorizations through the appropriate link
+The system displays the form for the insertion of the data necessary for the issue of the ES certificate
+Certificate of agability Certificate of habitability
+The citizen inserts the requested data
+The system verifies the correctness and completeness of the data then shows a summary screen or activates the accordance of the incorrect data
+The citizen confirms the operation
+The system displays the print form
+The system sends a notification message of the request to the competent employee
+The citizen carries out the press to be delivered at the municipal office with the stamp duty

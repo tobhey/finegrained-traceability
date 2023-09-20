@@ -1,0 +1,3 @@
+Visualizza Dati Scolastici Studente
+Visualizzazione delle informazioni scolastiche riguardanti l utente
+Cerca nell archivio i dati relativi al registro della classe a cui appartiene lo studente Visualizza i dati relativi allo studente ed in particolare Data Assenze Note disciplinari Ritardi e Giustifiche

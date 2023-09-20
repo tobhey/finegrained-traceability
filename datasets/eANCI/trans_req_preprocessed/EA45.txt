@@ -1,0 +1,9 @@
+Night reception
+
+The user selects the social assistance function by selecting Night Reception request
+The system shows the form for the insertion of the applicant's data and the recipient
+The user inserts his data and if necessary entering the data of a third person specifying the relationship with that person
+Also specifies a domicile or alternative address and a possible date of appointment with social workers
+Then submit the form
+The system picks up the personal data of the applicant citizen and the citizen recipient if different from the applicant and the data concerning the family unit of the citizen recipient
+The request is sent to the Social Services Office and the sending is notified to the user

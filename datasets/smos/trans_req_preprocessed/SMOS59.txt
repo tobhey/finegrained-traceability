@@ -1,0 +1,5 @@
+View of a student report card
+The anglum report is displayed that requests it
+Select the report card
+The system displays the report cards of the logged student in the archive
+View the details of the selected report card

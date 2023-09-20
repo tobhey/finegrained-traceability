@@ -1,0 +1,8 @@
+Calcola Importo Non Riuscito
+
+Il Cittadino preme il pulsante relativo alla funzione del calcolo delle imposte
+Il Sistema presenta la lista delle tasse e delle imposte per cui possibile calcolare l ' importo
+Il Cittadino seleziona l ' imposta di interesse
+Il Sistema mostra un form da compilare per il calcolo
+Il Cittadino inserisce i dati necessari
+Il Sistema verifica la correttezza dei dati ma non riesce ad effettuare il calcolo notificando all ' utente il motivo del fallimento

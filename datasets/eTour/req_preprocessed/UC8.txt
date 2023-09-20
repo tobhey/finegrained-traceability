@@ -1,0 +1,9 @@
+Modify Data Refreshment Point Agency
+Edit the data pertaining to a designated point of rest
+View a list of points of rest as a result of the use case Search Refreshment Point it selects an active and functional data changes
+Upload data from the point of rest and displays the form of change
+Change data in the form and submit
+Verify the data entered in form and asks for confirmation of the transaction
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation
+Stores the modified data of the point of rest

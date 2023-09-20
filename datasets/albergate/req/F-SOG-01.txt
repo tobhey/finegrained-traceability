@@ -1,0 +1,37 @@
+Requisito:
+Gestione dell'arrivo di un cliente.
+Descrizione:
+All'arrivo di un cliente possono verificarsi le seguenti eventualità:
+1. se il cliente ha precedentemente prenotato allora dalla prenotazione si 
+risale al numero delle camere che andrà ad occupare e la prenotazione verrà 
+cancellata dall'elenco delle prenotazioni;
+2. se il cliente non ha precedentemente prenotato si procederà come se fosse 
+in atto una prenotazione, cioè:
+a) si ricerca una camera disponibile;
+b) nel caso l'esito sia favorevole, la si assegna al cliente per il periodo 
+specificato.
+1. Il nuovo cliente richiede di aggiungersi a coloro che già occupano una 
+certa stanza.
+A questo punto a partire dalle stanze assegnate (o tramite prenotazione o al 
+momento), si inseriscono nell'archivio degli ospiti, camera per camera, i dati 
+delle persone che vi soggiorneranno. Tali dati comprenderanno, oltre ai dati 
+personali (facoltativi per neonati, bambini e ragazzi che soggiornano con 
+adulti), il tipo di pensionamento (questo permette di avere persone con tipo di 
+pensionamento diverso in una stessa stanza). Deve essere anche possibile 
+distinguere i clienti che rientrano nelle categorie di neonati e bambini per 
+rendere possibile l'applicazione di eventuali sconti. Alle varie stanze che 
+vengono così ad essere utilizzate verrà dato l'appellativo di occupate.
+Input richiesto:
+Dati personali dei vari occupanti.
+Output desiderato:
+Aggiornamento archivio dei clienti e modifica dello stato delle stanze.
+Criterio di accettazione:
+Se dai dati forniti dal cliente non si riesce a risalire alla prenotazione verrà 
+visualizzato un messaggio di errore e verrà chiesto di ripetere l'operazione o 
+annullarla. Se si tenta di inserire in una stanza piena un'ulteriore persona 
+apparirà un messaggio di avvertimento.
+Aspettative collegate:
+Conoscere per ogni stanza i dati di coloro che vi alloggiano.
+Requisiti collegati:
+F-PRE-01, F-PRE-02.
+

@@ -1,0 +1,19 @@
+Use case name
+InformationConsultancyYouth
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen requests to view the list of counseling centers.
+3.
+2. The system allows to view the list of consulting rooms.
+The Citizen chooses the consulting room. 4. The system returns information
+regarding the chosen consultatory displaying data such as:
+- its location; - its opening dates and times. - the list of interviews, if any
+booked(invoking the use case
+ViewConsultingReservation).
+Condition of entry
+The citizen has logged into the system.
+Exit condition
+The citizen has viewed the information about consulting room, OR.
+In case the citizen wants to book an interview, the system calls the use case, BookingInterview.
+Quality requirements Not provided.

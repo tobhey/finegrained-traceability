@@ -1,0 +1,6 @@
+Recupero Password Impiegato
+
+L ' impiegato ha dimenticato la password e preme il bottone recupero password
+Il sistema mostra la form per l ' inserimento della matricola
+L ' impiegato inserisce la propria matricola e preme il tasto di conferma
+Il sistema verifica i dati e invia la password all ' indirizzo email dell ' impiegato

@@ -1,0 +1,15 @@
+Use Case Name
+DownloadSubscription
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses this screen because he/she wants to enroll in Civil Service.
+2. The system responds with a page where the requesting Citizen can download the form to fill out and submit to the Civil Defense office.
+Entry condition
+The Citizen has authenticated in the system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen has completed downloading the form that he/she must complete and submit in person as it requires accompanying external forms, and the use case Civil Service is invoked.
+The Citizen fails to view the download of the form, and therefore the use case ServiceNotAvailable, which handles technical failure cases, is extended.
+Quality requirements The system response time to load the form download ranges from 2 to 4 seconds, OR
+System response time ranges from 5 to 7 seconds if the module download fails.

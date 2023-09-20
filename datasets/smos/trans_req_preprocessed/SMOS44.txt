@@ -1,0 +1,4 @@
+Make student monitoring
+Allows you to query the system about the number of absences and notes associated with students
+Search the Archive The students who have a number of absences and notes to a predetermined threshold for the school year
+Displays a display screen of the data obtained

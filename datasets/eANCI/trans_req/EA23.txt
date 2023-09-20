@@ -1,0 +1,23 @@
+Use case name
+RegistrationCitizen
+Participating actors
+Started by Citizen
+Flow of events
+Citizen accesses the registration form 1. 2. The system displays the form for
+registration. 3. The citizen enters his/her data and presses the
+confirmation button. 4. The system verifies the correctness of the data,
+saves them and sends an e-mail of successful registration to the citizen.
+Entry condition
+The citizen has accessed the system.
+Exit condition
+➢ The system registers the citizen, OR ➢ In case the citizen enters incorrect data, the system calls the case
+use case DataErrati, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is called.
+Quality Requirements➢ The name string corresponding to the name of the ID card holder, is well formed contains characters [ a..z A..Z ' àéèìòù ] and is less than 30 characters long and is not empty.
+➢ The string of the last name corresponding to the first name of the ID card holder, is well-formed contains characters [ a..z A..Z ' àéèìòù ] and has length less than 30 characters and is not empty.
+➢ The string of the Tax Code corresponding to the actual tax code of the holder, is in accordance with regulations and has length of 16 characters.
+➢ The Identity Card string is present in the system, consists of XXnnnnnnn (X= letter n= number) and has length of 9 characters.
+➢ The email string consists of x@x.x and has a length of less than 31 characters and is not empty.
+➢ The username string is not already in the system, is well formed contains characters [ a..z A..Z 0..9 . - _ ] and has length less than 30 characters and is not empty.
+➢ The password string is well formed contains characters [ a..z A..Z 0..9 . - _ * + ! ? , : ; àèéìòù]and has a
+length between 8 and 15 characters.

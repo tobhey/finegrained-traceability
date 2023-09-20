@@ -1,0 +1,7 @@
+Enter Admin absences
+Digitization of the data entry log by the administrator
+Fill out the form by inserting students and click Save
+Update the screen displayed based on the date
+Send data to the server
+The server for each absence sends a notification e-mail to the parent of the student
+Displays the updated registry data

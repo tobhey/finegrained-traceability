@@ -1,0 +1,7 @@
+Electoral card request
+
+The citizen presses on the electoral card button
+The system shows the form for the card request
+The citizen confirms the operation
+The system sends a notification to the employee
+The citizen will receive the electoral card that will be delivered to your home

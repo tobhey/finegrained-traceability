@@ -1,0 +1,6 @@
+Attivit Utili
+
+Selezionando questo caso d ' uso il Cittadino accede ad una schermata di scelta di due casi d ' uso Boschi Rifiuti
+Il sistema mette a disposizione una semplice ed intuitiva schermata che permette di scegliere quale dei due servizi visitare per aiutare indirettamente a mantenere accettabili le condizioni ambientali comunali
+Il Cittadino sceglie uno dei due casi d ' uso Boschi o Rifiuti
+Il sistema risponde all ' esigenza del Cittadino facendogli visualizzare la pagina desiderata che aveva richiesto

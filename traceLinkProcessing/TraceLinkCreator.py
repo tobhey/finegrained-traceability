@@ -25,8 +25,8 @@ class FileLevelTraceLinkCreator(TraceLinkCreator):
 
     def process(self) -> [TraceLink]:
         all_trace_links = []
-        for req_file_name in self._trace_link_data_structure.all_req_file_names:
-            for code_file_name in self._trace_link_data_structure.all_code_file_names:
+        for req_file_name in self._trace_link_data_structure.all_req_file_names():
+            for code_file_name in self._trace_link_data_structure.all_code_file_names():
                 similarity = self._trace_link_data_structure.similarity_between(req_file_name, code_file_name)
                 all_trace_links.append(TraceLink(req_file_name, code_file_name, similarity))
         return all_trace_links

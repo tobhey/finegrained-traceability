@@ -1,0 +1,5 @@
+View Listing List
+This case allows a teacher to view the list of classes in which she teaches
+Select the academic year of interest
+View the list of academic years in which at least one class in which the teacher teaches
+View the classes associated with the selected school year

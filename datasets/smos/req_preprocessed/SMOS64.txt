@@ -1,0 +1,4 @@
+Visualizza Elenco Registri
+Visualizza lelenco dei registri per un anno accademico
+Seleziona lanno accademico Mostra una schermata per la selezione dellanno accademico di interesse
+Cerca nellarchivio tutti i registri digitali di quellanno e li visualizza associati alla classe cui appartengono

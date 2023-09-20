@@ -1,0 +1,9 @@
+Insert Banner
+Inserting a new banner associated with a point of rest
+Receives a list of turning points of the rest use case Search Refreshment Point and select one from the list and access to the function of inserting banners
+Displays a form for the selection of an image
+Select an image and sends the request for entering the system
+Check the characteristics of the inserted check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner
+In the event that the inserted image is not valid enable the use case Errored
+Confirm the operation of insertion
+Remember the banners associated with the selected point of rest

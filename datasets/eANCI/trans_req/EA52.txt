@@ -1,0 +1,14 @@
+Use case name
+FundsVictimsUsura
+Participating Actors
+Started by User
+Flow of events
+1.
+User selects the feature "Application for Solidarity Fund Allocation for Victims of Usury and Extortion."
+2. The system displays the information and related forms to be downloaded and sent to the Prefecture, offering in addition the possibility to print it out.
+Entry condition
+The user has accessed the system and selected the Social Assistance feature.
+Exit condition
+The user viewed the page, OR The system encountered an unanticipated error so calls the use case
+ServiceNotAvailable.
+Unanticipated Quality Requirements.

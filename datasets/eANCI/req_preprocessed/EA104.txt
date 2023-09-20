@@ -1,0 +1,6 @@
+Gestione Modifiche
+
+L ' impiegato dopo essersi autenticato nel sistema accede alla funzionalit Protezione Civile per modificare i relativi form
+Il sistema risponde a tale esigenza con la possibilit di visualizzare una schermata con i casi d ' uso Aggiorna Condizioni Atmosferiche Aggiorna Analisi Ambientali Aggiorna Bandie Concorsi
+L ' impiegato seleziona la funzionalit da modificare
+Il sistema risponde all ' esigenza dell ' impiegato con il form di modifica richiesto

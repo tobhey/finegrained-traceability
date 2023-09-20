@@ -1,0 +1,11 @@
+Modify Banner
+Changing the image of a banner ad
+Select the editing functionality of the banner
+View the list of banner associated with the point of rest
+Select a banner from the list and enter the editing functionality
+Displays a form for the selection of an image
+Select a picture and send the request to change the system
+Check the characteristics of the inserted and asks for confirmation of the change of the banner
+In the event that the inserted image is not valid enable the use case Errored
+Confirmation of the transaction change
+Bookmark this new image for the selected banner

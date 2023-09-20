@@ -1,0 +1,15 @@
+Name: InsertNewTeaching
+Actors: Administrator
+Description: Insert a new teaching into the archive
+Preconditions:
+• The user is logged in to the system as an administrator • The user has already performed the case of "viewing technology" and the
+system is displaying the list of teachings • The user click on the "New Teaching" button
+Events sequence
+User
+2. Fill out the form 3. Click on the "Save" button
+System
+1. The system shows the form to be completed with: Teaching name.
+4. Checks on the validity of the data entered and inserts the new teaching into the archive; In the event that the data entered are not valid, activates the case of "Errodati" use.
+Postconditions:
+• • • •
+The user has entered a teaching is notified the error connection to the SMOS server interrupted the administrator interrupts the operation

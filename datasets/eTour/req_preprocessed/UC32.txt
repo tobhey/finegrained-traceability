@@ -1,0 +1,5 @@
+Modify Password Error
+He was asked to enter a password but is not confirmed in a correct way
+Notify an error message
+Confirmation of the reading of the notification
+Back to change your password

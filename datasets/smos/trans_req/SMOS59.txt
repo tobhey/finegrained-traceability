@@ -1,0 +1,13 @@
+Name: DisplayOfAPageStudent
+Actors: student
+Description: The student report is displayed that requests it
+Preconditions:
+• The user has been logged in to the system as a student • the user click on "Online report"
+Events sequence
+User
+System
+2. Select the report card
+1. The system displays the student's reports logged in in the archive
+3. Displays the details of the selected report card
+Postconditions:
+• The system displays a student's report • Connection to the SMOS server interrupted

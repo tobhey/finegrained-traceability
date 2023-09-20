@@ -1,0 +1,6 @@
+View Class List
+Allows you to view the classes of classes
+Select Academic Lanno of Interest
+Allows you to select the academic lanno you want to view classes
+Search for classroom classes and displays the class management screen
+View Lelco of the selected academic year classes

@@ -1,0 +1,36 @@
+Requisito:
+Calcolo del conto complessivo.
+Descrizione:
+Al momento in cui lo si richiede si devono recuperare:
+1.	ammontare spese di soggiorno
+2.	ammontare spese telefoniche
+3.	ammontare spese per servizi extra
+Successivamente si deve fornire a video l’ammontare parziale per ogni voce 
+sopraindicata e l'ammontare totale. Si deve inoltre poter facilmente 
+distinguere i tre totali parziali in modo da fornire al cliente l’informazione che 
+desidera. All’interno delle spese dei pernottamenti sono compresi i pasti 
+concordati in base al tipo di soggiorno.
+Si distinguono 4 diversi casi:
+- Calcolo totale del conto su un’unica stanza.
+- Calcolo del conto separato nel caso in cui uno (o alcuni) tra gli 
+occupanti una certa stanza debba, per qualche motivo, lasciare l'albergo 
+in anticipo rispetto alla data prevista. In questo caso deve poter essere 
+applicato un supplemento per stanze parzialmente utilizzate. Nel conto 
+saranno escluse le spese extra che verranno poi riversate nel conto finale.
+- Calcolo totale del conto su più stanze.
+- Calcolo del conto per clienti mandati da un'agenzia. In questo caso il 
+conto consisterà solamente delle spese telefoniche e delle spese per 
+servizi e spese extra. 
+Input richiesto:
+Dati di uno o più clienti, o numeri di una o più stanze.
+Output desiderato:
+Stampa a video del conto richiesto.
+Criterio di accettazione:
+Si richiede la visualizzazione delle spese accumulate da parte dei clienti 
+dell’albergo quando se ne necessita.
+Aspettative collegate:
+Immediato resoconto del debito accumulato dal cliente fino al momento della 
+richiesta del conto.
+Requisiti collegati:
+F-SOG-02, F-SOG-03, F-SOG-05, F-GES-01.
+

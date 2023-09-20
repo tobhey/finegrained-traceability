@@ -1,0 +1,6 @@
+Informazioni Informagiovani
+
+Il Cittadino richiede la visualizzazione dell ' elenco delle notizie di informagiovani
+Il sistema permette di visualizzare l ' elenco delle informazioni riguardanti gazzetta ufficiale speciale lavoro informazioni bandi concorso locali viaggi studio
+Il cittadino sceglie l ' informazione desiderata
+Il sistema restituisce le informazioni riguardanti la notizia specificando data di pubblicazione del bando data di scadenza del bando descrizione

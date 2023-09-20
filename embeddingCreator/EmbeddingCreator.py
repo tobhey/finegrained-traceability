@@ -5,6 +5,7 @@ from javalang.tokenizer import LexerError
 from pathlib import Path
 
 from embeddingCreator.EmbeddingContainer import EmbeddingContainer
+from preprocessing.CodeASTTokenizer import FileExtensionNotSupportedError
 from preprocessing.FileRepresentation import FileRepresentation
 from preprocessing.Preprocessor import Preprocessor
 from utility import FileUtil
@@ -56,6 +57,8 @@ class EmbeddingCreator(abc.ABC):
                 continue
             except (JavaParserError, LexerError) as j:
                 log.info(f"SKIPPED: Error on tokenizing {filename} (Note: code files needs to be compilable): {j}")
+                continue
+            except (FileExtensionNotSupportedError):
                 continue
             file_embedding = self._create_embeddings(file_representation)
             if file_embedding:

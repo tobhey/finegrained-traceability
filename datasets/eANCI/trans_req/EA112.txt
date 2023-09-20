@@ -1,0 +1,16 @@
+Use case name
+SanitaryAntropic
+Participating Actors
+Initiated by Citizen
+Flow of events
+1.
+The Citizen accesses the desired screen from the list of environmental hazards that is next to each hazard description.
+2. The system responds to the Citizen's request by providing a detailed explanation of what this use case means in practical terms, and distributing advice and standard procedures in case of hazards.
+Entry Condition.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information provided to him, OR
+The Citizen is unable to view the descriptive screen, so the use case ServiceNotAvailable, which handles technical failure cases, will be extended.
+Quality Requirements The system will respond to the Citizen's need by responding with the descriptive page on the order of hundredths of a second,OR
+If the Citizen cannot view the screen, the response from the system will increase, in the order of seconds.

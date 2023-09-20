@@ -3,6 +3,8 @@ import abc, re, logging
 from pathlib import Path
 
 from datasets.SolutionMatrix import SolutionMatrix
+from preprocessing.CodeASTTokenizer import JavaCodeASTTokenizer, CCodeASTTokenizer, MixedASTTokenizer
+from preprocessing.Tokenizer import JavaDocDescriptionOnlyTokenizer, WordTokenizer
 from utility import FileUtil
 
 log = logging.getLogger(__name__)
@@ -17,13 +19,13 @@ class Dataset(abc.ABC):
 
     def __init__(self):
         self._solution_matrix = None
-        
+
     def all_original_code_file_names(self):
         return [name.strip("\n") for name in FileUtil.read_textfile_into_lines_list(self._all_code_filenames_file())]
-    
+
     def all_original_req_file_names(self):
-        return[name.strip("\n") for name in FileUtil.read_textfile_into_lines_list(self._all_req_filenames_file())]
-        
+        return [name.strip("\n") for name in FileUtil.read_textfile_into_lines_list(self._all_req_filenames_file())]
+
     def encoding(self):
         return "utf-8-sig"
 
@@ -33,38 +35,38 @@ class Dataset(abc.ABC):
         original number all possible req/code links
         """
         pass
-    
+
     @abc.abstractmethod
     def _all_code_filenames_file(self):
         pass
-    
+
     @abc.abstractmethod
     def _all_req_filenames_file(self):
         pass
-    
+
     @abc.abstractmethod
     def name(self):
         pass
-    
+
     @abc.abstractmethod
     def folder(self):
         pass
-    
+
     @abc.abstractmethod
     def code_folder(self):
         pass
-    
+
     @abc.abstractmethod
     def req_folder(self):
         pass
-    
+
     @abc.abstractmethod
     def method_callgraph(self):
         """
         returns the precalculated method call graph dictionary
         """
         pass
-    
+
     @abc.abstractmethod
     def method_callgraph_path(self):
         pass
@@ -72,16 +74,16 @@ class Dataset(abc.ABC):
     @abc.abstractmethod
     def class_callgraph_path(self):
         pass
-    
+
     def solution_matrix(self):
         if self._solution_matrix is None:
             self._read_solution_matrix()
         return self._solution_matrix
-    
+
     @abc.abstractmethod
     def _read_solution_matrix(self):
         pass
-    
+
     @abc.abstractmethod
     def raw_call_graph_path(self):
         """
@@ -100,13 +102,29 @@ class Dataset(abc.ABC):
     @abc.abstractmethod
     def class_callgraph(self):
         pass
-    
+
     @abc.abstractmethod
     def is_english(self):
         pass
 
+    @abc.abstractmethod
+    def classification_file_path(self):
+        pass
 
-class Etour(Dataset):
+    @abc.abstractmethod
+    def code_tokenizer(self):
+        pass
+
+    def has_UCT(self):
+        return False
+
+class JavaDataset(Dataset):
+
+    def code_tokenizer(self):
+       return JavaCodeASTTokenizer(self, JavaDocDescriptionOnlyTokenizer(self, not self.is_english()))
+
+
+class Etour(JavaDataset):
     ETOUR_FOLDER = DATASETS_FOLDER / "eTour"
     ETOUR_SOLUTION_MATRIX_PATH = ETOUR_FOLDER / "etour_solution_links_english.txt"
     ETOUR_ITAL_SOLUTION_MATRIX_PATH = ETOUR_FOLDER / "etour_solution_links_italian.txt"
@@ -117,46 +135,50 @@ class Etour(Dataset):
     ETOUR_METHOD_CALLGRAPH_PATH = ETOUR_FOLDER / "etour_method_callgraph.json"
     ETOUR_ALL_CODE_FILENAMES_FILE = ETOUR_FOLDER / "all_code_filenames.txt"
     ETOUR_ALL_REQ_FILENAMES_FILE = ETOUR_FOLDER / "all_req_filenames.txt"
-    
+    ETOUR_CLASSIFICATION_FILE = ETOUR_FOLDER / "eTour_best.csv"
+    ETOUR_GOLD_STANDARD_CLASSIFICATION_FILE = ETOUR_FOLDER / "eTour_gold.csv"
+
     UC_NAME_TEMPLATE_REGEX = re.compile("^Use case name(:)?", re.RegexFlag.IGNORECASE)
     UC_DESCRIPTION_TEMPLATE_REGEX = re.compile("^Description(:)?", re.RegexFlag.IGNORECASE)
     UC_ACTOR_TEMPLATE_REGEX = re.compile("^Participating Actor(:)?", re.RegexFlag.IGNORECASE)
     UC_PRECONDITION_TEMPLATE_REGEX = re.compile("^Entry (Operator |Tourist )?conditions(:)?", re.RegexFlag.IGNORECASE)
     UC_POSTCONDITION_TEMPLATE_REGEX = re.compile("^Exit conditions(:)?", re.RegexFlag.IGNORECASE)
     UC_QUALI_REQ_TEMPLATE_REGEX = re.compile("^Quality Requirements(:)?", re.RegexFlag.IGNORECASE)
-    UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^Flow of events(:)?", re.RegexFlag.IGNORECASE)
+    UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^(Flow of events User System(:)?|Flow of events Gps System(:)?)",
+                                                  re.RegexFlag.IGNORECASE)
     UC_USER_TEMPLATE_REGEX = re.compile("a^", re.RegexFlag.IGNORECASE)  # Should not match anything
     UC_SYSTEM_TEMPLATE_REGEX = re.compile("a^", re.RegexFlag.IGNORECASE)  # Should not match anything
-    
-    def __init__(self, use_italian_solution_matrix=False):
+
+    def __init__(self, classification_file=ETOUR_CLASSIFICATION_FILE, use_italian_solution_matrix=False):
         super().__init__()
         if use_italian_solution_matrix:
             self.ETOUR_SOLUTION_MATRIX_PATH = self.ETOUR_ITAL_SOLUTION_MATRIX_PATH
-
+        self.ETOUR_CLASSIFICATION_FILE = classification_file
+    
     def name(self):
         return "etour"
-    
+
     def folder(self):
         return self.ETOUR_FOLDER
-    
+
     def code_folder(self):
         return self.ETOUR_CODE_DIR
-    
+
     def req_folder(self):
         return self.ETOUR_REQ_DIR
-    
+
     def _all_code_filenames_file(self):
         return self.ETOUR_ALL_CODE_FILENAMES_FILE
-    
+
     def _all_req_filenames_file(self):
         return self.ETOUR_ALL_REQ_FILENAMES_FILE
-    
+
     def num_original_links(self):
         return 6728
-    
+
     def method_callgraph(self):
         return FileUtil.read_from_json(self.ETOUR_METHOD_CALLGRAPH_PATH)
-    
+
     def method_callgraph_path(self):
         return self.ETOUR_METHOD_CALLGRAPH_PATH
 
@@ -165,28 +187,32 @@ class Etour(Dataset):
 
     def keys_with_extension(self):
         return False
-    
+
     def _read_solution_matrix(self):
         self._solution_matrix = read_txt_format_solution_matrix(self.ETOUR_SOLUTION_MATRIX_PATH)
-    
+
     def italian_solution_matrix(self):  # Code file names are italian 
         return read_txt_format_solution_matrix(self.ETOUR_ITAL_SOLUTION_MATRIX_PATH)
-    
+
     def raw_call_graph_path(self):
         return self.ETOUR_RAW_CALLGRAPH
-    
+
     def class_callgraph(self):
         return FileUtil.read_from_json(self.ETOUR_CLASS_CALLGRAPH_PATH)
-    
+
     def packages(self):
         return ["beans", "com.trapan", "unisa.gps"]
-    
+
     def is_english(self):
         return True
 
+    def classification_file_path(self):
+        return self.ETOUR_CLASSIFICATION_FILE
 
-class Itrust(Dataset):
-    
+    def has_UCT(self):
+        return True
+
+class Itrust(JavaDataset):
     ITRUST_FOLDER = DATASETS_FOLDER / "iTrust"
     ITRUST_SOLUTION_MATRIX_PATH = ITRUST_FOLDER / "itrust_solution_links.txt"
     ITRUST_REQ_DIR = ITRUST_FOLDER / "req"
@@ -196,46 +222,52 @@ class Itrust(Dataset):
     ITRUST_METHOD_CALLGRAPH_PATH = ITRUST_FOLDER / "itrust_method_callgraph.json"
     ITRUST_ALL_CODE_FILENAMES_FILE = ITRUST_FOLDER / "all_code_filenames.txt"
     ITRUST_ALL_REQ_FILENAMES_FILE = ITRUST_FOLDER / "all_req_filenames.txt"
-    
+    ITRUST_CLASSIFICATION_FILE = ITRUST_FOLDER / "iTrust_best.csv"
+    ITRUST_GOLD_STANDARD_CLASSIFICATION_FILE = ITRUST_FOLDER / "iTrust_gold.csv"
+
+    def __init__(self, classification_file=ITRUST_CLASSIFICATION_FILE):
+        super().__init__()
+        self.ITRUST_CLASSIFICATION_FILE = classification_file
+
     def name(self):
         return "itrust"
-    
+
     def num_original_links(self):
         return 29606
-    
+
     def folder(self):
         return self.ITRUST_FOLDER
-    
+
     def code_folder(self):
         return self.ITRUST_CODE_DIR
-    
+
     def req_folder(self):
         return self.ITRUST_REQ_DIR
 
     def _all_code_filenames_file(self):
         return self.ITRUST_ALL_CODE_FILENAMES_FILE
-    
+
     def _all_req_filenames_file(self):
         return self.ITRUST_ALL_REQ_FILENAMES_FILE
 
     def method_callgraph(self):
         return FileUtil.read_from_json(self.ITRUST_METHOD_CALLGRAPH_PATH)
-    
+
     def method_callgraph_path(self):
         return self.ITRUST_METHOD_CALLGRAPH_PATH
 
     def class_callgraph_path(self):
         return self.ITRUST_CLASS_CALLGRAPH_PATH
-    
+
     def _read_solution_matrix(self):
         self._solution_matrix = read_txt_format_solution_matrix(self.ITRUST_SOLUTION_MATRIX_PATH)
-    
+
     def raw_call_graph_path(self):
         return self.ITRUST_RAW_CALLGRAPH
-    
+
     def class_callgraph(self):
         return FileUtil.read_from_json(self.ITRUST_CLASS_CALLGRAPH_PATH)
-    
+
     def packages(self):
         return ["edu.ncsu.csc.itrust"]
 
@@ -243,8 +275,74 @@ class Itrust(Dataset):
         return True
 
 
-class Smos(Dataset):
+    def classification_file_path(self):
+        return self.ITRUST_CLASSIFICATION_FILE
+
+
+class ItrustFull(Itrust):
+    ITRUST_FOLDER = DATASETS_FOLDER / "iTrustFull"
+    ITRUST_SOLUTION_MATRIX_PATH = ITRUST_FOLDER / "itrust_solution_links.txt"
+    ITRUST_REQ_DIR = ITRUST_FOLDER / "req"
+    ITRUST_CODE_DIR = ITRUST_FOLDER / "code"
+    ITRUST_RAW_CALLGRAPH = ITRUST_FOLDER / "itrust_raw_callgraph.txt"
+    ITRUST_CLASS_CALLGRAPH_PATH = ITRUST_FOLDER / "itrust_class_callgraph.json"
+    ITRUST_METHOD_CALLGRAPH_PATH = ITRUST_FOLDER / "itrust_method_callgraph.json"
+    ITRUST_ALL_CODE_FILENAMES_FILE = ITRUST_FOLDER / "all_code_filenames.txt"
+    ITRUST_ALL_REQ_FILENAMES_FILE = ITRUST_FOLDER / "all_req_filenames.txt"
+    ITRUST_CLASSIFICATION_FILE = ITRUST_FOLDER / "iTrust_best.csv"
+    ITRUST_GOLD_STANDARD_CLASSIFICATION_FILE = ITRUST_FOLDER / "iTrust_gold.csv"
+
+    def __init__(self, classification_file=ITRUST_CLASSIFICATION_FILE):
+        super().__init__()
+        self.ITRUST_CLASSIFICATION_FILE = classification_file
+
+    def name(self):
+        return "itrustFull"
+
+    def num_original_links(self):
+        return 48077
+
+    def folder(self):
+        return self.ITRUST_FOLDER
+
+    def code_folder(self):
+        return self.ITRUST_CODE_DIR
+
+    def req_folder(self):
+        return self.ITRUST_REQ_DIR
+
+    def _all_code_filenames_file(self):
+        return self.ITRUST_ALL_CODE_FILENAMES_FILE
+
+    def _all_req_filenames_file(self):
+        return self.ITRUST_ALL_REQ_FILENAMES_FILE
+
+    def method_callgraph(self):
+        return FileUtil.read_from_json(self.ITRUST_METHOD_CALLGRAPH_PATH)
+
+    def method_callgraph_path(self):
+        return self.ITRUST_METHOD_CALLGRAPH_PATH
+
+    def class_callgraph_path(self):
+        return self.ITRUST_CLASS_CALLGRAPH_PATH
+
+    def _read_solution_matrix(self):
+        self._solution_matrix = read_txt_format_solution_matrix(self.ITRUST_SOLUTION_MATRIX_PATH)
+
+    def raw_call_graph_path(self):
+        return self.ITRUST_RAW_CALLGRAPH
+
+    def class_callgraph(self):
+        return FileUtil.read_from_json(self.ITRUST_CLASS_CALLGRAPH_PATH)
     
+    def classification_file_path(self):
+        return self.ITRUST_CLASSIFICATION_FILE
+
+    def code_tokenizer(self):
+        return MixedASTTokenizer(self, JavaDocDescriptionOnlyTokenizer(self, not self.is_english()), WordTokenizer(self, not self.is_english()))
+
+
+class Smos(JavaDataset):
     SMOS_FOLDER = DATASETS_FOLDER / "smos"
     SMOS_SOLUTION_MATRIX_PATH = SMOS_FOLDER / "smos_solution_links_italian.txt"
     SMOS_ENGLISH_SOLUTION_MATRIX_PATH = SMOS_FOLDER / "smos_solution_links_english.txt"
@@ -255,76 +353,172 @@ class Smos(Dataset):
     SMOS_METHOD_CALLGRAPH_PATH = SMOS_FOLDER / "smos_method_callgraph.json"
     SMOS_ALL_CODE_FILENAMES_FILE = SMOS_FOLDER / "all_code_filenames.txt"
     SMOS_ALL_REQ_FILENAMES_FILE = SMOS_FOLDER / "all_req_filenames.txt"
-    
+    SMOS_CLASSIFICATION_FILE = SMOS_FOLDER / "SMOS_best.csv"
+    SMOS_GOLD_STANDARD_CLASSIFICATION_FILE = SMOS_FOLDER / "SMOS_gold.csv"
+
     UC_NAME_TEMPLATE_REGEX = re.compile("^Nome(:)?", re.RegexFlag.IGNORECASE)
     UC_DESCRIPTION_TEMPLATE_REGEX = re.compile("^Descrizione(:)?", re.RegexFlag.IGNORECASE)
     UC_ACTOR_TEMPLATE_REGEX = re.compile("^Attori(:)?", re.RegexFlag.IGNORECASE)
     UC_PRECONDITION_TEMPLATE_REGEX = re.compile("^Precondizioni(:)?", re.RegexFlag.IGNORECASE)
     UC_POSTCONDITION_TEMPLATE_REGEX = re.compile("^Postcondizioni(:)?", re.RegexFlag.IGNORECASE)
-    UC_QUALI_REQ_TEMPLATE_REGEX = re.compile("a^", re.RegexFlag.IGNORECASE)  # should never match -> smos doesn't have this element
+    UC_QUALI_REQ_TEMPLATE_REGEX = re.compile("a^",
+                                             re.RegexFlag.IGNORECASE)  # should never match -> smos doesn't have this element
     UC_USER_TEMPLATE_REGEX = re.compile("^Utente(:)?", re.RegexFlag.IGNORECASE)
     UC_SYSTEM_TEMPLATE_REGEX = re.compile("^Sistema(:)?", re.RegexFlag.IGNORECASE)
     UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^Sequenza degli eventi(:)?", re.RegexFlag.IGNORECASE)
-    
-    def __init__(self, use_english_solution_matrix=False):
+
+    def __init__(self, classification_file=SMOS_CLASSIFICATION_FILE, use_english_solution_matrix=False):
         super().__init__()
         if use_english_solution_matrix:
             self.SMOS_SOLUTION_MATRIX_PATH = self.SMOS_ENGLISH_SOLUTION_MATRIX_PATH
-            
+        self.SMOS_CLASSIFICATION_FILE = classification_file
+
     def name(self):
         return "smos"
-    
+
     def num_original_links(self):
         return 6700
-    
+
     def folder(self):
         return self.SMOS_FOLDER
-    
+
     def code_folder(self):
         return self.SMOS_CODE_DIR
-    
+
     def req_folder(self):
         return self.SMOS_REQ_DIR
-    
+
     def _all_code_filenames_file(self):
         return self.SMOS_ALL_CODE_FILENAMES_FILE
-    
+
     def _all_req_filenames_file(self):
         return self.SMOS_ALL_REQ_FILENAMES_FILE
-    
+
     def method_callgraph(self):
         return FileUtil.read_from_json(self.SMOS_METHOD_CALLGRAPH_PATH)
-    
+
     def method_callgraph_path(self):
         return self.SMOS_METHOD_CALLGRAPH_PATH
-    
+
     def class_callgraph_path(self):
         return self.SMOS_CLASS_CALLGRAPH_PATH
-    
+
     def _read_solution_matrix(self):
         self._solution_matrix = read_txt_format_solution_matrix(self.SMOS_SOLUTION_MATRIX_PATH)
-    
+
     def english_solution_matrix(self):
         return read_txt_format_solution_matrix(self.SMOS_ENGLISH_SOLUTION_MATRIX_PATH)
-    
+
     def raw_call_graph_path(self):
         return self.SMOS_RAW_CALLGRAPH
-    
+
     def class_callgraph(self):
         return FileUtil.read_from_json(self.SMOS_CLASS_CALLGRAPH_PATH)
-    
+
     def packages(self):
         return ["smos"]
-    
+
     def encoding(self):
         return "ISO-8859-1"
 
     def is_english(self):
         return False
 
-    
-class Eanci(Dataset):
-    
+    def classification_file_path(self):
+        return self.SMOS_CLASSIFICATION_FILE
+
+    def has_UCT(self):
+        return True
+
+class SmosTrans(JavaDataset):
+    SMOS_FOLDER = DATASETS_FOLDER / "smos"
+    SMOS_SOLUTION_MATRIX_PATH = SMOS_FOLDER / "smos_solution_links_italian.txt"
+    SMOS_ENGLISH_SOLUTION_MATRIX_PATH = SMOS_FOLDER / "smos_solution_links_english.txt"
+    SMOS_REQ_DIR = SMOS_FOLDER / "trans_req"
+    SMOS_CODE_DIR = SMOS_FOLDER / "trans_code"
+    SMOS_RAW_CALLGRAPH = SMOS_FOLDER / "smos_raw_callgraph_en.txt"
+    SMOS_CLASS_CALLGRAPH_PATH = SMOS_FOLDER / "smos_class_callgraph_en.json"
+    SMOS_METHOD_CALLGRAPH_PATH = SMOS_FOLDER / "smos_method_callgraph_en.json"
+    SMOS_ALL_CODE_FILENAMES_FILE = SMOS_FOLDER / "all_code_filenames.txt"
+    SMOS_ALL_REQ_FILENAMES_FILE = SMOS_FOLDER / "all_req_filenames.txt"
+    SMOS_CLASSIFICATION_FILE = SMOS_FOLDER / "SMOS_best.csv"
+    SMOS_GOLD_STANDARD_CLASSIFICATION_FILE = SMOS_FOLDER / "SMOS_gold.csv"
+
+    UC_NAME_TEMPLATE_REGEX = re.compile("^Name(:)?", re.RegexFlag.IGNORECASE)
+    UC_DESCRIPTION_TEMPLATE_REGEX = re.compile("^Description(:)?", re.RegexFlag.IGNORECASE)
+    UC_ACTOR_TEMPLATE_REGEX = re.compile("^Actors(:)?", re.RegexFlag.IGNORECASE)
+    UC_PRECONDITION_TEMPLATE_REGEX = re.compile("^Preconditions(:)?", re.RegexFlag.IGNORECASE)
+    UC_POSTCONDITION_TEMPLATE_REGEX = re.compile("^Postconditions(:)?", re.RegexFlag.IGNORECASE)
+    UC_QUALI_REQ_TEMPLATE_REGEX = re.compile("a^",
+                                             re.RegexFlag.IGNORECASE)  # should never match -> smos doesn't have this element
+    UC_USER_TEMPLATE_REGEX = re.compile("^User(:)?", re.RegexFlag.IGNORECASE)
+    UC_SYSTEM_TEMPLATE_REGEX = re.compile("^System(:)?", re.RegexFlag.IGNORECASE)
+    UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^Events sequence(:)?", re.RegexFlag.IGNORECASE)
+
+    def __init__(self, classification_file=SMOS_CLASSIFICATION_FILE, use_english_solution_matrix=False):
+        super().__init__()
+        if use_english_solution_matrix:
+            self.SMOS_SOLUTION_MATRIX_PATH = self.SMOS_ENGLISH_SOLUTION_MATRIX_PATH
+        self.SMOS_CLASSIFICATION_FILE = classification_file
+
+    def name(self):
+        return "smosTrans"
+
+    def num_original_links(self):
+        return 6700
+
+    def folder(self):
+        return self.SMOS_FOLDER
+
+    def code_folder(self):
+        return self.SMOS_CODE_DIR
+
+    def req_folder(self):
+        return self.SMOS_REQ_DIR
+
+    def _all_code_filenames_file(self):
+        return self.SMOS_ALL_CODE_FILENAMES_FILE
+
+    def _all_req_filenames_file(self):
+        return self.SMOS_ALL_REQ_FILENAMES_FILE
+
+    def method_callgraph(self):
+        return FileUtil.read_from_json(self.SMOS_METHOD_CALLGRAPH_PATH)
+
+    def method_callgraph_path(self):
+        return self.SMOS_METHOD_CALLGRAPH_PATH
+
+    def class_callgraph_path(self):
+        return self.SMOS_CLASS_CALLGRAPH_PATH
+
+    def _read_solution_matrix(self):
+        self._solution_matrix = read_txt_format_solution_matrix(self.SMOS_SOLUTION_MATRIX_PATH)
+
+    def english_solution_matrix(self):
+        return read_txt_format_solution_matrix(self.SMOS_ENGLISH_SOLUTION_MATRIX_PATH)
+
+    def raw_call_graph_path(self):
+        return self.SMOS_RAW_CALLGRAPH
+
+    def class_callgraph(self):
+        return FileUtil.read_from_json(self.SMOS_CLASS_CALLGRAPH_PATH)
+
+    def packages(self):
+        return ["smos"]
+
+    def encoding(self):
+        return "ISO-8859-1"
+
+    def is_english(self):
+        return True
+
+    def classification_file_path(self):
+        return self.SMOS_CLASSIFICATION_FILE
+
+    def has_UCT(self):
+        return True
+
+class Eanci(JavaDataset):
     EANCI_FOLDER = DATASETS_FOLDER / "eANCI"
     EANCI_SOLUTION_MATRIX_PATH = EANCI_FOLDER / "eanci_solution_links.txt"
     EANCI_REQ_DIR = EANCI_FOLDER / "req"
@@ -334,78 +528,346 @@ class Eanci(Dataset):
     EANCI_METHOD_CALLGRAPH_PATH = EANCI_FOLDER / "eanci_method_callgraph.json"
     EANCI_ALL_CODE_FILENAMES_FILE = EANCI_FOLDER / "all_code_filenames.txt"
     EANCI_ALL_REQ_FILENAMES_FILE = EANCI_FOLDER / "all_req_filenames.txt"
-    
+    EANCI_CLASSIFICATION_FILE = EANCI_FOLDER / "eANCI_best.csv"
+    EANCI_GOLD_STANDARD_CLASSIFICATION_FILE = EANCI_FOLDER / "eANCI_gold.csv"
+
     UC_NAME_TEMPLATE_REGEX = re.compile("^Nome caso d'uso(:)?", flags=re.RegexFlag.IGNORECASE)
-    UC_DESCRIPTION_TEMPLATE_REGEX = re.compile("a^", re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_DESCRIPTION_TEMPLATE_REGEX = re.compile("a^",
+                                               re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
     UC_ACTOR_TEMPLATE_REGEX = re.compile("^Attori partecipanti(:)?", re.RegexFlag.IGNORECASE)
     UC_PRECONDITION_TEMPLATE_REGEX = re.compile("^Condizione di entrata(:)?", re.RegexFlag.IGNORECASE)
     UC_POSTCONDITION_TEMPLATE_REGEX = re.compile("^Condizioni di uscita(:)?", re.RegexFlag.IGNORECASE)
     UC_QUALI_REQ_TEMPLATE_REGEX = re.compile("Requisiti di qualita(:)?", re.RegexFlag.IGNORECASE)
-    UC_USER_TEMPLATE_REGEX = re.compile("^a^", re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
-    UC_SYSTEM_TEMPLATE_REGEX = re.compile("^a^", re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_USER_TEMPLATE_REGEX = re.compile("^a^",
+                                        re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_SYSTEM_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
     UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^Flusso di eventi(:)?", re.RegexFlag.IGNORECASE)
-    
+
+    def __init__(self, classification_file=EANCI_CLASSIFICATION_FILE):
+        super().__init__()
+        self.EANCI_CLASSIFICATION_FILE = classification_file
+
     def name(self):
         return "eanci"
-    
+
     def num_original_links(self):
         return 7645
-    
+
     def folder(self):
         return self.EANCI_FOLDER
-    
+
     def code_folder(self):
         return self.EANCI_CODE_DIR
-    
+
     def req_folder(self):
         return self.EANCI_REQ_DIR
-    
+
     def _all_code_filenames_file(self):
         return self.EANCI_ALL_CODE_FILENAMES_FILE
-    
+
     def _all_req_filenames_file(self):
         return self.EANCI_ALL_REQ_FILENAMES_FILE
-    
+
     def method_callgraph(self):
         return FileUtil.read_from_json(self.EANCI_METHOD_CALLGRAPH_PATH)
 
     def method_callgraph_path(self):
         return self.EANCI_METHOD_CALLGRAPH_PATH
-    
+
     def class_callgraph_path(self):
         return self.EANCI_CLASS_CALLGRAPH_PATH
-    
+
     def _read_solution_matrix(self):
         self._solution_matrix = read_txt_format_solution_matrix(self.EANCI_SOLUTION_MATRIX_PATH)
-    
+
     def raw_call_graph_path(self):
         return self.EANCI_RAW_CALLGRAPH
-    
+
     def class_callgraph(self):
         return FileUtil.read_from_json(self.EANCI_CLASS_CALLGRAPH_PATH)
-    
+
     def packages(self):
-        return ["DB", "Servlet", "Bean"]
-        
+        return ["DB", "Servlet", "Bean", "Manager"]
+
     def encoding(self):
         return "ISO-8859-1"
-    
+
     def is_english(self):
         return False
 
-    
+    def classification_file_path(self):
+        return self.EANCI_CLASSIFICATION_FILE
+
+    def has_UCT(self):
+        return True
+
+class EanciTrans(JavaDataset):
+    EANCI_FOLDER = DATASETS_FOLDER / "eANCI"
+    EANCI_SOLUTION_MATRIX_PATH = EANCI_FOLDER / "eanci_solution_links.txt"
+    EANCI_REQ_DIR = EANCI_FOLDER / "trans_req"
+    EANCI_CODE_DIR = EANCI_FOLDER / "trans_code"
+    EANCI_RAW_CALLGRAPH = EANCI_FOLDER / "eanci_raw_callgraph_en.txt"
+    EANCI_CLASS_CALLGRAPH_PATH = EANCI_FOLDER / "eanci_class_callgraph_en.json"
+    EANCI_METHOD_CALLGRAPH_PATH = EANCI_FOLDER / "eanci_method_callgraph_en.json"
+    EANCI_ALL_CODE_FILENAMES_FILE = EANCI_FOLDER / "all_code_filenames.txt"
+    EANCI_ALL_REQ_FILENAMES_FILE = EANCI_FOLDER / "all_req_filenames.txt"
+    EANCI_CLASSIFICATION_FILE = EANCI_FOLDER / "eANCI_best.csv"
+    EANCI_GOLD_STANDARD_CLASSIFICATION_FILE = EANCI_FOLDER / "eANCI_gold.csv"
+
+    UC_NAME_TEMPLATE_REGEX = re.compile("^Use case name(:)?", flags=re.RegexFlag.IGNORECASE)
+    UC_DESCRIPTION_TEMPLATE_REGEX = re.compile("a^",
+                                               re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_ACTOR_TEMPLATE_REGEX = re.compile("^Participating Actors(:)?", re.RegexFlag.IGNORECASE)
+    UC_PRECONDITION_TEMPLATE_REGEX = re.compile("^(Entry condition|Condition of Entry|Input condition)(:)?", re.RegexFlag.IGNORECASE)
+    UC_POSTCONDITION_TEMPLATE_REGEX = re.compile("^(Exit condition|Condition of Exit|Output condition)(:)?", re.RegexFlag.IGNORECASE)
+    UC_QUALI_REQ_TEMPLATE_REGEX = re.compile("Quality Requirements(:)?", re.RegexFlag.IGNORECASE)
+    UC_USER_TEMPLATE_REGEX = re.compile("^a^",
+                                        re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_SYSTEM_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^(Flow of events|Event Flow)(:)?", re.RegexFlag.IGNORECASE)
+
+    def __init__(self, classification_file=EANCI_CLASSIFICATION_FILE):
+        super().__init__()
+        self.EANCI_CLASSIFICATION_FILE = classification_file
+
+    def name(self):
+        return "eanciTrans"
+
+    def num_original_links(self):
+        return 7645
+
+    def folder(self):
+        return self.EANCI_FOLDER
+
+    def code_folder(self):
+        return self.EANCI_CODE_DIR
+
+    def req_folder(self):
+        return self.EANCI_REQ_DIR
+
+    def _all_code_filenames_file(self):
+        return self.EANCI_ALL_CODE_FILENAMES_FILE
+
+    def _all_req_filenames_file(self):
+        return self.EANCI_ALL_REQ_FILENAMES_FILE
+
+    def method_callgraph(self):
+        return FileUtil.read_from_json(self.EANCI_METHOD_CALLGRAPH_PATH)
+
+    def method_callgraph_path(self):
+        return self.EANCI_METHOD_CALLGRAPH_PATH
+
+    def class_callgraph_path(self):
+        return self.EANCI_CLASS_CALLGRAPH_PATH
+
+    def _read_solution_matrix(self):
+        self._solution_matrix = read_txt_format_solution_matrix(self.EANCI_SOLUTION_MATRIX_PATH)
+
+    def raw_call_graph_path(self):
+        return self.EANCI_RAW_CALLGRAPH
+
+    def class_callgraph(self):
+        return FileUtil.read_from_json(self.EANCI_CLASS_CALLGRAPH_PATH)
+
+    def packages(self):
+        return ["DB", "Servlet", "Bean", "Manager"]
+
+    def encoding(self):
+        return "ISO-8859-1"
+
+    def is_english(self):
+        return True
+
+    def has_use_case_template(self):
+        return True
+
+    def classification_file_path(self):
+        return self.EANCI_CLASSIFICATION_FILE
+
+    def has_UCT(self):
+        return True
+
+class Albergate(JavaDataset):
+    ALBERGATE_FOLDER = DATASETS_FOLDER / "albergate"
+    ALBERGATE_SOLUTION_MATRIX_PATH = ALBERGATE_FOLDER / "AnswerMatrix.txt"
+    ALBERGATE_REQ_DIR = ALBERGATE_FOLDER / "req"
+    ALBERGATE_CODE_DIR = ALBERGATE_FOLDER / "code"
+    ALBERGATE_RAW_CALLGRAPH = ALBERGATE_FOLDER / "albergate_raw_callgraph.txt"
+    ALBERGATE_CLASS_CALLGRAPH_PATH = ALBERGATE_FOLDER / "albergate_class_callgraph.json"
+    ALBERGATE_METHOD_CALLGRAPH_PATH = ALBERGATE_FOLDER / "albergate_method_callgraph.json"
+    ALBERGATE_ALL_CODE_FILENAMES_FILE = ALBERGATE_FOLDER / "all_code_filenames.txt"
+    ALBERGATE_ALL_REQ_FILENAMES_FILE = ALBERGATE_FOLDER / "all_req_filenames.txt"
+
+    UC_NAME_TEMPLATE_REGEX = re.compile("^Requisito:", re.RegexFlag.IGNORECASE)
+    UC_DESCRIPTION_TEMPLATE_REGEX = re.compile("^Descrizione(:)?", re.RegexFlag.IGNORECASE)
+    UC_ACTOR_TEMPLATE_REGEX = re.compile("^Attori(:)?", re.RegexFlag.IGNORECASE)
+    UC_PRECONDITION_TEMPLATE_REGEX = re.compile("^Input richiesto(:)?", re.RegexFlag.IGNORECASE)
+    UC_POSTCONDITION_TEMPLATE_REGEX = re.compile("^Output desiderato(:)?", re.RegexFlag.IGNORECASE)
+    UC_QUALI_REQ_TEMPLATE_REGEX = re.compile("^Criterio di accettazione(:)?", re.RegexFlag.IGNORECASE)
+    UC_USER_TEMPLATE_REGEX = re.compile("^Utente(:)?", re.RegexFlag.IGNORECASE)
+    UC_SYSTEM_TEMPLATE_REGEX = re.compile("^Sistema(:)?", re.RegexFlag.IGNORECASE)
+    UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^Descrizione(:)?", re.RegexFlag.IGNORECASE)
+
+    def name(self):
+        return "albergate"
+
+    def num_original_links(self):
+        return 53
+
+    def folder(self):
+        return self.ALBERGATE_FOLDER
+
+    def code_folder(self):
+        return self.ALBERGATE_CODE_DIR
+
+    def req_folder(self):
+        return self.ALBERGATE_REQ_DIR
+
+    def _all_code_filenames_file(self):
+        return self.ALBERGATE_ALL_CODE_FILENAMES_FILE
+
+    def _all_req_filenames_file(self):
+        return self.ALBERGATE_ALL_REQ_FILENAMES_FILE
+
+    def method_callgraph(self):
+        return FileUtil.read_from_json(self.ALBERGATE_METHOD_CALLGRAPH_PATH)
+
+    def method_callgraph_path(self):
+        return self.ALBERGATE_METHOD_CALLGRAPH_PATH
+
+    def class_callgraph_path(self):
+        return self.ALBERGATE_CLASS_CALLGRAPH_PATH
+
+    def _read_solution_matrix(self):
+        self._solution_matrix = read_txt_format_solution_matrix(self.ALBERGATE_SOLUTION_MATRIX_PATH)
+
+    def raw_call_graph_path(self):
+        return self.ALBERGATE_RAW_CALLGRAPH
+
+    def class_callgraph(self):
+        return FileUtil.read_from_json(self.ALBERGATE_CLASS_CALLGRAPH_PATH)
+
+    def packages(self):
+        return ["interfacce"]
+
+    def is_english(self):
+        return False
+
+    def classification_file_path(self):
+       raise NotImplementedError()
+
+    def has_UCT(self):
+        return True
+
+class Libest(Dataset):
+    LIBEST_FOLDER = DATASETS_FOLDER / "LibEST"
+    LIBEST_SOLUTION_MATRIX_PATH = LIBEST_FOLDER / "req_to_code_ground.txt"
+    LIBEST_REQ_DIR = LIBEST_FOLDER / "req"
+    LIBEST_CODE_DIR = LIBEST_FOLDER / "code"
+    LIBEST_RAW_CALLGRAPH = LIBEST_FOLDER / "LibEST_raw_callgraph.txt"
+    LIBEST_CLASS_CALLGRAPH_PATH = LIBEST_FOLDER / "LibEST_class_callgraph.json"
+    LIBEST_METHOD_CALLGRAPH_PATH = LIBEST_FOLDER / "LibEST_method_callgraph.json"
+    LIBEST_ALL_CODE_FILENAMES_FILE = LIBEST_FOLDER / "all_code_filenames.txt"
+    LIBEST_ALL_REQ_FILENAMES_FILE = LIBEST_FOLDER / "all_req_filenames.txt"
+    LIBEST_CLASSIFICATION_FILE = LIBEST_FOLDER / "LibEST_best.csv"
+    LIBEST_GOLD_STANDARD_CLASSIFICATION_FILE = LIBEST_FOLDER / "LibEST_gold.csv"
+    FAKE_C_LIB_HEADER = LIBEST_FOLDER / "fake_libc_include"  # Needed to run the pycparser for libest code files
+
+    UC_NAME_TEMPLATE_REGEX = re.compile("^REQUIREMENT [0-9]+:", re.RegexFlag.IGNORECASE)
+    UC_DESCRIPTION_TEMPLATE_REGEX = re.compile("^\n+", re.RegexFlag.IGNORECASE)
+    UC_ACTOR_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_PRECONDITION_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_POSTCONDITION_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_QUALI_REQ_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element)
+    UC_USER_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_SYSTEM_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+    UC_FLOW_OF_EVENTS_TEMPLATE_REGEX = re.compile("^a^",
+                                          re.RegexFlag.IGNORECASE)  # should never match -> eAnci doesn't have this element
+
+    def __init__(self, classification_file=LIBEST_CLASSIFICATION_FILE):
+        super().__init__()
+        self.LIBEST_CLASSIFICATION_FILE = classification_file
+
+    def name(self):
+        return "libest"
+
+    def num_original_links(self):
+        return 204
+
+    def folder(self):
+        return self.LIBEST_FOLDER
+
+    def code_folder(self):
+        return self.LIBEST_CODE_DIR
+
+    def req_folder(self):
+        return self.LIBEST_REQ_DIR
+
+    def _all_code_filenames_file(self):
+        return self.LIBEST_ALL_CODE_FILENAMES_FILE
+
+    def _all_req_filenames_file(self):
+        return self.LIBEST_ALL_REQ_FILENAMES_FILE
+
+    def method_callgraph(self):
+        return FileUtil.read_from_json(self.LIBEST_METHOD_CALLGRAPH_PATH)
+
+    def method_callgraph_path(self):
+        return self.LIBEST_METHOD_CALLGRAPH_PATH
+
+    def class_callgraph_path(self):
+        return self.LIBEST_CLASS_CALLGRAPH_PATH
+
+    def _read_solution_matrix(self):
+        self._solution_matrix = read_txt_format_solution_matrix(self.LIBEST_SOLUTION_MATRIX_PATH)
+
+    def raw_call_graph_path(self):
+        return self.LIBEST_RAW_CALLGRAPH
+
+    def class_callgraph(self):
+        return FileUtil.read_from_json(self.LIBEST_CLASS_CALLGRAPH_PATH)
+
+    def packages(self):
+        return []  # Not implemented
+
+    def encoding(self):
+        return "ISO-8859-1"
+
+    def is_english(self):
+        return True
+
+    def is_C(self):
+        return True
+
+    def classification_file_path(self):
+        return self.LIBEST_CLASSIFICATION_FILE
+
+    def code_tokenizer(self):
+        return CCodeASTTokenizer(self, WordTokenizer(self, not self.is_english()))
+
+    def has_UCT(self):
+        return True
+
 def read_txt_format_solution_matrix(file_path, delim=":"):
     """
     Use this for solution matrices of etour, libest, dronology
     """
-    
+
     text_rows = []
     try:
         file = open(file_path, 'r', encoding='utf8')
         text_rows = file.readlines()
     except IOError:
         log.error("Unable to read " + str(file_path))
-        
+
     tm = SolutionMatrix()
     for row in text_rows:
         row_split = row.split(delim)
@@ -414,5 +876,5 @@ def read_txt_format_solution_matrix(file_path, delim=":"):
             code_names = row_split[1].split()
             for code_name in code_names:
                 tm.add_trace_pair(req_name, code_name)
-        
+
     return tm

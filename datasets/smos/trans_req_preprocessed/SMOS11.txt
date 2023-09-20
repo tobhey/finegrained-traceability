@@ -1,0 +1,9 @@
+Assigns Remove lessons to a teacher
+Allows you to assign or remove teachers to a teacher
+Select the academic year
+Select the desired class
+Select the teachings to associate or remove the teacher
+Displays the teaching management form for the teacher in question
+View the list of classes available for the selected year
+View the list of teachings associated with that class
+Assigns or removes the teaching teachings as indicated by the administrator

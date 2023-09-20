@@ -1,0 +1,6 @@
+Cancellation used
+
+The administrator presses the deletion button used
+The system asks the administrator a confirmation
+The administrator confirms the operation
+The system cancels the employee

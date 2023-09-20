@@ -1,0 +1,22 @@
+Requisito:
+Gestione del cambio di stanza.
+Descrizione:
+Nel caso in cui il cliente desideri o sia costretto (es. per un guasto) a cambiare 
+stanza di soggiorno, il sistema dovrà fornire tutti gli strumenti necessari 
+affinché ciò sia possibile.
+Input richiesto:
+Numero di stanza da lasciare, numero della nuova stanza da occupare
+Output desiderato:
+Modifica dell’informazione che indicava la stanza che occupavano i clienti 
+con il nuovo dato, modifica dello status delle stanze.
+Criterio di accettazione:
+Quando viene accolta una richiesta di cambio di stanza si dovrà poter 
+verificare che i dati degli occupanti non si riferiscono più alla stanza in 
+precedenza occupata ma alla nuova stanza in cui soggiornano. Il 
+cambiamento di stanza coinvolgerà lo stato delle stanze modificandolo 
+opportunamente
+Aspettative collegate:
+Permettere un eventuale spostamento di stanza.
+Requisiti collegati:
+nn.
+

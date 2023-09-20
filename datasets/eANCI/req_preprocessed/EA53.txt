@@ -1,0 +1,5 @@
+Indennita Accompagnamento
+
+L ' utente seleziona Richiesta indennit di accompagnamento
+Il sistema mostra le informazioni relative alla pensione di invalidit e mostra il link per il download del relativo modulo da inviare all ' INPS fornendo la possibilit di stampare il tutto
+Inoltre mostra i link diretti alla richiesta di stato di famiglia e di stato civile

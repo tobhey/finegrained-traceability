@@ -1,0 +1,3 @@
+View Details Address
+Allows you to view the details of an address
+Displays the screen with the details of a single address in particular address name

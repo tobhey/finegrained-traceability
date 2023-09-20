@@ -1,0 +1,18 @@
+Use case name
+EnrollmentCardYouth
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen applies for youth card enrollment.
+2. The system displays a form for submitting the request.
+3. The citizen enters the card application data into a form.
+4. The system receives the form, verifies the data, and submits the request.
+5. The system notifies that the card has been entered and displays the card number and the summary of data entered in a form.
+Entry condition
+This case requires that the citizen has gone through the authentication procedure.
+Exit condition
+The system has displayed the summary form, OR
+In case an error occurred in the card application phase, the system calls the use case ServiceNotAvailable, OR
+Should the citizen enter incorrect data, the system calls the use case DataError, OR
+In case the citizen decides to cancel the card request, the system calls the use case CardCanceled.
+Quality requirements Not provided.

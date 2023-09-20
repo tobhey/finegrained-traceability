@@ -1,0 +1,4 @@
+Logout Amministratore
+
+L ' amministratore vuole terminare la sessione di lavoro e clicca sul bottone Logout
+Il sistema disconnette l ' amministratore dal sistema e ritorna alla schermata principale

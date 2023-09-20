@@ -1,0 +1,5 @@
+Pratica Accettata
+
+L ' Impiegato accetta la pratica
+Il sistema imposta la pratica come accettata
+Quindi invia una notifica al Cittadino

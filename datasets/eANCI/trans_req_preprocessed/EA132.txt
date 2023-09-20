@@ -1,0 +1,6 @@
+REQUEST REQUEST ACCEPTED
+
+The employee displays the received notification
+The system shows the employee the request made by the citizen
+The employee certifies the validity of the request by controlling the accuracy of the data and enables the bureaucratic procedure for the request of the service
+The system sends a confirmation e-mail to the citizen who requested the service

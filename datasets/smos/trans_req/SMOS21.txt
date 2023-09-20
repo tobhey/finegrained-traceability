@@ -1,0 +1,17 @@
+Name: AssignRemoveTeachings
+Actors: Administrator
+Description: Assigns or removes one or more teachings from an address
+Preconditions:
+• • • •
+The user is logged in to the system as an administrator The user has made the case of use "viewdettaglizzizzo" The user displays the detailed information of an address the user click on the "Teachings Address" button
+Events sequence
+User
+2. Select the teachings to be assigned or removed at
+3. Click on the "Send" button
+System
+1. Displays a form from which you can add and / or remove lessons at the address.
+4. Associate or removes selected teachings at the address.
+5. Back to display details of the address.
+Postconditions:
+• • •
+The administrator interrupts the operation connection to the SMOS server interrupted the system has changed the teachings relating to the address

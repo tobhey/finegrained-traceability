@@ -1,0 +1,13 @@
+Name: DeleteNote
+Actors: Administrator
+Description: Deleting disciplinary notes
+Preconditions:
+• The user must be logged in to the system as an administrator • The user has carried out the case of use "SHOWDDETTICLETA" and the system is
+Viewing the details of a note • The user clicks the "Delete" button
+Events sequence
+User
+System
+1. The system sends a notification of incorrect corrige to the student's parents, then eliminates the data of the note from the archive.
+Postconditions:
+• The note has been canceled, and the system sent notification to parents. The system returns to the registry screen.
+• The administrator interrupts the operation • Connection to the SMOS server interrupted

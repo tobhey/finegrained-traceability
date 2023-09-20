@@ -1,0 +1,10 @@
+#Set the default behavior, in case people don't have core.autocrlf set.
+* text eol=lf
+*.pptx binary
+*.pdf binary
+*.png binary
+*.best.hdf5 binary
+*.hdf5 binary
+*.docx binary
+*.mp4 binary
+*.mkv binary

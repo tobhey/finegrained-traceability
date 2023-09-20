@@ -1,0 +1,15 @@
+Use case name
+EntryInformation
+Participating Actors
+Started by Employee
+Flow of events
+1. Employee requests the insertion of a new news item.
+2. The system displays a form for submitting the request.
+3. The clerk enters data about the new news in a form.
+4. The system receives the form, and enters the news into the system
+Entry condition
+This case requires that the employee has gone through the authentication procedure.
+Exit condition
+The system has performed the insertion of the news, OR
+If an error occurred in the insertion request, the system calls the use case ServiceNotAvailable
+Quality RequirementsNot Available.

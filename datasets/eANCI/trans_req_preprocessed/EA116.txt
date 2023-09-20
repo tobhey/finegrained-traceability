@@ -1,0 +1,6 @@
+Volunteering
+
+The citizen accesses the introductory screen
+The system responds by viewing the descriptive card about general information on this aspect of civil protection and the possibility of knowing the prerequisites to participate
+The citizen becomes aware of what wrote and therefore select the link where the case is called how to become volunteers
+The system responds, allowing you to view this description

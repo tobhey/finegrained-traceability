@@ -1,0 +1,8 @@
+Pagamento Non Riuscito
+
+Il Cittadino clicca sul pulsante per accedere all ' area Pagamento Online delle tasse o delle multe
+Il Sistema visualizza la lista delle tasse multe che possono essere pagate online
+Il Cittadino seleziona la tassamulta di interesse
+Il Sistema redirige il Cittadino verso la sezione necessaria mostrando il form al cittadino
+Il Cittadino avvia la transazione
+Il Sistema non consente la transazione poich si sono verificati problemi con il metodo di pagamento selezionato

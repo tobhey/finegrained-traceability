@@ -1,0 +1,6 @@
+Autenticazione Impiegato
+
+L ' impiegato accede alla sessione di autenticazione
+Il sistema mostra la form di login per l ' immissione dei dati nome utente e password
+L ' impiegato inserisci inserisce i dati e sottomette la richiesta di autenticazione
+Il sistema verifica l ' esattezza dei dati e consente l ' accesso all ' impiegato

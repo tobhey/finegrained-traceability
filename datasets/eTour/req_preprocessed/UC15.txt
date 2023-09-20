@@ -1,0 +1,9 @@
+Modify Tourist Account Data
+Change data of a selected account Tourist
+Tourists from the list obtained by activating the use case Search Tourist it selects and activates a function to modify data
+Loads the data selected and displays them in a form allowing the change
+Edit the fields in the form and submit
+Verify the information and asks for confirmation of the change
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation
+Stores the modified data selected account

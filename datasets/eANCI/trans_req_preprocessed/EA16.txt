@@ -1,0 +1,6 @@
+Administrator password modification
+
+The administrator wants to change the password and press the Change Password button
+The system displays the form for the insertion of the old password
+The administrator inserts the old password the new password and press the confirmation key
+The system notifies that the password was changed

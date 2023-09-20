@@ -1,0 +1,6 @@
+Citizen insertion
+
+The employee accesses the system and activates the registration procedure of the citizen
+The system displays the form for the insertion of a new citizen
+The employee inserts the citizen's data and submits the registration request
+The system receives the form verification that the citizen has already been present in the system inserted by the employee

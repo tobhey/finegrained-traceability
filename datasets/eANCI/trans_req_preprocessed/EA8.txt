@@ -1,0 +1,4 @@
+Logout Administrator
+
+The administrator wants to finish the work session and click on the logout button
+The system disconnects the administrator from the system and returns to the main screen

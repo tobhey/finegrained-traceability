@@ -1,0 +1,6 @@
+Check Banner Number
+Check if a point Refreshments included the maximum number of allowed banners to it
+Load the data of the Convention of refreshment point and verify that the number of banners is less than the specified number of the current banner
+If not checked will end the operation input and displays a notification
+Confirmation of the reading of the notification
+Recovers the previous state

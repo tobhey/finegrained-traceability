@@ -1,0 +1,3 @@
+REQUIREMENT 31: DISTRIBUTION OF CA CERTIFICATES
+     
+The EST client can request a copy of the current CA certificates. This function is generally performed before other EST functions.

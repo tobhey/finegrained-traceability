@@ -1,0 +1,3 @@
+Ricerca Entita Attori Amministratore
+Consente all ' amministratore di ricercare nel sistema tutte le entit caratterizzate dalle keywords inserite
+Visualizza l ' elenco delle entit correlate alla keywords ricercate in particolare vengono mostrate in una lista attiva Classi Insegnamenti Indirizzi Utenti trovati

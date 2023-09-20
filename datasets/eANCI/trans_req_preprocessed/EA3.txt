@@ -1,0 +1,6 @@
+Employee authentication
+
+The employee accesses the authentication session
+The system shows the login form for data entry username and password
+The Insert employee inserts the data and submits the authentication request
+The system verifies the accuracy of the data and allows access to the employee

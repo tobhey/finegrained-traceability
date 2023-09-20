@@ -1,0 +1,18 @@
+Use Case Name
+UpdateBandsECompetitions
+Participating Actors
+Started by Employee
+Flow of events
+1.
+3.
+The municipal clerk after authenticating in the system updates the list of associations that have published a new call for events.
+2. The system responds by providing the clerk with a form to complete to update the fields: association_logo, description, association_name, notice.
+The clerk completes the fields of the form presented by the system and submits it.
+The system shall update the form and allow it to be viewed by the Citizen 4.
+Entry condition
+The employee has authenticated into the system.
+Exit condition
+The submission was successful, OR
+The clerk does not the update and retrieved the ServiceNotAvailable.
+Can complete therefore comes use case
+Quality requirements Not expected

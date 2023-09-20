@@ -1,0 +1,6 @@
+Bandi E Concorsi
+
+Il Cittadino accede alla schermata iniziale per poter visionare la possibilit di visionare le associazioni che affiancano la Protezione Civile
+Il sistema risponde all ' esigenza permettendo al Cittadino di visualizzare tutte le associazioni che fanno capo alla Protezione Civile e che assumono personale con una piccola immagine dell ' associazione con accanto la possibilit di ricevere il download del bando messo a disposizione dalla associazione in questione
+Il Cittadino prende atto di ci che fornisce la scheda e sceglie da quale tra le associazioni messe a disposizione ricevere notizie per una eventuale assunzione o partecipazione al concorso circa le modalit dello stesso
+Il sistema risponde a tale esigenza permettendogli di visualizzare il bando di concorso corrispondente

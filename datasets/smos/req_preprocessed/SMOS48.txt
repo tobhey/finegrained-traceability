@@ -1,0 +1,5 @@
+Cancellazione Di Una Pagella
+L Amministratore elimina una pagella dal sistema
+L ' utente accetta la cancellazione premendo il tasto di conferma
+Il sistema visualizza un form per confermare la cancellazione
+Visualizza un messaggio di corretta cancellazione e visualizza il form con l ' elenco delle classi

@@ -1,0 +1,12 @@
+Use case name
+LogoutCitizen
+Participating actors
+Initiated by citizen
+Flow of events
+1. Citizen wants to end the work session and clicks on the Logout button.
+2. The system logs the citizen out of the system and returns to the main screen.
+Entry condition
+The citizen has logged into the system.
+Logout condition
+The system closes the citizen's session.
+Quality requirements➢ Not provided.

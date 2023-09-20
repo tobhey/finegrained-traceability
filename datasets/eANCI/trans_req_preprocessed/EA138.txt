@@ -1,0 +1,5 @@
+Incorrect data
+
+The system shows a message to the video of the terminal indicating that the requested request was incorrect
+Citizen reads the notification message
+The system resumes the input form

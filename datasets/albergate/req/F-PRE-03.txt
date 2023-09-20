@@ -1,0 +1,29 @@
+Requisito:
+Gestione delle camere bloccate.
+Descrizione:
+Se al momento della prenotazione una stanza viene bloccata, tale stanza 
+rimarrà in quello stato per un certo periodo di tempo fissato (vedi F-GES-04) 
+dalla gestione dell'albergo. Trascorso tale periodo verrà inviato un messaggio 
+che faccia comprendere che la stanza è bloccata da troppo tempo in modo che 
+ci si possa informare se il ritardo è dovuto a un contrattempo del cliente 
+oppure se egli non intende più soggiornare nell'albergo. Nel primo caso si 
+provvederà a rinnovare il bloccaggio della stanza, mentre nel secondo a 
+cancellare la prenotazione. Una volta arrivata la caparra del cliente deve 
+essere possibile passare la stanza da bloccata ad assegnata.
+Input richiesto:
+Situazione delle stanze.
+Output desiderato:
+Situazione aggiornata delle stanze.
+Criterio di accettazione:
+Trascorso il numero di giorni fissati dall'albergatore a partire dal giorno della 
+prenotazione il sistema dovrà garantire che:
+  una stanza bloccata sia passata a stato di assegnata;
+  venga visualizzato un messaggio che avvisi della situazione di ritardo 
+di pagamento della caparra.
+Aspettative collegate:
+L’albergatore si aspetta di poter tenere sotto controllo la situazione delle 
+stanze bloccate in modo tale che una camera non rimanga troppo a lungo in 
+tale stato rischiando di far perdere altri potenziali clienti all’albergo.
+Requisiti collegati:
+F-PRE-02, F-GES-04.
+

@@ -1,0 +1,15 @@
+Use Case Name
+ManagementModifications
+Participating Actors
+Started by Employee
+Flow of events
+1. The employee after authenticating in the system accesses the Civil Defense feature to edit the relevant forms.
+2. The system responds to this need with the ability to display a screen with the use cases UpdateAtmosphericConditions, UpdateEnvironmentalAnalysis, UpdateCompetitionsBands.
+3. The 'employee selects the feature to be changed.
+4. The system responds to the employee's need with the required change form.
+Entry Condition
+The employee has authenticated into the municipal system.
+Exit condition
+The employee has correctly submitted the form, OR
+The employee fails to view the page related to the requested edit form and therefore the use case ServiceNotAvailable, which handles technical failure cases, will be extended.
+Quality RequirementsNot Provided.

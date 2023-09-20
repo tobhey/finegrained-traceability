@@ -1,0 +1,16 @@
+Name: InsertDelayAdmin
+Actors: Administrator
+Description: Register digitization, data entry by the administrator
+Preconditions:
+• • •
+The user must be logged in to the system as an administrator, the user took the case of use "SeveralTetTingloregister" selects the date on which he wants to enter the information.
+Events sequence
+User
+System
+2. Fill out the form by entering students with delay and click "Save"
+1. Update the screen displayed according to the date
+3. Send data to the server.
+4. Displays the updated log data.
+Postconditions:
+• The delay data has been entered in the system, and the system sent notifications to parents. The system remains on the registry screen.
+• The administrator interrupts the operation.• Connection to the interrupted SMOS server.

@@ -1,0 +1,3 @@
+REQUIREMENT 10: SERVER KEY GENERATION
+     
+The EST client can request a server-generated certificate and key pair (see Section 4.4).

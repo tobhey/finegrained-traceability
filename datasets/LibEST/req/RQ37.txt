@@ -1,0 +1,7 @@
+REQUIREMENT 37: SIMPLE RE-ENROLLMENT OF CLIENTS
+     
+EST clients renew/rekey certificates with an HTTPS POST using the operation path value of "/simplereenroll".
+
+A certificate request employs the same format as the "simpleenroll" request, using the same HTTP content-type. The request Subject field and SubjectAltName extension MUST be identical to the corresponding fields in the certificate being renewed/rekeyed. The ChangeSubjectName attribute, as defined in [RFC6402], MAY be included in the CSR to request that these fields be changed in the new certificate.
+
+If the Subject Public Key Info in the certification request is the same as the current client certificate, then the EST server renews the client certificate. If the public key information in the certification request is different than the current client certificate, then the EST server rekeys the client certificate.

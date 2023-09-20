@@ -1,0 +1,9 @@
+Insert News
+Inserts a new news in the system
+Activate the feature to insert a news
+Displays the corresponding form
+Fill out the form and submit
+Verify the data entered and asks for confirmation of the transaction
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation of insertion
+Stores the data of the new news

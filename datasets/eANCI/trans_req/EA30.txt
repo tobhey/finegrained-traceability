@@ -1,0 +1,17 @@
+Use Case Name
+IdentityCardRequest
+Participating Actors
+Started by Citizen, continued employee
+Flow of events
+1. Citizen views family status and selects a family member.
+2. The system displays a form for entering personal data(Height, special marks, etc.).
+3. The Citizen enters the data, selects the payment method and presses the confirm button.
+4. The system shows the screen with the documentation to be shown at the counter on the days and hours the office is open.
+5. The citizen confirms the transaction. 6. The system notifies the clerk of the
+request.
+Entry condition
+The Citizen has authenticated in the system. The citizen exercises parental authority
+over the person concerned.
+Exit condition
+➢ The clerk receives the file and chooses whether to accept it or not, by calling the use case RequestCardOfIdentityRejected or RequestCardOfIdentityAccepted, OR respectively
+➢ In the case where the service is not available, the use case ServiceNotAvailable is invoked.

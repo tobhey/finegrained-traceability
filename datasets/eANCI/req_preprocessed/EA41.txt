@@ -1,0 +1,4 @@
+Visualizzazione Pratica
+
+Il cittadino clicca sul bottone visualizza pratiche Carta d ' Identit Cambio Residenza
+Il sistema visualizza una schermata con le pratiche che riguardano il cittadino

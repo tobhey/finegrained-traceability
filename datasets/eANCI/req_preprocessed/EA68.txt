@@ -1,0 +1,4 @@
+News Annullato
+
+Cittadino decide di voler annullare le news di informagiovani e quindi inserisce nel form che la vuole annullare
+Il sistema riceve il form notifica l ' avvenuto annullamento delle news e ripresenta il form

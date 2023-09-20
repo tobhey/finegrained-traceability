@@ -1,0 +1,18 @@
+Use Case Name
+ClearPractice
+Participating actors
+Started by citizen
+Flow of events
+1.
+3.
+Citizen presses the cancel file button (ID Card, Change of Residence) if the file has not been initialized .
+2. The system asks the citizen for confirmation. The citizen confirms the operation.
+The system deletes the practice 4.
+Entry condition
+The citizen has authenticated into the system. This use case extends ViewPractice and occurs when the
+citizen wants to delete the practice.
+Exit condition.
+The citizen does not confirm the transaction, OR
+The system deletes the practice, OR ➢ In the case where the service is not available, the use case is invoked
+of use ServiceNotAvailable.
+Quality RequirementsNotProvided.

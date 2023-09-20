@@ -1,0 +1,6 @@
+Research employee
+
+The administrator presses the search button used
+The system shows the form for the search for an employee
+The administrator carries out a search through the data of the employee
+The system returns the intended employee data

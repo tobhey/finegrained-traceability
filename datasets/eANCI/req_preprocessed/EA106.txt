@@ -1,0 +1,4 @@
+Monitoraggio Idro-pluviometrico
+
+Il Cittadino accede a questa schermata in quanto vuole soddisfare la sua curiosit nel conoscere la situazione monitorata dalla Protezione Civile delle acque comunali
+Il sistema risponde con una schermata dove permette di visualizzare informazioni circa le modalit del monitoraggio delle acque comunali la situazione batteriologica e l ' aggiornamento delle ultime analisi effettuate sui campioni prelevati

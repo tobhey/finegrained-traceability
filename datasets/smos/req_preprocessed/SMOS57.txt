@@ -1,0 +1,3 @@
+Visualizza Registro
+Visualizzazione del registro di classe
+Visualizza le informazioni relative al registro di classe ed in particolare Data Assenze Note disciplinari Ritardi e Giustifiche

@@ -1,0 +1,60 @@
+REQUIREMENT 50: IANA CONSIDERATIONS
+     
+Section 4.4.1.2 defines an OID that has been registered in an arc delegated by the IANA to the PKIX working group.
+
+IANA has registered the following:
+
+IANA updated the well-known URI registry with the following filled-in template from [RFC5785].
+
+URI suffix: est
+
+Change controller: IETF
+
+IANA has updated the "Application Media Types" registry with the following filled-in templates from [RFC6838].
+
+The media subtype for CSR attributes in a CSR Attributes Response is application/csrattrs.
+
+                
+       Type name: application
+
+       Subtype name: csrattrs
+
+       Required parameters: None
+
+       Optional parameters: None
+
+       Encoding considerations: binary;
+
+       Security Considerations:
+
+         Clients request a list of attributes that servers wish to be in
+         certification requests.  The request/response is normally done
+         in a TLS-protected tunnel.
+
+       Interoperability considerations: None
+
+       Published specification: This memo.
+
+       Applications which use this media type: Enrollment over Secure
+       Transport (EST)
+
+       Additional information:
+
+         Magic number(s): None
+
+         File extension: .csrattrs
+
+       Person & email address to contact for further information:
+
+         Dan Harkins <dharkins@arubanetworks.com>
+
+       Restrictions on usage: None
+
+       Author: Dan Harkins <dharkins@arubanetworks.com>
+
+       Intended usage: COMMON
+
+       Change controller: The IESG <iesg@ietf.org>
+                
+                
+The application/pkcs7-mime content-type defines the optional "smime-type" parameter [RFC5751] with a set of specific values. This document adds another value, "server-generated-key", as the parameter value for Server-side Key Generation Response.

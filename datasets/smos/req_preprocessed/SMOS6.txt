@@ -1,0 +1,6 @@
+Nuovo Utente
+Inserimento di un nuovo utente nel sistema
+Riempie i campi del form
+Clicca sul pulsante Salva
+Visualizza il form di inserimento degli utenti costituito dai seguenti campi Nome Cognome e-mail cell login password conferma password
+Effettua dei controlli sulla validit dei dati immessi e inserisce il nuovo utente nellarchivio nel caso in cui i dati inseriti non sono validi attiva il caso duso Errore Dati

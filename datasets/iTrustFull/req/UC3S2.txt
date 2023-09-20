@@ -1,0 +1,1 @@
+If answer to security question is correct, allow user to change their password. An email notification is sent.

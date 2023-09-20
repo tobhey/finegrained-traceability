@@ -1,0 +1,14 @@
+Name: ViewRequestsSubscription
+Actors: Administrator
+Description: Allows the administrator to view the list of registration requests to the system
+Preconditions:
+• The user is logged in to the system as an administrator • The user click on the "View list request list" button
+Present in the home
+Events sequence
+User
+System
+1.Displays the list of registrations yet to be activated.
+Postconditions:
+•
+•
+The user is viewing the list of requests for registration to the system by students the user interrupts the connection to the SMOS server interrupted

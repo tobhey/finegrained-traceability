@@ -1,0 +1,4 @@
+Seismic
+
+The citizen accesses the descriptive screen of how the seismic territory monitoring takes place and the possibility of acquiring information about the causes of an earthquake and the measurement and prevention technologies used by the operating core specialists
+The system responds by providing the citizen the possibility of always viewing the characteristics of the tools the work carried out by the specialists and national bodies with which they collaborate

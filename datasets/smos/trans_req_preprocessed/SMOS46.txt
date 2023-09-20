@@ -1,0 +1,9 @@
+Pagine insert
+Insertion of a student's report performed by the administrator
+Choose the class of the student to insert the report card
+Select the pupil to which to insert the report card by clicking on the relevant key
+Inserts the votes of the report card all or partly and click on the Save button
+View Lelo's classes in the reported academic system in progress with a reporting button associated with each class next
+View the list of class students chosen by the user
+View the form for the insertion of a report card
+Insert the votes entered in the Archive and reports the user to the class students viewing page

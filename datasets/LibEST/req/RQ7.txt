@@ -1,0 +1,3 @@
+REQUIREMENT 7: CERTIFICATE-LESS TLS AUTHENTICATION
+     
+The EST client and EST server can be mutually authenticated using a certificate-less TLS cipher suite (see Section 3.3.3).

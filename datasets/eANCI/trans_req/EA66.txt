@@ -1,0 +1,16 @@
+Use case name
+RegistrationNewsInformagiovani
+Participating actors
+Started by Citizen
+Flow of events
+1. Citizen requests subscription to informagiovani news to receive service-related advertisements.
+2. The system displays a form for submitting the request.
+3. The citizen enters the news request data into a form.
+4. The system receives the form, verifies the data, and submits the request.
+Entry condition
+This case requires that the citizen has gone through the authentication procedure.
+Exit condition
+The system has submitted the applicant's request, OR
+Should an error occur at the news request stage, the system calls the use case ServiceNotAvailable, OR
+Should the citizen decide to cancel the news request, the system calls the use case NewsAnnulled.
+Quality RequirementsNot Provided.

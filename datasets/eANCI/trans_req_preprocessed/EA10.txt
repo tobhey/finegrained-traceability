@@ -1,0 +1,4 @@
+Logout Employee
+
+The employee wants to end the work session and click on the logout button
+The system disconnects the employee from the system and returns to the main screen

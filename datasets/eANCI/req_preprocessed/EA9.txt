@@ -1,0 +1,4 @@
+Logout Cittadino
+
+Il cittadino vuole terminare la sessione di lavoro e clicca sul bottone Logout
+Il sistema disconnette il cittadino dal sistema e ritorna alla schermata principale

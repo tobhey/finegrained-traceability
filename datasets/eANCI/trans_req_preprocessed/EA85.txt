@@ -1,0 +1,6 @@
+Search for Building File
+
+The citizen accesses the research area
+The system displays the form for the insertion of the search key the citizen inserts the search key
+IlSistemamostraIrisultationLargeCerca The citizen selects the file
+Ilsistemate

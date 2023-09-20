@@ -1,0 +1,13 @@
+Use case name
+PlanZoneAssistance
+Participating Actors
+Started by User
+Event Flow
+Remote user selects the Social Assistance feature by selecting "Area Plan: assistance services" 1.
+2. The system displays the area plan regarding care services.
+Entry Condition.
+The user accessed the system.
+Exit condition
+The user returns to the previous screen, OR
+The system encountered an unanticipated error so calls the use case ServiceNotAvailable.
+Unanticipated Quality Requirements.

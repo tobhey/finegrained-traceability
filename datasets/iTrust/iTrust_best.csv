@@ -1,0 +1,337 @@
+file,part,line,functional,Function,Behavior,Data,OnlyF,F,OnlyQ,Q,UserRelated
+UC10E1.txt,UC10E1.txt.0,The health care professional types an invalid medical identification number and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC10E2.txt,UC10E2.txt.0,The patient chosen is not the desired patient,0,0,0,0,0,0,0,0,0
+UC10E2.txt,UC10E2.txt.1,The health care professional does not confirm the selection and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC10S1.txt,UC10S1.txt.0,The health care personnel enters a MID E of a patient and confirms their selection E,0,0,0,0,0,1,0,0,1
+UC10S1.txt,UC10S1.txt.1,The health care personnel may enteredit personal health information including editing historical values from Data Format and immunizations and office visit information date diagnoses medication name of attending physician but not notes laboratory procedures family history the MI Ds of the patient 's mother and father and Body Mass Index BMI S,0,1,0,1,0,1,0,0,1
+UC10S1.txt,UC10S1.txt.2,The HCP can indicate the patient has passed away providing an appropriate diagnosis code,0,1,0,0,0,1,0,0,0
+UC10S1.txt,UC10S1.txt.3,The HCP can graph height or weight of the patient over the last calendar years S,0,1,1,1,0,1,0,0,0
+UC10S2.txt,UC10S2.txt.0,For the patient the HCP can choose either height or weight to graph,0,1,0,1,0,1,0,0,1
+UC10S2.txt,UC10S2.txt.1,The HCP is presented with a line chart giving the chosen measurements either height or weight of the patient spanning the last calendar years of data averaged by quarters January- March April- June July- September October- December E,0,0,1,1,0,1,0,0,0
+UC11E1.txt,UC11E1.txt.0,The HCP types an invalid medical identification number and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC11E2.txt,UC11E2.txt.0,The patient chosen is not the desired patient,0,0,0,0,0,0,0,0,0
+UC11E2.txt,UC11E2.txt.1,The health care personnel does not confirm the selection and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC11S1.txt,UC11S1.txt.0,The HCP enters a MID E or name of a patient and confirms their selection E,0,0,0,1,0,1,0,0,1
+UC11S1.txt,UC11S1.txt.1,The HCP documents the office visit date hospital location of the office visit if any the default should be the HCP 's home location and notes numbers characters - ' blankspace and carriage return are all allowed input values about an office visit,0,1,1,1,0,1,0,0,0
+UC11S1.txt,UC11S1.txt.2,The HCP 's medical identification number should also be maintained,0,0,1,0,0,1,0,0,0
+UC11S1.txt,UC11S1.txt.3,Additionally the HCP can document none one or more medications NDC see Data Format prescribed S none one or more lab procedures that are ordered LOINC code see Data Format UC none one or more diagnoses via the ICD- CM code none one or more medical procedures CPT code performed and none one or more immunizations given CPT Code see UC S chosen from appropriate pull-down lists,0,1,0,1,0,1,0,0,0
+UC11S1.txt,UC11S1.txt.4,The HCP may also add a patient referral UC,0,0,0,1,0,1,0,0,0
+UC11S1.txt,UC11S1.txt.5,All events are logged UC S,0,0,0,0,0,0,0,0,0
+UC11S2.txt,UC11S2.txt.0,HC Ps can return to an office visit and modify or delete the fields of the office visit date hospital notes prescriptions laboratory procedures UC referral UC diagnoses procedures andor immunizations,0,1,1,1,0,1,0,0,0
+UC11S2.txt,UC11S2.txt.1,The event is logged UC S and the HCP is returned in the specific office visit record to verify his or her changes,0,0,1,1,0,1,0,0,0
+UC12.txt,UC12.txt.0,The software tester authenticates himself or herself in the i Trust Medical Records system UC,0,1,0,0,0,1,0,0,1
+UC12.txt,UC12.txt.1,He or she is then presented with the actual operational profile of the operations of the i Trust Medical Records where the use percentage is the of total transactions for each particular transaction logging type broken-down by each of the user types patient LHCP UHCP admin tester,0,0,1,1,0,1,0,0,0
+UC13.txt,UC13.txt.0,A patient 's DLHCP chooses to add or delete a patient 's E E personal representative by typing that person 's MID E E,0,1,0,1,0,1,0,0,1
+UC13E1.txt,UC13E1.txt.0,The health care personnel types an invalid medical identification number and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC15E1.txt,UC15E1.txt.0,The administrator types an invalid code information and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC15S1.txt,UC15S1.txt.0,The administrator will maintain addupdate a listing of allowable immunizations that an HCP can use,0,1,1,1,0,1,0,0,1
+UC15S1.txt,UC15S1.txt.1,The administrator will store the CPT code The CPT code set accurately describes medical surgical and diagnostic services and is designed to communicate uniform information about medical services and procedures among physicians coders patients accreditation organizations and payers for administrative financial and analytical purposes,0,1,1,1,0,1,0,0,1
+UC15S1.txt,UC15S1.txt.2,About CPT E and up to alpha characters giving the name E of the immunization,0,0,0,0,0,1,0,0,0
+UC15S2.txt,UC15S2.txt.0,The administrator will maintain a listing of allowable diagnoses that an LHCP can use,0,1,1,1,0,1,0,0,1
+UC15S2.txt,UC15S2.txt.1,The administrator will store the ICD- CM code The International Statistical Classification of Diseases and Related Health Problems most commonly known by the abbreviation ICD provides codes to classify diseases and a wide variety of signs symptoms abnormal findings complaints social circumstances and external causes of injury or disease,0,1,1,1,0,1,0,0,1
+UC15S2.txt,UC15S2.txt.2,NHCS Classification of Diseases Functioning and Disability for the diagnosis E a classification that the diagnosis is either chroniclong-term OR short term and up to alphanumeric characters giving the name E of the diagnosis,0,0,0,1,0,1,0,0,0
+UC15S3.txt,UC15S3.txt.0,The administrator will maintain addupdate a listing of allowable drugs that an HCP can use,0,1,1,1,0,1,0,0,1
+UC15S3.txt,UC15S3.txt.1,The administrator will store the National Drug Code The National Drug Code NDC is a universal product identifier used in the United States for drugs intended for human use,0,1,0,1,0,1,0,0,1
+UC15S3.txt,UC15S3.txt.2,National Drug Code Directory,0,1,1,1,0,1,0,0,0
+UC15S4.txt,UC15S4.txt.0,The administrator will maintain addupdate a listing of allowable physical services including laboratory procedures that an HCP can use,0,1,1,1,0,1,0,0,1
+UC15S4.txt,UC15S4.txt.1,The administrator will store information of a LOINC code Logical Observation Identifiers Names and Codes LOINC is a database and universal standard for identifying medical laboratory observations,0,1,1,1,0,1,0,0,1
+UC15S4.txt,UC15S4.txt.2,LOINC co Medical Informatics E according to Data Format,0,1,1,1,0,1,0,0,0
+UC16.txt,UC16.txt.0,Through the Personal Health Records page an LHCP chooses a chronic disease and a patient,0,1,0,0,0,1,0,0,1
+UC16.txt,UC16.txt.1,The data in the database is analyzed according to the risk factors for the disease to determine if the patient exhibits a certain risk factor,0,1,1,1,0,1,0,0,0
+UC16.txt,UC16.txt.2,Currently available risk factors for chronic diseases are defined for Diabetes and Type and Type and Heart Disease,0,0,0,0,0,1,0,0,0
+UC16.txt,UC16.txt.3,When the chosen patient satisfies the preconditions of the chosen chronic disease E the LHCP is provided with a warning message if that patient exhibits three or more risk factors,0,0,1,0,0,1,0,0,0
+UC16.txt,UC16.txt.4,The message will display the risk factors that the patients exhibit,0,1,1,1,0,1,0,0,0
+UC16E1.txt,UC16E1.txt.0,The LHCP chooses to examine a patient for which the preconditions do not apply eg an adult should n't be tested for child diabetes and the LHCP is prompted that no analysis can occur,0,0,0,0,0,1,0,0,0
+UC17S1.txt,UC17S1.txt.0,An alive patient who has not had an office visit for more than one year and who has been diagnosed with diabetes mellitus is diagnosed with ICD code beginning with asthma is diagnosed with ICD code beginning with or circulatory-system disease is diagnosed with an ICD code between and inclusive,0,0,0,0,0,0,0,0,0
+UC17S2.txt,UC17S2.txt.0,An alive patient over years old who has not had a flu shot CPT codes per http wwwinfluenzacomindexcfm fa ADDITIONALRESHC during the months Sept - Dec of the last calendar year or during the months Sept - Dec of the current calendar year if the retrieval time is between Sept - Dec,0,0,0,0,0,1,0,0,0
+UC17S3.txt,UC17S3.txt.0,An alive patient under the age of who has not had proper immunizations per the immunization schedule,0,0,0,0,0,0,0,0,1
+UC17S3.txt,UC17S3.txt.1,The catch up schedule is relevant when the patient did not begin the immunizations according to the recommended schedule,0,0,1,0,0,1,0,0,0
+UC18E1.txt,UC18E1.txt.0,The administrator types an invalid hospital ID and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC18E2.txt,UC18E2.txt.0,The administrator types an invalid hospital name and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC18S1.txt,UC18S1.txt.0,The administrator will store hospital Id number for the hospital E and up to alphanumeric characters giving the name of the hospital,0,1,1,1,0,1,0,0,1
+UC18S2.txt,UC18S2.txt.0,The system shall enable the administrator to add a new entry for a hospital or modify the hospital name in an existing entry,0,1,1,1,0,1,0,0,0
+UC18S2.txt,UC18S2.txt.1,Note that the administrator is not allowed through the system interface to delete an existing entry or modify the hospital ID number in an existing entry,0,0,1,1,0,1,0,0,0
+UC19E1.txt,UC19E1.txt.0,The LHCP types an invalid medical identification number and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC19E2.txt,UC19E2.txt.0,The patient chosen is not the desired patient,0,0,0,0,0,0,0,0,0
+UC19E2.txt,UC19E2.txt.1,The LHCP does not confirm the selection and is prompted to try again,0,0,1,0,0,1,0,0,0
+UC19S1.txt,UC19S1.txt.0,The user patient or personal health representative can choose to view a list of their own prescriptions or the prescriptions for whom the user is a person health representative by choosing one patient from a a list of these patients,0,1,0,1,0,1,0,0,1
+UC19S1.txt,UC19S1.txt.1,A prescription list is then displayed S sorted by start date the later date is ranked earlier,0,0,1,1,0,1,0,0,0
+UC19S2.txt,UC19S2.txt.0,The user LHCP selects a patient from the list of requested reports,0,0,1,1,0,1,0,0,1
+UC19S2.txt,UC19S2.txt.1,At this point the LHCP can view a prescription list for that patient S sorted by start date the later date is ranked earlier,0,1,1,1,0,1,0,0,0
+UC19S3.txt,UC19S3.txt.0,The prescription report is titled with the patient name,0,0,0,1,0,1,0,0,0
+UC19S3.txt,UC19S3.txt.1,The prescription list includes medication date prescribed start date end date for each prescription and the name of the doctor who prescribed the medication,0,0,0,1,0,1,0,0,0
+UC1E1.txt,UC1E1.txt.0,The system prompts the enterereditor to correct the format of a required data field because the input of that data field does not match that specified in data format for patients,0,1,1,0,0,1,0,0,0
+UC1E2.txt,UC1E2.txt.0,The enterereditor is presented with the name of the user and determines if it is invalid or not the right person,0,0,0,1,0,1,0,0,1
+UC1E2.txt,UC1E2.txt.1,The enterereditor is prompted to try again,0,0,1,0,0,1,0,0,1
+UC1S1.txt,UC1S1.txt.0,The HCP enters a patient as a new user of i Trust Medical Records system,0,0,1,1,0,1,0,0,0
+UC1S1.txt,UC1S1.txt.1,Only the name and email are is provided,0,0,0,0,0,1,0,0,0
+UC1S1.txt,UC1S1.txt.2,The patient 's assigned MID and a secret key the initial password is personally provided to the user with which the user can reset hisher password,0,0,1,1,0,1,0,0,0
+UC1S1.txt,UC1S1.txt.3,The HCP can edit the patient according to data format E with all initial values except patient MID defaulting to null andor as appropriate,0,1,1,1,0,1,0,0,0
+UC1S1.txt,UC1S1.txt.4,Patient MID should be the number assigned when the patient is added to the system and can not be edited,0,0,1,1,0,1,0,0,0
+UC1S1.txt,UC1S1.txt.5,The HCP does not have the ability to entereditview the patient 's security questionpassword,0,0,0,0,0,1,0,0,0
+UC1S2.txt,UC1S2.txt.0,The HCP provides a deceased date data format,0,1,0,1,0,1,0,0,0
+UC1S2.txt,UC1S2.txt.1,An optional diagnosis code is entered as the cause of death,0,0,0,1,0,1,0,0,0
+UC21E1.txt,UC21E1.txt.0,The LHCP types an invalid medical identification number and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC21E2.txt,UC21E2.txt.0,The patient chosen is not the desired patient,0,0,0,0,0,0,0,0,0
+UC21E2.txt,UC21E2.txt.1,The LHCP or ER does not confirm the selection and is prompted to try again,0,0,1,0,0,1,0,0,0
+UC21S1.txt,UC21S1.txt.0,The LHCP or ER enters a MID E and confirms the input E,0,0,0,0,0,1,0,0,0
+UC22E1.txt,UC22E1.txt.0,The user inputs invalid information and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC22E2.txt,UC22E2.txt.0,The comment is empty and the text No Comment without link is displayed instead of the Read Comment link,0,0,1,0,0,1,0,0,0
+UC22S1.txt,UC22S1.txt.0,The system shall enable the administrator to add a new entry for an appointment type including its type name with up to alpha characters and duration in the unit of minutes E and modify the duration in an existing entry E,0,1,1,1,0,1,0,0,0
+UC22S1.txt,UC22S1.txt.1,A new entry shall not have the same type name as that of any existing entry E,0,0,1,0,0,1,0,0,0
+UC22S1.txt,UC22S1.txt.2,Note that the administrator is not allowed through the system interface to delete an existing entry or modify the appointment type name in an existing entry,0,0,1,1,0,1,0,0,0
+UC22S2.txt,UC22S2.txt.0,The LHCP chooses to schedule an appointment with a patient it is assumed that the LHCP and patient have already worked out the details of the appointment in person or via telephone outside of the system,0,0,0,0,0,1,0,0,1
+UC22S2.txt,UC22S2.txt.1,The LHCP enters the patient MID selects the type of appointment from a pull-down menu of the existing appointment types enter the appointment date and start time only a datetime equal or after the current datetime is allowed,0,0,0,1,0,1,0,0,1
+UC22S2.txt,UC22S2.txt.2,The user interface shall provide both the option of typing in a specific date in the date format and the option of selecting a date from a calendar for the current month enter comment optional up to characters such as reason for the appointment E,0,1,0,1,0,1,0,0,0
+UC22S3.txt,UC22S3.txt.0,A user an LHCP or patient wishes to view a list of his or her upcoming appointments ie a list including appointments whose appointment date and start time is equal or later than the current datetime,0,1,0,1,0,1,0,0,1
+UC22S3.txt,UC22S3.txt.1,The user chooses to open his or her upcoming appointment list,0,1,0,1,0,1,0,0,1
+UC22S3.txt,UC22S3.txt.2,Each row in the list includes the appointment type appointment date and start time duration and the name of either the patient only for the user being an LHCP or the LHCP only for the user being a patient,0,0,0,1,0,1,0,0,0
+UC22S3.txt,UC22S3.txt.3,The appointments in the list shall be ordered by appointment date and start time the soonest upcoming first,0,1,0,1,0,1,0,0,0
+UC22S3.txt,UC22S3.txt.4,The row for each conflicting appointment is highlighted in bold a conflicting appointment is one that has overlap in its appointment duration period with that of at least another appointment of the same user,0,0,1,0,0,1,0,0,0
+UC22S3.txt,UC22S3.txt.5,When viewing the calendar the user selects an appointment from the list to read comment by clicking the Read Comment link beside the row for the appointment and then the comment for the appointment shall be displayed in a new page E,0,1,0,1,0,1,0,0,1
+UC23E1.txt,UC23E1.txt.0,The LHCP types an invalid MID and is prompted to try again,0,0,1,0,0,1,0,0,1
+UC23E2.txt,UC23E2.txt.0,The chosen patient is not the desired patient,0,0,0,0,0,0,0,0,0
+UC23E2.txt,UC23E2.txt.1,The LHCP does not confirm the selection and can try again,0,0,0,0,0,1,0,0,0
+UC23S1.txt,UC23S1.txt.0,The LHCP enters a patient medical identification number MID E and confirms hisher input E,0,0,0,0,0,1,0,0,1
+UC23S3.txt,UC23S3.txt.0,The LHCP can view of the comprehensive patient report for the specified patient including the information below,0,1,0,1,0,1,0,0,0
+UC23S3.txt,UC23S3.txt.1,All patient demographic information address phone etc see UC and Data Format The entire history of personal health records see UC and Data Format All diagnoses including those not normally viewable by the requesting LHCP see UC and Data Format All designated HC Ps MI Ds and Names see UC All allergies procedures medications office visits and known relatives see UC and Data Format All MI Ds and names of people that this person is representing see UC All MI Ds and names of people that this person is represented by see UC,0,0,0,1,0,1,0,0,0
+UC23S4.txt,UC23S4.txt.0,The LHCP views a list of requests heshe has made for reports with the status and pertinent information about the requests,0,1,1,1,0,1,0,0,1
+UC24.txt,UC24.txt.0,A patient or personal health representative can answer any of the following questions relative to a previous in UC S office visit according to Data Format,0,1,0,1,0,1,0,0,0
+UC24.txt,UC24.txt.1,How many minutes did you wait in the waiting room,0,0,0,0,0,0,0,0,0
+UC24.txt,UC24.txt.2,How many minutes did you wait in the examination room before seeing your physician,0,0,0,0,0,0,0,0,0
+UC24.txt,UC24.txt.3,How satisfied were you with your office visit,0,0,0,0,0,0,0,0,0
+UC24.txt,UC24.txt.4,How satisfied were you with the treatment or information you received,0,0,0,0,0,1,0,0,0
+UC24.txt,UC24.txt.5,The answers to the survey are stored,0,0,1,1,0,1,0,0,0
+UC25.txt,UC25.txt.0,A user chooses to view physician satisfaction survey results,0,1,0,0,0,1,0,0,1
+UC25.txt,UC25.txt.1,The user provides a zip code E Or a hospital code and an optional physician type from a pull-down list see data format - general surgeon heart specialist pediatrician OBGYN,0,0,0,1,0,1,0,0,1
+UC25.txt,UC25.txt.2,The patient is provided with the following for each physician of that type that practices in a zip code based upon the addresszipcode provided in UC that match the first three digits of the provided zip code Name address average number of minutes patients wait in waiting room average number of minutes patients wait in examination room prior to seeing physician average office visit satisfaction average satisfaction with treatmentinformation and percentage of office visits for which satisfaction information is available,0,0,0,1,0,1,0,0,0
+UC25E1.txt,UC25E1.txt.0,The input is not a valid zip code see Data Format,0,0,1,0,0,1,0,0,0
+UC25E1.txt,UC25E1.txt.1,The user is asked to try again,0,0,1,0,0,1,0,0,1
+UC26E1.txt,UC26E1.txt.0,The lab procedure code is not the intended lab procedure code,0,0,0,0,0,0,0,0,0
+UC26E1.txt,UC26E1.txt.1,The HCP selects a different procedure code,0,0,0,0,0,1,0,0,1
+UC26E2.txt,UC26E2.txt.0,The selected Lab Technician is not the intended Lab Technician,0,0,0,0,0,0,0,0,1
+UC26E2.txt,UC26E2.txt.1,The HCP selects a different Lab Technician,0,0,0,0,0,1,0,0,1
+UC26S1.txt,UC26S1.txt.0,An HCP can create a lab procedure for a given office visit,0,1,0,0,0,1,0,0,0
+UC26S1.txt,UC26S1.txt.1,The HCP selects a procedure code a priority from to most important not as important and Lab Technician listed with hisher specialty and the number of pending lab procedures in hisher priority queue grouped by priority,0,0,0,1,0,1,0,0,1
+UC26S1.txt,UC26S1.txt.2,The HCP saves the new lab procedure or cancels the lab procedure creation E E,0,1,1,0,0,1,0,0,0
+UC26S1.txt,UC26S1.txt.3,The status of the lab procedure is marked as in transit,0,0,0,0,0,1,0,0,0
+UC26S2.txt,UC26S2.txt.0,An HCP can view a previously created lab procedure for a given office visit,0,1,0,1,0,1,0,0,0
+UC26S2.txt,UC26S2.txt.1,The HCP can view patient name lab procedure code current lab procedure status timestamp and Lab Technician name,0,1,1,1,0,1,0,0,0
+UC26S3.txt,UC26S3.txt.0,An HCP can reassign a previously created lab procedure to a different Lab Technician if the lab procedure is not yet in the testing state,0,1,0,1,0,1,0,0,0
+UC26S3.txt,UC26S3.txt.1,The HCP selects a different Lab Technician from the list of available Lab Technicians displayed with Lab Technician specialty and the number of pending lab procedures in hisher priority queue grouped by priority,0,0,0,1,0,1,0,0,1
+UC26S3.txt,UC26S3.txt.2,The HCP confirms the reassignment or cancels the reassignment E,0,1,0,0,0,1,0,0,0
+UC26S4.txt,UC26S4.txt.0,An HCP can remove a previously created lab procedure for a given office visit,0,1,0,0,0,1,0,0,0
+UC26S4.txt,UC26S4.txt.1,The HCP chooses to remove the lab procedure as long as the status is either in transit or received,0,0,0,0,0,1,0,0,1
+UC26S4.txt,UC26S4.txt.2,The HCP is prompted to confirm that heshe wishes to remove the lab procedure,0,0,1,0,0,1,0,0,1
+UC27S1.txt,UC27S1.txt.0,The user has successfully changed hisher password UC S,0,0,0,0,0,0,0,0,1
+UC27S1.txt,UC27S1.txt.1,An email informing the user of the password change is sent to the user including the MID but not the password,0,0,1,1,0,1,0,0,0
+UC27S2.txt,UC27S2.txt.0,The status of a laboratory procedure has been updated UC S,0,0,0,0,0,0,0,0,0
+UC27S2.txt,UC27S2.txt.1,The patient is notified with the following information the LOINC number and the updated status,0,0,1,1,0,1,0,0,1
+UC28.txt,UC28.txt.0,The LHCP chooses to view all patients with which he or she has ever had an office visit with,0,1,0,1,0,1,0,0,1
+UC28.txt,UC28.txt.1,The patient 's name clickable to view PHR address and date of last office visit,0,1,0,1,0,1,0,0,1
+UC28.txt,UC28.txt.2,The list is sorted by the date of the last office visit most recent first,0,0,1,1,0,1,0,0,0
+UC29.txt,UC29.txt.0,A patient has just been diagnosed with a condition and wants to find the LHC Ps in the area who have handled that condition,0,0,0,0,0,0,0,0,1
+UC29.txt,UC29.txt.1,The patient chooses ' My Diagnoses and is presented with a listing of all their own diagnoses sorted by diagnosis date more recent first,0,0,0,1,0,1,0,0,1
+UC29.txt,UC29.txt.2,The patient can select a diagnosis and will be presented with the LHC Ps in the patient 's living area based upon the first three numbers of their zip code who have handled this diagnosis in the last three years,0,0,1,0,0,1,0,0,1
+UC29.txt,UC29.txt.3,The list is ranked by the quantity of patients the LHCP has treated for that diagnosis each patient is only counted once regardless of the number of office visits,0,0,1,1,0,1,0,0,0
+UC29.txt,UC29.txt.4,For each LHCP the following information is displayed Name of LHCP linked to contact information for that LHCP the quantity of unique patients treated by that LHCP for that diagnosis each patient is only counted once regardless of the number of office visits list of all prescriptions given by that LHCP for that diagnosis list of all laboratory procedures ordered by that LHCP for that diagnosis the LCHP 's average visit satisfaction and the LHCP 's average treatment satisfaction,0,0,1,1,0,1,0,0,0
+UC2E2.txt,UC2E2.txt.0,The enterereditor is presented with the name of the user and determines if it is invalid or not the right person,0,0,0,1,0,1,0,0,1
+UC2E2.txt,UC2E2.txt.1,The enterereditor is prompted to try again,0,0,1,0,0,1,0,0,1
+UC2S1.txt,UC2S1.txt.0,An administrator enters a LHCP ER or public health agent as a user of i Trust Medical Records system initially only the name and email are provided,0,0,0,1,0,1,0,0,1
+UC2S1.txt,UC2S1.txt.1,A secret key is personally provided to the user with which the user can reset hisher password,0,1,0,0,0,1,0,0,0
+UC2S1.txt,UC2S1.txt.2,The admin must specify a specialty for a new LHCP one of General Physician Heart Surgeon OBGYN Pediatrician Surgeon and for a new LT one of blood tissue or general,0,0,0,0,0,1,0,0,1
+UC2S1.txt,UC2S1.txt.3,The data for personnel can be edited according to Data Format all fields mandatory except for associated MID and Street Address S E,0,1,1,1,0,1,0,0,0
+UC2S1.txt,UC2S1.txt.4,The administrator shall be allowed to assign a LHCP to multiple hospitals and the administrator can choose among only the hospitals provided in the hospital list pull down menu,0,1,0,1,0,1,0,0,1
+UC2S1.txt,UC2S1.txt.5,The hospital ID numbers for a LHCP are stored in the Medical Care Personnel Affiliation database data format,0,0,1,1,0,1,0,0,0
+UC2S1.txt,UC2S1.txt.6,The administrator shall be allowed to assign a LT to a single hospital and the administrator can choose among only the hospitals provided in the hospital list pull down menu,0,1,0,1,0,1,0,0,1
+UC2S1.txt,UC2S1.txt.7,The hospital ID numbers for a LT are stored in the Medical Care Personnel Affiliation database data format,0,0,1,1,0,1,0,0,0
+UC2S2.txt,UC2S2.txt.0,A LHCP enters an UAP as a user of i Trust Medical Records system according to data format all fields mandatory,0,0,0,0,0,1,0,0,1
+UC30E1.txt,UC30E1.txt.0,The HCP types an invalid medical identification number and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC30E2.txt,UC30E2.txt.0,The patient chosen is not the desired patient,0,0,0,0,0,0,0,0,0
+UC30E2.txt,UC30E2.txt.1,The HCP does not confirm the selection and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC30S1.txt,UC30S1.txt.0,A patient or personal representative for a patient chooses to send a message to an LHCP no multiple recipients allowed in a single message,0,0,0,0,0,1,0,0,1
+UC30S1.txt,UC30S1.txt.1,The patientrepresentative is presented with a pull down menu of hisher DLHCP,0,0,1,1,0,1,0,0,0
+UC30S1.txt,UC30S1.txt.2,The patientrepresentative chooses one of these DLHCP and types the subject up to characters and text of a message up to characters and clicks the send button,0,0,0,0,0,1,0,0,1
+UC30S1.txt,UC30S1.txt.3,A row for showing the message subject the name of the recipient and the timestamp which includes both date and time is then visible in the patientrepresentative 's message outbox,0,0,1,1,0,1,0,0,0
+UC30S1.txt,UC30S1.txt.4,A bolded row for showing the message subject the name of sender and the timestamp is then visible in the LHCP 's message inbox,0,0,1,1,0,1,0,0,0
+UC30S1.txt,UC30S1.txt.5,A fake email is sent to the LHCP alerting the user that a new message has arrived,0,1,1,0,0,1,0,0,0
+UC30S1.txt,UC30S1.txt.6,After a message is sent the patient or personal representative is directed to hisher message outbox,0,0,1,1,0,1,0,0,1
+UC30S2.txt,UC30S2.txt.0,An LHCP chooses to send a message to a patientrepresentative no multiple recipients allowed in a single message,0,0,0,0,0,1,0,0,0
+UC30S2.txt,UC30S2.txt.1,The LHCP enters and confirms the patientrepresentative 's MID E E,0,0,0,0,0,1,0,0,0
+UC30S2.txt,UC30S2.txt.2,The LHCP types the subject up to characters and the text of a message up to characters and clicks the send button,0,1,0,0,0,1,0,0,1
+UC30S2.txt,UC30S2.txt.3,A row for showing the message subject the name of the recipient and the timestamp is then visible in the LHCP 's message outbox,0,0,1,1,0,1,0,0,0
+UC30S2.txt,UC30S2.txt.4,A bolded row for showing the message subject the name of the sender and the timestamp is then visible in the patientrepresentative 's message inbox and a fake email is sent to the patientrepresentative that indicates that heshe has a new message from an LHCP,0,0,1,1,0,1,0,0,0
+UC30S2.txt,UC30S2.txt.5,After a message is sent the LHCP is directed to to hisher message outbox,0,0,1,1,0,1,0,0,0
+UC30S3.txt,UC30S3.txt.0,A patient or patient representative wishes to reply to a message,0,0,0,0,0,1,0,0,1
+UC30S3.txt,UC30S3.txt.1,The patientrepresentative views his or her message inbox,0,0,0,1,0,1,0,0,1
+UC30S3.txt,UC30S3.txt.2,The patientrepresentative opens the message to which he or she wishes to reply S and then clicks the reply link above the message text,0,1,0,0,0,1,0,0,1
+UC30S3.txt,UC30S3.txt.3,The patientrepresentative enters the text of the response message up to characters he or she wishes to send then clicks the send button,0,0,0,0,0,1,0,0,1
+UC30S3.txt,UC30S3.txt.4,A row for showing the message subject now preceded by RE the name of the recipient and the timestamp is then visible in the patientrepresentative 's message outbox,0,0,1,1,0,1,0,0,0
+UC30S3.txt,UC30S3.txt.5,A bolded row for showing the message subject now preceded by RE the name of the sender and timestamp is then visible in the LHCP 's message inbox,0,0,1,1,0,1,0,0,0
+UC30S3.txt,UC30S3.txt.6,A fake email is sent to the LHCP alerting the LHCP that a new message reply has arrived,0,1,1,0,0,1,0,0,0
+UC30S4.txt,UC30S4.txt.0,An LHCP wishes to reply to a message,0,0,0,0,0,1,0,0,0
+UC30S4.txt,UC30S4.txt.1,The LHCP views his or her message inbox,0,1,0,1,0,1,0,0,0
+UC30S4.txt,UC30S4.txt.2,The LHCP opens the message to which he or she wishes to reply S and then clicks the reply link above the message text,0,1,0,0,0,1,0,0,1
+UC30S4.txt,UC30S4.txt.3,The LHCP enters the text of the response message up to characters he or she wishes to send then clicks the send button,0,0,0,0,0,1,0,0,1
+UC30S4.txt,UC30S4.txt.4,A row for showing the message subject now preceded by RE the name of the recipient and the timestamp are then visible in the LHCP 's message outbox,0,0,1,1,0,1,0,0,0
+UC30S4.txt,UC30S4.txt.5,A bolded row for showing the message subject now preceded by RE the name of sender and timestamp are then visible in the patientrepresentative 's message inbox,0,0,1,1,0,1,0,0,0
+UC30S4.txt,UC30S4.txt.6,A fake email is sent to the patientrepresentative alerting the patientrepresentative that a new message reply has arrived,0,1,1,0,0,1,0,0,0
+UC30S5.txt,UC30S5.txt.0,A user a patient patient representative or LHCP wishes to read a message from the message inbox or outbox,0,1,0,0,0,1,0,0,1
+UC30S5.txt,UC30S5.txt.1,The user chooses to open his or her message inboxoutbox,0,1,0,0,0,1,0,0,1
+UC30S5.txt,UC30S5.txt.2,Each row in the message inboxoutbox includes the message subject the name of either the sender only for the case of inbox or recipient only for the case of outbox and timestamp,0,0,0,1,0,1,0,0,0
+UC30S5.txt,UC30S5.txt.3,By default the messages in the message inboxoutbox should be ordered by timestamp the most recent first,0,0,1,1,0,1,0,0,0
+UC30S5.txt,UC30S5.txt.4,Each row for an unread message in the message inbox is bolded,0,0,0,1,0,1,0,0,0
+UC30S5.txt,UC30S5.txt.5,The user selects a message from the message inboxoutbox to read by clicking the Read link beside the row for the message and then the message subject the name of the sender the name of the the recipient timestamp and the message text shall be displayed in a new page,0,1,0,1,0,1,0,0,1
+UC30S5.txt,UC30S5.txt.6,After a message in the message inbox is read ie displayed in a new page the row for the message in the message inbox is not bolded anymore,0,0,1,1,0,1,0,0,0
+UC30S6.txt,UC30S6.txt.0,A user a patient patient representative or LHCP can sort messages in his or her message inbox by either the sender 's last name or timestamp but not both in either ascending or descending order where timestamps in descending order would have the most recent first,0,1,0,1,0,1,0,0,0
+UC30S6.txt,UC30S6.txt.1,A user can sort messages in his or her message outbox by the recipient 's last name or timestamp but not both in either ascending or descending order,0,1,0,1,0,1,0,0,0
+UC30S6.txt,UC30S6.txt.2,To do so a user selects one option out of the Sort by labeled drop-down box with options of Sender Recipient or Timestamp and selects one option out of the by order of labeled drop-down box with options of ascending or descending and then click the Sort button,0,1,0,0,0,1,0,0,1
+UC30S6.txt,UC30S6.txt.3,Note that the sorted order is not saved for later viewing after the message inbox or outbox is reopened again where the default sorting is always used,0,0,1,1,0,1,0,0,0
+UC30S7.txt,UC30S7.txt.0,A user an LHCP or patientrepresentative can modify hisher message displaying filter by modifying the following filtering criteria The sender ie the sender 's name is exactly the same as the specified string the subject ie the subject is exactly the same as the specified string has the words ie the subject or the message body has the specified substring does n't have ie neither the subject nor the message body has the specified substring time stamp falling into the period defined by the starting date and ending date inclusive,0,0,0,1,0,1,0,0,0
+UC30S7.txt,UC30S7.txt.1,The user interface shall provide both the option of typing in a specific date in the date format and the option of selecting a date from a calendar for the current month,0,1,0,0,0,1,0,0,0
+UC30S7.txt,UC30S7.txt.2,Note that a single filter includes values for these five filtering criteria rather than five filters for these five filtering criteria and a value could be an empty string indicating that this criterion has no impact on filtering ie imposing no constraints related to this criterion,0,0,0,0,0,1,0,0,0
+UC30S7.txt,UC30S7.txt.3,The user interface shall be initially populated with the values of the filtering criteria from the previously saved filter,0,1,1,1,0,1,0,0,0
+UC30S7.txt,UC30S7.txt.4,After the user modifies the criteria the user chooses to click the Cancel button to cancel the modifications of the filter ie repopulate the user interface with the values of the filtering criteria from the previously saved filter to click the Test Search button to search ie displaying the message inbox S including only the messages satisfying the specified filtering criteria or to click the Save button to save the modified filter,0,1,0,1,0,1,0,0,1
+UC30S7.txt,UC30S7.txt.5,Each user is associated with only one filter being saved across login sessions and applies only this saved filter,0,0,0,0,0,1,0,0,1
+UC30S7.txt,UC30S7.txt.6,The user 's associated filter initially has all empty inputs for the filtering criteria before the user modifies it,0,0,1,0,0,1,0,0,0
+UC31S1.txt,UC31S1.txt.0,The expired prescription report list is titled with the patient name,0,0,0,1,0,1,0,0,0
+UC31S1.txt,UC31S1.txt.1,The expired prescription list includes medication date prescribed ie the day of the office visit start date end date for each prescription and the name of the LHCP who prescribed the medication where the name of the LHCP is linked to contact information for that LHCP,0,0,0,1,0,1,0,0,0
+UC31S1.txt,UC31S1.txt.2,If there are no expired prescriptions an empty expired prescription list is presented,0,0,1,1,0,1,0,0,0
+UC31S2.txt,UC31S2.txt.0,The patient clicks on the name of the LHCP for an expired prescription and is presented with the contact information for that LHCP including First Name Last Name LHCP Type Street Address Street Address City State Zip Code Phone and Contact Email if any type of contact information is missing or the whole contact information for the LHCP is not available in the database the corresponding missing types of information are simply shown as blank,0,0,0,1,0,1,0,0,1
+UC32E1.txt,UC32E1.txt.0,If there are no patients satisfying the three conditions an empty list is presented,0,0,1,1,0,1,0,0,0
+UC32S1.txt,UC32S1.txt.0,A chronic special-diagnosis-history patient is an alive patient who has been diagnosed with at least one of the following diabetes mellitus is diagnosed with ICD code beginning with asthma is diagnosed with ICD code beginning with or circulatory-system disease is diagnosed with an ICD code between and inclusive,0,0,0,0,0,1,0,0,0
+UC32S2.txt,UC32S2.txt.0,The patient list is titled with the HCP 's name,0,0,0,1,0,1,0,0,0
+UC32S2.txt,UC32S2.txt.1,The patient list includes the patient 's name ie first name and last name phone number and contact email address E E so that confirmation calls or emails can be made or sent outside of the i Trust system,0,0,0,1,0,1,0,0,0
+UC32S2.txt,UC32S2.txt.2,The list is sorted based on the ascending alphabetical order of the patients ' last names and then first names,0,0,1,1,0,1,0,0,0
+UC32S2.txt,UC32S2.txt.3,When a chronic special-diagnosis-history patient satisfies all three conditions and has multiple prescriptions satisfying the third condition the patient is listed in the list only once,0,0,1,1,0,1,0,0,0
+UC32S2.txt,UC32S2.txt.4,The list is a static list with no link on the patient 's name phone number or contact email address,0,0,0,1,0,1,0,0,0
+UC33E1.txt,UC33E1.txt.0,The receiving HCP chosen is not the desired HCP,0,0,0,0,0,0,0,0,0
+UC33E1.txt,UC33E1.txt.1,The sending HCP does not confirm the selection and is prompted to try again,0,0,1,0,0,1,0,0,1
+UC33E2.txt,UC33E2.txt.0,The patient receiving HCP referral notes andor referral priority are invalid and the HCP is prompted to enter this information again,0,0,1,1,0,1,0,0,0
+UC33S1.txt,UC33S1.txt.0,An HCP chooses to refer a patient to another receiving HCP through the referral feature on a patient 's office visit page UC,0,1,0,0,0,1,0,0,0
+UC33S1.txt,UC33S1.txt.1,The sending HCP must select a receiving HCP by either entering the HCP 's MID and confirming the selection or by searching for the HCP by name,0,0,0,0,0,1,0,0,1
+UC33S1.txt,UC33S1.txt.2,The sending HCP is also presented with a text box to include notes about the referral,0,1,1,1,0,1,0,0,0
+UC33S1.txt,UC33S1.txt.3,The sending HCP then chooses a priority from - is most important is least important for the referral,0,0,1,0,0,1,0,0,0
+UC33S1.txt,UC33S1.txt.4,The HCP may send the referral cancel the referral E or edit the referral E,0,1,1,1,0,1,0,0,0
+UC33S1.txt,UC33S1.txt.5,Upon sending a referral the patient sending HCP and receiving HCP receive a message summarizing the newly created referral information sending HCP name specialty receiving HCP name specialty patient name referral notes and referral creation timestamp additionally the sending and receiving HCP messages include the referral priority,0,0,1,1,0,1,0,0,0
+UC33S2.txt,UC33S2.txt.0,An HCP chooses to view received referrals,0,1,0,0,0,1,0,0,1
+UC33S2.txt,UC33S2.txt.1,The receiving HCP is presented with a list of referrals sorted by priority from most important to least important,0,0,1,1,0,1,0,0,0
+UC33S2.txt,UC33S2.txt.2,The receiving HCP then selects a referral to view details and is presented with the name and specialty of the sending HCP the patient 's name the referral notes the referral priority the office visit date with a link to the office visit and the time the referral was created,0,0,1,1,0,1,0,0,1
+UC33S3.txt,UC33S3.txt.0,A sending HCP views a list of previously sent patient referrals,0,1,1,1,0,1,0,0,1
+UC33S3.txt,UC33S3.txt.1,The HCP may sort the list of referrals by patient name receiving HCP name time generated andor priority,0,1,1,1,0,1,0,0,0
+UC33S3.txt,UC33S3.txt.2,The HCP chooses a specific referral from the list to view complete details about the referral patient name receiving HCP name and specialty time generated priority office visit date and notes,0,1,0,1,0,1,0,0,1
+UC34E1.txt,UC34E1.txt.0,The patient chosen is not the desired patient,0,0,0,0,0,0,0,0,0
+UC34E1.txt,UC34E1.txt.1,The HCP does not confirm the selection and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC34E2.txt,UC34E2.txt.0,The patient UAP or personal representative enters a systolic blood pressure outside the range - or a diastolic blood pressure outside the range -,0,0,0,0,0,1,0,0,1
+UC34E2.txt,UC34E2.txt.1,Heshe is notified of an error and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC34E3.txt,UC34E3.txt.0,The patient UAP or personal representative enters a glucose level outside the range -,0,0,0,0,0,1,0,0,1
+UC34E3.txt,UC34E3.txt.1,Heshe is notified of an error and is prompted to try again,0,0,0,0,0,1,0,0,1
+UC34E4.txt,UC34E4.txt.0,The patient UAP or personal representative tries to enter more than ten physiologic data points for one day and is told additional data can not be entered,0,0,0,0,0,1,0,0,1
+UC34S1.txt,UC34S1.txt.0,An LHCP or UAP can add and delete patients from his or her monitoring list,0,1,0,1,0,1,0,0,0
+UC34S1.txt,UC34S1.txt.1,A patient is added to the list by the LHCP or UAP typing in the patient 's MID E or name,0,0,1,1,0,1,0,0,0
+UC34S1.txt,UC34S1.txt.2,An LHCP can delete a patient from his or her monitoring list by the LHCP typing the the patient 's MID E,0,1,1,1,0,1,0,0,0
+UC34S1.txt,UC34S1.txt.3,In both cases the LHCP is presented the name of the patient and must confirm the adddelete,0,0,0,0,0,1,0,0,0
+UC34S1.txt,UC34S1.txt.4,For each patient from the monitoring list the LHCP can choose to edit which types of remote monitoring information blood pressure glucose levels height weight and pedometer readings should be submitted by the patient,0,1,0,1,0,1,0,0,1
+UC34S1.txt,UC34S1.txt.5,By default all types of information are selected for monitoring,0,0,1,0,0,1,0,0,0
+UC34S2.txt,UC34S2.txt.0,A patient whose at least one physiologic data type is specified to be under monitoring chooses to report their physiologic data,0,0,0,0,0,1,0,0,1
+UC34S2.txt,UC34S2.txt.1,He or she can report his or her blood pressure systolic and diastolic E andor glucose levels E,0,1,0,1,0,1,0,0,1
+UC34S2.txt,UC34S2.txt.2,The input data a timestamp and the fact that the status is self-reported are saved,0,0,1,1,0,1,0,0,0
+UC34S3.txt,UC34S3.txt.0,An LHCP chooses to view the physiologic data monitoring details,0,1,0,0,0,1,0,0,1
+UC34S3.txt,UC34S3.txt.1,The LHCP is presented with a listing of all his or her patients whose at least one physiologic data type is specified to be under monitoring with their blood pressure and glucose levels recording timestamp and whom reported the data patient UAP name personal representative name,0,0,1,1,0,1,0,0,0
+UC34S3.txt,UC34S3.txt.2,Patients with no information for the current day are highlighted,0,0,0,0,0,1,0,0,0
+UC34S3.txt,UC34S3.txt.3,Patients with blood pressure or glucose level out of range are highlighted normal blood pressure systolic - diastolic - normal glucose -,0,0,0,0,0,1,0,0,0
+UC34S3.txt,UC34S3.txt.4,The LHCP can select a patient to obtain additional information about a patient S,0,1,0,0,0,1,0,0,1
+UC34S4.txt,UC34S4.txt.0,An LHCP selects to view additional information for a patient,0,1,0,0,0,1,0,0,1
+UC34S4.txt,UC34S4.txt.1,The LHCP is presented with a screen upon which heshe can choose a date range,0,0,0,0,0,1,0,0,0
+UC34S4.txt,UC34S4.txt.2,Once the date range is selected the LHCP can see the patient name patient phone number personal representative name and phone number if applicable and the blood pressure glucose levels height weight and pedometer readings as well as whom reported the data patient UAP name personal representative name for that date range,0,1,1,1,0,1,0,0,0
+UC34S5.txt,UC34S5.txt.0,A UAP can select to report physiologic measurements,0,1,0,0,0,1,0,0,1
+UC34S5.txt,UC34S5.txt.1,Heshe is presented with a list of the patients whose at least one physiologic data type is specified to be under monitoring and for whom heshe is allowed to report measurements,0,0,1,1,0,1,0,0,1
+UC34S5.txt,UC34S5.txt.2,He or she can select a patient and then enter data,0,1,0,0,0,1,0,0,1
+UC34S5.txt,UC34S5.txt.3,He or she can report the blood pressure systolic and diastolic E andor glucose levels E for the patient,0,1,0,1,0,1,0,0,1
+UC34S5.txt,UC34S5.txt.4,The input data a timestamp and the fact the the status was reported by case manager and their MID are saved,0,0,1,1,0,1,0,0,0
+UC34S5.txt,UC34S5.txt.5,Only the applicable input entries those whose corresponding data types of the patient are specified to be under monitoring are displayed to the UAP,0,0,1,1,0,1,0,0,0
+UC34S6.txt,UC34S6.txt.0,A patient can select to report physiologic measurements for those whose at least one physiologic data type is specified to be under monitoring andfor whom heshe is a patient representative,0,1,0,0,0,1,0,0,1
+UC34S6.txt,UC34S6.txt.1,Heshe is presented with a list of the patients whose at least one physiologic data type is specified to be under monitoring and for which heshe is allowed to report measurements,0,0,1,1,0,1,0,0,1
+UC34S6.txt,UC34S6.txt.2,He or she can select a patient and then enter data,0,1,0,0,0,1,0,0,1
+UC34S6.txt,UC34S6.txt.3,He or she can report the blood pressure systolic and diastolic E andor glucose levels E for the patient,0,1,0,1,0,1,0,0,1
+UC34S6.txt,UC34S6.txt.4,The input data and a timestamp and the fact that the status was reported by patient representative and their MID are saved,0,0,1,1,0,1,0,0,0
+UC34S6.txt,UC34S6.txt.5,Only the applicable input entries those whose corresponding data types of the patient are specified to be under monitoring are displayed to the patient,0,0,1,1,0,1,0,0,0
+UC35S1.txt,UC35S1.txt.0,A patient is presented with a listing of all prescription drugs for which heshe has been prescribed andor has taken in the last months,0,1,1,1,0,1,0,0,1
+UC35S1.txt,UC35S1.txt.1,The patient chooses one or more drug s for which to report the adverse event,0,0,0,0,0,1,0,0,1
+UC35S1.txt,UC35S1.txt.2,The patient is then able to write a textual description which describes the symptoms of the adverse event and to save the information,0,1,1,1,0,1,0,0,0
+UC35S1.txt,UC35S1.txt.3,A fake email is sent to the LHCP who prescribed the medication indicating the patient name and MID drug and symptoms,0,1,1,1,0,1,0,0,0
+UC35S2.txt,UC35S2.txt.0,A patient is presented with a listing of all immunizations for which heshe has been administered in the last months,0,1,1,1,0,1,0,0,1
+UC35S2.txt,UC35S2.txt.1,The patient chooses the immunization for which to report the adverse event,0,0,0,0,0,1,0,0,1
+UC35S2.txt,UC35S2.txt.2,The patient is then able to write a textual description which describes the symptoms of the adverse event and to save the information,0,1,1,1,0,1,0,0,0
+UC35S2.txt,UC35S2.txt.3,A fake email is sent to the LHCP who administered the immunization indicating the patient name and MID drug and symptoms,0,0,1,1,0,1,0,0,0
+UC36S1.txt,UC36S1.txt.0,A public health agent is presented with a listing of prescription drug-related adverse events for the time period that do not have a status of removed sorted by NDC,0,0,1,1,0,1,0,0,1
+UC36S1.txt,UC36S1.txt.1,The public health agent can select to see the detail of a specific report,0,1,0,0,0,1,0,0,1
+UC36S1.txt,UC36S1.txt.2,Upon reading the report the public health agent can choose to send a fake email message to the adverse event reporter to gain more information about the report,0,1,0,0,0,1,0,0,1
+UC36S1.txt,UC36S1.txt.3,The public health agent may also choose to remove an adverse event report such as based upon communication with the reporter or because the report appears to be bogus S,0,1,0,0,0,1,0,0,1
+UC36S2.txt,UC36S2.txt.0,A public health agent is presented with a listing of immunization-related adverse events for the time period that do not have a status of removed sorted by CPT code,0,0,1,1,0,1,0,0,0
+UC36S2.txt,UC36S2.txt.1,The public health agent can select to see the detail of a specific report,0,1,0,0,0,1,0,0,1
+UC36S2.txt,UC36S2.txt.2,Upon reading the report the public health agent can choose to send a fake email message to the adverse event reporter to gain more information about the report,0,1,0,0,0,1,0,0,1
+UC36S2.txt,UC36S2.txt.3,The public health agent may also choose to remove an adverse event report such as based upon communication with the reporter or because the report appears to be bogus S,0,1,0,0,0,1,0,0,1
+UC36S3.txt,UC36S3.txt.0,The adverse event report changes to a status of removed,0,0,1,0,0,1,0,0,0
+UC36S3.txt,UC36S3.txt.1,A message of the removal is sent to the adverse event reporter and to the LHCP involved in the report because the LHCP prescribed the drug or administered the immunization,0,0,1,1,0,1,0,0,0
+UC37S1.txt,UC37S1.txt.0,The drug desired to be prescribed is checked against the patient 's drug allergies,0,1,1,0,0,1,0,0,0
+UC37S1.txt,UC37S1.txt.1,The HCP is notified of drug allergy,0,0,0,0,0,1,0,0,1
+UC37S2.txt,UC37S2.txt.0,The drug desired to be prescribed is checked for interactions between other drugs currently taken by the patient,0,1,1,0,0,1,0,0,0
+UC37S2.txt,UC37S2.txt.1,The HCP is notified of possible interactions,0,1,1,0,0,1,0,0,1
+UC37S3.txt,UC37S3.txt.0,The HCP selects one or more reasons out the nine reasons listed here for the overriding,0,0,0,0,0,1,0,0,1
+UC37S3.txt,UC37S3.txt.1,E The patient is sent a fake email that the HCP has prescribed a medication that heshe is allergic to or that has a known interaction with a drug heshe is taking,0,0,1,0,0,1,0,0,1
+UC38S1.txt,UC38S1.txt.0,The administer is presented with two lists of NDC codesnames,0,0,0,1,0,1,0,0,0
+UC38S1.txt,UC38S1.txt.1,The administrator chooses a drug from each list to record an interaction between the two drugs E The two drugs and a textual description of the possible effects of the interaction are stored,0,0,1,1,0,1,0,0,1
+UC38S2.txt,UC38S2.txt.0,The administrator selects one drug and is presented with a listing of all drug interactions with that drug,0,0,0,1,0,1,0,0,1
+UC38S2.txt,UC38S2.txt.1,The administrator can select a particular pair of drugs and delete the interaction between the two drugs,0,1,0,1,0,1,0,0,1
+UC3E1.txt,UC3E1.txt.0,The user may try three times,0,1,0,0,0,1,0,0,1
+UC3E1.txt,UC3E1.txt.1,After three failed attempts with a userid in a given session disallow attempts to log in via IP address for minutes see comments in the source code,0,0,1,0,0,1,0,0,0
+UC3E2.txt,UC3E2.txt.0,If the patient has never stored a security questionanswer the user is asked for the random password assigned on creation of the account,0,0,1,1,0,1,0,0,1
+UC3S1.txt,UC3S1.txt.0,If the security questionanswer has been set it is not null E present security question and obtain answer,0,0,1,0,0,1,0,0,1
+UC3S2.txt,UC3S2.txt.0,If answer to security question is correct allow user to change their password,0,1,1,0,0,1,0,0,0
+UC3S2.txt,UC3S2.txt.1,An email notification is sent,0,0,1,0,0,1,0,0,0
+UC3S3.txt,UC3S3.txt.0,Electronic sessions must terminate after a pre-determined period of inactivity,0,0,0,0,0,1,0,0,0
+UC3S3.txt,UC3S3.txt.1,Allow the administrator to set the length of this period of time and ensure that all authorization is disabled after a period of inactivity that exceeds this length,0,1,0,0,0,1,0,0,0
+UC3S4.txt,UC3S4.txt.0,A LHCP is presented with a screen of links to the following Recent Laboratory Results recent within the last month laboratory results UC for laboratory procedures heshe ordered in office visits any upcoming appointments for the day,0,0,1,1,0,1,0,0,0
+UC3S4.txt,UC3S4.txt.1,In the notification center and rejectionacceptance of comprehensive report,0,0,0,0,0,1,0,0,0
+UC3S5.txt,UC3S5.txt.0,A patient is presented with a screen of links to the following Any upcoming appointments,0,0,1,1,0,1,0,0,0
+UC40S1.txt,UC40S1.txt.0,A user an LHCP or patient chooses to display hisher appointments in the current month on a calendar for the current month,0,1,0,1,0,1,0,0,1
+UC40S1.txt,UC40S1.txt.1,Hisher appointments in the current month shall be displayed on the calendar S,0,1,1,1,0,1,0,0,0
+UC40S1.txt,UC40S1.txt.2,The user can select an appointment from the calendar to read the appointment 's details S,0,1,0,1,0,1,0,0,1
+UC40S2.txt,UC40S2.txt.0,A user a patient chooses to display hisher appointments in the current month together with hisher office visit dates prescription dates and lab procedure dates of the current month on a calendar for the current month,0,1,0,1,0,1,0,0,1
+UC40S2.txt,UC40S2.txt.1,Hisher appointments shall be displayed on the calendar S,0,1,1,1,0,1,0,0,0
+UC40S2.txt,UC40S2.txt.2,The user can select an appointment from the calendar to read the appointment 's details S,0,1,0,1,0,1,0,0,1
+UC40S2.txt,UC40S2.txt.3,In the calendar the date entry with an office visit shall display a label as the diagnoses ie ICD- CM codes for the office visit,0,1,1,1,0,1,0,0,0
+UC40S2.txt,UC40S2.txt.4,The user can select an office visit from the calendar to read the visit 's details S,0,1,0,1,0,1,0,0,1
+UC40S2.txt,UC40S2.txt.5,In the calendar the date entry with a prescription date ie the date of the office visit the medication was prescribed on shall display a label for the medications prescribed ie NDC see Data Format in the prescription,0,1,1,1,0,1,0,0,0
+UC40S2.txt,UC40S2.txt.6,The user can select a prescription from the calendar to read the prescription 's details S,0,1,0,1,0,1,0,0,1
+UC40S2.txt,UC40S2.txt.7,In the calendar the date entry with a laboratory procedure ie the entry of the its last status update date shall display a label as the LOINC code for the laboratory procedure,0,0,1,1,0,1,0,0,0
+UC40S2.txt,UC40S2.txt.8,The user can select a laboratory procedure from the calendar to read the laboratory procedure 's details S,0,1,0,1,0,1,0,0,1
+UC40S3.txt,UC40S3.txt.0,In the calendar the date entry with an appointment shall display a label as the appointment type name for the appointment,0,1,1,1,0,1,0,0,0
+UC40S3.txt,UC40S3.txt.1,The date entry including conflicting appointments is highlighted in bold a conflicting appointment is one that has overlap in its appointment duration period with that of at least another appointment of the same user,0,0,1,0,0,1,0,0,0
+UC40S4.txt,UC40S4.txt.0,The user selects an appointment from the calendar to read its details by clicking the Read Details link beside or below the appointment type name displayed for the appointment and then the details for the appointment shall be displayed in a new page including the appointment type the appointment date and start time comment and the name of either the patient only for the user being an LHCP or the LHCP only for the user being a patient,0,1,0,1,0,1,0,0,1
+UC40S5.txt,UC40S5.txt.0,The user selects an office visit from the calendar to read its details by clicking the Read Details link beside or below the ICD- CM code ie diagnose displayed for the visit,0,1,0,0,0,1,0,0,1
+UC40S5.txt,UC40S5.txt.1,Then the details for the visit shall be displayed in a new page including date of office visit note text diagnoses ie ICD- CM codes medical procedures performed ie CPT code lab procedures ordered LOINC code see Data Format medications prescribed ie NDC see Data Format immunizations given ie CPT Code see UC S and the name of the doctor who prescribed the medication,0,1,1,1,0,1,0,0,0
+UC40S6.txt,UC40S6.txt.0,The user selects a prescription from the calendar to read its details by clicking the Read Details link beside or below the medication displayed for the prescription and then the details for the prescription shall be displayed in a new page including the medications prescribed ie NDC see Data Format date prescribed start date end date for each prescription and the name of the doctor who prescribed the medication,0,1,0,1,0,1,0,0,1
+UC40S7.txt,UC40S7.txt.0,The user selects a laboratory procedure from the calendar to read its details by clicking the Read Details link beside or below the LOINC code displayed for the laboratory procedure and then the details for the laboratory procedure shall be displayed in a new page including laboratory procedure code status commentary results andoffice visit date when the laboratory procedure was ordered,0,1,0,1,0,1,0,0,1
+UC4E1.txt,UC4E1.txt.0,The system prompts the patient or HCP to correct the format of a required data field because the input of that data field does not match that specified in data format or data format as appropriate,0,1,1,0,0,1,0,0,0
+UC4E2.txt,UC4E2.txt.0,The system shall display a default placeholder image for patients who do not have a photograph on file,0,1,1,0,0,1,0,0,0
+UC4S1.txt,UC4S1.txt.0,A patient or personal health representative may enter or edit their own demographic information including their security questionanswer according to data format,0,1,0,1,0,1,0,0,0
+UC4S1.txt,UC4S1.txt.1,When answer to the security question is typed in the answer should not appear on the screen similar to how a password normally appears and the answer should be confirmed by the patient or personal health representative before it is saved,0,0,1,0,0,1,0,0,0
+UC4S2.txt,UC4S2.txt.0,HCP must enter the MID of a patient and then enter or edit demographic information with the exception of the patient 's security questionpassword according to data format,0,0,0,1,0,1,0,0,1
+UC4S3.txt,UC4S3.txt.0,An HCP may enter or edit their own demographic information according to data format,0,1,0,1,0,1,0,0,1
+UC4S4.txt,UC4S4.txt.0,An HCP may upload a photo of the patient as part of the patient 's demographic records,0,1,0,1,0,1,0,0,0
+UC5S1.txt,UC5S1.txt.0,For Login Failures the IP Address of the machine transaction type and timestamp are recorded,0,0,1,1,0,1,0,0,0
+UC5S2.txt,UC5S2.txt.0,For creating viewing modifying or deleting information the following information is recorded the MID of the logged in user any appropriate secondary MID of the user whose information is being accessed a transaction type corresponding to the given action and the current timestamp,0,1,1,1,0,1,0,0,0
+UC6S1.txt,UC6S1.txt.0,The LHCP 's name specialty address date of office visit and whether or not the LHCP is a DLHCP for this patient is indicated,0,0,0,1,0,1,0,0,0
+UC6S1.txt,UC6S1.txt.1,The list is sorted by the date of the last office visit most recent first,0,0,1,1,0,1,0,0,0
+UC6S2.txt,UC6S2.txt.0,The patient can choose to toggle between designatingundesignating any LHCP as being a DLHCP for them,0,1,0,0,0,1,0,0,1
+UC6S3.txt,UC6S3.txt.0,The patient types a last name or partial last name andor providing the specialty,0,0,0,1,0,1,0,0,1
+UC6S3.txt,UC6S3.txt.1,The patient may optionally enter a zip code match on first three numbers of zip code in addition to the name andor specialty,0,1,0,1,0,1,0,0,1
+UC6S3.txt,UC6S3.txt.2,The LHCP 's name specialty and address are provided,0,0,0,1,0,1,0,0,0
+UC8S1.txt,UC8S1.txt.0,By default the patient is presented with a list sorted by dates most recent access first,0,0,1,1,0,1,0,0,0
+UC8S2.txt,UC8S2.txt.0,The patient may choose to view the list sorted by the role of the accessor relative to the patient personal health representative LHCP UAP Emergency Responder any order is fine as long as the list is sorted by role as well as by date for each role type most recent access first,0,1,0,1,0,1,0,0,1
+UC9S1.txt,UC9S1.txt.0,The patient or personal health representative can see patient personal health information including historical values immunizations and office visit information date diagnoses medication name of attending physician but not notes laboratory procedures for a their own records and b the records for whom the user is a personal representative,0,1,0,1,0,1,0,0,1
+UC9S1.txt,UC9S1.txt.1,If a patient or personal health representative has not taken an office visit satisfaction survey for an office visit yet the patient may choose to take the survey for an office visit if the survey has already been taken the patient or personal health representative will not have the ability to take the survey or view their previously submitted survey,0,0,0,1,0,1,0,0,1
+UC9S2.txt,UC9S2.txt.0,The patient or personal health representative can see an abbreviated health history of their siblings parents and both sets of grandparents for which MI Ds are available in i Trust,0,1,0,1,0,1,0,0,1
+UC9S2.txt,UC9S2.txt.1,They can see diagnoses related to the following presented as a table with an x if the family member suffered from that diagnosis High blood pressure Systolic blood pressure over mm Hg andor a diastolic blood pressure over mm Hg high cholesterol HDL good cholesterol levels under mgd L milligrams per deciliter andor a triglyceride level over mgd L diabetes is diagnosed with ICD- CM code beginning with cancer is diagnosed with ICD- CM code beginning with heart disease is diagnosed with ICDCM code beginning with smoking and the cause of death if the family member is deceased,0,0,1,0,0,1,0,0,0

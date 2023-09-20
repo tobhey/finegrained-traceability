@@ -1,0 +1,16 @@
+Name: Assign/RemoveStudentsToAParent
+Actors: Administrator
+Description: It allows you to associate new students to a parent or remove the associations previously inserted
+Preconditions:
+• The user is logged in as an administrator • The user has carried out the case of use "viewdetTailsente" and the system is
+Viewing the details of a parent • The user click on the "Parentela" button
+Events sequence
+User
+2. Select students to be assigned or removed from the parent
+3. Click on the "Send" button
+System
+1. Displays the child management form for the parent in question
+4. Assign / remove students associated with a parent
+Postconditions:
+• • •
+One or more children to a parent were associated or removed. The administrator interrupts the connection to the SMOS server interrupted

@@ -1,0 +1,8 @@
+Colloquio reservation
+
+The citizen requires an interview in the preselected consulting
+The system displays a form for submission of the request
+The citizen puts the data of the interview request in a form
+The system receives the form verifies the data for booking and submits the request
+Citizen requires printing the receipt of the booking of the interview
+IlSistemastrampaPretovement

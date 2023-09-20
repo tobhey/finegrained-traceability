@@ -1,0 +1,4 @@
+Elimina Insegnamento
+Elimina un insegnamento dallarchivio
+Elimina linsegnamento dallarchivio
+Visualizza lelenco degli insegnamenti aggiornato

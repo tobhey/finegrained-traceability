@@ -1,0 +1,14 @@
+Use case name
+EliminationReservationInterview
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen requests cancellation of interview reservation in the counseling center.
+2. The system displays a form to confirm the request.
+3. The citizen confirms the deletion of the reservation.
+4. Thesystemeliminatesbooking.
+Entry Condition.
+This extends the ViewPreservationConsultor io use case by considering the case where the citizen wants to delete the chosen reservation.
+Exit condition
+The system has made the cancellation of the reservation.
+Quality requirements Not provided.

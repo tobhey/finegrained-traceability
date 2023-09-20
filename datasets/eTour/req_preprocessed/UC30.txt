@@ -1,0 +1,8 @@
+Insert Tag
+Inserts a new tag search
+Access the functionality of inserting new tag search
+Show the form for entering a tag
+Fill out the form with the required information and submit
+Verify the data entered and check if the tag is already present in the system
+In the latter case the active use case Existing Error Tag
+Instead if the data is invalid or insufficient the system activates the use case Errored

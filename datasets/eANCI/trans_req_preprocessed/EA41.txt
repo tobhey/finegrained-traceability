@@ -1,0 +1,4 @@
+Practical display
+
+The citizen click on the button show practical identity card change residence
+The system displays a screen with the practices concerning the citizen

@@ -1,0 +1,6 @@
+Active Inactive Tourist Account
+Enable or disable the account of a tourist
+Activate the feature for the activation deactivation by a given sheet tourist
+Asks for confirmation of activation deactivation
+Confirm the operation
+Enable disable the account of the visitor you selected

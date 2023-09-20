@@ -1,0 +1,4 @@
+Committee
+
+The citizen accesses this service to be able to take note of the hierarchical composition of civil protection
+The system responds to the citizen's curiosity with a screen where an organization chart of the municipal civil protection components present according to the other government institutions of the territory based on the law of the municipal council by all approved

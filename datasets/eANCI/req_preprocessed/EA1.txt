@@ -1,0 +1,6 @@
+Autenticazione Amministratore
+
+L ' amministratore accede al sistema
+Il sistema visualizza il form di login per l ' immissione dei dati nome utente e password
+L ' amministratore inserisce i dati e sottomette la richiesta di autenticazione
+Il sistema riceve il form verifica i dati e consente l ' accesso all ' amministratore al sistema con i permessi di accesso specificati

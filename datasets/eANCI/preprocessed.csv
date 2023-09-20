@@ -1,0 +1,1291 @@
+file,ID,text
+EA46.txt,EA46.txt.name,Check Sickness
+EA46.txt,EA46.txt.actor,Started by User
+EA46.txt,EA46.txt.precondition,The user has accessed the system and selected the Social Assistance feature
+EA46.txt,EA46.txt.postcondition,The user viewed the page OR The system encountered an unanticipated error then called the use case Service Not Available
+EA46.txt,EA46.txt.quality_requirement,Unanticipated
+EA46.txt,EA46.txt.flow_of_events.0,User selects Request sickness allowance ''
+EA46.txt,EA46.txt.flow_of_events.1,The system displays the page with the information for requesting the INPS office for the sickness check also allowing the user to print it out
+EA136.txt,EA136.txt.name,Forms
+EA136.txt,EA136.txt.actor,Initiated by Citizen
+EA136.txt,EA136.txt.precondition,The Citizen is logged in
+EA136.txt,EA136.txt.postcondition,The download has been initialized OR In case there are general errors the system calls the use case Service Not Available
+EA136.txt,EA136.txt.quality_requirement,Not expected
+EA136.txt,EA136.txt.flow_of_events.0,Citizen clicks button to access forms section
+EA136.txt,EA136.txt.flow_of_events.1,The System redirects the Citizen to the required section and displays the various forms available for download
+EA136.txt,EA136.txt.flow_of_events.2,The Citizen selects the desired form
+EA136.txt,EA136.txt.flow_of_events.3,The System starts the download
+EA111.txt,EA111.txt.name,Risks
+EA111.txt,EA111.txt.actor,Initiated by Citizen
+EA111.txt,EA111.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA111.txt,EA111.txt.postcondition,The Citizen is satisfied with the information sheet and decides to recall the sheets about other hazards that Civil Defense deals with OR The Citizen has no opportunity to view the initial screen so the use case Service Not Available which handles Technical Failure cases will be extended
+EA111.txt,EA111.txt.quality_requirement,The Citizen correctly displays the initial risk section therefore the system takes time in the hundredths of a second range to satisfy the requirement OR If the display of the section does not occur the system takes seconds in the range of -
+EA111.txt,EA111.txt.flow_of_events.0,The Citizen accesses the screen about the meanings of the hazards that Civil Defense deals with with specific images for each hazard category and videos of how it operates during rescue operations
+EA111.txt,EA111.txt.flow_of_events.1,The system responds to the Citizen 's request with a screen where there are causes meanings about landslides floods and coastal erosion phenomena and videos of interventions
+EA111.txt,EA111.txt.flow_of_events.2,The Citizen after viewing the descriptive sheet may want to know the causes of other hazards that the body deals with and therefore decides to view them by activating the use cases Fire Volcanic Seismic Sanitary Antropic Hydrological monitoring
+EA111.txt,EA111.txt.flow_of_events.3,The system also makes available additional fact sheets on other hazards that Civil Defense deals with
+EA118.txt,EA118.txt.name,Calculate Amount
+EA118.txt,EA118.txt.actor,Started by Citizen
+EA118.txt,EA118.txt.precondition,The Citizen must be connected to the system
+EA118.txt,EA118.txt.postcondition,The Citizen receives the information of interest OR In the event that there is an error in data entry or the amount can not be calculated the System calls the use case Calculate Import Unsuccessful OR In the case where there are errors in the data entered by the citizen the System calls the use case Data Errata OR In case there are generic errors the system calls the use case Service Not Available
+EA118.txt,EA118.txt.quality_requirement,None
+EA118.txt,EA118.txt.flow_of_events.0,The Citizen presses the button related to the tax calculation function
+EA118.txt,EA118.txt.flow_of_events.1,The System presents the list of taxes and fees for which the amount can be calculated
+EA118.txt,EA118.txt.flow_of_events.2,The Citizen selects the tax of interest
+EA118.txt,EA118.txt.flow_of_events.3,The System shows a form to be filled in for calculation
+EA118.txt,EA118.txt.flow_of_events.4,The Citizen enters the necessary data
+EA118.txt,EA118.txt.flow_of_events.5,The System verifies the correctness of the data computes the amount and shows it to the Citizen
+EA121.txt,EA121.txt.name,ICI
+EA121.txt,EA121.txt.actor,Initiated by Citizen
+EA121.txt,EA121.txt.precondition,The Citizen has authenticated in the system
+EA121.txt,EA121.txt.postcondition,Payment has been made OR In the case where there is insufficient funds to cover the payment or an error occurs in the transaction the System calls the case use case Payment Not Failed OR In the case where other generic System-related errors occur the use case is invoked Service Not Available
+EA121.txt,EA121.txt.quality_requirement,Not Expected
+EA121.txt,EA121.txt.flow_of_events.0,The Citizen clicks on the button to access the Online Tax Payment area
+EA121.txt,EA121.txt.flow_of_events.1,The System displays the list of fees that can be paid online
+EA121.txt,EA121.txt.flow_of_events.2,The Citizen selects the section dedicated to Municipal Property Tax and its payment
+EA121.txt,EA121.txt.flow_of_events.3,The System redirects the Citizen to the necessary section showing the form of the relevant tax and the relevant amount to be paid
+EA121.txt,EA121.txt.flow_of_events.4,The Citizen confirms the correctness of the information and initiates the transaction selecting the preferred payment method
+EA121.txt,EA121.txt.flow_of_events.5,The System performs the transaction and displays a successful payment message
+EA113.txt,EA113.txt.name,Service Civil
+EA113.txt,EA113.txt.actor,Initiated by Citizen
+EA113.txt,EA113.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA113.txt,EA113.txt.postcondition,The Citizen acknowledges the information received OR The Citizen fails to view the information page and therefore the use case Service Not Available which handles technical failure cases is extended
+EA113.txt,EA113.txt.quality_requirement,The response time is in the hundredths of a second range if the user is able to view the information page with its link to the form download OR The system 's response time to the Citizen 's need increases in the order of seconds if heshe fails to view the form
+EA113.txt,EA113.txt.flow_of_events.0,The Citizen accesses this section to get information about his or her service to others
+EA113.txt,EA113.txt.flow_of_events.1,The system responds with a screen display where it clarifies the goals of community service general information and the ability to call Download Iscrizione use case
+EA135.txt,EA135.txt.name,TOSAP
+EA135.txt,EA135.txt.description,Table TOSAP use case Citizen side Version
+EA135.txt,EA135.txt.actor,Initiated by Citizen
+EA135.txt,EA135.txt.precondition,The Citizen has logged in The Citizen has made the request for the specific service The request for the service has been accepted
+EA135.txt,EA135.txt.postcondition,Payment has been made OR In the case where there is insufficient funds to cover the payment or an error occurs in the transaction the System calls the case use case Payment Not Received OR In the case where there are general errors the System calls the use case Service Not Available
+EA135.txt,EA135.txt.quality_requirement,Not Provided
+EA135.txt,EA135.txt.flow_of_events.0,The Citizen clicks on the button to access the Online Tax Payment area
+EA135.txt,EA135.txt.flow_of_events.1,The System displays the list of fees that can be paid online
+EA135.txt,EA135.txt.flow_of_events.2,The Citizen selects the section dedicated to the Tax for the Occupation of Public Land and Areas and its payment and enters the file code
+EA135.txt,EA135.txt.flow_of_events.3,The System redirects the Citizen to the necessary section showing the form of the relevant fee and the relevant amount to be paid
+EA135.txt,EA135.txt.flow_of_events.4,The Citizen confirms that the information is correct selects the preferred payment method and initiates the transaction
+EA135.txt,EA135.txt.flow_of_events.5,The System performs the transaction and displays a successful payment message
+EA42.txt,EA42.txt.name,Practice Accepted
+EA42.txt,EA42.txt.actor,Started by Employee Communicates with Citizen
+EA42.txt,EA42.txt.precondition,The Employee is logged into the system has selected a pending practice
+EA42.txt,EA42.txt.postcondition,A notification was sent to the Citizen OR The system encountered an unexpected error so calls the use case Service Not Available
+EA42.txt,EA42.txt.quality_requirement,This use case includes the use cases Assistance Economic Assistance Domestic Service Mobility Disabled Accommodations Night Assistance Girls Mothers Minor Assistance Housing Release Parking Disabled
+EA42.txt,EA42.txt.flow_of_events.0,Clerk accepts the practice
+EA42.txt,EA42.txt.flow_of_events.1,The system sets the practice as accepted
+EA42.txt,EA42.txt.flow_of_events.2,Then sends a notification to the Citizen
+EA107.txt,EA107.txt.name,Monitoring Vulcanic
+EA107.txt,EA107.txt.actor,Started by Citizen
+EA107.txt,EA107.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA107.txt,EA107.txt.postcondition,The Citizen is satisfied with the information provided to him OR The Citizen can not properly view the information sheet about the monitoring of volcanoes in the municipal and national territory so the use case Service Not Available which handles technical failure cases is extended
+EA107.txt,EA107.txt.quality_requirement,The response time varies in the range of hundredths of a second But if the Citizen does not display the information sheet correctly then times can vary in the order of seconds from a minimum of to a maximum of
+EA107.txt,EA107.txt.flow_of_events.0,The Citizen accesses this screen because he or she wants to know more about the actual operation of how Civil Defense conducts monitoring of volcanoes in the municipality and nationwide territory with a detailed description of the information technology adopted
+EA107.txt,EA107.txt.flow_of_events.1,The system responds to the request by displaying an information sheet describing everything the Civil Defense does to keep track of volcanic activity
+EA6.txt,EA6.txt.name,Entry Citizen
+EA6.txt,EA6.txt.actor,Initiated by employee
+EA6.txt,EA6.txt.precondition,The clerk has authenticated in the system
+EA6.txt,EA6.txt.postcondition,The system registers the Employee OR In the case where the employee enters a citizen already in the system the system calls the use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA6.txt,EA6.txt.quality_requirement,The name string may contain characters az AZ ' and be less than characters long and not empty The last name string may contain characters az AZ ' and has length less than characters and is not empty The Tax Code string must be current to regulations and has a length of characters The Date of Birth string must be an existing date and be ddmmyyyyy of numeric type dd from to mm from to yyyy from to present The birthplace string can contain characters az AZ ' and a length of less than characters and not empty Email string has format x xx and has a length less than characters and non-empty Household ID string must be present in the system must contain only numeric characters and must be greater than
+EA6.txt,EA6.txt.flow_of_events.0,The clerk logs into the system and activates the citizen registration process
+EA6.txt,EA6.txt.flow_of_events.1,The system displays the form for entering a new citizen
+EA6.txt,EA6.txt.flow_of_events.2,The clerk enters the citizen 's data and submits the registration request
+EA6.txt,EA6.txt.flow_of_events.3,The system receives the form checks that the citizen entered by the clerk is not already in the system
+EA54.txt,EA54.txt.name,Show Practice Attended Employee
+EA54.txt,EA54.txt.actor,Started by Employee
+EA54.txt,EA54.txt.precondition,This use case includes the View Practices Attended Employee use case
+EA54.txt,EA54.txt.postcondition,The Clerk accepts the practice the use case Practice Accepted '' is invoked OR The Clerk Rejects the practice the use case Practice Rejected '' is invoked OR The system has encountered an unanticipated error so it calls the use case Service Not Available Unanticipated Quality Requirements
+EA54.txt,EA54.txt.flow_of_events.0,The system shows the information regarding the selected practice with its options to accept or reject practice
+EA54.txt,EA54.txt.flow_of_events.1,The Clerk can Accept or Reject the practice if it is already complete with all documentation necessary signatures and after verification
+EA54.txt,EA54.txt.flow_of_events.2,Heshe can also print the practice data if necessary
+EA10.txt,EA10.txt.name,Logout Employee
+EA10.txt,EA10.txt.actor,Started by employee
+EA10.txt,EA10.txt.precondition,The employee has logged into the system Logout condition The system closes the employee 's session
+EA10.txt,EA10.txt.quality_requirement,Not provided
+EA10.txt,EA10.txt.flow_of_events.0,The employee wants to end the work session and clicks on the Logout button
+EA10.txt,EA10.txt.flow_of_events.1,The system logs the employee out of the system and returns to the main screen
+EA98.txt,EA98.txt.name,Woods
+EA98.txt,EA98.txt.actor,Started by Citizen
+EA98.txt,EA98.txt.precondition,The Citizen is authenticated within the municipal system OR The Citizen has accessed the municipal system
+EA98.txt,EA98.txt.postcondition,The Citizen is satisfied with the information and advice received OR The Citizen is unable to view the descriptive screen so the use case Service Not Available that handles technical failure cases is extended
+EA98.txt,EA98.txt.quality_requirement,The system takes time on the order of hundredths of a second for the requester to view the screen OR In contrast the system would take time on the order of - seconds if the screen is not displayed correctly
+EA98.txt,EA98.txt.flow_of_events.0,The Citizen accesses this screen so that he or she can learn about the advice that Civil Defense makes available to anyone in order to avoid and have people avoid forest fires
+EA98.txt,EA98.txt.flow_of_events.1,The system provides a screen with a set of rules that the Citizen should follow and have followed if heshe is with third parties to prevent the occurrence of arson and in case of this which authority to call
+EA33.txt,EA33.txt.name,Request Certificates
+EA33.txt,EA33.txt.actor,Initiated by citizen
+EA33.txt,EA33.txt.precondition,The citizen has authenticated in the system
+EA33.txt,EA33.txt.postcondition,The system sends the certificate OR In the case where the relevant person has not been found the system calls the use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA33.txt,EA33.txt.quality_requirement,The last name string can contain characters such as az AZ ' and a length between and characters The name string may contain characters such as az AZ ' and a length between and characters The birthplace string can contain characters such as az AZ ' and a length of at least one character The birth province string may contain characters such as az AZ ' and a length of at least one character The date of birth string must actually exist and consist of ddmm yyyyy of numeric type dd from to mm from to yyyy from to present The residence string may contain characters az AZ ' and must be at least one character long The province of residence string may contain characters such as az AZ ' and a length of at least one character The address string can contain characters such as az AZ ' and a length of at least one character
+EA33.txt,EA33.txt.flow_of_events.0,Citizen selects a specific certificate birth certificates marital status certificates
+EA33.txt,EA33.txt.flow_of_events.1,The system displays the form for entering the data of the person concerned
+EA33.txt,EA33.txt.flow_of_events.2,The citizen enters the data of the person concerned
+EA33.txt,EA33.txt.flow_of_events.3,The system displays a screen with the requested certificate
+EA33.txt,EA33.txt.flow_of_events.4,The citizen selects the payment and shipping method
+EA33.txt,EA33.txt.flow_of_events.5,The system sends the certificate
+EA72.txt,EA72.txt.name,Delete Information
+EA72.txt,EA72.txt.actor,Started by Employee
+EA72.txt,EA72.txt.precondition,This case requires that the employee has gone through the authentication procedure
+EA72.txt,EA72.txt.postcondition,The system has performed the deletion of the news OR If an error occurred in the deletion request the system calls the use case Service Not Available
+EA72.txt,EA72.txt.quality_requirement,Not Available
+EA72.txt,EA72.txt.flow_of_events.0,Employee requests the deletion of a news item
+EA72.txt,EA72.txt.flow_of_events.1,The system displays the list of existing news items
+EA72.txt,EA72.txt.flow_of_events.2,The employee chooses a news item
+EA72.txt,EA72.txt.flow_of_events.3,The system displays a form the confirmation of the operation
+EA72.txt,EA72.txt.flow_of_events.4,The employee confirms the operation through the form
+EA72.txt,EA72.txt.flow_of_events.5,The system receives the form and deletes the data of the news from the system
+EA110.txt,EA110.txt.name,Waste
+EA110.txt,EA110.txt.actor,Started by Citizen
+EA110.txt,EA110.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA110.txt,EA110.txt.postcondition,The Citizen is satisfied with the information heshe received from the descriptive sheet OR The Citizen is unable to view the screen and therefore the use case Service Not Available which handles technical failure cases is extended
+EA110.txt,EA110.txt.quality_requirement,Response times are to be found in the hundredths of a second range if correct display of the page occurs OR On the order of seconds to if it fails to view that screen
+EA110.txt,EA110.txt.flow_of_events.0,The Citizen accesses the fact sheet because he wants to know the actual waste situation in his municipality and whether of course the environment is protected by the Civil Defense with the help of municipal agencies
+EA110.txt,EA110.txt.flow_of_events.1,The system responds to this need with a large and descriptive screen where the goals of the Municipal Council and informative notes on the dangers of waste fires are pointed out and what kind of waste collection is in one 's municipality
+EA110.txt,EA110.txt.flow_of_events.2,In addition you can view the use case View Toxicological Ambiental Results
+EA27.txt,EA27.txt.name,Change State Of Family
+EA27.txt,EA27.txt.actor,Started by Citizen continued by Employee
+EA27.txt,EA27.txt.precondition,The Citizen has authenticated in the system
+EA27.txt,EA27.txt.postcondition,The System creates the document to be delivered to the appropriate office OR In the case where the service is not available the use case Service Not Available is invoked
+EA27.txt,EA27.txt.quality_requirement,Not Available
+EA27.txt,EA27.txt.flow_of_events.0,Citizen presses on the Change Family Status button
+EA27.txt,EA27.txt.flow_of_events.1,The system shows the citizen the form to fill out
+EA27.txt,EA27.txt.flow_of_events.2,The citizen enters the new household data and submits the request
+EA27.txt,EA27.txt.flow_of_events.3,The system sends the request to the appropriate clerk
+EA112.txt,EA112.txt.name,Sanitary Antropic
+EA112.txt,EA112.txt.actor,Initiated by Citizen
+EA112.txt,EA112.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA112.txt,EA112.txt.postcondition,The Citizen is satisfied with the information provided to him OR The Citizen is unable to view the descriptive screen so the use case Service Not Available which handles technical failure cases will be extended
+EA112.txt,EA112.txt.quality_requirement,The system will respond to the Citizen 's need by responding with the descriptive page on the order of hundredths of a second OR If the Citizen can not view the screen the response from the system will increase in the order of seconds
+EA112.txt,EA112.txt.flow_of_events.0,The Citizen accesses the desired screen from the list of environmental hazards that is next to each hazard description
+EA112.txt,EA112.txt.flow_of_events.1,The system responds to the Citizen 's request by providing a detailed explanation of what this use case means in practical terms and distributing advice and standard procedures in case of hazards
+EA78.txt,EA78.txt.name,Edit Information
+EA78.txt,EA78.txt.actor,Started by Employee
+EA78.txt,EA78.txt.precondition,This case requires that the employee has gone through the authentication procedure
+EA78.txt,EA78.txt.postcondition,The system has performed the modification of the news OR If an error occurred in the change request the system calls the use case Service Not Available
+EA78.txt,EA78.txt.quality_requirement,Not Available
+EA78.txt,EA78.txt.flow_of_events.0,Employee requests an edit of a news item
+EA78.txt,EA78.txt.flow_of_events.1,The system displays the list of existing news items
+EA78.txt,EA78.txt.flow_of_events.2,The employee chooses a news item
+EA78.txt,EA78.txt.flow_of_events.3,The system displays a form for edit the news
+EA78.txt,EA78.txt.flow_of_events.4,The employee enters data about the news in a form
+EA78.txt,EA78.txt.flow_of_events.5,The system receives the form and updates the news data in the system
+EA24.txt,EA24.txt.name,Research Employee
+EA24.txt,EA24.txt.actor,Started by administrator
+EA24.txt,EA24.txt.precondition,The administrator has authenticated into the system
+EA24.txt,EA24.txt.postcondition,The system displays the screen of the clerk OR In the case where the clerk is not found the system retrieves the use case Data Errati OR In case the administrator wants to delete an employee the system calls the use case Delete Employee OR In the case where the administrator wants to edit an employee the system calls the use case Edit Employee OR In the case where the service is not available the use case Service Not Available is called
+EA24.txt,EA24.txt.quality_requirement,The matricula string is present in the system contains only numeric characters and has a length of characters
+EA24.txt,EA24.txt.flow_of_events.0,The administrator presses on the Search Employee button
+EA24.txt,EA24.txt.flow_of_events.1,The system displays the form to search for an employee
+EA24.txt,EA24.txt.flow_of_events.2,The administrator performs a search using the employee 's data
+EA24.txt,EA24.txt.flow_of_events.3,The system returns the data of the searched employee
+EA49.txt,EA49.txt.name,Economic Assistance
+EA49.txt,EA49.txt.actor,Initiated by User Communicates with Office of Social Services
+EA49.txt,EA49.txt.precondition,The user has successfully logged in and selected the Social Assistance feature
+EA49.txt,EA49.txt.postcondition,The system has encountered an error in filling out the form so it calls the use case Data Errati OR The user returns to the previous screen OR The system encountered an unanticipated error so it calls the use case Service Not Available
+EA49.txt,EA49.txt.quality_requirement,Unanticipated
+EA49.txt,EA49.txt.flow_of_events.0,User selects Request economic assistance elderly minor orphans AIDS patients prisoners adults in need ''
+EA49.txt,EA49.txt.flow_of_events.1,The system displays the form for entering applicant and recipient data
+EA49.txt,EA49.txt.flow_of_events.2,The user enters hisher own data and if necessary enters the data of a third person specifying the relationship with that person
+EA49.txt,EA49.txt.flow_of_events.3,The system retrieves the data of the applicant citizen the master data of the recipient citizen in case the applicant and the recipient were not the same person and the data regarding the household of the recipient Citizen
+EA49.txt,EA49.txt.flow_of_events.4,The user specifies the psycho-physical conditions of the recipient specifying the attached documents disability certificate issued by the ASL commission andor health card of the attending physician andor certificate of the pension provider ISEE model finally specifying a possible date of appointment with social workers
+EA49.txt,EA49.txt.flow_of_events.5,Then submit the form
+EA49.txt,EA49.txt.flow_of_events.6,The system picks up data regarding any social welfare services the recipient already uses
+EA49.txt,EA49.txt.flow_of_events.7,It then forwards the request to the Social Services office and notifies the user that the request has been made
+EA58.txt,EA58.txt.name,Service Mobility Disabled
+EA58.txt,EA58.txt.actor,Initiated by User Communicates with Social Services Office
+EA58.txt,EA58.txt.precondition,The user has successfully logged in and selected the Social Assistance feature
+EA58.txt,EA58.txt.postcondition,The system has encountered an error in filling out the form so it calls the use case Data Errati OR The user returns to the previous screen OR The system encountered an unexpected error so it calls the use case Service Not Available
+EA58.txt,EA58.txt.flow_of_events.0,User selects Mobility and transportation service for the disabled ''
+EA58.txt,EA58.txt.flow_of_events.1,The system displays the form for entering applicant and recipient data
+EA58.txt,EA58.txt.flow_of_events.2,The user enters hisher own data and if necessary enters the data of a third person specifying the relationship with that person
+EA58.txt,EA58.txt.flow_of_events.3,The system retrieves the data of the applicant citizen the master data of the recipient citizen in case the applicant and the recipient were not the same person and the data regarding the household of the recipient Citizen
+EA58.txt,EA58.txt.flow_of_events.4,The user specifies the psycho-physical conditions of the recipient specifying the attached documents disability certificate issued by the ASL commission andor health card of the attending physician andor certificate of the pension provider ISEE model finally specifying a possible date of appointment with social workers
+EA58.txt,EA58.txt.flow_of_events.5,Then submit the form
+EA58.txt,EA58.txt.flow_of_events.6,The system picks up data regarding any social welfare services the recipient already uses
+EA58.txt,EA58.txt.flow_of_events.7,It then forwards the request to the Social Services office and notifies the user that the request has been made
+EA117.txt,EA117.txt.name,Volcanic
+EA117.txt,EA117.txt.actor,Started by Citizen
+EA117.txt,EA117.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA117.txt,EA117.txt.postcondition,The Citizen is satisfied with the information provided to himher OR The Citizen is unable to view the descriptive sheet of the Vulcan feature so the Service Not Available use case is extended which handles cases of technical failure
+EA117.txt,EA117.txt.quality_requirement,System response time is in the hundredths of a second range if the Citizen correctly displays the card with inherent components The response time to the requested service changes if the Citizen fails to properly view the descriptive page
+EA117.txt,EA117.txt.flow_of_events.0,The Citizen accesses this tab from the Risks use case if they want to know more about the volcanic situation in their municipality and the ability to view the Civil Defense monitoring methods
+EA117.txt,EA117.txt.flow_of_events.1,The system responds with the correct display of a descriptive screen about the different types of eruptions of a volcano making available the possibility to view the current volcanic situation of the municipality
+EA117.txt,EA117.txt.flow_of_events.2,The Citizen wants to know how the present volcanoes are monitored and therefore will invoke the use case Monitor Vulcanic
+EA117.txt,EA117.txt.flow_of_events.3,The system provides the Citizen with a link to the Monitor Vulcanic use case so that they can learn about the actual situation
+EA75.txt,EA75.txt.name,Information Museums
+EA75.txt,EA75.txt.actor,Started by Citizen
+EA75.txt,EA75.txt.precondition,The citizen has logged into the system
+EA75.txt,EA75.txt.postcondition,The citizen has viewed the information about the museum OR In case the citizen wants to book the visit heshe will be referred to the museum website
+EA75.txt,EA75.txt.quality_requirement,Not provided
+EA75.txt,EA75.txt.flow_of_events.0,Citizen requests to view the list of museums
+EA75.txt,EA75.txt.flow_of_events.1,The system allows the list of museums to be displayed
+EA75.txt,EA75.txt.flow_of_events.2,The Citizen chooses the museum
+EA75.txt,EA75.txt.flow_of_events.3,The system returns information regarding the chosen museum by displaying data such as - - - location opening dates and times link to the museum 's website
+EA67.txt,EA67.txt.name,Edit Preservation Interview
+EA67.txt,EA67.txt.actor,Started by Citizen
+EA67.txt,EA67.txt.precondition,This extends the View Preservation Consultor io use case by considering the case when the citizen wants to change the chosen reservation
+EA67.txt,EA67.txt.postcondition,The system has made the reservation change
+EA67.txt,EA67.txt.quality_requirement,Not provided
+EA67.txt,EA67.txt.flow_of_events.0,Citizen requests change of interview reservation in the counseling center
+EA67.txt,EA67.txt.flow_of_events.1,The system displays a form for editing the reservation fields
+EA67.txt,EA67.txt.flow_of_events.2,The citizen makes the changes in the form confirms the reservation
+EA67.txt,EA67.txt.flow_of_events.3,Thesystemmodifiesthereservation
+EA97.txt,EA97.txt.name,Tenders E Competitions
+EA97.txt,EA97.txt.actor,Started by Citizen
+EA97.txt,EA97.txt.precondition,The Citizen has authenticated himselfherself in the municipal system OR The Citizen has accessed the municipal system
+EA97.txt,EA97.txt.postcondition,The Citizen has completed downloading the notice that is uniquely associated with the association for which they have chosen to participate OR The Citizen is unable to view the introductory screen with all associations and therefore the Service Not Available use case that handles technical failures will be extended
+EA97.txt,EA97.txt.quality_requirement,The Citizen is able to view the page correctly meaning that the system response times are in the hundredths of a second range OR The Citizen fails to display the introductory screen correctly meaning that the system response time would be in the order of seconds ranging from a minimum of to a maximum of
+EA97.txt,EA97.txt.flow_of_events.0,The Citizen accesses the initial screen in order to view the possibility of viewing the associations that support the Civil Defense
+EA97.txt,EA97.txt.flow_of_events.1,The system responds to the need by allowing the Citizen to view all the associations that are part of the Civil Defense and that hire personnel with a small image of the association with next to it the possibility of receiving a download of the notice made available by the association in question
+EA97.txt,EA97.txt.flow_of_events.2,The Citizen takes note of what the form provides and chooses from which among the associations made available to receive news for possible recruitment or participation in the competition about the modalities of the same
+EA97.txt,EA97.txt.flow_of_events.3,The system responds to this by allowing himher to view the corresponding competition notice
+EA44.txt,EA44.txt.name,View Practices Attended Employee
+EA44.txt,EA44.txt.actor,Started by Employee
+EA44.txt,EA44.txt.precondition,The Employee has logged in correctly
+EA44.txt,EA44.txt.postcondition,The Employee selects a pending request and the use case Show Practice Awaiting Employee '' is invoked OR The Employee returns to the previous screen OR The System encountered an unanticipated error so calls the use case Service Not Available OR Unanticipated Quality Requirements
+EA44.txt,EA44.txt.flow_of_events.0,Employee selects View Pending Requests ''
+EA44.txt,EA44.txt.flow_of_events.1,System shows the list of pending files
+EA65.txt,EA65.txt.name,Enrollment Card Youth
+EA65.txt,EA65.txt.actor,Started by Citizen
+EA65.txt,EA65.txt.precondition,This case requires that the citizen has gone through the authentication procedure
+EA65.txt,EA65.txt.postcondition,The system has displayed the summary form OR In case an error occurred in the card application phase the system calls the use case Service Not Available OR Should the citizen enter incorrect data the system calls the use case Data Error OR In case the citizen decides to cancel the card request the system calls the use case Card Canceled
+EA65.txt,EA65.txt.quality_requirement,Not provided
+EA65.txt,EA65.txt.flow_of_events.0,Citizen applies for youth card enrollment
+EA65.txt,EA65.txt.flow_of_events.1,The system displays a form for submitting the request
+EA65.txt,EA65.txt.flow_of_events.2,The citizen enters the card application data into a form
+EA65.txt,EA65.txt.flow_of_events.3,The system receives the form verifies the data and submits the request
+EA65.txt,EA65.txt.flow_of_events.4,The system notifies that the card has been entered and displays the card number and the summary of data entered in a form
+EA14.txt,EA14.txt.name,Edit E Mail Employee
+EA14.txt,EA14.txt.actor,Started by employee
+EA14.txt,EA14.txt.precondition,The 'employee has authenticated into the system
+EA14.txt,EA14.txt.postcondition,The system saves the new e-mail The system detects an error and retrieves the use case Data Errati OR In the case where the service is not available the use case Service Not Available is invoked
+EA14.txt,EA14.txt.quality_requirement,Not Provided
+EA14.txt,EA14.txt.flow_of_events.0,The 'employee accesses the edit-email form
+EA14.txt,EA14.txt.flow_of_events.1,The system shows the form the entry of the new e-mail
+EA14.txt,EA14.txt.flow_of_events.2,The employee enters the new e-mail and presses the confirmation button
+EA14.txt,EA14.txt.flow_of_events.3,The system updates the new e-mail
+EA87.txt,EA87.txt.name,Request Copy File Construction
+EA87.txt,EA87.txt.actor,Initiated by citizen communicates with clerk
+EA87.txt,EA87.txt.precondition,Includes Search File Building
+EA87.txt,EA87.txt.postcondition,The system proceeds to send the request to the clerk The system notifies the citizen that the request has been submitted and the copy will be sent to them shortly OR in the case of technical failures the system invokes the use case Service Not Available
+EA87.txt,EA87.txt.quality_requirement,Not available
+EA87.txt,EA87.txt.flow_of_events.0,Citizen requests copy of file using appropriate button
+EA87.txt,EA87.txt.flow_of_events.1,The system sends the request to the clerk
+EA87.txt,EA87.txt.flow_of_events.2,The system notifies the citizen that the request has been forwarded and the copy will be sent shortly
+EA91.txt,EA91.txt.name,Issue Certificates
+EA91.txt,EA91.txt.actor,Initiated by citizen communicates with employee
+EA91.txt,EA91.txt.precondition,The citizen has authenticated in the system
+EA91.txt,EA91.txt.postcondition,The system displays the form for printing The system sends a message notifying the relevant clerk of the request OR in the case of incorrect data entry the system invokes the use case Dati Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA91.txt,EA91.txt.quality_requirement,Not Available
+EA91.txt,EA91.txt.flow_of_events.0,Citizen accesses the certificate and permit issuance area using the appropriate link
+EA91.txt,EA91.txt.flow_of_events.1,The system displays the form for entering the data necessary for the issuance of the certificate eg
+EA91.txt,EA91.txt.flow_of_events.2,certificate of fitness certificate of habitability
+EA91.txt,EA91.txt.flow_of_events.3,The citizen enters the required data
+EA91.txt,EA91.txt.flow_of_events.4,The system verifies the correctness and completeness of the data then displays a summary screen or activates the Dati Errati use case
+EA91.txt,EA91.txt.flow_of_events.5,The citizen confirms the operation
+EA91.txt,EA91.txt.flow_of_events.6,The system displays the form for printing
+EA91.txt,EA91.txt.flow_of_events.7,The system sends a message notifying the appropriate employee of the request
+EA91.txt,EA91.txt.flow_of_events.8,The citizen makes the printout to be handed in at the municipal office with the revenue stamp
+EA64.txt,EA64.txt.name,Information Informagiovani
+EA64.txt,EA64.txt.actor,Started by Citizen
+EA64.txt,EA64.txt.precondition,The citizen has logged into the system
+EA64.txt,EA64.txt.postcondition,The citizen has viewed the information about the initiatives OR In case of failure the system calls Service Not Available
+EA64.txt,EA64.txt.quality_requirement,Not expected
+EA64.txt,EA64.txt.flow_of_events.0,Citizen requests viewing of informagiovani news list
+EA64.txt,EA64.txt.flow_of_events.1,The system allows to view the list of information regarding - special official employment gazette - local competition notices information - study trips
+EA64.txt,EA64.txt.flow_of_events.2,The citizen selects the desired information
+EA64.txt,EA64.txt.flow_of_events.3,The system returns the information concerning the news specifying - date of publication of the notice - expiration date of the notice - description
+EA123.txt,EA123.txt.name,IRPEF
+EA123.txt,EA123.txt.actor,Initiated by Citizen
+EA123.txt,EA123.txt.precondition,The Citizen has authenticated in the system
+EA123.txt,EA123.txt.postcondition,The payment has been made OR In the case where there is insufficient funds to cover the payment or an error occurs in the transaction the System calls the case use case Payment Not Successful OR In the case where additional generic problems arise the System calls the use case Service Not Available
+EA123.txt,EA123.txt.quality_requirement,Not Provided
+EA123.txt,EA123.txt.flow_of_events.0,The Citizen clicks on the button to access the Online Tax Payment area
+EA123.txt,EA123.txt.flow_of_events.1,The System displays the list of fees that can be paid online
+EA123.txt,EA123.txt.flow_of_events.2,The Citizen selects the section dedicated to Income Tax for Individuals and its payment
+EA123.txt,EA123.txt.flow_of_events.3,The System redirects the Citizen to the necessary section showing the form of the relevant tax and the relevant amount to be paid
+EA123.txt,EA123.txt.flow_of_events.4,The Citizen confirms the correctness of the information selects the preferred payment method and initiates the transaction
+EA123.txt,EA123.txt.flow_of_events.5,The System performs the transaction and displays a successful payment message
+EA115.txt,EA115.txt.name,View Results Toxicological Environmental
+EA115.txt,EA115.txt.actor,Citizen User Registered
+EA115.txt,EA115.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA115.txt,EA115.txt.postcondition,The Citizen is satisfied with the information collected OR The Citizen is unable to view the card and therefore the use case Service Not Available which handles technical failure cases is extended
+EA115.txt,EA115.txt.quality_requirement,System response times are acceptable and on the order of hundredths of a second if the card is correctly displayed by the person who requested it Whereas if there was some hiccup in the display of the use case the system response times increase on the order of seconds from a minimum of to a maximum of
+EA115.txt,EA115.txt.flow_of_events.0,The Citizen accesses this tab in order to become personally aware of the environmental situation in the municipality where he or she resides whether it is being kept under control and what values are at risk and why this is so
+EA115.txt,EA115.txt.flow_of_events.1,The system responds with a descriptive screen about the toxicological values received from the chemical and toxicological analyses carried out by the Civil Defense on the environment and municipal land
+EA70.txt,EA70.txt.name,Reservation Interview Canceled
+EA70.txt,EA70.txt.actor,Started by Citizen
+EA70.txt,EA70.txt.precondition,This use case extends Booking Interview and checks when a citizen decides to cancel the interview booking
+EA70.txt,EA70.txt.postcondition,The system resubmits the form
+EA70.txt,EA70.txt.quality_requirement,Not provided
+EA70.txt,EA70.txt.flow_of_events.0,Citizen decides heshe wants to cancel the interview reservation and then enters in the form that heshe wants to cancel it
+EA70.txt,EA70.txt.flow_of_events.1,System receives the form notifies cancellation of interview booking and resubmits the form
+EA8.txt,EA8.txt.name,Logout Administrator
+EA8.txt,EA8.txt.actor,Started by Administrator
+EA8.txt,EA8.txt.precondition,The administrator has logged into the system Logout condition The system closes the administrator 's session
+EA8.txt,EA8.txt.quality_requirement,Not provided
+EA8.txt,EA8.txt.flow_of_events.0,The administrator wants to end the work session and clicks on the Logout button
+EA8.txt,EA8.txt.flow_of_events.1,The system logs the administrator out of the system and returns to the main screen
+EA63.txt,EA63.txt.name,Information Consultancy Youth
+EA63.txt,EA63.txt.actor,Started by Citizen
+EA63.txt,EA63.txt.precondition,The citizen has logged into the system
+EA63.txt,EA63.txt.postcondition,The citizen has viewed the information about consulting room OR In case the citizen wants to book an interview the system calls the use case Booking Interview
+EA63.txt,EA63.txt.quality_requirement,Not provided
+EA63.txt,EA63.txt.flow_of_events.0,The Citizen requests to view the list of counseling centers
+EA63.txt,EA63.txt.flow_of_events.1,The system allows to view the list of consulting rooms
+EA63.txt,EA63.txt.flow_of_events.2,The Citizen chooses the consulting room
+EA63.txt,EA63.txt.flow_of_events.3,The system returns information regarding the chosen consultatory displaying data such as - its location - its opening dates and times
+EA63.txt,EA63.txt.flow_of_events.4,- the list of interviews if any booked invoking the use case View Consulting Reservation
+EA102.txt,EA102.txt.name,Download Subscription
+EA102.txt,EA102.txt.actor,Started by Citizen
+EA102.txt,EA102.txt.precondition,The Citizen has authenticated in the system OR The Citizen has accessed the municipal system
+EA102.txt,EA102.txt.postcondition,The Citizen has completed downloading the form that heshe must complete and submit in person as it requires accompanying external forms and the use case Civil Service is invoked The Citizen fails to view the download of the form and therefore the use case Service Not Available which handles technical failure cases is extended
+EA102.txt,EA102.txt.quality_requirement,The system response time to load the form download ranges from to seconds OR System response time ranges from to seconds if the module download fails
+EA102.txt,EA102.txt.flow_of_events.0,The Citizen accesses this screen because heshe wants to enroll in Civil Service
+EA102.txt,EA102.txt.flow_of_events.1,The system responds with a page where the requesting Citizen can download the form to fill out and submit to the Civil Defense office
+EA109.txt,EA109.txt.name,Civil Protection
+EA109.txt,EA109.txt.actor,Started by Citizen
+EA109.txt,EA109.txt.precondition,The Citizen is authenticated in the system OR The Citizen has accessed the municipal system
+EA109.txt,EA109.txt.postcondition,The system makes the description sheet available to the Citizen and heshe acknowledges it OR In the event that the system fails to have the card displayed the use case Service Not Available is extended which handles Technical Failure cases
+EA109.txt,EA109.txt.quality_requirement,The response time to the Citizen 's need is in the hundredths of a second range if the Citizen correctly displays the screen Response times vary in the order of seconds from a minimum of to a maximum of if the Citizen does not correctly view the descriptive screen
+EA109.txt,EA109.txt.flow_of_events.0,Citizen accesses the descriptive sheet about general information about the municipal body in question
+EA109.txt,EA109.txt.flow_of_events.1,The system responds to the information functionality allowing the display of a description about the active roles played by the Civil Defense
+EA12.txt,EA12.txt.name,Edit E Mail Administrator
+EA12.txt,EA12.txt.actor,Started by administrator
+EA12.txt,EA12.txt.precondition,The administrator has authenticated into the system
+EA12.txt,EA12.txt.postcondition,The system saves the new e-mail The system detects an error and retrieves the use case Data Errati OR In the case where the service is not available the use case Service Not Available is invoked
+EA12.txt,EA12.txt.quality_requirement,Not Provided
+EA12.txt,EA12.txt.flow_of_events.0,Administrator accesses the email edit form
+EA12.txt,EA12.txt.flow_of_events.1,The system shows the form the new e-mail entry
+EA12.txt,EA12.txt.flow_of_events.2,The administrator enters the new e-mail and presses the confirmation button
+EA12.txt,EA12.txt.flow_of_events.3,The system updates the new email
+EA125.txt,EA125.txt.name,Payment Fees
+EA125.txt,EA125.txt.actor,Started by Citizen
+EA125.txt,EA125.txt.precondition,The Citizen has authenticated in the system
+EA125.txt,EA125.txt.postcondition,The payment has been made OR In case there is an error in data entry or the available funds are not sufficient to cover the payment the System calls the use case Payment Not Received OR The Citizen clicks on the button related to dispute a particular fine in which case the System calls the use case Contesta Multa OR In the case where there are errors in the data entered by the Citizen the System calls the use case Dati Errati OR In the case where there are generic errors the system calls the use case Service Not Available
+EA125.txt,EA125.txt.quality_requirement,None
+EA125.txt,EA125.txt.flow_of_events.0,The Citizen clicks on the button to access the online fines management feature
+EA125.txt,EA125.txt.flow_of_events.1,The System redirects the Citizen to the desired section
+EA125.txt,EA125.txt.flow_of_events.2,The Citizen clicks on the button to pay fines online
+EA125.txt,EA125.txt.flow_of_events.3,The System searches for fines against the Citizen in the database for which payment has not yet been received
+EA125.txt,EA125.txt.flow_of_events.4,The Citizen selects the fine for which heshe wishes to make payment
+EA125.txt,EA125.txt.flow_of_events.5,The System displays the fine form and the relevant amount to be paid
+EA125.txt,EA125.txt.flow_of_events.6,The Citizen verifies that the information is correct and initiates the transaction selecting the preferred payment method
+EA125.txt,EA125.txt.flow_of_events.7,The System performs the transaction and displays a successful payment message
+EA138.txt,EA138.txt.name,Data Errati
+EA138.txt,EA138.txt.actor,Started by Citizen
+EA138.txt,EA138.txt.precondition,This use case extends use cases and handles exceptional cases of failure due to incorrect input
+EA138.txt,EA138.txt.postcondition,The input form is resubmitted
+EA138.txt,EA138.txt.quality_requirement,Not expected
+EA138.txt,EA138.txt.flow_of_events.0,System displays a message to the terminal screen indicating that the request entered was incorrect
+EA138.txt,EA138.txt.flow_of_events.1,Citizen reads the notification message
+EA138.txt,EA138.txt.flow_of_events.2,System resubmits the input form
+EA73.txt,EA73.txt.name,Information Libraries
+EA73.txt,EA73.txt.actor,Started by Citizen
+EA73.txt,EA73.txt.precondition,The citizen has logged into the system
+EA73.txt,EA73.txt.postcondition,The citizen has viewed the library information OR In case the citizen wants to view a book heshe will be referred to the library website
+EA73.txt,EA73.txt.quality_requirement,Not provided
+EA73.txt,EA73.txt.flow_of_events.0,Citizen requests to view list of libraries
+EA73.txt,EA73.txt.flow_of_events.1,The system allows to view the list of libraries
+EA73.txt,EA73.txt.flow_of_events.2,The Citizen chooses the library
+EA73.txt,EA73.txt.flow_of_events.3,The system returns information concerning the chosen library by displaying data such as - - - location opening dates and times and link to the library 's website
+EA130.txt,EA130.txt.name,Request IPPA Rifiied
+EA130.txt,EA130.txt.actor,Started by Employee
+EA130.txt,EA130.txt.precondition,The Clerk has authenticated in the system Request IPPA Rifiied includes the case of use Request IPPA
+EA130.txt,EA130.txt.postcondition,The system notifies the citizen of the outcome
+EA130.txt,EA130.txt.quality_requirement,Not expected
+EA130.txt,EA130.txt.flow_of_events.0,The Employee displays the notification received
+EA130.txt,EA130.txt.flow_of_events.1,The System displays to the Clerk the request made by the citizen
+EA130.txt,EA130.txt.flow_of_events.2,The Clerk reveals an error in the request and rejects the procedure the request
+EA130.txt,EA130.txt.flow_of_events.3,The System sends a notification to the citizen who requested the service
+EA66.txt,EA66.txt.name,Registration News Informagiovani
+EA66.txt,EA66.txt.actor,Started by Citizen
+EA66.txt,EA66.txt.precondition,This case requires that the citizen has gone through the authentication procedure
+EA66.txt,EA66.txt.postcondition,The system has submitted the applicant 's request OR Should an error occur at the news request stage the system calls the use case Service Not Available OR Should the citizen decide to cancel the news request the system calls the use case News Annulled
+EA66.txt,EA66.txt.quality_requirement,Not Provided
+EA66.txt,EA66.txt.flow_of_events.0,Citizen requests subscription to informagiovani news to receive service-related advertisements
+EA66.txt,EA66.txt.flow_of_events.1,The system displays a form for submitting the request
+EA66.txt,EA66.txt.flow_of_events.2,The citizen enters the news request data into a form
+EA66.txt,EA66.txt.flow_of_events.3,The system receives the form verifies the data and submits the request
+EA40.txt,EA40.txt.name,Request Electrical Case
+EA40.txt,EA40.txt.actor,Started by Citizen continued by employee
+EA40.txt,EA40.txt.precondition,The Citizen must be authenticated in the system The voter card has not been sent
+EA40.txt,EA40.txt.postcondition,The System alerts the clerk OR In the case where the service is not available the case is invoked of use Service Not Available
+EA40.txt,EA40.txt.quality_requirement,Not Provided
+EA40.txt,EA40.txt.flow_of_events.0,The Citizen presses on the Electoral Card button
+EA40.txt,EA40.txt.flow_of_events.1,The system displays the card request form
+EA40.txt,EA40.txt.flow_of_events.2,The Citizen confirms the operation
+EA40.txt,EA40.txt.flow_of_events.3,The system sends a notification to the clerk
+EA40.txt,EA40.txt.flow_of_events.4,The citizen will receive the election card which Will be delivered to hisher home address
+EA15.txt,EA15.txt.name,Edit Employee
+EA15.txt,EA15.txt.actor,Started by administrator
+EA15.txt,EA15.txt.precondition,The administrator has authenticated into the system This use case includes Search Employee and occurs when the administrator wants to edit an employee
+EA15.txt,EA15.txt.postcondition,The system modifies the 'employee OR In the case where the service is not available the use case is invoked of use Service Not Available
+EA15.txt,EA15.txt.quality_requirement,Not Provided
+EA15.txt,EA15.txt.flow_of_events.0,The administrator presses the edit-employee button
+EA15.txt,EA15.txt.flow_of_events.1,The system displays a form for editing the clerk
+EA15.txt,EA15.txt.flow_of_events.2,The administrator enters the data
+EA15.txt,EA15.txt.flow_of_events.3,The system saves the changes made
+EA21.txt,EA21.txt.name,Recovery Password Employee
+EA21.txt,EA21.txt.actor,Started by employee
+EA21.txt,EA21.txt.precondition,The employee has authenticated into the system
+EA21.txt,EA21.txt.postcondition,The system sends the password OR In the case where the employee enters a serial number that is not in the system the system calls the use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA21.txt,EA21.txt.quality_requirement,Not expected
+EA21.txt,EA21.txt.flow_of_events.0,The employee has forgotten the password and presses the password recovery button
+EA21.txt,EA21.txt.flow_of_events.1,The system displays the form for entering the matriculation number
+EA21.txt,EA21.txt.flow_of_events.2,The employee enters hisher matriculation number and presses the confirmation button
+EA21.txt,EA21.txt.flow_of_events.3,The system verifies the data and sends the password to the employee 's email address
+EA30.txt,EA30.txt.name,Identity Card Request
+EA30.txt,EA30.txt.actor,Started by Citizen continued employee
+EA30.txt,EA30.txt.precondition,The Citizen has authenticated in the system The citizen exercises parental authority over the person concerned
+EA30.txt,EA30.txt.postcondition,The clerk receives the file and chooses whether to accept it or not by calling the use case Request Card Of Identity Rejected or Request Card Of Identity Accepted OR respectively In the case where the service is not available the use case Service Not Available is invoked
+EA30.txt,EA30.txt.flow_of_events.0,Citizen views family status and selects a family member
+EA30.txt,EA30.txt.flow_of_events.1,The system displays a form for entering personal data Height special marks etc
+EA30.txt,EA30.txt.flow_of_events.2,The Citizen enters the data selects the payment method and presses the confirm button
+EA30.txt,EA30.txt.flow_of_events.3,The system shows the screen with the documentation to be shown at the counter on the days and hours the office is open
+EA30.txt,EA30.txt.flow_of_events.4,The citizen confirms the transaction
+EA30.txt,EA30.txt.flow_of_events.5,The system notifies the clerk of the request
+EA86.txt,EA86.txt.name,Request Authorization
+EA86.txt,EA86.txt.actor,Initiated by citizen communicates with employee
+EA86.txt,EA86.txt.precondition,The citizen has authenticated in the system
+EA86.txt,EA86.txt.postcondition,The system displays the form for printing The system sends a message notifying the relevant clerk of the request OR in the case of incorrect data entered the system invokes the use case Dati Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA86.txt,EA86.txt.quality_requirement,Not Available
+EA86.txt,EA86.txt.flow_of_events.0,Citizen accesses the certificate and authorization issuance area using the appropriate link
+EA86.txt,EA86.txt.flow_of_events.1,The system displays the form for entering the data required for the authorization request eg
+EA86.txt,EA86.txt.flow_of_events.2,authorization connection to the water supply network authorization connection to the sewerage network
+EA86.txt,EA86.txt.flow_of_events.3,The citizen enters the required data
+EA86.txt,EA86.txt.flow_of_events.4,The system verifies the correctness and completeness of the data then displays a summary screen or activates the use case Dati Errati
+EA86.txt,EA86.txt.flow_of_events.5,The citizen confirms the operation
+EA86.txt,EA86.txt.flow_of_events.6,The system displays the form for printing
+EA86.txt,EA86.txt.flow_of_events.7,The system sends a message notifying the appropriate employee of the request
+EA86.txt,EA86.txt.flow_of_events.8,The citizen makes the printout to be delivered to the municipal office with the stamp and attachments
+EA71.txt,EA71.txt.name,View Reservation Consultation
+EA71.txt,EA71.txt.actor,Started by Citizen
+EA71.txt,EA71.txt.precondition,This case requires that the Citizen has carried out the authentication procedure
+EA71.txt,EA71.txt.postcondition,The Citizen has viewed the information about the reservation OR In case the citizen wants to modifydelete a reservation the system calls the use case Modify Preservation Intercourse Elimi nation Preservation Intercourse
+EA71.txt,EA71.txt.quality_requirement,Not provided
+EA71.txt,EA71.txt.flow_of_events.0,Citizen requests to view the reservation made at a consultation center
+EA71.txt,EA71.txt.flow_of_events.1,The system returns information regarding the selected reservation by displaying data such as - Date and time - Consultatory
+EA81.txt,EA81.txt.name,Definition Building Offenses
+EA81.txt,EA81.txt.actor,Initiated by citizen communicates with employee
+EA81.txt,EA81.txt.precondition,The citizen has authenticated in the system
+EA81.txt,EA81.txt.postcondition,The system displays a message notifying the request The system sends a request notification message to the relevant clerk OR in the case of incorrect data entry the system invokes the use case Data Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA81.txt,EA81.txt.quality_requirement,Not Available
+EA81.txt,EA81.txt.flow_of_events.0,Citizen accesses the definition of construction offenses request area via the appropriate link
+EA81.txt,EA81.txt.flow_of_events.1,The system displays the form for entering the data necessary for the request
+EA81.txt,EA81.txt.flow_of_events.2,The citizen enters the required data
+EA81.txt,EA81.txt.flow_of_events.3,The system verifies the correctness and completeness of the data then displays a summary screen or activates the Dati Errati use case
+EA81.txt,EA81.txt.flow_of_events.4,The citizen confirms the operation
+EA81.txt,EA81.txt.flow_of_events.5,The system displays a message notifying of the request
+EA81.txt,EA81.txt.flow_of_events.6,The system sends a message notifying the appropriate employee of the request
+EA82.txt,EA82.txt.name,Declaration Substitute Act Notoriety
+EA82.txt,EA82.txt.actor,Initiated by citizen communicates with employee
+EA82.txt,EA82.txt.precondition,The citizen has authenticated in the system
+EA82.txt,EA82.txt.postcondition,The system displays a message notifying the request The system sends a request notification message to the relevant clerk OR in the case of incorrect data entry the system invokes the use case Data Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA82.txt,EA82.txt.quality_requirement,Not Available
+EA82.txt,EA82.txt.flow_of_events.0,Citizen accesses the Declaration in Lieu of Affidavit area using the appropriate link
+EA82.txt,EA82.txt.flow_of_events.1,The system displays the form for entering the data necessary for the request
+EA82.txt,EA82.txt.flow_of_events.2,The citizen enters the required data
+EA82.txt,EA82.txt.flow_of_events.3,The system verifies the correctness and completeness of the data then displays a summary screen or activates the Dati Errati use case
+EA82.txt,EA82.txt.flow_of_events.4,The citizen confirms the operation
+EA82.txt,EA82.txt.flow_of_events.5,The system displays a notification message
+EA82.txt,EA82.txt.flow_of_events.6,The system sends a message notifying the appropriate employee of the request
+EA90.txt,EA90.txt.name,Request Catastical Service
+EA90.txt,EA90.txt.actor,Initiated by citizen communicates with clerk
+EA90.txt,EA90.txt.precondition,The citizen has authenticated in the system
+EA90.txt,EA90.txt.postcondition,The system displays a message notifying the citizen of the request The system displays a message of successful notification of the request to the employee OR in the case of incorrect data entry the system invokes the use case Data Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA90.txt,EA90.txt.quality_requirement,Not Available
+EA90.txt,EA90.txt.flow_of_events.0,Citizen accesses the municipal cadastral service area via the appropriate link
+EA90.txt,EA90.txt.flow_of_events.1,The system displays the form for entering the necessary data for the request
+EA90.txt,EA90.txt.flow_of_events.2,The citizen enters the required data
+EA90.txt,EA90.txt.flow_of_events.3,The system verifies the correctness and completeness of the data then displays a summary screen or activates the Dati Errati use case
+EA90.txt,EA90.txt.flow_of_events.4,The citizen confirms the operation
+EA90.txt,EA90.txt.flow_of_events.5,The system displays the payment method
+EA90.txt,EA90.txt.flow_of_events.6,The citizen makes the choice
+EA90.txt,EA90.txt.flow_of_events.7,The system sends the appropriate employee a message notifying him of the request
+EA90.txt,EA90.txt.flow_of_events.8,The system notifies the citizen that the request has been submitted and the copy will be will be sent shortly
+EA139.txt,EA139.txt.name,Service Not Available
+EA139.txt,EA139.txt.actor,Started by Citizen
+EA139.txt,EA139.txt.precondition,This use case extends use cases and handles exceptional cases of failure due to technical problems
+EA139.txt,EA139.txt.postcondition,The input form is resubmitted
+EA139.txt,EA139.txt.quality_requirement,Not expected
+EA139.txt,EA139.txt.flow_of_events.0,System displays a message on the terminal screen indicating that the request can not be made
+EA139.txt,EA139.txt.flow_of_events.1,Citizen reads the notification message
+EA139.txt,EA139.txt.flow_of_events.2,System resubmits input form
+EA9.txt,EA9.txt.name,Logout Citizen
+EA9.txt,EA9.txt.actor,Initiated by citizen
+EA9.txt,EA9.txt.precondition,The citizen has logged into the system Logout condition The system closes the citizen 's session
+EA9.txt,EA9.txt.quality_requirement,Not provided
+EA9.txt,EA9.txt.flow_of_events.0,Citizen wants to end the work session and clicks on the Logout button
+EA9.txt,EA9.txt.flow_of_events.1,The system logs the citizen out of the system and returns to the main screen
+EA119.txt,EA119.txt.name,Calculate Amount Not Result
+EA119.txt,EA119.txt.actor,Started by Citizen
+EA119.txt,EA119.txt.precondition,This use case extends Calculate Import and is invoked when the Citizen enters incorrect data OR an error has occurred in the calculation of the amount
+EA119.txt,EA119.txt.postcondition,The System notifies the error and resubmits the form to the Citizen
+EA119.txt,EA119.txt.quality_requirement,Not Provided
+EA119.txt,EA119.txt.flow_of_events.0,The Citizen presses the button related to the tax calculation function
+EA119.txt,EA119.txt.flow_of_events.1,The System presents the list of taxes and fees for which the amount can be calculated
+EA119.txt,EA119.txt.flow_of_events.2,The Citizen selects the tax of interest
+EA119.txt,EA119.txt.flow_of_events.3,The System shows a form to be filled in for calculation
+EA119.txt,EA119.txt.flow_of_events.4,The Citizen enters the necessary data
+EA119.txt,EA119.txt.flow_of_events.5,The System verifies the correctness of the data but fails to perform the calculation notifying the user of the reason for failure
+EA99.txt,EA99.txt.name,What Tempo Fa
+EA99.txt,EA99.txt.actor,Started by Citizen
+EA99.txt,EA99.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA99.txt,EA99.txt.postcondition,The Citizen is satisfied with the information received OR The Citizen is unable to view the municipal weather page therefore the use case Service Not Available which handles exceptional cases of technical failure is extended
+EA99.txt,EA99.txt.quality_requirement,The system responds in a time varying on the order of hundredths of a second if the user correctly displays the screen related to weather conditions OR On the other hand the time varies in the order of seconds from a minimum of to a maximum of when the user Citizen fails to know the municipal weather conditions
+EA99.txt,EA99.txt.flow_of_events.0,The Citizen accesses this screen to view the weather situation for the municipality in which he or she resides
+EA99.txt,EA99.txt.flow_of_events.1,The system responds to the Citizen 's need by allowing him to view in addition to the weather situation of his municipality also that of the provinces of the region to which he belongs with update date minimum and maximum temperatures and of course weather conditions expressed with a small descriptive image
+EA47.txt,EA47.txt.name,Assistance Housing
+EA47.txt,EA47.txt.actor,Initiated by User Communicates with Social Services Office
+EA47.txt,EA47.txt.precondition,The user has successfully logged in and selected the Social Assistance feature
+EA47.txt,EA47.txt.postcondition,The system has encountered an error in filling out the form so it calls the use case Data Errati OR The user returns to the previous screen OR The system encountered an unanticipated error so it calls the use case Service Not Available
+EA47.txt,EA47.txt.quality_requirement,Unanticipated
+EA47.txt,EA47.txt.flow_of_events.0,User selects the Social Assistance feature by selecting Housing Assistance Request evictions ''
+EA47.txt,EA47.txt.flow_of_events.1,The system displays the form for entering applicant and recipient data if different
+EA47.txt,EA47.txt.flow_of_events.2,The user enters hisher own data and those of the recipient if the recipient is a third person if necessary specifying the relationship with that person also specifies the new domicile
+EA47.txt,EA47.txt.flow_of_events.3,The user selects the attached documentation minutes of enforceable eviction the new registered lease and the ISEE model
+EA47.txt,EA47.txt.flow_of_events.4,Heshe then submits the form
+EA47.txt,EA47.txt.flow_of_events.5,The system retrieves the master data of the recipient citizen and data regarding the recipient Citizen 's household
+EA47.txt,EA47.txt.flow_of_events.6,The request is sent to the Social Services office and the user is notified of the submission
+EA96.txt,EA96.txt.name,Activities Useful
+EA96.txt,EA96.txt.actor,Started by Citizen
+EA96.txt,EA96.txt.precondition,The Citizen has authenticated into the municipal system OR The Citizen has accessed the system
+EA96.txt,EA96.txt.postcondition,The Citizen has correctly viewed the introductory screen and decides to access one of the proposed screens by calling up the Woods use case or the Waste use case The Citizen fails to view the introductory page to the two use cases Woods Waste and therefore extends the Service Not Available use case that handles technical failure cases
+EA96.txt,EA96.txt.quality_requirement,System response times are found to be on the order of hundredths of a second if the Citizen correctly views the page of choosing which use case to project to OR Response times are slowed due to external problems and range in the order of seconds to
+EA96.txt,EA96.txt.flow_of_events.0,By selecting this use case the Citizen accesses a screen for choosing two use cases Woods Waste
+EA96.txt,EA96.txt.flow_of_events.1,The system provides a simple and intuitive screen that allows the user to choose which of the two services to visit to indirectly help maintain acceptable municipal environmental conditions
+EA96.txt,EA96.txt.flow_of_events.2,The Citizen chooses one of the two use cases Woods or Waste
+EA96.txt,EA96.txt.flow_of_events.3,The system responds to the Citizen 's need by displaying the desired page he or she had requested
+EA77.txt,EA77.txt.name,Entry Information
+EA77.txt,EA77.txt.actor,Started by Employee
+EA77.txt,EA77.txt.precondition,This case requires that the employee has gone through the authentication procedure
+EA77.txt,EA77.txt.postcondition,The system has performed the insertion of the news OR If an error occurred in the insertion request the system calls the use case Service Not Available
+EA77.txt,EA77.txt.quality_requirement,Not Available
+EA77.txt,EA77.txt.flow_of_events.0,Employee requests the insertion of a new news item
+EA77.txt,EA77.txt.flow_of_events.1,The system displays a form for submitting the request
+EA77.txt,EA77.txt.flow_of_events.2,The clerk enters data about the new news in a form
+EA77.txt,EA77.txt.flow_of_events.3,The system receives the form and enters the news into the system
+EA11.txt,EA11.txt.name,Edit Citizen
+EA11.txt,EA11.txt.actor,Started by employee
+EA11.txt,EA11.txt.precondition,The employee has authenticated into the system This use case includes Search Citizen and occurs when the clerk wants to edit a citizen
+EA11.txt,EA11.txt.postcondition,The system modifies the citizen OR In the case where the service is not available the use case is invoked of use Service Not Available
+EA11.txt,EA11.txt.quality_requirement,Not Provided
+EA11.txt,EA11.txt.flow_of_events.0,The clerk presses the edit citizen button
+EA11.txt,EA11.txt.flow_of_events.1,The system displays a form for editing the citizen
+EA11.txt,EA11.txt.flow_of_events.2,The employee enters the data
+EA11.txt,EA11.txt.flow_of_events.3,The system saves the changes made
+EA83.txt,EA83.txt.name,Vision Plan Regulator
+EA83.txt,EA83.txt.actor,Initiated by citizen
+EA83.txt,EA83.txt.precondition,The citizen has accessed the system
+EA83.txt,EA83.txt.postcondition,The system displays the master plan OR in the case of technical failures the system retrieves the use case Service Not Available
+EA83.txt,EA83.txt.quality_requirement,Not available
+EA83.txt,EA83.txt.flow_of_events.0,Citizen accesses the Regulatory Plan area via the appropriate link
+EA83.txt,EA83.txt.flow_of_events.1,the system displays the document
+EA120.txt,EA120.txt.name,Contesta Multa
+EA120.txt,EA120.txt.actor,Started by Citizen
+EA120.txt,EA120.txt.precondition,The Citizen has authenticated in the system
+EA120.txt,EA120.txt.postcondition,This use case extends Payment Multe and is invoked when the Citizen clicks on the button related to disputing fines OR In case there are generic errors the system calls the use case Service Not Available
+EA120.txt,EA120.txt.quality_requirement,Not Provided
+EA120.txt,EA120.txt.flow_of_events.0,The Citizen clicks on the button to access the online fine management feature
+EA120.txt,EA120.txt.flow_of_events.1,The System redirects the Citizen to the desired section
+EA120.txt,EA120.txt.flow_of_events.2,The Citizen clicks on the button to pay fines online
+EA120.txt,EA120.txt.flow_of_events.3,The System searches for fines against the Citizen in the database for which payment has not yet been received
+EA120.txt,EA120.txt.flow_of_events.4,The Citizen selects the fine for which heshe wishes to make a dispute
+EA120.txt,EA120.txt.flow_of_events.5,The System displays all available information related to the fine as well as the form to be filled in for the dispute
+EA120.txt,EA120.txt.flow_of_events.6,The Citizen enters the necessary information
+EA120.txt,EA120.txt.flow_of_events.7,The System verifies that the information is correct forwards the dispute request to the appropriate person and notifies the Citizen
+EA84.txt,EA84.txt.name,Submit Building Project
+EA84.txt,EA84.txt.actor,Initiated by citizen communicates with employee
+EA84.txt,EA84.txt.precondition,The citizen has authenticated in the system
+EA84.txt,EA84.txt.postcondition,The system displays a message that the request has been notified The system sends a message notifying the relevant clerk of the request OR in the case of incorrect data entered the system invokes the use case Data Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA84.txt,EA84.txt.quality_requirement,Not Available
+EA84.txt,EA84.txt.flow_of_events.0,Citizen accesses the submit construction project area via the appropriate link
+EA84.txt,EA84.txt.flow_of_events.1,The system displays the form for entering the required data
+EA84.txt,EA84.txt.flow_of_events.2,The citizen enters the required data
+EA84.txt,EA84.txt.flow_of_events.3,The system verifies the correctness and completeness of the data then displays a summary screen or activates the Dati Errati use case
+EA84.txt,EA84.txt.flow_of_events.4,The citizen confirms the operation
+EA84.txt,EA84.txt.flow_of_events.5,The system displays the form for printing
+EA84.txt,EA84.txt.flow_of_events.6,The system sends a message notifying the appropriate employee of the request
+EA84.txt,EA84.txt.flow_of_events.7,Citizen makes the printout to be delivered to the municipal office with the required documents and a revenue stamp attached
+EA128.txt,EA128.txt.name,Request IPPA
+EA128.txt,EA128.txt.actor,Initiated by Citizen communicates with Employee
+EA128.txt,EA128.txt.precondition,The Citizen has authenticated in the system
+EA128.txt,EA128.txt.postcondition,The clerk receives the file and chooses whether to accept it or not invoking the use case respectively Request IPPA Accepted Request IPPA Rified OR In case there are errors in the data o entered by the user the system calls the use case Data Errred
+EA128.txt,EA128.txt.quality_requirement,Not expected
+EA128.txt,EA128.txt.flow_of_events.0,The Citizen clicks on the button to access the municipality 's service request area
+EA128.txt,EA128.txt.flow_of_events.1,The System redirects the Citizen to the required section
+EA128.txt,EA128.txt.flow_of_events.2,The Citizen selects the section dedicated to the Advertising and Public Display Tax request
+EA128.txt,EA128.txt.flow_of_events.3,The System displays the relevant request form automatically obtaining the necessary data
+EA128.txt,EA128.txt.flow_of_events.4,The Citizen enters additional data necessary for correct completion of the form confirms the correctness of the information and sends the request
+EA128.txt,EA128.txt.flow_of_events.5,The System notifies the employee of the request
+EA56.txt,EA56.txt.name,Qualification Reduce Guerra
+EA56.txt,EA56.txt.actor,Started by User
+EA56.txt,EA56.txt.precondition,The user has accessed the system and selected the Social Assistance feature
+EA56.txt,EA56.txt.postcondition,The user has viewed the page OR The user has selected one of the direct links to the various certificates birth certificate residence certificate death certificate thereby invoking the use case Request Certificates OR The system encountered an unanticipated error expected so it calls the use case Service Not Available Unanticipated Quality Requirements
+EA56.txt,EA56.txt.flow_of_events.0,User selects the Request for recognition of qualification as a veteran or orphan of labor '' feature
+EA56.txt,EA56.txt.flow_of_events.1,The system shows the information and related forms to be downloaded and sent to the Prefecture offering the option to print it out
+EA56.txt,EA56.txt.flow_of_events.2,It also shows a direct link to the page for requesting the Birth Certificate Residence Certificate and Death Certificate
+EA124.txt,EA124.txt.name,Forms
+EA124.txt,EA124.txt.actor,Initiated by Citizen
+EA124.txt,EA124.txt.precondition,The Citizen is logged in
+EA124.txt,EA124.txt.postcondition,The download has been initialized OR In case there are general errors the system calls the use case Service Not Available
+EA124.txt,EA124.txt.quality_requirement,Not expected
+EA124.txt,EA124.txt.flow_of_events.0,Citizen clicks button to access forms section
+EA124.txt,EA124.txt.flow_of_events.1,The System redirects the Citizen to the required section and displays the various forms available for download
+EA124.txt,EA124.txt.flow_of_events.2,The Citizen selects the desired form
+EA124.txt,EA124.txt.flow_of_events.3,The System starts the download
+EA16.txt,EA16.txt.name,Edit Password Administrator
+EA16.txt,EA16.txt.actor,Started by administrator
+EA16.txt,EA16.txt.precondition,The 'administrator has authenticated into the system
+EA16.txt,EA16.txt.postcondition,The password is changed OR In the case where the administrator enters a password of less than characters or the old password is incorrect the system calls the use case Data Errati OR In case the service is not available the use case Service Not Available is called
+EA16.txt,EA16.txt.quality_requirement,Not expected
+EA16.txt,EA16.txt.flow_of_events.0,The administrator wants to change the password and presses the change password button
+EA16.txt,EA16.txt.flow_of_events.1,The system displays the form for entering the old password
+EA16.txt,EA16.txt.flow_of_events.2,The administrator enters the old password the new password and presses the confirm button
+EA16.txt,EA16.txt.flow_of_events.3,The system notifies that the password has been changed
+EA7.txt,EA7.txt.name,Entry Employee
+EA7.txt,EA7.txt.actor,Started by administrator
+EA7.txt,EA7.txt.precondition,The administrator has authenticated into the system
+EA7.txt,EA7.txt.postcondition,The system registers the Employee OR In the case where the Administrator enters a serial number already in the system the system calls the use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA7.txt,EA7.txt.quality_requirement,The name string may contain characters such as az AZ ' and must be less than in length and not empty The surname string can contain characters such as az AZ ' and must have length less than and not empty Email string consists of x xx and has a length less than characters Matriculation string contains only numeric characters is equal to characters The username string is not already in the system is well formed contains characters az AZ - and has length less than characters and is not empty Password string is well formed contains characters az AZ - and has length between and characters The password confirmation string must be consistent with the password entered
+EA7.txt,EA7.txt.flow_of_events.0,The administrator logs into the system via administrative terminal and activates the procedure of Employee registration
+EA7.txt,EA7.txt.flow_of_events.1,The system displays the form for entering a new employee
+EA7.txt,EA7.txt.flow_of_events.2,The Administrator enters the Employee 's data and submits the registration request
+EA7.txt,EA7.txt.flow_of_events.3,The system receives the form verifies that the registration number entered by the Administrator is not already in the system and generates a password saves the entered data and displays a notification of successful registration with the password assigned to the Employee
+EA100.txt,EA100.txt.name,How To Become Volunteer
+EA100.txt,EA100.txt.actor,Started by Citizen
+EA100.txt,EA100.txt.precondition,The Citizen is authenticated within the municipal system OR The Citizen has been accessed within the municipal system
+EA100.txt,EA100.txt.postcondition,The Citizen satisfied with what they viewed from the description page and therefore invokes the Download Module use case OR The Citizen fails to view the requested in-depth page while the system extends the use case Service Not Available that handles technical failure cases
+EA100.txt,EA100.txt.quality_requirement,The response time of the system is to be found in a range that varies in the unit of hundredths of a second if the Citizen correctly displays the in-depth form The response time increases when the Citizen does not use the in-depth service the times of which vary from a minimum of to a maximum of seconds
+EA100.txt,EA100.txt.flow_of_events.0,The Citizen accesses this descriptive screen
+EA100.txt,EA100.txt.flow_of_events.1,The system responds to the need by letting him know how to become a Civil Defense volunteer and of the requirements that the Citizen will necessarily have to meet
+EA100.txt,EA100.txt.flow_of_events.2,The Citizen takes note of what is written and therefore wishes to access the associated forms and therefore the use case Download Module will be called
+EA39.txt,EA39.txt.name,Lost Electric Card
+EA39.txt,EA39.txt.actor,Started by Citizen continued by employee
+EA39.txt,EA39.txt.precondition,The Citizen must be authenticated in the system
+EA39.txt,EA39.txt.postcondition,The System creates the document to be delivered to the appropriate office OR In the case where the service is not available the use case Service Not Available is invoked
+EA39.txt,EA39.txt.quality_requirement,Not Provided
+EA39.txt,EA39.txt.flow_of_events.0,The Citizen presses on the Lost Electoral Card button
+EA39.txt,EA39.txt.flow_of_events.1,The system directly sends a lost card notification to the appropriate clerk
+EA39.txt,EA39.txt.flow_of_events.2,The Citizen goes to the clerk 's office with a copy of the lost card report
+EA131.txt,EA131.txt.name,Request TOSAP
+EA131.txt,EA131.txt.actor,Initiated by Citizen communicates with Employee
+EA131.txt,EA131.txt.precondition,The Citizen has authenticated in the system
+EA131.txt,EA131.txt.postcondition,The clerk receives the file and chooses whether to accept it or not recalling the use case respectively Request TOSAP Accepted Request TOSAP Rejected OR In case there are general errors the o system calls the use case Service Not Available OR In the case where there are errors in the data entered by the user the system calls the use case Data Errati
+EA131.txt,EA131.txt.quality_requirement,Not Available
+EA131.txt,EA131.txt.flow_of_events.0,The Citizen clicks on the button to access the municipality 's service request area
+EA131.txt,EA131.txt.flow_of_events.1,The System redirects the Citizen to the required section
+EA131.txt,EA131.txt.flow_of_events.2,The Citizen selects the section dedicated to the request for the Fee for the Occupation of Public Land and Areas
+EA131.txt,EA131.txt.flow_of_events.3,The System displays the relevant request form automatically obtaining the necessary data
+EA131.txt,EA131.txt.flow_of_events.4,The Citizen enters additional data necessary for the correct completion of the form confirms the correctness of the information and sends the request
+EA131.txt,EA131.txt.flow_of_events.5,The System notifies the employee of the request
+EA53.txt,EA53.txt.name,Compensation Accompaniment
+EA53.txt,EA53.txt.actor,Started by User
+EA53.txt,EA53.txt.precondition,The user has accessed the system and selected the Social Assistance feature
+EA53.txt,EA53.txt.postcondition,The user has viewed the page OR The user has selected one of the direct links then the use case Request Family State or Request Certificate OR The system encountered an unanticipated error expected so it calls the use case Service Not Available Unanticipated Quality Requirements
+EA53.txt,EA53.txt.flow_of_events.0,User selects Application for accompaniment allowance ''
+EA53.txt,EA53.txt.flow_of_events.1,The system displays the information about the disability pension and shows the link to download the relevant form to send to INPS providing the option to print it out
+EA53.txt,EA53.txt.flow_of_events.2,It also shows direct links to the request for family status and marital status
+EA32.txt,EA32.txt.name,Request Card Of Identity Referred
+EA32.txt,EA32.txt.actor,Started by Employee continued citizen
+EA32.txt,EA32.txt.precondition,The employee has authenticated into the system This use case extends Request Identity Card and occurs when the clerk does not confirm the citizen 's request
+EA32.txt,EA32.txt.postcondition,The system notifies the citizen
+EA32.txt,EA32.txt.quality_requirement,Not Provided
+EA32.txt,EA32.txt.flow_of_events.0,Employee views the notification received
+EA32.txt,EA32.txt.flow_of_events.1,The system shows the clerk the request for the creation of the ID card by by the citizen
+EA32.txt,EA32.txt.flow_of_events.2,The clerk detects an error in the data and rejects the ID card creation procedure
+EA32.txt,EA32.txt.flow_of_events.3,The system shall send an e-mail notification to the citizen who requested the ID card creation
+EA95.txt,EA95.txt.name,Update Atmospheric Conditions
+EA95.txt,EA95.txt.actor,Started by Employee
+EA95.txt,EA95.txt.precondition,The employee has authenticated into the system
+EA95.txt,EA95.txt.postcondition,The submission was successful OR The clerk does not the update and retrieved the Service Not Available Can complete therefore comes use case
+EA95.txt,EA95.txt.quality_requirement,Not expected
+EA95.txt,EA95.txt.flow_of_events.0,The municipal clerk after authenticating in the system updates the weather conditions of the municipality and regional provinces
+EA95.txt,EA95.txt.flow_of_events.1,The system responds by providing the clerk with a form to complete in order to update the fields temp Min temp Max state Atmospheric name City date
+EA95.txt,EA95.txt.flow_of_events.2,The employee completes the fields of the form presented by the system and submits it
+EA95.txt,EA95.txt.flow_of_events.3,The system shall update the form and allow it to be viewed by the Citizen
+EA127.txt,EA127.txt.name,Search Verbals Multices
+EA127.txt,EA127.txt.actor,Started by Citizen
+EA127.txt,EA127.txt.precondition,The Citizen has authenticated into the system
+EA127.txt,EA127.txt.postcondition,The System has performed the search OR In case there are generic errors the system calls the use case Service Not Available
+EA127.txt,EA127.txt.quality_requirement,Not expected
+EA127.txt,EA127.txt.flow_of_events.0,The Citizen clicks on the button to access the online fines management feature
+EA127.txt,EA127.txt.flow_of_events.1,The System redirects the Citizen to the desired section
+EA127.txt,EA127.txt.flow_of_events.2,The Citizen clicks on the button to search for fines only charged to himher
+EA127.txt,EA127.txt.flow_of_events.3,The System searches the citizen 's charge fines paid and unpaid in the database and displays them in a list in which you can browse to show all the information available for a given fine
+EA93.txt,EA93.txt.name,Update Environmental Analysis
+EA93.txt,EA93.txt.actor,Started by Employee
+EA93.txt,EA93.txt.precondition,The employee has authenticated into the system
+EA93.txt,EA93.txt.postcondition,The submission was successful OR The clerk does not the update and retrieved the Service Not Available Can complete therefore comes use case
+EA93.txt,EA93.txt.quality_requirement,Not expected
+EA93.txt,EA93.txt.flow_of_events.0,Municipal employee after authenticating in the system updates the form that simply provides for the copy of the report of the analysis performed on the environment by the Civil Defense
+EA93.txt,EA93.txt.flow_of_events.1,The system responds by providing the clerk with a form in which to report the information compiled by the chemical experts
+EA93.txt,EA93.txt.flow_of_events.2,The employee completes the form field presented by the system and submits it
+EA93.txt,EA93.txt.flow_of_events.3,The system updates the form and allows it to be viewed by the Citizen
+EA50.txt,EA50.txt.name,Assistance Girls Mothers Minors
+EA50.txt,EA50.txt.actor,Started by User Communicates with Social Services Office
+EA50.txt,EA50.txt.precondition,The user has successfully logged in and selected the Social Assistance feature
+EA50.txt,EA50.txt.postcondition,The system has encountered an error in filling out the form so it calls the use case Data Errati OR The user returns to the previous screen OR The system encountered an unanticipated error so it calls the use case Service Not Available
+EA50.txt,EA50.txt.quality_requirement,Unanticipated
+EA50.txt,EA50.txt.flow_of_events.0,User selects the Social Assistance feature by selecting Request for Assistance to Girls Mothers and Minors in Need ''
+EA50.txt,EA50.txt.flow_of_events.1,The system displays the form for entering applicant and recipient data
+EA50.txt,EA50.txt.flow_of_events.2,The user enters hisher own data and those of the recipient of the request himselfherself other person if necessary specifying the relationship with that person
+EA50.txt,EA50.txt.flow_of_events.3,Heshe also specifies a possible appointment date with Social Workers
+EA50.txt,EA50.txt.flow_of_events.4,Heshe then submits the form
+EA50.txt,EA50.txt.flow_of_events.5,The system retrieves from the system the master data of the recipient citizen and data regarding the household of the recipient Citizen
+EA50.txt,EA50.txt.flow_of_events.6,The request is sent to the Social Services office and the user is notified of the submission
+EA31.txt,EA31.txt.name,Request Accepted Identity Card
+EA31.txt,EA31.txt.actor,Started by Employee continued citizen
+EA31.txt,EA31.txt.precondition,The clerk has authenticated into the system This use case extends Request Identity Card and occurs when the clerk confirms the request of the citizen
+EA31.txt,EA31.txt.postcondition,The system notifies the citizen
+EA31.txt,EA31.txt.quality_requirement,Not Provided
+EA31.txt,EA31.txt.flow_of_events.0,The clerk displays the notification received
+EA31.txt,EA31.txt.flow_of_events.1,The system shows the clerk the request for the creation of the ID card by by the citizen
+EA31.txt,EA31.txt.flow_of_events.2,The clerk certifies the validity of the request by checking the accuracy of the data and enables the ID card creation procedure
+EA31.txt,EA31.txt.flow_of_events.3,The system sends a confirmation e-mail to the citizen who requested the creation of the ID card
+EA31.txt,EA31.txt.flow_of_events.4,The citizen goes to the counter
+EA51.txt,EA51.txt.name,Assistance Residential Assistance
+EA51.txt,EA51.txt.actor,Initiated by User Communicates with ASL
+EA51.txt,EA51.txt.precondition,The user has successfully logged in and selected the Social Work feature
+EA51.txt,EA51.txt.postcondition,The system has encountered an error in filling out the form so it calls the use case Data Errati OR The user returns to the previous screen OR The system encountered an unanticipated error so it calls the use case Service Not Available Unanticipated Quality Requirements
+EA51.txt,EA51.txt.flow_of_events.0,User selects Request residential and semi-residential care ''
+EA51.txt,EA51.txt.flow_of_events.1,The system displays the form for entering applicant and recipient data
+EA51.txt,EA51.txt.flow_of_events.2,The user enters hisher own data and if necessary enters the data of a third person specifying the relationship with that person
+EA51.txt,EA51.txt.flow_of_events.3,The system retrieves the master data of the applicant the recipient citizen if the recipient is a third person and data regarding the household of the recipient Citizen
+EA51.txt,EA51.txt.flow_of_events.4,The user specifies the recipient 's psycho-physical condition the reason for the request the type of service requested and the hours required
+EA51.txt,EA51.txt.flow_of_events.5,Heshe then submits the form
+EA51.txt,EA51.txt.flow_of_events.6,The system forwards the request to the appropriate ASL and notifies the user of the successful request
+EA105.txt,EA105.txt.name,Fires
+EA105.txt,EA105.txt.actor,Started by Citizen
+EA105.txt,EA105.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA105.txt,EA105.txt.postcondition,The Citizen is satisfied with the information provided to him OR The Citizen is unable to view the descriptive sheet of the Fire feature while the use case Service Not Available which handles technical failure cases will be extended
+EA105.txt,EA105.txt.quality_requirement,The response time is in the hundredths of a second range if the page is correctly displayed by the service requester Should the Citizen fail to view the descriptive tab for this feature the system would take a few seconds to invoke the use case that handles the exception
+EA105.txt,EA105.txt.flow_of_events.0,The Citizen can access this section if heshe has chosen to view the Risks use case and decides to learn more about the possible causes that trigger fires
+EA105.txt,EA105.txt.flow_of_events.1,The system responds to the Citizen 's need with a detailed description of how to prevent fires and who deals with them
+EA116.txt,EA116.txt.name,Volunteerism
+EA116.txt,EA116.txt.actor,Started by Citizen
+EA116.txt,EA116.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA116.txt,EA116.txt.postcondition,The Citizen acknowledges the information received and if heshe agrees to call the case How To Become Volunteer redirected to that card OR The Citizen acknowledges of use comes of the information provided to him but exits the display of the current screen OR The Citizen fails to view the tab describing the Volunteer use case and therefore extends the Service Not Available use case that handles Technical Failure cases
+EA116.txt,EA116.txt.quality_requirement,System response times are in the hundredths of a second range if the Citizen is able to view the page correctly System response times to the Citizen 's request increase in the order of seconds varying from a minimum of to a maximum of
+EA116.txt,EA116.txt.flow_of_events.0,The Citizen accesses the introductory screen
+EA116.txt,EA116.txt.flow_of_events.1,The system responds by displaying the descriptive tab about the general information about this aspect of Civil Defense and the possibility of knowing the prerequisites for participation
+EA116.txt,EA116.txt.flow_of_events.2,The Citizen becomes aware of what is written and therefore selects the link where the use case Come Become Volunteer is called
+EA116.txt,EA116.txt.flow_of_events.3,The system responds by allowing him to view this description
+EA37.txt,EA37.txt.name,identity Card Renewal
+EA37.txt,EA37.txt.actor,Started by Citizen continued employed
+EA37.txt,EA37.txt.precondition,The Citizen must be authenticated in the system
+EA37.txt,EA37.txt.postcondition,The System creates the document to be delivered to the appropriate office OR In the case where the service is not available the use case Service Not Available is invoked
+EA37.txt,EA37.txt.quality_requirement,Not Provided
+EA37.txt,EA37.txt.flow_of_events.0,Citizen presses on the Renew ID Card button
+EA37.txt,EA37.txt.flow_of_events.1,The system directly sends a renewal request from the Citizen to the appropriate clerk
+EA37.txt,EA37.txt.flow_of_events.2,The Citizen goes to the counter to renew the ID card
+EA104.txt,EA104.txt.name,Management Modifications
+EA104.txt,EA104.txt.actor,Started by Employee
+EA104.txt,EA104.txt.precondition,The employee has authenticated into the municipal system
+EA104.txt,EA104.txt.postcondition,The employee has correctly submitted the form OR The employee fails to view the page related to the requested edit form and therefore the use case Service Not Available which handles technical failure cases will be extended
+EA104.txt,EA104.txt.quality_requirement,Not Provided
+EA104.txt,EA104.txt.flow_of_events.0,The employee after authenticating in the system accesses the Civil Defense feature to edit the relevant forms
+EA104.txt,EA104.txt.flow_of_events.1,The system responds to this need with the ability to display a screen with the use cases Update Atmospheric Conditions Update Environmental Analysis Update Competitions Bands
+EA104.txt,EA104.txt.flow_of_events.2,The 'employee selects the feature to be changed
+EA104.txt,EA104.txt.flow_of_events.3,The system responds to the employee 's need with the required change form
+EA4.txt,EA4.txt.name,Cancellation Citizen
+EA4.txt,EA4.txt.actor,Started by employee
+EA4.txt,EA4.txt.precondition,The employee has authenticated into the system This use case includes Search Citizen and occurs when the clerk wants to delete a citizen
+EA4.txt,EA4.txt.postcondition,The clerk does not confirm the operation OR The system deletes the citizen OR In the case where the service is not available the use case is invoked of use Service Not Available
+EA4.txt,EA4.txt.quality_requirement,Not expected
+EA4.txt,EA4.txt.flow_of_events.0,The clerk presses the citizen delete button
+EA4.txt,EA4.txt.flow_of_events.1,The system asks the clerk for confirmation
+EA4.txt,EA4.txt.flow_of_events.2,The clerk confirms the operation
+EA4.txt,EA4.txt.flow_of_events.3,The system deletes the citizen
+EA25.txt,EA25.txt.name,Change Of Residence
+EA25.txt,EA25.txt.actor,Started by citizen continued employee
+EA25.txt,EA25.txt.precondition,The Citizen has authenticated in the system
+EA25.txt,EA25.txt.postcondition,The System creates the document to be delivered to the appropriate office OR In the case where the service is not available the use case Service Not Available is invoked
+EA25.txt,EA25.txt.quality_requirement,The string common name new residence can contain characters az AZ ' and the string must be non-empty The address string may contain characters az AZ ' and the string must be nonempty The house number string may contain characters AZ and the string must be less than characters long The phone prefix string can contain only numeric characters and must be between and digits long The phone number string can contain only numeric characters and must be between and digits long The family member last name string can include characters az AZ ' and have a maximum length of carat and non-empty The family comp name string can include characters az AZ ' and have a maximum length of carat and non-empty The familiar comp birthplace string may contain characters az AZ ' and must be at least one character The string birth date comp familiar must be an existing date and must have a ddmmyyyy format of numeric type dd from to mm from to yyyy from to present The string card code applicant outside the municipality must be X Xnnnnnnn X letter n number and must have a length of characters
+EA25.txt,EA25.txt.flow_of_events.0,The Citizen presses on the Change of Residence button
+EA25.txt,EA25.txt.flow_of_events.1,The system shows the citizen the form to fill out
+EA25.txt,EA25.txt.flow_of_events.2,The citizen enters the data of hisher new residence
+EA25.txt,EA25.txt.flow_of_events.3,The system notifies the citizen that the request has been successfully submitted and is stored in the system
+EA25.txt,EA25.txt.flow_of_events.4,The clerk logs into the system and views the request received
+EA25.txt,EA25.txt.flow_of_events.5,The clerk verifies the data fills in the document with the rest of the data to be entered and confirms the operation
+EA25.txt,EA25.txt.flow_of_events.6,The system saves the form and updates the data
+EA3.txt,EA3.txt.name,Authentication Employee
+EA3.txt,EA3.txt.actor,Initiated by employee
+EA3.txt,EA3.txt.precondition,The employee has been granted access to the system
+EA3.txt,EA3.txt.postcondition,The employee has successfully logged in OR In the case where the employee enters incorrect login andor password the system calls the use case Data Errati OR In case the service is not available the use case Service Not Available is called
+EA3.txt,EA3.txt.quality_requirement,The username string is present in the system is well-formed contains characters az AZ - edlength less than characters and is not empty The password string is present in the system is well formed contains characters az AZ - and has a length between and characters
+EA3.txt,EA3.txt.flow_of_events.0,Employee logs in to the authentication session
+EA3.txt,EA3.txt.flow_of_events.1,The system displays the login form for data entry username and password
+EA3.txt,EA3.txt.flow_of_events.2,The employee enters the data and submits the authentication request
+EA3.txt,EA3.txt.flow_of_events.3,The system verifies the accuracy of the data and allows the employee to log in
+EA43.txt,EA43.txt.name,Practice Response
+EA43.txt,EA43.txt.actor,Initiated by Employee Communicates with Citizen
+EA43.txt,EA43.txt.precondition,The Employee is logged into the system has selected a pending file
+EA43.txt,EA43.txt.postcondition,A notification was sent to the Citizen OR The system encountered an unanticipated error so calls the use case Service Not Available
+EA43.txt,EA43.txt.quality_requirement,This use case includes the use cases Assistance Economic Assistance Domestic Service Mobility Disabled Accommodations Night Assistance Girls Mothers Minor Assistance Housing Release Parking Disabled
+EA43.txt,EA43.txt.flow_of_events.0,Clerk rejects the practice
+EA43.txt,EA43.txt.flow_of_events.1,The system sets the file as rejected
+EA43.txt,EA43.txt.flow_of_events.2,It then sends a notification to the Citizen
+EA26.txt,EA26.txt.name,Change Of Residence Other Community
+EA26.txt,EA26.txt.actor,Started by Citizen continued by Employee
+EA26.txt,EA26.txt.precondition,The Citizen has authenticated in the system
+EA26.txt,EA26.txt.postcondition,The System creates the document to be delivered to the appropriate office OR In the case where the service is not available the use case Service Not Available is invoked
+EA26.txt,EA26.txt.quality_requirement,The string common name new residence can contain characters az AZ ' and the string must be non-empty The address string may contain characters az AZ ' and the string must be nonempty The house number string may contain characters AZ and the string must be less than characters long The phone prefix string can contain only numeric characters and must be between and digits long The phone number string can contain only numeric characters and must be between and digits long The family member last name string may include characters az AZ ' and have a maximum length of characters and not empty The family member first name string can include characters az AZ ' and have a maximum length of carat and non-empty The familiar comp birthplace string may contain characters az AZ ' and must be at least one character long The family comp birth date string must be an existing date and must have a ddmmyyyy format of numeric type dd from to mm from to yyyy from to present The string card code applicant outside the municipality must be X Xnnnnnnn X letter n number and must have a length of characters
+EA26.txt,EA26.txt.flow_of_events.0,The Citizen presses on the Change of Residence button
+EA26.txt,EA26.txt.flow_of_events.1,The system shows the citizen the form to fill out
+EA26.txt,EA26.txt.flow_of_events.2,The citizen enters the data of hisher new residence
+EA26.txt,EA26.txt.flow_of_events.3,The system notifies the citizen that the request has been successfully submitted and the request is stored
+EA26.txt,EA26.txt.flow_of_events.4,The clerk logs into the system and views the request received
+EA26.txt,EA26.txt.flow_of_events.5,The clerk verifies the data fills in the document with the rest of the data to be entered and confirms the operation
+EA26.txt,EA26.txt.flow_of_events.6,The system saves the form and updates the data
+EA26.txt,EA26.txt.flow_of_events.7,The clerk sends a document with the request made by the citizen to the clerk of the other municipality
+EA26.txt,EA26.txt.flow_of_events.8,The clerk of the other municipality verifies the document and sends a positive notification to the other clerk and a notification to the citizen
+EA36.txt,EA36.txt.name,Request Status Of Family
+EA36.txt,EA36.txt.actor,Started by Citizen
+EA36.txt,EA36.txt.precondition,The Citizen has authenticated into the system
+EA36.txt,EA36.txt.postcondition,The system performs an operation chosen by the citizen OR In case the service is not available the use case Service Not Available is invoked
+EA36.txt,EA36.txt.quality_requirement,Not Provided
+EA36.txt,EA36.txt.flow_of_events.0,Citizen presses on the Family Status button
+EA36.txt,EA36.txt.flow_of_events.1,The system displays the family status to the citizen
+EA36.txt,EA36.txt.flow_of_events.2,The Citizen chooses whether to print or send to hisher e-mail the family status
+EA36.txt,EA36.txt.flow_of_events.3,The system executes the choice made by the citizen
+EA20.txt,EA20.txt.name,Recovery Password Administrator
+EA20.txt,EA20.txt.actor,Started by administrator
+EA20.txt,EA20.txt.precondition,The administrator has access to the system
+EA20.txt,EA20.txt.postcondition,The system sends the password OR In the case where the administrator enters a serial number that is not in the system the system calls the use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA20.txt,EA20.txt.quality_requirement,Not expected
+EA20.txt,EA20.txt.flow_of_events.0,The administrator has forgotten the password and presses the password recovery button
+EA20.txt,EA20.txt.flow_of_events.1,The system shows the form for entering the freshman
+EA20.txt,EA20.txt.flow_of_events.2,The administrator enters hisher matriculation number and presses the confirmation button
+EA20.txt,EA20.txt.flow_of_events.3,The system verifies the data and sends the password to the administrator 's email address
+EA57.txt,EA57.txt.name,Release Parking Disabled
+EA57.txt,EA57.txt.actor,Initiated by User Communicates with Traffic Police Command
+EA57.txt,EA57.txt.precondition,The user has successfully logged in and selected the Social Assistance feature
+EA57.txt,EA57.txt.postcondition,The system has encountered an error in filling out the form so it calls the use case Data Errati OR The user returns to the previous screen OR The system encountered an unanticipated error so it calls the use case Service Not Available Unanticipated Quality Requirements
+EA57.txt,EA57.txt.flow_of_events.0,The user selects the Social Assistance feature by selecting Disabled Parking Release ''
+EA57.txt,EA57.txt.flow_of_events.1,The system displays the form for entering applicant and recipient data if different
+EA57.txt,EA57.txt.flow_of_events.2,The user enters the master data of the applicant and those of the recipient if different if necessary specifying the relationship to that person
+EA57.txt,EA57.txt.flow_of_events.3,Also specified is the type of documentation attached to the traffic police command medical-legal certificate issued by the ASL commission
+EA57.txt,EA57.txt.flow_of_events.4,It then submits the form
+EA57.txt,EA57.txt.flow_of_events.5,The system picks up the master data of the recipient citizen
+EA57.txt,EA57.txt.flow_of_events.6,The request is sent to the traffic police command and the user is notified of the submission
+EA68.txt,EA68.txt.name,News Canceled
+EA68.txt,EA68.txt.actor,Started by Citizen
+EA68.txt,EA68.txt.precondition,This use case extends Subscribe News Informagiovani and occurs when a citizen decides to cancel informagiovani news
+EA68.txt,EA68.txt.postcondition,The system resubmits the form
+EA68.txt,EA68.txt.quality_requirement,Not provided
+EA68.txt,EA68.txt.flow_of_events.0,Citizen decides she wants to cancel informagiovani news and then enters in the form that she wants to cancel it
+EA68.txt,EA68.txt.flow_of_events.1,The system receives the form notifies that the news has been cancelled and resubmits the form
+EA41.txt,EA41.txt.name,Visualization Practice
+EA41.txt,EA41.txt.actor,Started by citizen
+EA41.txt,EA41.txt.precondition,The citizen has authenticated in the system
+EA41.txt,EA41.txt.postcondition,The citizen displays the screen OR In the case where the citizen wants to delete a file the system calls the use case Delete Practice OR In the case where the citizen wants to edit a practice the system calls the use case Edit Practice OR In the case where the service is not available the use case is called of use case Service Not Available
+EA41.txt,EA41.txt.quality_requirement,Not Available
+EA41.txt,EA41.txt.flow_of_events.0,Citizen clicks on the button view practices ID Card Change of Residence
+EA41.txt,EA41.txt.flow_of_events.1,The system displays a screen with the practices that concern the citizen
+EA89.txt,EA89.txt.name,Request Number Civic
+EA89.txt,EA89.txt.actor,Initiated by citizen communicates with employee
+EA89.txt,EA89.txt.precondition,The citizen has authenticated in the system
+EA89.txt,EA89.txt.postcondition,The system displays a message notifying the request The system sends a request notification message to the appropriate clerk OR in the case of incorrect data entry the system invokes the use case Data Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA89.txt,EA89.txt.quality_requirement,Not Available
+EA89.txt,EA89.txt.flow_of_events.0,Citizen accesses the house number request area using the appropriate link
+EA89.txt,EA89.txt.flow_of_events.1,The system displays the form for entering the data required for the request The citizen enters the required data
+EA89.txt,EA89.txt.flow_of_events.2,The system verifies the correctness and completeness of the data then displays a summary screen or activates the use case Dati Errati The citizen confirms the operation
+EA89.txt,EA89.txt.flow_of_events.3,The system displays a message notifying the request
+EA89.txt,EA89.txt.flow_of_events.4,The system sends a message notifying the appropriate employee of the request
+EA133.txt,EA133.txt.name,Request TOSAP Rified
+EA133.txt,EA133.txt.actor,Started by Employee
+EA133.txt,EA133.txt.precondition,The Clerk has authenticated in the system Request TOSAP Rejected includes the Request TOSAP use case
+EA133.txt,EA133.txt.postcondition,The system notifies the citizen of the outcome
+EA133.txt,EA133.txt.quality_requirement,Not provided
+EA133.txt,EA133.txt.flow_of_events.0,The Employee displays the notification received
+EA133.txt,EA133.txt.flow_of_events.1,The System displays to the Clerk the request made by the citizen
+EA133.txt,EA133.txt.flow_of_events.2,The Clerk reveals an error in the request and rejects the procedure the request
+EA133.txt,EA133.txt.flow_of_events.3,The System sends a notification to the citizen who requested the service
+EA129.txt,EA129.txt.name,Request IPPA Accepted
+EA129.txt,EA129.txt.actor,Started by Employee
+EA129.txt,EA129.txt.precondition,The Clerk has authenticated in the system Request IPPA Accepted includes the case use case Request IPPA
+EA129.txt,EA129.txt.postcondition,The system notifies the citizen of the outcome
+EA129.txt,EA129.txt.quality_requirement,Not provided
+EA129.txt,EA129.txt.flow_of_events.0,The Employee displays the notification received
+EA129.txt,EA129.txt.flow_of_events.1,The System displays to the Clerk the request made by the citizen
+EA129.txt,EA129.txt.flow_of_events.2,The Clerk certifies the validity of the request by checking the accuracy of the data and enables the bureaucratic procedure for requesting the service
+EA129.txt,EA129.txt.flow_of_events.3,The System sends a confirmation e-mail to the citizen who requested the service
+EA13.txt,EA13.txt.name,Edit E Mail Citizen
+EA13.txt,EA13.txt.actor,Started by Citizen
+EA13.txt,EA13.txt.precondition,The citizen has authenticated in the system
+EA13.txt,EA13.txt.postcondition,The system saves the new email The system detects an error and retrieves the use case Dati Errati OR In the case where the service is not available the use case Service Not Available is invoked
+EA13.txt,EA13.txt.quality_requirement,Not Provided
+EA13.txt,EA13.txt.flow_of_events.0,Citizen accesses the e-email edit form
+EA13.txt,EA13.txt.flow_of_events.1,The system shows the form the enter the new email
+EA13.txt,EA13.txt.flow_of_events.2,The citizen enters the new e-mail and presses the confirmation button
+EA13.txt,EA13.txt.flow_of_events.3,The system updates the new e-mail
+EA55.txt,EA55.txt.name,Plan Zone Assistance
+EA55.txt,EA55.txt.actor,Started by User
+EA55.txt,EA55.txt.precondition,The user accessed the system
+EA55.txt,EA55.txt.postcondition,The user returns to the previous screen OR The system encountered an unanticipated error so calls the use case Service Not Available Unanticipated Quality Requirements
+EA55.txt,EA55.txt.flow_of_events.0,Remote user selects the Social Assistance feature by selecting Area Plan assistance services ''
+EA55.txt,EA55.txt.flow_of_events.1,The system displays the area plan regarding care services
+EA38.txt,EA38.txt.name,Lost Identity Card
+EA38.txt,EA38.txt.actor,Started by Citizen continued by employee
+EA38.txt,EA38.txt.precondition,The Citizen must be authenticated in the system
+EA38.txt,EA38.txt.postcondition,The System creates the document to be delivered to the appropriate office OR In the case where the service is not available the use case Service Not Available is invoked
+EA38.txt,EA38.txt.quality_requirement,Not Provided
+EA38.txt,EA38.txt.flow_of_events.0,The Citizen presses on the Lost ID Card button
+EA38.txt,EA38.txt.flow_of_events.1,The system directly sends a lost card notification to the appropriate clerk
+EA38.txt,EA38.txt.flow_of_events.2,The Citizen goes to the clerk 's office with a copy of the loss report
+EA85.txt,EA85.txt.name,Search File Building
+EA85.txt,EA85.txt.actor,Initiated by citizen
+EA85.txt,EA85.txt.precondition,The citizen has authenticated in the system
+EA85.txt,EA85.txt.postcondition,The system displays the file OR In the case where the citizen is not found the system invokes the use case Data Errati OR In the case of technical failures the system invokes the use case Service Not Available OR If the citizen wants a copy of the file found it calls the use case Request Copy File Edossier
+EA85.txt,EA85.txt.quality_requirement,Not Provided
+EA85.txt,EA85.txt.flow_of_events.0,Citizen accesses the search area
+EA85.txt,EA85.txt.flow_of_events.1,The system displays the form for entering the search key Citizen enters the search key
+EA85.txt,EA85.txt.flow_of_events.2,The system displays the results of the search The citizen selects the file
+EA85.txt,EA85.txt.flow_of_events.3,The system displays the file
+EA103.txt,EA103.txt.name,Download Module
+EA103.txt,EA103.txt.actor,Started by Citizen
+EA103.txt,EA103.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA103.txt,EA103.txt.postcondition,The Citizen has successfully downloaded the form with permission from the system and therefore the Come Become Volunteer use case will be invoked OR The Citizen fails to view the page about downloading the form and the use case Service Not Available which handles Technical Failure cases will be extended
+EA103.txt,EA103.txt.quality_requirement,The system response time ranges from to seconds to load the form if the Citizen can view it correctly Response time increases on the order of seconds if the Citizen does not correctly display what he or she has requested
+EA103.txt,EA103.txt.flow_of_events.0,The Citizen accesses the download of the form as they want to join the Volunteerism
+EA103.txt,EA103.txt.flow_of_events.1,The system responds to this need with the ability to view the form The Citizen acknowledges the form and decides to start downloading the file
+EA103.txt,EA103.txt.flow_of_events.2,The system responds to the Citizen 's need by saving the form to join the Volunteer action
+EA48.txt,EA48.txt.name,Domestic Assistance Domestic Assistance
+EA48.txt,EA48.txt.actor,Initiated by User Communicates with Social Services Office
+EA48.txt,EA48.txt.precondition,The user has successfully logged in and selected the Social Assistance feature
+EA48.txt,EA48.txt.postcondition,The system has encountered an error in filling out the form so it calls the use case Data Errati OR The user returns to the previous screen OR The system encountered an unanticipated error so it calls the use case Service Not Available
+EA48.txt,EA48.txt.quality_requirement,Unanticipated
+EA48.txt,EA48.txt.flow_of_events.0,User selects Home care request elderly minors handicapped ''
+EA48.txt,EA48.txt.flow_of_events.1,The system displays the form for entering applicant and recipient data
+EA48.txt,EA48.txt.flow_of_events.2,The user enters the master data of the applicant and if necessary enters the data of a third person specifying the relationship with that person
+EA48.txt,EA48.txt.flow_of_events.3,The system picks up the data of the applicant citizen the master data of the recipient citizen in case the applicant and recipient were not the same person and the data concerning the household of the recipient Citizen
+EA48.txt,EA48.txt.flow_of_events.4,The user specifies the psycho-physical conditions of the recipient specifying the attached documents disability certificate issued by the ASL commission andor health card of the attending physician andor certificate of the pension provider ISEE model finally specifying a possible date of appointment with social workers
+EA48.txt,EA48.txt.flow_of_events.5,Then submit the form
+EA48.txt,EA48.txt.flow_of_events.6,The system picks up data regarding any social welfare services the recipient already uses
+EA48.txt,EA48.txt.flow_of_events.7,It then forwards the request to the Social Services office and notifies the Citizen that the request has been made
+EA61.txt,EA61.txt.name,Card Annulled
+EA61.txt,EA61.txt.actor,Started by Citizen
+EA61.txt,EA61.txt.precondition,This use case extends Enrollment Card Youth and checks when a citizen decides to cancel the youth card
+EA61.txt,EA61.txt.postcondition,The system resubmits the form
+EA61.txt,EA61.txt.quality_requirement,Not provided
+EA61.txt,EA61.txt.flow_of_events.0,Citizen decides he wants to cancel the youth card and then enters in the form that he wants to cancel it
+EA61.txt,EA61.txt.flow_of_events.1,The system receives the form notifies that the card has been cancelled and resubmits the form
+EA29.txt,EA29.txt.name,Edit Practice
+EA29.txt,EA29.txt.actor,Started by citizen
+EA29.txt,EA29.txt.precondition,The citizen has authenticated into the system This use case extends View Practice and occurs when the citizen wants to edit the file
+EA29.txt,EA29.txt.postcondition,The system edits the practice OR In the case where the service is not available the use case is invoked of use Service Not Available
+EA29.txt,EA29.txt.quality_requirement,Not Provided
+EA29.txt,EA29.txt.flow_of_events.0,Citizen presses the Edit Practice button ID Card Change of Residence if the practice has not been initialized
+EA29.txt,EA29.txt.flow_of_events.1,The system displays a form for editing the practice
+EA29.txt,EA29.txt.flow_of_events.2,The citizen enters the data
+EA29.txt,EA29.txt.flow_of_events.3,The system saves the changes made
+EA23.txt,EA23.txt.name,Registration Citizen
+EA23.txt,EA23.txt.actor,Started by Citizen
+EA23.txt,EA23.txt.precondition,The citizen has accessed the system
+EA23.txt,EA23.txt.postcondition,The system registers the citizen OR In case the citizen enters incorrect data the system calls the case use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA23.txt,EA23.txt.quality_requirement,The name string corresponding to the name of the ID card holder is well formed contains characters az AZ ' and is less than characters long and is not empty The string of the last name corresponding to the first name of the ID card holder is well-formed contains characters az AZ ' and has length less than characters and is not empty The string of the Tax Code corresponding to the actual tax code of the holder is in accordance with regulations and has length of characters The Identity Card string is present in the system consists of X Xnnnnnnn X letter n number and has length of characters The email string consists of x xx and has a length of less than characters and is not empty The username string is not already in the system is well formed contains characters az AZ - and has length less than characters and is not empty The password string is well formed contains characters az AZ - and has a length between and characters
+EA23.txt,EA23.txt.flow_of_events.0,Citizen accesses the registration form
+EA23.txt,EA23.txt.flow_of_events.1,The system displays the form for registration
+EA23.txt,EA23.txt.flow_of_events.2,The citizen enters hisher data and presses the confirmation button
+EA23.txt,EA23.txt.flow_of_events.3,The system verifies the correctness of the data saves them and sends an e-mail of successful registration to the citizen
+EA137.txt,EA137.txt.name,Consultation Help On- Line
+EA137.txt,EA137.txt.actor,Started by Citizen
+EA137.txt,EA137.txt.precondition,The citizen has logged into the system
+EA137.txt,EA137.txt.postcondition,The citizen has accessed information related to a particular functionality
+EA137.txt,EA137.txt.quality_requirement,Not provided
+EA137.txt,EA137.txt.flow_of_events.0,The Citizen enters the online help section
+EA137.txt,EA137.txt.flow_of_events.1,The system presents a screen containing the list of features
+EA137.txt,EA137.txt.flow_of_events.2,The Citizen accesses the help information by clicking on the link related to the functionality they wish to receive
+EA137.txt,EA137.txt.flow_of_events.3,The system presents the help information explaining the methods and actions to be performed for the specific functionality
+EA74.txt,EA74.txt.name,Information Events In The Territory
+EA74.txt,EA74.txt.actor,Started by Citizen
+EA74.txt,EA74.txt.precondition,The citizen has logged into the system
+EA74.txt,EA74.txt.postcondition,The citizen has viewed the event information OR In case the citizen wants to book the event will be referred to the event site
+EA74.txt,EA74.txt.quality_requirement,Not provided
+EA74.txt,EA74.txt.flow_of_events.0,The Citizen requests to view the list of events
+EA74.txt,EA74.txt.flow_of_events.1,The system allows to view the list of events
+EA74.txt,EA74.txt.flow_of_events.2,The Citizen chooses the event
+EA74.txt,EA74.txt.flow_of_events.3,The system returns information regarding the chosen event by displaying data such as - - - the location date and time of the event site managing the event Pro-loco
+EA45.txt,EA45.txt.name,Welcome Night
+EA45.txt,EA45.txt.actor,Initiated by User Communicates with Social Services Office
+EA45.txt,EA45.txt.precondition,The user has successfully logged in and selected the Social Assistance feature
+EA45.txt,EA45.txt.postcondition,The system has encountered an error in filling out the form so it calls the use case Data Errati OR The user returns to the previous screen OR The system encountered an unanticipated error so it calls the use case Service Not Available
+EA45.txt,EA45.txt.quality_requirement,Unanticipated
+EA45.txt,EA45.txt.flow_of_events.0,User selects Social Work feature by selecting Night Reception Request ''
+EA45.txt,EA45.txt.flow_of_events.1,The system displays the form for entering applicant and recipient data
+EA45.txt,EA45.txt.flow_of_events.2,The user enters hisher own data and if necessary enters the data of a third person specifying the relationship with that person
+EA45.txt,EA45.txt.flow_of_events.3,He also specifies an alternative home or address and a possible date of appointment with social workers
+EA45.txt,EA45.txt.flow_of_events.4,He then submits the form
+EA45.txt,EA45.txt.flow_of_events.5,The system picks up the master data of the requesting citizen and the receiving citizen if different from the requestor and data regarding the receiving Citizen 's household
+EA45.txt,EA45.txt.flow_of_events.6,The request is sent to the Social Services office and the user is notified of the submission
+EA59.txt,EA59.txt.name,Unsubscribe News Informagiovani
+EA59.txt,EA59.txt.actor,Started by Citizen
+EA59.txt,EA59.txt.precondition,This case requires that the citizen has gone through the authentication procedure
+EA59.txt,EA59.txt.postcondition,The system has executed the citizen 's request OR If an error occurs in the process of deleting from the news service the system calls the use case Service Not Available
+EA59.txt,EA59.txt.quality_requirement,Not Available
+EA59.txt,EA59.txt.flow_of_events.0,Citizen requests unsubscription from advertisement service related to informagiovani news
+EA59.txt,EA59.txt.flow_of_events.1,The system displays a form to confirm the request
+EA59.txt,EA59.txt.flow_of_events.2,The citizen confirms the unsubscribe operation
+EA59.txt,EA59.txt.flow_of_events.3,The system deletes the citizen from the advertisement service
+EA106.txt,EA106.txt.name,Hydro-pluviometric monitoring
+EA106.txt,EA106.txt.actor,Started by Citizen
+EA106.txt,EA106.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA106.txt,EA106.txt.postcondition,The Citizen is satisfied with the information received from the form heshe was offered OR The Citizen is unable to view the page heshe requested and the use case Service Not Available that handles technical failure cases is extended
+EA106.txt,EA106.txt.quality_requirement,System response time is in the hundredths of a second range if it correctly displays the card The response time increases and falls within the terms of seconds from a minimum of to a maximum of
+EA106.txt,EA106.txt.flow_of_events.0,The Citizen accesses this screen as he wants to satisfy his curiosity in knowing the situation monitored by the Civil Defense of municipal waters
+EA106.txt,EA106.txt.flow_of_events.1,The system responds with a screen where heshe can view information about how the municipal water is being monitored the bacteriological situation and an update of the latest analysis performed on the samples taken
+EA62.txt,EA62.txt.name,Elimination Reservation Interview
+EA62.txt,EA62.txt.actor,Started by Citizen
+EA62.txt,EA62.txt.precondition,This extends the View Preservation Consultor io use case by considering the case where the citizen wants to delete the chosen reservation
+EA62.txt,EA62.txt.postcondition,The system has made the cancellation of the reservation
+EA62.txt,EA62.txt.quality_requirement,Not provided
+EA62.txt,EA62.txt.flow_of_events.0,Citizen requests cancellation of interview reservation in the counseling center
+EA62.txt,EA62.txt.flow_of_events.1,The system displays a form to confirm the request
+EA62.txt,EA62.txt.flow_of_events.2,The citizen confirms the deletion of the reservation
+EA62.txt,EA62.txt.flow_of_events.3,Thesystemeliminatesbooking
+EA101.txt,EA101.txt.name,Committee
+EA101.txt,EA101.txt.actor,Started by Citizen
+EA101.txt,EA101.txt.precondition,The Citizen is authenticated within the municipal system OR The Citizen has accessed the municipal system
+EA101.txt,EA101.txt.postcondition,The Citizen becomes aware of the components of the municipal body OR If unable to view the page the use case is extended Service Not Available which handles technical failure cases
+EA101.txt,EA101.txt.quality_requirement,The response time to the Citizen 's curiosity is in the hundredths of a second range if the screen describing the use case Committee is displayed correctly If the screen can not be provided the system will respond in times ranging in the range of - seconds
+EA101.txt,EA101.txt.flow_of_events.0,The Citizen accesses this service in order to take note of the hierarchical composition of the Civil Defense
+EA101.txt,EA101.txt.flow_of_events.1,The system responds to the curiosity of the Citizen with a screen where there is an organizational chart of the components of the Municipal Civil Defense in accordance with the other governmental institutions in the area according to the law of the Municipal Council approved by all
+EA122.txt,EA122.txt.name,IPPA
+EA122.txt,EA122.txt.actor,Initiated by Citizen
+EA122.txt,EA122.txt.precondition,The Citizen has logged in The Citizen has made the request for the specific service The request for the service has been accepted
+EA122.txt,EA122.txt.postcondition,Payment has been made OR In the case where there is insufficient funds to cover the payment or an error occurs in the transaction the System calls the case use case Payment Not Received OR In the case where there are general errors the System calls the use case Service Not Available
+EA122.txt,EA122.txt.quality_requirement,Not Provided
+EA122.txt,EA122.txt.flow_of_events.0,The Citizen clicks on the button to access the Online Tax Payment area
+EA122.txt,EA122.txt.flow_of_events.1,The System displays the list of taxes that can be paid online
+EA122.txt,EA122.txt.flow_of_events.2,The Citizen selects the section on Advertising and Public Display Tax and its payment and enters the file code
+EA122.txt,EA122.txt.flow_of_events.3,The System redirects the Citizen to the necessary section showing the form of the relevant tax and the relevant amount to be paid
+EA122.txt,EA122.txt.flow_of_events.4,The Citizen confirms that the information is correct selects the preferred payment method and initiates the transaction
+EA122.txt,EA122.txt.flow_of_events.5,The System performs the transaction and displays a successful payment message
+EA22.txt,EA22.txt.name,Registration Citizen
+EA22.txt,EA22.txt.actor,Started by Citizen
+EA22.txt,EA22.txt.precondition,The citizen has accessed the system
+EA22.txt,EA22.txt.postcondition,The system registers the citizen OR In case the citizen enters incorrect data the system calls the case use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA22.txt,EA22.txt.quality_requirement,The name string corresponding to the name of the ID card holder is well formed contains characters az AZ ' and is less than characters long and is not empty The string of the last name corresponding to the first name of the ID card holder is well-formed contains characters az AZ ' and has length less than characters and is not empty The string of the Tax Code corresponding to the actual tax code of the holder is in accordance with regulations and has length of characters The Identity Card string is present in the system consists of X Xnnnnnnn X letter n number and has length of characters The email string consists of x xx and has a length of less than characters and is not empty The username string is not already in the system is well formed contains characters az AZ - and has length less than characters and is not empty The password string is well formed contains characters az AZ - and has a length between and characters
+EA22.txt,EA22.txt.flow_of_events.0,Citizen accesses the registration form
+EA22.txt,EA22.txt.flow_of_events.1,The system displays the form for registration
+EA22.txt,EA22.txt.flow_of_events.2,The citizen enters hisher data and presses the confirmation button
+EA22.txt,EA22.txt.flow_of_events.3,The system verifies the correctness of the data saves them and sends an e-mail of successful registration to the citizen
+EA126.txt,EA126.txt.name,Payment Unsuccessful
+EA126.txt,EA126.txt.actor,Started by Citizen
+EA126.txt,EA126.txt.precondition,This use case extends ICI IRPEF TIA TOSAP IPPA and Payment Multa and is invoked when errors occur due to the payment method
+EA126.txt,EA126.txt.postcondition,s The System notifies the error and displays the form again for completion
+EA126.txt,EA126.txt.quality_requirement,Not provided
+EA126.txt,EA126.txt.flow_of_events.0,The Citizen clicks on the button to access the Online Payment area for taxes or fines
+EA126.txt,EA126.txt.flow_of_events.1,The System displays the list of feesfines that can be paid online
+EA126.txt,EA126.txt.flow_of_events.2,The Citizen selects the taxfine of interest
+EA126.txt,EA126.txt.flow_of_events.3,The System redirects the Citizen to the necessary section showing the form to the Citizen
+EA126.txt,EA126.txt.flow_of_events.4,The Citizen initiates the transaction
+EA126.txt,EA126.txt.flow_of_events.5,The System does not allow the transaction because there were problems with the selected payment method
+EA17.txt,EA17.txt.name,Edit Password Citizen
+EA17.txt,EA17.txt.actor,Started by citizen
+EA17.txt,EA17.txt.precondition,The citizen has authenticated into the system
+EA17.txt,EA17.txt.postcondition,The password is changed OR In case the citizen enters a password of less than characters or the old password is incorrect the system calls the use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA17.txt,EA17.txt.quality_requirement,The password string consists of az AZ- and is between and characters long The string is not consistent with the password entered
+EA17.txt,EA17.txt.flow_of_events.0,Citizen wants to change password and presses the change password button
+EA17.txt,EA17.txt.flow_of_events.1,The system displays the form for entering the old password and the new password
+EA17.txt,EA17.txt.flow_of_events.2,The citizen enters the old password the new password and presses the confirm button
+EA17.txt,EA17.txt.flow_of_events.3,The system notifies that the password has been changed
+EA134.txt,EA134.txt.name,TIA
+EA134.txt,EA134.txt.actor,Initiated by Citizen
+EA134.txt,EA134.txt.precondition,The Citizen has authenticated in the system
+EA134.txt,EA134.txt.postcondition,The payment has been made OR In the case where there is insufficient funds to cover the payment or an error occurs in the transaction the System calls the case of use Payment Not Successful OR In the event that other general problems arise the System calls the case of use case Service Not Available
+EA134.txt,EA134.txt.quality_requirement,None
+EA134.txt,EA134.txt.flow_of_events.0,The Citizen clicks on the button to access the Online Tax Payment area
+EA134.txt,EA134.txt.flow_of_events.1,The System displays the list of fees that can be paid online
+EA134.txt,EA134.txt.flow_of_events.2,The Citizen selects the section dedicated to the Environmental Hygiene Fee and its payment
+EA134.txt,EA134.txt.flow_of_events.3,The System redirects the Citizen to the necessary section showing the form of the relevant fee and the relevant amount to be paid
+EA134.txt,EA134.txt.flow_of_events.4,The Citizen confirms the correctness of the information selects the preferred payment method and initiates the transaction
+EA134.txt,EA134.txt.flow_of_events.5,The System performs the transaction and displays a successful payment message
+EA2.txt,EA2.txt.name,Authentication Citizen
+EA2.txt,EA2.txt.actor,Started by Citizen
+EA2.txt,EA2.txt.precondition,The citizen has been granted access in the system
+EA2.txt,EA2.txt.postcondition,The citizen has successfully logged in OR In the case where the citizen enters incorrect login andor password the system calls the use case Data Errati OR In case the service is not available the use case Service Not Available is called
+EA2.txt,EA2.txt.quality_requirement,The username string is present in the system is well-formed contains characters az AZ - edlength less than characters and is not empty The password string is present in the system is well formed contains characters az AZ - and has a length between and characters
+EA2.txt,EA2.txt.flow_of_events.0,Citizen logs in to the authentication session
+EA2.txt,EA2.txt.flow_of_events.1,The system displays the login form for data entry username and password
+EA2.txt,EA2.txt.flow_of_events.2,The citizen enters the data and submits the authentication request
+EA2.txt,EA2.txt.flow_of_events.3,The system verifies the accuracy of the data and allows the citizen to log in
+EA69.txt,EA69.txt.name,Reservation Interview
+EA69.txt,EA69.txt.actor,Started by Citizen
+EA69.txt,EA69.txt.precondition,This use case extends Information Consulting Youth and intervenes when a citizen decides to make an interview reservation This case requires that the citizen has gone through the authentication process
+EA69.txt,EA69.txt.postcondition,s The system has booked the applicant 's interview OR Should an error occur at the interview booking stage the system calls the use case Service Not Available OR Should the citizen decide to cancel the interview reservation the system calls the use case Reservation Interview Canceled
+EA69.txt,EA69.txt.quality_requirement,Not Available
+EA69.txt,EA69.txt.flow_of_events.0,Citizen requests an interview in the preselected counseling center
+EA69.txt,EA69.txt.flow_of_events.1,The system displays a form for submitting the request
+EA69.txt,EA69.txt.flow_of_events.2,The citizen enters the interview request data into a form
+EA69.txt,EA69.txt.flow_of_events.3,The system receives the form verifies the reservation data and submits the request
+EA69.txt,EA69.txt.flow_of_events.4,Citizen requests prints out receipt of interview booking
+EA69.txt,EA69.txt.flow_of_events.5,Thesystemprintsthebooking
+EA28.txt,EA28.txt.name,Clear Practice
+EA28.txt,EA28.txt.actor,Started by citizen
+EA28.txt,EA28.txt.precondition,The citizen has authenticated into the system This use case extends View Practice and occurs when the citizen wants to delete the practice
+EA28.txt,EA28.txt.postcondition,The citizen does not confirm the transaction OR The system deletes the practice OR In the case where the service is not available the use case is invoked of use Service Not Available
+EA28.txt,EA28.txt.quality_requirement,Not Provided
+EA28.txt,EA28.txt.flow_of_events.0,Citizen presses the cancel file button ID Card Change of Residence if the file has not been initialized
+EA28.txt,EA28.txt.flow_of_events.1,The system asks the citizen for confirmation
+EA28.txt,EA28.txt.flow_of_events.2,The citizen confirms the operation
+EA28.txt,EA28.txt.flow_of_events.3,The system deletes the practice
+EA132.txt,EA132.txt.name,Request TOSAP Accessed
+EA132.txt,EA132.txt.actor,Started by Employee
+EA132.txt,EA132.txt.precondition,The Clerk has authenticated in the system Request TOSAP Accessed includes the Request TOSAP use case
+EA132.txt,EA132.txt.postcondition,The system notifies the citizen of the outcome
+EA132.txt,EA132.txt.quality_requirement,Not provided
+EA132.txt,EA132.txt.flow_of_events.0,The Employee displays the notification received
+EA132.txt,EA132.txt.flow_of_events.1,The System displays to the Clerk the request made by the citizen
+EA132.txt,EA132.txt.flow_of_events.2,The Clerk certifies the validity of the request by checking the accuracy of the data and enables the bureaucratic procedure for requesting the service
+EA132.txt,EA132.txt.flow_of_events.3,The System sends a confirmation e-mail to the citizen who requested the service
+EA108.txt,EA108.txt.name,Useful Numbers
+EA108.txt,EA108.txt.actor,Started by Citizen
+EA108.txt,EA108.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA108.txt,EA108.txt.postcondition,The Citizen is satisfied with the service provided to himher and views the screen of useful numbers and advice provided to himher OR In case the system fails to display the information sheet about numbers to call in case of emergency the use case Service Not Available which handles cases of technical failure is extended
+EA108.txt,EA108.txt.quality_requirement,The system responds to the service requested by the Citizen in a few hundredths of a second if the description of useful numbers is displayed correctly If this however is not the case the system handles the exception in the range of - seconds to let the user know that there is some problem with the service request
+EA108.txt,EA108.txt.flow_of_events.0,The Citizen accesses this page to take advantage of phone numbers to contact in case of danger of any kind
+EA108.txt,EA108.txt.flow_of_events.1,The system responds by allowing the display of a descriptive card with the telephone numbers of the agencies concerned with the safety of the Citizen himself
+EA108.txt,EA108.txt.flow_of_events.2,The Citizen by accessing this screen can in addition view advice and standard procedures divided into categories about the correct communication between him and the Call Center contact person of a given municipal body
+EA108.txt,EA108.txt.flow_of_events.3,The system shall respond with an emergency support screen corresponding to the service the Citizen decides to contact
+EA19.txt,EA19.txt.name,Recover Password Citizen
+EA19.txt,EA19.txt.actor,Started by Citizen
+EA19.txt,EA19.txt.precondition,The citizen has authenticated in the system
+EA19.txt,EA19.txt.postcondition,The system has sent the password OR In the case where the administrator enters a matriculation number that is not in the system the system calls the use case Data Errati OR In the case where the service is not available the use case Service Not Available is called
+EA19.txt,EA19.txt.quality_requirement,The username string present in the system and associated with the ID card holder is well formed contains characters az AZ - and is less than characters long and is not empty Identity Card string is present in the system is well formed X Xnnnnnnn X letter n number and has a length equal to characters
+EA19.txt,EA19.txt.flow_of_events.0,Citizen has forgotten password and presses on the Recover Password button
+EA19.txt,EA19.txt.flow_of_events.1,The system displays the password recovery screen that requires entering the user name and ID card code
+EA19.txt,EA19.txt.flow_of_events.2,The citizen enters hisher data and presses the confirmation button
+EA19.txt,EA19.txt.flow_of_events.3,The system verifies the correctness of the data and sends the password to the citizen 's email address
+EA35.txt,EA35.txt.name,Request To Wedding
+EA35.txt,EA35.txt.actor,Started by Citizen continued by Employee
+EA35.txt,EA35.txt.precondition,The Citizen has authenticated in the system
+EA35.txt,EA35.txt.postcondition,The System creates the document to be delivered to the appropriate office OR In the case where the service is not available the use case Service Not Available is invoked
+EA35.txt,EA35.txt.quality_requirement,Not Available
+EA35.txt,EA35.txt.flow_of_events.0,Citizen presses on the Marriage Request button
+EA35.txt,EA35.txt.flow_of_events.1,The system shows the citizen the form to fill out
+EA35.txt,EA35.txt.flow_of_events.2,The citizen enters all hisher data the data of the partner and presses the confirmation button
+EA35.txt,EA35.txt.flow_of_events.3,The system automatically creates the form to be submitted with self-certification and family status of the applicant citizen and sends the form to the clerk
+EA35.txt,EA35.txt.flow_of_events.4,The clerk receives the notification and publishes the marriage application
+EA52.txt,EA52.txt.name,Funds Victims Usura
+EA52.txt,EA52.txt.actor,Started by User
+EA52.txt,EA52.txt.precondition,The user has accessed the system and selected the Social Assistance feature
+EA52.txt,EA52.txt.postcondition,The user viewed the page OR The system encountered an unanticipated error so calls the use case Service Not Available Unanticipated Quality Requirements
+EA52.txt,EA52.txt.flow_of_events.0,User selects the feature Application for Solidarity Fund Allocation for Victims of Usury and Extortion ''
+EA52.txt,EA52.txt.flow_of_events.1,The system displays the information and related forms to be downloaded and sent to the Prefecture offering in addition the possibility to print it out
+EA18.txt,EA18.txt.name,Edit Password Employee
+EA18.txt,EA18.txt.actor,Started by employee
+EA18.txt,EA18.txt.precondition,The 'employee has authenticated into the system
+EA18.txt,EA18.txt.postcondition,The password is changed OR In the case where the employee enters a password of less than characters or the old password is incorrect the system calls the use case Data Errati OR In case the service is not available the use case Service Not Available is called
+EA18.txt,EA18.txt.quality_requirement,Not expected
+EA18.txt,EA18.txt.flow_of_events.0,The employee wants to change the password and presses the change password button
+EA18.txt,EA18.txt.flow_of_events.1,The system displays the form for entering the old password and the new one
+EA18.txt,EA18.txt.flow_of_events.2,The employee enters the old password the new password and presses the confirm button
+EA18.txt,EA18.txt.flow_of_events.3,The system notifies that the password has been changed
+EA5.txt,EA5.txt.name,Deletion Employee
+EA5.txt,EA5.txt.actor,Started by administrator
+EA5.txt,EA5.txt.precondition,The administrator has authenticated into the system This use case includes Search Employee and occurs when the administrator wants to delete an employee
+EA5.txt,EA5.txt.postcondition,The administrator does not confirm the operation OR The system deletes the employee OR In the case where the service is not available the use case is invoked use case Service Not Available is invoked
+EA5.txt,EA5.txt.quality_requirement,The freshman string is present in the system consists of numeric characters only and is characters long The name string must be present in the system and associated with the last name can contain characters az AZ ' and must have a maximum length of characters The string last name must be present in the system and associated with the first name may contain characters az AZ ' and must have a maximum length of characters
+EA5.txt,EA5.txt.flow_of_events.0,The administrator presses the delete-employee button
+EA5.txt,EA5.txt.flow_of_events.1,The system asks the administrator for confirmation
+EA5.txt,EA5.txt.flow_of_events.2,The administrator confirms the operation
+EA5.txt,EA5.txt.flow_of_events.3,The system deletes the employee
+EA79.txt,EA79.txt.name,View Information
+EA79.txt,EA79.txt.actor,Started by Citizen
+EA79.txt,EA79.txt.precondition,This case requires that the citizen has logged into the system
+EA79.txt,EA79.txt.postcondition,The Citizen has viewed the information OR In case the system is not available it invokes the use case Service Not Available
+EA79.txt,EA79.txt.quality_requirement,Not Available
+EA79.txt,EA79.txt.flow_of_events.0,The Citizen requests to view the information in the area
+EA79.txt,EA79.txt.flow_of_events.1,The system returns information regarding the territory by displaying data such as - libraries - events - museums - promotions present in the territory
+EA80.txt,EA80.txt.name,Communications
+EA80.txt,EA80.txt.actor,Initiated by citizen communicates with employee
+EA80.txt,EA80.txt.precondition,The citizen has authenticated in the system
+EA80.txt,EA80.txt.postcondition,The system displays the form for printing The system sends a message notifying the relevant clerk of the request OR in the case of incorrect data entry the system invokes the use case Dati Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA80.txt,EA80.txt.quality_requirement,Not Available
+EA80.txt,EA80.txt.flow_of_events.0,Citizen accesses the communications area using the appropriate link
+EA80.txt,EA80.txt.flow_of_events.1,The system displays the form for entering the data required for the communication eg
+EA80.txt,EA80.txt.flow_of_events.2,communication of start of work DIA
+EA80.txt,EA80.txt.flow_of_events.3,communication of end of work
+EA80.txt,EA80.txt.flow_of_events.4,The citizen enters the required data
+EA80.txt,EA80.txt.flow_of_events.5,The system verifies the correctness and completeness of the data then displays a summary screen or activates the Dati Errati use case
+EA80.txt,EA80.txt.flow_of_events.6,The citizen confirms the operation
+EA80.txt,EA80.txt.flow_of_events.7,The system displays the form for printing
+EA80.txt,EA80.txt.flow_of_events.8,The system sends a message notifying the relevant clerk of the request
+EA80.txt,EA80.txt.flow_of_events.9,The citizen makes the printout to be delivered to the municipal office with a revenue stamp
+EA92.txt,EA92.txt.name,Vision Circulars
+EA92.txt,EA92.txt.actor,Started by citizen
+EA92.txt,EA92.txt.precondition,The citizen has accessed the system
+EA92.txt,EA92.txt.postcondition,The system displays the circular OR in the case of technical failures the system recalls the use case Service Not Available
+EA92.txt,EA92.txt.quality_requirement,Not available
+EA92.txt,EA92.txt.flow_of_events.0,Citizen accesses the circulars area using the appropriate link
+EA92.txt,EA92.txt.flow_of_events.1,The system displays the numbered list of circulars The citizen chooses the circular by means of link
+EA92.txt,EA92.txt.flow_of_events.2,The system displays the circular chosen
+EA60.txt,EA60.txt.name,Cancellation Card Youth
+EA60.txt,EA60.txt.actor,Started by Citizen
+EA60.txt,EA60.txt.precondition,This case requires that the citizen has gone through the authentication procedure and has a Card Giovani
+EA60.txt,EA60.txt.postcondition,The system has performed the deletion of the card In case the citizen has entered the number of a card that does not exist or is not owned by the citizen the system calls the use case Dati Errati In case there is a failure in the request the system calls the use case Service Not Available
+EA60.txt,EA60.txt.quality_requirement,Not Provided
+EA60.txt,EA60.txt.flow_of_events.0,Citizen requests cancellation of Card Giovani
+EA60.txt,EA60.txt.flow_of_events.1,The system displays a form for entering the Card number
+EA60.txt,EA60.txt.flow_of_events.2,The citizen enters the number
+EA60.txt,EA60.txt.flow_of_events.3,The system verifies the existence of the card and the citizen 's membership
+EA60.txt,EA60.txt.flow_of_events.4,The system displays a form for confirmation of the request
+EA60.txt,EA60.txt.flow_of_events.5,The citizen confirms the deletion of the card
+EA60.txt,EA60.txt.flow_of_events.6,The system deletes the youth card from the repository
+EA76.txt,EA76.txt.name,Information Promotion Territorial
+EA76.txt,EA76.txt.actor,Started by Citizen
+EA76.txt,EA76.txt.precondition,The citizen has logged into the system
+EA76.txt,EA76.txt.postcondition,The citizen has viewed the information about the territorial promotion OR In case the citizen wants to view a territorial promotion heshe will be referred to the website of the tourist board
+EA76.txt,EA76.txt.quality_requirement,Not provided
+EA76.txt,EA76.txt.flow_of_events.0,The Citizen requests to view the list of territorial promotions
+EA76.txt,EA76.txt.flow_of_events.1,The system allows viewing the list of promotions
+EA76.txt,EA76.txt.flow_of_events.2,The Citizen chooses the promotion
+EA76.txt,EA76.txt.flow_of_events.3,The system returns the information regarding the chosen promotion
+EA94.txt,EA94.txt.name,Update Bands E Competitions
+EA94.txt,EA94.txt.actor,Started by Employee
+EA94.txt,EA94.txt.precondition,The employee has authenticated into the system
+EA94.txt,EA94.txt.postcondition,The submission was successful OR The clerk does not the update and retrieved the Service Not Available Can complete therefore comes use case
+EA94.txt,EA94.txt.quality_requirement,Not expected
+EA94.txt,EA94.txt.flow_of_events.0,The municipal clerk after authenticating in the system updates the list of associations that have published a new call for events
+EA94.txt,EA94.txt.flow_of_events.1,The system responds by providing the clerk with a form to complete to update the fields associationlogo description associationname notice
+EA94.txt,EA94.txt.flow_of_events.2,The clerk completes the fields of the form presented by the system and submits it
+EA94.txt,EA94.txt.flow_of_events.3,The system shall update the form and allow it to be viewed by the Citizen
+EA34.txt,EA34.txt.name,Request Certificates Terti
+EA34.txt,EA34.txt.actor,Started by citizen
+EA34.txt,EA34.txt.precondition,The citizen has authenticated in the system
+EA34.txt,EA34.txt.postcondition,The system sends the certificate OR In the case where the service is not available the case is invoked of use Service Not Available
+EA34.txt,EA34.txt.quality_requirement,Not Provided Note In the case where the citizen is not a close relative of the person in the data to be entered heshe must specify a valid reason for requesting the certificate
+EA34.txt,EA34.txt.flow_of_events.0,Citizen selects a specific certificate birth certificates marital status certificates
+EA34.txt,EA34.txt.flow_of_events.1,The system displays the form for entering the data of the person concerned
+EA34.txt,EA34.txt.flow_of_events.2,The citizen enters the data of the person concerned see note
+EA34.txt,EA34.txt.flow_of_events.3,The system stores the data of the citizen and interested person in a special form
+EA34.txt,EA34.txt.flow_of_events.4,The system shows a screen with the requested certificate
+EA34.txt,EA34.txt.flow_of_events.5,The citizen selects the mode of payment and shipment
+EA34.txt,EA34.txt.flow_of_events.6,The system sends the certificate
+EA1.txt,EA1.txt.name,Authentication Administrator
+EA1.txt,EA1.txt.actor,Initiated by administrator
+EA1.txt,EA1.txt.precondition,The 'administrator has been granted access to the system
+EA1.txt,EA1.txt.postcondition,The system allows the administrator access OR In case the administrator enters incorrect login andor password the system calls the use case Data Errati OR In case the service is not available the use case Service Not Available is called
+EA1.txt,EA1.txt.quality_requirement,The username string is present in the system is well-formed contains characters az AZ - edlength less than characters and is not empty The password string is present in the system is well formed contains characters az AZ - and has a length between and characters
+EA1.txt,EA1.txt.flow_of_events.0,The administrator logs in to the system
+EA1.txt,EA1.txt.flow_of_events.1,The system displays the login form for data entry user name and password
+EA1.txt,EA1.txt.flow_of_events.2,The administrator enters the data and submits the authentication request
+EA1.txt,EA1.txt.flow_of_events.3,The system receives the form verifies the data and allows the administrator access to the system with the access permissions specified
+EA88.txt,EA88.txt.name,Request Definition Conduct
+EA88.txt,EA88.txt.actor,Initiated by citizen communicates with employee
+EA88.txt,EA88.txt.precondition,The citizen has authenticated in the system
+EA88.txt,EA88.txt.postcondition,The system displays a message notifying the request The system sends a request notification message to the appropriate employee OR in the case of incorrect data entry the system invokes the use case Data Errati OR in the case of technical failures the system invokes the use case Service Not Available
+EA88.txt,EA88.txt.quality_requirement,Not Available
+EA88.txt,EA88.txt.flow_of_events.0,Citizen accesses the remission definition request area using the appropriate link
+EA88.txt,EA88.txt.flow_of_events.1,The system displays the form for entering the data necessary for the
+EA88.txt,EA88.txt.flow_of_events.2,request The citizen enters the required data
+EA88.txt,EA88.txt.flow_of_events.3,System verifies correctness and completeness of data then displays a summary screen or activates the use case Dati Errati The citizen confirms the operation
+EA88.txt,EA88.txt.flow_of_events.4,The system displays a message of notification of the request
+EA88.txt,EA88.txt.flow_of_events.5,The system sends the appropriate employee A message notifying the request
+EA114.txt,EA114.txt.name,Seismic
+EA114.txt,EA114.txt.actor,Initiated by Citizen
+EA114.txt,EA114.txt.precondition,The Citizen is authenticated in the municipal system OR The Citizen has accessed the municipal system
+EA114.txt,EA114.txt.postcondition,The Citizen is satisfied with the information retrieved put a available from the Civil Defense OR The Citizen is unable to obtain the descriptive screen and therefore the use case Service Not Available is extended which handles cases of technical failure
+EA114.txt,EA114.txt.quality_requirement,The system 's reaction time to the Citizen 's request is in the hundredths of a second range if the display is successful OR If the Citizen fails to display the information card correctly the system will respond in to seconds
+EA114.txt,EA114.txt.flow_of_events.0,The Citizen accesses the descriptive screen of how the seismic monitoring of the territory takes place and the possibility of acquiring information about the causes of an earthquake and the measurement and prevention technologies used by the specialists of the operational core
+EA114.txt,EA114.txt.flow_of_events.1,The system shall respond by providing the Citizen with the opportunity to view in a always descriptive manner the characteristics of the instruments the work done by the specialists and the national agencies with which they collaborate

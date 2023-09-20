@@ -1,0 +1,3 @@
+Visualizza Dati Studenti
+Il presente caso d ' uso consente ad un genitore di visualizzare le informazioni relative ai propri figli
+Visualizza una tabella riassuntiva con le informazioni relative ai figli ed in particolare Data Assenze Note disciplinari Ritardi e Giustifiche

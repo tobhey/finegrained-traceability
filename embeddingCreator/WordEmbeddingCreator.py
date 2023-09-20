@@ -2,7 +2,11 @@ from abc import ABC, abstractmethod
 import logging
 import random
 
+from pyemd import emd
+
 import gensim.models.wrappers
+
+from gensim.models.word2vec import Word2Vec
 
 from utility import Util
 
@@ -42,6 +46,26 @@ class FastTextEmbeddingCreator(WordEmbeddingCreator):
             log.info(k)
             return None
     
+    def word_movers_distance(self, str_list_1, str_list_2):
+        return self._model.wmdistance(str_list_1, str_list_2)
+
+
+class FastTextAlignedEmbeddingCreator(WordEmbeddingCreator):
+    """
+    Use this for monolingual fasttext models that uses .bin models
+    """
+
+    def __init__(self, model_path):
+        self._model = gensim.models.KeyedVectors.load_word2vec_format(model_path)
+        self._model.init_sims(replace=True)  # normalizes vectors to length 1
+
+    def create_word_embedding(self, word):
+        try:
+            return self._model[word]
+        except KeyError as k:
+            log.info(k)
+            return None
+
     def word_movers_distance(self, str_list_1, str_list_2):
         return self._model.wmdistance(str_list_1, str_list_2)
 

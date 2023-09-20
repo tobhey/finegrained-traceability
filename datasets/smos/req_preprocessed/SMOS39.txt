@@ -1,0 +1,3 @@
+Visualizza Dettagli Nota
+Visualizza i dettagli di una nota
+Mostra un form con i dettagli della nota alunno descrizione docente data

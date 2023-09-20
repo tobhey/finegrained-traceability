@@ -1,0 +1,6 @@
+Registrazione Cittadino
+
+Il cittadino accede al form di registrazione
+Il sistema mostra il form per la registrazione
+Il cittadino inserisce i suoi dati e preme il tasto di conferma
+Il sistema verifica la correttezza dei dati li salva e invia una e-mail di registrazione avvenuta al cittadino

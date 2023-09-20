@@ -1,0 +1,9 @@
+Rilascio Parcheggio Disabili
+
+L ' utente seleziona la funzionalit Assistenza Sociale selezionando Rilascio Parcheggio Disabili
+Il sistema mostra il form per l ' inserimento dei dati del richiedente e del destinatario se diversi
+L ' utente inserisce i dati anagrafici del richiedente e quelli del destinatario se diverso se necessario specificando il rapporto con tale persona
+Inoltre viene specificato il tipo di documentazione allegata al comando dei vigili urbani certificato medico-legale rilasciato dalla commissione ASL
+Quindi sottomette il form
+Il sistema preleva i dati anagrafici del cittadino destinatario
+La richiesta viene inviata al comando dei vigili urbani ed all ' utente viene notificato l ' invio

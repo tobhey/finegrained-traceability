@@ -1,0 +1,6 @@
+Museums information
+
+The citizen requests the view of the list of museums
+The system allows you to view the list of museums
+The citizen chooses the museum
+The system returns the information regarding the chosen museum by displaying data such as location the dates and opening times the link to the museum site

@@ -1,0 +1,8 @@
+Modifica Informazione
+
+L ' impiegato richiede la modifica di una news
+Il sistema visualizza l ' elenco delle news esistenti
+L ' impiegato sceglie una news
+Il sistema visualizza un form per la modifica della news
+L ' impiegato inserisce i dati relativi alla news in un form
+Il sistema riceve il form e aggiorna i dati della news nel sistema

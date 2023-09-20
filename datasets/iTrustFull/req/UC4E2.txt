@@ -1,0 +1,1 @@
+The system shall display a default placeholder image for patients who do not have a photograph on file.

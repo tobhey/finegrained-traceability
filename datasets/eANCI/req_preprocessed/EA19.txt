@@ -1,0 +1,6 @@
+Recupera Password Cittadino
+
+Il cittadino ha dimenticato la password e preme sul bottone Recupera Password
+Il sistema mostra la schermata per il recupero della password che richiede l ' inserimento del nome utente e del codice della carta d ' identit
+Il cittadino inserisce i suoi dati e preme il tasto di conferma
+Il sistema verifica la correttezza dei dati e invia la password all ' indirizzo email del cittadino

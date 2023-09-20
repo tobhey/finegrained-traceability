@@ -1,0 +1,15 @@
+REQUIREMENT 22:
+     
+TLS client authentication is the RECOMMENDED method for identifying EST clients. HTTP-based client authentication (Section 3.2.3) MAY be used.
+
+The EST server authenticates the EST client as defined for the cipher suite negotiated. The following text provides details assuming a certificate-based cipher suite such as the TLS 1.1 [RFC4346] mandatory cipher suite (TLS_RSA_WITH_3DES_EDE_CBC_SHA). The EST server MUST support certificate-based client authentication.
+
+Generally, the client will use an existing certificate for renew or rekey operations. If the certificate to be renewed or rekeyed is appropriate for the negotiated cipher suite, then the client MUST use it for the TLS handshake, otherwise the client SHOULD use an alternate certificate that is suitable for the cipher suite and contains the same subject identity information. When requesting an enroll operation, the client MAY use a client certificate issued by a third party to authenticate itself.
+
+Certificate validation MUST be performed as per [RFC5280]. The EST client certificate MUST conform to the [RFC5280] certificate profile.
+
+The server validates the TLS client certificate using the EST server Explicit and, if enabled, Implicit TA database(s). The server MUST maintain a distinction between the use of Explicit and Implicit TA databases during authentication in order to support proper authorization.
+
+The EST server MUST perform authorization checks as specified in Section 3.7.
+
+If a client does not support TLS client authentication, then it MUST support HTTP-based client authentication (Section 3.2.3) or certificate-less TLS authentication (Section 3.3.3).

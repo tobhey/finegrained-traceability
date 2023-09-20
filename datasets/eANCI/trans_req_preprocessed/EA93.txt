@@ -1,0 +1,6 @@
+Update environmental analysis
+
+The municipal clerk after being authenticated in the system updates the form that simply provides for the copy of the analysis report carried out on the environment from the civil protection
+The system responds by making a form available to the employee in which to report the information drawn up by chemical experts
+The employee completes the field of the form presented by the system and submits
+The system updates the form and allows the visualization of the latter to the citizen

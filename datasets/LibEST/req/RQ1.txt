@@ -1,0 +1,23 @@
+REQUIREMENT 1
+     
+This document profiles certificate enrollment for clients using Certificate Management over CMS (CMC) [RFC5272] messages over a secure transport. Enrollment over Secure Transport (EST) describes the use of Transport Layer Security (TLS) 1.1 [RFC4346], 1.2 [RFC5246], or any future version) and Hypertext Transfer Protocol (HTTP) [RFC2616] to provide an authenticated and authorized channel for Simple Public Key Infrastructure (PKI) Requests and Responses [RFC5272]. Architecturally, the EST service is located between a Certification Authority (CA) and a client. It performs several functions traditionally allocated to the Registration Authority (RA) role in a PKI. The nature of communication between an EST server and a CA is not described in this document. EST adopts the Certificate Management Protocol (CMP) [RFC4210] model for CA certificate rollover, but it does not use the CMP message syntax or protocol. EST servers are extensible in that new functions may be defined to provide additional capabilities not specified in CMC [RFC5272], and this document defines two such extensions: one for requesting Certificate Signing Request attributes and another for requesting server-generated keys. EST specifies how to transfer messages securely via HTTP over TLS (HTTPS) [RFC2818], where the HTTP headers and media types are used in conjunction with TLS. HTTPS operates over TCP; this document does not specify EST over HTTP/Datagram Transport Layer Security/User Datagram Protocol (HTTP/DTLS/UDP). With a suitable specification for combining HTTP, DTLS, and UDP, there are no EST requirements that would prevent it from working over such a stack. Figure 1 shows how the layers build upon each other.
+
+EST Layering: Protocols:
+   +--------------------------------------------+
+   |                                            |
+   | EST request/response messages              |
+   |                                            |
+   +--------------------------------------------+
+   |                                            |
+   | HTTP for message transfer and signaling    |
+   |                                            |
+   +--------------------------------------------+
+   |                                            |
+   | TLS for transport security                 |
+   |                                            |
+   +--------------------------------------------+
+   |                                            |
+   | TCP for transport                          |
+   |                                            |
+   +--------------------------------------------+
+Figure 1

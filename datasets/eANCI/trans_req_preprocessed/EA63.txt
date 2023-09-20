@@ -1,0 +1,7 @@
+YOUNG CONSULTORY INFORMATION
+
+The citizen requires the view of the List of Consultors
+The system allows you to view the list of Consultors
+The citizen chooses the counselor
+The system returns the information regarding the selected Consultorio by visualizing data such as location the dates and opening times
+The possible list of the booked talks by invoking the case of use Reservation view Consu Ltio

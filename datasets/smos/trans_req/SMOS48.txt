@@ -1,0 +1,14 @@
+Name: DeleteOfOnePage
+Actors: Administrator
+Description: The administrator eliminates a report card from the system
+Preconditions:
+• • •
+The user has been logged in to the system as an administrator, the user took the case of use "Displaying a report card" the user click on the "Delete" button
+Events sequence
+User
+2. The user accepts the cancellation by pressing the confirmation key
+System
+1. The system displays a form to confirm the cancellation
+3. Displays a message of correct deletion and displays the form with the list of classes
+Postconditions:
+• A report relative to a student is canceled • Connection to the interrupted SMOS server

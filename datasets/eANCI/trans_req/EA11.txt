@@ -1,0 +1,14 @@
+Use case name
+EditCitizen
+Participating actors
+Started by employee
+Flow of events
+1. The clerk presses the edit citizen button.
+2. The system displays a form for editing the citizen.
+3. The employee enters the data. 4. The system saves the changes made.
+Entry condition
+The employee has authenticated into the system. This use case includes SearchCitizen and occurs when the clerk wants to edit a citizen
+Exit condition.
+The system modifies the citizen, OR ➢ In the case where the service is not available the use case is invoked
+of use ServiceNotAvailable.
+Quality Requirements Not Provided.

@@ -1,0 +1,30 @@
+Use case name
+ChangeOfResidence
+Participating actors
+Started by citizen, continued employee
+Flow of events
+1.
+3.
+5. 6.
+7.
+The Citizen presses on the Change of Residence button.
+2. The system shows the citizen the form to fill out. The citizen enters the data of his/her new residence.
+The system notifies the citizen that the request has been successfully submitted and is stored in the system 4. The clerk logs into the system and views the request received.
+The clerk verifies the data, fills in the document with the rest of the data to be entered, and confirms the operation. The system saves the form and updates the data.
+Entry condition
+The Citizen has authenticated in the system.
+Exit condition
+➢ The System creates the document to be delivered to the appropriate office,OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is invoked.
+Quality Requirements The string common name new residence can contain characters [ a..z A..Z ' àéèìòù . ] and the string must be non-empty.
+The address string may contain characters [ a..z A..Z ' àéèìòù , . ] and the string must be nonempty.
+The house number string may contain characters [ 0..9 A..Z ]and the string must be less than 5 characters long.
+The phone prefix string can contain only numeric characters and must be between 2 and 5 digits long.
+The phone number string can contain only numeric characters and must be between 5 and 8 digits long.
+The family member last name string can include characters [ a..z A..Z ' àéèìòù ] and have a maximum length of 30 carat and non-empty.
+The family comp name string can include characters [ a..z A..Z ' àéèìòù ] and have a maximum length of 30 carat and non-empty.
+The familiar comp birthplace string may contain characters [ a..z A..Z '
+àéèìòù . ] and must be at least
+one character. The string birth date comp familiar
+must be an existing date and must have a dd/mm/yyyy format of numeric type (dd from 1 to 31, mm from 1 to 12, yyyy from 1900 to present) .
+The string card code applicant outside the municipality must be XXnnnnnnn (X= letter n= number) and must have a length of 9 characters.

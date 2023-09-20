@@ -1,0 +1,3 @@
+Visualizza Dettagli Giustifica
+Visualizza i dettagli di una giustifica
+Mostra un form con i dettagli della giustifica e la possibilit di modificare o eliminare la giustifica

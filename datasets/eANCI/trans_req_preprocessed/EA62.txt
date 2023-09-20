@@ -1,0 +1,6 @@
+Elimination reservation interview
+
+The citizen requires the cancellation of the reservation of the interview in the Consultorio
+The system displays a form for confirmation of the request
+The citizen confirms the deletion of the reservation
+IlSistemaAliminaLoPretation

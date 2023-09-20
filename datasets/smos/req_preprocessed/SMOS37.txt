@@ -1,0 +1,6 @@
+Inserisci Nota
+Inserimento Note Disciplinari
+Compila il form
+Clicca su Salva
+Mostra un form con i campi della nota studente data docente descrizione
+Salva la nota e invia una notifica via e-mail al genitore

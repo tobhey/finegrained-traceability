@@ -1,0 +1,13 @@
+Name: Delete teaching
+Actors: Administrator
+Description: Eliminates a teaching from the archive
+Preconditions:
+• • • •
+The user is logged in to the system as an administrator the user has taken the case of use "displaydeddailsignment" The user displays the detailed information of a teaching the user click on the "Delete" button
+Events sequence
+User
+System
+1. Eliminate teaching from the archive
+2. Displays the list of updated teachings
+Postconditions:
+• The user has eliminated a teaching • Connection to the SMOS server interrupted

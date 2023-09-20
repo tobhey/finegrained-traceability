@@ -1,0 +1,4 @@
+Assistance area floor
+
+The user from Remote selects the social assistance function by selecting Assistance Services Zone Plan
+The system shows the area plan concerning welfare services

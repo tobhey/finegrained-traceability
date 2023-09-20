@@ -1,0 +1,13 @@
+Name: ViewUserDetails
+Actors: Administrator
+Description: View a user details
+Preconditions:
+•
+•
+The user is logged in as administrator The user took the case of use "ViewingLanciutenti" and the system is viewing the list of users in the system the user click on the "Details" button
+Events sequence
+User
+System
+1. Displays the detailed user information and in particular: Name, Surname, E-mail, Cell, Login, Password.
+Postconditions:
+• The system displays detailed information about a user • Connection to the SMOS server interrupted

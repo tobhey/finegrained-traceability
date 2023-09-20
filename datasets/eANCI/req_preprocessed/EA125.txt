@@ -1,0 +1,10 @@
+Pagamento Multe
+
+Il Cittadino clicca sul pulsante per accedere alla funzionalit di gestione online delle multe
+Il Sistema redirige il cittadino verso la sezione desiderata
+Il Cittadino clicca sul pulsante per il pagamento online delle multe
+Il Sistema effettua una ricerca delle multe a carico del Cittadino presenti nel database per le quali non ancora pervenuto il pagamento
+Il Cittadino seleziona la multa per la quale desidera effettuare il pagamento
+Il Sistema mostra il form della multa e il relativo importo da pagare
+Il Cittadino verifica la correttezza delle informazioni e avvia la transazione selezionando il metodo di pagamento preferito
+Il Sistema effettua la transazione e mostra un messaggio di avvenuto pagamento

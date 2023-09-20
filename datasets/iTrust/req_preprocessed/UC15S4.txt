@@ -1,0 +1,3 @@
+The administrator will maintain addupdate a listing of allowable physical services including laboratory procedures that an HCP can use
+The administrator will store information of a LOINC code Logical Observation Identifiers Names and Codes LOINC is a database and universal standard for identifying medical laboratory observations
+LOINC co Medical Informatics E according to Data Format

@@ -1,0 +1,10 @@
+Payment fines
+
+The citizen clicks on the button to access the online fines management functionality
+The system redirects the citizen towards the desired section
+The citizen clicks on the button for online payment of fines
+The system makes a search for fines to the citizen present in the database for which the payment has not yet been received
+The citizen selects the fine for which he wants to pay
+The system shows the fine form and the relative amount to be paid
+The citizen checks the correctness of the information and starts the transaction by selecting the preferred payment method
+The system makes the transaction and show a message of payment

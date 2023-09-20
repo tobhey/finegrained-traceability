@@ -1,0 +1,11 @@
+REQUIREMENT 21: TLS-BASED SERVER AUTHENTICATION
+     
+TLS server authentication with certificates MUST be supported.
+
+The EST client authenticates the EST server as defined for the cipher suite negotiated. The following text provides details assuming a certificate-based cipher suite, such as the TLS 1.1 [RFC4346] mandatory cipher suite (TLS_RSA_WITH_3DES_EDE_CBC_SHA).
+
+Certificate validation MUST be performed as per [RFC5280]. The EST server certificate MUST conform to the [RFC5280] certificate profile.
+
+The client validates the TLS server certificate using the EST client Explicit and, if enabled, Implicit TA database(s). The client MUST maintain a distinction between the use of Explicit and Implicit TA databases during authentication in order to support proper authorization. The EST client MUST perform authorization checks as specified in Section 3.6.
+
+If certificate validation fails, the client MAY follow the procedure outlined in Section 4.1.1 for Bootstrap Distribution of CA certificates.

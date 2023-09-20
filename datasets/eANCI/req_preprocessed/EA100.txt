@@ -1,0 +1,5 @@
+Come Diventare Volontari
+
+Il Cittadino accede a questa schermata descrittiva
+Il sistema risponde all ' esigenza permettendogli di conoscere come fare per diventare un volontario della Protezione Civile e dei requisiti che il Cittadino dovr necessariamente possedere
+Il Cittadino prende atto di ci che scritto e desidera perci accedere alla modulistica associata e pertanto verr chiamato il caso d ' uso Download Modulo

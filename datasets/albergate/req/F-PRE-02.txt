@@ -1,0 +1,35 @@
+Requisito:
+Prenotazione di camere da parte di un cliente.
+Descrizione:
+Quando un cliente effettua una prenotazione è necessario poter evidenziare 
+che la camera che egli desidera e per il periodo da lui scelto venga bloccata. 
+Nel caso in cui il cliente sia un habitué o un amico deve essere possibile 
+assegnargli direttamente la camera e quindi accertarsi che essa è stata 
+assegnata.
+Input richiesto:
+È necessario conoscere le stanze disponibili che possono soddisfare le richieste 
+del cliente (disponibilità nel periodo da lui richiesto, possibilità di avere il 
+letto aggiuntivo, vista mare/valle). Inoltre  è necessario conoscere i dati forniti 
+dal cliente stesso e che permettono la sua prenotazione (vedi dati 
+prenotazione).
+Output desiderato:
+Registrazione della prenotazione e bloccaggio (o assegnamento) della stanza 
+per il periodo accordato.
+Criterio di accettazione:
+Dopo che una prenotazione viene accettata la stanza dovrà risultare bloccata o 
+assegnata e perciò sottratta dalle disponibilità dell'albergo per il periodo 
+relativo alla prenotazione.
+Aspettative collegate:
+L'albergatore si aspetta in questo modo di avere un quadro generale  della 
+situazione del suo albergo, di poter visualizzare in modo semplice la 
+situazione delle varie stanze ovvero di vedere se una stanza è bloccata, 
+assegnata, commissionata o disponibile, di avere un minimo di informazioni 
+per poter provvedere ad accogliere il cliente in modo adeguato e poter allo 
+stesso tempo organizzare il suo lavoro. Es.: se il cliente al momento della 
+prenotazione non ha fatto richiesta del letto aggiuntivo, ma in realtà lo 
+desidera  e al momento del suo arrivo le stanze che permettono di supportare 
+il letto aggiuntivo sono occupate non si potrà più soddisfare la richiesta del 
+cliente.
+Requisiti collegati:
+F-PRE-01, F-PRE-03, F-PRE-04, F-PRE-05, F-PRE-06.
+

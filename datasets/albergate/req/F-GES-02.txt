@@ -1,0 +1,22 @@
+Requisito:
+Gestione dei prezzi dei servizi e spese extra.
+Descrizione:
+Il sistema metterà a disposizione dell'utente le funzionalità necessarie alla 
+gestione del listino prezzi dei servizi extra. Dovrà quindi essere possibile 
+visualizzare il listino, apportare delle modifiche ai prezzi e inserire nuove 
+voci. Verrà anche prevista un campo "jolly" per gestire eventuali voci rare per 
+le quali non è conveniente prevedere una gestione specifica.
+Input richiesto:
+Dati del bene o servizio che si intende modificare.
+Output desiderato:
+Conferma della modifica effettuata e listino completo.
+Criterio di accettazione:
+Si deve poter inserire il codice del servizio di cui si intende modificare il 
+prezzo. Il sistema ritornerà errore nel caso in cui nessuna corrispondenza sia 
+verificata, altrimenti restituirà i dati relativi al servizio e la possibilità di 
+modificarne il prezzo.
+Aspettative collegate:
+Supervisione e gestione dei prezzi dei servizi offerti.
+Requisiti collegati:
+F-SOG-02.
+

@@ -1,0 +1,6 @@
+Modifica Cittadino
+
+L ' impiegato preme il pulsante di modifica cittadino
+Il sistema mostra un form per la modifica del cittadino
+L ' impiegato inserisce i dati
+Il sistema salva le modifiche apportate

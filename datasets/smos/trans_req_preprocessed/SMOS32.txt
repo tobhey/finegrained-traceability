@@ -1,0 +1,5 @@
+Edit delay
+Modification of a delay by the administrator
+The user edit the delay and click Save
+Update the screen based on the date selected
+The system sends the data modified to the server

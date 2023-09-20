@@ -1,0 +1,4 @@
+Delete user
+Eliminate a user from the system
+Delete the user from the archive
+View Updated User Lelenc

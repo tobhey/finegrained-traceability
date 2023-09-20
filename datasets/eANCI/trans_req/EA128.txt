@@ -1,0 +1,19 @@
+Use case name
+RequestIPPA
+Participating Actors
+Initiated by Citizen, communicates with Employee.
+Flow of events
+1. The Citizen clicks on the button to access the municipality's service request area.
+2. The System redirects the Citizen to the required section.
+3. The Citizen selects the section dedicated to the Advertising and Public Display Tax request.
+4. The System displays the relevant request form,automatically obtaining the necessary data.
+5. The Citizen enters additional data necessary for correct completion of the form,confirms the correctness of the information and sends the request.
+6. The System notifies the employee of the request.
+Entry condition
+The Citizen has authenticated in the system.
+Exit condition
+➢The clerk receives the file and chooses whether to accept it or not,invoking the use case respectively
+RequestIPPAAccepted RequestIPPARified, OR In case there are errors in the data
+o
+entered by the user, the system calls the use case DataErrred.
+Quality requirements Not expected.

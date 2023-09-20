@@ -1,0 +1,8 @@
+Inserisci Assenze
+Digitalizzazione del Registro raccolta dati dal personale ATA classe per classe
+L ' utente seleziona gli studenti assenti
+Clicca su salva
+Mostra all ' utente una schermata con gli alunni e dei radio button per selezionare se un alunno assente o presente
+Di default l ' alunno presente
+Il sistema invia i dati al server
+Il server per ogni assenza invia una e- mail di notifica al genitore dell ' alunno

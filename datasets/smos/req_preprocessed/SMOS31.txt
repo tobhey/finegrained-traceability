@@ -1,0 +1,6 @@
+Modifica Assenza
+Modifica delle assenze da parte dell ' Amministratore La modifica da intendersi come inserimentocancellazione dellassenza
+Modifica l ' assenza Inserisce o Elimina e clicca Salva
+Aggiorna la schermata in base alla data selezionata
+Invia i dati modificati al server
+Il sistema invia una e-mail di rettifica al genitore dell ' alunno

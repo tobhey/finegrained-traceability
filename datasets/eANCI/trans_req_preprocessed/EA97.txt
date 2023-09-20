@@ -1,0 +1,6 @@
+Bands and competitions
+
+The citizen accesses the home screen to view the possibility of viewing the associations that combine civil protection
+The system responds to the need allowing the citizen to view all the associations that are headed to civil protection and taking personnel with a small image of the association with the possibility to receive the download of the ban provided by the association in question
+The citizen acknowledges us who provides the card and chooses from which among the associations made available to receive news for a possible recruitment or participation in the competition about the modalities of the same
+The system responds to this need, allowing you to view the corresponding competition notice

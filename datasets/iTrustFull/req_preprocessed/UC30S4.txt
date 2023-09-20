@@ -1,0 +1,7 @@
+An LHCP wishes to reply to a message
+The LHCP views his or her message inbox
+The LHCP opens the message to which he or she wishes to reply S and then clicks the reply link above the message text
+The LHCP enters the text of the response message up to characters he or she wishes to send then clicks the send button
+A row for showing the message subject now preceded by RE the name of the recipient and the timestamp are then visible in the LHCP 's message outbox
+A bolded row for showing the message subject now preceded by RE the name of sender and timestamp are then visible in the patientrepresentative 's message inbox
+A fake email is sent to the patientrepresentative alerting the patientrepresentative that a new message reply has arrived

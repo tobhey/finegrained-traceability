@@ -1,0 +1,8 @@
+Request definition condone
+
+The citizen accesses the Definition request area condone through the appropriate link
+The system displays the form to enter the data needed to
+Request the citizen inserts the requested data
+The system verifies correctness and completeness of the data then shows a summary screen or activates the case of use incorrect data The citizen confirms the operation
+The system displays a notification message of the request
+The system sends a notification message of the request to the competent employee

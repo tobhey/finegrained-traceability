@@ -1,0 +1,6 @@
+Autenticazione Cittadino
+
+Il cittadino accede alla sessione di autenticazione
+Il sistema mostra il form di login per l ' immissione dei dati nome utente e password
+Il cittadino inserisce i dati e sottomette la richiesta di autenticazione
+Il sistema verifica l ' esattezza dei dati e consente l ' accesso al cittadino

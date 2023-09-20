@@ -1,0 +1,9 @@
+Assistenza Alloggiativi
+
+L ' utente seleziona la funzionalit Assistenza Sociale selezionando Richiesta assistenza alloggiativi sfratti
+Il sistema mostra il form per l ' inserimento dei dati del richiedente e del destinatario se diversi
+L ' utente inserisce i propri dati e quelli del destinatario se il destinatario una terza persona se necessario specificando il rapporto con tale persona inoltre specifica il nuovo domicilio
+L ' utente seleziona la documentazione allegata verbale di sfratto esecutivo il nuovo contratto di locazione registrato e il modello ISEE
+Quindi sottomette il form
+Il sistema preleva i dati anagrafici del cittadino destinatario e i dati riguardanti il nucleo familiare del Cittadino destinatario
+La richiesta viene inviata all ' ufficio dei Servizi Sociali ed all ' utente viene notificato l ' invio

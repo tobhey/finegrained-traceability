@@ -1,0 +1,4 @@
+View Personal Statistic
+Viewing statistics for Point Of Restaurants
+Select the feature to display personal statistics
+Displays a form that shows data for the statistics associated refreshment point

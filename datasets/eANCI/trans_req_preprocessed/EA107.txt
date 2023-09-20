@@ -1,0 +1,4 @@
+Volcanic monitoring
+
+The citizen accesses this screen as he wants to know more about the actual functioning of how civil protection carries out the monitoring of volcanoes on the municipal and national territory with a detailed description of the computer technologies adopted
+The system responds to the request with the display of an information sheet in which everything is described that civil protection makes to control the volcanic activity

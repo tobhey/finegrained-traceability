@@ -1,0 +1,30 @@
+Requisito:
+Gestione delle stanze commissionate ad agenzia.
+Descrizione:
+Alcune delle stanze dell’albergo per determinati periodi potrebbero essere date 
+in gestione ad una agenzia viaggi, in questo caso tali stanze risulteranno per 
+quei periodi commissionate, quindi non  disponibili. Quando lagenzia invia 
+delle prenotazioni deve essere possibile passare le stanze da commissionate ad 
+assegnate, ovviamente solo per il periodo della prenotazione. Le stanze 
+commissionate diventeranno disponibili, nel caso in cui nessuna prenotazione 
+giunga dall'agenzia entro la data concordata al momento della stipulazione del 
+contratto di commissionamento. 
+Input richiesto:
+Informazioni sugli accordi presi con le agenzie ovvero numero di stanza 
+commissionata, periodo di commissionamento (data di inizio e di fine), data 
+dopo la quale la stanza, se non occupata, può essere considerata disponibile.
+Output desiderato:
+Situazione aggiornata delle stanze.
+Criterio di accettazione:
+L’albergatore dovrà poter inserire informazioni relative agli accordi con 
+l’agenzia (data di inizio e fine commissione delle stanze) e verificare il loro 
+effettivo commissionamento. Inoltre si deve poter verificare che, se dopo la 
+data concordata con l’agenzia le stanze non sono ancora state occupate, esse  
+risultino allora disponibili.
+Aspettative collegate:
+Si desidera poter dare in gestione alcune stanze ad una agenzia e poter tenere 
+sotto controllo la situazione in modo tale che se l’agenzia non riesce ad 
+occuparle, entro la data concordata possano essere considerate disponibili.
+Requisiti collegati:
+F-PRE-01, F-PRE-02.
+

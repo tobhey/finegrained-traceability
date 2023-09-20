@@ -1,0 +1,6 @@
+Family status request
+
+The citizen presses the family status button
+The system shows the citizen the family status
+The citizen chooses whether to print or send the family status to your e-mail
+The system performs the choice made by the citizen

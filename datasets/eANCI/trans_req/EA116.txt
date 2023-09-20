@@ -1,0 +1,23 @@
+Use case name
+Volunteerism
+Participating actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses the introductory screen.
+2. The system responds by displaying the descriptive tab about the general information about this aspect of Civil Defense, and the possibility of knowing the prerequisites for participation.
+3. The Citizen becomes aware of what is written, and therefore selects the link where the use case ComeBecomeVolunteer is called.
+4. The system responds by allowing him to view this description.
+Entry Condition.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen acknowledges the information received and if he/she agrees to
+call the case
+HowToBecomeVolunteer ,
+redirected to that card, OR The Citizen acknowledges
+of use comes
+of the information provided to him, but exits the display of the
+current screen, OR The Citizen fails to view the
+tab describing the Volunteer use case, and therefore extends the ServiceNotAvailable use case that handles Technical Failure cases.
+Quality Requirements System response times are in the hundredths of a second range if the Citizen is able to view the page correctly.
+System response times to the Citizen's request, increase in the order of seconds, varying from a minimum of 3 to a maximum of 6.

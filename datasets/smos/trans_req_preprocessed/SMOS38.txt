@@ -1,0 +1,3 @@
+View Details justice
+View the details of a justice
+Show a form with the details of the justification and the possibility of modifying or eliminating the justification

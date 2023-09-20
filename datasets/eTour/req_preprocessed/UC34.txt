@@ -1,0 +1,6 @@
+SEARCH
+Research and cultural heritage for all
+Activate the search functionality
+Displays the corresponding form
+Fill out the form and submit
+Gets the position of the Guest citing the case of use location and process research

@@ -1,0 +1,3 @@
+The patient types a last name or partial last name andor providing the specialty
+The patient may optionally enter a zip code match on first three numbers of zip code in addition to the name andor specialty
+The LHCP 's name specialty and address are provided

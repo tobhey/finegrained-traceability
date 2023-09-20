@@ -1,0 +1,13 @@
+Name: ViewJustificationDetails
+Actors: Administrator
+Description: View the details of a justice
+Preconditions:
+• • •
+The user must be logged in to the system as an administrator, the user has held the case of use "ViewingLancogiustifies" click on one of the green absences
+Events sequence
+User
+System
+1. Show a form with the details of the justification and the possibility of modifying or eliminating the justification.
+Postconditions:
+• • •
+The system is viewing the details of a justice. The administrator interrupts the connection to the SMOS server interrupted

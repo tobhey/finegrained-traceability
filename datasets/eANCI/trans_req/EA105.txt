@@ -1,0 +1,16 @@
+Use case name
+Fires
+Participating Actors
+Started by Citizen
+Flow of events
+1.
+The Citizen can access this section if he/she has chosen to view the Risks use case, and decides to learn more about the possible causes that trigger fires.
+2. The system responds to the Citizen's need with a detailed description of how to prevent fires, and who deals with them.
+Condition of Entry.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information provided to him, OR
+The Citizen is unable to view the descriptive sheet of the Fire feature , while the use case ServiceNotAvailable, which handles technical failure cases, will be extended.
+Quality Requirements The response time is in the hundredths of a second range if the page is correctly displayed by the service requester.
+Should the Citizen fail to view the descriptive tab for this feature, the system would take a few seconds to invoke the use case that handles the exception.

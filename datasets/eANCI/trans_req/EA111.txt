@@ -1,0 +1,17 @@
+Use case name
+Risks
+Participating Actors
+Initiated by Citizen
+Flow of events
+1. The Citizen accesses the screen about the meanings of the hazards that Civil Defense deals with, with specific images for each hazard category, and videos of how it operates during rescue operations.
+2. The system responds to the Citizen's request, with a screen where there are causes, meanings, about landslides, floods, and coastal erosion phenomena, and videos of interventions.
+3. The Citizen, after viewing the descriptive sheet may want to know the causes of other hazards that the body deals with, and therefore decides to view them by activating, the use cases Fire, Volcanic, Seismic, SanitaryAntropic,Hydrological monitoring.
+4. The system also makes available additional fact sheets on other hazards that Civil Defense deals with.
+Condition of Entry.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information sheet and decides to recall the sheets about other hazards that Civil Defense deals with, OR
+The Citizen has no opportunity to view the initial screen, so the use case ServiceNotAvailable, which handles Technical Failure cases, will be extended.
+Quality Requirements The Citizen correctly displays the initial risk section, therefore, the system takes time in the hundredths of a second range to satisfy the requirement, OR
+If, the display of the section does not occur, the system takes seconds in the range of 3-7.

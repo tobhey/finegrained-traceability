@@ -1,0 +1,4 @@
+
+Nom Effettua Monitoraggio Studenti Consente di visualizzare gli studenti con un numero di note e assenze superiore ad una soglia indicata dall ' utente
+Cerca gli studenti con un numero di assenze e note superiori alla soglia stabilita
+Visualizza le informazioni recuperate

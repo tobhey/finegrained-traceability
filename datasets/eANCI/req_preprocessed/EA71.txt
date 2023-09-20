@@ -1,0 +1,4 @@
+Visualizzazione Prenotazione Consultorio
+
+Il Cittadino richiede la visualizzazione della prenotazione effettuata in un consultorio
+Il sistema restituisce le informazioni riguardanti la prenotazione prescelta visualizzandone dati come Data e ora Consultorio

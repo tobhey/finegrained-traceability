@@ -1,0 +1,15 @@
+Use case name
+CivilProtection
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen accesses the descriptive sheet about general information about the municipal body in question.
+2. The system responds to the information functionality, allowing the display of a description about the active roles played by the Civil Defense.
+Entry condition
+The Citizen is authenticated in the system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The system makes the description sheet available to the Citizen and he/she acknowledges it, OR
+In the event that the system fails to have the card displayed, the use case ServiceNotAvailable is extended, which handles Technical Failure cases.
+Quality Requirements The response time to the Citizen's need is in the hundredths of a second range if the Citizen correctly displays the screen.
+Response times vary in the order of seconds, from a minimum of 3 to a maximum of 7, if the Citizen does not correctly view the descriptive screen.

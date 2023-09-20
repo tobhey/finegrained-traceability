@@ -1,0 +1,15 @@
+Name: EditOfOnePage
+Actors: Administrator
+Description: Use case to change the report card of a student
+Preconditions:
+• • •
+The user has been logged in to the system as an administrator, the user has carried out the case of use "DisplayedUnapagella" the user click on the edit button
+Events sequence
+User
+2. Enter the new data and click the confirmation key
+System
+1. Displays the form with the fields to be modified including the votes of the different subjects
+3. The system displays a confirmation message and displays the form with the list of students
+Postconditions:
+• • •
+A report relative to a student modified the user interrupts the connection to the SMOS server interrupted

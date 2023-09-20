@@ -1,0 +1,14 @@
+Use Case Name
+ShowPracticeAttendedEmployee
+Participating Actors
+Started by Employee
+Flow of events
+1. The system shows the information regarding the selected practice with its options to accept or reject practice.
+2. The Clerk can Accept or Reject the practice if it is already complete with all documentation, necessary signatures, and after verification. He/she can also print the practice data if necessary.
+Entry Condition
+This use case includes the ViewPracticesAttendedEmployee use case.
+Exit condition
+➢ The Clerk accepts the practice, the use case "PracticeAccepted" is invoked, OR
+➢ The Clerk Rejects the practice, the use case "PracticeRejected" is invoked, OR
+The system has encountered an unanticipated error so it calls the use case ServiceNotAvailable.
+Unanticipated Quality Requirements.

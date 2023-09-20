@@ -1,0 +1,17 @@
+Name: ViewOnePage
+Actors: Administrator
+Description: Display of a report card
+Preconditions:
+• The user has been logged in to the system as an administrator • The user click on the "Online reports" button
+Events sequence
+User
+1. Select the academic year
+3. Choose the pupil class to view the report card
+5. Select the student and four months to view the report by clicking on the relevant button.
+System
+2. Displays the list of classes in the system with a "report cards" button next to each class
+4. Displays the list of class students chosen by the user
+6. Displays the chosen student report referred to the selected four months.
+Postconditions:
+• • •
+The system displays a student's report The user stops the connection to the SMOS server interrupted

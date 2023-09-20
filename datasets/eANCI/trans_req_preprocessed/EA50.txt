@@ -1,0 +1,9 @@
+Minor Mothers Assistance
+
+The user selects the social assistance function by selecting assistance request to mothers and minors in difficulty
+The system shows the form for the insertion of the applicant's data and the recipient
+The user enters his own data and those of the recipient of the request himself another person if necessary specifying the relationship with that person
+Also specifies a possible date of appointment with social workers
+Then submit the form
+The system picks up the personal data of the citizen recipient and the data concerning the family unit of the citizen recipient
+The request is sent to the Social Services Office and the sending is notified to the user

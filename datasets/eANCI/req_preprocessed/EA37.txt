@@ -1,0 +1,5 @@
+Rinnovo Carda D ' identita
+
+Il Cittadino preme sul bottone Rinnovo carta d ' identit
+Il sistema invia direttamente una richiesta di rinnovo da parte del cittadino all ' impiegato competente
+Il cittadino si reca allo sportello per rinnovare la carta d ' identit

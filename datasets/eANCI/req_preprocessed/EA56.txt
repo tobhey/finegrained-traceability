@@ -1,0 +1,5 @@
+Qualifica Reduce Guerra
+
+L ' utente seleziona la funzionalit Richiesta riconoscimento qualifica di reduce o orfano di lavoro
+Il sistema mostra le informazioni e i relativi moduli da scaricare e da inviare alla Prefettura offrendo la possibilit di stampare il tutto
+Inoltre mostra un link diretto alla pagina per la richiesta dell ' Atto di nascita al certificato di residenza e al certificato di morte

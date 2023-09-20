@@ -1,0 +1,17 @@
+Use case name
+TendersECompetitions
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses the initial screen in order to view the possibility of viewing the associations that support the Civil Defense.
+2. The system responds to the need by allowing the Citizen to view all the associations that are part of the Civil Defense and that hire personnel, with a small image of the association, with next to it the possibility of receiving a download of the notice made available by the association in question.
+3. The Citizen takes note of what the form provides, and chooses from which, among the associations made available, to receive news for possible recruitment or participation in the competition, about the modalities of the same.
+4. The system responds to this by allowing him/her to view the corresponding competition notice.
+Condition of entry
+The Citizen has authenticated himself/herself in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen has completed downloading the notice that is uniquely associated with the association for which they have chosen to participate, OR
+The Citizen is unable to view the introductory screen with all associations and therefore, the ServiceNotAvailable use case that handles technical failures will be extended.
+Quality Requirements The Citizen is able to view the page correctly, meaning that the system response times are in the hundredths of a second range, OR
+The Citizen fails to display the introductory screen correctly, meaning that the system response time would be in the order of seconds, ranging from a minimum of 3 to a maximum of 7.

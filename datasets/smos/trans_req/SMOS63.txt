@@ -1,0 +1,12 @@
+Name: PerformStudentMonitoring
+Actors: Direction
+Description: View students with a number of notes and absences higher than a user-indicated threshold
+Preconditions:
+• The user is logged in to the system as direction • The user click on the "Student Monitoring" button
+Events sequence
+User
+System
+1. Look for students with a number of absences and notes superior to the established threshold.
+2. Displays the recovered information.
+Postconditions ::
+• The information collected in the data collected • Connect to the interrupted SMOS server were displayed.

@@ -1,0 +1,8 @@
+Richiesta Carta Di Identita
+
+Il Cittadino visualizza lo stato di famiglia e seleziona un componente della famiglia
+Il sistema mostra un form per inserimento dei dati personali Altezza segni particolari ecc
+Il cittadino inserisce i dati seleziona la modalit di pagamento e preme il tasto conferma
+Il sistema mostra la schermata con la documentazione da esibire allo sportello nei giorni e orari di apertura dell ' ufficio
+Il cittadino conferma l ' operazione
+Il sistema notifica all ' impiegato la richiesta

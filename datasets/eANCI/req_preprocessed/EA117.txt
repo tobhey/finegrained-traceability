@@ -1,0 +1,6 @@
+Vulcanico
+
+Il Cittadino accede a questa scheda dal caso d ' uso Rischi se intende conoscerne di pi circa la situazione vulcanica del proprio comune di appartenenza e la possibilit di visualizzare le modalit di monitoraggio della Protezione Civile
+Il sistema risponde con la corretta visualizzazione di una schermata descrittiva circa i diversi tipi di eruzione di un vulcano mettendo a disposizione la possibilit di visualizzare l ' attuale situazione vulcanica del comune
+Il Cittadino vuole conoscere le modalit di monitoraggio dei vulcani presenti e pertanto richiamer il caso d ' uso Monitoraggio Vulcanico
+Il sistema mette a disposizione del Cittadino un link al caso d ' uso Monitoraggio Vulcanico per poter conoscere la reale situazione

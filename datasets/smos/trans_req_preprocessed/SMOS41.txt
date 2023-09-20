@@ -1,0 +1,5 @@
+Change note
+Modification of a disciplinary note
+The user edit one or more fields of the form displayed student teaching description date
+The user click on Save
+The system saves the changes

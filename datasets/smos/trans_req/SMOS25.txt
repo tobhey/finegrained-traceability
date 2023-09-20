@@ -1,0 +1,15 @@
+Name: Edit Teaching
+Actors: Administrator
+Description: Edit details of a teaching
+Preconditions:
+• The user is logged in to the system as an administrator • The user has taken the case of use "displaydeddailsigning" • the user displays the detailed information of a teaching • the user edit one of the information contained in the form of
+Display of teaching details
+Events sequence
+User
+System
+1. Click on the "Save" button
+2. Make checks on the validity of the data entered and changes the teaching in the archive;In the event that the data entered are not valid, activates the case of "Errodati" use.
+3. View the list of updated teachings
+Postconditions:
+• • • •
+The user has changed a teaching is notified the data error Connection to the SMOS server interrupted the administrator interrupts the operation

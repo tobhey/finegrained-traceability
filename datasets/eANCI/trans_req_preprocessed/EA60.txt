@@ -1,0 +1,9 @@
+Youth card cancellation
+
+The citizen requires the cancellation of the young card
+The system displays a form for the insertion of the card number
+The citizen inserts the number
+The system verifies the existence of the card and belonging to the citizen
+The system displays a form for confirmation of the request
+The citizen confirms the elimination of the card
+The system eliminates young card from the repository

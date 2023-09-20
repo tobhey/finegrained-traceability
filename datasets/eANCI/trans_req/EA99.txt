@@ -1,0 +1,15 @@
+Use case name
+WhatTempoFa
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses this screen to view the weather situation for the municipality in which he or she resides.
+2. The system responds to the Citizen's need by allowing him to view, in addition to the weather situation, of his municipality,also that of the provinces of the region to which he belongs, with update date, minimum and maximum temperatures, and of course, weather conditions expressed with a small descriptive image.
+Condition of Entry
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information received, OR
+The Citizen is unable to view the municipal weather page, therefore, the use case ServiceNotAvailable which handles exceptional cases of technical failure is extended.
+Quality Requirements The system responds in a time varying on the order of hundredths of a second if the user correctly displays the screen related to weather conditions, OR
+On the other hand, the time varies in the order of seconds, from a minimum of 2 to a maximum of 6, when the user Citizen, fails to know the municipal weather conditions.

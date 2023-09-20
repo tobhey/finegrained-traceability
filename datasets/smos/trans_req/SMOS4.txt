@@ -1,0 +1,14 @@
+Name: ChangePassword
+Actors: registered user
+Description: Allows a user to change your password
+Preconditions:
+• The user is logged in to the system • Click on the "Change password" button
+Events sequence
+User
+2. Fill out the form and submits;
+System
+1. View the form with the fields: Old password, new password, confirms new password.
+3. Confirm the password change
+Postconditions:
+• • •
+The user password has been changed the user cancels the connection interruption to the smos server

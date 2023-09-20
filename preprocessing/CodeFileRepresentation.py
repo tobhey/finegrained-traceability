@@ -87,7 +87,7 @@ class IdentifierString(Preprocessable):
         return "".join(self.tokens)
     
     def __add__(self, other):
-        return IdentifierString(*(self.tokens + other.tokens))
+        return IdentifierString(self.file_name, *(self.tokens + other.tokens))
     
     def __bool__(self):
         self.__clean_up_strings()
@@ -120,7 +120,13 @@ class Parameter(Preprocessable):
         Returns the type and the name as plain list. No assumptions about order.
         """
         return self.param_type.tokens + self.param_name.tokens
-    
+
+    def get_param_name_words(self) -> [str]:
+        """
+        Returns the the name as plain list. No assumptions about order.
+        """
+        return self.param_name.tokens
+
     def __bool__(self):
         return bool(self.param_name) or bool(self.param_type)
         
@@ -212,17 +218,28 @@ class Method(Preprocessable):
         for param in self.parameters:
             param_words.extend(param.get_param_words())
         return param_words
-    
+
+    def get_param_names_plain_list(self) -> [str]:
+        """
+        Returns param names tokens as plain string list (No assumptions about order):
+        [name1, name2...]
+        """
+        self.__check_and_clean_param_list
+        param_words = []
+        for param in self.parameters:
+            param_words.extend(param.get_param_name_words())
+        return param_words
+
     def get_original_param_type_list(self) -> [str]:
         """
         Returns un-preprocessed param types as plain string list.
         """
         result_list = []
         for param in self.original_parameters:
-            if len(param.param_type.tokens) > 1:
-                print("d")
-            assert len(param.param_type.tokens) == 1, param.param_type.tokens
-            result_list += [param.param_type.tokens[0]]
+            #if len(param.param_type.tokens) > 1:
+            #    print("d")
+            #assert len(param.param_type.tokens) == 1, param.param_type.tokens
+            result_list += [' '.join(param.param_type.tokens)]
         return result_list
     
     def get_comment_tokens(self) -> [str]:
@@ -273,7 +290,7 @@ class Attribute(Preprocessable):
     def __init__(self, a_type: IdentifierString, a_name: IdentifierString, init_value: IdentifierString,
                   comment: IdentifierString, line=None):
         self.a_type = a_type
-        self.a_name = a_name
+        self.name = a_name
         self.init_value = init_value
         self.comment = comment
         self.line = line
@@ -288,13 +305,13 @@ class Attribute(Preprocessable):
         ([type, tokens], [name, tokens], [init, value, tokens], [comment, tokens])
         If all values are emtpy, a single, plain None is returned
         """
-        attr_tuple = (self.a_type.tokens, self.a_name.tokens, self.init_value.tokens, self.comment.tokens)
+        attr_tuple = (self.a_type.tokens, self.name.tokens, self.init_value.tokens, self.comment.tokens)
         if attr_tuple == ([], [], [], []):
             return None
         return attr_tuple
     
     def get_attribute_plain_list(self) -> [str]:
-        return self.a_type.tokens + self.a_name.tokens + self.init_value.tokens
+        return self.a_type.tokens + self.name.tokens + self.init_value.tokens
     
     def get_comment_tokens(self) -> [str]:
         if self.comment:
@@ -302,10 +319,10 @@ class Attribute(Preprocessable):
         return []
 
     def __bool__(self):
-        return bool(self.a_name) or bool(self.a_type) or bool(self.init_value) or bool(self.comment)
+        return bool(self.name) or bool(self.a_type) or bool(self.init_value) or bool(self.comment)
             
     def preprocess(self, preprocessor):
-        self.a_name.preprocess(preprocessor)
+        self.name.preprocess(preprocessor)
         self.a_type.preprocess(preprocessor)
         self.init_value.preprocess(preprocessor)
         preprocessor.javadoc = True
@@ -315,7 +332,7 @@ class Attribute(Preprocessable):
         attr_string = ""
         if self.comment:
             attr_string = self.comment.get_printable_string() + "\n"
-        attr_string += ("ATTR| " + self.a_type.get_printable_string() + " " + self.a_name.get_printable_string()
+        attr_string += ("ATTR| " + self.a_type.get_printable_string() + " " + self.name.get_printable_string()
                         +self.init_value.get_printable_string())
         return attr_string
 

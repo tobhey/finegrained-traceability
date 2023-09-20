@@ -1,0 +1,8 @@
+Modify Generic Preference
+Edit Preferences generic personal
+Access to functionality for the modification of generic personal preferences
+Upload your preferences and the general view in a form
+Edit the fields in the form and submit
+Asks for confirmation of the change
+Confirm the operation
+Stores preferences changed

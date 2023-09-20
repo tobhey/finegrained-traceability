@@ -1,0 +1,17 @@
+REQUIREMENT 2: TERMINOLOGY
+     
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119].
+
+It is assumed that the reader is familiar with the terms and concepts described in Public Key Cryptography Standard (PKCS) #10 [RFC2986], HTTPS [RFC2818], CMP [RFC4210], CMC [RFC5272][RFC5273][RFC5274], and TLS [RFC4346].
+
+In addition to the terms defined in the terminology section of CMC [RFC5272], the following terms are defined for clarity:
+
+EST CA: For certificate issuing services, the EST CA is reached through the EST server; the CA could be logically "behind" the EST server or embedded within it.
+
+Third-Party Trust Anchor: Any trust anchor (TA) that is not authoritative for the PKI hierarchy for which the EST server is providing services.
+
+Explicit Trust Anchor: Any TA that is explicitly configured on the client or server for use during EST TLS authentication; for example, a TA that is manually configured on the EST client or bootstrapped as described in Section 4.1.1. (See more details in Sections 3.6 and 6.)
+
+Implicit Trust Anchor: Any third-party TA that is available on the client or server for use during TLS authentication but is not specifically indicated for use during EST TLS authentication; for example, TAs commonly used by web browsers to authenticate web servers or TAs used by servers to authenticate manufacturer- installed client credentials (such as certificates populated into cable modems or routers in the factory). The authorization model for these TAs is different from the authorization model for Explicit Trust Anchors. (See more details in Sections 3.6.1, 3.6.2, and 6).
+
+Certificate-Less TLS: Certificate-less TLS cipher suites provide a way to perform mutual authentication in situations where neither the client nor server have certificates or are willing to use them. The credential used for authentication is a word, phrase, code, or key that is shared between the client and server. The credential must be uniquely shared between the client and server in order to provide authentication of an individual client to an individual server.

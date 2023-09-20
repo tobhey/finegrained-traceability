@@ -1,0 +1,5 @@
+Elimina Ritardo
+Eliminazione di un ritardo da parte dell ' Amministratore
+Elimina lentrata in ritardo di uno studente e clicca Salva
+Aggiorna la schermata in base alla data selezionata
+Elimina lentrata in ritardo dallarchivio

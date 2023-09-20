@@ -1,0 +1,6 @@
+Inserimento Impiegato
+
+L ' amministratore accede al sistema tramite terminale amministrativo e attiva la procedura di registrazione dell ' Impiegato
+Il sistema visualizza il form per l ' inserimento di un nuovo impiegato
+L ' Amministratore inserisce i dati dell ' Impiegato e sottomette la richiesta di registrazione
+Il sistema riceve il form verifica che nel sistema non sia gi presente la matricola inserita dall ' Amministratore e genera una password salva i dati inseriti e mostra una notifica dell ' avvenuta registrazione con la password assegnata all ' impiegato

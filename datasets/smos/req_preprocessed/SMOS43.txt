@@ -1,0 +1,3 @@
+Elimina Nota
+Eliminazione Note Disciplinari
+Il sistema invia una notifica di errata corrige ai genitori dello studente poi elimina i dati della nota dallarchivio

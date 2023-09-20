@@ -1,0 +1,17 @@
+Use case name
+AuthenticationCitizen
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen logs in to the authentication session.
+2. The system displays the login form for data entry (username and password).
+3. The citizen enters the data and submits the authentication request.
+4. The system verifies the accuracy of the data and allows the citizen to log in.
+Entry condition
+The citizen has been granted access in the system.
+Exit condition
+The citizen has successfully logged in, OR
+In the case where the citizen enters incorrect login and/or password, the system calls the use case DataErrati, OR
+➢ In case the service is not available the use case ServiceNotAvailable is called.
+Quality Requirements➢ The username string is present in the system, is well-formed contains characters [a..zA..Z0..9 .-_]edlength less than 30 characters, and is not empty.
+➢ The password string is present in the system, is well formed contains characters [a..zA..Z0..9 .-_ * +!?,:; àèéìòù ] and has a length between 8 and 15characters.

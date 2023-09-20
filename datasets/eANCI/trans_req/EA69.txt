@@ -1,0 +1,19 @@
+Use case name
+ReservationInterview
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen requests an interview in the preselected counseling center.
+2. The system displays a form for submitting the request.
+3. The citizen enters the interview request data into a form.
+4. The system receives the form, verifies the reservation data, and submits the request.
+5. Citizen requests prints out receipt of interview booking.
+6. Thesystemprintsthebooking.
+Entry condition
+This use case extends InformationConsultingYouth and intervenes when a citizen decides to make an interview reservation.
+This case requires that the citizen has gone through the authentication process.
+Exit conditions
+The system has booked the applicant's interview, OR
+Should an error occur at the interview booking stage, the system calls the use case ServiceNotAvailable, OR
+Should the citizen decide to cancel the interview reservation, the system calls the use case ReservationInterviewCanceled
+Quality RequirementsNot Available.

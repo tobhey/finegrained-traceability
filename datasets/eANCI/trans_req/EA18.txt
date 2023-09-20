@@ -1,0 +1,16 @@
+Use Case Name
+EditPasswordEmployee
+Participating actors
+Started by employee
+Flow of events
+1. The employee wants to change the password and presses the change password button.
+2. The system displays the form for entering the old password and the new one.
+3. The employee enters the old password, the new password and presses the confirm button.
+4. The system notifies that the password has been changed.
+Entry condition
+The 'employee has authenticated into the system.
+Exit condition
+The password is changed,OR In the case where the employee enters a
+password of less than 8 characters or the old password is incorrect, the system calls the use case DataErrati, OR
+➢ In case the service is not available, the use case ServiceNotAvailable is called.
+Quality requirements➢ Not expected.

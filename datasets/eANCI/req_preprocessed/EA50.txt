@@ -1,0 +1,9 @@
+Assistenza Ragazze Madri Minori
+
+L ' utente seleziona la funzionalit Assistenza Sociale selezionando Richiesta assistenza a ragazze madri e minori in difficolt
+Il sistema mostra il form per l ' inserimento dei dati del richiedente e del destinatario
+L ' utente inserisce i propri dati e quelli del destinatario della richiesta se stesso altra persona se necessario specificando il rapporto con tale persona
+Inoltre specifica una eventuale data di appuntamento con gli Assistenti Sociali
+Quindi sottomette il form
+Il sistema preleva dal sistema i dati anagrafici del cittadino destinatario e i dati riguardanti il nucleo familiare del Cittadino destinatario
+La richiesta viene inviata all ' ufficio dei Servizi Sociali ed al l ' utente viene notificato l ' invio

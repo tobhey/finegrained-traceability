@@ -1,0 +1,15 @@
+Use case name
+UnsubscribeNewsInformagiovani
+Participating Actors
+Started by Citizen
+Flow of events
+1. Citizen requests unsubscription from advertisement service related to informagiovani news.
+2. The system displays a form to confirm the request.
+3. The citizen confirms the unsubscribe operation.
+4. The system deletes the citizen from the advertisement service.
+Entry condition
+This case requires that the citizen has gone through the authentication procedure.
+Exit condition
+The system has executed the citizen's request, OR
+If an error occurs in the process of deleting from the news service, the system calls the use case ServiceNotAvailable
+Quality RequirementsNot Available.

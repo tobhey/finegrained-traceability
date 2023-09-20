@@ -1,0 +1,6 @@
+Information informagiovani
+
+The citizen requires the list of list of informagiovani news
+The system allows you to view the list of information regarding the Official Journal Job Information Bands Local Competition Travel Studio
+The citizen chooses the desired information
+The system returns the information regarding the news specifying date of publication of the announcement expiration date of the announcement Description

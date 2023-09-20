@@ -1,0 +1,15 @@
+Name: EditJustification
+Actors: Administrator
+Description: Changing a justice
+Preconditions:
+• The user must be logged in to the system as an administrator • The user has carried out the case of use "viewdetalticaustifica" and the system is
+Viewing the details of a justice
+Events sequence
+User
+System
+1. Change one or more fields of the displayed form: date justification.
+2. Click on "Save"
+3. Change the justification.
+Postconditions:
+• • •
+The justification has been modified. The system returns to the registry screen. The administrator interrupts the connection to the SMOS server interrupted

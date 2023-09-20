@@ -1,0 +1,15 @@
+Use case name
+ViewReservationConsultation
+Participating actors
+Started by Citizen
+Flow of events
+1.
+Citizen requests to view the reservation made at a consultation center.
+2. The system returns information regarding the selected reservation by displaying data such as:
+- Date and time; - Consultatory.
+Entry condition
+This case requires that the Citizen has carried out the authentication procedure.
+Exit condition
+The Citizen has viewed the information about the reservation, OR.
+In case the citizen wants to modify/delete a reservation, the system calls the use case, ModifyPreservationIntercourse/Elimi nationPreservationIntercourse .
+Quality requirements Not provided.

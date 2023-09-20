@@ -1,0 +1,6 @@
+Cancella Pratica
+
+Il cittadino preme il pulsante di cancellazione pratica Carta d ' identit Cambio Residenza se la pratica non stata inizializzata
+Il sistema chiede al cittadino una conferma
+Il cittadino conferma l ' operazione
+Il sistema cancella la pratica

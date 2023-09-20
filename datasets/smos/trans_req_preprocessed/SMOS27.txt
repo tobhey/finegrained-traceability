@@ -1,0 +1,5 @@
+View List register
+View List of registers for an academic year
+Select School Lanno
+Show a screen for the selection of academic year of interest
+Look for the archive all the digital registers of thatenno and displays them associated with the class to which they belong

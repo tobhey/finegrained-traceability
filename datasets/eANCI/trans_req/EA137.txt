@@ -1,0 +1,14 @@
+Use Case Name
+ConsultationHelpOn-Line
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen enters the online help section.
+2. The system presents a screen containing the list of features.
+3. The Citizen accesses the help information by clicking on the link related to the functionality they wish to receive.
+4. The system presents the help information, explaining the methods and actions to be performed for the specific functionality.
+Entry condition
+The citizen has logged into the system.
+Exit condition.
+The citizen has accessed information related to a particular functionality
+Quality requirements Not provided.

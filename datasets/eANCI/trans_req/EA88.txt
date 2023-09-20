@@ -1,0 +1,21 @@
+Use Case Name
+RequestDefinitionConduct
+Participating actors
+Initiated by citizen, communicates with employee
+Flow of events
+1. Citizen accesses the remission definition request area using the appropriate link 2. The system displays the form for entering the data necessary for the
+3.
+5.
+request The citizen enters the required data
+4. System verifies correctness and completeness of data then displays a summary screen or activates the use case DatiErrati
+The citizen confirms the operation 6. The system displays a message of
+notification of the request 7. The system sends the appropriate employee
+A message notifying the request
+Entry condition
+The citizen has authenticated in the system
+Exit condition
+The system displays a message notifying the request
+The system sends a request notification message to the appropriate employee, OR
+in the case of incorrect data entry the system invokes the use case DataErrati, OR
+in the case of technical failures the system invokes the use case ServiceNotAvailable
+Quality RequirementsNotAvailable

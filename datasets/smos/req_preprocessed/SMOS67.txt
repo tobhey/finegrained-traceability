@@ -1,0 +1,6 @@
+Registrazione Al Sito
+Consente ad uno studente di registrarsi al sistema
+Riempie i campi del form
+Sottomette il form
+Visualizza il form di registrazione contenente Nome Cognome Cellulare e-mail username password conferma password
+Inserisce la richiesta di iscrizione nel sistema

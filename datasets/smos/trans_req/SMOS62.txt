@@ -1,0 +1,13 @@
+Name: ViewOnePage
+Actors: parent
+Description: The student report is displayed
+Preconditions:
+• The user has been logged in to the system as a parent • The user click on the Magine button associated with one of his children
+Events sequence
+User
+System
+2. Select the report card
+1. View selected student report cards
+3. Displays the details of the selected report card
+Postconditions:
+• The system displays a student's reporting • Connection to the interrupted SMOS server

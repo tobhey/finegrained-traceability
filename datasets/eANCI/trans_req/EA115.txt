@@ -1,0 +1,15 @@
+Use Case Name
+ViewResultsToxicologicalEnvironmental
+Participating Actors
+Citizen, UserRegistered
+Flow of Events.
+1. The Citizen accesses this tab in order to become personally aware of the environmental situation in the municipality where he or she resides, whether it is being kept under control, and what values are at risk and why this is so.
+2. The system responds with a descriptive screen about the toxicological values received from the chemical and toxicological analyses carried out by the Civil Defense on the environment and municipal land.
+Condition of Entry.
+The Citizen, is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information collected, OR
+The Citizen is unable to view the card and therefore the use case ServiceNotAvailable, which handles technical failure cases, is extended.
+Quality Requirements System response times are acceptable and on the order of hundredths of a second if the card is correctly displayed by the person who requested it
+Whereas, if there was some hiccup in the display of the use case, the system response times increase, on the order of seconds, from a minimum of 3 to a maximum of 6.

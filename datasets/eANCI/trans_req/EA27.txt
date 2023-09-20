@@ -1,0 +1,16 @@
+Use Case Name
+ChangeStateOfFamily
+Participating Actors
+Started by Citizen, continued by Employee
+Flow of events
+1.
+3.
+Citizen presses on the Change Family Status button.
+2. The system shows the citizen the form to fill out. The citizen enters the new household data and submits the request.
+4. The system sends the request to the appropriate clerk.
+Entry condition
+The Citizen has authenticated in the system.
+Exit condition
+➢ The System creates the document to be delivered to the appropriate office, OR ➢ In the case where the service is not
+available the use case ServiceNotAvailable is invoked.
+Quality RequirementsNot Available.

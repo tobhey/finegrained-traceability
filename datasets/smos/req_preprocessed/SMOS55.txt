@@ -1,0 +1,7 @@
+Inserisci Ritardi Ata
+Digitalizzazione del Registro raccolta dati dal personale ATA classe per classe
+L ' utente seleziona i ritardi
+L ' utente clicca Conferma
+Il sistema mostra all ' utente una schermata con tutti gli alunni presenti con a fianco una checkbox ritardo
+Se selezionata si attivano dei campi di select a lato per selezionare l ' ora del ritardo
+Il sistema invia i dati al server

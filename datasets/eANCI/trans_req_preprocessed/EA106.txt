@@ -1,0 +1,4 @@
+IDRO-PLEANING MONITORING
+
+The citizen accesses this screen as he wants to satisfy his curiosity in knowing the situation monitored by the civil protection of municipal waters
+The system responds with a screen where it allows you to view information about the modalities of municipal water monitoring the bacteriological situation and updating the latest analyzes carried out on the samples taken

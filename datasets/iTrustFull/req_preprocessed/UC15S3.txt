@@ -1,0 +1,3 @@
+The administrator will maintain addupdate a listing of allowable drugs that an HCP can use
+The administrator will store the National Drug Code The National Drug Code NDC is a universal product identifier used in the United States for drugs intended for human use
+National Drug Code Directory

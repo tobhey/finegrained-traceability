@@ -1,0 +1,35 @@
+Requisito:
+Ricerca di camere disponibili.
+Descrizione:
+Permette di elencare tutte le stanze disponibili nel periodo richiesto dal 
+cliente. Nel caso non vi siano stanze disponibili esattamente in quel periodo 
+verrà mostrata la disponibilità di stanze in modo che l'operatore sia in grado 
+di fornire un suggerimento al cliente su come spostare o ridimensionare il 
+periodo di permanenza. Tale periodo è un intervallo di tempo espresso come 
+giorni che intercorrono tra due date. Ad esempio il periodo dal 05/07/1998 al 
+11/07/1998 implica 7 giorni di permanenza con liberazione della stanza il 
+giorno 12/07/1998 mattina, quindi già a partire da quel giorno la stanza deve 
+essere resa disponibile per eventuali altre prenotazioni. La fase di ricerca delle 
+camere disponibili, dovrà tenere conto dei vincoli imposti come stanze 
+bloccate, assegnate o commissionate ad agenzie viaggi.
+Le prenotazioni fornite da un'agenzia dovranno prima di tutto coprire i 
+commissionamenti. Quando le stanze commissionate non permettono più 
+alcuna prenotazione,  si potrà ricercare stanze disponibili tra quelle non 
+commissionate.
+Input richiesto:
+Periodo scelto per la permanenza.
+Output desiderato:
+Output a video delle disponibilità dell'albergo o di una tabella che riassuma la 
+disponibilità dell'albergo.
+Criterio di accettazione:
+Dato un intervallo di tempo espresso da due date, il sistema dovrà ritornare 
+l'elenco di tutte le camere disponibili in quel periodo. Nel caso di nessuna 
+disponibilità esatta verrà mostrata a video una tabella che metterà in evidenza 
+le disponibilità dell'albergo.
+Nel caso di prenotazione tramite agenzia, dovranno essere visualizzate le 
+stanze commissionate, ed eventualmente tutte le altre stanze. 
+Aspettative collegate:
+Pronta verifica delle disponibilità dell'albergo.
+Requisiti collegati:
+F-PRE-02, F-PRE-03, F-PRE-04.
+

@@ -1,0 +1,6 @@
+Delete Cultural Heritage
+Delete a cultural object in the system
+View the list of Cultural Heritage as a result of the use case Search Cultural Heritage it selects and activates a function of elimination
+Asks confirmation
+Confirm the operation
+Delete the cultural choice

@@ -1,0 +1,7 @@
+REQUIREMENT 41: FULL CMC RESPONSE
+     
+If the enrollment is successful, the server response MUST include an HTTP 200 response code with a content-type of "application/pkcs7-mime" as specified in [RFC5273]. The response data includes either the Simple PKI Response with an smime-type parameter of "certs-only" or the Full PKI Response with an smime-type parameter "CMC-response", as specified in Section 3.2.1 of [RFC5751]. The body of the message is the binary value of the encoding of the PKI Response with a Content-Transfer-Encoding of "base64" [RFC2045].
+
+When rejecting a request, the server MUST specify either an HTTP 4xx error or an HTTP 5xx error. A CMC response with the content-type of "application/pkcs7-mime" MUST be included in the response data for any CMC error response.
+
+All other return codes are handled as specified in Section 4.2.3 or HTTP [RFC2616]. For example, a client interprets an HTTP 404 or 501 response to indicate that this service is not implemented.

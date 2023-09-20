@@ -1,0 +1,16 @@
+Use Case Name
+ActivitiesUseful
+Participating Actors
+Started by Citizen
+Event Flow.
+1. By selecting this use case, the Citizen accesses a screen for choosing two use cases: Woods, Waste
+2. The system provides a simple and intuitive screen that allows the user to choose which of the two services to visit, to indirectly help maintain acceptable, municipal environmental conditions.
+3. The Citizen chooses one of the two use cases Woods, or Waste. 4. The system responds to the Citizen's need by displaying the desired page he or she had requested.
+Entry Condition.
+The Citizen has authenticated into the municipal system, OR
+The Citizen has accessed the system.
+Exit condition
+The Citizen has correctly viewed the introductory screen and decides to access one of the proposed screens by calling up the Woods use case, or the Waste use case.
+The Citizen fails to view the introductory page to the two use cases, Woods, Waste, and therefore extends the ServiceNotAvailable use case that handles technical failure cases.
+Quality Requirements System response times are found to be on the order of hundredths of a second if the Citizen correctly views the page of choosing which use case to project to, OR
+Response times are slowed due to external problems and range in the order of seconds, 3 to 7.

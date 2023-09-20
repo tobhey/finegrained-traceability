@@ -1,0 +1,9 @@
+Cambio Di Residenza
+
+Il Cittadino preme sul bottone Cambio di residenza
+Il sistema mostra al cittadino il form da compilare
+Il cittadino inserisce i dati della sua nuova abitazione
+Il sistema notifica al cittadino il corretto invio della richiesta e viene memorizzata nel sistema
+L ' impiegato accede al sistema e visualizza la richiesta ricevuta
+L ' impiegato verifica i dati compila il documento con il resto dei dati da inserire e conferma l ' operazione
+Il sistema salva il modulo e aggiorna i dati

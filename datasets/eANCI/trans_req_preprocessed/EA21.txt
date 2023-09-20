@@ -1,0 +1,6 @@
+Employee password recovery
+
+The employee has forgotten the password and press the Password Recovery Button
+The system shows the form for the insertion of the freshman
+The employee inserts his freshman and press the confirmation key
+The system checks the data and sends the password to the email address of the employee

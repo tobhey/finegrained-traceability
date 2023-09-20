@@ -1,0 +1,1 @@
+A LHCP enters an UAP as a user of iTrust Medical Records system according to data format 6.2 (all fields mandatory)

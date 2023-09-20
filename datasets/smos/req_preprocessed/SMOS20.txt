@@ -1,0 +1,4 @@
+Elimina Indirizzo
+Elimina un indirizzo dallarchivio
+Verifica se l ' indirizzo ha classi associate in caso affermativo mostra un messaggio di errore Impossibile eliminare l ' indirizzo cancellare le classi associate e riprovare altrimenti elimina l ' indirizzo
+Visualizza lelenco degli indirizzi aggiornato

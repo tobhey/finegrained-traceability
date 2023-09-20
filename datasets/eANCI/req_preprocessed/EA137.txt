@@ -1,0 +1,6 @@
+Consultazione Help On- Line
+
+Il Cittadino entra nella sezione dedicata all ' help on-line
+Il sistema presenta una schermata contenente la lista delle funzionalit
+Il cittadino accede alle informazioni di help cliccando sul collegamento relativo alla funzionalit di cui vuole ricevere
+Il sistema presenta le informazioni di aiuto spiegando le modalit e le azioni da eseguire per la specifica funzionalit

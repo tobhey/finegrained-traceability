@@ -1,0 +1,5 @@
+Mostra Pratica Attesa Impiegato
+
+Il sistema mostra le informazioni riguardanti la pratica selezionata con le relative opzioni di accettazione o rifiuto pratica
+L ' Impiegato pu Accettare o Respingere la pratica se gi completa di tutta la documentazione le firme necessarie e dopo averla verificata
+Inoltre pu stampare i dati della pratica se necessario

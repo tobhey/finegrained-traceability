@@ -1,0 +1,4 @@
+Download Iscrizione
+
+Il Cittadino accede a questa schermata perch vuole iscriversi al Servizio Civile
+Il sistema risponde con una pagina dove il Cittadino che ne ha fatto richiesta pu effettuare il download del modulo da compilare e presentare alla sede della Protezione Civile

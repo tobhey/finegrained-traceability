@@ -1,0 +1,4 @@
+Reject Student Registration
+Allows the administrator to refuse the registration to the system of a student
+Eliminates the registration request to the system
+View the list of registrations yet to be activated

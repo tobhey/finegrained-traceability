@@ -1,0 +1,13 @@
+Name: DeleteClass
+Actors: Administrator
+Description: Delete a class from the archive
+Preconditions:
+• • • •
+The user is logged in to the system as an administrator the user has made the case of use "viewdettagliSlasse" the user displays the detailed information of a class the user click on the "Delete" button
+Events sequence
+User
+System
+1. Delete the class from the archive
+2. Displays the list of updated classes
+Postconditions:
+• The user has deleted a class • Connection to the interrupted SMOS server

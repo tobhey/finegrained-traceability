@@ -1,0 +1,25 @@
+Requisito:
+Gestione del servizio ristorante per clienti esterni.
+Descrizione:
+Il sistema dovrà essere in grado di gestire la contabilità immediata di un 
+normale ristorante i cui clienti non sono necessariamente soggiornanti 
+nell’hotel.
+Il sistema dovrà essere quindi in grado di:
+  fornire i prezzi delle portate singole perché il cliente esterno non sia 
+vincolato alla scelta del menù fisso previsto per i soggiornanti;
+  accettare in ingresso le varie portate consumate;
+  stampare la ricevuta in base all'elenco delle consumazioni.
+Input richiesto:
+Dati relativi al cliente (numero persone, portate e bevande consumate, 
+modalità di pagamento).
+Output desiderato:
+Stampa del conto relativo alle consumazioni.
+Criterio di accettazione:
+Tale requisito è soddisfatto se il sistema fornisce all’utente la possibilità di 
+visualizzare, modificare, aggiornare e stampare il conto del servizio di 
+ristorazione.
+Aspettative collegate:
+Semplice gestione dell'attività di ristorazione.
+Requisiti collegati:
+nn.
+

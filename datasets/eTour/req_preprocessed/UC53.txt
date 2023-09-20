@@ -1,0 +1,10 @@
+Insert Feedback
+Inserts a feedback for the selected site
+Activate the feature on the issue of feedback
+Verify that the visitor has not already issued a feedback for the site and displays a form for entering the feedback for the selected site
+In case the visitor has already issued a feedback for the site selected activates the use case Feedback Already Released
+Fill out the form selecting one vote and inserting a comment then submit
+Verify the data entered and confirm the cheide
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirming the issue of feedback
+Remember feedback and inserts the selected site in the list of sites visited

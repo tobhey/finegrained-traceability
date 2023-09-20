@@ -1,0 +1,12 @@
+Name: ViewDetailsSingleRegister
+Actors: Administrator
+Description: View the details of one of the class registers
+Preconditions:
+• • •
+The user must be logged in to the system as an administrator, the user must have carried out the case of use "ViewingElCoregistri" click on the "Details" button associated with one of the registers.
+Events sequence
+User
+System
+1. Review the information contained in the registry organized by date. In particular, for today's date, the list of students, specifying: absent / present, late and a form from which it is possible to manage justifications and disciplinary notes.
+Postconditions:
+• The system is displaying the details of a class registry • Connection to the interrupted SMOS server

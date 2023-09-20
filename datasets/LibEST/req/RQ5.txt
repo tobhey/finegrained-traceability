@@ -1,0 +1,13 @@
+REQUIREMENT 5: INTIAL ENROLLMENT
+     
+After authenticating an EST server and verifying that it is authorized to provide services to the client, an EST client can acquire a certificate for itself by submitting an enrollment request to that server.
+
+The EST server authenticates and authorizes the EST client as specified in Sections 3.3.2, 3.3.3, and 3.7. The methods described in the normative text that are discussed in this overview include:
+
+TLS with a previously issued client certificate (e.g., an existing certificate issued by the EST CA);
+ 
+TLS with a previously installed certificate (e.g., manufacturer- installed certificate or a certificate issued by some other party);
+ 
+Certificate-less TLS (e.g., with a shared credential distributed out-of-band);
+ 
+HTTP-based with a username/password distributed out-of-band.

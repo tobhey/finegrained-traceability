@@ -1,0 +1,19 @@
+Use Case Name
+RequestCertificatesTerti
+Participating actors
+Started by citizen
+Flow of events
+1. Citizen selects a specific certificate(birth certificates, marital status certificates).
+2. The system displays the form for entering the data of the person concerned.
+3. The citizen enters the data of the person concerned (see note).
+4. The system stores the data of the citizen and interested person in a special form
+5. The system shows a screen with the requested certificate.
+6. The citizen selects the mode of payment and shipment.
+7. The system sends the certificate.
+Entry condition
+The citizen has authenticated in the system.
+Exit condition
+The system sends the certificate, OR ➢ In the case where the service is not available the case is invoked
+of use ServiceNotAvailable.
+Quality Requirements Not Provided.
+Note: In the case where the citizen is not a close relative of the person in the data to be entered, he/she must specify a valid reason for requesting the certificate.

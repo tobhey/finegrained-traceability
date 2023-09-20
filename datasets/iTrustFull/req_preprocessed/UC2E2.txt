@@ -1,0 +1,2 @@
+The enterereditor is presented with the name of the user and determines if it is invalid or not the right person
+The enterereditor is prompted to try again

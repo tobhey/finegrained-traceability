@@ -1,0 +1,3 @@
+REQUIREMENT 27: CLIENT USE OF EXPLICIT TA DATABASE
+     
+When the EST client Explicit TA database is used to validate the EST server certificate, the client MUST check either the configured URI or the most recent HTTP redirection URI against the server's identity according to the rules specified in [RFC6125], Section 6.4, or the EST server certificate MUST contain the id-kp-cmcRA [RFC6402] extended key usage extension.

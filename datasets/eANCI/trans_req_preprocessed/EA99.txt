@@ -1,0 +1,4 @@
+What is the weather like
+
+The citizen accesses this screen to view the meteorological situation of the municipality in which it resides
+The system responds to the requirement of the citizen, allowing him to see in addition to the time situation of his common also that of the provinces of the region to which he belongs with the date of updating minimum and maximum temperatures and obviously atmospheric conditions expressed with a small descriptive image

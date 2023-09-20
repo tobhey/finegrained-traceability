@@ -1,0 +1,6 @@
+Search Tourist
+Returns the list of tourist account in the system according to certain parameters
+Access the search functionality of a tourist
+Show the form
+Fill out the form and submit
+Processing the request

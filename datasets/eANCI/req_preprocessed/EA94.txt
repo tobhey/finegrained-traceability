@@ -1,0 +1,6 @@
+Aggiorna Bandi E Concorsi
+
+L ' impiegato comunale dopo essersi autenticato nel sistema aggiorna la lista delle associazioni che hanno pubblicato un nuovo bando di concorso
+Il sistema risponde mettendo a disposizione dell ' impiegato un form da completare per aggiornare i campi logoassociazione descrizione nomeassociazione bando
+L ' impiegato completa i campi del form presentato dal sistema e lo sottomette
+Il sistema ne aggiorna il form e permette la visualizzazione di quest ' ultimo al Cittadino

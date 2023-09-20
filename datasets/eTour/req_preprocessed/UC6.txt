@@ -1,0 +1,6 @@
+Delete Refreshment Point
+Delete a refreshment from the system
+View a list of points of rest as a result of the use case Search Cultural Heritage it selects and activates a function of elimination
+Asks for confirmation of the transaction
+Confirm the deletion
+Deletes the selected point of rest

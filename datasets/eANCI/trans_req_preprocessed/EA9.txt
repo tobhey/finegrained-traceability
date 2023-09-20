@@ -1,0 +1,4 @@
+Citizen logout
+
+The citizen wants to finish the work session and click on the logout button
+The system disconnects the citizen from the system and returns to the main screen

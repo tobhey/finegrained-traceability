@@ -1,0 +1,5 @@
+Change Password
+It allows a user to change their password
+Fill out the form and submits
+View the form with the old password fields new password confirms new password
+Confirmed password change

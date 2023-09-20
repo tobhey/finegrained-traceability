@@ -1,0 +1,16 @@
+Name: EnterNewAddress
+Actors: Administrator
+Description: Enter a new address in the archive
+Preconditions:
+•
+•
+The user is logged in to the system as an administrator The user has already taken the case of "ViewingLenchindirizzi" and the system is displaying the list of addresses The user click on the "New address" button
+Events sequence
+User
+2. Fill out the form 3. Click on the "Save" button
+System
+1. The system shows the form to be completed with: address name.
+4. Checks on the validity of the data entered and inserts a new address in the archive;In the event that the data entered are not valid, activates the case of "Errodati" use.
+Postconditions:
+• • • •
+The user has entered an address is notified the connection data error to the SMOS server interrupted the administrator interrupts the operation

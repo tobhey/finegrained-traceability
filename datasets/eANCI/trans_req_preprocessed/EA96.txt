@@ -1,0 +1,6 @@
+Useful activities
+
+Selecting this case the citizen accesses a screen of choice of two cases of waste waste
+The system provides a simple and intuitive screen that allows you to choose which of the two services to visit to indirectly help keep the municipal environmental conditions acceptable
+The citizen chooses one of the two cases of use forests or waste
+The system responds to the demand of the citizen by visualizing the desired page he had requested

@@ -1,0 +1,6 @@
+Change citizen password
+
+The citizen wants to change the password and press the Change Password button
+The system displays the form for the insertion of the old password and the new
+The citizen inserts the old password the new password and press the confirmation key
+The system notifies that the password was changed

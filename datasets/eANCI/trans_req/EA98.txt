@@ -1,0 +1,15 @@
+Use case name
+Woods
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses this screen so that he or she can learn about the advice that Civil Defense makes available to anyone in order to avoid and have people avoid forest fires.
+2. The system provides a screen with a set of rules that the Citizen should follow and have followed if he/she is with third parties, to prevent the occurrence of arson, and in case of this, which authority to call.
+Condition of Entry.
+The Citizen is authenticated within the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen is satisfied with the information and advice received, OR
+The Citizen is unable to view the descriptive screen, so the use case ServiceNotAvailable that handles technical failure cases is extended.
+Quality Requirements The system takes time on the order of hundredths of a second for the requester to view the screen, OR
+In contrast, the system would take time on the order of 3-5 seconds if the screen is not displayed correctly.

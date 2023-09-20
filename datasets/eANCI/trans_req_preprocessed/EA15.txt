@@ -1,0 +1,6 @@
+Edit employee
+
+The administrator presses the Edit button used
+The system shows a form for the modification of the employee
+The administrator inserts the data
+The system saves the changes made

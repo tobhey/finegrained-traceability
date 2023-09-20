@@ -1,0 +1,6 @@
+Login
+It allows a user to log in to the system
+Check that username and password have length
+If the respected condition goes to point two otherwise notify the user error
+Search for the archive if username and password entered by the user are present among the loggable users
+If the search was successful, the system is logged in

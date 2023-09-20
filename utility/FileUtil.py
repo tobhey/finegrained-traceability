@@ -78,6 +78,14 @@ def write_eval_to_excel(data, path):
     workbook.close()
     log.info("Wrote excel file: " + str(path))
 
+
+def write_eval_to_csv(data, path):
+    with open(path, mode='w') as file:
+        writer = csv.writer(file, delimiter=CSV_DELIM, quotechar="\"", quoting=csv.QUOTE_MINIMAL, lineterminator="\n")
+        for i, row in enumerate(data):
+            writer.writerow(row)
+    log.info("Wrote csv file: " + str(path))
+
             
 def write_file(file_path, content):
     create_missing_dirs(file_path)

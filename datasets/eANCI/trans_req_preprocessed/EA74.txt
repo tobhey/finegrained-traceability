@@ -1,0 +1,6 @@
+Events information in the area
+
+The citizen requires the visualization of the list of events
+The system allows you to view the list of events
+The citizen chooses the event
+The system returns the information regarding the chosen event by displaying data such as the place the date and time of the site event that manages the pro-spot event

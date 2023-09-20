@@ -1,0 +1,3 @@
+REQUIREMENT 11: FULL PKI REQUEST MESSAGES
+     
+Full PKI Request [RFC5272] messages can be transported via EST using the Full CMC Request function. This affords access to functions not provided by the Simple Enrollment functions. Full PKI Request messages are defined in Sections 3.2 and 4.2 of [RFC5272]. See Section 4.3 for a discussion of how EST provides a transport for these messages.

@@ -1,0 +1,8 @@
+Delete Banner
+Delete a banner ad associated with the point of rest
+Select the feature for removal of the banner
+View the list of banner associated with the point of rest
+Select a banner from the list and enter the function of elimination
+Displays a message confirming the deletion
+Confirm the operation
+Removes the banner

@@ -1,0 +1,17 @@
+Use Case Name
+EditPasswordCitizen
+Participating actors
+Started by citizen
+Flow of events
+1. Citizen wants to change password and presses the change password button.
+2. The system displays the form for entering the old password and the new password.
+3. The citizen enters the old password, the new password and presses the confirm button.
+4. The system notifies that the password has been changed.
+Entry condition
+The citizen has authenticated into the system.
+Exit condition
+The password is changed,OR In case the citizen enters a
+password of less than 8 characters or the old password is incorrect, the system calls the use case DataErrati, OR
+➢ In the case where the service is not available the use case ServiceNotAvailable is called.
+Quality Requirements➢ The password string consists of [a..zA..Z0..9.-_ * +!?,:; àèéòù ] and is between 8 and 15 characters long.
+➢ The string is not consistent with the password entered.

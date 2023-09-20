@@ -1,0 +1,21 @@
+Use case name
+RequestTOSAP
+Participating Actors
+Initiated by Citizen, communicates with Employee
+Flow of events
+1. The Citizen clicks on the button to access the municipality's service request area.
+2. The System redirects the Citizen to the required section.
+3. The Citizen selects the section dedicated to the request for the Fee for the Occupation of Public Land and Areas.
+4. The System displays the relevant request form,automatically obtaining the necessary data.
+5. The Citizen enters additional data necessary for the correct completion of the form,confirms the correctness of the information and sends the request.
+6. The System notifies the employee of the request.
+Entry condition
+The Citizen has authenticated in the system.
+Exit condition
+➢The clerk receives the file and chooses whether to accept it or not,recalling the use case respectively
+RequestTOSAPAccepted RequestTOSAPRejected, OR In case there are general errors the
+o
+system calls the use case
+ServiceNotAvailable, OR In the case where there are errors in the data
+entered by the user the system calls the use case DataErrati.
+Quality RequirementsNotAvailable

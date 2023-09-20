@@ -1,0 +1,6 @@
+Ricerca Impiegato
+
+L ' amministratore preme sul bottone Ricerca impiegato
+Il sistema mostra il form per la ricerca di un impiegato
+L ' amministratore effettua una ricerca tramite i dati del impiegato
+Il sistema restituisce i dati del impiegato ricercato

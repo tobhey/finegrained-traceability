@@ -1,0 +1,42 @@
+REQUIREMENT 53: INFORMATIVE REFERENCES
+     
+
+   [IDevID]   IEEE Standards Association, "IEEE 802.1AR Secure Device
+              Identifier", December 2009, <http://standards.ieee.org/
+              findstds/standard/802.1AR-2009.html>.
+
+   [RFC2307]  Howard, L., "An Approach for Using LDAP as a Network
+              Information Service", RFC 2307, March 1998.
+
+   [RFC2818]  Rescorla, E., "HTTP Over TLS", RFC 2818, May 2000.
+
+   [RFC2985]  Nystrom, M. and B. Kaliski, "PKCS https://tools.ietf.org/html/rfc7030#9: Selected Object
+              Classes and Attribute Types Version 2.0", RFC 2985,
+              November 2000.
+
+   [RFC3394]  Schaad, J. and R. Housley, "Advanced Encryption Standard
+              (AES) Key Wrap Algorithm", RFC 3394, September 2002.
+
+   [RFC5054]  Taylor, D., Wu, T., Mavrogiannopoulos, N., and T. Perrin,
+              "Using the Secure Remote Password (SRP) Protocol for TLS
+              Authentication", RFC 5054, November 2007.
+
+   [RFC5967]  Turner, S., "The application/pkcs10 Media Type", RFC 5967,
+              August 2010.
+
+   [RFC6403]  Zieglar, L., Turner, S., and M. Peck, "Suite B Profile of
+              Certificate Management over CMS", RFC 6403, November 2011.
+
+   [SHS]      National Institute of Standards and Technology, "Secure
+              Hash Standard (SHS)", Federal Information Processing
+              Standard Publication 180-4, March 2012,
+              <http://csrc.nist.gov/publications/fips/
+              fips180-4/fips-180-4.pdf>.
+
+   [SP-800-57-Part-1]
+              National Institute of Standards and Technology,
+              "Recommendation for Key Management - Part 1: General
+              (Revision 3)", July 2012,
+              <http://csrc.nist.gov/publications/nistpubs/800-57/
+              sp800-57_part1_rev3_general.pdf>.
+                

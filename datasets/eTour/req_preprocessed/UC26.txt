@@ -1,0 +1,11 @@
+Modify Comment
+Editing a comment by a feedback selected
+View the list of sites as a result of the use case Search Site it selects and activates a function of change in the selected comment
+Upload feedback issued to that site and displays them in a form
+Select a feedback from the list and submit the form
+Displays a form for editing the comment of feedback selected
+Edit the comment and submit the form
+Verify the data entered and asks for confirmation of the change
+Where the data is invalid or insufficient the system activates the use case Errored
+Confirm the operation
+Remember the comment changed

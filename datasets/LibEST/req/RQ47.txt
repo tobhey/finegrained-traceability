@@ -1,0 +1,7 @@
+REQUIREMENT 47: CSR ATTRIBUTES
+     
+CA policy may allow inclusion of client-provided attributes in certificates that it issues, and some of these attributes may describe information that is not available to the CA. In addition, a CA may desire to certify a certain type of public key and a client may not have a priori knowledge of that fact. Therefore, clients SHOULD request a list of expected attributes that are required, or desired, by the CA in an enrollment request or if dictated by local policy.
+
+The EST server SHOULD NOT require client authentication or authorization to reply to this request.
+
+Requesting CSR attributes is optional, but clients are advised that CAs may refuse enrollment requests that are not encoded according to the CA's policy.

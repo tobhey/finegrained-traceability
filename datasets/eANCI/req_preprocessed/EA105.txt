@@ -1,0 +1,4 @@
+Incendi
+
+Il Cittadino pu accedere a questa sezione se ha scelto di visionare il caso d ' uso Rischi e decida di saperne di pi circa le possibili cause che scatenano gli incendi
+Il sistema risponde all ' esigenza del Cittadino con una descrizione dettagliata su come prevenire gli incendi e chi si occupa di essi

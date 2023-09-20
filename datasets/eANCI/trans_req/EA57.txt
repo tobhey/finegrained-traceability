@@ -1,0 +1,16 @@
+Use case name
+ReleaseParkingDisabled
+Participating Actors
+Initiated by User Communicates with Traffic Police Command
+Flow of events
+1. The user selects the Social Assistance feature by selecting "Disabled Parking Release."
+2. The system displays the form for entering applicant and recipient data (if different).
+3. The user enters the master data of the applicant and those of the recipient (if different) if necessary specifying the relationship to that person. Also specified is the type of documentation attached to the traffic police command (medical-legal certificate issued by the ASL commission). It then submits the form.
+4. The system picks up the master data of the recipient citizen. The request is sent to the traffic police command and the user is notified of the submission.
+Entry condition
+The user has successfully logged in and selected the Social Assistance feature.
+Exit condition
+The system has encountered an error in filling out the form so it calls the use case DataErrati, OR
+The user returns to the previous screen, OR
+The system encountered an unanticipated error so it calls the use case ServiceNotAvailable.
+Unanticipated Quality Requirements.

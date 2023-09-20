@@ -1,0 +1,4 @@
+Visualizza Pratiche Attesa Impiegato
+
+Impiegato seleziona Visualizza Richieste in Attesa
+Il Sistema mostra la lista delle pratiche in attesa

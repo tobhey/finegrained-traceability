@@ -1,0 +1,11 @@
+Name: ViewStudentData
+Actors: parent
+Description: This use case allows a parent to view information about their children
+Preconditions:
+• The user is logged in to the system as a parent • The user clicks the "Register" button associated with one of his children
+Events sequence
+User
+System
+1. Displays a summary table with the information relating to children and in particular: date, absences, disciplinary notes, delays and justification.
+Postconditions:
+• Information relating to one of the user's children • Connection to the interrupted SMOS server

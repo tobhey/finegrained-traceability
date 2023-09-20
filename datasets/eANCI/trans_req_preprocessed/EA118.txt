@@ -1,0 +1,8 @@
+Calculate amount
+
+The citizen presses the button relating to the function of the tax calculation
+The system has the list of taxes and taxes for which you can calculate the amount
+The citizen selects the tax of interest
+The system shows a form to fill out for the calculation
+The citizen inserts the necessary data
+The system verifies the correctness of the data computs the amount and shows it to the citizen

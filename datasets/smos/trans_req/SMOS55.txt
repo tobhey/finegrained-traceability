@@ -1,0 +1,16 @@
+Name: InsertDelayAta
+Actors: ATA staff
+Description: Register digitization, data collection from ATA class personnel per class
+Preconditions:
+• • •
+The user must be logged in to the system as the ATA staff the user has carried out the case of use ViewLancoclassiata selects a class to enter the data in the system
+Events sequence
+User
+System
+2. The user selects delays 3. The user click "Confirm"
+1. The system shows a screen with all the students present, alongside a "delay" checkbox. If selected you activate Select fields to the side to select the time of the delay
+4. The system sends data to the server.
+Postconditions:
+•
+•
+The delay data has been entered in the system. The initial screen is shown again. Connection to the interrupted SMOS server. The user interrupts the operations.

@@ -1,0 +1,3 @@
+View Details Class
+Allows you to view the details of a class
+View the fencing with the details of a single class name School year address

@@ -1,0 +1,9 @@
+Request third party certificates
+
+The citizen selects a specific certificate certificate certified civil status certificates
+The system displays the form for entering the person's data concerned
+The citizen inserts the data of the person concerned see note
+The system stores the data of the citizen and the interested party in a special module
+The system shows a screen with the requested certificate
+The citizen selects the payment and shipping mode
+The system sends the certificate

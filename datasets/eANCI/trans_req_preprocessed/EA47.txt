@@ -1,0 +1,9 @@
+Accommodation
+
+The user selects the functionality of social assistance by selecting request for housing housing assistance
+The system shows the form for the inclusion of the applicant's data and the recipient if different
+The user enters his own data and those of the recipient if the recipient a third person if necessary specifying the relationship with that person also specifies the new domicile
+The user selects the Executive Executive Executive Minutes documentation The new registered lease and ISEE model
+Then submit the form
+The system picks up the personal data of the citizen recipient and the data concerning the family unit of the citizen recipient
+The request is sent to the Social Services Office and the sending is notified to the user

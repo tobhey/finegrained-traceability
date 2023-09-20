@@ -1,0 +1,7 @@
+REQUIREMENT 33: CA CERTIFICATES REQUEST
+     
+EST clients request the EST CA TA database information of the CA (in the form of certificates) with an HTTPS GET message using an operation path of "/cacerts". EST clients and servers MUST support the /cacerts function. Clients SHOULD request an up-to-date response before stored information has expired in order to ensure the EST CA TA database is up to date.
+
+The EST server SHOULD NOT require client authentication or authorization to reply to this request.
+
+The client MUST authenticate the EST server, as specified in Section 3.3.1 if certificate-based authentication is used or Section 3.3.3 if the optional certificate-less authentication is used, and check the server's authorization as given in Section 3.6, or follow the procedure outlined in Section 4.1.1.

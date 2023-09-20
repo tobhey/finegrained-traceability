@@ -1,0 +1,15 @@
+Name: DeleteDelay
+Actors: Administrator
+Description: Elimination of a delay by the administrator
+Preconditions:
+• • •
+The user must be logged in to the system as an administrator, the user took the case "SplitTaTtAlloreGloregistration" selects the date he wants to eliminate a delay.
+Events sequence
+User
+System
+2. Remove the late input of a student and click "Save"
+1. Update the screen based on the selected date
+3. Delete late entry from the archive.
+Postconditions:
+• The system has eliminated the delay. The system remains on the registry screen.
+• The administrator interrupts the operation • Connection to the SMOS server interrupted

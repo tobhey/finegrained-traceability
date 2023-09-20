@@ -1,0 +1,3 @@
+Visualizza Elenco Note
+Visualizza l ' elenco delle note inerente allo studente
+Mostra tutte le note dell ' alunno registrate durante l ' anno scolastico

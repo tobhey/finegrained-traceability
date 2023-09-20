@@ -1,0 +1,8 @@
+ICI
+
+The citizen click on the button to access the taxes online tax area
+The system displays the list of taxes that can be paid online
+The citizen selects the section dedicated to the municipal property tax and to the relative payment
+The system redirects the citizen towards the necessary section showing the form of the relative fee and the relative amount to be paid
+The citizen confirms the correctness of the information and starts the transaction by selecting the preferred payment method
+The system makes the transaction and show a message of payment

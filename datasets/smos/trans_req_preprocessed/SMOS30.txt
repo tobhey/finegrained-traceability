@@ -1,0 +1,6 @@
+Enter admin delays
+Digitization of the data entry log by the administrator
+Fill out the form by entering students with delay and click Save
+Update the screen displayed based on the date
+Send data to the server
+Displays the updated registry data

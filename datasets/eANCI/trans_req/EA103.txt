@@ -1,0 +1,17 @@
+Use case name
+DownloadModule
+Participating Actors
+Started by Citizen
+Flow of events
+1. The Citizen accesses the download of the form as they want to join the Volunteerism
+3.
+The system responds to this need with the ability to view the form The Citizen acknowledges the form, and decides to start downloading the file 2.
+4. The system responds to the Citizen's need by saving the form to join the Volunteer action.
+Entry Condition.
+The Citizen is authenticated in the municipal system, OR
+The Citizen has accessed the municipal system.
+Exit condition.
+The Citizen has successfully downloaded the form with permission from the system, and therefore the ComeBecomeVolunteer use case will be invoked, OR
+The Citizen fails to view the page about downloading the form and the use case ServiceNotAvailable, which handles Technical Failure cases, will be extended.
+Quality Requirements The system response time ranges from 2 to 4 seconds to load the form if the Citizen can view it correctly.
+Response time increases, on the order of seconds, if the Citizen does not correctly display what he or she has requested.

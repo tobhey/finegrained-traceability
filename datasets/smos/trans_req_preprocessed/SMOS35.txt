@@ -1,0 +1,3 @@
+View list Notes
+View the list of notes concerning the student
+Show all the notes of the student recorded during the school year

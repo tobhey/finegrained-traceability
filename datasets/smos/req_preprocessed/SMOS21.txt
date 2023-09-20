@@ -1,0 +1,7 @@
+Assegna Rimuovi Insegnamenti
+Assegna o rimuove uno o pi insegnamenti da un indirizzo
+Seleziona gli insegnamenti da assegnare o rimuovere allindirizzo
+Clicca sul pulsante Invia
+Visualizza un form da cui possibile aggiungere eo rimuovere insegnamenti allindirizzo
+Associa o rimuove gli insegnamenti selezionati allindirizzo
+Torna alla visualizzazione dei dettagli dellindirizzo

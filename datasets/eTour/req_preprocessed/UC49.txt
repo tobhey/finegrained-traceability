@@ -1,0 +1,4 @@
+View Preferred Site
+View the list of personal favorites
+Select the feature to display the list of personal favorites
+Upload the list of bookmarks

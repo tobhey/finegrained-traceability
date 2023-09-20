@@ -1,0 +1,6 @@
+Change absence
+Changing absences by the administrator the modification to be understood as insevenzion of the essence
+Change the absence inserts or delete and click Save
+Update the screen based on the date selected
+Send modified data to the server
+The system sends an email to rectification to the parent of the student

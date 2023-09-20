@@ -1,0 +1,6 @@
+Cambio Stato Di Famiglia
+
+Il Cittadino preme sul bottone Cambio stato di famiglia
+Il sistema mostra al cittadino il form da compilare
+Il cittadino inserisce i dati del nuovo nucleo familiare e invia la richiesta
+Il sistema invia la richiesta all ' impiegato competente

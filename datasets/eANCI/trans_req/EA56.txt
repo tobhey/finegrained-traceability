@@ -1,0 +1,15 @@
+Use Case Name
+QualificationReduceGuerra
+Participating Actors
+Started by User
+Flow of events
+1.
+User selects the "Request for recognition of qualification as a veteran or orphan of labor" feature.
+2. The system shows the information and related forms to be downloaded and sent to the Prefecture,offering the option to print it out. It also shows a direct link to the page for requesting the Birth Certificate, Residence Certificate, and Death Certificate.
+Entry condition
+The user has accessed the system and selected the Social Assistance feature.
+Exit condition
+The user has viewed the page, OR The user has selected one of the direct links to the various certificates (birth certificate, residence certificate, death certificate) thereby invoking the use case
+RequestCertificates, OR The system encountered an unanticipated error
+expected so it calls the use case ServiceNotAvailable.
+Unanticipated Quality Requirements.

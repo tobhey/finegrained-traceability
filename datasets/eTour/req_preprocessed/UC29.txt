@@ -1,0 +1,5 @@
+Existing Error Tag
+He was asked to enter a search tags already in the system
+Notice the error message and asks for confirmation of its reading
+Confirmation of the reading of the notification
+Recovers the previous state

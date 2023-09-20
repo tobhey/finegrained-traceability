@@ -1,0 +1,9 @@
+Change of residence
+
+The citizen presses the change of residence on the button
+The system shows the citizen the form to be completed
+The citizen inserts the data of his new home
+The system notifies the citizen the correct sending of the request and is stored in the system
+The employee accesses the system and displays the received request
+The employee checks the data fills out the document with the rest of the data to be inserted and confirmed the operation
+The system saves the form and update the data

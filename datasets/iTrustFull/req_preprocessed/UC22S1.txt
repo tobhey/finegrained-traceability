@@ -1,0 +1,3 @@
+The system shall enable the administrator to add a new entry for an appointment type including its type name with up to alpha characters and duration in the unit of minutes E and modify the duration in an existing entry E
+A new entry shall not have the same type name as that of any existing entry E
+Note that the administrator is not allowed through the system interface to delete an existing entry or modify the appointment type name in an existing entry

@@ -1,0 +1,8 @@
+Delete News
+Delete a news in the system
+Activate the function of elimination of a news
+View all news in a form
+Select a news from the list and submit the form
+Asks for confirmation of the transaction
+Confirm the deletion of the news
+Delete the data news

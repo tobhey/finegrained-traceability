@@ -1,0 +1,6 @@
+Modifica E Mail Amministratore
+
+L ' amministratore accede al form di modifica e-mail
+Il sistema mostra il form l ' inserimento della nuova e-mail
+L ' amministratore inserisce la nuova email e preme il tasto di conferma
+Il sistema aggiorna la nuova e-mail

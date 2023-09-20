@@ -1,0 +1,3 @@
+View Class List
+Viewing classes
+The system shows a screen with all the classes in the database with a key to access the registry of each class

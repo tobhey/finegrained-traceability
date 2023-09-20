@@ -1,0 +1,12 @@
+Name: DoStudentsMonitoring
+Actors: Administrator
+Description: allows you to query the system about the number of absences and notes associated with students
+Preconditions:
+• The user is logged in to the system as an administrator • The user click on the "Student Monitoring" button
+Events sequence
+User
+System
+1. Search in the archive the students who have, for the school year in progress a number of absences and notes higher than a predetermined threshold.
+2. Displays a data presentation screen.
+Postconditions ::
+• There was information about absences and notes of the students.• Connection to the interrupted SMOS server.

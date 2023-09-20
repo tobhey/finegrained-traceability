@@ -1,0 +1,7 @@
+Enter new teaching
+Insert a new teaching on the archive
+He is visualizing the Lelemo of the user teachings click on the New Teaching button
+Fill out the form
+Click on the Save button
+The system shows the form to be completed by Teaching Name
+Check out controls on the validity of the data entered and inserts the new teaching to the archive in the event that the data entered are not valid to activate the data error data

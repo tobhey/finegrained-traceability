@@ -1,0 +1,17 @@
+Use case name
+CancellationCitizen
+Participating actors
+Started by employee
+Flow of events
+1.
+3.
+The clerk presses the citizen delete button.
+2. The system asks the clerk for confirmation. The clerk confirms the operation.
+4. The system deletes the citizen.
+Entry condition
+The employee has authenticated into the system. This use case includes SearchCitizen and occurs when the clerk wants to delete a citizen.
+Exit condition.
+The clerk does not confirm the operation,OR
+The system deletes the citizen,OR ➢ In the case where the service is not available the use case is invoked.
+of use ServiceNotAvailable.
+Quality requirements Not expected

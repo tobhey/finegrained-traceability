@@ -1,0 +1,25 @@
+Requisito:
+Addebito della spesa telefonica.
+Descrizione:
+Vista la normativa interna dell’hotel, che prevede il servizio telefonico in 
+camera indipendentemente dal tipo di soggiorno, deve essere possibile tener 
+conto del numero di scatti effettuati dal cliente a partire dall’inizio del 
+soggiorno. Tale numero moltiplicato al costo del singolo scatto, stabilito dal 
+proprietario,  fornirà l’addebito della spesa telefonica che andrà poi ad 
+aggiungersi al conto totale del soggiorno.
+Input richiesto:
+Dati telefonate forniti dal centralino telefonica.
+Output desiderato:
+Addebito spesa telefonica.
+Criterio di accettazione:
+Il sistema deve essere in grado di comunicare con il centralino e tener traccia 
+delle informazioni di una telefonata effettuata dal cliente durante il soggiorno 
+con relativo    addebito della spesa. Tali informazioni dovranno essere 
+reperibili al momento della richiesta del conto.
+Aspettative collegate:
+L’albergatore si aspetta di poter controllare il sistema telefonico dell’hotel 
+ricavandone il vantaggio di disporre del costo telefonico da aggiungere al 
+conto totale del soggiorno al termine di quest’ultimo.
+Requisiti collegati:
+F-SOG-04, F-GES-05.
+

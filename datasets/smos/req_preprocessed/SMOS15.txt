@@ -1,0 +1,3 @@
+Visualizza Dettagli Classe
+Permette di visualizzare i dettagli di una classe
+Visualizza la scherma con i dettagli di una singola classe nome indirizzo anno scolastico

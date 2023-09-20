@@ -1,0 +1,5 @@
+Accepted
+
+The employee accepts the practice
+The system sets the practice as accepted
+So send a notification to the citizen

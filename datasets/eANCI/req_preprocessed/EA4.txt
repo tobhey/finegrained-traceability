@@ -1,0 +1,6 @@
+Cancellazione Cittadino
+
+L ' impiegato preme il pulsante di cancellazione cittadino
+Il sistema chiede all ' impiegato una conferma
+L ' impiegato conferma l ' operazione
+Il sistema cancella il cittadino

@@ -1,0 +1,6 @@
+Administrator Password Recovery
+
+The administrator has forgotten the password and press the Password Recovery Button
+The system shows the form for the insertion of the freshman
+The administrator inserts his freshman and press the confirmation key
+The system checks the data and sends the password to the email address of the administrator

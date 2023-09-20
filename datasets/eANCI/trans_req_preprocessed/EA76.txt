@@ -1,0 +1,6 @@
+Territorial promotion information
+
+The citizen requires the view of the list of territorial promotions
+The system allows you to view the list of promotions
+The citizen chooses the promotion
+The system returns the information regarding the chosen promotion

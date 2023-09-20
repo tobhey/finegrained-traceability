@@ -1,0 +1,3 @@
+Visualizza Richieste Di Iscrizione
+Consente all ' amministratore di visualizzare l ' elenco delle richieste di iscrizione giunte al sistema
+Visualizza l ' elenco delle iscrizioni ancora da attivare

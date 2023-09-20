@@ -1,0 +1,6 @@
+Inserimento Informazione
+
+L ' impiegato richiede l ' inserimento di una nuova news
+Il sistema visualizza un form per la sottomissione della richiesta
+L ' impiegato inserisce i dati relativi alla nuova news in un form
+Il sistema riceve il form e inserisce la news nel sistema

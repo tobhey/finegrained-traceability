@@ -1,0 +1,8 @@
+The LHCP can view of the comprehensive patient report for the specified patient, including the information below.
+All patient demographic information (address, phone, etc), see (UC4) and Data Format 6.1
+The entire history of personal health records, see (UC10) and Data Format 6.4
+All diagnoses, including those not normally viewable by the requesting LHCP, see (UC11) and Data Format 6.5
+All designated HCPs (MIDs and Names), see (UC6)
+All allergies, procedures, medications, office visits, and known relatives, see (UC11) and Data Format 6.5, 6.6
+All MIDs and names of people that this person is representing, see (UC13) 
+All MIDs and names of people that this person is represented by, see (UC13)

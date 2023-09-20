@@ -1,0 +1,3 @@
+A user an LHCP or patient chooses to display hisher appointments in the current month on a calendar for the current month
+Hisher appointments in the current month shall be displayed on the calendar S
+The user can select an appointment from the calendar to read the appointment 's details S

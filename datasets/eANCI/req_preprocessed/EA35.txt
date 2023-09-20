@@ -1,0 +1,7 @@
+Richiesta Di Matrimonio
+
+Il Cittadino preme sul bottone Richiesta di matrimonio
+Il sistema mostra al cittadino il form da compilare
+Il cittadino inserisce tutti i suoi dati quelli del partner e preme il tasto di conferma
+Il sistema crea automaticamente il modulo da presentare con autocertificazione e stato di famiglia del cittadino richiedente e invia il modulo all ' impiegato
+L ' impiegato riceve la notifica e pubblica la richiesta di matrimonio

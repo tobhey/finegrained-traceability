@@ -1,0 +1,6 @@
+Rischi
+
+Il Cittadino accede alla schermata circa i significati dei rischi di cui si occupa la Protezione Civile con immagini specifiche per ogni categoria di pericolo e video di come opera durante le operazioni di soccorso
+Il sistema risponde alla richiesta del Cittadino con una schermata dove sono presenti cause significati circa le frane alluvioni e fenomeni di erosione costiera e video di interventi
+Il Cittadino dopo aver visionato la scheda descrittiva pu voler conoscere le cause di altri pericoli di cui l ' organo si occupa e pertanto decide di visionarle attivando i casi d ' uso Incendi Vulcanico Sismico Sanitario Antropico Monitoraggio Idro- pluviometrico
+Il sistema mette a disposizione anche delle ulteriori schede informative su altri pericoli di cui si occupa la Protezione Civile

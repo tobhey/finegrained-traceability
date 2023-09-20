@@ -1,0 +1,18 @@
+Use case name
+DeletionEmployee
+Participating actors
+Started by administrator
+Flow of events
+1. The administrator presses the delete-employee button.
+2. The system asks the administrator for confirmation.
+3. The administrator confirms the operation. 4. The system deletes the employee.
+Entry condition
+The administrator has authenticated into the system.
+This use case includes SearchEmployee and occurs when the administrator wants to delete an employee.
+Exit condition
+The administrator does not confirm the operation,OR
+The system deletes the employee,OR ➢ In the case where the service is not available, the use case is invoked
+use case ServiceNotAvailable is invoked.
+Quality requirements The freshman string is present in the system, consists of numeric characters only, and is 6 characters long.
+The name string must be present in the system and associated with the last name, can contain characters [ a..z A..Z ' àéèìòù ] and must have a maximum length of 30 characters.
+The string last name must be present in the system and associated with the first name, may contain characters [ a..z A..Z ' àéèìòù ] and must have a maximum length of 30 characters.

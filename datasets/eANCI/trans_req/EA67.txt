@@ -1,0 +1,14 @@
+Use case name
+EditPreservationInterview
+Participating actors
+Started by Citizen
+Flow of events
+1. Citizen requests change of interview reservation in the counseling center.
+2. The system displays a form for editing the reservation fields.
+3. The citizen makes the changes in the form confirms the reservation.
+4. Thesystemmodifiesthereservation.
+Entry condition
+This extends the ViewPreservationConsultor io use case by considering the case when the citizen wants to change the chosen reservation.
+Exit condition
+The system has made the reservation change.
+Quality requirements Not provided.

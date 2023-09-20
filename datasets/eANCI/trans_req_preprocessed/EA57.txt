@@ -1,0 +1,9 @@
+Disabled parking release
+
+The user selects the functionality social assistance by selecting disabled parking release
+The system shows the form for the inclusion of the applicant's data and the recipient if different
+The user enters the applicant's personal data and those of the recipient if different if necessary specifying the relationship with that person
+Furthermore, the type of documentation attached to the Command of Urban Certificate Medical-Legal Released by the ASL Commission is also specified
+Then submit the form
+The system picks up the personal data of the citizen recipient
+The request is sent to the Command of Urban and the user is notified the sending

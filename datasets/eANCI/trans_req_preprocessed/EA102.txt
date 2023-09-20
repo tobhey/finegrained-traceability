@@ -1,0 +1,4 @@
+Download registration
+
+The citizen accesses this screen because he wants to enroll in the civil service
+The system responds with a page where the citizen who requested can download the form to be completed and submit to the civil protection office

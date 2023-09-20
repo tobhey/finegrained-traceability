@@ -1,0 +1,6 @@
+Change reservation interview
+
+The citizen requests the change in the reservation of the interview in the Consultorio
+The system displays a form for editing the reservation fields
+The citizen makes the changes in the form confirms the reservation
+IlSistemamodificaLoPretation

@@ -1,0 +1,2 @@
+HC Ps can return to an office visit and modify or delete the fields of the office visit date hospital notes prescriptions laboratory procedures UC referral UC diagnoses procedures andor immunizations
+The event is logged UC S and the HCP is returned in the specific office visit record to verify his or her changes

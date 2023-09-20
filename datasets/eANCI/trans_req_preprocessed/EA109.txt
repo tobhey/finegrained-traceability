@@ -1,0 +1,4 @@
+Civil protection
+
+The citizen accesses the descriptive sheet about general information regarding the municipal body in question
+The system responds to the information functionality allowing the visualization of a description of the active roles carried out by civil protection
