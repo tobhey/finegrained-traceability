@@ -75,22 +75,22 @@ def handle_filter(filter):
         resulting_filter = NFRElementFilter()
     elif filter.lower() == "nb":
         resulting_filter = UserRelatedElementFilter()
-    elif filter.lower() == "nfnb":
+    elif filter.lower() == "both":
         resulting_filter = UserRelatedNFRElementFilter()
     return resulting_filter
 
 
-def build_runner_name(variant, use_case_templates, method_comments, call_dependencies, nqk):
+def build_runner_name(variant, use_case_templates, method_comments, call_dependencies):
     runner_name = ""
-    if (variant.lower() == "ecoss"):
+    if variant.lower() == "ecoss":
         runner_name += "ElementAvgCosine"
-    elif (variant.lower() == "acoss"):
+    elif variant.lower() == "acoss":
         runner_name += "ArtifactAvgCosine"
-    elif (variant.lower() == "awmd"):
+    elif variant.lower() == "awmd":
         runner_name += "ArtifactWMD"
-    elif (variant.lower() == "uxccos"):
+    elif variant.lower() == "uxccos":
         runner_name += "UniXcoder"
-    elif (variant.lower() == "uxcwmd"):
+    elif variant.lower() == "uxcwmd":
         runner_name += "UniXcoderWMD"
     else:
         runner_name += "FTLR"
@@ -108,7 +108,7 @@ def build_runner_name(variant, use_case_templates, method_comments, call_depende
 
 
 def handle_variant(variant, dataset, filter, use_case_templates, method_comments, call_dependencies, nqk):
-    runner_name = build_runner_name(variant, use_case_templates, method_comments, call_dependencies, nqk)
+    runner_name = build_runner_name(variant, use_case_templates, method_comments, call_dependencies)
     cls = globals()[runner_name]
     runner = cls(dataset=dataset, element_filter=filter, nqk=nqk)
     if isinstance(runner, UniXcoderRunner):
