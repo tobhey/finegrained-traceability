@@ -85,8 +85,8 @@ class TraceabilityRunner:
 class AvgCosineRunner(TraceabilityRunner):
     DEFAULT_MATRIX_FILE_PATH = "{dataset_folder}/{folder}/{dataset_name}_{name_suffix}_matrix.csv"
 
-    def __init__(self, dataset: Dataset):
-        super().__init__(dataset)
+    def __init__(self, dataset: Dataset, nqk=False):
+        super().__init__(dataset, nqk)
 
         self.req_reduce_func = max
         self.code_reduce_function = max
@@ -102,8 +102,11 @@ class ArtifactAvgCosineRunner(AvgCosineRunner):
     LABEL = "ArtifactAvgCosine"
     DEFAULT_DATASOURCE_SUFFIX = "ArtifactAvgCosine"
 
-    def __init__(self, dataset: Dataset, use_types=True, element_filter=None, classname_as_optional_voter=True):
-        super().__init__(dataset)
+    def __init__(self, dataset: Dataset, use_types=True, element_filter=None, classname_as_optional_voter=True, nqk=False):
+        super().__init__(dataset, nqk)
+        if nqk:
+            self.LABEL = self.LABEL + "NQK"
+            self.DEFAULT_DATASOURCE_SUFFIX = self.DEFAULT_DATASOURCE_SUFFIX + "NQK"
         if not use_types:
             self.LABEL = self.LABEL + "NoTypes"
             self.DEFAULT_DATASOURCE_SUFFIX = self.DEFAULT_DATASOURCE_SUFFIX + "NoTypes"
@@ -246,8 +249,11 @@ class ArtifactWMDRunner(WMDRunner):
     DEFAULT_DATASOURCE_SUFFIX = "ArtifactWMD"
     WMD_VALUE_MAP_FUNCTION = partial(Util.map_value_range, 0, 2)  # Map the wmd distances from [0,2] to [0,1]
 
-    def __init__(self, dataset: Dataset, use_types=True, element_filter=None, classname_as_optional_voter=True):
-        super().__init__(dataset)
+    def __init__(self, dataset: Dataset, use_types=True, element_filter=None, classname_as_optional_voter=True, nqk=False):
+        super().__init__(dataset, nqk)
+        if nqk:
+            self.LABEL = self.LABEL + "NQK"
+            self.DEFAULT_DATASOURCE_SUFFIX = self.DEFAULT_DATASOURCE_SUFFIX + "NQK"
         if not use_types:
             self.LABEL = self.LABEL + "NoTypes"
             self.DEFAULT_DATASOURCE_SUFFIX = self.DEFAULT_DATASOURCE_SUFFIX + "NoTypes"
@@ -374,8 +380,11 @@ class ElementAvgCosineRunner(AvgCosineRunner):
     DEFAULT_DATASOURCE_SUFFIX = "ElementAvgCosine"
     ARTIFACT_TO_ELEMENT_MAP_FILE_PATTERN = "{dataset_folder}/{folder}/{dataset_name}_{name_suffix}_a2eMap.json"
 
-    def __init__(self, dataset: Dataset, use_types=True, element_filter=None, classname_as_optional_voter=True):
-        super().__init__(dataset)
+    def __init__(self, dataset: Dataset, use_types=True, element_filter=None, classname_as_optional_voter=True, nqk=False):
+        super().__init__(dataset, nqk)
+        if nqk:
+            self.LABEL = self.LABEL + "NQK"
+            self.DEFAULT_DATASOURCE_SUFFIX = self.DEFAULT_DATASOURCE_SUFFIX + "NQK"
         if not use_types:
             self.LABEL = self.LABEL + "NoTypes"
             self.DEFAULT_DATASOURCE_SUFFIX = self.DEFAULT_DATASOURCE_SUFFIX + "NoTypes"
