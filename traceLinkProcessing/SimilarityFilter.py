@@ -3,11 +3,13 @@
 class SimilarityFilter:
     
 
-    def _bigger_is_more_sim(self, a, b):
+    @staticmethod
+    def _bigger_is_more_sim(a, b):
         return a > b
     
 
-    def _smaller_is_more_sim(self, a, b):
+    @staticmethod
+    def _smaller_is_more_sim(a, b):
         return a < b
     
     def __init__(self, bigger_is_more_similar=True):

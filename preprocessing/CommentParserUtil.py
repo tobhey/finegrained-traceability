@@ -4,7 +4,6 @@ Comments in C files needs to be parsed separately because the pycparser does not
 import logging
 from comment_parser import comment_parser
 from preprocessing.CodeFileRepresentation import IdentifierString, Enum_
-from preprocessing.Tokenizer import WordTokenizer
 
 log = logging.getLogger(__name__)
 

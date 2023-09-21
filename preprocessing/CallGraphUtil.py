@@ -7,7 +7,7 @@ Contains util functions to work with the java call graph parser
 import logging
 import re
 
-from datasets.Dataset import Dataset, Smos
+from datasets.Dataset import Dataset
 from utility import FileUtil
 
 log = logging.getLogger(__name__)
@@ -103,8 +103,8 @@ def create_callgraph_from_raw_file(dataset: Dataset, create_class_callgraph=Fals
                 continue  # Leave out inner classes
             
             if create_class_callgraph:
-                insert_class(caller_class_name, set([callee_class_name]), set())
-                insert_class(callee_class_name, set(), set([caller_class_name]))
+                insert_class(caller_class_name, {callee_class_name}, set())
+                insert_class(callee_class_name, set(), {caller_class_name})
                     
         elif row_split[0] == "M":  # method level call
             # row_split[1] = Class of caller method
@@ -143,8 +143,8 @@ def create_callgraph_from_raw_file(dataset: Dataset, create_class_callgraph=Fals
             # called_by = caller_dict_key
             # calls = callee_dict_key
             
-            insert_entry(caller_dict_key, caller_class, caller_name, caller_param, set(), set([callee_dict_key]))
-            insert_entry(callee_dict_key, callee_class, callee_name, callee_param, set([caller_dict_key]), set())
+            insert_entry(caller_dict_key, caller_class, caller_name, caller_param, set(), {callee_dict_key})
+            insert_entry(callee_dict_key, callee_class, callee_name, callee_param, {caller_dict_key}, set())
              
         else:
             log.error("Unknow start character: " + row_split[0])

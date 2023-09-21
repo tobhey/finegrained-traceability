@@ -32,7 +32,7 @@ class SolutionComparator:
             elif self._print_false_positives:
                 false_positives_matrix.add_trace_pair(trace_link.req_key, trace_link.code_key)
         if self._print_false_negatives:
-            self._print_false_negatives(sol_matrix_copy)
+            self.print_false_negatives(sol_matrix_copy)
         if self._print_false_positives:
             log.info("\n\nFalse Positives: {} Links, {} unique Reqs, {} unique Code".format(false_positives_matrix._number_of_trace_links,
                                                                         false_positives_matrix.num_unique_reqs(), false_positives_matrix.num_unique_code()))
@@ -60,10 +60,11 @@ class SolutionComparator:
                 req_dict[req_name] = [sim_rel_tuple_to_add]
                 
         if self._print_false_negatives:
-            self._print_false_negatives(sol_matrix_copy)
+            self.print_false_negatives(sol_matrix_copy)
             
         return req_dict
-    
-    def _print_false_negatives(self, sol_matrix_with_false_negatives):
+
+    @staticmethod
+    def print_false_negatives(sol_matrix_with_false_negatives):
         log.info(f"\nFalse Negatives: {sol_matrix_with_false_negatives._number_of_trace_links} Links, {sol_matrix_with_false_negatives.num_unique_reqs()} unique Reqs, {sol_matrix_with_false_negatives.num_unique_code()} unique Code")
         log.info("\n" + sol_matrix_with_false_negatives.print_str())

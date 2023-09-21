@@ -1,5 +1,6 @@
 import abc, logging
 import re
+from abc import ABC
 
 from nltk.tokenize import word_tokenize, sent_tokenize
 
@@ -20,7 +21,7 @@ class Tokenizer(abc.ABC):
         pass
 
     
-class NaturalSpeechTokenizer(Tokenizer):
+class NaturalSpeechTokenizer(Tokenizer, ABC):
 
     def __init__(self, dataset, italian=False):
         super(NaturalSpeechTokenizer, self).__init__(dataset)

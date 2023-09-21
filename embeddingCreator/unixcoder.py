@@ -157,12 +157,12 @@ class Beam(object):
         self.finished = []
 
     def getCurrentState(self):
-        "Get the outputs for the current timestep."
+        """Get the outputs for the current timestep."""
         batch = self.nextYs[-1].view(-1, 1)
         return batch
 
     def getCurrentOrigin(self):
-        "Get the backpointers for the current timestep."
+        """Get the backpointers for the current timestep."""
         return self.prevKs[-1]
 
     def advance(self, wordLk):

@@ -1,4 +1,4 @@
-import abc, logging, traceback
+import abc, logging
 
 from javalang.parser import JavaSyntaxError, JavaParserError
 from javalang.tokenizer import LexerError
@@ -58,7 +58,7 @@ class EmbeddingCreator(abc.ABC):
             except (JavaParserError, LexerError) as j:
                 log.info(f"SKIPPED: Error on tokenizing {filename} (Note: code files needs to be compilable): {j}")
                 continue
-            except (FileExtensionNotSupportedError):
+            except FileExtensionNotSupportedError:
                 continue
             file_embedding = self._create_embeddings(file_representation)
             if file_embedding:

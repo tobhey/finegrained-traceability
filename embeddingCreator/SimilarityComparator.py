@@ -2,16 +2,6 @@ from utility.Util import calculate_cos_sim
 from utility import Util
 from _functools import partial
 
-from scipy import spatial
-
-from pyemd import emd
-from gensim.corpora import Dictionary
-
-from numpy import zeros,\
-    double, sqrt,\
-    sum as np_sum
-
-import numpy as np
 WMD_VALUE_MAP_FUNCTION = partial(Util.map_value_range, 0, 2)
 class SimilarityComparator:
 
@@ -39,7 +29,7 @@ class SimilarityComparator:
             max = 0
             for vector_2 in boe_2:
                 similarity = self._cosine_similarity(vector_1, vector_2)
-                if(similarity > max):
+                if similarity > max:
                     max = similarity
             sum += max
 

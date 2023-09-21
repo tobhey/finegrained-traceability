@@ -22,12 +22,10 @@ from evaluation.OutputService import F1ExcelOutputService, MAPOutputService, MAP
 from precalculating.TraceLinkDataStructure import ElementLevelTraceLinkDataStructure, FileLevelTraceLinkDataStructure
 from precalculating.TraceLinkDataStructureFactory import ElementLevelTraceLinkDataStructureFactory, \
     FileLevelTraceLinkDataStructureFactory
-from preprocessing.CodeASTTokenizer import JavaCodeASTTokenizer, CCodeASTTokenizer
 from preprocessing.Preprocessor import CamelCaseSplitter, LowerCaseTransformer, \
     NonLetterFilter, UrlRemover, Separator, JavaCodeStopWordRemover, \
     StopWordRemover, Lemmatizer, WordLengthFilter, Preprocessor, POSFilter
-from preprocessing.Tokenizer import JavaDocDescriptionOnlyTokenizer, \
-    WordAndSentenceTokenizer, UCTokenizer, WordTokenizer, NameAndDescriptionTokenizer
+from preprocessing.Tokenizer import WordAndSentenceTokenizer, UCTokenizer, NameAndDescriptionTokenizer
 from traceLinkProcessing.ElementFilter import ElementFilter
 from traceLinkProcessing.NeighborHandler import NeighborStrategy
 from traceLinkProcessing.SimilarityFilter import SimilarityFilter

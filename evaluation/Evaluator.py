@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 
 from traceLinkProcessing.TraceLink import TraceLink
-from utility import Util
 
 
 class Evaluator(ABC):
@@ -230,7 +229,7 @@ class EvalResultObject(ABC):
         pass
 
 
-class EmptyResultObject():
+class EmptyResultObject(EvalResultObject):
 
     def __init__(self, message: str):
         self._message = message
@@ -281,7 +280,7 @@ class F1ResultObject(EvalResultObject):
         return print_str
 
 
-class MAPResultObject(ABC):
+class MAPResultObject(EvalResultObject):
 
     def __init__(self, mAP, k):
         self.mAP = mAP
@@ -299,7 +298,7 @@ class MAPResultObject(ABC):
         return self.mAP
 
 
-class LagResultObject(ABC):
+class LagResultObject(EvalResultObject):
 
     def __init__(self, lag):
         self.lag = lag

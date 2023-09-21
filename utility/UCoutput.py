@@ -56,8 +56,7 @@ if dataset.has_UCT():
         req_tokenizer = UCTokenizer(dataset, not dataset.is_english())
 
 all_filenames = FileUtil.get_files_in_directory(dataset.req_folder())
-output = []
-output.append("file,ID,text")
+output = ["file,ID,text"]
 for file_path in all_filenames:
     file_representation = req_tokenizer.tokenize(file_path)
     file_representation.preprocess(req_preprocessor)

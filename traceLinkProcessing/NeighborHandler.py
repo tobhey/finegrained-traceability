@@ -24,7 +24,7 @@ class NeighborHandler:
             all_neighbor_keys = method_callgraph_entry[CallGraphUtil.CALLED_BY] + method_callgraph_entry[CallGraphUtil.CALLS]
         elif self._neighbor_strategy == NeighborStrategy.up:
             all_neighbor_keys = method_callgraph_entry[CallGraphUtil.CALLED_BY]
-        elif self._neighbor_strategy == self.NeighborStrategy.down:
+        elif self._neighbor_strategy == NeighborStrategy.down:
             all_neighbor_keys = method_callgraph_entry[CallGraphUtil.CALLS]
         else:
             log.error("Unknown neighbor strategy: " + str(self._neighbor_strategy))

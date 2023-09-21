@@ -93,6 +93,7 @@ class ElementLevelTraceLinkDataStructureFactory(TraceLinkDataStructureFactory):
                 similarity_matrix.set_value(key, element_key, similarity)
         return similarity_matrix
                 
-    def _build_req_element_key(self, req_file_name, index):
+    @staticmethod
+    def _build_req_element_key(req_file_name, index):
         return f"{req_file_name}.{index}"
             

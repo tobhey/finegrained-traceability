@@ -122,13 +122,11 @@ class UseCaseFileRepresentation(FileRepresentation):
         self.__clean_up_strings()
     
     def get_printable_string(self):
-        print_str = ["UC_NAME || " + "|".join(self.name_words)]
-        print_str.append("DESCRIPTION || " + "|".join(self.description_words))
-        print_str.append("ACTOR || " + "|".join(self.actor_words))
-        print_str.append("PRECOND || " + "|".join(self.precondition_words))
-        print_str.append("EVENTFLOW || " + ", ".join(["|".join(sent_group) for sent_group in self.flow_of_events_words]))
-        print_str.append("POSTCOND || " + "|".join(self.postcondition_words))
-        print_str.append("QUALIREQ || " + "|".join(self.quality_requirement_words))
+        print_str = ["UC_NAME || " + "|".join(self.name_words), "DESCRIPTION || " + "|".join(self.description_words),
+                     "ACTOR || " + "|".join(self.actor_words), "PRECOND || " + "|".join(self.precondition_words),
+                     "EVENTFLOW || " + ", ".join(["|".join(sent_group) for sent_group in self.flow_of_events_words]),
+                     "POSTCOND || " + "|".join(self.postcondition_words),
+                     "QUALIREQ || " + "|".join(self.quality_requirement_words)]
         return "\n".join(print_str)
 
     def get_csv_string(self):

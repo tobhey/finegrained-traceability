@@ -205,7 +205,7 @@ class Method(Preprocessable):
         [([boolean], [is, active]), ([type, tokens], [name, tokens]), ...]
         The type and name string list can contain multiple tokens if a camel case splitter was applied beforehand.
         """
-        self.__check_and_clean_param_list
+        self.__check_and_clean_param_list()
         return [param.get_param_tuple() for param in self.parameters]
     
     def get_param_plain_list(self) -> [str]:
@@ -213,7 +213,7 @@ class Method(Preprocessable):
         Returns param tokens as plain string list (No assumptions about order):
         [type1, name1, type2, name2...]
         """
-        self.__check_and_clean_param_list
+        self.__check_and_clean_param_list()
         param_words = []
         for param in self.parameters:
             param_words.extend(param.get_param_words())
@@ -224,7 +224,7 @@ class Method(Preprocessable):
         Returns param names tokens as plain string list (No assumptions about order):
         [name1, name2...]
         """
-        self.__check_and_clean_param_list
+        self.__check_and_clean_param_list()
         param_words = []
         for param in self.parameters:
             param_words.extend(param.get_param_name_words())

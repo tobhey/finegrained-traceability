@@ -25,7 +25,8 @@ class ElementFilter(ABC):
     def _filter(self, trace_link_data_structure: ElementLevelTraceLinkDataStructure, df, file, idx):
         pass
 
-    def check_and_remove(self, trace_link_data_structure: ElementLevelTraceLinkDataStructure, df, file, idx, columns):
+    @staticmethod
+    def check_and_remove(trace_link_data_structure: ElementLevelTraceLinkDataStructure, df, file, idx, columns):
         result = False
         for column,value in columns:
             result = result or (df.loc[idx, column] == value)

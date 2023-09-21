@@ -146,7 +146,7 @@ class MajorityDecision:
         for code_elem in self._trace_link_data_structure.all_code_elements_of(code_file_name):
             for req_file_name in self._trace_link_data_structure.all_req_file_names():
                 similarity = self._trace_link_data_structure.similarity_between(req_file_name, code_elem)
-                if (self._similarity_filter.is_more_similar(similarity, majority_drop_thresh)):
+                if self._similarity_filter.is_more_similar(similarity, majority_drop_thresh):
                     votes.append(req_file_name)
                     sims_per_req.append(req_file_name, similarity)
         return votes, sims_per_req

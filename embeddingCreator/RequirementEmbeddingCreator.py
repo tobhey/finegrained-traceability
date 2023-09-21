@@ -1,10 +1,11 @@
 import logging
+from abc import ABC
 
 from pathlib import Path
 
-from embeddingCreator.EmbeddingContainer import RequirementEmbeddingContainer, EmbeddingContainer
+from embeddingCreator.EmbeddingContainer import RequirementEmbeddingContainer
 from embeddingCreator.EmbeddingCreator import EmbeddingCreator
-from preprocessing.FileRepresentation import FileRepresentation, UseCaseFileRepresentation
+from preprocessing.FileRepresentation import UseCaseFileRepresentation
 from utility import Util
 
 logging.basicConfig(level=logging.INFO)
@@ -13,7 +14,7 @@ log = logging.getLogger(__name__)
 PREPROCESSED_REQ_OUTPUT_DIR = Path(__file__).parent.parent / "output/Preprocessed_Req"
 
 
-class RequirementEmbeddingCreator(EmbeddingCreator):
+class RequirementEmbeddingCreator(EmbeddingCreator, ABC):
 
     def __init__(self, requirements_word_chooser, preprocessor, wordemb_creator,
                   tokenizer, preprocessed_token_output_directory=PREPROCESSED_REQ_OUTPUT_DIR): 
@@ -46,8 +47,8 @@ class RequirementVectorEmbeddingCreator(RequirementEmbeddingCreator):
     
     def _create_embeddings(self, file_representation):
         chosen_word_groups = self._requirements_word_chooser.choose_words_from(file_representation)
-        chosen_word_groups_embeddings = []
-        requirement_element_vectors = []
+        #chosen_word_groups_embeddings = []
+        #requirement_element_vectors = []
         element_vectors = {}
         for word_group_id in chosen_word_groups:
             word_embeddings = self._word_embedding_creator.create_word_list_embedding(chosen_word_groups[word_group_id])

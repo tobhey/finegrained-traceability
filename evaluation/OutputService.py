@@ -1,7 +1,6 @@
-from abc import ABC , abstractmethod
+from abc import ABC
 from typing import Dict, List
 import logging
-from pathlib import Path
 
 from autograd.builtins import isinstance
 
@@ -149,7 +148,8 @@ class F1ExcelOutputService(OutputService):
             
         return excel_array
         
-    def _get_context_thresholds(self, all_threshs, best_thresh):
+    @staticmethod
+    def _get_context_thresholds(all_threshs, best_thresh):
         
         if len(all_threshs) > 1:
             context_threshs = []
@@ -290,9 +290,8 @@ class CombinedExcelOutputService(F1ExcelOutputService):
         excel_array.append([lag_message])
         
         excel_array.append([""])  # Add empty row as divider
-        csv_array = []
-        csv_array.append(["Best:", "", "", "", "", "Default:", "", "", "MAP", "LAG"])
-        csv_array.append(["Maj", "Final", "Precision", "Recall", "F1", "Precision", "Recall", "F1", "MAP", "LAG"])
+        csv_array = [["Best:", "", "", "", "", "Default:", "", "", "MAP", "LAG"],
+                     ["Maj", "Final", "Precision", "Recall", "F1", "Precision", "Recall", "F1", "MAP", "LAG"]]
         if isinstance(best_eval_result, F1ResultObject):
             default_prec = 0
             default_rec = 0
@@ -363,9 +362,8 @@ class CombinedExcelOutputService(F1ExcelOutputService):
         excel_array.append([lag_message])
 
         excel_array.append([""])  # Add empty row as divider
-        csv_array = []
-        csv_array.append(["Best:","","","","","Default:","","","MAP","LAG"])
-        csv_array.append(["Maj","Final","Precision","Recall","F1","Precision","Recall","F1","MAP","LAG"])
+        csv_array = [["Best:", "", "", "", "", "Default:", "", "", "MAP", "LAG"],
+                     ["Maj", "Final", "Precision", "Recall", "F1", "Precision", "Recall", "F1", "MAP", "LAG"]]
         if isinstance(best_eval_result, F1ResultObject):
             default_prec = 0
             default_rec = 0
@@ -399,10 +397,6 @@ class PrecisionRecallPairOutputService(F1ExcelOutputService):
     def process_trace_link_2D_dict(self, trace_link_2D_dict: Dict[float, Dict[float, List[TraceLink]]]):
         results = {}
         for maj_thresh in trace_link_2D_dict:
-            best_eval_result = None
-            best_thresh = None
-
-            print_str_dict = {}
             for final_threshold in trace_link_2D_dict[maj_thresh]:
                 # header_row.append(self.FILE_LEVEL_DROP_THRESH_PATTERN.format(final_threshold))
                 eval_result_object = self._evaluator.evaluate(trace_link_2D_dict[maj_thresh][final_threshold])

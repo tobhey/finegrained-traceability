@@ -17,7 +17,6 @@ def extract_FileAST(fileAST, filepath):
     file_name = FileUtil.get_filename_from_path(filepath)
     # Use mock class to hold the methods
     class_name = IdentifierString(file_name, file_name.replace(".jsp", ""))
-    super_classifiers = []
     class_object = Classifier(class_name, IdentifierString(file_name, ""))
     attributes = []
     functions = []

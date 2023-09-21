@@ -63,7 +63,8 @@ class CodeEmbeddingCreator(EmbeddingCreator):
             class_embedding_container.set_non_cg_vector(self._build_class_name_voter_key(classifier), class_name_vector)
         return class_embedding_container
     
-    def _build_class_name_voter_key(self, classifier):
+    @staticmethod
+    def _build_class_name_voter_key(classifier):
         return classifier.get_original_name() + "." + ClassEmbeddingContainer.CLASS_NAME_VOTER
 
 

@@ -105,7 +105,7 @@ def _extract_attributes(attribute_nodes, file_name):
     """Return an attribute object list."""
     attr_list = []
     for attr in attribute_nodes:
-        if not(ONLY_PUBLIC_ATTRIBUTES) or attr.modifiers.contains("public"):  # logical Implication
+        if not ONLY_PUBLIC_ATTRIBUTES or attr.modifiers.contains("public"):  # logical Implication
             attr_init_value, left_side_identifier = _extract_children_strings(attr.declarators[0].initializer, file_name)
             attr_obj = Attribute(IdentifierString(file_name, attr.type.name),
                                  IdentifierString(file_name, attr.declarators[0].name), attr_init_value, IdentifierString(file_name, ""))
@@ -120,7 +120,7 @@ def _extract_methods(method_nodes, file_name):
     meth_list = []
     for meth in method_nodes:
         #if not(ONLY_PUBLIC_METHODS) or not("private" in meth.modifiers or "protected" in meth.modifiers):
-        if not(ONLY_PUBLIC_METHODS) or "public" in meth.modifiers:  # logical Implication
+        if not ONLY_PUBLIC_METHODS or "public" in meth.modifiers:  # logical Implication
             meth_obj = Method(IdentifierString(file_name, ""), IdentifierString(file_name, meth.name), IdentifierString(file_name, ""),
                               IdentifierString(file_name, ""), IdentifierString(file_name, ""))
             if meth.return_type:
@@ -144,7 +144,7 @@ def _extract_parameters(parameter_nodes, file_name):
     return param_list
 
         
-def _extract_children_strings(body_node, file_name) -> IdentifierString:
+def _extract_children_strings(body_node, file_name) -> tuple[IdentifierString, IdentifierString]:
     """Returns an IdentifierString that contains all identifiers in the given body node"""
     
     strings_in_body, left_side_identifiers = _traverse_node(body_node, file_name)

@@ -2,11 +2,7 @@ from abc import ABC, abstractmethod
 import logging
 import random
 
-from pyemd import emd
-
 import gensim.models.wrappers
-
-from gensim.models.word2vec import Word2Vec
 
 from utility import Util
 

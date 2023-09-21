@@ -7,7 +7,6 @@ import javalang
 
 from preprocessing import Tokenizer, JavaLangUtil, PycparserUtil, JSParserUtil
 from pycparser import parse_file
-from esprima import parse
 from preprocessing.CodeFileRepresentation import CodeFileRepresentation, IdentifierString, Classifier
 from preprocessing.CommentParserUtil import parse_and_add_comments_to_file
 from utility import FileUtil
