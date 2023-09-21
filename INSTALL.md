@@ -22,3 +22,5 @@ python -m nltk.downloader wordnet
 * the others are common scientific python libs that are compatible with the before mentioned
 
 The fastText model files (for english and italian) are not included in this repository. The model files can be found on the [website of fastText](https://fasttext.cc/docs/en/crawl-vectors.html). For the paper we used `cc.en.300.bin` and `cc.it.300.bin`.
+
+The unixcoder model files are also not included. They can be downloaded from [Hugging Face hub](https://huggingface.co/microsoft/unixcoder-base), model name `microsoft/unixcoder-base`.

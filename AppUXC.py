@@ -15,7 +15,8 @@ from utility.FileUtil import setup_clear_dir
 
 ENGLISH_FASTTEXT_MODEL_PATH = "../models/cc.en.300.bin"
 ITALIAN_FASTTEXT_MODEL_PATH = "../models/cc.it.300.bin"
-models = {'english': ENGLISH_FASTTEXT_MODEL_PATH, 'italian': ITALIAN_FASTTEXT_MODEL_PATH}
+UNIXCODER_MODEL_PATH = "../models/unixcoder-base"
+models = {'english': ENGLISH_FASTTEXT_MODEL_PATH, 'italian': ITALIAN_FASTTEXT_MODEL_PATH, 'unixcoder': UNIXCODER_MODEL_PATH}
 
 FINAL_THRESHOLDS = [0.44]
 MAJORITY_THRESHOLDS = [0.59]
@@ -33,7 +34,7 @@ b = UniXcoderRunner(Etour(), element_filter=None, nqk=True)
 # select whether to use use case templates (UCT), method comments (MC) or the method body (MB)
 b.configurate_word_choosers(uct=True, mc=False, mb=False)
 
-b.precalculate(matrix_file_path=None, artifact_map_file_path=None)
+b.precalculate(models, matrix_file_path=None, artifact_map_file_path=None)
 
 
 """

@@ -23,7 +23,8 @@ log = logging.getLogger(__name__)
 
 ENGLISH_FASTTEXT_MODEL_PATH = "../../models/cc.en.300.bin"
 ITALIAN_FASTTEXT_MODEL_PATH = "../../models/cc.it.300.bin"
-models = {'english': ENGLISH_FASTTEXT_MODEL_PATH, 'italian': ITALIAN_FASTTEXT_MODEL_PATH}
+UNIXCODER_MODEL_PATH = "../models/unixcoder-base"
+models = {'english': ENGLISH_FASTTEXT_MODEL_PATH, 'italian': ITALIAN_FASTTEXT_MODEL_PATH, 'unixcoder': UNIXCODER_MODEL_PATH}
 
 FINAL_THRESHOLDS = [0.586]
 MAJORITY_THRESHOLDS = [0.302]
@@ -104,7 +105,7 @@ def run_calculate(runner):
 def run_precalculate(runner):
     print(type(runner).__name__)
     print(vars(runner))
-    runner.precalculate(matrix_file_path=None, artifact_map_file_path=None)
+    runner.precalculate(models, matrix_file_path=None, artifact_map_file_path=None)
     
     
 tasksPre = (delayed(run_precalculate)(runner) for runner in runners)

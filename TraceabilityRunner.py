@@ -902,8 +902,8 @@ class UniXcoderRunner(FTLRRunner):
         self.excel_output_file_path = excel_output_folder / f"{self.dataset.name()}_{self.LABEL}_eval_result.xlsx"
 
 
-    def precalculate(self, matrix_file_path=None, artifact_map_file_path=None):
-        word_emb_creator = UniXcoderEmbeddingCreator()
+    def precalculate(self, models, matrix_file_path=None, artifact_map_file_path=None):
+        word_emb_creator = UniXcoderEmbeddingCreator(model_path=models['unixcoder'])
         similarity_comparator = SimilarityComparator(True)
         if not matrix_file_path:
             matrix_file_path = self.default_matrix_path()
@@ -1023,8 +1023,8 @@ class UniXcoderWMDRunner(FTLRRunner):
         self.excel_output_file_path = excel_output_folder / f"{self.dataset.name()}_{self.LABEL}_eval_result.xlsx"
 
 
-    def precalculate(self, matrix_file_path=None, artifact_map_file_path=None):
-        word_emb_creator = UniXcoderEmbeddingCreator()
+    def precalculate(self, models, matrix_file_path=None, artifact_map_file_path=None):
+        word_emb_creator = UniXcoderEmbeddingCreator(model_path=models['unixcoder'])
         similarity_comparator = SimilarityComparator(False)
         if not matrix_file_path:
             matrix_file_path = self.default_matrix_path()

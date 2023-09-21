@@ -86,11 +86,11 @@ In each case the result files are saved in the corresponding `datasets/[DATASETN
 
 ~~~
 usage: FTLR [-h] --dataset {etour,itrust,itrustjsp,smos,eanci,smostrans,eancitrans,libest,albergate}
-            [--method {ftlr,ecoss,acoss,awmd,uxccos,uxcwmd}] [--use_case_templates] [--method_comments]
+            [--variant {ftlr,ecoss,acoss,awmd,uxccos,uxcwmd}] [--use_case_templates] [--method_comments]
             [--call_dependencies] [--nqk] [--metric {f1,map,both,None}] [--processing_step {precalculate,run,both}]
             [--filter {NF,NB,both,None}] [--gold_standard] [--majority_threshold MAJORITY_THRESHOLD]
             [--final_threshold FINAL_THRESHOLD] [--english_model ENGLISH_MODEL] [--italian_model ITALIAN_MODEL]
-            [--optimize_thresholds]
+            [--unixcoder_model UNIXCODER_MODEL] [--optimize_thresholds]
 
 Performs Evaluation of FTLR-Variants on Different Datasets.
 
@@ -98,8 +98,8 @@ options:
   -h, --help            show this help message and exit
   --dataset {etour,itrust,itrustjsp,smos,eanci,smostrans,eancitrans,libest,albergate}, -d {etour,itrust,itrustjsp,smos,eanci,smostrans,eancitrans,libest,albergate}
                         Choose dataset to run on
-  --method {ftlr,ecoss,acoss,awmd,uxccos,uxcwmd}, -v {ftlr,ecoss,acoss,awmd,uxccos,uxcwmd}
-                        Choose tlr method (default: ftlr)
+  --variant {ftlr,ecoss,acoss,awmd,uxccos,uxcwmd}, -v {ftlr,ecoss,acoss,awmd,uxccos,uxcwmd}
+                        Choose tlr variant (default: ftlr)
   --use_case_templates, -uct
                         Use use case template filter
   --method_comments, -mc
@@ -122,9 +122,10 @@ options:
                         Path to english fasttext model file (default: ../models/cc.en.300.bin)
   --italian_model ITALIAN_MODEL, -im ITALIAN_MODEL
                         Path to italian fasttext model file (default: ../models/cc.it.300.bin)
+  --unixcoder_model UNIXCODER_MODEL, -uxcm UNIXCODER_MODEL
+                        Path to unixcoder model files (default: ../models/unixcoder-base)
   --optimize_thresholds, -OPT
                         Optimizes thresholds by varying in 0.01 steps from 0 to 1 (does not output trace links)
-
 ~~~
 
 ## Datasets

@@ -428,7 +428,8 @@ class TracelinkOutputService(ABC):
         rows = [["sourceID", "targetID"]]
         if threshold in trace_link_dict.keys():
             for tracelink in trace_link_dict[threshold]:
-                rows.append([tracelink.req_key, tracelink.code_key])
+                if not isinstance(tracelink, str):
+                    rows.append([tracelink.req_key, tracelink.code_key])
         else:
             log.error("specified threshold not in results!")
 
@@ -440,7 +441,8 @@ class TracelinkOutputService(ABC):
             trace_link_dict = trace_link_2D_dict[maj_threshold]
             if final_threshold in trace_link_dict.keys():
                 for tracelink in trace_link_dict[final_threshold]:
-                    rows.append([tracelink.req_key, tracelink.code_key])
+                    if not isinstance(tracelink,str):
+                        rows.append([tracelink.req_key, tracelink.code_key])
             else:
                 log.error("specified final threshold not in results!")
         else:

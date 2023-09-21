@@ -8,9 +8,9 @@ class UniXcoderEmbeddingCreator(WordEmbeddingCreator):
     Creates context sensitive embedding vectors based on the UniXcoder lm
     """
 
-    def __init__(self):
+    def __init__(self, model_path):
         self._device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self._model = UniXcoder("microsoft/unixcoder-base")
+        self._model = UniXcoder(model_path)
         self._model.eval()
 
     def create_word_embedding(self, word):
