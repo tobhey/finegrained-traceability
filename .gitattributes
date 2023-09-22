@@ -8,3 +8,10 @@
 *.docx binary
 *.mp4 binary
 *.mkv binary
+
+#Ignore .tm, .java, .jsp, .c and .h files from language identification
+*.tm linguist-vendored=false
+*.java linguist-vendored=false
+*.jsp linguist-vendored=false
+*.c linguist-vendored=false
+*.h linguist-vendored=false
