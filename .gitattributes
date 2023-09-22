@@ -10,8 +10,8 @@
 *.mkv binary
 
 #Ignore .tm, .java, .jsp, .c and .h files from language identification
-*.tm linguist-vendored=false
-*.java linguist-vendored=false
-*.jsp linguist-vendored=false
-*.c linguist-vendored=false
-*.h linguist-vendored=false
+*.tm linguist-vendored
+*.java linguist-vendored
+*.jsp linguist-vendored
+*.c linguist-vendored
+*.h linguist-vendored
