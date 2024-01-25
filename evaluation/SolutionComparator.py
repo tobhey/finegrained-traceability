@@ -68,3 +68,6 @@ class SolutionComparator:
     def print_false_negatives(sol_matrix_with_false_negatives):
         log.info(f"\nFalse Negatives: {sol_matrix_with_false_negatives._number_of_trace_links} Links, {sol_matrix_with_false_negatives.num_unique_reqs()} unique Reqs, {sol_matrix_with_false_negatives.num_unique_code()} unique Code")
         log.info("\n" + sol_matrix_with_false_negatives.print_str())
+
+    def get_solution_source_artifacts_number(self):
+        return self._solution_trace_matrix.num_unique_reqs()

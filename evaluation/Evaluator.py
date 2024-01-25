@@ -52,7 +52,8 @@ class MAPEvaluator(Evaluator):
     2. For each requirement, build a code files list sorted by their similarity to this requirement
     3. Take the first k code files and throw the remainder away
     4. Calculate Average Precision @ k
-    5. Sum all Average Precisions @ k of each requirement and normalize it by dividing through len(original_req_file_names)
+    5. Sum all Average Precisions @ k of each requirement and normalize it by
+       dividing through the number of expected queries
     
     If k == None, it calculates the MAP over all retrieved code files (== leave out step 3.)
     
@@ -110,8 +111,8 @@ class MAPEvaluator(Evaluator):
             if self._k is not None:
                 first_k_links = first_k_links[:self._k]
             precision_sum += self._calculate_average_precision(first_k_links)
-            
-        return  MAPResultObject(precision_sum / len(self._original_req_file_names), self._k)
+
+        return MAPResultObject(precision_sum / self._solution_comparator.get_solution_source_artifacts_number(), self._k)
 
     def _calculate_average_precision(self, similarity_relevance_list):
         """
