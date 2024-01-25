@@ -1,4 +1,4 @@
-![GitHub](https://img.shields.io/github/license/tobhey/finegrained-traceability)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8367343.svg)](https://doi.org/10.5281/zenodo.8367343) ![GitHub](https://img.shields.io/github/license/tobhey/finegrained-traceability)
 
 # Fine-grained Traceability Link Recovery (FTLR)
 | :exclamation:  Please Note:                                                                                                                                                                                                                                                                                                                                         |
